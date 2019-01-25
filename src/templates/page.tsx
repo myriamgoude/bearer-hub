@@ -13,7 +13,6 @@ interface PageTemplateProps {
         description: string
         author: {
           name: string
-          url: string
         }
       }
     }

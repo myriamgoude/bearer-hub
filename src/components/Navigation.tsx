@@ -18,7 +18,7 @@ const StyledNavigationLink = styled(Link)`
 
 const Navigation = () => (
   <StyledNavigation>
-    <StyledNavigationLink to="/">EXPLORE INTEGRATIONS</StyledNavigationLink>
+    <StyledNavigationLink to="/explore">EXPLORE INTEGRATIONS</StyledNavigationLink>
     <StyledNavigationLink to="/how-it-works">HOW IT WORKS</StyledNavigationLink>
     <StyledNavigationLink to="/native-integration">MANIFESTO</StyledNavigationLink>
     <StyledNavigationLink to="/">DOCS</StyledNavigationLink>

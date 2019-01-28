@@ -6,6 +6,7 @@ export const colors = {
   accent: '#ffb238',
   success: '#37b635',
   warning: '#ec1818',
+  dark: '#03091d',
   ui: {
     bright: '#e0d6eb',
     light: '#f5f3f7',
@@ -61,5 +62,6 @@ export const dimensions = {
 }
 
 export const heights = {
-  header: 60
+  header: 60,
+  footer: 120,
 }

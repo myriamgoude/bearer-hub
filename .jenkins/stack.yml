@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: hub
+spec:
+  containers:
+    - name: node
+      image: bearersh/node-corp:0.10.1
+      command:
+        - cat
+      tty: true
+  volumes:
+    - name: docker-socket-volume
+      empty: {}

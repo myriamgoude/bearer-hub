@@ -8,7 +8,7 @@ echo "Inject secrets to the hub application"
 . ./.jenkins/scripts/secrets.sh $SECRET_ARN
 
 echo "Build the hub application"
-yarn build
+yarn && yarn build
 
 echo "Deploy the the hub application"
 yarn netlify deploy --prod  --dir=public

@@ -59,6 +59,13 @@ module.exports = {
         devKey: process.env.GATSBY_HUB_SEGMENT_ID,
         trackPage: true
       }
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://bearer-hub-staging.netlify.com/',
+        policy: [{ userAgent: '*', disallow: ['/'] }]
+      }
+    },
   ]
 }

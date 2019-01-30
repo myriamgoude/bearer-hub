@@ -2,7 +2,6 @@
 
 module.exports = {
   siteMetadata: {
-    siteUrl: ''
     title: 'Bearer Hub',
     description: 'Bearer Hub',
     author: {

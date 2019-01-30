@@ -51,6 +51,14 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-segment-js`,
+      options: {
+        prodKey: process.env.GATSBY_HUB_SEGMENT_ID,
+        devKey: process.env.GATSBY_HUB_SEGMENT_ID,
+        trackPage: true
+      }
+    }
   ]
 }

@@ -2,6 +2,7 @@
 
 module.exports = {
   siteMetadata: {
+    siteUrl: ''
     title: 'Bearer Hub',
     description: 'Bearer Hub',
     author: {
@@ -64,6 +65,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://bearer-hub-staging.netlify.com/',
+        sitemap: 'https://bearer-hub-staging.netlify.com/',
         policy: [{ userAgent: '*', disallow: ['/'] }]
       }
     },

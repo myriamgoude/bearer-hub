@@ -56,6 +56,7 @@
     "typescript": "^3.0.3"
   },
   "devDependencies": {
+    "@bearer/tslint-config": "^0.81.9",
     "@types/classnames": "^2.2.6",
     "@types/node": "^10.10.1",
     "@types/react": "^16.4.14",

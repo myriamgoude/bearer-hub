@@ -5,6 +5,8 @@ import { widths } from '../styles/variables'
 import { getEmSize } from '../styles/mixins'
 
 const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: row;
   position: relative;
   margin-left: auto;
   margin-right: auto;

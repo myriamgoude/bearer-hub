@@ -6,7 +6,12 @@ module.exports = {
     description: 'Bearer Hub',
     author: {
       name: '@bearersh'
-    }
+    },
+    integrations: [
+      { name: "test" },
+      { name: "asdf" },
+      { name: "qwerty" },
+    ],
   },
   plugins: [
     {

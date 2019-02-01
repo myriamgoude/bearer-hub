@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Page from '../components/Page'
-import Container from '../components/Container'
 import IndexLayout from '../layouts'
 
 const StyledContainer = styled.div`

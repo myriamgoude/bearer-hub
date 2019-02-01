@@ -23,8 +23,6 @@ const StyledImg = styled.img`
 `
 
 const FooterInner = styled(Container)`
-  display: flex;
-  flex-direction: row;
   align-items: center;
   height: 100%;
 `

@@ -23,8 +23,6 @@ const StyledImg = styled.img`
 `
 
 const HeaderInner = styled(Container)`
-  display: flex;
-  flex-direction: row;
   align-items: center;
   height: 100%;
 `

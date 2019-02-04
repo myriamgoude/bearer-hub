@@ -6,7 +6,7 @@ import Container from '../components/Container'
 import HeroPanel from '../components/HeroPanel'
 import { IIntegrationProps, IntegrationPanel } from '../components/IntegrationPanel'
 import Button from '../components/Button'
-import SubHeading from '../components/SubHeading'
+import SectionHeading from '../components/SectionHeading'
 import IndexLayout from '../layouts'
 
 import placeholderImage from '../images/homepage-placeholder.png'
@@ -45,7 +45,7 @@ export default ({ data }: IIndexPageProps) => (
         Learn more about <Link to="/native-integration">Native Integrations</Link>
       </HeroPanel>
 
-      <SubHeading>Most Integrated Apps</SubHeading>
+      <SectionHeading primaryText="Most Integrated Apps" />
       <Container>
         <div>
           <h3>For product manager</h3>
@@ -61,12 +61,12 @@ export default ({ data }: IIndexPageProps) => (
         </div>
       </Container>
 
-      <SubHeading>A Native Integration in 5 minutes</SubHeading>
+      <SectionHeading primaryText="A Native Integration in 5 minutes" />
 
-      <SubHeading>Featured Integrations</SubHeading>
+      <SectionHeading primaryText="Featured Integrations" />
       <IntegrationPanel integrations={ data.site.siteMetadata.integrations }></IntegrationPanel>
 
-      <SubHeading>Why use Bearer?</SubHeading>
+      <SectionHeading primaryText="Why use Bearer?"/>
 
       <HeroPanel
         title="Looking to build your own Native Integration?"

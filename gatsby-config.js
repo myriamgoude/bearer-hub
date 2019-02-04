@@ -12,6 +12,20 @@ module.exports = {
       { name: "asdf" },
       { name: "qwerty" },
     ],
+    howToSteps: [
+      {
+        title: "Modular Components",
+        description: "Bearer’s Integrations are composed of highly flexible modular components built on top of APIs. Did we mention they are 100% Open Source?",
+      },
+      {
+        title: "UI Elements & Backend Functions",
+        description: "The Integration Components provide a mix of UI Elements & Backend Functions to cover fullstack usage.",
+      },
+      {
+        title: "Integration Proxy",
+        description: "Our Infrastructure act as an Integration proxy, taking care of hard things like APIs Authentication (OAuth etc.), Security, Logging and Scaling.",
+      },
+    ]
   },
   plugins: [
     {

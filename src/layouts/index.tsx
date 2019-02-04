@@ -40,9 +40,9 @@ const IndexLayout: React.SFC = ({ children }) => (
             { name: 'keywords', content: 'gatsbyjs, gatsby, javascript, sample, something' }
           ]}
         />
-        <Header title={data.site.siteMetadata.title} />
+        <Header />
         <LayoutMain>{children}</LayoutMain>
-        <Footer title={data.site.siteMetadata.title} />
+        <Footer />
       </LayoutRoot>
     )}
   />

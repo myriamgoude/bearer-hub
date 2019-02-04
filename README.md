@@ -10,9 +10,7 @@ To create a production build, use `gatsby build`
 
 ## Local development
 
-The local site is available at http://localhost:8000/
-
-The in-browser GraphiQL interface is available at http://localhost:8000/___graphql 
+With `yarn start` running, the local site is available at http://localhost:8000/ and GraphiQL, the in-browser GraphQL interface, is available at http://localhost:8000/___graphql 
 
 ## Environments
 

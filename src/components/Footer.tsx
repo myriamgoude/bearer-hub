@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-import { heights, dimensions, colors } from '../styles/variables'
+import { dimensions, colors } from '../styles/variables'
 import Container from './Container'
 
 import logo from '../images/logo.svg'

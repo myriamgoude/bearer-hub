@@ -13,7 +13,7 @@ interface PageHeadingProps {
   secondaryText?: string
 }
 
-const PageHeading: React.SFC<PageHeadingProps> = (PageHeadingProps) => (
+const PageHeading = (PageHeadingProps:PageHeadingProps) => (
   <StyledDiv>
     <h1>{PageHeadingProps.primaryText}</h1>
     <h3>{PageHeadingProps.secondaryText}</h3>

@@ -6,7 +6,7 @@ import { colors } from '../styles/variables'
 
 const StyledButton = styled.button<{primary: boolean}>`
   background-color: ${props => props.primary ? colors.accent : colors.dark};
-  color: ${props => (props as any).primary ? colors.dark : colors.white};
+  color: ${props => props.primary ? colors.dark : colors.white};
   padding: .5rem 1rem;
   margin-right: 1rem;
   border-radius: 4px;
@@ -19,7 +19,7 @@ interface IButtonProps {
   className?: string
 }
 
-const Button: React.SFC<IButtonProps> = (props) => (
+const Button = (props:IButtonProps) => (
   <Link to={props.link}>
     <StyledButton primary={props.primary || false}>
       {props.text}

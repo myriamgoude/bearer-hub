@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+.emotion-0 {
+  background-color: #030d36;
+  color: #fff;
+  padding: .5rem 1rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+}
+
+<a
+  href="/foo"
+>
+  <button
+    className="emotion-0"
+  >
+    hello
+  </button>
+</a>
+`;
+
+exports[`Header renders primary colours 1`] = `
+.emotion-0 {
+  background-color: #ffc400;
+  color: #030d36;
+  padding: .5rem 1rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+}
+
+<a
+  href="/foo"
+>
+  <button
+    className="emotion-0"
+  >
+    hello
+  </button>
+</a>
+`;

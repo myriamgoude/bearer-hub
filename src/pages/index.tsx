@@ -49,15 +49,22 @@ export default ({ data }: IIndexPageProps) => (
       <Container>
         <div>
           <h3>For product manager</h3>
-          <div>Start adding the Integration that keeps piling up in your backlog. Add dozens of Integrations that users keep asking for without impacting roadmap and budget.</div>
+          <div>
+            Start adding the Integration that keeps piling up in your backlog.
+            Add dozens of Integrations that users keep asking for without impacting roadmap and budget.
+          </div>
         </div>
         <div>
           <h3>For Front-End developer</h3>
-          <div>Ready to use, one line of code, Web Components that works for your stack, future proof. Offer a standardize experience, customizable to your look and feel.</div>
+          <div>Ready to use, one line of code, Web Components that works for your stack,
+            future proof. Offer a standardize experience, customizable to your look and feel.
+          </div>
         </div>
         <div>
           <h3>For Back-End developer</h3>
-          <div>Scale your Integration without overloading your codebase with dozens of dependencies, SDK and vendor specific code. Did we mention we also take care of the OAuth flow too?</div>
+          <div>Scale your Integration without overloading your codebase with dozens of dependencies,
+            SDK and vendor specific code. Did we mention we also take care of the OAuth flow too?
+            </div>
         </div>
       </Container>
 

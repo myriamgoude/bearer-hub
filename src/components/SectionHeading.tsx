@@ -13,7 +13,7 @@ interface ISectionHeadingProps {
   secondaryText?: string
 }
 
-const SectionHeading: React.SFC<ISectionHeadingProps> = (ISectionHeadingProps) => (
+const SectionHeading = (ISectionHeadingProps:ISectionHeadingProps) => (
   <StyledDiv>
     <h2>{ISectionHeadingProps.primaryText}</h2>
     <h3>{ISectionHeadingProps.secondaryText}</h3>

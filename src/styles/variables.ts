@@ -63,5 +63,5 @@ export const dimensions = {
 
 export const heights = {
   header: 60,
-  footer: 120,
+  footer: 120
 }

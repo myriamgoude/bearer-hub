@@ -82,4 +82,34 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     })
   })
+
+  // Add presentation pages for integrations at explore/integrations/my-integration-slug/present
+  // using site metadata and the explore/present.tsx template
+  const allExplorePages = await graphql(`
+    {
+      site{
+        siteMetadata{
+          integrations {
+            name
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  if (allExplorePages.errors) {
+    console.error(allExplorePages.errors)
+    throw new Error(allExplorePages.errors)
+  }
+
+  allExplorePages.data.site.siteMetadata.integrations.forEach(({ slug }) => {
+    createPage({
+      path: '/explore/' + slug,
+      component: path.resolve(`./src/templates/explore/present.tsx`),
+      context: {
+        slug
+      }
+    })
+  })
 }

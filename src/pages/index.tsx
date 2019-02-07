@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import HeroPanel from '../components/HeroPanel'
-import { IIntegrationProps, IntegrationPanel } from '../components/IntegrationPanel'
+import { IIntegration, IntegrationPanel } from '../components/IntegrationPanel'
 import Button from '../components/Button'
 import SectionHeading from '../components/SectionHeading'
 import IndexLayout from '../layouts'
@@ -14,7 +14,9 @@ import placeholderImage from '../images/homepage-placeholder.png'
 interface IIndexPageProps {
   data: {
     site: {
-      siteMetadata: IIntegrationProps
+      siteMetadata: {
+        integrations: IIntegration[]
+      }
     }
   }
 }
@@ -25,6 +27,7 @@ export const query = graphql`
       siteMetadata {
         integrations {
           name
+          slug
         } 
       }
     }

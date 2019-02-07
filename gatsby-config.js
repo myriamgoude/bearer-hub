@@ -8,9 +8,18 @@ module.exports = {
       name: '@bearersh'
     },
     integrations: [
-      { name: "test" },
-      { name: "asdf" },
-      { name: "qwerty" },
+      { 
+        name: "test",
+        slug: "test"
+      },
+      { 
+        name: "asdf",
+        slug: "asdf" 
+      },
+      { 
+        name: "qwerty",
+        slug: "qwerty" 
+      },
     ],
     howToSteps: [
       {

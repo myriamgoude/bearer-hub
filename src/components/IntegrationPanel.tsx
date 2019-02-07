@@ -1,18 +1,20 @@
 import * as React from 'react'
+import { Link } from 'gatsby'
 import Container from './Container'
 
-interface TIntegration {
-  name: string
+export interface IIntegration {
+  name: string,
+  slug: string
 }
 
-export interface IIntegrationProps { integrations: TIntegration[] }
+interface IIntegrationProps { integrations: IIntegration[] }
 
 export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
   render() {
     return <Container>
       <ul>
         {this.props.integrations.map((integration, index) => (
-          <li key={index}>{integration.name}</li>
+          <li key={index}><Link to={`/explore/${integration.slug}`} >{integration.name}</Link></li>
         ))}
       </ul>
     </Container>

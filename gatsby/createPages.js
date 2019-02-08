@@ -51,7 +51,7 @@ module.exports = async ({ graphql, actions }) => {
   const allExplorePages = await graphql(`
     {
       graphcms {
-        integrations(where: {status: "PUBLISHED"}) {
+        integrations(where: {status: PUBLISHED}) {
           slug
         }
       }

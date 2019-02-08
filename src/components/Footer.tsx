@@ -2,124 +2,73 @@ import * as React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-import { dimensions, colors } from '../styles/variables'
-import Container from './Container'
+import whiteLogo from '../images/logo-white.svg'
 
-import logo from '../images/logo.svg'
-import socialIcon from '../images/social-icon-placeholder.png'
+// NOTE: social icons are from imported from https://simpleicons.org/
+import socialIconTwitter from '../images/social/twitter.svg'
+import socialIconFacebook from '../images/social/facebook.svg'
+import socialIconLinkedIn from '../images/social/linkedin.svg'
+import socialIconGitHub from '../images/social/github.svg'
 
-const StyledFooter = styled.footer`
-  padding: ${dimensions.containerPadding}rem;
-  display: block;
-  flex: 1;
-  position: relative;
-  background-color: ${colors.dark};
-  h1, h2, h3, h4 {
-    color: ${colors.gray.copy};
-  }
-  color: ${colors.white};
-`
-
-const StyledFooterInner = styled.div`
-  display: block;
-  flex-direction: row;
-  padding-right: ${dimensions.containerPadding}rem;
-  
-  ul, li {
-    display: list-item;
-    padding: 0;
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-`
-
-const StyledImg = styled.img`
-  height: 2rem;
-  line-height: 2rem;
-  vertical-align: bottom;
-  margin-right: .5rem;
-  width: auto;
-`
-
-const HomepageLink = styled(Link)`
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-`
-
-const StyledFooterSocial = styled(Container)`
-  color: ${colors.gray.copy};
-  flex-direction: column;
-`
+import footerStyles from "../modules/footer.module.css"
 
 const Footer = () => (
-  <StyledFooter>
-    <Container>
-      <StyledFooterInner>
-        <HomepageLink to="/">
-          <StyledImg src={logo} alt="Bearer logo" />
-        </HomepageLink>
-      </StyledFooterInner>
-      <StyledFooterInner>
-        <h4>INTEGRATIONS</h4>
-        <ul>
-          <li>Login</li>
-          <Link to="/explore"><li>Explore</li></Link>
-          <Link to="/pricing"><li>Pricing Plan</li></Link>
-          <Link to="/security"><li>Security</li></Link>
-        </ul>
-      </StyledFooterInner>
-      <StyledFooterInner>
-        <div>
-          <h4>HELP</h4>
+  <footer className={footerStyles.container}>
+    <div className={footerStyles.main}>
+      <div className={footerStyles.logo}>
+        <Link to="/">
+          <img src={whiteLogo} alt="Bearer logo" />
+        </Link>
+      </div>
+      <div className={footerStyles.categories}>
+        <section className={footerStyles.category}>
+          <h3 className={footerStyles.categoryTitle}>Integrations</h3>
           <ul>
-            <Link to="/how-it-works"><li>How it works</li></Link>
-            <li>Documentation</li>
-            <li>FAQ</li>
-            <li>Integration requests</li>
-            <li>Status page</li>
+            <li><a href="#">Login</a></li>
+            <li><Link to="/explore">Explore</Link></li>
+            <li><Link to="/pricing">Pricing Plan</Link></li>
+            <li><Link to="/security">Security</Link></li>
           </ul>
-        </div>
-      </StyledFooterInner>
-      <StyledFooterInner>
-        <div>
-          <h4>COMPANY</h4>
+        </section>
+        <section className={footerStyles.category}>
+          <h3 className={footerStyles.categoryTitle}>Helps</h3>
           <ul>
-            <Link to="/native-integrations"><li>Manifesto</li></Link>
-            <Link to="/about"><li>About us</li></Link>
-            <Link to="/press"><li>Press kit</li></Link>
+            <li><Link to="/how-it-works">How it works</Link></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Faq</a></li>
+            <li><a href="#">Integration requests</a></li>
+            <li><a href="#">Status page</a></li>
           </ul>
-        </div>
-      </StyledFooterInner>
-      <StyledFooterInner>
-        <div>
-          <h4>LEGAL</h4>
+        </section>
+        <section className={footerStyles.category}>
+          <h3 className={footerStyles.categoryTitle}>Company</h3>
           <ul>
-            <Link to="/privacy"><li>Privacy</li></Link>
-            <Link to="/legal"><li>Legal Notices</li></Link>
+            <li><Link to="/native-integrations">Manifesto</Link></li>
+            <li><Link to="/about">About us</Link></li>
+            <li><Link to="/press">Press kit</Link></li>
+          </ul>
+        </section>
+        <section className={footerStyles.category}>
+          <h3 className={footerStyles.categoryTitle}>Legal</h3>
+          <ul>
+            <li><Link to="/privacy">Privacy</Link></li>
+            <li><Link to="/legal">Legal Notices</Link></li>
             <li>GDPR</li>
           </ul>
-        </div>
-      </StyledFooterInner>
-      <StyledFooterSocial>
-        <div>
-          <a href="https://github.com/Bearer"><StyledImg src={socialIcon} alt="Bearer GitHub" /></a>
-          <a href="https://github.com/Bearer"><StyledImg src={socialIcon} alt="Bearer GitHub" /></a>
-          <a href="https://github.com/Bearer"><StyledImg src={socialIcon} alt="Bearer GitHub" /></a>
-          <a href="https://github.com/Bearer"><StyledImg src={socialIcon} alt="Bearer GitHub" /></a>
-        </div>
-        <div>
-          (c) Copyright Bearer 2019
-        </div>
-      </StyledFooterSocial>
-    </Container>
-  </StyledFooter>
+        </section>
+      </div>
+    </div>        
+    <div className={footerStyles.social}>
+      <div>
+        <a href="https://twitter.com/@bearer"><img src={socialIconTwitter} alt="Bearer is on Twitter" /></a>
+        <a href="https://github.com/Bearer"><img src={socialIconGitHub} alt="Bearer is on GitHub" /></a>
+        <a href="#facebook"><img src={socialIconFacebook} alt="Bearer is on Facebook" /></a>
+        <a href="https://www.linkedin.com/company/bearer"><img src={socialIconLinkedIn} alt="Bearer is on LinkedIn" /></a>
+      </div>
+    </div>
+
+    <div className={footerStyles.copyright}>&copy; Copyright Bearer 2018-2019</div>
+  </footer>
 )
 
 export default Footer

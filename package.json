@@ -1,13 +1,13 @@
 {
-  "name": "gatsby-starter-typescript-plus",
-  "description": "A starter kit for TypeScript-based Gatsby projects with sensible defaults.",
+  "name": "bearer-hub",
+  "description": "Bearer Hub https://bearer.sh",
   "version": "1.0.0",
   "private": true,
-  "author": "Resi Respati <resir014@gmail.com>",
+  "author": "https://github.com/Bearer",
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "UNLICENSED",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
@@ -25,7 +25,6 @@
   "dependencies": {
     "@emotion/core": "^10.0.5",
     "@emotion/styled": "^10.0.5",
-    "babel-plugin-styled-components": "^1.7.1",
     "classnames": "^2.2.6",
     "gatsby": "^2.0.115",
     "gatsby-image": "^2.0.29",

@@ -23,9 +23,19 @@ pipeline {
     } // end environment
 
     stages {
+        stage("Test") {
+            steps {
+                container("node") {
+                    ansiColor('xterm') {
+                        sh ".jenkins/scripts/test.sh"
+                    }
+                }
+            }
+        }//end stage
+
         stage("deploy staging") {
             when {
-                allOf { 
+                allOf {
                     branch "master"
                 }
             }

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
 import whiteLogo from '../images/logo-white.svg'
@@ -63,7 +62,9 @@ const Footer = () => (
         <a href="https://twitter.com/@bearer"><img src={socialIconTwitter} alt="Bearer is on Twitter" /></a>
         <a href="https://github.com/Bearer"><img src={socialIconGitHub} alt="Bearer is on GitHub" /></a>
         <a href="#facebook"><img src={socialIconFacebook} alt="Bearer is on Facebook" /></a>
-        <a href="https://www.linkedin.com/company/bearer"><img src={socialIconLinkedIn} alt="Bearer is on LinkedIn" /></a>
+        <a href="https://www.linkedin.com/company/bearer">
+		<img src={socialIconLinkedIn} alt="Bearer is on LinkedIn" />
+	</a>
       </div>
     </div>
 

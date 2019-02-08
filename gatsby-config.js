@@ -20,6 +20,44 @@ module.exports = {
         title: "Integration Proxy",
         description: "Our Infrastructure act as an Integration proxy, taking care of hard things like APIs Authentication (OAuth etc.), Security, Logging and Scaling.",
       },
+    ],
+    footer: [
+      {
+        title: 'Integrations',
+        links: [
+          {to: '#', label: 'Login'},
+          {to: '/explore', label: 'Explore'},
+          {to: '/pricing', label: 'Pricing'},
+          {to: '/security', label: 'security'},
+        ]
+      },
+      {
+        title: 'Help',
+        links: [
+          {to: '/', label: 'How it works'},
+          {to: '#', label: 'Documentation'},
+          {to: '#', label: 'FAQ'},
+          {to: '#', label: 'Integration Requests'},
+          {to: '#', label: 'Status Page'},
+        ]
+      },
+      {
+        title: 'Company',
+        links: [
+          {to: '/native-integrations', label: 'Manifesto'},
+          {to: '/about', label: 'About us'},
+          {to: '/press', label: 'Press Kit'},
+        ]
+      },
+      {
+        title: 'Legal',
+        links: [
+          {to: '/privacy-policy', label: 'Privacy'},
+          {to: '/cookie-policy', label: 'Cookie Policy'},
+          {to: '/legal', label: 'Legal Notices'},
+          {to: '#', label: 'GDPR'},
+        ]
+      }
     ]
   },
   plugins: [
@@ -90,5 +128,11 @@ module.exports = {
         policy: [{ userAgent: '*', disallow: ['/'] }]
       }
     },
+    {
+      resolve: `gatsby-iubenda-bearer`,
+      options: {
+        policy: '65368465'
+      }
+    }
   ]
 }

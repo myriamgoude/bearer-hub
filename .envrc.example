@@ -1,2 +1,2 @@
 export GATSBY_HUB_SEGMENT_ID=4rrdmJ0QnFcs7n4tV9nBJYNtIrxxbVd5
-export GRAPHCMS_ENDPOINT_URL="https://api-euwest.graphcms.com/v1/my-unique-endpoint-identifier/master"
+export GRAPHCMS_ENDPOINT_URL=https://api-euwest.graphcms.com/v1/cjrw1n0x11y7501f9bq7i0kjk/master

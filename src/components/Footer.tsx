@@ -1,16 +1,16 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
-import styled from '@emotion/styled'
+import * as React from "react"
+import { Link, StaticQuery, graphql } from "gatsby"
+import styled from "@emotion/styled"
 
-import { breakpoints, colors, dimensions } from '../styles/variables'
+import { breakpoints, colors, dimensions } from "../styles/variables"
 
-import whiteLogo from '../images/logo-white.svg'
+import whiteLogo from "../images/logo-white.svg"
 
 // NOTE: social icons are from imported from https://simpleicons.org/
-import socialIconTwitter from '../images/social/twitter.svg'
-import socialIconFacebook from '../images/social/facebook.svg'
-import socialIconLinkedIn from '../images/social/linkedin.svg'
-import socialIconGitHub from '../images/social/github.svg'
+import socialIconTwitter from "../images/social/twitter.svg"
+import socialIconFacebook from "../images/social/facebook.svg"
+import socialIconLinkedIn from "../images/social/linkedin.svg"
+import socialIconGitHub from "../images/social/github.svg"
 
 const FooterContainer = styled.footer`
   background-color: ${colors.dark};
@@ -56,8 +56,8 @@ const FooterSocial = styled.div`
     margin: 2.875rem 2rem 0 0;
     text-align: right;
 
-    a:last-child img { 
-      margin-right: 0; 
+    a:last-child img {
+      margin-right: 0;
     }
   }
 `
@@ -148,7 +148,7 @@ const FooterCategory = styled.section`
   }
 `
 
-const FooterLogo  = styled.div`
+const FooterLogo = styled.div`
   a {
     border: 0;
   }
@@ -167,7 +167,46 @@ const FooterLogo  = styled.div`
   }
 `
 
-const Footer = () => (
+interface IFooterQuery {
+  site: {
+    siteMetadata: {
+      footer: IFooterCategory[]
+    }
+  }
+}
+
+interface IFooterCategory{
+    title: string,
+    links: {to: string, label: string}[]
+}
+
+interface IFooterProps {
+  categories: IFooterCategory[]
+}
+
+const query = graphql`
+query {
+  site{
+    siteMetadata {
+      footer {
+        title
+        links {
+          to
+          label
+        }
+      }
+    }
+  }
+}
+`
+
+export default () => {
+  return <StaticQuery query={query} render={
+    (data:IFooterQuery)=> <Footer categories={data.site.siteMetadata.footer}/>
+  } />
+}
+
+const Footer = (props:IFooterProps) => (
   <FooterContainer>
     <FooterMain>
       <FooterLogo>
@@ -176,48 +215,29 @@ const Footer = () => (
         </Link>
       </FooterLogo>
       <FooterCategories>
-        <FooterCategory>
-          <h3>Integrations</h3>
-          <ul>
-            <li><a href="#">Login</a></li>
-            <li><Link to="/explore">Explore</Link></li>
-            <li><Link to="/pricing">Pricing Plan</Link></li>
-            <li><Link to="/security">Security</Link></li>
-          </ul>
-        </FooterCategory>
-        <FooterCategory>
-          <h3>Help</h3>
-          <ul>
-            <li><Link to="/how-it-works">How it works</Link></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Integration requests</a></li>
-            <li><a href="#">Status page</a></li>
-          </ul>
-        </FooterCategory>
-        <FooterCategory>
-          <h3>Company</h3>
-          <ul>
-            <li><Link to="/native-integrations">Manifesto</Link></li>
-            <li><Link to="/about">About us</Link></li>
-            <li><Link to="/press">Press kit</Link></li>
-          </ul>
-        </FooterCategory>
-        <FooterCategory>
-          <h3>Legal</h3>
-          <ul>
-            <li><Link to="/privacy">Privacy</Link></li>
-            <li><Link to="/legal">Legal Notices</Link></li>
-            <li>GDPR</li>
-          </ul>
-        </FooterCategory>
+        { props.categories.map((cat, i) => (
+          <FooterCategory key={i}>
+            <h3>{cat.title}</h3>
+            <ul>
+              {cat.links.map((link, index) => (
+                <li key={index}><Link to={link.to}>{link.label}</Link></li>
+              ))}
+            </ul>
+          </FooterCategory>
+        ))}
       </FooterCategories>
-    </FooterMain>        
+    </FooterMain>
     <FooterSocial>
       <div>
-        <a href="https://twitter.com/@bearer"><img src={socialIconTwitter} alt="Bearer is on Twitter" /></a>
-        <a href="https://github.com/Bearer"><img src={socialIconGitHub} alt="Bearer is on GitHub" /></a>
-        <a href="#facebook"><img src={socialIconFacebook} alt="Bearer is on Facebook" /></a>
+        <a href="https://twitter.com/@bearer">
+          <img src={socialIconTwitter} alt="Bearer is on Twitter" />
+        </a>
+        <a href="https://github.com/Bearer">
+          <img src={socialIconGitHub} alt="Bearer is on GitHub" />
+        </a>
+        <a href="#facebook">
+          <img src={socialIconFacebook} alt="Bearer is on Facebook" />
+        </a>
         <a href="https://www.linkedin.com/company/bearer">
           <img src={socialIconLinkedIn} alt="Bearer is on LinkedIn" />
         </a>
@@ -226,5 +246,3 @@ const Footer = () => (
     <FooterCopyright>&copy; Copyright Bearer 2018-2019</FooterCopyright>
   </FooterContainer>
 )
-
-export default Footer

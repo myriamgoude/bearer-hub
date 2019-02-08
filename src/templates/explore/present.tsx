@@ -7,36 +7,26 @@ import IndexLayout from '../../layouts'
 
 interface PresentTemplateProps {
     data: {
-      site: {
-        siteMetadata: {
-          integrations: {
-            name: string,
-            slug: string
-          }[]
-        }
+      graphcms: {
+        integrations: {
+          name: string
+        }[]
       }
     }
   }
 
-  // FIXME: unlike allMarkdown or GraphCMS data, with site metadata we cannot query e.g.
-  // "first" or "where" which we would want to do in this case.
   export const query = graphql`
-    query ExplorePresentQuery {
-      site {
-        siteMetadata {
-          integrations{
-            slug
-            name
-          }
+    query ExplorePresentQuery($slug: String!) {
+      graphcms {
+        integrations(where: {slug: $slug} first: 1){
+          name
         }
       }
     }
   `
 
   const PresentTemplate: React.SFC<PresentTemplateProps> = ({ data }) => {
-    // FIXME: unlike allMarkdown or GraphCMS data, with site metadata we cannot query e.g.
-    // "first" or "where" which we would want to do in this case.
-    const integration = data.site.siteMetadata.integrations[0]
+    const integration = data.graphcms.integrations[0]
 
     return (
       <IndexLayout>

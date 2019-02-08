@@ -7,20 +7,6 @@ module.exports = {
     author: {
       name: '@bearersh'
     },
-    integrations: [
-      { 
-        name: "test",
-        slug: "test"
-      },
-      { 
-        name: "asdf",
-        slug: "asdf" 
-      },
-      { 
-        name: "qwerty",
-        slug: "qwerty" 
-      },
-    ],
     howToSteps: [
       {
         title: "Modular Components",
@@ -43,6 +29,14 @@ module.exports = {
         name: 'content',
         path: `${__dirname}/src/content`
       }
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "GraphCMS",
+        fieldName: "graphcms",
+        url: process.env.GRAPHCMS_ENDPOINT_URL,
+      },
     },
     {
       resolve: 'gatsby-transformer-remark',

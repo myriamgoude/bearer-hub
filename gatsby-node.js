@@ -86,13 +86,10 @@ exports.createPages = async ({ graphql, actions }) => {
   // Add presentation pages for integrations at explore/integrations/my-integration-slug/present
   // using site metadata and the explore/present.tsx template
   const allExplorePages = await graphql(`
-    {
-      site{
-        siteMetadata{
-          integrations {
-            name
-            slug
-          }
+    { 
+      graphcms {
+        integrations(where: {status: "PUBLISHED}) {
+          slug
         }
       }
     }
@@ -103,7 +100,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw new Error(allExplorePages.errors)
   }
 
-  allExplorePages.data.site.siteMetadata.integrations.forEach(({ slug }) => {
+  allExplorePages.data.graphcms.integrations.forEach(({ slug }) => {
     createPage({
       path: '/explore/' + slug,
       component: path.resolve(`./src/templates/explore/present.tsx`),

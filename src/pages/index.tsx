@@ -13,23 +13,19 @@ import placeholderImage from '../images/homepage-placeholder.png'
 
 interface IIndexPageProps {
   data: {
-    site: {
-      siteMetadata: {
-        integrations: IIntegration[]
-      }
+    graphcms: {
+      integrations: IIntegration[]
     }
   }
 }
 
 export const query = graphql`
   query IntegrationQuery {
-    site {
-      siteMetadata {
-        integrations {
-          name
-          slug
-        } 
-      }
+    graphcms {
+      integrations(where: { status: PUBLISHED }) {
+        name
+        slug
+      } 
     }
   }
 `
@@ -74,7 +70,7 @@ export default ({ data }: IIndexPageProps) => (
       <SectionHeading primaryText="A Native Integration in 5 minutes" />
 
       <SectionHeading primaryText="Featured Integrations" />
-      <IntegrationPanel integrations={ data.site.siteMetadata.integrations }></IntegrationPanel>
+      <IntegrationPanel integrations={ data.graphcms.integrations }></IntegrationPanel>
 
       <SectionHeading primaryText="Why use Bearer?"/>
 

@@ -7,25 +7,21 @@ import IndexLayout from '../../layouts'
 
 interface IExploreIndexProps {
   data: {
-    site: {
-      siteMetadata: {
-        integrations: {
-          name: string,
-          slug: string
-        }[]
-      }
+    graphcms: {
+      integrations: {
+        name: string,
+        slug: string
+      }[]
     }
   }
 }
 
 export const query = graphql`
   query ExploreIndexQuery {
-    site {
-      siteMetadata {
-        integrations {
-          name
-          slug
-        }
+    graphcms {
+      integrations(where: { status: PUBLISHED }) {
+        name
+        slug
       }
     }
   }
@@ -37,7 +33,7 @@ export default ({ data }: IExploreIndexProps) => (
       <Container>
         <h1>Explore Integrations</h1>
         <h2>List of integrations...</h2>
-        {data.site.siteMetadata.integrations.map((integration, index) => (
+        {data.graphcms.integrations.map((integration, index) => (
           <li key={index}><Link to={`/explore/${integration.slug}`}>{integration.name}</Link></li>
         ))}
       </Container>

@@ -1,8 +1,17 @@
 import * as auth0 from 'auth0-js'
 import Auth0Lock from 'auth0-lock'
-import IdTokenVerifier from 'idtoken-verifier'
 import Cookie from './Cookie'
 import { colors } from '../styles/variables'
+import { isBuild } from './Browser'
+
+interface IidTokenPayload {
+  aud: string
+  exp: number
+  iat: number
+  iss: string
+  nonce: string
+  sub: string
+}
 
 const AUTH0_CREDENTIALS = {
   clientID: process.env.GATSBY_AUTH0_CLIENT_ID || '',
@@ -26,10 +35,6 @@ const AUTH0 = new auth0.WebAuth({
   responseType: RESPONSE_TYPE,
   scope: OPENID_SCOPES
 })
-const VERIFIER = new IdTokenVerifier({
-  issuer: `https://${AUTH0_CREDENTIALS.domains.provider}`,
-  audience: `https://${AUTH0_CREDENTIALS.domains.provider}/userinfo`
-})
 
 /*
   Triggers off site auth flow
@@ -40,6 +45,9 @@ export function login(url: string = DEFAULT_REDIRECT): void {
 }
 
 export function isAuthenticated(): boolean {
+  if (isBuild()) {
+    return false
+  }
   const jwt = Cookie.get(JWT_COOKIE_KEY)
   return jwt ? true : false
 }
@@ -68,20 +76,19 @@ export function createAuth0Lock(url: string = DEFAULT_REDIRECT, closable: boolea
     }
   })
   lock.on('authenticated', (authResult: any) => {
-    storeJWT(authResult.idToken)
+    storeJWT(authResult.idToken, authResult.idTokenPayload)
   })
   return lock
 }
 
 export function authenticateCallback(callback: () => void) {
   AUTH0.parseHash((_err: any, authResult: any) => {
-    storeJWT(authResult.idToken)
+    storeJWT(authResult.idToken, authResult.idTokenPayload)
     callback()
   })
 }
 
-function storeJWT(jwt: string) {
-  const exp = VERIFIER.decode(jwt).payload.exp
+function storeJWT(jwt: string, { exp }: IidTokenPayload) {
   Cookie.set(JWT_COOKIE_KEY, jwt, exp)
 }
 

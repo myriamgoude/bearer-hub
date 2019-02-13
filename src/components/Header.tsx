@@ -18,7 +18,7 @@ const StyledImg = styled.img`
   height: 2rem;
   line-height: 2rem;
   vertical-align: bottom;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   width: auto;
 `
 

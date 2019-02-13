@@ -1,6 +1,6 @@
 ---
 layout: simple
-title: "Legal Notice"
+title: 'Legal Notice'
 ---
 
 ## Legal Notice Title 1

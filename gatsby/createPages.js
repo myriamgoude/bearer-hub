@@ -1,8 +1,8 @@
-"use strict";
-const { resolve } = require("path");
+'use strict'
+const { resolve } = require('path')
 
 module.exports = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
   const allMarkdown = await graphql(`
     {
@@ -17,15 +17,15 @@ module.exports = async ({ graphql, actions }) => {
         }
       }
     }
-  `);
+  `)
 
   if (allMarkdown.errors) {
-    console.error(allMarkdown.errors);
-    throw new Error(allMarkdown.errors);
+    console.error(allMarkdown.errors)
+    throw new Error(allMarkdown.errors)
   }
 
   allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const { slug, layout } = node.fields;
+    const { slug, layout } = node.fields
 
     createPage({
       path: slug,
@@ -38,20 +38,20 @@ module.exports = async ({ graphql, actions }) => {
       // template.
       //
       // Note that the template has to exist first, or else the build will fail.
-      component: resolve(`./src/templates/${layout || "page"}.tsx`),
+      component: resolve(`./src/templates/${layout || 'page'}.tsx`),
       context: {
         // Data passed to context is available in page queries as GraphQL variables.
         slug
       }
-    });
-  });
+    })
+  })
 
   // Add presentation pages for integrations at explore/integrations/my-integration-slug/present
   // using site metadata and the explore/present.tsx template
   const allExplorePages = await graphql(`
     {
       graphcms {
-        integrations(where: {status: PUBLISHED}) {
+        integrations(where: { status: PUBLISHED }) {
           slug
         }
       }
@@ -59,17 +59,17 @@ module.exports = async ({ graphql, actions }) => {
   `)
 
   if (allExplorePages.errors) {
-    console.error(allExplorePages.errors);
-    throw new Error(allExplorePages.errors);
+    console.error(allExplorePages.errors)
+    throw new Error(allExplorePages.errors)
   }
 
   allExplorePages.data.graphcms.integrations.forEach(({ slug }) => {
     createPage({
-      path: "/explore/" + slug,
+      path: '/explore/' + slug,
       component: resolve(`./src/templates/explore/present.tsx`),
       context: {
         slug
       }
-    });
-  });
-};
+    })
+  })
+}

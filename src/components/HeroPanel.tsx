@@ -2,8 +2,8 @@ import * as React from 'react'
 import Container from '../components/Container'
 
 interface IHeroPanel {
-  title: string,
-  image?: string,
+  title: string
+  image?: string
 }
 
 const HeroPanel: React.SFC<IHeroPanel> = ({ title, image, children }) => (

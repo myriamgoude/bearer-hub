@@ -1,6 +1,6 @@
 ---
 layout: simple
-title: "Security"
+title: 'Security'
 ---
 
 ## Security Title 1

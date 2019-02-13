@@ -9,7 +9,7 @@ interface IExploreIndexProps {
   data: {
     graphcms: {
       integrations: {
-        name: string,
+        name: string
         slug: string
       }[]
     }
@@ -34,7 +34,9 @@ export default ({ data }: IExploreIndexProps) => (
         <h1>Explore Integrations</h1>
         <h2>List of integrations...</h2>
         {data.graphcms.integrations.map((integration, index) => (
-          <li key={index}><Link to={`/explore/${integration.slug}`}>{integration.name}</Link></li>
+          <li key={index}>
+            <Link to={`/explore/${integration.slug}`}>{integration.name}</Link>
+          </li>
         ))}
       </Container>
     </Page>

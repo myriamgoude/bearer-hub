@@ -1,16 +1,16 @@
-import * as React from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
-import styled from "@emotion/styled"
+import * as React from 'react'
+import { Link, StaticQuery, graphql } from 'gatsby'
+import styled from '@emotion/styled'
 
-import { breakpoints, colors, dimensions } from "../styles/variables"
+import { breakpoints, colors, dimensions } from '../styles/variables'
 
-import whiteLogo from "../images/logo-white.svg"
+import whiteLogo from '../images/logo-white.svg'
 
 // NOTE: social icons are from imported from https://simpleicons.org/
-import socialIconTwitter from "../images/social/twitter.svg"
-import socialIconFacebook from "../images/social/facebook.svg"
-import socialIconLinkedIn from "../images/social/linkedin.svg"
-import socialIconGitHub from "../images/social/github.svg"
+import socialIconTwitter from '../images/social/twitter.svg'
+import socialIconFacebook from '../images/social/facebook.svg'
+import socialIconLinkedIn from '../images/social/linkedin.svg'
+import socialIconGitHub from '../images/social/github.svg'
 
 const FooterContainer = styled.footer`
   background-color: ${colors.dark};
@@ -175,9 +175,9 @@ interface IFooterQuery {
   }
 }
 
-interface IFooterCategory{
-    title: string,
-    links: {to: string, label: string}[]
+interface IFooterCategory {
+  title: string
+  links: { to: string; label: string }[]
 }
 
 interface IFooterProps {
@@ -185,28 +185,28 @@ interface IFooterProps {
 }
 
 const query = graphql`
-query {
-  site{
-    siteMetadata {
-      footer {
-        title
-        links {
-          to
-          label
+  query {
+    site {
+      siteMetadata {
+        footer {
+          title
+          links {
+            to
+            label
+          }
         }
       }
     }
   }
-}
 `
 
 export default () => {
-  return <StaticQuery query={query} render={
-    (data:IFooterQuery)=> <Footer categories={data.site.siteMetadata.footer}/>
-  } />
+  return (
+    <StaticQuery query={query} render={(data: IFooterQuery) => <Footer categories={data.site.siteMetadata.footer} />} />
+  )
 }
 
-const Footer = (props:IFooterProps) => (
+const Footer = (props: IFooterProps) => (
   <FooterContainer>
     <FooterMain>
       <FooterLogo>
@@ -215,12 +215,14 @@ const Footer = (props:IFooterProps) => (
         </Link>
       </FooterLogo>
       <FooterCategories>
-        { props.categories.map((cat, i) => (
+        {props.categories.map((cat, i) => (
           <FooterCategory key={i}>
             <h3>{cat.title}</h3>
             <ul>
               {cat.links.map((link, index) => (
-                <li key={index}><Link to={link.to}>{link.label}</Link></li>
+                <li key={index}>
+                  <Link to={link.to}>{link.label}</Link>
+                </li>
               ))}
             </ul>
           </FooterCategory>

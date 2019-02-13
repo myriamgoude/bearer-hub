@@ -25,7 +25,7 @@ export const query = graphql`
       integrations(where: { status: PUBLISHED }) {
         name
         slug
-      } 
+      }
     }
   }
 `
@@ -33,9 +33,7 @@ export const query = graphql`
 export default ({ data }: IIndexPageProps) => (
   <IndexLayout>
     <Page>
-      <HeroPanel
-        title="Native Integration To power your app"
-        image={placeholderImage}>
+      <HeroPanel title="Native Integration To power your app" image={placeholderImage}>
         Bearer helps apps get connected to the rest of the World. Your users will thank you
         <div>
           <Button primary link="/explore" text="Explore integrations" />
@@ -49,37 +47,38 @@ export default ({ data }: IIndexPageProps) => (
         <div>
           <h3>For product manager</h3>
           <div>
-            Start adding the Integration that keeps piling up in your backlog.
-            Add dozens of Integrations that users keep asking for without impacting roadmap and budget.
+            Start adding the Integration that keeps piling up in your backlog. Add dozens of Integrations that users
+            keep asking for without impacting roadmap and budget.
           </div>
         </div>
         <div>
           <h3>For Front-End developer</h3>
-          <div>Ready to use, one line of code, Web Components that works for your stack,
-            future proof. Offer a standardize experience, customizable to your look and feel.
+          <div>
+            Ready to use, one line of code, Web Components that works for your stack, future proof. Offer a standardize
+            experience, customizable to your look and feel.
           </div>
         </div>
         <div>
           <h3>For Back-End developer</h3>
-          <div>Scale your Integration without overloading your codebase with dozens of dependencies,
-            SDK and vendor specific code. Did we mention we also take care of the OAuth flow too?
-            </div>
+          <div>
+            Scale your Integration without overloading your codebase with dozens of dependencies, SDK and vendor
+            specific code. Did we mention we also take care of the OAuth flow too?
+          </div>
         </div>
       </Container>
 
       <SectionHeading primaryText="A Native Integration in 5 minutes" />
 
       <SectionHeading primaryText="Featured Integrations" />
-      <IntegrationPanel integrations={ data.graphcms.integrations }></IntegrationPanel>
+      <IntegrationPanel integrations={data.graphcms.integrations} />
 
-      <SectionHeading primaryText="Why use Bearer?"/>
+      <SectionHeading primaryText="Why use Bearer?" />
 
-      <HeroPanel
-        title="Looking to build your own Native Integration?"
-        image={placeholderImage}>
-        <div><Button primary link="/contact" text="Get in touch" /></div>
+      <HeroPanel title="Looking to build your own Native Integration?" image={placeholderImage}>
+        <div>
+          <Button primary link="/contact" text="Get in touch" />
+        </div>
       </HeroPanel>
-
     </Page>
   </IndexLayout>
 )

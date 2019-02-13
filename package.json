@@ -13,8 +13,10 @@
     "build": "gatsby build",
     "clean": "rimraf public",
     "dev": "gatsby develop",
-    "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
-    "lint": "tslint 'src/**/*.{ts,tsx}' -p tsconfig.json",
+    "format": "prettier --write *.js gatsby/* \"src/**/*.{ts,tsx,md}\"",
+    "lint-ts": "tslint 'src/**/*.{ts,tsx}' -p tsconfig.json",
+    "lint-prettier": "prettier --check *.js gatsby/* \"src/**/*.{ts,tsx,md}\"",
+    "lint": "yarn lint-ts && yarn lint-prettier",
     "start": "yarn dev",
     "test": "yarn type-check && yarn lint && yarn jest",
     "type-check": "tsc"
@@ -77,12 +79,12 @@
     "jest": "^24.1.0",
     "jest-emotion": "^10.0.7",
     "netlify-cli": "^2.6.4",
-    "prettier": "^1.14.2",
+    "prettier": "1.16.4",
     "react-test-renderer": "^16.8.0",
     "rimraf": "^2.6.2",
     "tslint": "^5.11.0",
     "tslint-config-blvd": "^1.2.1",
-    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.0"
   }
 }

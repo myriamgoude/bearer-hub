@@ -4,7 +4,7 @@ exports[`Header renders correctly 1`] = `
 .emotion-0 {
   background-color: #030d36;
   color: #fff;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   margin-right: 1rem;
   border-radius: 4px;
 }
@@ -24,7 +24,7 @@ exports[`Header renders primary colours 1`] = `
 .emotion-0 {
   background-color: #ffc400;
   color: #030d36;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   margin-right: 1rem;
   border-radius: 4px;
 }

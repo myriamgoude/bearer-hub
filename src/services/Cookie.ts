@@ -1,6 +1,6 @@
 // Cross subdomain cookies
 
-const COOKIE_DOMAIN = process.env.GATSBY_COOKIE_DOMAIN || "localhost"
+const COOKIE_DOMAIN = process.env.GATSBY_COOKIE_DOMAIN || 'localhost'
 
 const Cookie = {
   set: (rawName: string, rawValue: string, jwtExpiry: number = 0) => {
@@ -10,7 +10,7 @@ const Cookie = {
     const at = new Date(jwtExpiry * 1000)
     const expires = `; expires=${(at as any).toGMTString()}`
 
-    if (COOKIE_DOMAIN.split(".").length === 1) {
+    if (COOKIE_DOMAIN.split('.').length === 1) {
       // localhost
       document.cookie = `${name}=${value}${expires}; path=/;`
     } else {
@@ -20,15 +20,13 @@ const Cookie = {
   },
 
   get: (name: string) => {
-    const encodedName = encodeURIComponent(name).replace(/[\-\.\+\*]/g, "\\$&")
-    const search = new RegExp(
-      `(?:(?:^|.*;)\\s*${encodedName}\\s*\\=\\s*([^;]*).*$)|^.*$`
-    )
-    return decodeURIComponent(document.cookie.replace(search, "$1")) || null
+    const encodedName = encodeURIComponent(name).replace(/[\-\.\+\*]/g, '\\$&')
+    const search = new RegExp(`(?:(?:^|.*;)\\s*${encodedName}\\s*\\=\\s*([^;]*).*$)|^.*$`)
+    return decodeURIComponent(document.cookie.replace(search, '$1')) || null
   },
 
   erase(name: string) {
-    Cookie.set(name, "", -1)
+    Cookie.set(name, '', -1)
   }
 }
 

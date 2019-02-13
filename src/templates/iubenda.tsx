@@ -34,7 +34,7 @@ export default IubendaTemplate
 
 export const query = graphql`
   query IubendaTemplateQuery($id: String!) {
-    iubendaDocument(id: { eq: $id}) {
+    iubendaDocument(id: { eq: $id }) {
       title
       content
     }

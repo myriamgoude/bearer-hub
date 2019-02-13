@@ -1,4 +1,4 @@
-"use strict";
+'use strict'
 
-exports.createPages = require("./gatsby/createPages");
-exports.onCreateNode = require("./gatsby/onCreateNode");
+exports.createPages = require('./gatsby/createPages')
+exports.onCreateNode = require('./gatsby/onCreateNode')

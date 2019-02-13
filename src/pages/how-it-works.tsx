@@ -17,10 +17,12 @@ interface IHowToProps {
   data: {
     site: {
       siteMetadata: {
-        howToSteps: [{
-          title: string
-          description: string
-        }]
+        howToSteps: [
+          {
+            title: string
+            description: string
+          }
+        ]
       }
     }
   }
@@ -42,14 +44,13 @@ export const query = graphql`
 const HowItWorksPage = ({ data }: IHowToProps) => (
   <IndexLayout>
     <Page>
-      <PageHeading
-        primaryText="How Bearer Works?"
-        secondaryText="The Future of Integration is today!"
-      />
+      <PageHeading primaryText="How Bearer Works?" secondaryText="The Future of Integration is today!" />
       {data.site.siteMetadata.howToSteps.map((step, index) => (
         <Container key={index}>
           <div>
-            <h4>{index + 1}. {step.title}</h4>
+            <h4>
+              {index + 1}. {step.title}
+            </h4>
             {step.description}
           </div>
         </Container>

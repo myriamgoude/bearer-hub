@@ -1,6 +1,6 @@
 ---
 layout: simple
-title: "Manifesto"
+title: 'Manifesto'
 ---
 
 ## Manifesto Title 1

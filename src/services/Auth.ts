@@ -1,22 +1,22 @@
-import * as auth0 from "auth0-js"
-import Auth0Lock from "auth0-lock"
-import IdTokenVerifier from "idtoken-verifier"
-import Cookie from "./Cookie"
-import { colors } from "../styles/variables"
+import * as auth0 from 'auth0-js'
+import Auth0Lock from 'auth0-lock'
+import IdTokenVerifier from 'idtoken-verifier'
+import Cookie from './Cookie'
+import { colors } from '../styles/variables'
 
 const AUTH0_CREDENTIALS = {
-  clientID: process.env.GATSBY_AUTH0_CLIENT_ID || "",
+  clientID: process.env.GATSBY_AUTH0_CLIENT_ID || '',
   domains: {
-    bearer: process.env.GATSBY_BASE_DOMAIN || "",
-    provider: process.env.GATSBY_AUTH0_DOMAIN || ""
+    bearer: process.env.GATSBY_BASE_DOMAIN || '',
+    provider: process.env.GATSBY_AUTH0_DOMAIN || ''
   }
 }
 const CALLBACK_URI = `${AUTH0_CREDENTIALS.domains.bearer}/callback`
-const REDIRECT_KEY = "_BEARERLOGINREDIRECT"
-const JWT_COOKIE_KEY = "_BEARERSSO"
-const DEFAULT_REDIRECT = "/"
-const RESPONSE_TYPE = "id_token"
-const OPENID_SCOPES = "openid"
+const REDIRECT_KEY = '_BEARERLOGINREDIRECT'
+const JWT_COOKIE_KEY = '_BEARERSSO'
+const DEFAULT_REDIRECT = '/'
+const RESPONSE_TYPE = 'id_token'
+const OPENID_SCOPES = 'openid'
 
 const AUTH0 = new auth0.WebAuth({
   audience: `https://${AUTH0_CREDENTIALS.domains.provider}/userinfo`,
@@ -48,33 +48,26 @@ export function isAuthenticated(): boolean {
   TODO: Used for inline login
   cant use just yet see: https://github.com/auth0/lock/issues/1148
 */
-export function createAuth0Lock(
-  url: string = DEFAULT_REDIRECT,
-  closable: boolean = false
-): Auth0LockStatic {
+export function createAuth0Lock(url: string = DEFAULT_REDIRECT, closable: boolean = false): Auth0LockStatic {
   sessionStorage.setItem(REDIRECT_KEY, url)
-  const lock = new Auth0Lock(
-    AUTH0_CREDENTIALS.clientID,
-    AUTH0_CREDENTIALS.domains.provider,
-    {
-      closable,
-      auth: {
-        params: {
-          scope: OPENID_SCOPES
-        },
-        redirectUrl: CALLBACK_URI,
-        responseType: RESPONSE_TYPE
+  const lock = new Auth0Lock(AUTH0_CREDENTIALS.clientID, AUTH0_CREDENTIALS.domains.provider, {
+    closable,
+    auth: {
+      params: {
+        scope: OPENID_SCOPES
       },
-      languageDictionary: {
-        title: "Bearer"
-      },
-      theme: {
-        logo: "https://static.bearer.sh/logo.png",
-        primaryColor: colors.accent
-      }
+      redirectUrl: CALLBACK_URI,
+      responseType: RESPONSE_TYPE
+    },
+    languageDictionary: {
+      title: 'Bearer'
+    },
+    theme: {
+      logo: 'https://static.bearer.sh/logo.png',
+      primaryColor: colors.accent
     }
-  )
-  lock.on("authenticated", (authResult: any) => {
+  })
+  lock.on('authenticated', (authResult: any) => {
     storeJWT(authResult.idToken)
   })
   return lock

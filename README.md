@@ -10,15 +10,15 @@ With `yarn start` running, the local site is available at http://localhost:8000/
 
 GraphiQL, the in-browser GraphQL interface, is available at http://localhost:8000/___graphql 
 
-To create a production build, use `yarn build` or `gatsby build`. 
+To create a production build, use `yarn build`. 
 
 _**Note without the `ALGOLIA_ADMIN_API_KEY` set in your `.envrc` file, `yarn build` will fail to build the Algolia index (`AlgoliaSearchError: Invalid Application-ID or API key`) but otherwise succeed.**_
 
 ### Using direnv
 
-We use [direnv](https://direnv.net/) to manage environment variables.**
+We use [direnv](https://direnv.net/) to manage environment variables.
 
-1. Install direnv. See instructions [here](https://github.com/direnv/direnv#install).
+1. Install [direnv](https://github.com/direnv/direnv#install).
 2. Add the appropriate line to your `~/.bash` or `~/.zshrc` file:
     ```
       eval "$(direnv hook bash)"
@@ -35,7 +35,7 @@ We use [direnv](https://direnv.net/) to manage environment variables.**
 Something not working? Here are some steps to try 
 
 1. Delete your local `.cache/`, `.node_modules/`, and `.public/` directories to "turn it off and on again"
-2. If you're seeing an error running `yarn start`, see if a different -- and hopefully more helpful! -- error is thrown by `gatsby build`
+2. If you're seeing an error running `yarn start`, try `yarn build` in case a different -- and hopefully more helpful -- error is thrown :) 
 
 ## Environments
 

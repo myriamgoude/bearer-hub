@@ -5,6 +5,7 @@ const queries = require('./gatsby/algolia')
 module.exports = {
   siteMetadata: {
     title: 'Bearer Hub',
+    siteUrl: process.env.GATSBY_BASE_DOMAIN,
     description: 'Bearer Hub',
     author: {
       name: '@bearersh'
@@ -126,6 +127,7 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-segment-js`,

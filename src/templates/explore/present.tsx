@@ -9,17 +9,17 @@ interface PresentTemplateProps {
   data: {
     graphcms: {
       integrations: {
-        name: string
+        title: string
       }[]
     }
   }
 }
 
 export const query = graphql`
-  query ExplorePresentQuery($slug: String!) {
+  query ExplorePresentQuery($id: ID!) {
     graphcms {
-      integrations(where: { slug: $slug }, first: 1) {
-        name
+      integrations(where: { id: $id }, first: 1) {
+        title
       }
     }
   }
@@ -32,7 +32,7 @@ const PresentTemplate: React.SFC<PresentTemplateProps> = ({ data }) => {
     <IndexLayout>
       <Page>
         <Container>
-          <h1>{integration.name}</h1>
+          <h1>{integration.title}</h1>
         </Container>
       </Page>
     </IndexLayout>

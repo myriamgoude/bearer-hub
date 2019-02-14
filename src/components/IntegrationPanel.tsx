@@ -2,13 +2,13 @@ import * as React from 'react'
 import Link from './Link'
 import Container from './Container'
 
-export interface IIntegration {
-  name: string
-  slug: string
-}
+import { path } from '../services/Integration'
 
 interface IIntegrationProps {
-  integrations: IIntegration[]
+  integrations: {
+    id: string
+    title: string
+  }[]
 }
 
 export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
@@ -18,7 +18,7 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
         <ul>
           {this.props.integrations.map((integration, index) => (
             <li key={index}>
-              <Link to={`/explore/${integration.slug}`}>{integration.name}</Link>
+              <Link to={`${path(integration)}`}>{integration.title}</Link>
             </li>
           ))}
         </ul>

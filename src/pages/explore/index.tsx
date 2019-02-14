@@ -6,12 +6,14 @@ import Page from '../../components/Page'
 import Container from '../../components/Container'
 import IndexLayout from '../../layouts'
 
+import { path } from '../../services/Integration'
+
 interface IExploreIndexProps {
   data: {
     graphcms: {
       integrations: {
-        name: string
-        slug: string
+        id: string
+        title: string
       }[]
     }
   }
@@ -21,8 +23,8 @@ export const query = graphql`
   query ExploreIndexQuery {
     graphcms {
       integrations(where: { status: PUBLISHED }) {
-        name
-        slug
+        id
+        title
       }
     }
   }
@@ -36,7 +38,7 @@ export default ({ data }: IExploreIndexProps) => (
         <h2>List of integrations...</h2>
         {data.graphcms.integrations.map((integration, index) => (
           <li key={index}>
-            <Link to={`/explore/${integration.slug}`}>{integration.name}</Link>
+            <Link to={`${path(integration)}`}>{integration.title}</Link>
           </li>
         ))}
       </Container>

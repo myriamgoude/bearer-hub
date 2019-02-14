@@ -5,7 +5,7 @@ import Link from '../components/Link'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import HeroPanel from '../components/HeroPanel'
-import { IIntegration, IntegrationPanel } from '../components/IntegrationPanel'
+import { IntegrationPanel } from '../components/IntegrationPanel'
 import Button from '../components/Button'
 import SectionHeading from '../components/SectionHeading'
 import IndexLayout from '../layouts'
@@ -15,7 +15,10 @@ import placeholderImage from '../images/homepage-placeholder.png'
 interface IIndexPageProps {
   data: {
     graphcms: {
-      integrations: IIntegration[]
+      integrations: {
+        id: string
+        title: string
+      }[]
     }
   }
 }
@@ -24,8 +27,8 @@ export const query = graphql`
   query IntegrationQuery {
     graphcms {
       integrations(where: { status: PUBLISHED }) {
-        name
-        slug
+        id
+        title
       }
     }
   }

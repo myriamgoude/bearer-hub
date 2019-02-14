@@ -1,4 +1,5 @@
 'use strict'
+
 const { resolve } = require('path')
 
 module.exports = async ({ graphql, actions }) => {
@@ -52,7 +53,8 @@ module.exports = async ({ graphql, actions }) => {
     {
       graphcms {
         integrations(where: { status: PUBLISHED }) {
-          slug
+          id
+          title
         }
       }
     }
@@ -63,12 +65,16 @@ module.exports = async ({ graphql, actions }) => {
     throw new Error(allExplorePages.errors)
   }
 
-  allExplorePages.data.graphcms.integrations.forEach(({ slug }) => {
+  allExplorePages.data.graphcms.integrations.forEach(({ id, title }) => {
+    // See /services/Integration which also generates a slug
+    // Since we cannot use this service here, the logic must be duplicated
+    const path = `/explore/${id}-${title.toLowerCase().replace(/\s/g, '-')}`
+
     createPage({
-      path: '/explore/' + slug,
+      path,
       component: resolve(`./src/templates/explore/present.tsx`),
       context: {
-        slug
+        id
       }
     })
   })

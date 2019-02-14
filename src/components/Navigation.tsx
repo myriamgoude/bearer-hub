@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import styled from '@emotion/styled'
 import { isAuthenticated, login } from '../services/Auth'
-import { Link } from 'gatsby'
+import Link from './Link'
 
 const StyledNavigation = styled.nav`
   margin-left: auto;

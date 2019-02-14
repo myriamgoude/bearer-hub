@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 
+import Link from '../components/Link'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'

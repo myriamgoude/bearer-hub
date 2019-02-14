@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
+import Link from '../components/Link'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import HeroPanel from '../components/HeroPanel'

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header passes props to subcomponents 1`] = `
+<a
+  href="#"
+  onClick={[Function]}
+>
+  my link
+</a>
+`;
+
+exports[`Header renders external links 1`] = `
+<a
+  href="http://example.com"
+>
+  my link
+</a>
+`;
+
+exports[`Header renders internal links 1`] = `
+<mockConstructor
+  to="/foo"
+>
+  my link
+</mockConstructor>
+`;
+
+exports[`Header renders tricky non gatsby links 1`] = `
+<a
+  href="#"
+>
+  my link
+</a>
+`;

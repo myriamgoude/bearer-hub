@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
-
+import Link from './Link'
 import { breakpoints, colors, dimensions } from '../styles/variables'
 
 import whiteLogo from '../images/logo-white.svg'
@@ -231,18 +231,18 @@ const Footer = (props: IFooterProps) => (
     </FooterMain>
     <FooterSocial>
       <div>
-        <a href="https://twitter.com/@bearer">
+        <Link to="https://twitter.com/@bearer">
           <img src={socialIconTwitter} alt="Bearer is on Twitter" />
-        </a>
-        <a href="https://github.com/Bearer">
+        </Link>
+        <Link to="https://github.com/Bearer">
           <img src={socialIconGitHub} alt="Bearer is on GitHub" />
-        </a>
-        <a href="#facebook">
+        </Link>
+        <Link to="#facebook">
           <img src={socialIconFacebook} alt="Bearer is on Facebook" />
-        </a>
-        <a href="https://www.linkedin.com/company/bearer">
+        </Link>
+        <Link to="https://www.linkedin.com/company/bearer">
           <img src={socialIconLinkedIn} alt="Bearer is on LinkedIn" />
-        </a>
+        </Link>
       </div>
     </FooterSocial>
     <FooterCopyright>&copy; Copyright Bearer 2018-2019</FooterCopyright>

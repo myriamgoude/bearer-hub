@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import Link from './Link'
 import Container from './Container'
 
 export interface IIntegration {

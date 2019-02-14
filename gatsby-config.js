@@ -107,7 +107,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
+        siteUrl: process.env.GATSBY_BASE_DOMAIN
       }
     },
     'gatsby-plugin-emotion',
@@ -126,15 +126,30 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://bearer-hub-staging.netlify.com/',
-        sitemap: 'https://bearer-hub-staging.netlify.com/',
+        host: process.env.GATSBY_BASE_DOMAIN,
+        sitemap: process.env.GATSBY_BASE_DOMAIN,
         policy: [{ userAgent: '*', disallow: ['/'] }]
       }
     },
     {
       resolve: `gatsby-iubenda-bearer`,
       options: {
-        policy: '65368465'
+        policy: '65368465',
+        cookieSolutionConfig: {
+          consentOnScroll: false,
+          lang: 'en',
+          siteId: 1413491,
+          cookiePolicyId: 65368465,
+          banner: {
+            applyStyles: false,
+            textColor: '#958ea4',
+            backgroundColor: '#FFFFFF',
+            fontSize: '12px',
+            content:
+              'Bearer uses browser cookies to give you the best possible experience. To make Bearer work, we log user data and share it with processors. By clicking on "I agree", you agree to our Privacy Policy, including cookie policy.',
+            slideDown: false
+          }
+        }
       }
     }
   ]

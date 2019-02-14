@@ -44,7 +44,6 @@ exports.sourceNodes = async ({ actions, createNodeId }, { policy }) => {
     const nodeData = processData({ content: data.content }, nodeId, page.slug);
     return createNode(nodeData);
   };
-  console.log("Fetching document(s) from iubenda");
   const pages = [
     {
       slug: "/privacy-policy",

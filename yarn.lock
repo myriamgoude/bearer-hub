@@ -1183,6 +1183,21 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-instantsearch-core@*":
+  version "5.2.3"
+  resolved "https://registry.npmjs.org/@types/react-instantsearch-core/-/react-instantsearch-core-5.2.3.tgz#9642d15cae7749bd91a0952e59a25ecd357846c7"
+  integrity sha512-ujEGrMCrLuB4MOG8GJ/Gp0TxdJi2YaNiE8UC65+Cae0oGo+4B0sa42SAJnDO4VpRnh84OxfvrsZkgbUH9wXYlg==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-instantsearch-dom@^5.2.2":
+  version "5.2.2"
+  resolved "https://registry.npmjs.org/@types/react-instantsearch-dom/-/react-instantsearch-dom-5.2.2.tgz#6428ac043646c4eeeda5f7ad967be53dccf54b11"
+  integrity sha512-p5rTXMDOMMUQfkD5JtooxSB+y0ZRER4TOhF0XDkHiJGGsKQUyfgeYWqm6oL0EVd7q68dDkki4ymYI3z++bDauQ==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-instantsearch-core" "*"
+
 "@types/react-test-renderer@^16.8.0":
   version "16.8.0"
   resolved "https://registry.npmjs.org/@types/react-test-renderer/-/react-test-renderer-16.8.0.tgz#dbed6549f97a7f114b6920bf553a5db7e61bf83c"
@@ -1475,7 +1490,17 @@ ajv@^6.5.3, ajv@^6.6.1:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-algoliasearch@^3.24.5:
+algoliasearch-helper@^2.26.0:
+  version "2.26.1"
+  resolved "https://registry.npmjs.org/algoliasearch-helper/-/algoliasearch-helper-2.26.1.tgz#75bd34f095e852d1bda483b8ebfb83c3c6e2852c"
+  integrity sha512-fQBZZXC3rac4wadRj5wA/gxy88Twb+GQF3n8foew8SAsqe9Q59PFq1y3j08pr6eNSRYkZJV7qMpe7ox5D27KOw==
+  dependencies:
+    events "^1.1.1"
+    lodash "^4.17.5"
+    qs "^6.5.1"
+    util "^0.10.3"
+
+algoliasearch@^3.24.5, algoliasearch@^3.27.1:
   version "3.32.0"
   resolved "https://registry.npmjs.org/algoliasearch/-/algoliasearch-3.32.0.tgz#5818168c26ff921bd0346a919071bac928b747ce"
   integrity sha512-C8oQnPTf0wPuyD2jSZwtBAPvz+lHOE7zRIPpgXGBuNt6ZNcC4omsbytG26318rT77a8h4759vmIp6n9p8iw4NA==
@@ -3026,7 +3051,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.6:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
@@ -4983,7 +5008,7 @@ eventemitter3@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.0.tgz#090b4d6cdbd645ed10bf750d4b5407942d7ba163"
 
-events@^1.0.0, events@^1.1.0:
+events@^1.0.0, events@^1.1.0, events@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
 
@@ -11991,6 +12016,29 @@ react-hot-loader@^4.6.2:
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.0.2"
     source-map "^0.7.3"
+
+react-instantsearch-core@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.npmjs.org/react-instantsearch-core/-/react-instantsearch-core-5.4.0.tgz#d0b261f0faad5c2244b830be63565c4f9b6a21ce"
+  integrity sha512-nAY3ElSfYITNKLClcdxuB9/XAQN5Gwsfd0WPWym12IrTUE74gHg3gM7EolKAWV1Qx2Cdw7vdNgQqcgD4SH/2lA==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    algoliasearch-helper "^2.26.0"
+    lodash "^4.17.4"
+    prop-types "^15.5.10"
+
+react-instantsearch-dom@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.npmjs.org/react-instantsearch-dom/-/react-instantsearch-dom-5.4.0.tgz#675f3c999ee18af3d5c1224b45ca9cac47f18ee5"
+  integrity sha512-FzbbIzF7BxpTfsXYFeX1rvJN1pv/VnokVE6ih42JncUABB/ESvi21sh6L33QWp68RjFIisdCr7ONu6Q5FUhjCw==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    algoliasearch "^3.27.1"
+    algoliasearch-helper "^2.26.0"
+    classnames "^2.2.5"
+    lodash "^4.17.4"
+    prop-types "^15.5.10"
+    react-instantsearch-core "^5.4.0"
 
 react-is@^16.8.0:
   version "16.8.0"

@@ -4,6 +4,7 @@ const allPublishedIntegrations = `
   query allPublishedIntegrations { 
     graphcms {
       integrations(where: { status: PUBLISHED }) {
+        id
         title
         categories {
             title

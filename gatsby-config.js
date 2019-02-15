@@ -31,7 +31,6 @@ module.exports = {
       {
         title: 'Integrations',
         links: [
-          { to: '#', label: 'Login' },
           { to: '/explore', label: 'Explore' },
           { to: '/pricing', label: 'Pricing' },
           { to: '/security', label: 'security' }
@@ -40,7 +39,7 @@ module.exports = {
       {
         title: 'Help',
         links: [
-          { to: '/', label: 'How it works' },
+          { to: '/how-it-works', label: 'How it works' },
           { to: '#', label: 'Documentation' },
           { to: 'https://support.bearer.sh/', label: 'FAQ' },
           { to: '#', label: 'Integration Requests' },

@@ -34,7 +34,7 @@ export default class Navigation extends React.Component {
       <StyledNavigation>
         <StyledNavigationLink to="/explore">EXPLORE INTEGRATIONS</StyledNavigationLink>
         <StyledNavigationLink to="/how-it-works">HOW IT WORKS</StyledNavigationLink>
-        <StyledNavigationLink to="/native-integration">MANIFESTO</StyledNavigationLink>
+        <StyledNavigationLink to="/native-integrations">MANIFESTO</StyledNavigationLink>
         <StyledNavigationLink to="/">DOCS</StyledNavigationLink>
         {isAuthenticated() ? this.renderLoggedIn() : this.renderLogin()}
       </StyledNavigation>

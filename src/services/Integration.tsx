@@ -4,7 +4,7 @@ interface IIntegration {
 }
 
 export function path(integration: IIntegration) {
-  return `explore/${slug(integration)}`
+  return `/explore/${slug(integration)}`
 }
 
 // Generate a slug given an Integration with an ID and title

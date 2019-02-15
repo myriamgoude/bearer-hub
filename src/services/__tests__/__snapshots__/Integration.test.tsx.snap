@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`path is considered an internal link 1`] = `
+<mockConstructor
+  to="/explore/123-my-title"
+>
+  My Title
+</mockConstructor>
+`;

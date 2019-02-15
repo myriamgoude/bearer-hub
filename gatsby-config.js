@@ -155,12 +155,12 @@ module.exports = {
           siteId: 1413491,
           cookiePolicyId: 65368465,
           banner: {
-            applyStyles: false,
-            textColor: '#958ea4',
-            backgroundColor: '#FFFFFF',
-            fontSize: '12px',
+            applyStyles: true,
+            textColor: '#FFF',
+            backgroundColor: '#030d36',
+            fontSize: '0.8rem',
             content:
-              'Bearer uses browser cookies to give you the best possible experience. To make Bearer work, we log user data and share it with processors. By clicking on "I agree", you agree to our Privacy Policy, including cookie policy.',
+              'Bearer uses browser cookies to give you the best possible experience. To make Bearer work, we log user data and share it with processors. By closing this banner, you agree to our Privacy Policy, including cookie policy.',
             slideDown: false
           }
         }

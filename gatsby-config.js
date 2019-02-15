@@ -42,7 +42,7 @@ module.exports = {
         links: [
           { to: '/', label: 'How it works' },
           { to: '#', label: 'Documentation' },
-          { to: '#', label: 'FAQ' },
+          { to: 'https://support.bearer.sh/', label: 'FAQ' },
           { to: '#', label: 'Integration Requests' },
           { to: '#', label: 'Status Page' }
         ]

@@ -1,4 +1,3 @@
-import * as auth0 from 'auth0-js'
 import Auth0Lock from 'auth0-lock'
 import Cookie from './Cookie'
 import { colors } from '../styles/variables'
@@ -9,40 +8,20 @@ interface IidTokenPayload {
   exp: number
   iat: number
   iss: string
-  nonce: string
+  nonce?: string
   sub: string
 }
 
-const AUTH0_CREDENTIALS = {
-  clientID: process.env.GATSBY_AUTH0_CLIENT_ID || '',
-  domains: {
-    bearer: process.env.GATSBY_BASE_DOMAIN || '',
-    provider: process.env.GATSBY_AUTH0_DOMAIN || ''
-  }
-}
-const CALLBACK_URI = `${AUTH0_CREDENTIALS.domains.bearer}/callback`
+const CLIENT_ID = process.env.GATSBY_AUTH0_CLIENT_ID || ''
+const AUTH0_DOMAIN = 'login.bearer.sh'
+const BASE_DOMAIN = process.env.GATSBY_BASE_DOMAIN || ''
+
+const CALLBACK_URI = `${BASE_DOMAIN}/callback`
 const REDIRECT_KEY = '_BEARERLOGINREDIRECT'
-const JWT_COOKIE_KEY = '_BEARERSSO'
+const JWT_COOKIE_KEY = '_BEARERAUTH0'
 const DEFAULT_REDIRECT = '/'
 const RESPONSE_TYPE = 'id_token'
 const OPENID_SCOPES = 'openid'
-
-const AUTH0 = new auth0.WebAuth({
-  audience: `https://${AUTH0_CREDENTIALS.domains.provider}/userinfo`,
-  clientID: AUTH0_CREDENTIALS.clientID,
-  domain: AUTH0_CREDENTIALS.domains.provider,
-  redirectUri: CALLBACK_URI,
-  responseType: RESPONSE_TYPE,
-  scope: OPENID_SCOPES
-})
-
-/*
-  Triggers off site auth flow
-*/
-export function login(url: string = DEFAULT_REDIRECT): void {
-  sessionStorage.setItem(REDIRECT_KEY, url)
-  AUTH0.authorize()
-}
 
 export function isAuthenticated(): boolean {
   if (isBuild()) {
@@ -53,13 +32,34 @@ export function isAuthenticated(): boolean {
 }
 
 /*
-  TODO: Used for inline login
-  cant use just yet see: https://github.com/auth0/lock/issues/1148
+  This will attempt to authenticate a user in the background via SSO
+  https://github.com/auth0/lock#checksessionparams-callback
 */
-export function createAuth0Lock(url: string = DEFAULT_REDIRECT, closable: boolean = false): Auth0LockStatic {
-  sessionStorage.setItem(REDIRECT_KEY, url)
-  const lock = new Auth0Lock(AUTH0_CREDENTIALS.clientID, AUTH0_CREDENTIALS.domains.provider, {
+export function isSSOAuthenticated(authenticated: () => void) {
+  if (isBuild()) {
+    return
+  }
+  if (isAuthenticated()) {
+    // already authenticated no need to go further
+    authenticated()
+    return
+  }
+  const lock = createLock()
+  lock.checkSession({}, (error, authResult) => {
+    if (error || !authResult) {
+      // background auth failed do nothing
+      return
+    }
+    storeJWT(authResult.idToken, authResult.idTokenPayload)
+    authenticated()
+  })
+}
+
+function createLock(signup: boolean = false, closable: boolean = false) {
+  const initialScreen = signup ? 'signUp' : 'login'
+  return new Auth0Lock(CLIENT_ID, AUTH0_DOMAIN, {
     closable,
+    initialScreen,
     auth: {
       params: {
         scope: OPENID_SCOPES
@@ -67,6 +67,7 @@ export function createAuth0Lock(url: string = DEFAULT_REDIRECT, closable: boolea
       redirectUrl: CALLBACK_URI,
       responseType: RESPONSE_TYPE
     },
+    configurationBaseUrl: 'https://cdn.eu.auth0.com',
     languageDictionary: {
       title: 'Bearer'
     },
@@ -75,23 +76,43 @@ export function createAuth0Lock(url: string = DEFAULT_REDIRECT, closable: boolea
       primaryColor: colors.accent
     }
   })
+}
+
+function storeJWT(_jwt: string, { exp }: IidTokenPayload) {
+  // Just store a key we dont actually need the JWT for anything
+  Cookie.set(JWT_COOKIE_KEY, 'true', exp)
+}
+
+export function lockLogin(
+  authenticated: () => void,
+  signup: boolean = false,
+  url: string = window.location.pathname
+): Auth0LockStatic {
+  sessionStorage.setItem(REDIRECT_KEY, url)
+  const lock = createLock(signup, true)
   lock.on('authenticated', (authResult: any) => {
+    // in page login
     storeJWT(authResult.idToken, authResult.idTokenPayload)
+    lock.hide()
+    authenticated()
   })
+  lock.show()
   return lock
 }
 
-export function authenticateCallback(callback: () => void) {
-  AUTH0.parseHash((_err: any, authResult: any) => {
+export function lockCallback(callback: () => void) {
+  createLock().on('authenticated', (authResult: any) => {
     storeJWT(authResult.idToken, authResult.idTokenPayload)
     callback()
   })
 }
 
-function storeJWT(jwt: string, { exp }: IidTokenPayload) {
-  Cookie.set(JWT_COOKIE_KEY, jwt, exp)
-}
-
 export function redirectPath(): string {
   return sessionStorage.getItem(REDIRECT_KEY) || DEFAULT_REDIRECT
+}
+
+export function logout(callback: () => void) {
+  Cookie.erase(JWT_COOKIE_KEY)
+  createLock().logout({ returnTo: DEFAULT_REDIRECT })
+  callback()
 }

@@ -1,22 +1,15 @@
-// Cross subdomain cookies
-
-const COOKIE_DOMAIN = process.env.GATSBY_COOKIE_DOMAIN || 'localhost'
-
+const env = process.env.ACTIVE_ENV || process.env.NODE_ENV || 'development'
+console.log(env)
 const Cookie = {
   set: (rawName: string, rawValue: string, jwtExpiry: number = 0) => {
     const value = encodeURIComponent(rawValue)
     const name = encodeURIComponent(rawName)
     // set cookie to expire when jwt token does
     const at = new Date(jwtExpiry * 1000)
-    const expires = `; expires=${(at as any).toGMTString()}`
-
-    if (COOKIE_DOMAIN.split('.').length === 1) {
-      // localhost
-      document.cookie = `${name}=${value}${expires}; path=/;`
-    } else {
-      const cmd = `${name}=${value}${expires}; path=/; domain=.${COOKIE_DOMAIN}; Secure=true; SameSite=Strict;`
-      document.cookie = cmd
-    }
+    const expires = `expires=${at.toUTCString()}`
+    const secure = env === 'production' ? 'Secure=true; ' : ''
+    const cookie = `${name}=${value}; ${expires}; path=/; ${secure}SameSite=Strict;`
+    document.cookie = cookie
   },
 
   get: (name: string) => {

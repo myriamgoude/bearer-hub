@@ -3,7 +3,7 @@
 export const colors = {
   brand: '#663399',
   lilac: '#9d7cbf',
-  accent: '#ffc400;',
+  accent: '#ffc400',
   success: '#37b635',
   warning: '#ec1818',
   dark: '#030d36;',

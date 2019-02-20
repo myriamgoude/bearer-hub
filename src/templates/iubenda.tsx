@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Page from '../components/Page'
+import PageMetadata from '../components/PageMetadata'
+
 import IndexLayout from '../layouts'
 
 const StyledContainer = styled.div`
@@ -11,17 +13,16 @@ const StyledContainer = styled.div`
   }
 `
 
-interface IubendaTemplateProps {
-  data: {
-    iubendaDocument: {
-      title: string
-      content: string
-    }
+interface IQueryData {
+  iubendaDocument: {
+    title: string
+    content: string
   }
 }
 
-const IubendaTemplate: React.SFC<IubendaTemplateProps> = ({ data }) => (
-  <IndexLayout>
+const IubendaTemplate: GatsbyPage<IQueryData> = ({ data, location }) => (
+  <IndexLayout location={location}>
+    <PageMetadata title={data.iubendaDocument.title} />
     <Page>
       <StyledContainer>
         <div dangerouslySetInnerHTML={{ __html: data.iubendaDocument.content }} />

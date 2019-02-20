@@ -1,6 +1,8 @@
 ---
 layout: simple
 title: 'Manifesto'
+image: ''
+description: 'long form description'
 ---
 
 ## Manifesto Title 1

@@ -4,9 +4,11 @@ import Page from '../../components/Page'
 import Container from '../../components/Container'
 import IndexLayout from '../../layouts'
 import Search from '../../components/Search'
+import PageMetadata from '../../components/PageMetadata'
 
-export default () => (
-  <IndexLayout>
+const ExplorePage: GatsbyPage = ({ location }) => (
+  <IndexLayout location={location}>
+    <PageMetadata title="Explore" description="Explore Integrations" />
     <Page>
       <Container>
         <div>
@@ -17,3 +19,5 @@ export default () => (
     </Page>
   </IndexLayout>
 )
+
+export default ExplorePage

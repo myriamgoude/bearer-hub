@@ -12,19 +12,17 @@ import IndexLayout from '../layouts'
 
 import placeholderImage from '../images/homepage-placeholder.png'
 
-interface IIndexPageProps {
-  data: {
-    graphcms: {
-      integrations: {
-        id: string
-        title: string
-      }[]
-    }
+interface IQueryData {
+  graphcms: {
+    integrations: {
+      id: string
+      title: string
+    }[]
   }
 }
 
 export const query = graphql`
-  query IntegrationQuery {
+  query IndexPageQuery {
     graphcms {
       integrations(where: { status: PUBLISHED }) {
         id
@@ -33,9 +31,8 @@ export const query = graphql`
     }
   }
 `
-
-export default ({ data }: IIndexPageProps) => (
-  <IndexLayout>
+const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
+  <IndexLayout location={location}>
     <Page>
       <HeroPanel title="Native Integration To power your app" image={placeholderImage}>
         Bearer helps apps get connected to the rest of the World. Your users will thank you
@@ -86,3 +83,4 @@ export default ({ data }: IIndexPageProps) => (
     </Page>
   </IndexLayout>
 )
+export default IndexPage

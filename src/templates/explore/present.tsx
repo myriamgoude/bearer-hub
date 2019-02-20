@@ -5,13 +5,11 @@ import Page from '../../components/Page'
 import Container from '../../components/Container'
 import IndexLayout from '../../layouts'
 
-interface PresentTemplateProps {
-  data: {
-    graphcms: {
-      integrations: {
-        title: string
-      }[]
-    }
+interface IQueryData {
+  graphcms: {
+    integrations: {
+      title: string
+    }[]
   }
 }
 
@@ -25,11 +23,11 @@ export const query = graphql`
   }
 `
 
-const PresentTemplate: React.SFC<PresentTemplateProps> = ({ data }) => {
+const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
   const integration = data.graphcms.integrations[0]
 
   return (
-    <IndexLayout>
+    <IndexLayout location={location}>
       <Page>
         <Container>
           <h1>{integration.title}</h1>

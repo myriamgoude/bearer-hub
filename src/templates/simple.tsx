@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Page from '../components/Page'
+import PageMetadata from '../components/PageMetadata'
 import IndexLayout from '../layouts'
 
 const StyledContainer = styled.div`
@@ -11,20 +12,21 @@ const StyledContainer = styled.div`
   }
 `
 
-interface SimpleTemplateProps {
-  data: {
-    markdownRemark: {
-      html: string
-      excerpt: string
-      frontmatter: {
-        title: string
-      }
+interface IQueryData {
+  markdownRemark: {
+    html: string
+    excerpt: string
+    frontmatter: {
+      title: string
+      description: string | null
+      image: string | null
     }
   }
 }
 
-const SimpleTemplate: React.SFC<SimpleTemplateProps> = ({ data }) => (
-  <IndexLayout>
+const SimpleTemplate: GatsbyPage<IQueryData> = ({ data, location }) => (
+  <IndexLayout location={location}>
+    <PageMetadata {...data.markdownRemark.frontmatter} />
     <Page>
       <StyledContainer>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
@@ -43,6 +45,8 @@ export const query = graphql`
       excerpt
       frontmatter {
         title
+        description
+        image
       }
     }
   }

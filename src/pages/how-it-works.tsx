@@ -7,23 +7,22 @@ import Container from '../components/Container'
 import IndexLayout from '../layouts'
 import Button from '../components/Button'
 import PageHeading from '../components/PageHeading'
+import PageMetadata from '../components/PageMetadata'
 import SectionHeading from '../components/SectionHeading'
 
 const StyledContainer = styled(Container)`
   justify-content: center;
 `
 
-interface IHowToProps {
-  data: {
-    site: {
-      siteMetadata: {
-        howToSteps: [
-          {
-            title: string
-            description: string
-          }
-        ]
-      }
+interface IQueryProps {
+  site: {
+    siteMetadata: {
+      howToSteps: [
+        {
+          title: string
+          description: string
+        }
+      ]
     }
   }
 }
@@ -40,11 +39,13 @@ export const query = graphql`
     }
   }
 `
+const title = 'How Bearer Works?'
 
-const HowItWorksPage = ({ data }: IHowToProps) => (
-  <IndexLayout>
+const HowItWorksPage: GatsbyPage<IQueryProps> = ({ data, location }) => (
+  <IndexLayout location={location}>
+    <PageMetadata title={title} />
     <Page>
-      <PageHeading primaryText="How Bearer Works?" secondaryText="The Future of Integration is today!" />
+      <PageHeading primaryText={title} secondaryText="The Future of Integration is today!" />
       {data.site.siteMetadata.howToSteps.map((step, index) => (
         <Container key={index}>
           <div>

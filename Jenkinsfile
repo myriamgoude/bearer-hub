@@ -20,6 +20,7 @@ pipeline {
         NETLIFY_AUTH_TOKEN = credentials('netlify-auth-token')
         AWS_CORP_STAGING_SECRETS = credentials('staging-corp')
         AWS_CORP_PROD_SECRETS = credentials('prod-corp')
+        GITHUB_JENKINS_TOKEN = credentials('githubhubtoken')
     } // end environment
 
     stages {
@@ -33,7 +34,25 @@ pipeline {
             }
         }//end stage
 
-        stage("deploy staging") {
+        stage('Deploy the preview') {
+            when {
+                branch "PR-*"
+            }
+            
+            steps {
+                script {
+                    SITE_ID="d3c509b0-5d03-4792-bb11-4942a144cb67"
+                }
+
+                container("node") {
+                    ansiColor('xterm') {
+                        sh ".jenkins/scripts/preview.sh $SITE_ID $AWS_CORP_STAGING_SECRETS $BRANCH_NAME"
+                    }
+                 }
+            }
+        } //end stage
+
+        stage("Deploy staging") {
             when {
                 allOf {
                     branch "master"
@@ -51,7 +70,7 @@ pipeline {
             }
         }//end stage
         
-        stage("deploy production") {
+        stage("Deploy production") {
             when {
                 allOf {
                     branch "release-v*"

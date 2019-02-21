@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoContent renders correctly 1`] = `
+<video
+  autoPlay={true}
+  controls={false}
+  loop={true}
+  muted={true}
+  playsInline={true}
+  poster="/mv-video-perview.jpg"
+  preload="auto"
+  src="/my-video.mp4"
+  type="video/mp4"
+/>
+`;

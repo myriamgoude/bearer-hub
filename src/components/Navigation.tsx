@@ -60,7 +60,7 @@ export default class Navigation extends React.Component<INavigationProps, INavig
         <StyledNavigationLink to="/explore">EXPLORE INTEGRATIONS</StyledNavigationLink>
         <StyledNavigationLink to="/how-it-works">HOW IT WORKS</StyledNavigationLink>
         <StyledNavigationLink to="/native-integrations">MANIFESTO</StyledNavigationLink>
-        <StyledNavigationLink to="/">DOCS</StyledNavigationLink>
+        <StyledNavigationLink to="https://docs.bearer.sh">DOCS</StyledNavigationLink>
         {this.state.isAuthenticated ? this.renderLoggedIn() : this.renderLogin()}
       </StyledNavigation>
     )

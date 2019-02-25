@@ -40,7 +40,6 @@ module.exports = {
           { to: '/how-it-works', label: 'How it works' },
           { to: '#', label: 'Documentation' },
           { to: 'https://support.bearer.sh/', label: 'FAQ' },
-          { to: '#', label: 'Integration Requests' },
           { to: '#', label: 'Status Page' }
         ]
       },

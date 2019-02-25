@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UIElement has auto margin-left when rightAligned is true 1`] = `
+.emotion-0 {
+  font-family: 'Courier New',Courier,monospace;
+}
+
+.emotion-1 {
+  width: 50%;
+  margin-left: auto;
+}
+
+<div
+  className="emotion-1"
+>
+  <h4>
+    Connect Hello World component
+  </h4>
+  <div>
+    Add image for UI element here
+  </div>
+  <div
+    className="emotion-0"
+  >
+    &lt;hello-world-connect /&gt;
+  </div>
+</div>
+`;
+
+exports[`UIElement has no auto margin when rightAligned is false 1`] = `
+.emotion-1 {
+  width: 50%;
+}
+
+.emotion-0 {
+  font-family: 'Courier New',Courier,monospace;
+}
+
+<div
+  className="emotion-1"
+>
+  <h4>
+    Connect Hello World component
+  </h4>
+  <div>
+    Add image for UI element here
+  </div>
+  <div
+    className="emotion-0"
+  >
+    &lt;hello-world-connect /&gt;
+  </div>
+</div>
+`;

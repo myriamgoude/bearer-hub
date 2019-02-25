@@ -2,13 +2,28 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 
 import Page from '../../components/Page'
-import Container from '../../components/Container'
+import PageHeading from '../../components/PageHeading'
+import TimelineStage from '../../components/timeline/TimelineStage'
 import IndexLayout from '../../layouts'
+
+interface ITimelineProps {
+  title: string
+  timelineStages: {
+    timeToComplete: number
+    backendElementType: string
+    backendElementName: string
+    uiElement: {
+      title: string
+      codeSnippet: string
+    }
+  }[]
+}
 
 interface IQueryData {
   graphcms: {
     integrations: {
-      title: string
+      description: string
+      timeline: ITimelineProps
     }[]
   }
 }
@@ -17,24 +32,51 @@ export const query = graphql`
   query ExplorePresentQuery($id: ID!) {
     graphcms {
       integrations(where: { id: $id }, first: 1) {
-        title
+        description
+        timeline {
+          title
+          timelineStages(where: { displayOnHub: true }, orderBy: order_ASC) {
+            timeToComplete
+            backendElementType
+            backendElementName
+            uiElement {
+              title
+              codeSnippet
+            }
+          }
+        }
       }
     }
   }
 `
 
+function timelineHeading(timeline?: ITimelineProps): string {
+  if (timeline) {
+    const totalTime = timeline.timelineStages.reduce((sum, stage) => {
+      return sum + stage.timeToComplete
+    }, 0)
+    return `${timeline.title}${totalTime ? ` in ${totalTime} minutes` : ''}`
+  }
+  return ''
+}
+
 const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
   const integration = data.graphcms.integrations[0]
+  const timeline = integration.timeline
 
-  return (
-    <IndexLayout location={location}>
-      <Page>
-        <Container>
-          <h1>{integration.title}</h1>
-        </Container>
-      </Page>
-    </IndexLayout>
-  )
+  if (timeline) {
+    return (
+      <IndexLayout location={location}>
+        <Page>
+          <PageHeading primaryText={timelineHeading(timeline)} />
+          {timeline.timelineStages.map((stage, i) => (
+            <TimelineStage index={i} stage={stage} />
+          ))}
+        </Page>
+      </IndexLayout>
+    )
+  }
+  return <div>Do we want to handle integrations without timelines?</div>
 }
 
 export default PresentTemplate

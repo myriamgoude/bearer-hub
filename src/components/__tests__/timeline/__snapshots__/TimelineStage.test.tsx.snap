@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimelineStage handles when UI element and backend function are both present 1`] = `
+Array [
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 60em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+    className="emotion-0"
+  >
+    <h4>
+      1
+       min(s)
+    </h4>
+  </div>,
+  .emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 60em;
+}
+
+.emotion-1 {
+  width: 50%;
+}
+
+.emotion-0 {
+  font-family: 'Courier New',Courier,monospace;
+}
+
+<div
+    className="emotion-4"
+  >
+    <div
+      className="emotion-1"
+    >
+      <h4>
+        Connect Hello World Component
+      </h4>
+      <div>
+        Add image for UI element here
+      </div>
+      <div
+        className="emotion-0"
+      >
+        &lt;connect-hello-world /&gt;
+      </div>
+    </div>
+    <div
+      className="emotion-1"
+    >
+      <h4>
+        Install the Bearer Library
+      </h4>
+      <div
+        className="emotion-0"
+      >
+        // from dir/
+        <br />
+        npm install @bearer/react
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`TimelineStage handles when UI element is not present, and has no auto margin when index is odd 1`] = `
+Array [
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 60em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+    className="emotion-0"
+  >
+    <h4>
+      2
+       min(s)
+    </h4>
+  </div>,
+  .emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 60em;
+}
+
+.emotion-1 {
+  width: 50%;
+}
+
+.emotion-0 {
+  font-family: 'Courier New',Courier,monospace;
+}
+
+<div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-1"
+    >
+      <h4>
+        Install the Bearer Library
+      </h4>
+      <div
+        className="emotion-0"
+      >
+        // from dir/
+        <br />
+        npm install @bearer/react
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`TimelineStage handles when backend function is not present, and has auto margin-left when index is even 1`] = `
+Array [
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 60em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+    className="emotion-0"
+  >
+    <h4>
+      2
+       min(s)
+    </h4>
+  </div>,
+  .emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 60em;
+}
+
+.emotion-0 {
+  font-family: 'Courier New',Courier,monospace;
+}
+
+.emotion-1 {
+  width: 50%;
+  margin-left: auto;
+}
+
+<div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-1"
+    >
+      <h4>
+        Connect Hello World Component
+      </h4>
+      <div>
+        Add image for UI element here
+      </div>
+      <div
+        className="emotion-0"
+      >
+        &lt;connect-hello-world /&gt;
+      </div>
+    </div>
+  </div>,
+]
+`;

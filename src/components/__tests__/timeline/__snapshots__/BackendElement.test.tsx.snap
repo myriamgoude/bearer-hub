@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackendElement has auto margin-left when rightAligned is true, and displays SDK content for SDK function type 1`] = `
+.emotion-0 {
+  font-family: 'Courier New',Courier,monospace;
+}
+
+.emotion-2 {
+  width: 50%;
+  margin-left: auto;
+}
+
+<div
+  className="emotion-2"
+>
+  <h4>
+    Install the Bearer SDK
+  </h4>
+  <div
+    className="emotion-0"
+  >
+    $ npm install --save @bearer/react
+    <br />
+    // Initialize Bearer client
+    <br />
+    import 
+    { Bearer Client }
+     from '@bearer/node'
+    <br />
+    const bearerClient = BearerClient.new
+  </div>
+  <h4>
+    Automate with a function call
+  </h4>
+  <div
+    className="emotion-0"
+  >
+    bearerClient.call('
+    ', params)
+    <br />
+  </div>
+</div>
+`;
+
+exports[`BackendElement has no auto margin when rightAligned is false, and displays Library component for Library function type 1`] = `
+.emotion-1 {
+  width: 50%;
+}
+
+.emotion-0 {
+  font-family: 'Courier New',Courier,monospace;
+}
+
+<div
+  className="emotion-1"
+>
+  <h4>
+    Install the Bearer Library
+  </h4>
+  <div
+    className="emotion-0"
+  >
+    // from dir/
+    <br />
+    npm install @bearer/react
+  </div>
+</div>
+`;

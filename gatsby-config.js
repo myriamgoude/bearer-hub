@@ -141,7 +141,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-iubenda-bearer`,
+      resolve: 'gatsby-iubenda-bearer',
       options: {
         policy: '65368465',
         cookieSolutionConfig: {
@@ -159,6 +159,12 @@ module.exports = {
             slideDown: false
           }
         }
+      }
+    },
+    {
+      resolve: 'gatsby-bugsnag-bearer',
+      options: {
+        apiKey: process.env.BUGSNAG_API_KEY
       }
     },
     'gatsby-plugin-react-helmet'

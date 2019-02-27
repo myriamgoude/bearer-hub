@@ -1,5 +1,4 @@
 const env = process.env.ACTIVE_ENV || process.env.NODE_ENV || 'development'
-console.log(env)
 const Cookie = {
   set: (rawName: string, rawValue: string, jwtExpiry: number = 0) => {
     const value = encodeURIComponent(rawValue)

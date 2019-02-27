@@ -9,6 +9,7 @@ import IndexLayout from '../../layouts'
 interface ITimelineProps {
   title: string
   timelineStages: {
+    id: string
     timeToComplete: number
     backendElementType: string
     backendElementName: string
@@ -36,6 +37,7 @@ export const query = graphql`
         timeline {
           title
           timelineStages(where: { displayOnHub: true }, orderBy: order_ASC) {
+            id
             timeToComplete
             backendElementType
             backendElementName
@@ -70,7 +72,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
         <Page>
           <PageHeading primaryText={timelineHeading(timeline)} />
           {timeline.timelineStages.map((stage, i) => (
-            <TimelineStage index={i} stage={stage} />
+            <TimelineStage key={stage.id} index={i} stage={stage} />
           ))}
         </Page>
       </IndexLayout>

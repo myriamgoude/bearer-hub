@@ -1,6 +1,6 @@
 import * as React from 'react'
 import renderer from 'react-test-renderer'
-import Button from '../Button'
+import Button from '../Buttons/Button'
 
 describe('Header', () => {
   it('renders correctly', () => {

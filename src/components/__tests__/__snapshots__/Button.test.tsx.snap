@@ -1,15 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders correctly 1`] = `
+.emotion-1 + a {
+  margin-left: 0.5rem;
+}
+
 .emotion-0 {
-  background-color: #030d36;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
   border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #FFC400;
+  color: #030D36;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 1.5rem;
+}
+
+.emotion-0:hover {
+  background-color: #E9B300;
 }
 
 <a
+  className="emotion-1"
   href="/foo"
 >
   <button
@@ -21,15 +37,31 @@ exports[`Header renders correctly 1`] = `
 `;
 
 exports[`Header renders primary colours 1`] = `
+.emotion-1 + a {
+  margin-left: 0.5rem;
+}
+
 .emotion-0 {
-  background-color: #ffc400;
-  color: #030d36;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
   border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #FFC400;
+  color: #030D36;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 1.5rem;
+}
+
+.emotion-0:hover {
+  background-color: #E9B300;
 }
 
 <a
+  className="emotion-1"
   href="/foo"
 >
   <button

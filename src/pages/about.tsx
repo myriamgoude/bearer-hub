@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import Page from '../components/Page'
-import Container from '../components/Container'
+import Page from '../components/Page/Page'
+import Container from '../components/Container/Container'
 import IndexLayout from '../layouts'
-import PageMetadata from '../components/PageMetadata'
+import PageMetadata from '../components/PageMetadata/PageMetadata'
 
 const AboutPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>

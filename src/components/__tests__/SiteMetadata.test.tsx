@@ -1,6 +1,6 @@
 import React from 'react'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
-import { DefaultMeta } from '../SiteMetadata'
+import { DefaultMeta } from '../SiteMetadata/SiteMetadata'
 
 describe('SiteMetadata', () => {
   const props = {

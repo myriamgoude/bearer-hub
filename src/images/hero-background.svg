@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="546px" viewBox="0 0 1440 546" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <radialGradient cx="61.6017223%" cy="39.7673114%" fx="61.6017223%" fy="39.7673114%" r="119.552611%" gradientTransform="translate(0.616017,0.397673),scale(0.444444,1.000000),rotate(164.171770),translate(-0.616017,-0.397673)" id="radialGradient-1">
+            <stop stop-color="#F6FAFF" offset="0%"></stop>
+            <stop stop-color="#F6FAFF" offset="1.33992753%"></stop>
+            <stop stop-color="#F0F2FC" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Hub" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Integration-landing-Export-Spreadsheet" fill="url(#radialGradient-1)" fill-rule="nonzero">
+            <path d="M0,-94 L1440,-94 L1440,546 C1117.02589,506.729685 874.192557,487.094527 711.5,487.094527 C548.807443,487.094527 311.640777,506.729685 0,546 L0,-94 Z" id="topIntePageSharp"></path>
+        </g>
+    </g>
+</svg>

@@ -3,23 +3,31 @@
 export const colors = {
   brand: '#663399',
   lilac: '#9d7cbf',
-  accent: '#ffc400',
+  accent: '#ffc400;',
   success: '#37b635',
   warning: '#ec1818',
-  dark: '#030d36;',
-  ui: {
-    bright: '#e0d6eb',
-    light: '#f5f3f7',
-    whisper: '#fbfafc'
-  },
+  dark: '#030d36',
+  ui: { bright: '#e0d6eb', light: '#f5f3f7', whisper: '#fbfafc' },
   code: '#fcf6f0',
-  gray: {
-    dark: 'hsla(270, 17.119554496%, 0%, 0.92)',
-    copy: '#a6aed0',
-    calm: 'rgba(0, 0, 0, 0.54)'
-  },
+  gray: { dark: 'hsla(270, 17.119554496%, 0%, 0.92)', copy: '#a6aed0', calm: 'rgba(0, 0, 0, 0.54)' },
   white: '#fff',
-  black: '#000'
+  black: '#000',
+  branded: {
+    yellow: '#FFC400',
+    darkBlue: '#030D36',
+    green: '#00C682',
+    orange: '#E4611F',
+    blue: '#0931D5',
+    black: '#03081E',
+    primary: ['#E9B300', '#FFC400', '#FFD033', '#FFE799', '#FFF9E5'],
+    secondary: ['#030D36', '#343C5D', '#999DAE', '#E6E7EB', '#F6F6F8'],
+    accent: ['#00C682', '#0FE49B', '#3FE9AF', '#9FF4D7', '#E7FCF5'],
+    link: ['#0931D5', '#1339D7', '#9DADEE', '#E6EAFA', '#F5F7FE'],
+    neutral: ['#6679CB', '#8494D5', '#C2C9EA', '#EFF1F9', '#F9FAFD'],
+    important: ['#DC4C4C', '#E37070', '#F1B7B7', '#FBEDED', '#FEF8F8'],
+    complementary1: ['#E4611F', '#E9814C', '#F4C0A5', '#FCEFE8', '#FEF9F6'],
+    complementary2: ['#C600A3', '#D133B5', '#E899DA', '#F9E5F5', '#FDF5FC']
+  }
 }
 
 export const fonts = {
@@ -34,17 +42,20 @@ export const breakpoints = {
   sm: 576,
   md: 768,
   lg: 992,
-  xl: 1200
+  xl: 1200,
+  xxl: 1440
 }
 
 export const widths = {
   md: 720,
   lg: 960,
-  xl: 1140
+  xl: 1140,
+  xxl: 1200
 }
 
 export const dimensions = {
   fontSize: {
+    small: 14,
     regular: 16,
     large: 18
   },
@@ -64,4 +75,8 @@ export const dimensions = {
 export const heights = {
   header: 60,
   footer: 120
+}
+
+export const shadows = {
+  regular: 'box-shadow: 0 2px 4px 0 rgba(3,13,54,0.13)'
 }

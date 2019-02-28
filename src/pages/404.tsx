@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import Link from '../components/Link'
-import Page from '../components/Page'
-import Container from '../components/Container'
+import Link from '../components/Link/Link'
+import Page from '../components/Page/Page'
+import Container from '../components/Container/Container'
 import IndexLayout from '../layouts'
 
 const NotFoundPage: GatsbyPage = ({ location }) => (

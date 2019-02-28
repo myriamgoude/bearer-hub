@@ -1,6 +1,6 @@
 import React from 'react'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
-import PageMetadata from '../PageMetadata'
+import PageMetadata from '../PageMetadata/PageMetadata'
 
 describe('PageMetadata', () => {
   const title = 'My Page'

@@ -1,6 +1,6 @@
 import React from 'react'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
-import Link from '../Link'
+import Link from '../Link/Link'
 
 describe('Header', () => {
   const text = 'my link'

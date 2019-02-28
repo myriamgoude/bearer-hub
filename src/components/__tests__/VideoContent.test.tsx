@@ -1,6 +1,6 @@
 import * as React from 'react'
 import renderer from 'react-test-renderer'
-import VideoContent from '../VideoContent'
+import VideoContent from '../VideoContent/VideoContent'
 
 describe('VideoContent', () => {
   it('renders correctly', () => {

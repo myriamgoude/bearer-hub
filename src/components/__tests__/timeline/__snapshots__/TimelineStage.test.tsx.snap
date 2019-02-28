@@ -3,18 +3,6 @@
 exports[`TimelineStage handles when UI element and backend function are both present 1`] = `
 Array [
   .emotion-0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  max-width: 60em;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -26,29 +14,14 @@ Array [
 }
 
 <div
-    className="emotion-0"
+    className="root emotion-0 displayBlock directionColumn paddingRegular"
   >
     <h4>
       1
        min(s)
     </h4>
   </div>,
-  .emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  max-width: 60em;
-}
-
-.emotion-1 {
+  .emotion-1 {
   width: 50%;
 }
 
@@ -57,7 +30,7 @@ Array [
 }
 
 <div
-    className="emotion-4"
+    className="root displayBlock directionColumn paddingRegular"
   >
     <div
       className="emotion-1"
@@ -95,18 +68,6 @@ Array [
 exports[`TimelineStage handles when UI element is not present, and has no auto margin when index is odd 1`] = `
 Array [
   .emotion-0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  max-width: 60em;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -118,29 +79,14 @@ Array [
 }
 
 <div
-    className="emotion-0"
+    className="root emotion-0 displayBlock directionColumn paddingRegular"
   >
     <h4>
       2
        min(s)
     </h4>
   </div>,
-  .emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  max-width: 60em;
-}
-
-.emotion-1 {
+  .emotion-1 {
   width: 50%;
 }
 
@@ -149,7 +95,7 @@ Array [
 }
 
 <div
-    className="emotion-2"
+    className="root displayBlock directionColumn paddingRegular"
   >
     <div
       className="emotion-1"
@@ -172,18 +118,6 @@ Array [
 exports[`TimelineStage handles when backend function is not present, and has auto margin-left when index is even 1`] = `
 Array [
   .emotion-0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  max-width: 60em;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -195,29 +129,14 @@ Array [
 }
 
 <div
-    className="emotion-0"
+    className="root emotion-0 displayBlock directionColumn paddingRegular"
   >
     <h4>
       2
        min(s)
     </h4>
   </div>,
-  .emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  max-width: 60em;
-}
-
-.emotion-0 {
+  .emotion-0 {
   font-family: 'Courier New',Courier,monospace;
 }
 
@@ -227,7 +146,7 @@ Array [
 }
 
 <div
-    className="emotion-2"
+    className="root displayBlock directionColumn paddingRegular"
   >
     <div
       className="emotion-1"

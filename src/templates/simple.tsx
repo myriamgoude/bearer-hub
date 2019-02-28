@@ -2,8 +2,8 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
-import Page from '../components/Page'
-import PageMetadata from '../components/PageMetadata'
+import Page from '../components/Page/Page'
+import PageMetadata from '../components/PageMetadata/PageMetadata'
 import IndexLayout from '../layouts'
 
 const StyledContainer = styled.div`

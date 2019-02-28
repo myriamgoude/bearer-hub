@@ -2,13 +2,13 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
-import Page from '../components/Page'
-import Container from '../components/Container'
+import Page from '../components/Page/Page'
+import Container from '../components/Container/Container'
 import IndexLayout from '../layouts'
-import Button from '../components/Button'
-import PageHeading from '../components/PageHeading'
-import PageMetadata from '../components/PageMetadata'
-import SectionHeading from '../components/SectionHeading'
+import Button from '../components/Buttons/Button'
+import PageHeading from '../components/PageHeading/PageHeading'
+import PageMetadata from '../components/PageMetadata/PageMetadata'
+import SectionHeading from '../components/SectionHeading/SectionHeading'
 
 const StyledContainer = styled(Container)`
   justify-content: center;

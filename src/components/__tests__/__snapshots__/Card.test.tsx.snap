@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<div
+  className="root paddingRegular"
+>
+  <h3>
+    foo
+  </h3>
+  <p
+    className="root"
+  >
+    foo
+  </p>
+</div>
+`;
+
+exports[`Header renders with object values 1`] = `
+<div
+  className="root paddingRegular"
+>
+  <h3>
+    <img
+      alt="icon"
+      className="foo"
+      src="#"
+    />
+    <span>
+      foo bar
+    </span>
+  </h3>
+  <p
+    className="root"
+  >
+    <span>
+      foo bar
+    </span>
+  </p>
+</div>
+`;

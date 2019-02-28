@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import Link from '../components/Link'
-import Page from '../components/Page'
-import PageMetadata from '../components/PageMetadata'
-import Container from '../components/Container'
+import Link from '../components/Link/Link'
+import Page from '../components/Page/Page'
+import PageMetadata from '../components/PageMetadata/PageMetadata'
+import Container from '../components/Container/Container'
 import IndexLayout from '../layouts'
 
 const PressPage: GatsbyPage = ({ location }) => (

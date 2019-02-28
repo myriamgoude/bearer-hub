@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import Page from '../../components/Page'
-import Container from '../../components/Container'
+import Page from '../../components/Page/Page'
+import Container from '../../components/Container/Container'
 import IndexLayout from '../../layouts'
-import Search from '../../components/Search'
-import PageMetadata from '../../components/PageMetadata'
+import Search from '../../components/Search/Search'
+import PageMetadata from '../../components/PageMetadata/PageMetadata'
 
 const ExplorePage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>

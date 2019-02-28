@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import Page from '../../components/Page'
 import PageHeading from '../../components/PageHeading'
+import Container from '../../components/Container'
 import TimelineStage from '../../components/timeline/TimelineStage'
 import IndexLayout from '../../layouts'
 
@@ -70,10 +71,12 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
     return (
       <IndexLayout location={location}>
         <Page>
-          <PageHeading primaryText={timelineHeading(timeline)} />
-          {timeline.timelineStages.map((stage, i) => (
-            <TimelineStage key={stage.id} index={i} stage={stage} />
-          ))}
+          <Container>
+            <PageHeading primaryText={timelineHeading(timeline)} />
+            {timeline.timelineStages.map((stage, i) => (
+              <TimelineStage key={stage.id} index={i} stage={stage} />
+            ))}
+          </Container>
         </Page>
       </IndexLayout>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
 
 import { path, slug } from '../Integration'
-import Link from '../../components/Link'
+import Link from '../../components/Link/Link'
 
 const myIntegration = { id: '123', title: 'My Title' }
 

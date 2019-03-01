@@ -5,6 +5,12 @@ const { resolve } = require('path')
 module.exports = async ({ graphql, actions }) => {
   const { createPage } = actions
 
+  //----------------------------//
+  // MARKDOWN PAGES             //
+  //----------------------------//
+
+  // Create pages for our static content that is not managed in our CMS
+  // such as our security and privacy pages
   const allMarkdown = await graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -30,26 +36,21 @@ module.exports = async ({ graphql, actions }) => {
 
     createPage({
       path: slug,
-      // This will automatically resolve the template to a corresponding
-      // `layout` frontmatter in the Markdown.
-      //
-      // Feel free to set any `layout` as you'd like in the frontmatter, as
-      // long as the corresponding template file exists in src/templates.
-      // If no template is set, it will fall back to the default `page`
-      // template.
-      //
-      // Note that the template has to exist first, or else the build will fail.
       component: resolve(`./src/templates/${layout || 'page'}.tsx`),
       context: {
-        // Data passed to context is available in page queries as GraphQL variables.
         slug
       }
     })
   })
 
-  // Add presentation pages for integrations at explore/integrations/my-integration-slug/present
-  // using site metadata and the explore/present.tsx template
-  const allExplorePages = await graphql(`
+  //----------------------------//
+  // EXPLORE PRESENT PAGES //
+  //----------------------------//
+
+  // Create pages for integrations at explore/integrations/my-integration-slug/present
+  // using content from our CMS system and the explore/present.tsx template
+
+  const allIntegrations = await graphql(`
     {
       graphcms {
         integrations(where: { status: PUBLISHED }) {
@@ -60,12 +61,12 @@ module.exports = async ({ graphql, actions }) => {
     }
   `)
 
-  if (allExplorePages.errors) {
-    console.error(allExplorePages.errors)
-    throw new Error(allExplorePages.errors)
+  if (allIntegrations.errors) {
+    console.error(allIntegrations.errors)
+    throw new Error(allIntegrations.errors)
   }
 
-  allExplorePages.data.graphcms.integrations.forEach(({ id, title }) => {
+  allIntegrations.data.graphcms.integrations.forEach(({ id, title }) => {
     // See /services/Integration which also generates a slug
     // Since we cannot use this service here, the logic must be duplicated
     const path = `/explore/${id}-${title.toLowerCase().replace(/\s/g, '-')}`
@@ -73,6 +74,74 @@ module.exports = async ({ graphql, actions }) => {
     createPage({
       path,
       component: resolve(`./src/templates/explore/present.tsx`),
+      context: {
+        id
+      }
+    })
+  })
+
+  //-------------------------------------//
+  // EXPLORE CATEGORY AND PROVIDER PAGES //
+  //-------------------------------------//
+
+  // Create pages for Integration Providers (e.g. "Slack", "MailChimp")
+  // at explore/my-provider-slug/ and using content from our CMS system
+  // and the explore/providers.tsx template
+
+  const allProviders = await graphql(`
+    {
+      graphcms {
+        providers(where: { status: PUBLISHED }) {
+          id
+          title
+        }
+      }
+    }
+  `)
+
+  if (allProviders.errors) {
+    console.error(allProviders.errors)
+    throw new Error(allProviders.errors)
+  }
+
+  allProviders.data.graphcms.providers.forEach(({ id, title }) => {
+    const path = `/explore/${title.toLowerCase().replace(/\s/g, '-')}`
+
+    createPage({
+      path,
+      component: resolve(`./src/templates/explore/providers.tsx`),
+      context: {
+        id
+      }
+    })
+  })
+
+  // Create pages for Integration Categories (e.g. "Developer Tooling",
+  // "Mailing") at explore/my-category-slug and using content from our
+  // CMS system and the explore/categories.tsx template
+
+  const allCategories = await graphql(`
+    {
+      graphcms {
+        categories(where: { status: PUBLISHED }) {
+          id
+          title
+        }
+      }
+    }
+  `)
+
+  if (allCategories.errors) {
+    console.error(allCategories.errors)
+    throw new Error(allCategories.errors)
+  }
+
+  allCategories.data.graphcms.categories.forEach(({ id, title }) => {
+    const path = `/explore/${title.toLowerCase().replace(/\s/g, '-')}`
+
+    createPage({
+      path,
+      component: resolve(`./src/templates/explore/categories.tsx`),
       context: {
         id
       }

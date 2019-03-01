@@ -5,6 +5,7 @@ import { path } from '../../services/Integration'
 import {
   ClearRefinements,
   Configure,
+  connectMenu,
   Highlight,
   Hits,
   InstantSearch,
@@ -13,7 +14,12 @@ import {
   SearchBox
 } from 'react-instantsearch-dom'
 
-export default class Search extends React.Component {
+interface ISearchProps {
+  defaultCategory?: string
+  defaultProvider?: string
+}
+
+export default class Search extends React.Component<ISearchProps> {
   hit({ hit }: any) {
     return (
       <Link to={`${path({ id: hit.id, title: hit.title })}`}>
@@ -27,6 +33,11 @@ export default class Search extends React.Component {
   }
 
   render() {
+    const categoriesAttribute = 'categories.title'
+    const providersAttribute = 'providers.title'
+
+    const VirtualMenu = connectMenu(() => null)
+
     return (
       <div>
         <InstantSearch
@@ -35,11 +46,38 @@ export default class Search extends React.Component {
           indexName={`${process.env.GATSBY_ALGOLIA_INDEX_NAME}`}
         >
           <div>
-            <ClearRefinements />
-            <h2>Category</h2>
-            <RefinementList attribute="categories.title" />
-            <h2>Provider</h2>
-            <RefinementList attribute="providers.title" />
+            {this.props.defaultCategory && this.props.defaultProvider ? null : (
+              <ClearRefinements
+                transformItems={(items: any) => {
+                  return items.filter(
+                    (item: any) =>
+                      this.props.defaultCategory
+                        ? item.attribute !== categoriesAttribute // filter items that aren't in the default category
+                        : this.props.defaultProvider
+                        ? item.attribute !== providersAttribute // filter items that aren't from the default provider
+                        : true // don't filter items since there's no default filters set
+                  )
+                }}
+              />
+            )}
+
+            {this.props.defaultCategory ? (
+              <VirtualMenu attribute={categoriesAttribute} defaultRefinement={this.props.defaultCategory} />
+            ) : (
+              <>
+                <h2>Category</h2>
+                <RefinementList attribute={categoriesAttribute} />
+              </>
+            )}
+
+            {this.props.defaultProvider ? (
+              <VirtualMenu attribute={providersAttribute} defaultRefinement={this.props.defaultProvider} />
+            ) : (
+              <>
+                <h2>Provider</h2>
+                <RefinementList attribute={providersAttribute} />
+              </>
+            )}
             <Configure hitsPerPage={8} />
           </div>
           <div>

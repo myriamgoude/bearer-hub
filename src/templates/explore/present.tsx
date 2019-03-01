@@ -1,9 +1,10 @@
 import * as React from 'react'
+import Markdown from 'react-markdown'
 import { graphql } from 'gatsby'
 
+import Container from '../../components/Container'
 import Page from '../../components/Page'
 import PageHeading from '../../components/PageHeading'
-import Container from '../../components/Container'
 import TimelineStage from '../../components/timeline/TimelineStage'
 import IndexLayout from '../../layouts'
 
@@ -24,7 +25,7 @@ interface ITimelineProps {
 interface IQueryData {
   graphcms: {
     integrations: {
-      description: string
+      mdDescription: string
       timeline: ITimelineProps
     }[]
   }
@@ -34,7 +35,7 @@ export const query = graphql`
   query ExplorePresentQuery($id: ID!) {
     graphcms {
       integrations(where: { id: $id }, first: 1) {
-        description
+        mdDescription
         timeline {
           title
           timelineStages(where: { displayOnHub: true }, orderBy: order_ASC) {
@@ -73,6 +74,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
         <Page>
           <Container>
             <PageHeading primaryText={timelineHeading(timeline)} />
+            <Markdown source={integration.mdDescription} escapeHtml={false} />
             {timeline.timelineStages.map((stage, i) => (
               <TimelineStage key={stage.id} index={i} stage={stage} />
             ))}

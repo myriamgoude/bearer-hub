@@ -14,5 +14,5 @@ module.exports = {
   },
   snapshotSerializers: ['jest-emotion'],
   testURL: `http://localhost`,
-  setupFiles: [`<rootDir>/loadershim.js`]
+  setupFiles: [`<rootDir>/loadershim.js`, 'jest-canvas-mock']
 }

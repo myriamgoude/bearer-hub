@@ -19,6 +19,11 @@ interface ITimelineStageProps {
     uiElement?: {
       title: string
       codeSnippet: string
+      image: {
+        handle: string
+        height: number
+        width: number
+      }
     }
   }
 }

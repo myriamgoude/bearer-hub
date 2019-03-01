@@ -1,4 +1,5 @@
 import * as React from 'react'
+import GraphImg from 'graphcms-image'
 import styled from '@emotion/styled'
 
 import CodeSnippet from './CodeSnippet'
@@ -12,6 +13,11 @@ interface IUIElementProps {
   element: {
     title: string
     codeSnippet: string
+    image: {
+      handle: string
+      height: number
+      width: number
+    }
   }
   rightAligned: boolean
 }
@@ -19,7 +25,7 @@ interface IUIElementProps {
 const IUIElementProps = ({ element, rightAligned }: IUIElementProps) => (
   <StyledDiv rightAligned={rightAligned}>
     <h4>{element.title}</h4>
-    <div>Add image for UI element here</div>
+    {element.image ? <GraphImg image={element.image} maxWidth={800} /> : null}
     <CodeSnippet>{element.codeSnippet}</CodeSnippet>
   </StyledDiv>
 )

@@ -18,6 +18,11 @@ interface ITimelineProps {
     uiElement: {
       title: string
       codeSnippet: string
+      image: {
+        handle: string
+        height: number
+        width: number
+      }
     }
   }[]
 }
@@ -46,6 +51,11 @@ export const query = graphql`
             uiElement {
               title
               codeSnippet
+              image {
+                handle
+                height
+                width
+              }
             }
           }
         }

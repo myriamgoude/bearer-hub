@@ -38,8 +38,55 @@ Array [
       <h4>
         Connect Hello World Component
       </h4>
-      <div>
-        Add image for UI element here
+      <div
+        className=" graphcms-image-outer-wrapper"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          className=" graphcms-image-wrapper"
+          style={
+            Object {
+              "overflow": "hidden",
+              "position": "relative",
+              "zIndex": 1,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "paddingBottom": "100%",
+                "width": "100%",
+              }
+            }
+          />
+          <img
+            alt=""
+            onLoad={null}
+            src="https://media.graphcms.com/resize=w:20,h:20,fit:crop/blur=amount:2/compress/my-test-image"
+            style={
+              Object {
+                "height": "100%",
+                "left": 0,
+                "objectFit": "cover",
+                "objectPosition": "center",
+                "opacity": 1,
+                "position": "absolute",
+                "top": 0,
+                "transition": "opacity 0.5s",
+                "transitionDelay": "0.25s",
+                "width": "100%",
+              }
+            }
+            title=""
+          />
+          
+        </div>
       </div>
       <div
         className="emotion-0"
@@ -154,8 +201,55 @@ Array [
       <h4>
         Connect Hello World Component
       </h4>
-      <div>
-        Add image for UI element here
+      <div
+        className=" graphcms-image-outer-wrapper"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          className=" graphcms-image-wrapper"
+          style={
+            Object {
+              "overflow": "hidden",
+              "position": "relative",
+              "zIndex": 1,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "paddingBottom": "100%",
+                "width": "100%",
+              }
+            }
+          />
+          <img
+            alt=""
+            onLoad={null}
+            src="https://media.graphcms.com/resize=w:20,h:20,fit:crop/blur=amount:2/compress/my-test-image"
+            style={
+              Object {
+                "height": "100%",
+                "left": 0,
+                "objectFit": "cover",
+                "objectPosition": "center",
+                "opacity": 1,
+                "position": "absolute",
+                "top": 0,
+                "transition": "opacity 0.5s",
+                "transitionDelay": "0.25s",
+                "width": "100%",
+              }
+            }
+            title=""
+          />
+          
+        </div>
       </div>
       <div
         className="emotion-0"

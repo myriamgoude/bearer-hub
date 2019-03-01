@@ -11,7 +11,12 @@ describe('TimelineStage', () => {
       backendElementName: 'connect-hello-world',
       uiElement: {
         title: 'Connect Hello World Component',
-        codeSnippet: '<connect-hello-world />'
+        codeSnippet: '<connect-hello-world />',
+        image: {
+          handle: 'my-test-image',
+          height: 50,
+          width: 50
+        }
       }
     }
     const tree = renderer.create(<TimelineStage stage={stage} index={2} />)
@@ -23,7 +28,12 @@ describe('TimelineStage', () => {
       timeToComplete: 2,
       uiElement: {
         title: 'Connect Hello World Component',
-        codeSnippet: '<connect-hello-world />'
+        codeSnippet: '<connect-hello-world />',
+        image: {
+          handle: 'my-test-image',
+          height: 50,
+          width: 50
+        }
       }
     }
     const tree = renderer.create(<TimelineStage stage={stage} index={0} />)

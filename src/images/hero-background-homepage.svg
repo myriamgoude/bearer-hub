@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="976px" height="585px" viewBox="0 0 976 585" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Rectangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="61.6017223%" cy="39.7673114%" fx="61.6017223%" fy="39.7673114%" r="73.2779664%" gradientTransform="translate(0.616017,0.397673),scale(0.778995,1.000000),rotate(153.576842),translate(-0.616017,-0.397673)" id="radialGradient-1">
+            <stop stop-color="#F6FAFF" offset="0%"></stop>
+            <stop stop-color="#F6FAFF" offset="1.33992753%"></stop>
+            <stop stop-color="#F0F2FC" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Hub" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home" transform="translate(-464.000000, 0.000000)" fill="url(#radialGradient-1)" fill-rule="nonzero">
+            <path d="M1532,-234 L1532,599 C1209.02589,547.887231 966.192557,522.330846 803.5,522.330846 C682.473305,522.330846 561.673897,398.433244 485.5,112.026946 C468.017074,46.2928801 451.850408,-75.7161019 437,-254 L1532,-234 Z" id="Rectangle"></path>
+        </g>
+    </g>
+</svg>

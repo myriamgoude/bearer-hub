@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { css, cx } from 'emotion'
+import { css } from '@emotion/core'
 import {
   Button,
   Card,
@@ -15,13 +15,13 @@ import {
   Page,
   Pill,
   Section,
+  SectionCTA,
   SectionHeading,
   Text
 } from '../components/'
 import IndexLayout from '../layouts'
 
-import placeholderHeroImage from '../images/hero-image.svg'
-import placeholderEndHeroImage from '../images/homepage-placeholder-2.png'
+import placeholderHeroImage from '../images/hero-illustration.svg'
 
 import logoDropbox from '../images/brands/dropbox.svg'
 import logoTwillio from '../images/brands/twilio.svg'
@@ -36,7 +36,7 @@ import iconGraph from '../images/shared/icon-Graph.svg'
 import iconShippet from '../images/shared/icon-Shippet.svg'
 import iconLayout from '../images/shared/icon-Layout.svg'
 
-import heroStyles from '../components/HeroPanel/HeroPanel.css'
+import heroStyles from '../components/HeroPanel/HeroPanel.style'
 
 import { colors } from '../styles/variables'
 
@@ -85,15 +85,7 @@ const styleWaveBg = css`
 const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
   <IndexLayout location={location}>
     <Page>
-      <div
-        className={cx(
-          css`
-            position: relative;
-          `,
-          heroStyles.backgroundHomepage,
-          heroStyles.curvedSection
-        )}
-      >
+      <div css={heroStyles.styleBackgroundHome}>
         <HeroPanel
           title={
             <>
@@ -102,6 +94,9 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           }
           subtitle="Bearer helps apps get connected to the rest of the World."
           image={placeholderHeroImage}
+          imageCss={css`
+            height: 500px;
+          `}
           longHero
         >
           <LightCta to="foo.com" text="Your users will thank you." />
@@ -115,42 +110,20 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         </HeroPanel>
       </div>
 
-      <Section>
-        <div
-          className={cx(
-            css`
-              top: 0;
-              position: relative;
-              z-index: 6;
-            `
-          )}
-        >
-          <SectionHeading
-            primaryText="Most Integrated Apps"
-            className={cx(
-              css`
-                width: 100%;
-                margin-top: -260px;
-              `
-            )}
-          />
-          <Grid space="between">
-            {[logoDropbox, logoGithub, logoMailchimp, logoTwillio, logoZendesk].map((logo, index) => {
-              return <Pill key={index} logo={logo} />
-            })}
-          </Grid>
-        </div>
+      <Section
+        css={css`
+          padding-bottom: 8em;
+        `}
+      >
+        <SectionHeading primaryText="Most Integrated Apps" />
+        <Grid space="between">
+          {[logoDropbox, logoTwillio, logoMailchimp, logoGithub, logoZendesk].map((logo, index) => {
+            return <Pill key={index} logo={logo} />
+          })}
+        </Grid>
       </Section>
 
-      <Section
-        withTail
-        background="transparent"
-        className={css(
-          css`
-            z-index: 6;
-          `
-        )}
-      >
+      <Section withTail background="transparent">
         <Grid fullWidth>
           {[
             {
@@ -193,39 +166,34 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         </Grid>
       </Section>
 
-      <div className={cx(styleWaveBg)}>
+      <div css={styleWaveBg}>
         <Section withTail>
           <SectionHeading primaryText="A Native Integration in 5 minutes" />
           <CodeExamples data={codeData} />
           <div
-            className={cx(
-              css`
-                margin-top: -30px;
-                text-align: center;
-                position: relative;
-                z-index: 5;
-              `
-            )}
+            css={css`
+              margin-top: -30px;
+              text-align: center;
+              position: relative;
+              z-index: 5;
+            `}
           >
             <Button
               text="How it works?"
               link="#"
-              className={cx(
-                css`
-                  margin: 1em auto;
-                `
-              )}
+              css={css`
+                margin: 1em auto;
+              `}
             />
 
             <div>
               <Link
                 to="#"
-                className={cx(
-                  'mt-16',
-                  css`
-                    color: ${colors.branded.black};
-                  `
-                )}
+                css={css`
+                  margin-top: 16px;
+                  display: inline-block;
+                  color: ${colors.branded.black};
+                `}
               >
                 You can also check the docs
               </Link>
@@ -238,110 +206,61 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         <SectionHeading primaryText="Featured Integrations" />
         <IntegrationPanel integrations={data.graphcms.integrations} />
         <div
-          className={cx(
-            'mt-32',
+          css={[
             css`
               text-align: center;
+              margin-top: 32px;
             `
-          )}
+          ]}
         >
           <Button
             text="explore integrations"
             link="#"
-            className={cx(
-              css`
-                margin: 1em auto;
-              `
-            )}
+            css={css`
+              margin: 1em auto;
+            `}
           />
         </div>
       </Section>
 
-      <div
-        className={cx(
-          styleWaveBg,
-          css`
-            height: 600px;
-          `
-        )}
-      >
-        <Section withTail>
-          <Grid fullWidth>
-            <div>
-              <SectionHeading primaryText="Looking to build your own Native Integration?" align="left" tag="h3" />
-              <Button primary link="/contact" text="Get in touch" />
-            </div>
-            <div>
-              <object
-                className={cx(
-                  css`
-                    display: block;
-                    position: relative;
-                    width: 400px;
-                    height: 300px;
-                  `
-                )}
-              >
-                <img
-                  src={placeholderEndHeroImage}
-                  className={cx(
-                    css`
-                      height: 120%;
-                      position: absolute;
-                      left: 0;
-                      right: 0;
-                      margin: auto;
-                    `
-                  )}
-                  alt=""
-                />
-              </object>
-            </div>
-          </Grid>
-        </Section>
-      </div>
+      <SectionCTA />
 
       <Section
         withTail
-        className={cx(
-          css`
-            height: 860px;
-          `
-        )}
+        css={css`
+          height: 860px;
+        `}
       >
         <SectionHeading primaryText="Why use Bearer?" />
         <Grid
           space="between"
           gutter={32}
           fullWidth
-          className={cx(
-            css`
-              height: 600px;
-              background: url(${require('../images/shared/yellow-circle.svg')}) no-repeat center top / 560px;
-            `
-          )}
-          childrenClassName={cx(
-            css`
-              max-width: 320px;
-            `
-          )}
+          className={css`
+            height: 600px;
+            background: url(${require('../images/shared/yellow-circle.svg')}) no-repeat center top / 560px;
+          `}
+          childrenClassName={css`
+            max-width: 320px;
+          `}
         >
           <Card
             title={
-              <>
-                {' '}
+              <div
+                css={css`
+                  margin-bottom: 16px;
+                `}
+              >
                 <img
                   src={require('../images/shared/icon-magnet.svg')}
-                  className={cx(
-                    css`
-                      vertical-align: middle;
-                      margin-right: 16px;
-                    `
-                  )}
+                  css={css`
+                    vertical-align: middle;
+                    margin-right: 16px;
+                  `}
                   alt="Icon Magnet"
                 />
                 <span>Native</span>
-              </>
+              </div>
             }
             children={
               <>
@@ -360,27 +279,26 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             padding="large"
           />
           <Card
-            className={cx(
-              css`
-                position: relative;
-                top: 200px;
-              `
-            )}
+            className={css`
+              position: relative;
+              top: 200px;
+            `}
             title={
-              <>
-                {' '}
+              <div
+                css={css`
+                  margin-bottom: 16px;
+                `}
+              >
                 <img
                   src={require('../images/shared/icon-globe.svg')}
-                  className={cx(
-                    css`
-                      vertical-align: middle;
-                      margin-right: 16px;
-                    `
-                  )}
+                  css={css`
+                    vertical-align: middle;
+                    margin-right: 16px;
+                  `}
                   alt="Icon Globe"
                 />
                 <span>Standardized</span>
-              </>
+              </div>
             }
             children={
               <>
@@ -395,20 +313,22 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           />
           <Card
             title={
-              <>
+              <div
+                css={css`
+                  margin-bottom: 16px;
+                `}
+              >
                 <img
                   src={require('../images/shared/icon-plugnplay.svg')}
-                  className={cx(
-                    css`
-                      vertical-align: middle;
-                      margin-right: 16px;
-                      position: relative;
-                    `
-                  )}
+                  css={css`
+                    vertical-align: middle;
+                    margin-right: 16px;
+                    position: relative;
+                  `}
                   alt="Icon Plug'n'Play"
                 />
                 <span>Plug and Play</span>
-              </>
+              </div>
             }
             children={
               <>

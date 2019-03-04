@@ -1,37 +1,39 @@
 import * as React from 'react'
-import { css, cx } from 'emotion'
+import { css } from '@emotion/core'
 
 import { Error } from '../Error/Error'
 
-import styles from './Grid.css'
+import styles from './Grid.style'
 import { breakpoints } from '../../styles/variables'
 
 interface IGridProps {
   children: any
   space?: string
-  childrenClassName?: string
+  childrenClassName?: any
   fullWidth?: boolean
   gutter?: number
   className?: any
   col?: number
+  css?: any
 }
 
 const Grid = (props: IGridProps) => {
   if (props.children.length <= 6) {
     return (
       <div
-        className={cx(
+        css={[
           styles.root,
           props.space === 'around' && styles.spaceAround,
           props.space === 'between' && styles.spaceBetween,
           props.fullWidth && styles.fullWidth,
+          props.css && props.css,
           props.className && props.className
-        )}
+        ]}
       >
         {props.children.map((item: any, index: number) => (
           <div
             key={index}
-            className={cx(
+            css={[
               props.gutter
                 ? props.col
                   ? css`
@@ -60,7 +62,7 @@ const Grid = (props: IGridProps) => {
                     }
                   `,
               props.childrenClassName && props.childrenClassName
-            )}
+            ]}
           >
             {item}
           </div>

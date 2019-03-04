@@ -1,14 +1,14 @@
 import * as React from 'react'
-import { css, cx } from 'emotion'
+import { css } from '@emotion/core'
 
 import Link from '../Link'
 import Text from '../Text'
 
-import styles from './Card.css'
+import styles from './Card.style'
 
 interface ICardProps {
   children?: object
-  className?: string
+  className?: any
   onClick?: any
   title?: string | any
   text?: any
@@ -17,28 +17,28 @@ interface ICardProps {
   style?: string | object
   link?: string
   small?: boolean
+  css?: any
 }
 
 const Card = (props: ICardProps) => {
   return props.link ? (
     <Link
       to={props.link}
-      className={cx(
-        css`
-          &:hover {
-            text-decoration: none;
-          }
-        `
-      )}
+      css={css`
+        &:hover {
+          text-decoration: none;
+        }
+      `}
     >
       <div
         onClick={props.onClick}
-        className={cx(
+        css={[
           props.className && props.className,
           styles.root,
           props.padding === 'large' ? styles.paddingLarge : styles.paddingRegular,
-          props.small && styles.heightSmall
-        )}
+          props.small && styles.heightSmall,
+          props.css && props.css
+        ]}
       >
         {props.icon && <img src={`${props.icon}`} alt={`Icon for ${props.title}`} />}
         {props.title && <h3>{props.title}</h3>}
@@ -49,12 +49,13 @@ const Card = (props: ICardProps) => {
   ) : (
     <div
       onClick={props.onClick}
-      className={cx(
+      css={[
         props.className && props.className,
         styles.root,
         props.padding === 'large' ? styles.paddingLarge : styles.paddingRegular,
-        props.small && styles.heightSmall
-      )}
+        props.small && styles.heightSmall,
+        props.css && props.css
+      ]}
     >
       {props.icon && <img src={`${props.icon}`} alt={`Icon for ${props.title}`} />}
       {props.title && <h3>{props.title}</h3>}

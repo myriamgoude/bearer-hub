@@ -2,19 +2,42 @@
 
 exports[`TimelineStage handles when UI element and backend function are both present 1`] = `
 Array [
-  .emotion-0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-<div
-    className="root emotion-0 displayBlock directionColumn paddingRegular"
+  <div
+    css={
+      Array [
+        Object {
+          "map": undefined,
+          "name": "6j1h23",
+          "next": undefined,
+          "styles": "
+    margin: auto;
+    width: 100%;
+    max-width: 64rem;
+  ",
+        },
+        undefined,
+        Object {
+          "map": undefined,
+          "name": "8qpjjf",
+          "next": undefined,
+          "styles": "
+    display: block;
+  ",
+        },
+        false,
+        false,
+        false,
+        Object {
+          "map": undefined,
+          "name": "1dpbaaj",
+          "next": undefined,
+          "styles": "
+    padding: 0 0.09375rem;
+  ",
+        },
+        undefined,
+      ]
+    }
   >
     <h4>
       1
@@ -30,7 +53,41 @@ Array [
 }
 
 <div
-    className="root displayBlock directionColumn paddingRegular"
+    css={
+      Array [
+        Object {
+          "map": undefined,
+          "name": "6j1h23",
+          "next": undefined,
+          "styles": "
+    margin: auto;
+    width: 100%;
+    max-width: 64rem;
+  ",
+        },
+        undefined,
+        Object {
+          "map": undefined,
+          "name": "8qpjjf",
+          "next": undefined,
+          "styles": "
+    display: block;
+  ",
+        },
+        false,
+        false,
+        false,
+        Object {
+          "map": undefined,
+          "name": "1dpbaaj",
+          "next": undefined,
+          "styles": "
+    padding: 0 0.09375rem;
+  ",
+        },
+        undefined,
+      ]
+    }
   >
     <div
       className="emotion-1"
@@ -114,19 +171,42 @@ Array [
 
 exports[`TimelineStage handles when UI element is not present, and has no auto margin when index is odd 1`] = `
 Array [
-  .emotion-0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-<div
-    className="root emotion-0 displayBlock directionColumn paddingRegular"
+  <div
+    css={
+      Array [
+        Object {
+          "map": undefined,
+          "name": "6j1h23",
+          "next": undefined,
+          "styles": "
+    margin: auto;
+    width: 100%;
+    max-width: 64rem;
+  ",
+        },
+        undefined,
+        Object {
+          "map": undefined,
+          "name": "8qpjjf",
+          "next": undefined,
+          "styles": "
+    display: block;
+  ",
+        },
+        false,
+        false,
+        false,
+        Object {
+          "map": undefined,
+          "name": "1dpbaaj",
+          "next": undefined,
+          "styles": "
+    padding: 0 0.09375rem;
+  ",
+        },
+        undefined,
+      ]
+    }
   >
     <h4>
       2
@@ -142,7 +222,41 @@ Array [
 }
 
 <div
-    className="root displayBlock directionColumn paddingRegular"
+    css={
+      Array [
+        Object {
+          "map": undefined,
+          "name": "6j1h23",
+          "next": undefined,
+          "styles": "
+    margin: auto;
+    width: 100%;
+    max-width: 64rem;
+  ",
+        },
+        undefined,
+        Object {
+          "map": undefined,
+          "name": "8qpjjf",
+          "next": undefined,
+          "styles": "
+    display: block;
+  ",
+        },
+        false,
+        false,
+        false,
+        Object {
+          "map": undefined,
+          "name": "1dpbaaj",
+          "next": undefined,
+          "styles": "
+    padding: 0 0.09375rem;
+  ",
+        },
+        undefined,
+      ]
+    }
   >
     <div
       className="emotion-1"
@@ -164,19 +278,42 @@ Array [
 
 exports[`TimelineStage handles when backend function is not present, and has auto margin-left when index is even 1`] = `
 Array [
-  .emotion-0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-<div
-    className="root emotion-0 displayBlock directionColumn paddingRegular"
+  <div
+    css={
+      Array [
+        Object {
+          "map": undefined,
+          "name": "6j1h23",
+          "next": undefined,
+          "styles": "
+    margin: auto;
+    width: 100%;
+    max-width: 64rem;
+  ",
+        },
+        undefined,
+        Object {
+          "map": undefined,
+          "name": "8qpjjf",
+          "next": undefined,
+          "styles": "
+    display: block;
+  ",
+        },
+        false,
+        false,
+        false,
+        Object {
+          "map": undefined,
+          "name": "1dpbaaj",
+          "next": undefined,
+          "styles": "
+    padding: 0 0.09375rem;
+  ",
+        },
+        undefined,
+      ]
+    }
   >
     <h4>
       2
@@ -193,7 +330,41 @@ Array [
 }
 
 <div
-    className="root displayBlock directionColumn paddingRegular"
+    css={
+      Array [
+        Object {
+          "map": undefined,
+          "name": "6j1h23",
+          "next": undefined,
+          "styles": "
+    margin: auto;
+    width: 100%;
+    max-width: 64rem;
+  ",
+        },
+        undefined,
+        Object {
+          "map": undefined,
+          "name": "8qpjjf",
+          "next": undefined,
+          "styles": "
+    display: block;
+  ",
+        },
+        false,
+        false,
+        false,
+        Object {
+          "map": undefined,
+          "name": "1dpbaaj",
+          "next": undefined,
+          "styles": "
+    padding: 0 0.09375rem;
+  ",
+        },
+        undefined,
+      ]
+    }
   >
     <div
       className="emotion-1"

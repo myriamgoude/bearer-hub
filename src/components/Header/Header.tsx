@@ -6,11 +6,11 @@ import Navigation from '../Navigation/Navigation'
 import Link from '../Link/Link'
 
 import logo from '../../images/logo.svg'
-import { cx, css } from 'emotion'
+import { css } from '@emotion/core'
 
 const StyledHeader = styled.header`
   height: ${heights.header}px;
-  padding: 0 ${dimensions.containerPadding}rem;
+  padding: 1em ${dimensions.containerPadding}rem;
   color: ${colors.black};
   position: relative;
   z-index: 10;
@@ -36,33 +36,30 @@ const Header = () => (
   <StyledHeader>
     <Container
       flex
-      flexDirection="column"
-      className={cx(
-        css`
-          justify-content: center;
-          align-items: center;
-          height: 100%;
-          flex-wrap: wrap;
-        `
-      )}
+      flexDirection="row"
+      css={css`
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        flex-wrap: wrap;
+      `}
     >
       <HomepageLink
         to="/"
-        className={cx(
-          css`
-            align-self: flex-start;
-          `
-        )}
+        css={css`
+          align-self: flex-start;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          flex: 0 1 30%;
+        `}
       >
         <StyledImg src={logo} alt="Bearer logo" />
       </HomepageLink>
       <div
-        className={cx(
-          css`
-            justify-self: flex-end;
-            display: flex;
-          `
-        )}
+        css={css`
+          justify-self: flex-end;
+        `}
       >
         <Navigation />
       </div>

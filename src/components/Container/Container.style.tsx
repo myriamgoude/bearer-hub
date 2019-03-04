@@ -1,4 +1,4 @@
-import { css } from 'emotion'
+import { css } from '@emotion/core'
 import { getEmSize } from '../../styles/mixins'
 import { widths, dimensions } from '../../styles/variables'
 

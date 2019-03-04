@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { cx, css } from 'emotion'
+import { css } from '@emotion/core'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 
 import sampleData from '../../data/codeSamples'
@@ -13,17 +13,22 @@ const renderPreview = (query, snippet, theme) => (
   <Highlight {...defaultProps} theme={theme} code={snippet[query]} language={snippet.language}>
     {({ className, tokens, getLineProps, getTokenProps }) => (
       <pre
-        className={cx(
+        className={[
           className,
           css`
-            margin: 0;
-            font-size: 14px;
             font-family: ${fonts.monospace};
           `
-        )}
+        ]}
       >
         {tokens.map((line, index) => (
-          <div key={index} className="token-line" {...getLineProps({ line, key: index })}>
+          <div
+            key={index}
+            css={css`
+              font-size: 12px;
+            `}
+            className="token-line"
+            {...getLineProps({ line, key: index })}
+          >
             {line.map((token, key) => (
               <span key={key} className={token.types.join(' ')} {...getTokenProps({ token, key })} />
             ))}
@@ -40,7 +45,7 @@ const renderListItem = (activeSample, activeStyle, handleClick, sample, stack) =
     <li key={lang.slug}>
       <button
         type="button"
-        className={cx(
+        css={[
           css`
             position: relative;
             color: black;
@@ -52,20 +57,18 @@ const renderListItem = (activeSample, activeStyle, handleClick, sample, stack) =
           `,
           styles.label,
           activeSample[stackX] === lang.slug ? activeStyle : null
-        )}
+        ]}
         onClick={() => handleClick(lang.slug, stack)}
       >
         <div
-          className={cx(
-            css`
-              color: ${activeSample[stackX] === lang.slug ? colors.branded.yellow : colors.branded.black};
-              cursor: pointer;
+          css={css`
+            color: ${activeSample[stackX] === lang.slug ? colors.branded.yellow : colors.branded.black};
+            cursor: pointer;
 
-              &:hover {
-                font-weight: bold;
-              }
-            `
-          )}
+            &:hover {
+              font-weight: bold;
+            }
+          `}
         >
           {lang.name}
         </div>
@@ -101,26 +104,22 @@ class CodeExamples extends Component {
     return (
       <div {...other}>
         <div
-          className={cx(
-            css`
-              display: flex;
-              margin-bottom: 16px;
-              @media (min-width: ${breakpoints.md}px) {
-                display: none;
-              }
-            `
-          )}
+          css={css`
+            display: flex;
+            margin-bottom: 16px;
+            @media (min-width: ${breakpoints.md}px) {
+              display: none;
+            }
+          `}
         >
           <div
-            className={cx(
-              css`
-                display: flex;
-                flex-direction: column;
-                flex: 0 1 50%;
-                text-align: center;
-                padding-right: 8px;
-              `
-            )}
+            css={css`
+              display: flex;
+              flex-direction: column;
+              flex: 0 1 50%;
+              text-align: center;
+              padding-right: 8px;
+            `}
           >
             <div tag="label" htmlFor="backend-select">
               Backend
@@ -128,13 +127,11 @@ class CodeExamples extends Component {
                 id="backend-select"
                 data-backend-lang-select=""
                 name="backend-select"
-                className={cx(
-                  css`
-                    margin-top: 8px;
-                    display: block;
-                    width: 100%;
-                  `
-                )}
+                css={css`
+                  margin-top: 8px;
+                  display: block;
+                  width: 100%;
+                `}
                 onChange={event => this.handleStackClick(event, 'backend')}
               >
                 {data.backendSamples.map(lang => (
@@ -147,15 +144,13 @@ class CodeExamples extends Component {
           </div>
 
           <div
-            className={cx(
-              css`
-                display: flex;
-                flex-direction: column;
-                flex: 0 1 50%;
-                text-align: center;
-                padding-left: 8px;
-              `
-            )}
+            css={css`
+              display: flex;
+              flex-direction: column;
+              flex: 0 1 50%;
+              text-align: center;
+              padding-left: 8px;
+            `}
           >
             <div tag="label" htmlFor="frontend-select">
               Frontend
@@ -163,13 +158,11 @@ class CodeExamples extends Component {
                 id="frontend-select"
                 data-frontend-lang-select=""
                 name="frontend-select"
-                className={cx(
-                  css`
-                    margin-top: 8px;
-                    display: block;
-                    width: 100%;
-                  `
-                )}
+                css={css`
+                  margin-top: 8px;
+                  display: block;
+                  width: 100%;
+                `}
                 onChange={event => this.handleStackClick(event, 'frontend')}
               >
                 {data.frontendSamples.map(lang => (
@@ -183,28 +176,24 @@ class CodeExamples extends Component {
         </div>
 
         <div
-          className={cx(
-            css`
-              display: flex;
-              flex-direction: row;
-              justify-content: space-around;
-              text-align: left;
-            `
-          )}
+          css={css`
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            text-align: left;
+          `}
         >
           <div
-            className={cx(
-              css`
-                flex: 0 1 8.33333%;
-                display: none;
-                @media (min-width: ${breakpoints.md}px) {
-                  display: block;
-                }
-              `
-            )}
+            css={css`
+              flex: 0 1 7.33333%;
+              display: none;
+              @media (min-width: ${breakpoints.md}px) {
+                display: block;
+              }
+            `}
           >
             <ul
-              className={cx(
+              css={[
                 styles.backendList,
                 css`
                   margin-right: 0px;
@@ -212,7 +201,7 @@ class CodeExamples extends Component {
                   list-style: none;
                   text-align: right;
                 `
-              )}
+              ]}
             >
               {renderListItem(
                 activeSample,
@@ -225,7 +214,7 @@ class CodeExamples extends Component {
           </div>
 
           <div
-            className={cx(css`
+            css={css`
               flex: 0 1 100%;
               border-radius: 2px;
               overflow: hidden;
@@ -234,35 +223,40 @@ class CodeExamples extends Component {
               z-index: 5;
               flex-direction: column;
               box-shadow: 0 4px 18px 0 #e2e5ee;
+
               @media (min-width: ${breakpoints.md}px) {
-                flex: 0 1 75%;
+                flex: 0 1 70%;
                 flex-direction: row;
                 height: 350px;
               }
-            `)}
+
+              @media (min-width: ${breakpoints.lg}px) {
+                flex: 0 1 80%;
+              }
+            `}
           >
             <div
-              className={cx(
-                css`
-                  padding: 24px;
-                  background-color: ${colors.branded.black};
-                  flex: 0 1 100%;
-                  overflow-y: auto;
-                  overflow-x: scroll;
-                  width: 100%;
-                `
-              )}
+              css={css`
+                padding: 16px;
+                background-color: #2a2f36;
+                flex: 0 1 100%;
+                overflow-y: auto;
+                overflow-x: scroll;
+                width: 100%;
+              `}
             >
               {data.backendSamples.map(sample => (
                 <div
                   key={sample.slug}
-                  className={cx(
+                  css={[
                     activeSample[0] === sample.slug
-                      ? 'active'
+                      ? css`
+                          display: block;
+                        `
                       : css`
                           display: none;
                         `
-                  )}
+                  ]}
                   data-backend-sample={sample.slug}
                 >
                   {renderPreview('code_push', sample, backendTheme)}
@@ -271,28 +265,28 @@ class CodeExamples extends Component {
             </div>
 
             <div
-              className={cx(
-                css`
-                  padding: 24px;
-                  background-color: white;
-                  flex: 0 1 100%;
-                  overflow-y: auto;
-                  overflow-x: scroll;
-                  width: 100%;
-                  flex: 0 1 100%;
-                `
-              )}
+              css={css`
+                padding: 16px;
+                background-color: white;
+                flex: 0 1 100%;
+                overflow-y: auto;
+                overflow-x: scroll;
+                width: 100%;
+                flex: 0 1 100%;
+              `}
             >
               {data.frontendSamples.map(sample => (
                 <div
                   key={sample.slug}
-                  className={cx(
+                  css={[
                     activeSample[1] === sample.slug
-                      ? 'active'
+                      ? css`
+                          display: block;
+                        `
                       : css`
                           display: none;
                         `
-                  )}
+                  ]}
                   data-frontend-sample={sample.language}
                 >
                   {renderPreview('code_query', sample, frontendTheme)}
@@ -302,16 +296,16 @@ class CodeExamples extends Component {
           </div>
 
           <div
-            className={cx(css`
-              flex: 0 1 8.333333%;
+            css={css`
+              flex: 0 1 7.333333%;
               display: none;
               @media (min-width: ${breakpoints.md}px) {
                 display: block;
               }
-            `)}
+            `}
           >
             <ul
-              className={cx(
+              css={[
                 styles.frontendList,
                 css`
                   margin-left: 0;
@@ -319,7 +313,7 @@ class CodeExamples extends Component {
                   list-style: none;
                   text-align: left;
                 `
-              )}
+              ]}
             >
               {renderListItem(
                 activeSample,

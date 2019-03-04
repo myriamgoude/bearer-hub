@@ -1,4 +1,4 @@
-import { css } from 'emotion'
+import { css } from '@emotion/core'
 import { breakpoints, colors, dimensions } from '../../styles/variables'
 
 export default {

@@ -4,8 +4,7 @@ export default {
       name: 'Express',
       slug: 'express',
       language: 'javascript',
-      code_push: `
-import express from 'express'
+      code_push: `import express from 'express'
 import bearerWebhooks from '@bearer/node/lib/express'
 
 const app = express()
@@ -23,8 +22,7 @@ app.use('/bearer/webhooks', bearerWebhooks(webhookHandlers), { token: 'BEARER_EN
       name: 'Javascript',
       slug: 'javascript-back',
       language: 'javascript',
-      code_push: `
-import { BearerClient } from '@bearer/node/lib/client'
+      code_push: `import { BearerClient } from '@bearer/node/lib/client'
 
 const bearerClient = new BearerClient('BEARER_SECRET_TOKEN')
 
@@ -45,8 +43,7 @@ bearerClient
       name: 'Ruby',
       slug: 'ruby',
       language: 'ruby',
-      code_push: `
-Bearer.setup { |bearer| bearer.BEARER_SECRET_TOKEN = 'BEARER_SECRET_TOKEN' }
+      code_push: `Bearer.setup { |bearer| bearer.BEARER_SECRET_TOKEN = 'BEARER_SECRET_TOKEN' }
 bearerClient.call("bearer-integration-uuid", "share", {
     authId: "user-token"
     message: 'Hello World'
@@ -60,8 +57,7 @@ bearerClient.call("bearer-integration-uuid", "share", {
       name: 'JavaScript',
       slug: 'javascript-front',
       language: 'markup',
-      code_query: `
-<script src="https://cdn.jsdelivr.net/npm/@bearer/js@beta5/lib/bearer.production.min.js"></script>
+      code_query: `<script src="https://cdn.jsdelivr.net/npm/@bearer/js@beta5/lib/bearer.production.min.js"></script>
 <script type="text/javascript">
   bearer(clientId)
 </script>
@@ -72,8 +68,7 @@ bearerClient.call("bearer-integration-uuid", "share", {
       name: 'React',
       slug: 'react',
       language: 'jsx',
-      code_query: `
-//Import BearerComponent
+      code_query: `//Import BearerComponent
 import { Bearer, bearerComponent } from '@bearer/react'
 
 //Initialize Share Component

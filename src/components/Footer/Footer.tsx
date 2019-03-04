@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+
 import Link from '../Link/Link'
 import Container from '../Container/Container'
 
@@ -11,8 +12,7 @@ import socialIconFacebook from '../../images/social/facebook.svg'
 import socialIconLinkedIn from '../../images/social/linkedin.svg'
 import socialIconGitHub from '../../images/social/github.svg'
 
-import styles from './Footer.css'
-import { cx } from 'emotion'
+import styles from './Footer.style'
 
 interface IFooterQuery {
   site: {
@@ -54,17 +54,17 @@ export default () => {
 }
 
 const Footer = (props: IFooterProps) => (
-  <div className={cx(styles.root)}>
+  <div css={styles.root}>
     <Container>
-      <div className={cx(styles.main)}>
-        <div className={cx(styles.logo)}>
+      <div css={styles.main}>
+        <div css={styles.logo}>
           <Link to="/">
             <img src={whiteLogo} alt="Bearer logo" />
           </Link>
         </div>
-        <div className={cx(styles.categories)}>
+        <div css={styles.categories}>
           {props.categories.map((cat, i) => (
-            <section className={cx(styles.category)} key={i}>
+            <section css={styles.category} key={i}>
               <h3>{cat.title}</h3>
               <ul>
                 {cat.links.map((link, index) => (
@@ -77,7 +77,7 @@ const Footer = (props: IFooterProps) => (
           ))}
         </div>
       </div>
-      <div className={cx(styles.social)}>
+      <div css={styles.social}>
         <div>
           <Link to="https://twitter.com/@bearer">
             <img src={socialIconTwitter} alt="Bearer is on Twitter" />
@@ -93,7 +93,7 @@ const Footer = (props: IFooterProps) => (
           </Link>
         </div>
       </div>
-      <div className={cx(styles.copyright)}>&copy; Copyright Bearer 2018-2019</div>
+      <div css={styles.copyright}>&copy; Copyright Bearer 2018-2019</div>
     </Container>
   </div>
 )

@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { cx } from 'emotion'
 
 import CustomTag from '../CustomTag'
 
-import styles from './SectionHeading.css'
+import styles from './SectionHeading.style'
 
 interface ISectionHeadingProps {
   primaryText: string
@@ -11,6 +10,7 @@ interface ISectionHeadingProps {
   className?: string
   align?: string
   tag?: string
+  css?: any
 }
 
 const SectionHeading = (props: ISectionHeadingProps) => {
@@ -30,7 +30,7 @@ const SectionHeading = (props: ISectionHeadingProps) => {
       break
   }
   return (
-    <div className={cx(styles.root, alignment, props.className && props.className)}>
+    <div css={[styles.root, alignment, props.css && props.css]} className={props.className && props.className}>
       <CustomTag tag={props.tag ? props.tag : 'h2'}>{props.primaryText}</CustomTag>
       <h3>{props.secondaryText}</h3>
     </div>

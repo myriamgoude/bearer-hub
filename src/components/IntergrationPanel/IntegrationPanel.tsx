@@ -1,13 +1,12 @@
 import * as React from 'react'
-import Container from '../Container/Container'
+import { css } from '@emotion/core'
 
-import { Grid, Card, Text } from '../index'
+import { Container, Grid, Card, Text } from '../index'
 
 import { path } from '../../services/Integration'
 
-import { css, cx } from 'emotion'
-
-import styles from './IntegrationPanel.css'
+import styles from './IntegrationPanel.style'
+import { getEmSize } from '../../styles/mixins'
 
 interface IIntegrationProps {
   integrations: {
@@ -36,21 +35,26 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                 key={integration.id}
                 link={`${path(integration)}`}
                 small
-                className={cx(styles.item, integration.featured && styles.featured)}
+                className={[styles.item, styles.card, integration.featured && styles.featured]}
               >
-                <div className={image && styles.cardImageContainer}>
-                  {image && <img src={image} className={styles.cardImage} />}
+                <div css={image && styles.cardImageContainer}>
+                  {image && <img src={image} css={styles.cardImage} />}
                 </div>
-                <Text
-                  text={integration.title}
-                  large
-                  className={cx(
-                    css`
+                <div
+                  css={css`
+                    align-self: flex-end;
+                  `}
+                >
+                  <Text
+                    text={integration.title}
+                    large
+                    className={css`
                       font-weight: bold;
-                    `
-                  )}
-                />
-                <Text small text={integration.description} />
+                      margin-bottom: ${getEmSize(8)};
+                    `}
+                  />
+                  <Text small text={integration.description} />
+                </div>
               </Card>
             )
           })}

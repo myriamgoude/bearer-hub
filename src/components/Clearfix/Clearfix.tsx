@@ -1,9 +1,9 @@
 import React from 'react'
 
-import styles from './Clearfix.css'
+import styles from './Clearfix.style'
 
 const Clearfix = () => {
-  return <span className={styles.root} />
+  return <span css={styles.root} />
 }
 
 export default Clearfix

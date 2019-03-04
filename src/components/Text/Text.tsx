@@ -1,6 +1,5 @@
 import React from 'react'
-import { cx } from 'emotion'
-import styles from './Text.css'
+import styles from './Text.style'
 
 interface ITextProps {
   text?: string | any
@@ -12,12 +11,12 @@ interface ITextProps {
 const Text = (props: ITextProps) => {
   return (
     <p
-      className={cx(
+      css={[
         styles.root,
         props.className && props.className,
         props.small && styles.fontSmall,
         props.large && styles.fontLarge
-      )}
+      ]}
     >
       {props.text}
     </p>

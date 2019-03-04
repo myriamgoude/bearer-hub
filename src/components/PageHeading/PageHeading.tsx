@@ -1,12 +1,5 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
-
-const StyledDiv = styled.div`
-  width: 100%;
-  flex-shrink: 0;
-  margin-left: auto;
-  text-align: center;
-`
+import styles from './PageHeading.style'
 
 interface PageHeadingProps {
   primaryText: string
@@ -14,10 +7,10 @@ interface PageHeadingProps {
 }
 
 const PageHeading = (PageHeadingProps: PageHeadingProps) => (
-  <StyledDiv>
+  <div css={styles.root}>
     <h1>{PageHeadingProps.primaryText}</h1>
     <h3>{PageHeadingProps.secondaryText}</h3>
-  </StyledDiv>
+  </div>
 )
 
 export default PageHeading

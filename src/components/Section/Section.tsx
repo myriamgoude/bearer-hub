@@ -1,28 +1,30 @@
 import * as React from 'react'
-import { css, cx } from 'emotion'
+import { css } from '@emotion/core'
 
 import Container from '../Container/Container'
 
-import styles from './Section.css'
+import styles from './Section.style'
 
 interface ISectionProps {
   children: any
   background?: string
   className?: string
   withTail?: boolean
+  css?: any
 }
 
 const Section = (props: ISectionProps) => (
   <div
-    className={cx(
+    css={[
       styles.root,
-      props.className,
+      props.css,
       props.withTail && styles.tail,
       props.background &&
         css`
           background: ${props.background};
         `
-    )}
+    ]}
+    className={props.className && props.className}
   >
     <Container>{props.children}</Container>
   </div>

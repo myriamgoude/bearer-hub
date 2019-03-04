@@ -2,13 +2,52 @@
 
 exports[`Header renders correctly 1`] = `
 <div
-  className="root paddingRegular"
+  css={
+    Array [
+      undefined,
+      Object {
+        "map": undefined,
+        "name": "1tcam5h",
+        "next": undefined,
+        "styles": "
+    background: white;
+    box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.26);
+    border-radius: 6px;
+  ",
+      },
+      Object {
+        "map": undefined,
+        "name": "1aofgej",
+        "next": undefined,
+        "styles": "
+    padding: 1.5rem;
+  ",
+      },
+      undefined,
+      undefined,
+    ]
+  }
 >
   <h3>
     foo
   </h3>
   <p
-    className="root"
+    css={
+      Array [
+        Object {
+          "map": undefined,
+          "name": "1o5r80t",
+          "next": undefined,
+          "styles": "
+    color: #030D36;
+    font-size: 1.125rem;
+  ",
+        },
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
   >
     foo
   </p>
@@ -17,7 +56,31 @@ exports[`Header renders correctly 1`] = `
 
 exports[`Header renders with object values 1`] = `
 <div
-  className="root paddingRegular"
+  css={
+    Array [
+      undefined,
+      Object {
+        "map": undefined,
+        "name": "1tcam5h",
+        "next": undefined,
+        "styles": "
+    background: white;
+    box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.26);
+    border-radius: 6px;
+  ",
+      },
+      Object {
+        "map": undefined,
+        "name": "1aofgej",
+        "next": undefined,
+        "styles": "
+    padding: 1.5rem;
+  ",
+      },
+      undefined,
+      undefined,
+    ]
+  }
 >
   <h3>
     <img
@@ -30,7 +93,22 @@ exports[`Header renders with object values 1`] = `
     </span>
   </h3>
   <p
-    className="root"
+    css={
+      Array [
+        Object {
+          "map": undefined,
+          "name": "1o5r80t",
+          "next": undefined,
+          "styles": "
+    color: #030D36;
+    font-size: 1.125rem;
+  ",
+        },
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
   >
     <span>
       foo bar

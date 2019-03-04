@@ -2,7 +2,22 @@
 
 exports[`Header renders correctly 1`] = `
 <p
-  className="root"
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "1o5r80t",
+        "next": undefined,
+        "styles": "
+    color: #030D36;
+    font-size: 1.125rem;
+  ",
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
 >
   hello
 </p>
@@ -10,7 +25,22 @@ exports[`Header renders correctly 1`] = `
 
 exports[`Header renders correctly with className 1`] = `
 <p
-  className="root foo"
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "1o5r80t",
+        "next": undefined,
+        "styles": "
+    color: #030D36;
+    font-size: 1.125rem;
+  ",
+      },
+      "foo",
+      undefined,
+      undefined,
+    ]
+  }
 >
   hello
 </p>

@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { cx } from 'emotion'
-import styles from './Pill.css'
+import styles from './Pill.style'
 
 interface IPillProps {
   logo: string
@@ -8,7 +7,7 @@ interface IPillProps {
 }
 
 const Pill = (props: IPillProps) => (
-  <div className={cx(styles.root, props.className && props.className)}>
+  <div css={[styles.root, props.className && props.className]}>
     <img src={props.logo} alt={`brand logo`} />
   </div>
 )

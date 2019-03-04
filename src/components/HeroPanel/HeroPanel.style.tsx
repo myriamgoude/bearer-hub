@@ -1,4 +1,4 @@
-import { css } from 'emotion'
+import { css } from '@emotion/core'
 import { colors, breakpoints } from '../../styles/variables'
 
 export default {
@@ -16,19 +16,16 @@ export default {
     color: ${colors.branded.yellow};
   `,
   illustration: css`
-    height: 200px;
+    height: 300px;
 
     @media (min-width: ${breakpoints.lg}px) {
-      height: 300px;
+      height: 400px;
     }
   `,
   heightXl: css`
     height: 800px;
   `,
 
-  backgroundHomepage: css`
-    background-image: radial-gradient(circle at 62% 40%, #f6faff, #f6faff 1%, #f0f2fc);
-  `,
   curvedSection: css`
     &::after {
       display: block;
@@ -41,6 +38,21 @@ export default {
       height: 300px;
       user-select: none;
       pointer-events: none;
+    }
+  `,
+
+  styleBackgroundHome: css`
+    background: url(${require('../../images/hero-background-homepage.svg')}) no-repeat top right;
+    background-size: 600px;
+
+    @media (min-width: ${breakpoints.sm}px) {
+      background-size: auto 300px;
+    }
+    @media (min-width: ${breakpoints.md}px) {
+      background-size: auto 400px;
+    }
+    @media (min-width: ${breakpoints.lg}px) {
+      background-size: auto 600px;
     }
   `
 }

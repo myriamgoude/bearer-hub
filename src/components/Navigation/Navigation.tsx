@@ -1,11 +1,12 @@
 import * as React from 'react'
-import { cx } from 'emotion'
 
 import { isAuthenticated, isSSOAuthenticated, lockLogin } from '../../services/Auth'
 import Link from '../Link/Link'
 import Button from '../Buttons/Button'
 
-import styles from './Navigation.css'
+import { css } from '@emotion/core'
+
+import styles from './Navigation.style'
 
 interface INavigationState {
   isAuthenticated: boolean
@@ -18,7 +19,7 @@ interface INavLinkProps {
 }
 
 const NavLink = (props: INavLinkProps) => (
-  <Link to={props.to} className={cx(styles.link)}>
+  <Link to={props.to} css={styles.link}>
     {props.children}
   </Link>
 )
@@ -47,15 +48,19 @@ export default class Navigation extends React.Component<INavigationProps, INavig
 
   private renderLogin = () => (
     <>
-      <Button onClick={this.doLogin} small text="Login" link="#" />
+      <Button onClick={this.doLogin} small primary text="Login" link="#" />
       <Button onClick={this.doSignup} small secondary text="Signup" link="#" />
     </>
   )
 
   public render() {
     return (
-      <div>
-        <ul className={styles.list}>
+      <div
+        css={css`
+          align-self: flex-end;
+        `}
+      >
+        <ul css={styles.list}>
           <NavLink to="/explore">EXPLORE INTEGRATIONS</NavLink>
           <NavLink to="/how-it-works">HOW IT WORKS</NavLink>
           <NavLink to="/native-integrations">MANIFESTO</NavLink>

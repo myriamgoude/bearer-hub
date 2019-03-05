@@ -149,6 +149,7 @@ module.exports = {
           lang: 'en',
           siteId: 1413491,
           cookiePolicyId: 65368465,
+          enableRemoteConsent: true,
           banner: {
             applyStyles: true,
             textColor: '#FFF',

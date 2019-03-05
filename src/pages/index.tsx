@@ -62,7 +62,7 @@ interface IQueryData {
 export const query = graphql`
   query IndexPageQuery {
     graphcms {
-      integrations(where: { status: PUBLISHED }) {
+      integrations(where: { status: PUBLISHED, timeline: { timelineStages_some: { id_not: null } } }) {
         id
         title
         description

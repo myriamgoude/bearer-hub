@@ -49,11 +49,13 @@ module.exports = async ({ graphql, actions }) => {
 
   // Create pages for integrations at explore/integrations/my-integration-slug/present
   // using content from our CMS system and the explore/present.tsx template
+  //
+  // Note: we only create pages for PUBLISHED integrations with TIMELINE STAGES
 
   const allIntegrations = await graphql(`
     {
       graphcms {
-        integrations(where: { status: PUBLISHED }) {
+        integrations(where: { status: PUBLISHED, timeline: { timelineStages_some: { id_not: null } } }) {
           id
           title
         }

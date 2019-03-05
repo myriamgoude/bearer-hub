@@ -78,22 +78,19 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
   const integration = data.graphcms.integrations[0]
   const timeline = integration.timeline
 
-  if (timeline) {
-    return (
-      <IndexLayout location={location}>
-        <Page>
-          <Container>
-            <PageHeading primaryText={timelineHeading(timeline)} />
-            <Markdown source={integration.mdDescription} escapeHtml={false} />
-            {timeline.timelineStages.map((stage, i) => (
-              <TimelineStage key={stage.id} index={i} stage={stage} />
-            ))}
-          </Container>
-        </Page>
-      </IndexLayout>
-    )
-  }
-  return <div>Do we want to handle integrations without timelines?</div>
+  return (
+    <IndexLayout location={location}>
+      <Page>
+        <Container>
+          <PageHeading primaryText={timelineHeading(timeline)} />
+          <Markdown source={integration.mdDescription} escapeHtml={false} />
+          {timeline.timelineStages.map((stage, i) => (
+            <TimelineStage key={stage.id} index={i} stage={stage} />
+          ))}
+        </Container>
+      </Page>
+    </IndexLayout>
+  )
 }
 
 export default PresentTemplate

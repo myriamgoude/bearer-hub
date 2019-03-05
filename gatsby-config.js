@@ -120,6 +120,29 @@ module.exports = {
       }
     },
     'gatsby-plugin-emotion',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: '',
+        short_name: '',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#da532c',
+        display: 'standalone',
+        icons: [
+          {
+            src: '/android-chrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: '/android-chrome-256x256.png',
+            sizes: '256x256',
+            type: 'image/png'
+          }
+        ]
+      }
+    },
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',

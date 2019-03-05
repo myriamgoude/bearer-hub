@@ -70,5 +70,31 @@ exports[`SiteMetadata DefaultMeta renders expected metadata 1`] = `
     content="630"
     property="og:image:height"
   />
+  <link
+    href="test-file-stub"
+    rel="icon"
+    sizes="16x16"
+    type="image/png"
+  />
+  <link
+    href="test-file-stub"
+    rel="icon"
+    sizes="32x32"
+    type="image/png"
+  />
+  <link
+    href="test-file-stub"
+    rel="icon"
+    sizes="180x180"
+    type="image/png"
+  />
+  <link
+    href="test-file-stub"
+    rel="mask-icon"
+  />
+  <meta
+    content="#da532c"
+    name="theme-color"
+  />
 </HelmetWrapper>
 `;

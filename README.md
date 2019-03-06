@@ -42,6 +42,4 @@ Something not working? Here are some steps to try
 * Staging (`master` branch): https://bearer-hub-staging.netlify.com/
 * Production (latest release): https://bearer-hub-production.netlify.com/
 
-## CI
-
 Jenkins: https://jenkins.bearer.tech/job/Bearer/job/hub/

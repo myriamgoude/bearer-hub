@@ -8,6 +8,7 @@ describe('SiteMetadata', () => {
     canonical: 'https://example.com/my-page',
     twitter: '@bearersh',
     image: 'https://example.com/my-image.jpg',
+    alt: 'An example description of my image',
     description: 'This is an example description'
   }
   it('DefaultMeta renders expected metadata', () => {

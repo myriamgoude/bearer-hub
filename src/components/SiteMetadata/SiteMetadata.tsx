@@ -11,6 +11,8 @@ import favicon_16x16 from '../../../static/favicon-16x16.png'
 import apple_touch_icon from '../../../static/apple-touch-icon.png'
 import safari_svg from '../../../static/safari-pinned-tab.svg'
 
+import facebookDefault_1x from '../../../static/FB-default@1x.png'
+
 interface ISiteMetadataProps {
   pathname: string
 }
@@ -27,18 +29,20 @@ const query = graphql`
     }
   }
 `
+
 interface IDefaultMetaProps {
   title: string
   canonical: string
   twitter: string
   image: string
+  alt: string
   description: string
 }
 
 // export this so we can test it with a shallow mount
 // NB: Full mount is required to mock the query but helmet will not return anything
 // in a full mount as it edits the header!
-export const DefaultMeta: React.SFC<IDefaultMetaProps> = ({ title, canonical, image, twitter, description }) => (
+export const DefaultMeta: React.SFC<IDefaultMetaProps> = ({ title, canonical, image, alt, twitter, description }) => (
   <Helmet defaultTitle={title} titleTemplate={`%s | ${title}`}>
     <html lang="en" />
     <link rel="canonical" href={canonical} />
@@ -46,6 +50,7 @@ export const DefaultMeta: React.SFC<IDefaultMetaProps> = ({ title, canonical, im
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={alt ? alt : ''} />
     <meta name="twitter:site" content={twitter} />
     <meta property="og:site_name" content={title} />
     <meta property="og:title" content={title} />
@@ -54,6 +59,7 @@ export const DefaultMeta: React.SFC<IDefaultMetaProps> = ({ title, canonical, im
     <meta property="og:locale" content="en" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={alt ? alt : ''} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -79,7 +85,8 @@ const SiteMetadata = ({ pathname }: ISiteMetadataProps) => (
         title,
         twitter,
         description,
-        image: 'https://www.bearer.sh/static/media/slack-notification-full-size.29ef4908.png',
+        image: `${facebookDefault_1x}`,
+        alt: 'Bearer logo with slogan "Developer Platform for API Integration"',
         canonical: `${siteUrl}${pathname}`
       }
       return <DefaultMeta {...meta} />

@@ -31,6 +31,10 @@ exports[`SiteMetadata DefaultMeta renders expected metadata 1`] = `
     name="twitter:image"
   />
   <meta
+    content="An example description of my image"
+    name="twitter:image:alt"
+  />
+  <meta
     content="@bearersh"
     name="twitter:site"
   />
@@ -61,6 +65,10 @@ exports[`SiteMetadata DefaultMeta renders expected metadata 1`] = `
   <meta
     content="https://example.com/my-image.jpg"
     property="og:image"
+  />
+  <meta
+    content="An example description of my image"
+    property="og:image:alt"
   />
   <meta
     content="1200"

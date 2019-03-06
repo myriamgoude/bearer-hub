@@ -160,8 +160,6 @@ Array [
       <div
         className="emotion-0"
       >
-        // from dir/
-        <br />
         npm install @bearer/react
       </div>
     </div>
@@ -267,8 +265,6 @@ Array [
       <div
         className="emotion-0"
       >
-        // from dir/
-        <br />
         npm install @bearer/react
       </div>
     </div>

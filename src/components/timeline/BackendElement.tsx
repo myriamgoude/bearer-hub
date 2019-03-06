@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 
 import BearerLibrary from './backendElements/InstallBearerLibrary'
 import BearerSDK from './backendElements/InstallBearerSDK'
+import FunctionCall from './backendElements/FunctionCall'
 
 const StyledDiv = styled.div<{ rightAligned: boolean }>`
   width: 50%;
@@ -11,13 +12,14 @@ const StyledDiv = styled.div<{ rightAligned: boolean }>`
 
 interface IBackendElementProps {
   type: string
-  name: string
   rightAligned: boolean
+  name?: string
 }
 
 const backendElementComponents: any = {
   InstallBearerLibrary: BearerLibrary,
-  InstallBearerSDK: BearerSDK
+  InstallBearerSDK: BearerSDK,
+  BearerFunctionCall: FunctionCall
 }
 
 class BackendElement extends React.Component<IBackendElementProps> {
@@ -26,7 +28,7 @@ class BackendElement extends React.Component<IBackendElementProps> {
     if (BackendElement) {
       return (
         <StyledDiv rightAligned={this.props.rightAligned}>
-          <BackendElement name={this.props.name} />
+          <BackendElement functionName={this.props.name} />
         </StyledDiv>
       )
     }

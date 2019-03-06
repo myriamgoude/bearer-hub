@@ -46,10 +46,10 @@ class TimelineStage extends React.Component<ITimelineStageProps> {
               rightAligned={this.rightAligned(this.props.index) && !this.props.stage.backendElementType}
             />
           ) : null}
-          {this.props.stage.backendElementType && this.props.stage.backendElementName ? (
+          {this.props.stage.backendElementType ? (
             <BackendElement
               type={this.props.stage.backendElementType}
-              name={this.props.stage.backendElementName}
+              name={this.props.stage.backendElementName || ''}
               rightAligned={this.rightAligned(this.props.index) && !this.props.stage.uiElement}
             />
           ) : null}

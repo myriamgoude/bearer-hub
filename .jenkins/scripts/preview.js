@@ -44,6 +44,7 @@ const extractPreviewUrl = filePath => {
     .readFileSync(filePath, 'utf8')
     .split('\n')[6]
     .split('URL:')[1]
+    .replace(/.+https/, 'https')
   return url
 }
 

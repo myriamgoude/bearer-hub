@@ -7,10 +7,20 @@ import Page from '../../components/Page'
 import PageHeading from '../../components/PageHeading'
 import PageMetadata from '../../components/PageMetadata'
 import Search from '../../components/Search'
+import SearchList from '../../components/SearchList'
 
 interface IQueryData {
   graphcms: {
+    defaultCategory: {
+      id: string
+      title: string
+    }[]
     categories: {
+      id: string
+      title: string
+    }[]
+    providers: {
+      id: string
       title: string
     }[]
   }
@@ -19,23 +29,31 @@ interface IQueryData {
 export const query = graphql`
   query ExploreCategoryQuery($id: ID!) {
     graphcms {
-      categories(where: { id: $id }) {
+      defaultCategory: categories(where: { id: $id }, first: 1) {
+        id
         title
       }
+      ...scopedCategories
+      ...scopedProviders
     }
   }
 `
 
 const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
-  const categoryTitle = data.graphcms.categories[0].title
+  const category = data.graphcms.defaultCategory[0]
 
   return (
     <IndexLayout location={location}>
-      <PageMetadata title={categoryTitle} description={`Explore ${categoryTitle} Integrations`} />
+      <PageMetadata title={category.title} description={`Explore ${category.title} Integrations`} />
       <Page>
-        <PageHeading primaryText={`Explore ${categoryTitle} Integrations`} />
+        <PageHeading primaryText={`Explore ${category.title} Integrations`} />
         <Container>
-          <Search defaultCategory={categoryTitle} />
+          <SearchList
+            selected={category.id}
+            categories={data.graphcms.categories}
+            providers={data.graphcms.providers}
+          />
+          <Search defaultCategory={category.title} />
         </Container>
       </Page>
     </IndexLayout>

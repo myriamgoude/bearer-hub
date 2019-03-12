@@ -7,10 +7,20 @@ import Page from '../../components/Page'
 import PageHeading from '../../components/PageHeading'
 import PageMetadata from '../../components/PageMetadata'
 import Search from '../../components/Search'
+import SearchList from '../../components/SearchList'
 
 interface IQueryData {
   graphcms: {
+    defaultProvider: {
+      id: string
+      title: string
+    }[]
+    categories: {
+      id: string
+      title: string
+    }[]
     providers: {
+      id: string
       title: string
     }[]
   }
@@ -19,23 +29,31 @@ interface IQueryData {
 export const query = graphql`
   query ExploreProviderQuery($id: ID!) {
     graphcms {
-      providers(where: { id: $id }) {
+      defaultProvider: providers(where: { id: $id }, first: 1) {
+        id
         title
       }
+      ...scopedCategories
+      ...scopedProviders
     }
   }
 `
 
 const ExploreProviderTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
-  const providerTitle = data.graphcms.providers[0].title
+  const provider = data.graphcms.defaultProvider[0]
 
   return (
     <IndexLayout location={location}>
-      <PageMetadata title={providerTitle} description={`Explore ${providerTitle} Integrations`} />
+      <PageMetadata title={provider.title} description={`Explore ${provider.title} Integrations`} />
       <Page>
-        <PageHeading primaryText={`Explore ${providerTitle} Integrations`} />
+        <PageHeading primaryText={`Explore ${provider.title} Integrations`} />
         <Container>
-          <Search defaultProvider={providerTitle} />
+          <SearchList
+            selected={provider.id}
+            categories={data.graphcms.categories}
+            providers={data.graphcms.providers}
+          />
+          <Search defaultProvider={provider.title} />
         </Container>
       </Page>
     </IndexLayout>

@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 
 import { Container, Grid, Card, Text } from '../index'
 
-import { path } from '../../services/Integration'
+import { path } from '../../services/Explore'
 
 import styles from './IntegrationPanel.style'
 import { getEmSize } from '../../styles/mixins'

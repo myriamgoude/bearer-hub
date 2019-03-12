@@ -1,13 +1,13 @@
 import React from 'react'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
 
-import { path, slug } from '../Integration'
+import { path, slug } from '../Explore'
 import Link from '../../components/Link/Link'
 
-const myIntegration = { id: '123', title: 'My Title' }
+const myItem = { id: '123', title: 'My Title' }
 
 describe('path', () => {
-  const myPath = path(myIntegration)
+  const myPath = path(myItem)
 
   it('returns the path to an integration presentation page', () => {
     expect(myPath).toMatch('/explore/123-my-title')
@@ -18,14 +18,19 @@ describe('path', () => {
     // since its mocked in /__mocks__/gatsby due to its dependacy on gatsby internals
     const renderer = ShallowRenderer.createRenderer()
 
-    renderer.render(<Link to={myPath}>{myIntegration.title}</Link>)
+    renderer.render(<Link to={myPath}>{myItem.title}</Link>)
     expect(renderer.getRenderOutput()).toMatchSnapshot()
   })
 })
 
 describe('slug', () => {
-  it('returns a generated slug', () => {
-    const mySlug = slug(myIntegration)
+  it('returns a generated slug with ID and title', () => {
+    const mySlug = slug(myItem)
     expect(mySlug).toMatch('123-my-title')
+  })
+
+  it('returns a generated slug with title only', () => {
+    const mySlug = slug({ title: 'my lonely title' })
+    expect(mySlug).toMatch('my-lonely-title')
   })
 })

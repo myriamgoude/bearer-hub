@@ -1,5 +1,4 @@
 'use strict'
-
 const { resolve } = require('path')
 
 module.exports = async ({ graphql, actions }) => {
@@ -55,7 +54,9 @@ module.exports = async ({ graphql, actions }) => {
   const allIntegrations = await graphql(`
     {
       graphcms {
-        integrations(where: { status: PUBLISHED, timeline: { timelineStages_some: { id_not: null } } }) {
+        integrations(
+          where: { status: PUBLISHED, timeline: { timelineStages_some: { id_not: null, displayOnHub_not: null } } }
+        ) {
           id
           title
         }
@@ -86,14 +87,27 @@ module.exports = async ({ graphql, actions }) => {
   // EXPLORE CATEGORY AND PROVIDER PAGES //
   //-------------------------------------//
 
+  // Note: Please see the scopedCategories and scopedProviders
+  // GraphQL fragments in pages/explore/index. We'd use these
+  // fragments in the queries below but they're not available
+  // to us here (Gatsby quirk)
+
   // Create pages for Integration Providers (e.g. "Slack", "MailChimp")
   // at explore/my-provider-slug/ and using content from our CMS system
   // and the explore/providers.tsx template
-
   const allProviders = await graphql(`
     {
       graphcms {
-        providers(where: { status: PUBLISHED }) {
+        providers(
+          where: {
+            status: PUBLISHED
+            integrations_some: {
+              id_not: null
+              status: PUBLISHED
+              timeline: { timelineStages_some: { id_not: null, displayOnHub: true } }
+            }
+          }
+        ) {
           id
           title
         }
@@ -121,11 +135,19 @@ module.exports = async ({ graphql, actions }) => {
   // Create pages for Integration Categories (e.g. "Developer Tooling",
   // "Mailing") at explore/my-category-slug and using content from our
   // CMS system and the explore/categories.tsx template
-
   const allCategories = await graphql(`
     {
       graphcms {
-        categories(where: { status: PUBLISHED }) {
+        categories(
+          where: {
+            status: PUBLISHED
+            integrations_some: {
+              id_not: null
+              status: PUBLISHED
+              timeline: { timelineStages_some: { id_not: null, displayOnHub: true } }
+            }
+          }
+        ) {
           id
           title
         }

@@ -18,6 +18,7 @@ import Page from './Page/index'
 import PageHeading from './PageHeading/index'
 import Pill from './Pill/index'
 import Search from './Search/index'
+import SearchList from './SearchList/index'
 import Section from './Section/index'
 import SectionCTA from './SectionCTA/index'
 import SectionHeading from './SectionHeading/index'
@@ -44,6 +45,7 @@ export {
   PageHeading,
   Pill,
   Search,
+  SearchList,
   Section,
   SectionCTA,
   SectionHeading,

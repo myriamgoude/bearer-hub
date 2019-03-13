@@ -4,9 +4,9 @@ import { css } from '@emotion/core'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 
 import sampleData from '../../data/codeSamples'
-import { backendTheme, frontendTheme } from './theme'
+import { backendTheme, frontendTheme } from './Theme'
 
-import styles from './CodeExamples.css'
+import styles from './CodeExamples.style'
 import { colors, fonts, breakpoints } from '../../styles/variables'
 
 const renderPreview = (query, snippet, theme) => (
@@ -62,7 +62,7 @@ const renderListItem = (activeSample, activeStyle, handleClick, sample, stack) =
       >
         <div
           css={css`
-            color: ${activeSample[stackX] === lang.slug ? colors.branded.yellow : colors.branded.black};
+            color: ${activeSample[stackX] === lang.slug ? colors.yellow : colors.black};
             cursor: pointer;
 
             &:hover {
@@ -77,7 +77,8 @@ const renderListItem = (activeSample, activeStyle, handleClick, sample, stack) =
   ))
 }
 
-/** Component that displays code samples from different languages (frontend and backend). */
+/**
+ * Component that displays code samples from different languages (frontend and backend). */
 
 class CodeExamples extends Component {
   state = {
@@ -238,7 +239,7 @@ class CodeExamples extends Component {
             <div
               css={css`
                 padding: 16px;
-                background-color: #2a2f36;
+                background-color: ${colors.codes.backendBGColor};
                 flex: 0 1 100%;
                 overflow-y: auto;
                 overflow-x: scroll;

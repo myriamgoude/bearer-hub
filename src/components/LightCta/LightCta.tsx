@@ -5,6 +5,7 @@ import { css } from '@emotion/core'
 import { colors } from '../../styles/variables'
 
 import styles from './LightCta.style'
+import helpers from '../../styles/helpers'
 
 interface ILightCtaProps {
   to: string
@@ -14,24 +15,17 @@ interface ILightCtaProps {
   [key: string]: any
 }
 
-const LightCta: React.SFC<ILightCtaProps> = ({ to, color, tailColor, text }: ILightCtaProps) => {
+const LightCta: React.SFC<ILightCtaProps> = ({ to, tailColor, text }: ILightCtaProps) => {
   return (
     <div className="mt-16">
-      <Link
-        to={to}
-        css={[
-          styles.link,
-          css`
-            color: ${color ? color : colors.branded.black};
-          `
-        ]}
-      >
+      <Link to={to} css={[styles.link, helpers.paragraph]}>
         <span
           css={css`
             display: inline-block;
             height: 1px;
-            width: 18px;
-            border: 1px solid ${tailColor ? tailColor : colors.branded.primary[0]};
+            width: 16px;
+            margin-right: 10px;
+            background: ${tailColor ? tailColor : colors.yellow};
             vertical-align: middle;
           `}
         />{' '}

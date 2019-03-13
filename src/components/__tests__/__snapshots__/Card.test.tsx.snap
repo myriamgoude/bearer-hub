@@ -36,16 +36,30 @@ exports[`Header renders correctly 1`] = `
       Array [
         Object {
           "map": undefined,
-          "name": "1o5r80t",
+          "name": "nd9hyy",
           "next": undefined,
           "styles": "
+    display: inline-block;
     color: #030D36;
     font-size: 1.125rem;
+  ",
+        },
+        Object {
+          "map": undefined,
+          "name": "9oecbb",
+          "next": undefined,
+          "styles": "
+    font-size: 16px;
   ",
         },
         undefined,
         undefined,
         undefined,
+        false,
+        false,
+        false,
+        false,
+        false,
       ]
     }
   >
@@ -97,16 +111,30 @@ exports[`Header renders with object values 1`] = `
       Array [
         Object {
           "map": undefined,
-          "name": "1o5r80t",
+          "name": "nd9hyy",
           "next": undefined,
           "styles": "
+    display: inline-block;
     color: #030D36;
     font-size: 1.125rem;
+  ",
+        },
+        Object {
+          "map": undefined,
+          "name": "9oecbb",
+          "next": undefined,
+          "styles": "
+    font-size: 16px;
   ",
         },
         undefined,
         undefined,
         undefined,
+        false,
+        false,
+        false,
+        false,
+        false,
       ]
     }
   >

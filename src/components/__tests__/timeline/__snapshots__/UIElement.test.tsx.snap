@@ -3,71 +3,125 @@
 exports[`UIElement has auto margin-left when rightAligned is true 1`] = `
 <ForwardRef(render)
   rightAligned={false}
+  time={5}
 >
-  <h4>
-    Connect Hello World component
-  </h4>
-  <GraphImage
-    alt=""
-    backgroundColor=""
-    baseURI="https://media.graphcms.com"
-    blurryPlaceholder={true}
-    className=""
-    fadeIn={true}
-    fit="crop"
-    image={
-      Object {
-        "handle": "my-test-image",
-        "height": 50,
-        "width": 50,
+  <div>
+    <SectionHeading
+      align="right"
+      primaryText="Connect Hello World component"
+      tag="h3"
+      tooltip={
+        <React.Fragment>
+          <Tooltip
+            content="This is a tooltip"
+            description="This is a tooltip"
+            overlay=""
+            placement="right"
+            trigger={
+              Array [
+                "hover",
+              ]
+            }
+          >
+            <img
+              src="test-file-stub"
+            />
+          </Tooltip>
+        </React.Fragment>
       }
+    />
+  </div>
+  <TimelineCard
+    image={
+      <GraphImage
+        alt=""
+        backgroundColor=""
+        baseURI="https://media.graphcms.com"
+        blurryPlaceholder={true}
+        className=""
+        fadeIn={true}
+        fit="crop"
+        image={
+          Object {
+            "handle": "my-test-image",
+            "height": 50,
+            "width": 50,
+          }
+        }
+        maxWidth={800}
+        onLoad={null}
+        outerWrapperClassName=""
+        style={Object {}}
+        title=""
+        transforms={Array []}
+        withWebp={true}
+      />
     }
-    maxWidth={800}
-    onLoad={null}
-    outerWrapperClassName=""
-    style={Object {}}
-    title=""
-    transforms={Array []}
-    withWebp={true}
+    language="HTML"
+    snippet="<hello-world-connect />"
   />
-  <CodeSnippet>
-    &lt;hello-world-connect /&gt;
-  </CodeSnippet>
 </ForwardRef(render)>
 `;
 
 exports[`UIElement has no auto margin when rightAligned is false 1`] = `
 <ForwardRef(render)
   rightAligned={false}
+  time={5}
 >
-  <h4>
-    Connect Hello World component
-  </h4>
-  <GraphImage
-    alt=""
-    backgroundColor=""
-    baseURI="https://media.graphcms.com"
-    blurryPlaceholder={true}
-    className=""
-    fadeIn={true}
-    fit="crop"
-    image={
-      Object {
-        "handle": "my-test-image",
-        "height": 50,
-        "width": 50,
+  <div>
+    <SectionHeading
+      align="right"
+      primaryText="Connect Hello World component"
+      tag="h3"
+      tooltip={
+        <React.Fragment>
+          <Tooltip
+            content="This is a tooltip"
+            description="This is a tooltip"
+            overlay=""
+            placement="right"
+            trigger={
+              Array [
+                "hover",
+              ]
+            }
+          >
+            <img
+              src="test-file-stub"
+            />
+          </Tooltip>
+        </React.Fragment>
       }
+    />
+  </div>
+  <TimelineCard
+    image={
+      <GraphImage
+        alt=""
+        backgroundColor=""
+        baseURI="https://media.graphcms.com"
+        blurryPlaceholder={true}
+        className=""
+        fadeIn={true}
+        fit="crop"
+        image={
+          Object {
+            "handle": "my-test-image",
+            "height": 50,
+            "width": 50,
+          }
+        }
+        maxWidth={800}
+        onLoad={null}
+        outerWrapperClassName=""
+        style={Object {}}
+        title=""
+        transforms={Array []}
+        withWebp={true}
+      />
     }
-    maxWidth={800}
-    onLoad={null}
-    outerWrapperClassName=""
-    style={Object {}}
-    title=""
-    transforms={Array []}
-    withWebp={true}
+    language="HTML"
+    snippet="<hello-world-connect />"
   />
-  <CodeSnippet>
-    &lt;hello-world-connect /&gt;
-  </CodeSnippet>
 </ForwardRef(render)>
 `;

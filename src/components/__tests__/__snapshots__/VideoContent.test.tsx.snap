@@ -4,6 +4,20 @@ exports[`VideoContent renders correctly 1`] = `
 <video
   autoPlay={true}
   controls={false}
+  css={
+    Object {
+      "map": undefined,
+      "name": "1bdu8zh",
+      "next": undefined,
+      "styles": "
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  ",
+    }
+  }
   loop={true}
   muted={true}
   playsInline={true}

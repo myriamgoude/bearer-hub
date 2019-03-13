@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="108px" viewBox="0 0 148 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
+    <title>A730AA09-CF91-4BC0-9A19-77B40DFED846</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#80C9FF" offset="0%"></stop>
+            <stop stop-color="#C796FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Hub" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.189499628">
+        <g id="Integration-landing-Mailchimp-Subscribe" transform="translate(-977.000000, -3361.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <path d="M1054.04611,3362.74837 C1077.24462,3358.94349 1091.17745,3358.94319 1095.8446,3362.74746 C1102.84534,3368.45388 1114.17005,3408.37778 1114.17005,3429.80912 C1114.17005,3429.80912 1114.17005,3429.80912 1114.17005,3429.80912 L1114.17005,3429.80912 C1114.17005,3463.58251 1086.79131,3490.96125 1053.01792,3490.96125 C1050.87965,3490.96125 1048.74286,3490.8491 1046.61634,3490.62526 C1017.7485,3487.58657 1000.34437,3478.93296 994.403946,3464.66441 C985.07676,3442.26105 1004.95748,3408.28904 1054.04611,3362.74837 Z" id="6754321" transform="translate(1053.170054, 3425.394483) rotate(-128.000000) translate(-1053.170054, -3425.394483) "></path>
+        </g>
+    </g>
+</svg>

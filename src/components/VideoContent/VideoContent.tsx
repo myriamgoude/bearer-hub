@@ -1,4 +1,5 @@
 import * as React from 'react'
+import styles from './VideoContent.style'
 
 interface IVideoContentProps {
   thumbnail: string
@@ -18,6 +19,6 @@ const VideoContent: React.SFC<IVideoContentProps> = ({ thumbnail, src, type = 'v
     poster: thumbnail,
     preload: 'auto'
   }
-  return <video {...videoOptions} />
+  return <video {...videoOptions} css={styles.root} />
 }
 export default VideoContent

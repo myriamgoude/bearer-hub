@@ -4,7 +4,6 @@ import { breakpoints } from '../../styles/variables'
 export default {
   root: css`
     display: flex;
-    max-width: 568px;
     margin: auto;
     flex-direction: column;
     justify-content: space-between;
@@ -22,5 +21,8 @@ export default {
   `,
   fullWidth: css`
     max-width: 100%;
+  `,
+  itemCentered: css`
+    justify-content: center;
   `
 }

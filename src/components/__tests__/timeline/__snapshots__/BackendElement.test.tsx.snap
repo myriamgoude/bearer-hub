@@ -1,56 +1,892 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BackendElement has auto margin-left when rightAligned is true, and displays SDK content for SDK function type 1`] = `
+exports[`BackendElement does not display time unless label is set 1`] = `
 .emotion-0 {
-  font-family: 'Courier New',Courier,monospace;
-}
-
-.emotion-1 {
   width: 50%;
   margin-left: auto;
+  padding-left: calc(115px + 20px);
+  position: relative;
+}
+
+.emotion-0:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 115px;
+  height: 40px;
+  color: #FFC400;
+  padding-left: 8px;
+  left: -1px;
+  text-align: left;
+  background: url(test-file-stub) no-repeat center center / contain;
 }
 
 <div
-  className="emotion-1"
+  className="emotion-0"
 >
-  <h4>
-    Install the Bearer SDK
-  </h4>
-  <div
-    className="emotion-0"
+  <h3>
+    <span
+      aria-describedby="Not sure what to pass here"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <img
+        src="test-file-stub"
+      />
+    </span>
+    <span
+      css={
+        Object {
+          "map": undefined,
+          "name": "k57eq2",
+          "next": undefined,
+          "styles": "
+          margin-left: 8px;
+        ",
+        }
+      }
+    >
+      Install the Bearer SDK
+    </span>
+  </h3>
+  <pre
+    css={
+      Object {
+        "map": undefined,
+        "name": "1tswbk8",
+        "next": undefined,
+        "styles": "
+    padding: 1em !important;
+    overflow: scroll;
+    border-radius: 2px;
+  ",
+      }
+    }
+    style={
+      Object {
+        "backgroundColor": "#1d262f",
+        "color": "#D4D4D4",
+      }
+    }
   >
-    $ npm install --save @bearer/react
-    <br />
-    // Initialize Bearer client
-    <br />
-    import 
-    { Bearer Client }
-     from '@bearer/node'
-    <br />
-    const bearerClient = BearerClient.new
-  </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        $ npm install 
+      </span>
+      <span
+        className="token operator"
+        style={
+          Object {
+            "color": "#ae3e88",
+          }
+        }
+      >
+        --
+      </span>
+      <span
+        className="token plain"
+      >
+        save @bearer
+      </span>
+      <span
+        className="token operator"
+        style={
+          Object {
+            "color": "#ae3e88",
+          }
+        }
+      >
+        /
+      </span>
+      <span
+        className="token plain"
+      >
+        react
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        
+      </span>
+      <span
+        className="token comment"
+        style={
+          Object {
+            "color": "#4a5f78",
+          }
+        }
+      >
+        // Initialize Bearer client
+      </span>
+      <span
+        className="token plain"
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        
+      </span>
+      <span
+        className="token keyword"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        import
+      </span>
+      <span
+        className="token plain"
+      >
+         
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "color": "#4a5f78",
+          }
+        }
+      >
+        {
+      </span>
+      <span
+        className="token string"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        '{ Bearer Client }'
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "color": "#4a5f78",
+          }
+        }
+      >
+        }
+      </span>
+      <span
+        className="token plain"
+      >
+         
+      </span>
+      <span
+        className="token keyword"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        from
+      </span>
+      <span
+        className="token plain"
+      >
+         
+      </span>
+      <span
+        className="token string"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        '@bearer/node'
+      </span>
+      <span
+        className="token plain"
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        
+      </span>
+      <span
+        className="token keyword"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        const
+      </span>
+      <span
+        className="token plain"
+      >
+         bearerClient 
+      </span>
+      <span
+        className="token operator"
+        style={
+          Object {
+            "color": "#ae3e88",
+          }
+        }
+      >
+        =
+      </span>
+      <span
+        className="token plain"
+      >
+         BearerClient
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "color": "#4a5f78",
+          }
+        }
+      >
+        .
+      </span>
+      <span
+        className="token keyword"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        new
+      </span>
+      <span
+        className="token plain"
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+      </span>
+    </div>
+  </pre>
+</div>
+`;
+
+exports[`BackendElement has auto margin-left when rightAligned is true, and displays SDK content for SDK function type 1`] = `
+.emotion-0 {
+  width: 50%;
+  margin-left: auto;
+  padding-left: calc(115px + 20px);
+  position: relative;
+}
+
+.emotion-0:before {
+  content: '11.01';
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 115px;
+  height: 40px;
+  color: #FFC400;
+  padding-left: 8px;
+  left: -1px;
+  text-align: left;
+  background: url(test-file-stub) no-repeat center center / contain;
+}
+
+<div
+  className="emotion-0"
+>
+  <h3>
+    <span
+      aria-describedby="Not sure what to pass here"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <img
+        src="test-file-stub"
+      />
+    </span>
+    <span
+      css={
+        Object {
+          "map": undefined,
+          "name": "k57eq2",
+          "next": undefined,
+          "styles": "
+          margin-left: 8px;
+        ",
+        }
+      }
+    >
+      Install the Bearer SDK
+    </span>
+  </h3>
+  <pre
+    css={
+      Object {
+        "map": undefined,
+        "name": "1tswbk8",
+        "next": undefined,
+        "styles": "
+    padding: 1em !important;
+    overflow: scroll;
+    border-radius: 2px;
+  ",
+      }
+    }
+    style={
+      Object {
+        "backgroundColor": "#1d262f",
+        "color": "#D4D4D4",
+      }
+    }
+  >
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        $ npm install 
+      </span>
+      <span
+        className="token operator"
+        style={
+          Object {
+            "color": "#ae3e88",
+          }
+        }
+      >
+        --
+      </span>
+      <span
+        className="token plain"
+      >
+        save @bearer
+      </span>
+      <span
+        className="token operator"
+        style={
+          Object {
+            "color": "#ae3e88",
+          }
+        }
+      >
+        /
+      </span>
+      <span
+        className="token plain"
+      >
+        react
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        
+      </span>
+      <span
+        className="token comment"
+        style={
+          Object {
+            "color": "#4a5f78",
+          }
+        }
+      >
+        // Initialize Bearer client
+      </span>
+      <span
+        className="token plain"
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        
+      </span>
+      <span
+        className="token keyword"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        import
+      </span>
+      <span
+        className="token plain"
+      >
+         
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "color": "#4a5f78",
+          }
+        }
+      >
+        {
+      </span>
+      <span
+        className="token string"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        '{ Bearer Client }'
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "color": "#4a5f78",
+          }
+        }
+      >
+        }
+      </span>
+      <span
+        className="token plain"
+      >
+         
+      </span>
+      <span
+        className="token keyword"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        from
+      </span>
+      <span
+        className="token plain"
+      >
+         
+      </span>
+      <span
+        className="token string"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        '@bearer/node'
+      </span>
+      <span
+        className="token plain"
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        
+      </span>
+      <span
+        className="token keyword"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        const
+      </span>
+      <span
+        className="token plain"
+      >
+         bearerClient 
+      </span>
+      <span
+        className="token operator"
+        style={
+          Object {
+            "color": "#ae3e88",
+          }
+        }
+      >
+        =
+      </span>
+      <span
+        className="token plain"
+      >
+         BearerClient
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "color": "#4a5f78",
+          }
+        }
+      >
+        .
+      </span>
+      <span
+        className="token keyword"
+        style={
+          Object {
+            "color": "#47ebb4",
+          }
+        }
+      >
+        new
+      </span>
+      <span
+        className="token plain"
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+      </span>
+    </div>
+  </pre>
 </div>
 `;
 
 exports[`BackendElement has no auto margin when rightAligned is false, and displays Library component for Library function type 1`] = `
-.emotion-1 {
+.emotion-0 {
   width: 50%;
+  padding-right: 115px;
+  position: relative;
 }
 
-.emotion-0 {
-  font-family: 'Courier New',Courier,monospace;
+.emotion-0:before {
+  content: '11.01';
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 115px;
+  height: 40px;
+  color: #FFC400;
+  padding-right: 8px;
+  right: -1px;
+  text-align: right;
+  background: url(test-file-stub) no-repeat center center / contain;
 }
 
 <div
-  className="emotion-1"
+  className="emotion-0"
 >
-  <h4>
-    Install the Bearer Library
-  </h4>
-  <div
-    className="emotion-0"
+  <h3>
+    <span
+      aria-describedby="Not sure what to pass here"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <img
+        src="test-file-stub"
+      />
+    </span>
+    <span
+      css={
+        Object {
+          "map": undefined,
+          "name": "k57eq2",
+          "next": undefined,
+          "styles": "
+          margin-left: 8px;
+        ",
+        }
+      }
+    >
+      Install the Bearer Library
+    </span>
+  </h3>
+  <pre
+    css={
+      Object {
+        "map": undefined,
+        "name": "1tswbk8",
+        "next": undefined,
+        "styles": "
+    padding: 1em !important;
+    overflow: scroll;
+    border-radius: 2px;
+  ",
+      }
+    }
+    style={
+      Object {
+        "backgroundColor": "#1d262f",
+        "color": "#D4D4D4",
+      }
+    }
   >
-    npm install @bearer/react
-  </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "#D4D4D4",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        npm install @bearer
+      </span>
+      <span
+        className="token operator"
+        style={
+          Object {
+            "color": "#ae3e88",
+          }
+        }
+      >
+        /
+      </span>
+      <span
+        className="token plain"
+      >
+        react
+      </span>
+    </div>
+  </pre>
 </div>
 `;

@@ -13,3 +13,6 @@ build/**
 .cache/
 
 /public/
+
+# To remove, I use this for testing the videos blocks
+/src/videos/

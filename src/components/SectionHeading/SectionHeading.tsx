@@ -1,16 +1,18 @@
 import * as React from 'react'
 
-import CustomTag from '../CustomTag'
+import Text from '../Text'
 
 import styles from './SectionHeading.style'
 
 interface ISectionHeadingProps {
-  primaryText: string
+  primaryText?: string | any
   secondaryText?: string
   className?: string
   align?: string
   tag?: string
   css?: any
+  children?: any
+  tooltip?: any
 }
 
 const SectionHeading = (props: ISectionHeadingProps) => {
@@ -31,10 +33,12 @@ const SectionHeading = (props: ISectionHeadingProps) => {
   }
   return (
     <div css={[styles.root, alignment, props.css && props.css]} className={props.className && props.className}>
-      <CustomTag tag={props.tag ? props.tag : 'h2'}>{props.primaryText}</CustomTag>
-      <h3>{props.secondaryText}</h3>
+      <Text tag={props.tag ? props.tag : 'h2'}>
+        {props.primaryText} {props.tooltip}
+      </Text>
+      <h3 css={styles.heading}>{props.secondaryText}</h3>
+      {props.children}
     </div>
   )
 }
-
 export default SectionHeading

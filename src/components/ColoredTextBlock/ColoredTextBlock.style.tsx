@@ -5,6 +5,7 @@ import { getEmSize } from '../../styles/mixins'
 export default {
   root: css`
     padding: 0 ${getEmSize(16)};
+    max-width: 272px;
   `,
   container: css`
     position: relative;
@@ -29,6 +30,6 @@ export default {
     transform: translate(-50%, -50%);
   `,
   title: css`
-    font-size: ${dimensions.headingSizes.h3}em;
+    font-size: ${dimensions.headingSizes.h4}em;
   `
 }

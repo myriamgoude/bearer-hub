@@ -30,3 +30,13 @@ export function slug({ id, title }: IItem) {
 
   return ''
 }
+
+export function timer(time: number) {
+  const now = new Date()
+  const minutesAdded = new Date(now.getTime() + time * 60 * 1000)
+  const realTime = `${minutesAdded.getHours() % 12}:${minutesAdded
+    .getMinutes()
+    .toString()
+    .padStart(2, '0')}`
+  return realTime
+}

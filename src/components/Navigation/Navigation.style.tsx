@@ -13,7 +13,7 @@ export default {
     font-size: 14px;
     letter-spacing: 0.12px;
     line-height: 17px;
-    color: ${colors.branded.black};
+    color: ${colors.black};
   `,
   list: css`
     margin: 0;

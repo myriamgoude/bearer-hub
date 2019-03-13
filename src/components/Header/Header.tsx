@@ -1,19 +1,19 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
+
 import { heights, dimensions, colors } from '../../styles/variables'
-import Container from '../Container/Container'
-import Navigation from '../Navigation/Navigation'
-import Link from '../Link/Link'
+
+import { Link, Navigation } from '../index'
 
 import logo from '../../images/logo.svg'
-import { css } from '@emotion/core'
 
 const StyledHeader = styled.header`
   height: ${heights.header}px;
   padding: 1em ${dimensions.containerPadding}rem;
   color: ${colors.black};
   position: relative;
-  z-index: 10;
+  z-index: 100;
   margin-bottom: -${heights.header}px;
 `
 
@@ -25,26 +25,19 @@ const StyledImg = styled.img`
   width: auto;
 `
 
-const HomepageLink = styled(Link)`
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-`
-
 const Header = () => (
   <StyledHeader>
-    <Container
-      flex
-      flexDirection="row"
+    <div
       css={css`
+        display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         height: 100%;
         flex-wrap: wrap;
       `}
     >
-      <HomepageLink
+      <Link
         to="/"
         css={css`
           align-self: flex-start;
@@ -52,10 +45,14 @@ const Header = () => (
           align-items: center;
           height: 100%;
           flex: 0 1 30%;
+          &:hover,
+          &:focus {
+            text-decoration: none;
+          }
         `}
       >
         <StyledImg src={logo} alt="Bearer logo" />
-      </HomepageLink>
+      </Link>
       <div
         css={css`
           justify-self: flex-end;
@@ -63,7 +60,7 @@ const Header = () => (
       >
         <Navigation />
       </div>
-    </Container>
+    </div>
   </StyledHeader>
 )
 

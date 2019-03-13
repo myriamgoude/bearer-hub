@@ -9,7 +9,7 @@ export default {
     position: relative;
   `,
   tail: css`
-    padding: ${getEmSize(90)} 0;
+    padding: ${getEmSize(64 * 2)} 0;
 
     &:before {
       content: '';
@@ -19,9 +19,9 @@ export default {
       position: absolute;
       left: 0;
       right: 0;
-      top: -44px;
+      top: -64px;
       margin: auto;
-      background: ${colors.branded.yellow};
+      background: ${colors.yellow};
       z-index: 5;
     }
   `

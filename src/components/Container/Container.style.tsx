@@ -25,5 +25,8 @@ export default {
   `,
   paddingRegular: css`
     padding: 0 ${getEmSize(dimensions.containerPadding)};
+  `,
+  noPaddingBottom: css`
+    padding-bottom: 0;
   `
 }

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
+
 import {
   Button,
   Card,
@@ -17,6 +18,7 @@ import {
   Section,
   SectionCTA,
   SectionHeading,
+  Small,
   Text
 } from '../components/'
 import IndexLayout from '../layouts'
@@ -29,9 +31,9 @@ import logoMailchimp from '../images/brands/mailchimp.svg'
 import logoGithub from '../images/brands/github.svg'
 import logoZendesk from '../images/brands/zendesk.svg'
 
-import greenStain from '../images/shared/green-stain.svg'
-import orangeStain from '../images/shared/orange-stain.svg'
-import blueStain from '../images/shared/blue-stain.svg'
+import greenSplash from '../images/shared/green-splash.svg'
+import orangeSplash from '../images/shared/orange-splash.svg'
+import blueSplash from '../images/shared/blue-splash.svg'
 import iconGraph from '../images/shared/icon-Graph.svg'
 import iconShippet from '../images/shared/icon-Shippet.svg'
 import iconLayout from '../images/shared/icon-Layout.svg'
@@ -87,26 +89,42 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
     <Page>
       <div css={heroStyles.styleBackgroundHome}>
         <HeroPanel
+          css={css`
+            background: red;
+          `}
           title={
             <>
-              Native Integration <Clearfix /> To power your app
+              <h1
+                css={css`
+                  color: ${colors.darkBlue};
+                `}
+              >
+                Native Integration <Clearfix /> To power your app
+              </h1>
             </>
           }
-          subtitle="Bearer helps apps get connected to the rest of the World."
+          subtitle={
+            <>
+              Bearer helps apps get connected to
+              <Clearfix /> the rest of the World.
+            </>
+          }
           image={placeholderHeroImage}
-          imageCss={css`
-            height: 500px;
-          `}
           longHero
         >
           <LightCta to="foo.com" text="Your users will thank you." />
-          <div className="mt-64 mb-32">
+          <div
+            css={css`
+              margin-top: 64px;
+              margin-bottom: 8px;
+            `}
+          >
             <Button primary link="/explore" text="Explore integrations" />
             <Button secondary link="/how-it-works" text="How it works" />
           </div>
-          <p>
+          <Small>
             Learn more about <Link to="/native-integration">Native Integrations</Link>
-          </p>
+          </Small>
         </HeroPanel>
       </div>
 
@@ -116,7 +134,12 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         `}
       >
         <SectionHeading primaryText="Most Integrated Apps" />
-        <Grid space="between">
+        <Grid
+          space="between"
+          style={css`
+            max-width: 568px;
+          `}
+        >
           {[logoDropbox, logoTwillio, logoMailchimp, logoGithub, logoZendesk].map((logo, index) => {
             return <Pill key={index} logo={logo} />
           })}
@@ -131,27 +154,27 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               text:
                 'Start adding the Integration that keeps piling up in your backlog.\
                  Add dozens of Integrations that users keep asking for without impacting roadmap and budget',
-              iconBg: greenStain,
+              iconBg: greenSplash,
               icon: iconGraph,
-              color: colors.branded.green
+              color: colors.green
             },
             {
               title: 'For Front-End developer',
               text:
                 'Ready to use, one line of code, Web Components that works for your stack,\
                  future proof. Offer a standardize experience, customizable to your look and feel.',
-              iconBg: orangeStain,
+              iconBg: orangeSplash,
               icon: iconLayout,
-              color: colors.branded.orange
+              color: colors.orange
             },
             {
               title: 'For Back-End developer',
               text:
                 'Scale your Integration without overloading your codebase with dozens \
                 of dependencies, SDK and vendor specific code.Did we mention we also take care of the OAuth flow too?',
-              iconBg: blueStain,
+              iconBg: blueSplash,
               icon: iconShippet,
-              color: colors.branded.blue
+              color: colors.blue
             }
           ].map((textBlock, index) => (
             <ColoredTextBlock
@@ -168,7 +191,12 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
 
       <div css={styleWaveBg}>
         <Section withTail>
-          <SectionHeading primaryText="A Native Integration in 5 minutes" />
+          <SectionHeading
+            primaryText="A Native Integration in 5 minutes"
+            css={css`
+              margin-bottom: 64px;
+            `}
+          />
           <CodeExamples data={codeData} />
           <div
             css={css`
@@ -192,10 +220,10 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
                 css={css`
                   margin-top: 16px;
                   display: inline-block;
-                  color: ${colors.branded.black};
+                  color: ${colors.black};
                 `}
               >
-                You can also check the docs
+                <Small>You can also check the docs</Small>
               </Link>
             </div>
           </div>
@@ -223,12 +251,16 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         </div>
       </Section>
 
-      <SectionCTA />
+      <SectionCTA
+        style={css`
+          margin-bottom: 64px;
+        `}
+      />
 
       <Section
         withTail
         css={css`
-          height: 860px;
+          margin-bottom: 3em;
         `}
       >
         <SectionHeading primaryText="Why use Bearer?" />
@@ -236,11 +268,11 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           space="between"
           gutter={32}
           fullWidth
-          className={css`
+          style={css`
             height: 600px;
             background: url(${require('../images/shared/yellow-circle.svg')}) no-repeat center top / 560px;
           `}
-          childrenClassName={css`
+          childrenStyle={css`
             max-width: 320px;
           `}
         >
@@ -255,11 +287,14 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
                   src={require('../images/shared/icon-magnet.svg')}
                   css={css`
                     vertical-align: middle;
-                    margin-right: 16px;
+                    margin-right: 12px;
+                    width: 40px;
                   `}
                   alt="Icon Magnet"
                 />
-                <span>Native</span>
+                <span>
+                  <Text text="Native" tag="h5" />
+                </span>
               </div>
             }
             children={
@@ -293,11 +328,14 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
                   src={require('../images/shared/icon-globe.svg')}
                   css={css`
                     vertical-align: middle;
-                    margin-right: 16px;
+                    margin-right: 12px;
+                    width: 40px;
                   `}
                   alt="Icon Globe"
                 />
-                <span>Standardized</span>
+                <span>
+                  <Text text="Standardized" tag="h5" />
+                </span>
               </div>
             }
             children={
@@ -322,12 +360,15 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
                   src={require('../images/shared/icon-plugnplay.svg')}
                   css={css`
                     vertical-align: middle;
-                    margin-right: 16px;
+                    margin-right: 12px;
+                    width: 40px;
                     position: relative;
                   `}
                   alt="Icon Plug'n'Play"
                 />
-                <span>Plug and Play</span>
+                <span>
+                  <Text text="Plug and Play" tag="h5" />
+                </span>
               </div>
             }
             children={

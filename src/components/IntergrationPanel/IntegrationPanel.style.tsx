@@ -5,7 +5,9 @@ export default {
   item: css`
     width: 100%;
     text-align: center;
+    margin-bottom: 32px;
   `,
+
   featured: css`
     position: relative;
     &&:after {
@@ -25,7 +27,7 @@ export default {
     }
   `,
   card: css`
-    margin-bottom: ${getEmSize(16)};
+    background: red;
   `,
   cardImageContainer: css`
     width: 100%;

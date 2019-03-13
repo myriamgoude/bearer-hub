@@ -18,7 +18,7 @@ interface IColoredTextBlocks {
 }
 
 const ColoredTextBlock = (props: IColoredTextBlocks) => {
-  const color = props.color ? props.color : colors.branded.black
+  const color = props.color ? props.color : colors.black
   return (
     <div css={styles.root}>
       <div css={styles.container}>

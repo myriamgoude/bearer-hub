@@ -3,7 +3,7 @@ import { breakpoints, colors, dimensions } from '../../styles/variables'
 
 export default {
   root: css`
-    background-color: ${colors.dark};
+    background-color: ${colors.darkBlue};
     color: ${colors.white};
     letter-spacing: -0.27px;
     line-height: ${dimensions.lineHeight.regular};
@@ -121,13 +121,13 @@ export default {
     @media (min-width: ${breakpoints.lg}px) {
       margin: 0 2rem;
 
-      &:first-child {
+      &:first-of-type {
         margin-left: 1rem;
       }
     }
 
     @media (min-width: ${breakpoints.xl}px) {
-      &:first-child {
+      &:first-of-type {
         margin-left: 2rem;
       }
     }

@@ -33,27 +33,27 @@ export default {
   `,
 
   primaryButton: css`
-    background-color: ${colors.branded.primary[1]};
-    color: ${colors.branded.secondary[0]};
+    background-color: ${colors.primary[1]};
+    color: ${colors.secondary[0]};
 
     &:hover {
-      background-color: ${colors.branded.primary[0]};
+      background-color: ${colors.primary[0]};
     }
   `,
   secondaryButton: css`
-    background-color: ${colors.branded.secondary[0]};
+    background-color: ${colors.secondary[0]};
     color: ${colors.white};
 
     &:hover {
-      background-color: ${colors.branded.secondary[1]};
+      background-color: ${colors.secondary[1]};
     }
   `,
   saveButton: css`
-    background-color: ${colors.branded.accent[0]};
+    background-color: ${colors.accent[0]};
     color: ${colors.white};
 
     &:hover {
-      background-color: ${colors.branded.accent[1]};
+      background-color: ${colors.accent[1]};
     }
   `
 }

@@ -1,6 +1,7 @@
 import * as React from 'react'
-import Link from '../Link/Link'
 import styled from '@emotion/styled'
+
+import Link from '../Link/Link'
 
 import styles from './Button.style'
 

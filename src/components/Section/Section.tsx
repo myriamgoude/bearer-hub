@@ -8,7 +8,7 @@ import styles from './Section.style'
 interface ISectionProps {
   children: any
   background?: string
-  className?: string
+  className?: any
   withTail?: boolean
   css?: any
 }
@@ -29,5 +29,4 @@ const Section = (props: ISectionProps) => (
     <Container>{props.children}</Container>
   </div>
 )
-
 export default Section

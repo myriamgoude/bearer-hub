@@ -3,6 +3,7 @@ import Link from '../Link/Link'
 import { path } from '../../services/Explore'
 
 import { Configure, connectMenu, Highlight, Hits, InstantSearch, Pagination, SearchBox } from 'react-instantsearch-dom'
+import Section from '../Section'
 
 interface ISearchProps {
   defaultCategory?: string
@@ -35,7 +36,7 @@ export default class Search extends React.Component<ISearchProps> {
           apiKey={`${process.env.GATSBY_ALGOLIA_SEARCH_API_KEY}`}
           indexName={`${process.env.GATSBY_ALGOLIA_INDEX_NAME}`}
         >
-          <div>
+          <nav>
             {this.props.defaultCategory ? (
               <VirtualMenu attribute={categoriesAttribute} defaultRefinement={this.props.defaultCategory} />
             ) : null}
@@ -44,12 +45,12 @@ export default class Search extends React.Component<ISearchProps> {
               <VirtualMenu attribute={providersAttribute} defaultRefinement={this.props.defaultProvider} />
             ) : null}
             <Configure hitsPerPage={8} />
-          </div>
-          <div>
+          </nav>
+          <Section>
             <SearchBox />
             <Hits hitComponent={this.hit} />
             <Pagination />
-          </div>
+          </Section>
         </InstantSearch>
       </div>
     )

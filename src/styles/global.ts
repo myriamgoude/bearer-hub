@@ -1,5 +1,8 @@
+import { colors } from './variables'
+
 export default `
   body {
-      background: #FBFCFF
+      background: ${colors.lightGrey}
   }
+
 `

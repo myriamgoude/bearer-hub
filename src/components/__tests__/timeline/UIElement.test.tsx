@@ -7,6 +7,8 @@ describe('UIElement', () => {
   const element = {
     title: 'Connect Hello World component',
     codeSnippet: '<hello-world-connect />',
+    tooltip: 'This is a tooltip',
+    helperText: 'This is some helper text',
     image: {
       handle: 'my-test-image',
       height: 50,
@@ -18,7 +20,7 @@ describe('UIElement', () => {
     const rightAligned = false
 
     const renderer = ShallowRenderer.createRenderer()
-    renderer.render(<UIElement element={element} rightAligned={rightAligned} />)
+    renderer.render(<UIElement element={element} rightAligned={rightAligned} time={5} />)
     expect(renderer.getRenderOutput()).toMatchSnapshot()
   })
 
@@ -26,7 +28,7 @@ describe('UIElement', () => {
     const rightAligned = false
 
     const renderer = ShallowRenderer.createRenderer()
-    renderer.render(<UIElement element={element} rightAligned={rightAligned} />)
+    renderer.render(<UIElement element={element} rightAligned={rightAligned} time={5} />)
     expect(renderer.getRenderOutput()).toMatchSnapshot()
   })
 })

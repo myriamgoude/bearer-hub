@@ -49,6 +49,10 @@ export default `
 
   h1 {
     font-size: ${variables.dimensions.headingSizes.h1}rem;
+     font-family:
+      'ProximaNova-Bold', apple-system,BlinkMacSystemFont,
+      "Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans",
+      "Droid Sans","Helvetica Neue",Arial,sans-serif
   }
 
   h2 {

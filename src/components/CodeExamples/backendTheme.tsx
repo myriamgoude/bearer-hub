@@ -1,29 +1,37 @@
+import { colors } from '../../styles/variables'
+
 const backendTheme = {
   plain: {
     color: '#D4D4D4',
-    backgroundColor: '#1E1E1E'
+    backgroundColor: colors.codes.backendBGColor
   },
   styles: [
     {
       types: ['prolog'],
       style: {
-        color: 'rgb(0, 0, 128)'
+        color: '#4a5f78'
       }
     },
     {
       types: ['comment'],
       style: {
-        color: '#8191b1'
+        color: '#4a5f78'
       }
     },
     {
-      types: ['builtin', 'tag', 'changed', 'keyword'],
+      types: ['builtin', 'changed'],
       style: {
         color: '#3ab2bd'
       }
     },
     {
-      types: ['number', 'inserted'],
+      types: ['tag', 'operator', 'number'],
+      style: {
+        color: '#0aa370'
+      }
+    },
+    {
+      types: ['inserted'],
       style: {
         color: 'rgb(181, 206, 168)'
       }
@@ -35,15 +43,39 @@ const backendTheme = {
       }
     },
     {
-      types: ['attr-name', 'variable'],
+      types: ['attr-name'],
       style: {
-        color: 'rgb(156, 220, 254)'
+        color: '#7eb6f6'
+      }
+    },
+    {
+      types: ['variable'],
+      style: {
+        color: '#47ebb4'
       }
     },
     {
       types: ['deleted', 'string'],
       style: {
         color: '#ec8b63'
+      }
+    },
+    {
+      types: [
+        'string',
+        'entity',
+        'url',
+        'attr-value',
+        'keyword',
+        'control',
+        'directive',
+        'unit',
+        'statement',
+        'regex',
+        'atrule'
+      ],
+      style: {
+        color: '#47ebb4'
       }
     },
     {
@@ -55,13 +87,13 @@ const backendTheme = {
     {
       types: ['selector'],
       style: {
-        color: 'rgb(215, 186, 125)'
+        color: '#ebf4ff'
       }
     },
     {
       types: ['punctuation'],
       style: {
-        color: 'rgb(128, 128, 128)'
+        color: '#4a5f78'
       }
     },
     {

@@ -1,8 +1,7 @@
 import * as React from 'react'
 
 import { isAuthenticated, isSSOAuthenticated, lockLogin } from '../../services/Auth'
-import Link from '../Link/Link'
-import Button from '../Buttons/Button'
+import { Link, Button } from '../index'
 
 import { css } from '@emotion/core'
 

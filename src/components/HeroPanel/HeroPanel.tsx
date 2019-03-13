@@ -1,38 +1,51 @@
 import * as React from 'react'
-import Container from '../Container/Container'
+
+import { Container, Text } from '../index'
 import styles from './HeroPanel.style'
+import helpers from '../../styles/helpers'
 
 interface IHeroPanel {
-  title: string | object
-  subtitle?: string | object
+  title?: string | any
+  subtitle?: string | any
   image?: string
   imageCss?: any
   highlight?: string
   css?: any
   children?: object
   longHero?: boolean
+  paddingBottom?: boolean
+  style?: any
 }
 
-const HeroPanel: React.SFC<IHeroPanel> = ({ title, subtitle, highlight, longHero, image, imageCss, css, children }) => {
-  const highlightString = (highlight: string) => {
-    return (
-      <h1>
-        <span css={styles.highlight}>{highlight}</span>{' '}
-        {typeof title === 'string' ? title.replace(highlight, '') : null}
-      </h1>
-    )
-  }
-
+const HeroPanel: React.SFC<IHeroPanel> = ({
+  title,
+  subtitle,
+  longHero,
+  image,
+  imageCss,
+  css,
+  children,
+  paddingBottom,
+  style
+}) => {
   return (
-    <Container flex flexDirection="row" css={[css && css, styles.root, longHero && styles.heightXl]} padding="large">
-      <div css={styles.heroItem}>
-        {highlight ? highlightString(highlight) : <h1>{title}</h1>}
-        <p>{subtitle}</p>
+    <Container
+      flex
+      flexDirection="row"
+      style={[styles.root, longHero && styles.heightXl, css && css, style && style]}
+      padding="large"
+      paddingBottom={paddingBottom}
+    >
+      <div css={image ? styles.halfItem : styles.fullItem}>
+        {typeof title === 'string' ? <h1 css={helpers.h1}>{title}</h1> : title}
+        <Text text={subtitle} tag="h3" style={styles.subtitle} />
         {children}
       </div>
-      <div css={styles.heroItem}>
-        <img src={image} css={[styles.illustration, imageCss && imageCss]} alt="Hero illustration" />
-      </div>
+      {image && (
+        <div css={styles.halfItem}>
+          <img src={image} css={[styles.illustration, imageCss && imageCss]} alt="Hero illustration" />
+        </div>
+      )}
     </Container>
   )
 }

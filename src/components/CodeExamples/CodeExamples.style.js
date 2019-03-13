@@ -14,7 +14,7 @@ const styles = {
       content: '';
       display: block;
       height: 1px;
-      background-color: ${colors.branded.yellow};
+      background-color: ${colors.yellow};
       position: absolute;
       top: -2px;
       bottom: 0;
@@ -39,7 +39,7 @@ const styles = {
       content: '';
       display: block;
       height: 1px;
-      background-color: ${colors.branded.yellow};
+      background-color: ${colors.yellow};
       position: absolute;
       top: -2px;
       bottom: 0;

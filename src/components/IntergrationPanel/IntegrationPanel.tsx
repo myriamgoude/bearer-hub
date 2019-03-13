@@ -21,6 +21,7 @@ interface IIntegrationProps {
       }
     }[]
   }[]
+  css?: any
 }
 
 export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
@@ -48,7 +49,7 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                   <Text
                     text={integration.title}
                     large
-                    className={css`
+                    style={css`
                       font-weight: bold;
                       margin-bottom: ${getEmSize(8)};
                     `}
@@ -63,5 +64,4 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
     )
   }
 }
-
 export default IntegrationPanel

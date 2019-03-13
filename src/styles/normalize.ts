@@ -26,7 +26,7 @@ export default `
   }
 
   a {
-    color: ${colors.brand};
+    color: ${colors.blue};
     text-decoration: none;
 
     &:hover,
@@ -35,11 +35,7 @@ export default `
     }
   }
 
-  img {
-    max-width: 100%;
-    object-fit: contain;
-    position: relative;
-  }
+
 
   figure {
     margin: 2rem 0;
@@ -52,7 +48,7 @@ export default `
   table {
     width: 100%;
     margin-bottom: 1rem;
-    border: 1px solid ${colors.ui.light};
+    border: 1px solid ${colors.ui.bright};
     font-size: 85%;
     border-collapse: collapse;
   }
@@ -60,7 +56,7 @@ export default `
   td,
   th {
     padding: .25rem .5rem;
-    border: 1px solid ${colors.ui.light};
+    border: 1px solid ${colors.ui.bright};
   }
 
   th {
@@ -134,13 +130,13 @@ export default `
     position: relative;
     margin: 1.5rem 0;
     border: 0;
-    border-top: 1px solid ${colors.ui.light};
+    border-top: 1px solid ${colors.ui.bright};
   }
 
   blockquote {
     margin: .8rem 0;
     padding: .5rem 1rem;
-    border-left: .25rem solid ${colors.ui.light};
+    border-left: .25rem solid ${colors.ui.bright};
     color: ${colors.gray.calm};
 
     p {

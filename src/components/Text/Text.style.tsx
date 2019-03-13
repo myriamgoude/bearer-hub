@@ -4,7 +4,8 @@ import { colors, dimensions } from '../../styles/variables'
 
 export default {
   root: css`
-    color: ${colors.branded.darkBlue};
+    display: inline-block;
+    color: ${colors.darkBlue};
     font-size: ${getEmSize(dimensions.fontSize.large)};
   `,
   fontSmall: css`

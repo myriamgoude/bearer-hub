@@ -1,10 +1,13 @@
 import React from 'react'
+import MockDate from 'mockdate'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
 
-import { path, slug } from '../Explore'
+import { path, slug, timer } from '../Explore'
 import Link from '../../components/Link/Link'
 
 const myItem = { id: '123', title: 'My Title' }
+
+afterAll(() => {})
 
 describe('path', () => {
   const myPath = path(myItem)
@@ -30,7 +33,20 @@ describe('slug', () => {
   })
 
   it('returns a generated slug with title only', () => {
-    const mySlug = slug({ title: 'my lonely title' })
+    const mySlug = slug({ id: 'title', title: 'my lonely title' })
     expect(mySlug).toMatch('my-lonely-title')
+  })
+})
+
+describe('timer', () => {
+  afterAll(() => {
+    MockDate.reset()
+  })
+
+  MockDate.set(new Date('2019-01-01T10:01:11'))
+  it('returns the expected time', () => {
+    const myTime = timer(2)
+    // 10:01 + 2 minutes = 10:03
+    expect(myTime).toMatch('10:03')
   })
 })

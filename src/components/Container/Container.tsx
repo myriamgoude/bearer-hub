@@ -1,28 +1,30 @@
 import * as React from 'react'
 import styles from './Container.style'
 
-interface ContainerProps {
-  css?: any
+interface IContainerProps {
+  style?: any
   flex?: boolean
   flexDirection?: string
   padding?: string
+  paddingBottom?: boolean
+  children: any
 }
-
-const Container: React.SFC<ContainerProps> = ({ children, css, flex, flexDirection, padding }) => {
+const Container = (props: IContainerProps) => {
   return (
     <div
       css={[
         styles.root,
-        flex && styles.displayFlex,
-        !flex && styles.displayBlock,
-        flexDirection === 'row' && styles.directionRow,
-        flexDirection === 'column' && styles.directionColumn,
-        padding === 'large' && styles.paddingLarge,
-        padding !== 'large' && styles.paddingRegular,
-        css && css
+        props.flex && styles.displayFlex,
+        !props.flex && styles.displayBlock,
+        props.flexDirection === 'row' && styles.directionRow,
+        props.flexDirection === 'column' && styles.directionColumn,
+        props.padding === 'large' && styles.paddingLarge,
+        props.padding !== 'large' && styles.paddingRegular,
+        !props.paddingBottom && styles.noPaddingBottom,
+        props.style && props.style
       ]}
     >
-      {children}
+      {props.children}
     </div>
   )
 }

@@ -73,7 +73,7 @@ function createLock(signup: boolean = false, closable: boolean = false) {
     },
     theme: {
       logo: 'https://static.bearer.sh/logo.png',
-      primaryColor: colors.accent
+      primaryColor: colors.accent[0]
     }
   })
 }

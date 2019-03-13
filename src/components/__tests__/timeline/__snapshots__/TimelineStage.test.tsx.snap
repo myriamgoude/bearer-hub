@@ -1,429 +1,606 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TimelineStage handles when UI element and backend function are both present 1`] = `
-Array [
-  <div
-    css={
-      Array [
-        Object {
-          "map": undefined,
-          "name": "6j1h23",
-          "next": undefined,
-          "styles": "
-    margin: auto;
-    width: 100%;
-    max-width: 64rem;
-  ",
-        },
-        undefined,
-        Object {
-          "map": undefined,
-          "name": "8qpjjf",
-          "next": undefined,
-          "styles": "
-    display: block;
-  ",
-        },
-        false,
-        false,
-        false,
-        Object {
-          "map": undefined,
-          "name": "1dpbaaj",
-          "next": undefined,
-          "styles": "
-    padding: 0 0.09375rem;
-  ",
-        },
-        undefined,
-      ]
-    }
-  >
-    <h4>
-      1
-       min(s)
-    </h4>
-  </div>,
-  .emotion-1 {
-  width: 50%;
-}
-
 .emotion-0 {
-  font-family: 'Courier New',Courier,monospace;
-}
-
-<div
-    css={
-      Array [
-        Object {
-          "map": undefined,
-          "name": "6j1h23",
-          "next": undefined,
-          "styles": "
-    margin: auto;
-    width: 100%;
-    max-width: 64rem;
-  ",
-        },
-        undefined,
-        Object {
-          "map": undefined,
-          "name": "8qpjjf",
-          "next": undefined,
-          "styles": "
-    display: block;
-  ",
-        },
-        false,
-        false,
-        false,
-        Object {
-          "map": undefined,
-          "name": "1dpbaaj",
-          "next": undefined,
-          "styles": "
-    padding: 0 0.09375rem;
-  ",
-        },
-        undefined,
-      ]
-    }
-  >
-    <div
-      className="emotion-1"
-    >
-      <h4>
-        Connect Hello World Component
-      </h4>
-      <div
-        className=" graphcms-image-outer-wrapper"
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          className=" graphcms-image-wrapper"
-          style={
-            Object {
-              "overflow": "hidden",
-              "position": "relative",
-              "zIndex": 1,
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "paddingBottom": "100%",
-                "width": "100%",
-              }
-            }
-          />
-          <img
-            alt=""
-            onLoad={null}
-            src="https://media.graphcms.com/resize=w:20,h:20,fit:crop/blur=amount:2/compress/my-test-image"
-            style={
-              Object {
-                "height": "100%",
-                "left": 0,
-                "objectFit": "cover",
-                "objectPosition": "center",
-                "opacity": 1,
-                "position": "absolute",
-                "top": 0,
-                "transition": "opacity 0.5s",
-                "transitionDelay": "0.25s",
-                "width": "100%",
-              }
-            }
-            title=""
-          />
-          
-        </div>
-      </div>
-      <div
-        className="emotion-0"
-      >
-        &lt;connect-hello-world /&gt;
-      </div>
-    </div>
-    <div
-      className="emotion-1"
-    >
-      <h4>
-        Install the Bearer Library
-      </h4>
-      <div
-        className="emotion-0"
-      >
-        npm install @bearer/react
-      </div>
-    </div>
-  </div>,
-]
-`;
-
-exports[`TimelineStage handles when UI element is not present, and has no auto margin when index is odd 1`] = `
-Array [
-  <div
-    css={
-      Array [
-        Object {
-          "map": undefined,
-          "name": "6j1h23",
-          "next": undefined,
-          "styles": "
-    margin: auto;
-    width: 100%;
-    max-width: 64rem;
-  ",
-        },
-        undefined,
-        Object {
-          "map": undefined,
-          "name": "8qpjjf",
-          "next": undefined,
-          "styles": "
-    display: block;
-  ",
-        },
-        false,
-        false,
-        false,
-        Object {
-          "map": undefined,
-          "name": "1dpbaaj",
-          "next": undefined,
-          "styles": "
-    padding: 0 0.09375rem;
-  ",
-        },
-        undefined,
-      ]
-    }
-  >
-    <h4>
-      2
-       min(s)
-    </h4>
-  </div>,
-  .emotion-1 {
   width: 50%;
+  padding-right: 115px;
+  position: relative;
 }
 
-.emotion-0 {
-  font-family: 'Courier New',Courier,monospace;
-}
-
-<div
-    css={
-      Array [
-        Object {
-          "map": undefined,
-          "name": "6j1h23",
-          "next": undefined,
-          "styles": "
-    margin: auto;
-    width: 100%;
-    max-width: 64rem;
-  ",
-        },
-        undefined,
-        Object {
-          "map": undefined,
-          "name": "8qpjjf",
-          "next": undefined,
-          "styles": "
-    display: block;
-  ",
-        },
-        false,
-        false,
-        false,
-        Object {
-          "map": undefined,
-          "name": "1dpbaaj",
-          "next": undefined,
-          "styles": "
-    padding: 0 0.09375rem;
-  ",
-        },
-        undefined,
-      ]
-    }
-  >
-    <div
-      className="emotion-1"
-    >
-      <h4>
-        Install the Bearer Library
-      </h4>
-      <div
-        className="emotion-0"
-      >
-        npm install @bearer/react
-      </div>
-    </div>
-  </div>,
-]
-`;
-
-exports[`TimelineStage handles when backend function is not present, and has auto margin-left when index is even 1`] = `
-Array [
-  <div
-    css={
-      Array [
-        Object {
-          "map": undefined,
-          "name": "6j1h23",
-          "next": undefined,
-          "styles": "
-    margin: auto;
-    width: 100%;
-    max-width: 64rem;
-  ",
-        },
-        undefined,
-        Object {
-          "map": undefined,
-          "name": "8qpjjf",
-          "next": undefined,
-          "styles": "
-    display: block;
-  ",
-        },
-        false,
-        false,
-        false,
-        Object {
-          "map": undefined,
-          "name": "1dpbaaj",
-          "next": undefined,
-          "styles": "
-    padding: 0 0.09375rem;
-  ",
-        },
-        undefined,
-      ]
-    }
-  >
-    <h4>
-      2
-       min(s)
-    </h4>
-  </div>,
-  .emotion-0 {
-  font-family: 'Courier New',Courier,monospace;
+.emotion-0:before {
+  content: '11.01';
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 115px;
+  height: 40px;
+  color: #FFC400;
+  padding-right: 8px;
+  right: -1px;
+  text-align: right;
+  background: url(test-file-stub) no-repeat center center / contain;
 }
 
 .emotion-1 {
   width: 50%;
   margin-left: auto;
+  padding-left: calc(115px + 20px);
+  position: relative;
+}
+
+.emotion-1:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 115px;
+  height: 40px;
+  color: #FFC400;
+  padding-left: 8px;
+  left: -1px;
+  text-align: left;
+  background: url(test-file-stub) no-repeat center center / contain;
 }
 
 <div
-    css={
-      Array [
-        Object {
-          "map": undefined,
-          "name": "6j1h23",
-          "next": undefined,
-          "styles": "
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "6j1h23",
+        "next": undefined,
+        "styles": "
     margin: auto;
     width: 100%;
     max-width: 64rem;
   ",
-        },
-        undefined,
-        Object {
-          "map": undefined,
-          "name": "8qpjjf",
-          "next": undefined,
-          "styles": "
+      },
+      undefined,
+      Object {
+        "map": undefined,
+        "name": "8qpjjf",
+        "next": undefined,
+        "styles": "
     display: block;
   ",
-        },
-        false,
-        false,
-        false,
-        Object {
-          "map": undefined,
-          "name": "1dpbaaj",
-          "next": undefined,
-          "styles": "
+      },
+      false,
+      false,
+      false,
+      Object {
+        "map": undefined,
+        "name": "1dpbaaj",
+        "next": undefined,
+        "styles": "
     padding: 0 0.09375rem;
   ",
-        },
-        undefined,
-      ]
+      },
+      Object {
+        "map": undefined,
+        "name": "1ank2qv",
+        "next": undefined,
+        "styles": "
+    padding-bottom: 0;
+  ",
+      },
+      Object {
+        "marginBottom": 32,
+      },
+    ]
+  }
+>
+  <div
+    css={
+      Object {
+        "map": undefined,
+        "name": "1tdew4b",
+        "next": undefined,
+        "styles": "
+                  display: flex;
+
+                  > *:before {
+                    margin-top: -20px;
+                    padding-bottom: 60px;
+                    background-position: center bottom 16px;
+                  }
+                ",
+      }
     }
   >
     <div
-      className="emotion-1"
+      className="emotion-0"
     >
-      <h4>
-        Connect Hello World Component
-      </h4>
+      <div>
+        <div
+          css={
+            Array [
+              Object {
+                "map": undefined,
+                "name": "fxnnpe",
+                "next": undefined,
+                "styles": "
+    width: 100%;
+    flex-shrink: 0;
+    text-align: left;
+    display: block;
+    margin-bottom: 2rem;
+  ",
+              },
+              Object {
+                "map": undefined,
+                "name": "1fuc94h",
+                "next": undefined,
+                "styles": "
+    text-align: right;
+  ",
+              },
+              undefined,
+            ]
+          }
+        >
+          <h3
+            css={
+              Array [
+                Object {
+                  "map": undefined,
+                  "name": "nd9hyy",
+                  "next": undefined,
+                  "styles": "
+    display: inline-block;
+    color: #030D36;
+    font-size: 1.125rem;
+  ",
+                },
+                Object {
+                  "map": undefined,
+                  "name": "9oecbb",
+                  "next": undefined,
+                  "styles": "
+    font-size: 16px;
+  ",
+                },
+                undefined,
+                undefined,
+                undefined,
+                false,
+                false,
+                Object {
+                  "map": undefined,
+                  "name": "pvcssf",
+                  "next": undefined,
+                  "styles": "
+    font-size: 1.563em;
+    color: #030D36;
+  ",
+                },
+                false,
+                false,
+              ]
+            }
+          >
+            Connect Hello World Component
+             
+            <span
+              aria-describedby="This is a tooltip"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <img
+                src="test-file-stub"
+              />
+            </span>
+          </h3>
+          <h3
+            css={
+              Object {
+                "map": undefined,
+                "name": "89fcrv",
+                "next": undefined,
+                "styles": "
+    display: inline;
+  ",
+              }
+            }
+          />
+        </div>
+      </div>
       <div
-        className=" graphcms-image-outer-wrapper"
-        style={
+        css={
           Object {
-            "position": "relative",
-            "zIndex": 0,
+            "map": undefined,
+            "name": "1cq93fn",
+            "next": undefined,
+            "styles": "
+    background: #f3f6ff;
+    border: 1px solid #dde0ee;
+    padding: 30px 16px 40px 16px;
+    border-radius: 4px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.15);
+  ",
           }
         }
       >
         <div
-          className=" graphcms-image-wrapper"
-          style={
+          css={
             Object {
-              "overflow": "hidden",
-              "position": "relative",
-              "zIndex": 1,
+              "map": undefined,
+              "name": "nai1lz",
+              "next": undefined,
+              "styles": "
+            padding: 16px 0 40px;
+          ",
             }
           }
         >
           <div
+            className=" graphcms-image-outer-wrapper"
             style={
               Object {
-                "paddingBottom": "100%",
-                "width": "100%",
+                "position": "relative",
+                "zIndex": 0,
               }
             }
-          />
-          <img
-            alt=""
-            onLoad={null}
-            src="https://media.graphcms.com/resize=w:20,h:20,fit:crop/blur=amount:2/compress/my-test-image"
-            style={
+          >
+            <div
+              className=" graphcms-image-wrapper"
+              style={
+                Object {
+                  "overflow": "hidden",
+                  "position": "relative",
+                  "zIndex": 1,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "paddingBottom": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+              <img
+                alt=""
+                onLoad={null}
+                src="https://media.graphcms.com/resize=w:20,h:20,fit:crop/blur=amount:2/compress/my-test-image"
+                style={
+                  Object {
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "cover",
+                    "objectPosition": "center",
+                    "opacity": 1,
+                    "position": "absolute",
+                    "top": 0,
+                    "transition": "opacity 0.5s",
+                    "transitionDelay": "0.25s",
+                    "width": "100%",
+                  }
+                }
+                title=""
+              />
+              
+            </div>
+          </div>
+        </div>
+        <div
+          css={
+            Object {
+              "map": undefined,
+              "name": "1umonxf",
+              "next": undefined,
+              "styles": "
+    background: white;
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    left: 0;
+    border-top: 1px solid #ced5ea;
+    user-select: none;
+    pointer-events: none;
+  ",
+            }
+          }
+        >
+          <div
+            css={
               Object {
-                "height": "100%",
-                "left": 0,
-                "objectFit": "cover",
-                "objectPosition": "center",
-                "opacity": 1,
-                "position": "absolute",
-                "top": 0,
-                "transition": "opacity 0.5s",
-                "transitionDelay": "0.25s",
-                "width": "100%",
+                "map": undefined,
+                "name": "2vnr9c",
+                "next": undefined,
+                "styles": "
+              height: 40px;
+              line-height: 40px;
+              width: 60px;
+              float: left;
+              text-align: center;
+              font-size: 12px;
+              color: #596ab0;
+              border-right: 1px solid #e1e5f1;
+            ",
               }
             }
-            title=""
-          />
-          
+          >
+            HTML
+          </div>
+          <div
+            css={
+              Object {
+                "map": undefined,
+                "name": "1eke2b3",
+                "next": undefined,
+                "styles": "
+              height: 40px;
+              line-height: 40px;
+              width: 40px;
+              float: left;
+              text-align: center;
+              font-size: 12px;
+              color: #596ab0;
+              border-right: 1px solid #e1e5f1;
+            ",
+              }
+            }
+          >
+            1
+          </div>
+          <pre
+            css={
+              Array [
+                Object {
+                  "map": undefined,
+                  "name": "a1nu2y",
+                  "next": undefined,
+                  "styles": "
+    font-family: 'Courier New', Courier, monospace;
+    background: #000;
+    color: #fff;
+    margin: 0;
+  ",
+                },
+                Object {
+                  "map": undefined,
+                  "name": "cxfdtd",
+                  "next": undefined,
+                  "styles": "
+              width: calc(100% - 100px);
+              height: 40px;
+              float: left;
+              line-height: 40px;
+              font-size: 12px;
+              background: white;
+              padding-left: 16px;
+              color: #000;
+              overflow-x: scroll;
+              user-select: none;
+              pointer-events: all;
+            ",
+                },
+              ]
+            }
+          >
+            <code>
+              &lt;connect-hello-world /&gt;
+            </code>
+          </pre>
         </div>
       </div>
-      <div
-        className="emotion-0"
-      >
-        &lt;connect-hello-world /&gt;
-      </div>
     </div>
-  </div>,
-]
+    <div
+      className="label-or"
+      css={
+        Object {
+          "map": undefined,
+          "name": "1ompbjz",
+          "next": undefined,
+          "styles": "
+  background: #FFC400;
+  height: 45px;
+  width: 45px;
+  border-radius: 24px;
+  margin: auto;
+  color: #fff;
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+",
+        }
+      }
+    >
+      <span>
+        Or
+      </span>
+    </div>
+    <div
+      className="emotion-1"
+    >
+      <h3>
+        <span
+          aria-describedby="Not sure what to pass here"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <img
+            src="test-file-stub"
+          />
+        </span>
+        <span
+          css={
+            Object {
+              "map": undefined,
+              "name": "k57eq2",
+              "next": undefined,
+              "styles": "
+          margin-left: 8px;
+        ",
+            }
+          }
+        >
+          Install the Bearer Library
+        </span>
+      </h3>
+      <pre
+        css={
+          Object {
+            "map": undefined,
+            "name": "1tswbk8",
+            "next": undefined,
+            "styles": "
+    padding: 1em !important;
+    overflow: scroll;
+    border-radius: 2px;
+  ",
+          }
+        }
+        style={
+          Object {
+            "backgroundColor": "#1d262f",
+            "color": "#D4D4D4",
+          }
+        }
+      >
+        <div
+          className="token-line"
+          style={
+            Object {
+              "backgroundColor": null,
+              "color": "#D4D4D4",
+            }
+          }
+        >
+          <span
+            className="token plain"
+          >
+            npm install @bearer
+          </span>
+          <span
+            className="token operator"
+            style={
+              Object {
+                "color": "#ae3e88",
+              }
+            }
+          >
+            /
+          </span>
+          <span
+            className="token plain"
+          >
+            react
+          </span>
+        </div>
+      </pre>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TimelineStage handles when UI element is not present, and has no auto margin when index is odd 1`] = `
+<div
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "6j1h23",
+        "next": undefined,
+        "styles": "
+    margin: auto;
+    width: 100%;
+    max-width: 64rem;
+  ",
+      },
+      undefined,
+      Object {
+        "map": undefined,
+        "name": "8qpjjf",
+        "next": undefined,
+        "styles": "
+    display: block;
+  ",
+      },
+      false,
+      false,
+      false,
+      Object {
+        "map": undefined,
+        "name": "1dpbaaj",
+        "next": undefined,
+        "styles": "
+    padding: 0 0.09375rem;
+  ",
+      },
+      Object {
+        "map": undefined,
+        "name": "1ank2qv",
+        "next": undefined,
+        "styles": "
+    padding-bottom: 0;
+  ",
+      },
+      Object {
+        "marginBottom": 32,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`TimelineStage handles when backend function is not present, and has auto margin-left when index is even 1`] = `
+<div
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "6j1h23",
+        "next": undefined,
+        "styles": "
+    margin: auto;
+    width: 100%;
+    max-width: 64rem;
+  ",
+      },
+      undefined,
+      Object {
+        "map": undefined,
+        "name": "8qpjjf",
+        "next": undefined,
+        "styles": "
+    display: block;
+  ",
+      },
+      false,
+      false,
+      false,
+      Object {
+        "map": undefined,
+        "name": "1dpbaaj",
+        "next": undefined,
+        "styles": "
+    padding: 0 0.09375rem;
+  ",
+      },
+      Object {
+        "map": undefined,
+        "name": "1ank2qv",
+        "next": undefined,
+        "styles": "
+    padding-bottom: 0;
+  ",
+      },
+      Object {
+        "marginBottom": 32,
+      },
+    ]
+  }
+/>
 `;

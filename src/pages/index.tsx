@@ -64,7 +64,13 @@ interface IQueryData {
 export const query = graphql`
   query IndexPageQuery {
     graphcms {
-      integrations(where: { status: PUBLISHED, timeline: { timelineStages_some: { id_not: null } } }) {
+      integrations(
+        where: {
+          status: PUBLISHED
+          featured: true
+          timeline: { timelineStages_some: { id_not: null, displayOnHub: true } }
+        }
+      ) {
         id
         title
         description
@@ -112,7 +118,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           image={placeholderHeroImage}
           longHero
         >
-          <LightCta to="foo.com" text="Your users will thank you." />
+          <LightCta text="Your users will thank you." />
           <div
             css={css`
               margin-top: 64px;
@@ -152,7 +158,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             {
               title: 'For product manager',
               text:
-                'Start adding the Integration that keeps piling up in your backlog.\
+                'Start adding the Integrations that keep piling up in your backlog.\
                  Add dozens of Integrations that users keep asking for without impacting roadmap and budget',
               iconBg: greenSplash,
               icon: iconGraph,
@@ -161,8 +167,8 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             {
               title: 'For Front-End developer',
               text:
-                'Ready to use, one line of code, Web Components that works for your stack,\
-                 future proof. Offer a standardize experience, customizable to your look and feel.',
+                'Ready-to-use, one line of code, Web Components that work for your stack,\
+                 future-proof. Offer a standardize experience, customizable to your look and feel.',
               iconBg: orangeSplash,
               icon: iconLayout,
               color: colors.orange
@@ -171,7 +177,8 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               title: 'For Back-End developer',
               text:
                 'Scale your Integration without overloading your codebase with dozens \
-                of dependencies, SDK and vendor specific code.Did we mention we also take care of the OAuth flow too?',
+                of dependencies, SDKs and vendor-specific code. \
+                Did we mention we take care of the OAuth flow too?',
               iconBg: blueSplash,
               icon: iconShippet,
               color: colors.blue
@@ -208,7 +215,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           >
             <Button
               text="How it works?"
-              link="#"
+              link="/how-it-works"
               css={css`
                 margin: 1em auto;
               `}
@@ -216,7 +223,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
 
             <div>
               <Link
-                to="#"
+                to="https://docs.bearer.sh/"
                 css={css`
                   margin-top: 16px;
                   display: inline-block;
@@ -242,8 +249,8 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           ]}
         >
           <Button
-            text="explore integrations"
-            link="#"
+            text="Explore Integrations"
+            link="/explore"
             css={css`
               margin: 1em auto;
             `}
@@ -300,14 +307,10 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             children={
               <>
                 <Text text="Integration should be a key feature of your App!" />
-
-                <Text text="Are you going to continue letting third-party capture its value?" />
-
+                <Text text="Are you going to continue to let third parties capture its value?" />
                 <Text
-                  text="
-                  It’s time to power-up your App with truly native integrations. Take care of your business logic and we
-                  will do the rest.
-                "
+                  text="It’s time to power-up your App with truly Native Integrations. 
+                  Take care of your business logic and we will do the rest."
                 />
               </>
             }
@@ -340,11 +343,9 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             }
             children={
               <>
-                <Text text="Every Vendor’s API, SDK, Authentication mechanism and even UI Widget are different!" />
-
-                <Text text="Stop piling up dependencies and maintaining vendors specific codes." />
-
-                <Text text="Every Bearer’s Integration is truly standardized, once and for all." />
+                <Text text="Every Vendor’s API, SDK, Authentication mechanism, and even UI Widgets, are different!" />
+                <Text text="Stop piling up dependencies and maintaining vendor-specific code." />
+                <Text text="Every Bearer Integration is truly standardized, once and for all." />
               </>
             }
             padding="large"
@@ -373,12 +374,12 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             }
             children={
               <>
-                <Text text="Using the Bearer standard add any Integration like a breeze (which is about 5 minutes" />
-
+                <Text
+                  text={`Using the Bearer standard, add any Integration like a breeze (which is about 5 minutes).`}
+                />
                 <Text
                   text={`We help you further by providing all the necessary tooling to help even more with your stack`}
                 />
-
                 <Text text="We currently support: Ruby, Rails, Node, Express, React and Vue" />
               </>
             }

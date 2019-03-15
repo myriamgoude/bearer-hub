@@ -1,9 +1,6 @@
 'use strict'
 
 const fs = require('fs')
-const pify = require('pify')
-
-const writeFile = pify(fs.writeFile)
 
 function githubHandle(githubUrl) {
   return githubUrl.replace('https://github.com/Bearer/integrations/tree/master/', '')
@@ -40,7 +37,7 @@ module.exports = async ({ graphql }) => {
     throw new Error(data.errors)
   }
 
-  let integrationData = {}
+  const integrationData = []
 
   data.graphcms.integrations.forEach(integration => {
     if (integration.githubUrl) {
@@ -48,20 +45,24 @@ module.exports = async ({ graphql }) => {
       let identifier = githubHandle(integration.githubUrl)
       let imageObj = handleImage(integration.providers[0])
 
-      integrationData[identifier] = {
+      integrationData.push({
+        id: identifier,
+        repo: integration.githubUrl,
         name: integration.title,
         description: integration.description,
         image: {
           url: imageObj.url,
           handle: imageObj.handle
         }
-      }
+      })
     } else {
       console.log(`No GitHub URL provided for "${integration.title}" integration`)
     }
   })
+  const dir = './public/api'
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir)
+  }
 
-  writeFile('./static/api/explore.json', JSON.stringify(integrationData), 'utf8').catch(e => {
-    console.log(`Failed to write JSON file: ${e}`)
-  })
+  fs.writeFileSync(`${dir}/explore.json`, JSON.stringify(integrationData), 'utf8')
 }

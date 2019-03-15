@@ -1,0 +1,5 @@
+[[headers]]
+  # Allow anyone to access the public api
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"

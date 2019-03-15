@@ -40,9 +40,10 @@ const prUpdate = (pr, params) => {
 }
 
 const extractPreviewUrl = filePath => {
+  console.log(fs.readFileSync(filePath, 'utf8').split('\n')[7].split('URL:'))
   url = fs
     .readFileSync(filePath, 'utf8')
-    .split('\n')[6]
+    .split('\n')[7]
     .split('URL:')[1]
     .replace(/.+https/, 'https')
   return url

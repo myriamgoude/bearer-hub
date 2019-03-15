@@ -17,5 +17,6 @@ yarn && yarn build
 
 echo "Deploy the the hub application"
 yarn netlify deploy --dir=public > preview
+cat ./preview
 
 node ./.jenkins/scripts/preview.js $CURRENT_BRANCH './preview'

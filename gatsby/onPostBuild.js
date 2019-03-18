@@ -18,6 +18,7 @@ module.exports = async ({ graphql }) => {
     {
       graphcms {
         integrations(where: { status: PUBLISHED }) {
+          uuid
           githubUrl
           title
           description
@@ -42,11 +43,12 @@ module.exports = async ({ graphql }) => {
   data.graphcms.integrations.forEach(integration => {
     if (integration.githubUrl) {
       console.log(`Preparing JSON for "${integration.title}" integration`)
-      let identifier = githubHandle(integration.githubUrl)
+      let template = githubHandle(integration.githubUrl)
       let imageObj = handleImage(integration.providers[0])
 
       integrationData.push({
-        id: identifier,
+        template,
+        id: integration.uuid,
         repo: integration.githubUrl,
         name: integration.title,
         description: integration.description,

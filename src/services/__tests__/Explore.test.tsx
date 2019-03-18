@@ -39,14 +39,21 @@ describe('slug', () => {
 })
 
 describe('timer', () => {
-  afterAll(() => {
+  afterEach(() => {
     MockDate.reset()
   })
 
-  MockDate.set(new Date('2019-01-01T10:01:11'))
-  it('returns the expected time', () => {
+  it('returns the expected time in 24:00 format', () => {
+    MockDate.set(new Date('2019-01-01T12:01:11'))
     const myTime = timer(2)
-    // 10:01 + 2 minutes = 10:03
-    expect(myTime).toMatch('10:03')
+    // 12:01 + 2 minutes = 12:03
+    expect(myTime).toMatch('12:03')
+  })
+
+  it('returns the expected time across hours', () => {
+    MockDate.set(new Date('2019-01-01T08:59:11'))
+    const myTime = timer(2)
+    // 8:59 + 2 minutes = 9:01
+    expect(myTime).toMatch('9:01')
   })
 })

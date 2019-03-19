@@ -10,14 +10,15 @@ interface ISectionProps {
   background?: string
   className?: any
   withTail?: boolean
-  css?: any
+  style?: any
+  styleContainer?: any
 }
 
 const Section = (props: ISectionProps) => (
   <div
     css={[
       styles.root,
-      props.css,
+      props.style && props.style,
       props.withTail && styles.tail,
       props.background &&
         css`
@@ -26,7 +27,7 @@ const Section = (props: ISectionProps) => (
     ]}
     className={props.className && props.className}
   >
-    <Container>{props.children}</Container>
+    <Container style={props.styleContainer}>{props.children}</Container>
   </div>
 )
 export default Section

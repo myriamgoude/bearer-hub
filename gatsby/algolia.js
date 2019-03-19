@@ -7,10 +7,13 @@ const allPublishedIntegrations = `
         id
         title
         categories {
-            title
+          title
         }
         providers {
-            title
+          title
+          image {
+            url
+          }
         }
       }
     }

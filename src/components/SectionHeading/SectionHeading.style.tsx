@@ -7,7 +7,7 @@ export default {
     flex-shrink: 0;
     text-align: left;
     display: block;
-    margin-bottom: ${getEmSize(32)};
+    margin-bottom: ${getEmSize(48)};
   `,
   heading: css`
     display: inline;

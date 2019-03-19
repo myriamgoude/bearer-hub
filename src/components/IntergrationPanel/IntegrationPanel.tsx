@@ -28,7 +28,7 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
   render() {
     return (
       <Container>
-        <Grid fullWidth gutter={24} col={4}>
+        <Grid fullWidth space="around" gutter={24} col={4}>
           {this.props.integrations.map(integration => {
             const image = integration.providers[0].image ? integration.providers[0].image.url : ''
             return (

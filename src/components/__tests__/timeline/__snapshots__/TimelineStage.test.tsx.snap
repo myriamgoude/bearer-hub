@@ -116,14 +116,14 @@ exports[`TimelineStage handles when UI element and backend function are both pre
             Array [
               Object {
                 "map": undefined,
-                "name": "fxnnpe",
+                "name": "12j8918",
                 "next": undefined,
                 "styles": "
     width: 100%;
     flex-shrink: 0;
     text-align: left;
     display: block;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   ",
               },
               Object {
@@ -190,18 +190,6 @@ exports[`TimelineStage handles when UI element and backend function are both pre
               />
             </span>
           </h3>
-          <h3
-            css={
-              Object {
-                "map": undefined,
-                "name": "89fcrv",
-                "next": undefined,
-                "styles": "
-    display: inline;
-  ",
-              }
-            }
-          />
         </div>
       </div>
       <div

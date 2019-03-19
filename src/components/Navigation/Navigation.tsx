@@ -1,14 +1,14 @@
 import * as React from 'react'
+import { css } from '@emotion/core'
 
 import { isAuthenticated, isSSOAuthenticated, lockLogin } from '../../services/Auth'
 import { Link, Button } from '../index'
-
-import { css } from '@emotion/core'
 
 import styles from './Navigation.style'
 
 interface INavigationState {
   isAuthenticated: boolean
+  isOpened: boolean
 }
 interface INavigationProps {}
 
@@ -17,17 +17,26 @@ interface INavLinkProps {
   to: any
 }
 
-const NavLink = (props: INavLinkProps) => (
-  <Link to={props.to} css={styles.link}>
-    {props.children}
-  </Link>
-)
+const NavLink = (props: INavLinkProps) => {
+  let linkStyle
+  if (typeof window !== 'undefined') {
+    linkStyle = [styles.link, window.location.pathname.indexOf(props.to) === 0 && styles.linkActive]
+  }
+  return (
+    <li>
+      <Link to={props.to} css={linkStyle}>
+        {props.children}
+      </Link>
+    </li>
+  )
+}
 
 export default class Navigation extends React.Component<INavigationProps, INavigationState> {
   constructor(props: INavigationProps) {
     super(props)
     this.state = {
-      isAuthenticated: isAuthenticated()
+      isAuthenticated: isAuthenticated(),
+      isOpened: false
     }
   }
 
@@ -52,14 +61,23 @@ export default class Navigation extends React.Component<INavigationProps, INavig
     </>
   )
 
+  renderToggleButton = () => (
+    <button onClick={() => this.setState({ isOpened: !this.state.isOpened })} css={styles.mobileButton}>
+      <img
+        src={require('../../images/shared/icon-burger.svg')}
+        css={css`
+          width: 32px;
+        `}
+      />
+      {this.state.isOpened}
+    </button>
+  )
+
   public render() {
     return (
-      <div
-        css={css`
-          align-self: flex-end;
-        `}
-      >
-        <ul css={styles.list}>
+      <div css={styles.root}>
+        {this.renderToggleButton()}
+        <ul css={[styles.list, !this.state.isOpened && styles.mobileList]}>
           <NavLink to="/explore">EXPLORE INTEGRATIONS</NavLink>
           <NavLink to="/how-it-works">HOW IT WORKS</NavLink>
           <NavLink to="/native-integrations">MANIFESTO</NavLink>

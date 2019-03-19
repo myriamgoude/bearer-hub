@@ -40,7 +40,7 @@ import iconLayout from '../images/shared/icon-Layout.svg'
 
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
 
-import { colors } from '../styles/variables'
+import { colors, breakpoints } from '../styles/variables'
 
 import codeData from '../data/codeSamples'
 
@@ -198,12 +198,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
 
       <div css={styleWaveBg}>
         <Section withTail>
-          <SectionHeading
-            primaryText="A Native Integration in 5 minutes"
-            css={css`
-              margin-bottom: 64px;
-            `}
-          />
+          <SectionHeading primaryText="A Native Integration in 5 minutes" />
           <CodeExamples data={codeData} />
           <div
             css={css`
@@ -244,7 +239,6 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           css={[
             css`
               text-align: center;
-              margin-top: 32px;
             `
           ]}
         >
@@ -272,15 +266,26 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
       >
         <SectionHeading primaryText="Why use Bearer?" />
         <Grid
-          space="between"
+          space="around"
           gutter={32}
           fullWidth
           style={css`
-            height: 600px;
+            justify-content: center !important;
+
+            @media (min-width: ${breakpoints.md}px) {
+              height: 600px;
+              justify-content: space-between !important;
+            }
+            align-items: center;
             background: url(${require('../images/shared/yellow-circle.svg')}) no-repeat center top / 560px;
           `}
           childrenStyle={css`
-            max-width: 320px;
+            margin-bottom: 16px;
+
+            @media (min-width: ${breakpoints.md}px) {
+              max-width: 320px;
+              margin-bottom: 0;
+            }
           `}
         >
           <Card
@@ -319,7 +324,9 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           <Card
             className={css`
               position: relative;
-              top: 200px;
+              @media (min-width: ${breakpoints.md}px) {
+                top: 200px;
+              }
             `}
             title={
               <div

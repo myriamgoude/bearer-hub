@@ -9,18 +9,20 @@ import DashedLine from './DashedLine/index'
 import Footer from './Footer/index'
 import Grid from './Grid/index'
 import Header from './Header/index'
+import HeroLined from './HeroLined/index'
 import HeroPanel from './HeroPanel/index'
 import IntegrationPanel from './IntergrationPanel/index'
 import LayoutMain from './LayoutMain/index'
 import LayoutRoot from './LayoutRoot/index'
+import Label from './Label/index'
 import Link from './Link/index'
 import LightCta from './LightCta/index'
 import Navigation from './Navigation/index'
 import Page from './Page/index'
 import PageHeading from './PageHeading/index'
+import PageMetadata from './PageMetadata/index'
 import Pill from './Pill/index'
 import Search from './Search/index'
-import SearchList from './SearchList/index'
 import Section from './Section/index'
 import SectionCTA from './SectionCTA/index'
 import SectionHeading from './SectionHeading/index'
@@ -43,18 +45,20 @@ export {
   Footer,
   Grid,
   Header,
+  HeroLined,
   HeroPanel,
   IntegrationPanel,
   LayoutMain,
   LayoutRoot,
+  Label,
   Link,
   LightCta,
   Navigation,
   Page,
   PageHeading,
+  PageMetadata,
   Pill,
   Search,
-  SearchList,
   Section,
   SectionCTA,
   SectionHeading,

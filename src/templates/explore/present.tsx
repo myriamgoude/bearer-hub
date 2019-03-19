@@ -17,10 +17,10 @@ import {
   SectionCTA
 } from '../../components/index'
 import TimelineStage from '../../components/timeline/TimelineStage'
+
 import IndexLayout from '../../layouts'
 
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
-
 import { getEmSize } from '../../styles/mixins'
 import { colors, dimensions } from '../../styles/variables'
 

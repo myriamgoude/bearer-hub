@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 53.1 (72631) - https://sketchapp.com -->
+    <title>D4F1C620-D793-40BA-A3B0-DDC450D0D0F2</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M22.1044725,21.1645177 L22.1044726,21.1645176 C26.7900885,15.9597727 26.3692625,7.9420629 21.1645176,3.25644704 C15.9597727,-1.42916882 7.9420629,-1.00834285 3.25644704,4.19640204 C-1.42916882,9.40114694 -1.00834285,17.4188567 4.19640204,22.1044726 C9.01920879,26.4462537 16.3417109,26.4462537 21.1645176,22.1044724 L30.8730429,31.8133966 L30.8730429,31.8133966 C31.1371158,32.0684461 31.5579484,32.0611325 31.8129979,31.7970594 C32.0618015,31.5394533 32.0618015,31.1310475 31.8129979,30.8734413 L22.1044725,21.1645177 Z M12.73005,24.0311811 L12.7300495,24.0311811 C6.48882804,24.0311808 1.4293175,18.9716705 1.4293175,12.7304491 C1.42931777,6.48922762 6.48882804,1.42971708 12.7300495,1.42971708 C18.9712709,1.42971735 24.0307815,6.48922762 24.0307815,12.7304491 L24.0307819,12.7301173 C24.0236384,18.9683075 18.9685591,24.02367 12.7303822,24.0311817 L12.73005,24.0311811 Z" id="path-1"></path>
+    </defs>
+    <g id="Hub" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Explore-integrations" transform="translate(-488.000000, -522.000000)">
+            <g id="UI/Inputs/Hero-Search" transform="translate(464.000000, 502.000000)">
+                <g id="Icons/Search">
+                    <g transform="translate(24.000000, 20.000000)">
+                        <g id="Colors/@secondary">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Mask" fill-rule="nonzero"></g>
+                            <g mask="url(#mask-2)" fill="#C2C9EA" id="Rectangle">
+                                <g transform="translate(-16.000000, -16.000000)">
+                                    <rect x="0" y="0" width="64" height="64"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

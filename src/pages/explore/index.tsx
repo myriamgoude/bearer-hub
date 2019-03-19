@@ -14,8 +14,6 @@ import { SearchList } from '../../components/Search/components/SearchList'
 
 import { colors } from '../../styles/variables'
 
-import { MockedHits } from '../../data/MockedHits'
-
 interface IQueryData {
   graphcms: {
     providers: {
@@ -80,40 +78,15 @@ export const query = graphql`
   }
 `
 
-const searchClient = {
-  async search(requests: any) {
-    return {
-      results: requests.map(() => {
-        // faking the return so we can render
-        return {
-          processingTimeMS: 0,
-          nbHits: 0,
-          hits: MockedHits,
-          facets: {}
-        }
-      })
-    }
-  },
-  async searchForFacetValues(requests: any) {
-    return {
-      results: requests.map(() => {
-        return {}
-      })
-    }
-  }
-}
-
 const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
-  console.log(data)
   return (
     <IndexLayout location={location}>
       <PageMetadata title="Explore" description="Explore Integrations" />
       <Page>
         <InstantSearch
-          appId=""
-          apiKey=""
+          appId={`${process.env.GATSBY_ALGOLIA_APP_ID}`}
+          apiKey={`${process.env.GATSBY_ALGOLIA_SEARCH_API_KEY}`}
           indexName={`${process.env.GATSBY_ALGOLIA_INDEX_NAME}`}
-          searchClient={searchClient}
         >
           <div css={heroStyles.styleBackgroundExplore}>
             <HeroLined>

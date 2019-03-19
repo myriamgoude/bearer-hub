@@ -15,7 +15,6 @@ const cardStyle = css`
 
 export const CustomHits = connectHits(
   ({ hits }: { hits: { objectID: string; title: any; id: string; providers: any; category: any }[] }) => {
-    console.log('hits', hits)
     return (
       <Grid
         col={3}
@@ -29,7 +28,6 @@ export const CustomHits = connectHits(
         `}
       >
         {hits.map(hit => {
-          console.log('hit', hit)
           return (
             <Card
               key={hit.objectID}

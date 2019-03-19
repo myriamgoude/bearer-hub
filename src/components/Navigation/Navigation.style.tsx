@@ -19,23 +19,36 @@ export default {
     color: currentColor;
   `,
   linkActive: css`
-    color: red;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 28px;
+      background: ${colors.yellow};
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: -24px;
+    }
   `,
   list: css`
     margin: 0;
     display: none;
     background: ${colors.darkBlue};
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    color: white !important;
     padding: 2em 0;
 
     @media (min-width: ${breakpoints.md}px) {
       display: block;
       background: transparent;
       color: ${colors.black};
+      width: auto;
+      padding: 0;
     }
 
     li {

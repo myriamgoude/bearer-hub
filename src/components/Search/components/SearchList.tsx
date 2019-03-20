@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
-import { path } from '../../../services/Explore'
+import { categoryPath, providerPath } from '../../../services/Explore'
 import { Label, Link } from '../../index'
 import { colors } from '../../../styles/variables'
 
@@ -8,10 +8,12 @@ interface ISearchListProps {
   selected?: string
   categories: {
     id: string
+    uuid: string
     title: string
   }[]
   providers: {
     id: string
+    uuid: string
     title: string
   }[]
 }
@@ -47,7 +49,7 @@ export const SearchList = (props: ISearchListProps) => {
           {props.providers.map(provider => (
             <li key={provider.id}>
               <Link
-                to={path({ title: provider.title })}
+                to={providerPath({ uuid: provider.uuid, title: provider.title })}
                 css={navLinkStyle}
                 style={
                   props.selected === provider.id
@@ -72,7 +74,7 @@ export const SearchList = (props: ISearchListProps) => {
           {props.categories.map(category => (
             <li key={category.id}>
               <Link
-                to={path({ title: category.title })}
+                to={categoryPath({ uuid: category.uuid, title: category.title })}
                 css={navLinkStyle}
                 style={
                   props.selected === category.id

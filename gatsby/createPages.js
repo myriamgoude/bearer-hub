@@ -1,5 +1,6 @@
 'use strict'
 const { resolve } = require('path')
+const fs = require('fs')
 
 module.exports = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -43,132 +44,140 @@ module.exports = async ({ graphql, actions }) => {
   })
 
   //----------------------------//
-  // EXPLORE PRESENT PAGES //
+  //  ALL EXPLORE PAGES         //
   //----------------------------//
 
-  // Create pages for integrations at explore/integrations/my-integration-slug/present
-  // using content from our CMS system and the explore/present.tsx template
-  //
-  // Note: we only create pages for PUBLISHED integrations with TIMELINE STAGES
+  // Templates for Explore pages
+  const integrationTemplate = resolve(`./src/templates/explore/present.tsx`)
+  const providerTemplate = resolve(`./src/templates/explore/providers.tsx`)
+  const categoryTemplate = resolve(`./src/templates/explore/categories.tsx`)
 
-  const allIntegrations = await graphql(`
+  // Redirect data for the Netlify _redirects file
+  const providerRedirects = []
+  const providerRewrites = []
+  const categoryRedirects = []
+  const categoryRewrites = []
+  const integrationRedirects = []
+  const integrationRewrites = []
+  const integrationProviderRedirects = []
+
+  // See /services/Integration which also generates a slug
+  // Since we cannot use this service here, the logic must be duplicated
+  function generateSlug(title) {
+    return title.toLowerCase().replace(/\s/g, '-')
+  }
+
+  // Note 1: we only ask for PUBLISHED integrations with 1+ PROVIDER and Hub-worthy TIMELINE STAGES
+  // Note 2: ID is a hashed string used by GraphCMS e.g. cjs3996bq9ew00c15zc96bcnh, cjsukbmse36eh0c150la5jzc2
+  //         UUID is a field we have defined, and use in the URLs e.g. 1, 5, 72
+  const allExplore = await graphql(`
     {
       graphcms {
         integrations(
-          where: { status: PUBLISHED, timeline: { timelineStages_some: { id_not: null, displayOnHub_not: null } } }
-        ) {
-          id
-          title
-        }
-      }
-    }
-  `)
-
-  if (allIntegrations.errors) {
-    console.error(allIntegrations.errors)
-    throw new Error(allIntegrations.errors)
-  }
-
-  allIntegrations.data.graphcms.integrations.forEach(({ id, title }) => {
-    // See /services/Integration which also generates a slug
-    // Since we cannot use this service here, the logic must be duplicated
-    const path = `/explore/${id}-${title.toLowerCase().replace(/\s/g, '-')}`
-
-    createPage({
-      path,
-      component: resolve(`./src/templates/explore/present.tsx`),
-      context: {
-        id
-      }
-    })
-  })
-
-  //-------------------------------------//
-  // EXPLORE CATEGORY AND PROVIDER PAGES //
-  //-------------------------------------//
-
-  // Note: Please see the scopedCategories and scopedProviders
-  // GraphQL fragments in pages/explore/index. We'd use these
-  // fragments in the queries below but they're not available
-  // to us here (Gatsby quirk)
-
-  // Create pages for Integration Providers (e.g. "Slack", "MailChimp")
-  // at explore/my-provider-slug/ and using content from our CMS system
-  // and the explore/providers.tsx template
-  const allProviders = await graphql(`
-    {
-      graphcms {
-        providers(
           where: {
             status: PUBLISHED
-            integrations_some: {
-              id_not: null
-              status: PUBLISHED
-              timeline: { timelineStages_some: { id_not: null, displayOnHub: true } }
-            }
+            timeline: { timelineStages_some: { id_not: null, displayOnHub_not: null } }
+            providers_some: { id_not: null }
           }
         ) {
           id
+          uuid
           title
-        }
-      }
-    }
-  `)
-
-  if (allProviders.errors) {
-    console.error(allProviders.errors)
-    throw new Error(allProviders.errors)
-  }
-
-  allProviders.data.graphcms.providers.forEach(({ id, title }) => {
-    const path = `/explore/${title.toLowerCase().replace(/\s/g, '-')}`
-
-    createPage({
-      path,
-      component: resolve(`./src/templates/explore/providers.tsx`),
-      context: {
-        id
-      }
-    })
-  })
-
-  // Create pages for Integration Categories (e.g. "Developer Tooling",
-  // "Mailing") at explore/my-category-slug and using content from our
-  // CMS system and the explore/categories.tsx template
-  const allCategories = await graphql(`
-    {
-      graphcms {
-        categories(
-          where: {
-            status: PUBLISHED
-            integrations_some: {
-              id_not: null
-              status: PUBLISHED
-              timeline: { timelineStages_some: { id_not: null, displayOnHub: true } }
-            }
+          providers {
+            id
+            uuid
+            title
           }
-        ) {
-          id
-          title
+          categories {
+            id
+            uuid
+            title
+          }
         }
       }
     }
   `)
 
-  if (allCategories.errors) {
-    console.error(allCategories.errors)
-    throw new Error(allCategories.errors)
+  if (allExplore.errors) {
+    console.error(allExplore.errors)
+    throw new Error(allExplore.errors)
   }
 
-  allCategories.data.graphcms.categories.forEach(({ id, title }) => {
-    const path = `/explore/${title.toLowerCase().replace(/\s/g, '-')}`
+  allExplore.data.graphcms.integrations.forEach(integration => {
+    const provider = integration.providers[0]
+    const providerSlug = generateSlug(provider.title)
+    const providerPath = `/explore/provider/${provider.uuid}/${providerSlug}`
+    const providerWildCardPath = `/explore/provider/${provider.uuid}/:slug`
 
+    const integrationPath = `/explore/${provider.uuid}/${providerSlug}/${integration.uuid}/${generateSlug(
+      integration.title
+    )}`
+    const integrationWildCardPath = `/explore/${provider.uuid}/:slug/${integration.uuid}/:slug`
+    // Take us from e.g. explore/12/slack/ to explore/provider/12/slack
+    const integrationProviderRedirect = `/explore/${provider.uuid}/:slug /explore/provider/${
+      provider.uuid
+    }/${providerSlug} 301`
+
+    // Create pages for Integrations (e.g. "Slack Notification")
     createPage({
-      path,
-      component: resolve(`./src/templates/explore/categories.tsx`),
+      path: integrationPath,
+      component: integrationTemplate,
       context: {
-        id
+        id: integration.id
       }
     })
+
+    // Create pages for Integration Providers (e.g. "Slack", "MailChimp")
+    createPage({
+      path: providerPath,
+      component: providerTemplate,
+      context: {
+        id: provider.id
+      }
+    })
+
+    // Add rewrite (200) and redirect (301) data for Integration and Provider
+    providerRewrites.push(`${providerPath} ${providerPath} 200`)
+    providerRedirects.push(`${providerWildCardPath} ${providerPath} 301`)
+
+    integrationRewrites.push(`${integrationPath} ${integrationPath} 200`)
+    integrationRedirects.push(`${integrationWildCardPath} ${integrationPath} 301`)
+
+    integrationProviderRedirects.push(integrationProviderRedirect)
+
+    // Create pages for Integration Categories (e.g. "Developer Tooling", "Mailing")
+    integration.categories.forEach(category => {
+      const categoryPath = `/explore/category/${category.uuid}/${generateSlug(category.title)}`
+      const categoryWildCardPath = `/explore/category/${category.uuid}/:slug`
+
+      createPage({
+        path: categoryPath,
+        component: categoryTemplate,
+        context: {
+          id: category.id
+        }
+      })
+
+      // Add rewrite (200) and redirect (301) data for Category
+      categoryRewrites.push(`${categoryPath} ${categoryPath} 200`)
+      categoryRedirects.push(`${categoryWildCardPath} ${categoryPath} 301`)
+    })
   })
+  console.log('Populating redirect file for Netlify...')
+  const dir = './public/'
+
+  const redirectData = []
+
+  // Add rewrites (200)
+  redirectData.push(integrationRewrites.join('\n'))
+  redirectData.push(providerRewrites.join('\n'))
+  redirectData.push(categoryRewrites.join('\n'))
+
+  // Add redirects (301)
+  redirectData.push(integrationRedirects.join('\n'))
+  redirectData.push(integrationProviderRedirects.join('\n'))
+  redirectData.push(providerRedirects.join('\n'))
+  redirectData.push(categoryRedirects.join('\n'))
+
+  fs.writeFileSync(`${dir}/_redirects`, redirectData.join('\n'), 'utf8')
 }

@@ -52,10 +52,12 @@ interface IQueryData {
       mdDescription: string
       timeline: ITimelineProps
       id: string
+      uuid: string
       title: string
       description: string
       featured: boolean
       providers: {
+        uuid: string
         title: string
         image: {
           url: string
@@ -70,10 +72,12 @@ export const query = graphql`
     graphcms {
       integrations(where: { id: $id }, first: 1) {
         id
+        uuid
         title
         description
         featured
         providers {
+          uuid
           title
           image {
             url

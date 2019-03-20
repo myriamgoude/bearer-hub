@@ -26,14 +26,17 @@ interface IQueryData {
   graphcms: {
     defaultCategory: {
       id: string
+      uuid: string
       title: string
     }[]
     categories: {
       id: string
+      uuid: string
       title: string
     }[]
     providers: {
       id: string
+      uuid: string
       title: string
     }[]
   }
@@ -44,6 +47,7 @@ export const query = graphql`
     graphcms {
       defaultCategory: categories(where: { id: $id }, first: 1) {
         id
+        uuid
         title
       }
       ...scopedCategories

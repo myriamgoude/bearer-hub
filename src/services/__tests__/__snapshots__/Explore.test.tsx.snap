@@ -1,9 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`path is considered an internal link 1`] = `
+exports[`categoryPath is considered an internal link 1`] = `
 <mockConstructor
-  to="/explore/123-my-title"
+  to="/explore/category/123/my-item-title"
 >
-  My Title
+  My Item Title
+</mockConstructor>
+`;
+
+exports[`integrationPath is considered an internal link 1`] = `
+<mockConstructor
+  to="/explore/123/my-item-title/456/my-integration-title"
+>
+  My Item Title
+</mockConstructor>
+`;
+
+exports[`providerPath is considered an internal link 1`] = `
+<mockConstructor
+  to="/explore/provider/123/my-item-title"
+>
+  My Item Title
 </mockConstructor>
 `;

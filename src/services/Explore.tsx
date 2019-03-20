@@ -1,34 +1,38 @@
 interface IItem {
-  id?: string
+  uuid: string
   title: string
 }
 
-// Returns a path to the Explore pages.
-// These can be Integration, Category, or Provider pages
-export function path(item: IItem) {
-  return `/explore/${slug(item)}`
+interface IIntegration {
+  uuid: string
+  title: string
+  providers: {
+    uuid: string
+    title: string
+  }[]
 }
 
-// Generate a slug given an item with a title and an optional ID
-//
-// Examples
-//
-// - Given item title "My Title", the generated slug will be "my-title"
-// - Given item with ID "123abc" and title "My Title", the generated
-// slug will be "123abc-my-title"
-export function slug({ id, title }: IItem) {
-  if (id && title) {
-    // This logic is duplicated when the GraphCMS pages are created
-    // See /gatsby/createPages.js
-    return `${id}-${title.toLowerCase().replace(/\s/g, '-')}`
-  }
-  if (title) {
-    // This logic is duplicated when the GraphCMS pages are created
-    // See /gatsby/createPages.js
-    return `${title.toLowerCase().replace(/\s/g, '-')}`
-  }
+// Returns a path to an Integration page, given its UUID and title
+// and the title and UUID of its provider.
+// These can be Integration, Category, or Provider pages
+export function integrationPath(integration: IIntegration) {
+  return `/explore/${integration.providers[0].uuid}/${slug(integration.providers[0].title)}/${integration.uuid}/${slug(
+    integration.title
+  )}`
+}
 
-  return ''
+export function providerPath(provider: IItem) {
+  return `/explore/provider/${provider.uuid}/${slug(provider.title)}`
+}
+
+export function categoryPath(category: IItem) {
+  return `/explore/category/${category.uuid}/${slug(category.title)}`
+}
+
+// Generate a slug given an item with a title
+// E.g. given item title "My Title", the generated slug will be "my-title"
+export function slug(title: string) {
+  return `${title.toLowerCase().replace(/\s/g, '-')}`
 }
 
 export function timer(time: number) {

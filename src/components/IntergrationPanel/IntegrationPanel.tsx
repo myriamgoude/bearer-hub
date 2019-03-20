@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 
 import { Container, Grid, Card, Text } from '../index'
 
-import { path } from '../../services/Explore'
+import { integrationPath } from '../../services/Explore'
 
 import styles from './IntegrationPanel.style'
 import { getEmSize } from '../../styles/mixins'
@@ -11,10 +11,12 @@ import { getEmSize } from '../../styles/mixins'
 interface IIntegrationProps {
   integrations: {
     id: string
+    uuid: string
     title: string
     description: string
     featured: boolean
     providers: {
+      uuid: string
       title: string
       image: {
         url: string
@@ -34,7 +36,7 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
             return (
               <Card
                 key={integration.id}
-                link={`${path(integration)}`}
+                link={`${integrationPath(integration)}`}
                 small
                 className={[styles.item, styles.card, integration.featured && styles.featured]}
               >

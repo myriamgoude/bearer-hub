@@ -5,7 +5,7 @@ import { connectHits } from 'react-instantsearch-dom'
 import { Card, Grid, Clearfix } from '../../index'
 import { CustomHighlight } from './CustomHighlight'
 import blockStyles from '../../../components/IntergrationPanel/IntegrationPanel.style'
-import { path } from '../../../services/Explore'
+import { integrationPath } from '../../../services/Explore'
 
 const cardStyle = css`
   display: flex;
@@ -14,7 +14,7 @@ const cardStyle = css`
 `
 
 export const CustomHits = connectHits(
-  ({ hits }: { hits: { objectID: string; title: any; id: string; providers: any; category: any }[] }) => {
+  ({ hits }: { hits: { objectID: string; title: any; id: string; uuid: string; providers: any; category: any }[] }) => {
     return (
       <Grid
         col={3}
@@ -31,7 +31,7 @@ export const CustomHits = connectHits(
           return (
             <Card
               key={hit.objectID}
-              link={`${path({ id: hit.id, title: hit.title })}`}
+              link={`${integrationPath({ uuid: hit.uuid, title: hit.title, providers: hit.providers })}`}
               small
               className={[blockStyles.item, blockStyles.card, cardStyle]}
             >

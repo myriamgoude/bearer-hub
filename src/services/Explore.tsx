@@ -6,17 +6,17 @@ interface IItem {
 interface IIntegration {
   uuid: string
   title: string
-  providers: {
+  provider: {
     uuid: string
     title: string
-  }[]
+  }
 }
 
 // Returns a path to an Integration page, given its UUID and title
 // and the title and UUID of its provider.
 // These can be Integration, Category, or Provider pages
 export function integrationPath(integration: IIntegration) {
-  return `/explore/${integration.providers[0].uuid}/${slug(integration.providers[0].title)}/${integration.uuid}/${slug(
+  return `/explore/${integration.provider.uuid}/${slug(integration.provider.title)}/${integration.uuid}/${slug(
     integration.title
   )}`
 }

@@ -12,7 +12,7 @@ export const CustomHighlight = connectHighlight(({ highlight, attribute, hit }: 
 
   return (
     <Text
-      tag={attribute === 'providers[0].title' ? 'h5' : 'p'}
+      tag={attribute === 'provider.title' ? 'h5' : 'p'}
       small={attribute === 'title' && true}
       style={css`
         font-weight: bold;

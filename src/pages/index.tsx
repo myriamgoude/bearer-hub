@@ -52,13 +52,13 @@ interface IQueryData {
       title: string
       description: string
       featured: boolean
-      providers: {
+      provider: {
         uuid: string
         title: string
         image: {
           url: string
         }
-      }[]
+      }
     }[]
   }
 }
@@ -70,6 +70,7 @@ export const query = graphql`
         where: {
           status: PUBLISHED
           featured: true
+          provider: { id_not: null }
           timeline: { timelineStages_some: { id_not: null, displayOnHub: true } }
         }
       ) {
@@ -78,7 +79,7 @@ export const query = graphql`
         title
         description
         featured
-        providers {
+        provider {
           uuid
           title
           image {

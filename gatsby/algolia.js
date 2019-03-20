@@ -11,7 +11,7 @@ const allPublishedIntegrations = `
           uuid
           title
         }
-        providers {
+        provider {
           uuid
           title
           image {
@@ -28,7 +28,7 @@ module.exports = [
     query: allPublishedIntegrations,
     transformer: ({ data }) => data.graphcms.integrations,
     settings: {
-      attributesForFaceting: ['categories.title', 'providers.title']
+      attributesForFaceting: ['categories.title', 'provider.title']
     }
   }
 ]

@@ -13,7 +13,7 @@ interface ISearchProps {
 export default class Search extends React.Component<ISearchProps> {
   render() {
     const categoriesAttribute = 'categories.title'
-    const providersAttribute = 'providers.title'
+    const providerAttribute = 'provider.title'
 
     const VirtualMenu = connectMenu(() => null)
 
@@ -28,7 +28,7 @@ export default class Search extends React.Component<ISearchProps> {
           ) : null}
 
           {this.props.defaultProvider ? (
-            <VirtualMenu attribute={providersAttribute} defaultRefinement={this.props.defaultProvider} />
+            <VirtualMenu attribute={providerAttribute} defaultRefinement={this.props.defaultProvider} />
           ) : null}
           <Configure hitsPerPage={8} />
         </div>

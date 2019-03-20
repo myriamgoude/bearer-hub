@@ -22,7 +22,7 @@ module.exports = async ({ graphql }) => {
           githubUrl
           title
           description
-          providers {
+          provider {
             image {
               url
               handle
@@ -44,7 +44,7 @@ module.exports = async ({ graphql }) => {
     if (integration.githubUrl) {
       console.log(`Preparing JSON for "${integration.title}" integration`)
       let template = githubHandle(integration.githubUrl)
-      let imageObj = handleImage(integration.providers[0])
+      let imageObj = handleImage(integration.provider)
 
       integrationData.push({
         template,

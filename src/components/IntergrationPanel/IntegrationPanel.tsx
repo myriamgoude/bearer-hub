@@ -15,13 +15,13 @@ interface IIntegrationProps {
     title: string
     description: string
     featured: boolean
-    providers: {
+    provider: {
       uuid: string
       title: string
       image: {
         url: string
       }
-    }[]
+    }
   }[]
   css?: any
 }
@@ -32,7 +32,7 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
       <Container>
         <Grid fullWidth space="around" gutter={24} col={4}>
           {this.props.integrations.map(integration => {
-            const image = integration.providers[0].image ? integration.providers[0].image.url : ''
+            const image = integration.provider.image ? integration.provider.image.url : ''
             return (
               <Card
                 key={integration.id}

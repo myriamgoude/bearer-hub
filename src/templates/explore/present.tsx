@@ -56,13 +56,13 @@ interface IQueryData {
       title: string
       description: string
       featured: boolean
-      providers: {
+      provider: {
         uuid: string
         title: string
         image: {
           url: string
         }
-      }[]
+      }
     }[]
   }
 }
@@ -76,7 +76,7 @@ export const query = graphql`
         title
         description
         featured
-        providers {
+        provider {
           uuid
           title
           image {

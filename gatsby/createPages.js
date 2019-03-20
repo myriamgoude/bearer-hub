@@ -77,13 +77,13 @@ module.exports = async ({ graphql, actions }) => {
           where: {
             status: PUBLISHED
             timeline: { timelineStages_some: { id_not: null, displayOnHub_not: null } }
-            providers_some: { id_not: null }
+            provider: { id_not: null }
           }
         ) {
           id
           uuid
           title
-          providers {
+          provider {
             id
             uuid
             title
@@ -104,7 +104,7 @@ module.exports = async ({ graphql, actions }) => {
   }
 
   allExplore.data.graphcms.integrations.forEach(integration => {
-    const provider = integration.providers[0]
+    const provider = integration.provider
     const providerSlug = generateSlug(provider.title)
     const providerPath = `/explore/provider/${provider.uuid}/${providerSlug}`
     const providerWildCardPath = `/explore/provider/${provider.uuid}/:slug`

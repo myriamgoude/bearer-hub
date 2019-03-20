@@ -1,5 +1,6 @@
 import { css } from '@emotion/core'
 import { colors, dimensions } from './variables'
+import { getEmSize } from './mixins'
 
 export const helpers = {
   h1: css`
@@ -29,6 +30,51 @@ export const helpers = {
 
   small: css`
     font-size: ${dimensions.fontSize.small}px;
+  `,
+
+  markdownPages: css`
+    margin: auto;
+    width: 100%;
+    color: ${colors.darkBlue};
+
+    p {
+      font-size: ${dimensions.fontSize.regular}px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    b,
+    strong {
+      color: currentColor;
+    }
+
+    h2 {
+      font-family: 'ProximaNova-Bold';
+    }
+    h3 {
+      font-weight: 300;
+    }
+
+    /**
+      Since we're using parsed markdown as only DOM, we'll have to assume that
+      the DOM will always be formatted that the following:
+
+      H2 title
+      H3 subtitle
+      P  content
+
+      H2 title
+      H3 subtitle
+      P  content
+
+      The following style will only work if this structure is respected
+      */
+
+    h2:not(:first-of-type) {
+      margin-top: ${getEmSize(48)};
+    }
   `
 }
 export default helpers

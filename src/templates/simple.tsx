@@ -1,16 +1,10 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import styled from '@emotion/styled'
 
-import Page from '../components/Page/Page'
-import PageMetadata from '../components/PageMetadata/PageMetadata'
+import { Clearfix, Page, PageMetadata, HeroLined, Text, Section } from '../components/index'
 import IndexLayout from '../layouts'
-
-const StyledContainer = styled.div`
-  h1 {
-    text-align: center;
-  }
-`
+import styles from '../styles/helpers'
+import css from '@emotion/css'
 
 interface IQueryData {
   markdownRemark: {
@@ -28,10 +22,18 @@ const SimpleTemplate: GatsbyPage<IQueryData> = ({ data, location }) => (
   <IndexLayout location={location}>
     <PageMetadata {...data.markdownRemark.frontmatter} />
     <Page>
-      <StyledContainer>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-      </StyledContainer>
+      <HeroLined
+        style={css`
+          height: 400px;
+        `}
+      >
+        <Text tag="h1" text={data.markdownRemark.frontmatter.title} />
+        <Clearfix />
+        <Text tag="h3" text={data.markdownRemark.frontmatter.description} />
+      </HeroLined>
+      <Section>
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} css={styles.markdownPages} />
+      </Section>
     </Page>
   </IndexLayout>
 )

@@ -93,7 +93,20 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
           indexName={`${process.env.GATSBY_ALGOLIA_INDEX_NAME}`}
         >
           <div css={heroStyles.styleBackgroundExplore}>
-            <HeroLined>
+            <HeroLined
+              style={css`
+                height: 780px;
+              `}
+              itemStyle={css`
+                top: 0;
+                bottom: 0;
+                transform: none;
+
+                &:after {
+                  bottom: 80px;
+                }
+              `}
+            >
               <Text tag="h1" text="Explore integrations" />
               <Clearfix />
               <Text tag="h3" text="Over 30 Native Integrations for your App" />

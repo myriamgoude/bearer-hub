@@ -4,6 +4,8 @@ import { css } from '@emotion/core'
 import { isAuthenticated, isSSOAuthenticated, lockLogin } from '../../services/Auth'
 import { Link, Button } from '../index'
 
+import { isBrowser } from '../../services/Browser'
+
 import styles from './Navigation.style'
 
 interface INavigationState {
@@ -17,19 +19,16 @@ interface INavLinkProps {
   to: any
 }
 
-const NavLink = (props: INavLinkProps) => {
-  let linkStyle
-  if (typeof window !== 'undefined') {
-    linkStyle = [styles.link, window.location.pathname.indexOf(props.to) === 0 && styles.linkActive]
-  }
-  return (
-    <li>
-      <Link to={props.to} css={linkStyle}>
-        {props.children}
-      </Link>
-    </li>
-  )
-}
+const NavLink = (props: INavLinkProps) => (
+  <li>
+    <Link
+      to={props.to}
+      css={[styles.link, isBrowser() && window.location.pathname.indexOf(props.to) === 0 && styles.linkActive]}
+    >
+      {props.children}
+    </Link>
+  </li>
+)
 
 export default class Navigation extends React.Component<INavigationProps, INavigationState> {
   constructor(props: INavigationProps) {

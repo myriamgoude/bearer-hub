@@ -66,6 +66,10 @@ export default {
     @media (min-width: ${breakpoints.xl}px) {
       background-size: 1200px;
     }
+    @media (min-width: ${breakpoints.xxl}px) {
+      background-size: 1500px;
+      background-position-y: -100px;
+    }
   `,
   styleBackgroundExplore: css`
     background: url(${require('../../images/hero-explore.svg')}) no-repeat bottom 200px center / 1600px;
@@ -82,6 +86,10 @@ export default {
     }
     @media (min-width: ${breakpoints.xl}px) {
       background-size: 1600px;
+    }
+
+    @media (min-width: ${breakpoints.xxl}px) {
+      background-size: 1880px;
     }
 
     &:after {

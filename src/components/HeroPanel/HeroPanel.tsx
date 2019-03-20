@@ -38,7 +38,7 @@ const HeroPanel: React.SFC<IHeroPanel> = ({
     >
       <div css={image ? styles.halfItem : styles.fullItem}>
         {typeof title === 'string' ? <h1 css={helpers.h1}>{title}</h1> : title}
-        <Text text={subtitle} tag="h3" style={styles.subtitle} />
+        {subtitle && <Text text={subtitle} tag="h3" style={styles.subtitle} />}
         {children}
       </div>
       {image && (

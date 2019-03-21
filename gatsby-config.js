@@ -166,23 +166,13 @@ module.exports = {
     {
       resolve: 'gatsby-iubenda-bearer',
       options: {
-        policy: '65368465',
-        cookieSolutionConfig: {
-          consentOnScroll: false,
-          lang: 'en',
-          siteId: 1413491,
-          cookiePolicyId: 65368465,
-          enableRemoteConsent: true,
-          banner: {
-            applyStyles: true,
-            textColor: '#FFF',
-            backgroundColor: '#030d36',
-            fontSize: '0.8rem',
-            content:
-              'Bearer uses browser cookies to give you the best possible experience. To make Bearer work, we log user data and share it with processors. By closing this banner, you agree to our Privacy Policy, including cookie policy.',
-            slideDown: false
-          }
-        }
+        policy: '65368465'
+      }
+    },
+    {
+      resolve: 'gatsby-dmscookie-bearer',
+      options: {
+        policy: '045117b0e0a11a242b9765e79cbf113f'
       }
     },
     {

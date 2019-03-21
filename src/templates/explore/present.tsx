@@ -74,6 +74,7 @@ export const query = graphql`
         id
         uuid
         title
+        uuid
         description
         featured
         provider {
@@ -201,7 +202,11 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             <StyledMarkDown source={integration.mdDescription} escapeHtml={false} className="markdown-header" />
 
             <div>
-              <Button primary link="/explore" text="Embed this Integration" />
+              <Button
+                primary
+                link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${integration.uuid}`}
+                text="Embed this Integration"
+              />
               <Button secondary link="/how-it-works" text="Documentation" />
             </div>
           </HeroPanel>

@@ -11,12 +11,12 @@ import { getEmSize } from '../../styles/mixins'
 interface IIntegrationProps {
   integrations: {
     id: string
-    uuid: string
+    hubID: string
     title: string
     description: string
     featured: boolean
     provider: {
-      uuid: string
+      hubID: string
       title: string
       image: {
         url: string

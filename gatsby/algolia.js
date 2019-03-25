@@ -5,14 +5,14 @@ const allPublishedIntegrations = `
     graphcms {
       integrations(where: { status: PUBLISHED, timeline: { timelineStages_some: { id_not: null, displayOnHub: true } } }) {
         id
-        uuid
+        hubID
         title
         categories {
-          uuid
+          hubID
           title
         }
         provider {
-          uuid
+          hubID
           title
           image {
             url

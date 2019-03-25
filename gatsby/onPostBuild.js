@@ -18,7 +18,7 @@ module.exports = async ({ graphql }) => {
     {
       graphcms {
         integrations(where: { status: PUBLISHED }) {
-          uuid
+          hubID
           githubUrl
           title
           description
@@ -48,7 +48,7 @@ module.exports = async ({ graphql }) => {
 
       integrationData.push({
         template,
-        id: integration.uuid,
+        id: integration.hubID,
         repo: integration.githubUrl,
         name: integration.title,
         description: integration.description,

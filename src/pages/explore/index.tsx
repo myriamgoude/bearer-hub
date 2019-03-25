@@ -18,7 +18,7 @@ interface IQueryData {
   graphcms: {
     providers: {
       id: string
-      uuid: string
+      hubID: string
       title: string
       image: {
         url: string
@@ -26,7 +26,7 @@ interface IQueryData {
     }[]
     categories: {
       id: string
-      uuid: string
+      hubID: string
       title: string
     }[]
   }
@@ -45,7 +45,7 @@ export const scopedCategories = graphql`
       }
     ) {
       id
-      uuid
+      hubID
       title
     }
   }
@@ -64,7 +64,7 @@ export const scopedProviders = graphql`
       }
     ) {
       id
-      uuid
+      hubID
       title
       image {
         url

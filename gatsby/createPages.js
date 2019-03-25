@@ -69,7 +69,7 @@ module.exports = async ({ graphql, actions }) => {
 
   // Note 1: we only ask for PUBLISHED integrations with 1+ PROVIDER and Hub-worthy TIMELINE STAGES
   // Note 2: ID is a hashed string used by GraphCMS e.g. cjs3996bq9ew00c15zc96bcnh, cjsukbmse36eh0c150la5jzc2
-  //         UUID is a field we have defined, and use in the URLs e.g. 1, 5, 72
+  //         Hub ID is a unique and required field we have defined in the CMS, which we use in the URLs e.g. 1, 5, 72
   const allExplore = await graphql(`
     {
       graphcms {
@@ -81,16 +81,16 @@ module.exports = async ({ graphql, actions }) => {
           }
         ) {
           id
-          uuid
+          hubID
           title
           provider {
             id
-            uuid
+            hubID
             title
           }
           categories {
             id
-            uuid
+            hubID
             title
           }
         }
@@ -106,16 +106,16 @@ module.exports = async ({ graphql, actions }) => {
   allExplore.data.graphcms.integrations.forEach(integration => {
     const provider = integration.provider
     const providerSlug = generateSlug(provider.title)
-    const providerPath = `/explore/provider/${provider.uuid}/${providerSlug}`
-    const providerWildCardPath = `/explore/provider/${provider.uuid}/:slug`
+    const providerPath = `/explore/provider/${provider.hubID}/${providerSlug}`
+    const providerWildCardPath = `/explore/provider/${provider.hubID}/:slug`
 
-    const integrationPath = `/explore/${provider.uuid}/${providerSlug}/${integration.uuid}/${generateSlug(
+    const integrationPath = `/explore/${provider.hubID}/${providerSlug}/${integration.hubID}/${generateSlug(
       integration.title
     )}`
-    const integrationWildCardPath = `/explore/${provider.uuid}/:slug/${integration.uuid}/:slug`
+    const integrationWildCardPath = `/explore/${provider.hubID}/:slug/${integration.hubID}/:slug`
     // Take us from e.g. explore/12/slack/ to explore/provider/12/slack
-    const integrationProviderRedirect = `/explore/${provider.uuid}/:slug /explore/provider/${
-      provider.uuid
+    const integrationProviderRedirect = `/explore/${provider.hubID}/:slug /explore/provider/${
+      provider.hubID
     }/${providerSlug} 301`
 
     // Create pages for Integrations (e.g. "Slack Notification")
@@ -147,8 +147,8 @@ module.exports = async ({ graphql, actions }) => {
 
     // Create pages for Integration Categories (e.g. "Developer Tooling", "Mailing")
     integration.categories.forEach(category => {
-      const categoryPath = `/explore/category/${category.uuid}/${generateSlug(category.title)}`
-      const categoryWildCardPath = `/explore/category/${category.uuid}/:slug`
+      const categoryPath = `/explore/category/${category.hubID}/${generateSlug(category.title)}`
+      const categoryWildCardPath = `/explore/category/${category.hubID}/:slug`
 
       createPage({
         path: categoryPath,

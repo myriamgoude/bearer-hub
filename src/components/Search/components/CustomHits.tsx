@@ -14,7 +14,7 @@ const cardStyle = css`
 `
 
 export const CustomHits = connectHits(
-  ({ hits }: { hits: { objectID: string; title: any; id: string; uuid: string; provider: any; category: any }[] }) => {
+  ({ hits }: { hits: { objectID: string; title: any; id: string; hubID: string; provider: any; category: any }[] }) => {
     return (
       <Grid
         col={3}
@@ -31,7 +31,7 @@ export const CustomHits = connectHits(
           return (
             <Card
               key={hit.objectID}
-              link={`${integrationPath({ uuid: hit.uuid, title: hit.title, provider: hit.provider })}`}
+              link={`${integrationPath({ hubID: hit.hubID, title: hit.title, provider: hit.provider })}`}
               small
               className={[blockStyles.item, blockStyles.card, cardStyle]}
             >

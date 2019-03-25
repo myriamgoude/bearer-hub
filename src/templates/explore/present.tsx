@@ -52,12 +52,12 @@ interface IQueryData {
       mdDescription: string
       timeline: ITimelineProps
       id: string
-      uuid: string
+      hubID: string
       title: string
       description: string
       featured: boolean
       provider: {
-        uuid: string
+        hubID: string
         title: string
         image: {
           url: string
@@ -72,13 +72,13 @@ export const query = graphql`
     graphcms {
       integrations(where: { id: $id }, first: 1) {
         id
-        uuid
+        hubID
         title
-        uuid
+        hubID
         description
         featured
         provider {
-          uuid
+          hubID
           title
           image {
             url
@@ -204,7 +204,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             <div>
               <Button
                 primary
-                link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${integration.uuid}`}
+                link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${integration.hubID}`}
                 text="Embed this Integration"
               />
               <Button secondary link="/how-it-works" text="Documentation" />

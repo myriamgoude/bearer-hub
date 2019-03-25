@@ -48,12 +48,12 @@ interface IQueryData {
   graphcms: {
     integrations: {
       id: string
-      uuid: string
+      hubID: string
       title: string
       description: string
       featured: boolean
       provider: {
-        uuid: string
+        hubID: string
         title: string
         image: {
           url: string
@@ -75,12 +75,12 @@ export const query = graphql`
         }
       ) {
         id
-        uuid
+        hubID
         title
         description
         featured
         provider {
-          uuid
+          hubID
           title
           image {
             url

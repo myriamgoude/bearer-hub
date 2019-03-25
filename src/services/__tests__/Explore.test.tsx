@@ -5,10 +5,10 @@ import * as ShallowRenderer from 'react-test-renderer/shallow'
 import { integrationPath, categoryPath, providerPath, slug, timer } from '../Explore'
 import Link from '../../components/Link/Link'
 
-const myItem = { uuid: '123', title: 'My Item Title' }
+const myItem = { hubID: '123', title: 'My Item Title' }
 
 describe('integrationPath', () => {
-  const myIntegration = { uuid: '456', title: 'My Integration Title', provider: myItem }
+  const myIntegration = { hubID: '456', title: 'My Integration Title', provider: myItem }
   const myPath = integrationPath(myIntegration)
 
   it('returns the path to an integration presentation page', () => {

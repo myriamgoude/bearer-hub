@@ -8,12 +8,12 @@ interface ISearchListProps {
   selected?: string
   categories: {
     id: string
-    uuid: string
+    hubID: string
     title: string
   }[]
   providers: {
     id: string
-    uuid: string
+    hubID: string
     title: string
   }[]
 }
@@ -49,7 +49,7 @@ export const SearchList = (props: ISearchListProps) => {
           {props.providers.map(provider => (
             <li key={provider.id}>
               <Link
-                to={providerPath({ uuid: provider.uuid, title: provider.title })}
+                to={providerPath({ hubID: provider.hubID, title: provider.title })}
                 css={navLinkStyle}
                 style={
                   props.selected === provider.id
@@ -74,7 +74,7 @@ export const SearchList = (props: ISearchListProps) => {
           {props.categories.map(category => (
             <li key={category.id}>
               <Link
-                to={categoryPath({ uuid: category.uuid, title: category.title })}
+                to={categoryPath({ hubID: category.hubID, title: category.title })}
                 css={navLinkStyle}
                 style={
                   props.selected === category.id

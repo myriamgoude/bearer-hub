@@ -35,8 +35,8 @@ interface IUIElementProps {
   element: {
     title: string
     codeSnippet: string
-    tooltip: string
-    helperText: string
+    tooltip?: string
+    helperText?: string
     image: {
       handle: string
       height: number
@@ -55,19 +55,7 @@ const UIElement = ({ element, rightAligned, time }: IUIElementProps) => {
           primaryText={element.title}
           align={rightAligned ? 'left' : 'right'}
           tag="h3"
-          tooltip={
-            <>
-              <Tooltip
-                placement="right"
-                trigger={['hover']}
-                content={element.tooltip}
-                overlay={''}
-                description={element.tooltip}
-              >
-                <img src={require('../../images/shared/icon-question.svg')} />
-              </Tooltip>
-            </>
-          }
+          tooltip={element.tooltip ? <Tooltip placement="right" trigger={['hover']} content={element.tooltip} /> : null}
         />
       </div>
       {element.image && element.codeSnippet && (

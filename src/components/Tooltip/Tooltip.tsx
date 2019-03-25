@@ -4,24 +4,25 @@ import RCTooltip from 'rc-tooltip'
 import 'rc-tooltip/assets/bootstrap.css'
 import styles from './Tooltip.style'
 
+import tooltipImg from '../../images/shared/icon-question.svg'
+
 interface ITooltipProps {
-  children: any
-  content: any
-  description: any
+  content: string
   placement: string
   trigger: any
-  overlay: any
 }
 
 const Tooltip = (props: ITooltipProps) => (
   <RCTooltip
-    id={props.description}
-    overlay={props.description}
+    id={props.content}
+    overlay={props.content}
     placement={props.placement}
     trigger={props.trigger}
     css={styles.root}
   >
-    <span aria-describedby={props.description}>{props.children}</span>
+    <span aria-describedby={props.content}>
+      <img src={tooltipImg} />
+    </span>
   </RCTooltip>
 )
 

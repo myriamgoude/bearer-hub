@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionHeading renders correctly with tooltip text 1`] = `
+<div
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "12j8918",
+        "next": undefined,
+        "styles": "
+    width: 100%;
+    flex-shrink: 0;
+    text-align: left;
+    display: block;
+    margin-bottom: 3rem;
+  ",
+      },
+      Object {
+        "map": undefined,
+        "name": "139b19o",
+        "next": undefined,
+        "styles": "
+    text-align: left;
+  ",
+      },
+      undefined,
+    ]
+  }
+>
+  <h2
+    css={
+      Array [
+        Object {
+          "map": undefined,
+          "name": "nd9hyy",
+          "next": undefined,
+          "styles": "
+    display: inline-block;
+    color: #030D36;
+    font-size: 1.125rem;
+  ",
+        },
+        Object {
+          "map": undefined,
+          "name": "9oecbb",
+          "next": undefined,
+          "styles": "
+    font-size: 16px;
+  ",
+        },
+        undefined,
+        undefined,
+        undefined,
+        false,
+        Object {
+          "map": undefined,
+          "name": "elpby5",
+          "next": undefined,
+          "styles": "
+    font-size: 32px;
+    color: #030D36;
+    font-family: 'ProximaNova-Semibold';
+  ",
+        },
+        false,
+        false,
+        false,
+      ]
+    }
+  >
+    Alice's Adventures
+     
+    Drink me
+  </h2>
+  <h3
+    css={
+      Object {
+        "map": undefined,
+        "name": "89fcrv",
+        "next": undefined,
+        "styles": "
+    display: inline;
+  ",
+      }
+    }
+  >
+    Through the Looking Glass
+  </h3>
+</div>
+`;
+
+exports[`SectionHeading renders correctly without tooltip text 1`] = `
+<div
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "12j8918",
+        "next": undefined,
+        "styles": "
+    width: 100%;
+    flex-shrink: 0;
+    text-align: left;
+    display: block;
+    margin-bottom: 3rem;
+  ",
+      },
+      Object {
+        "map": undefined,
+        "name": "139b19o",
+        "next": undefined,
+        "styles": "
+    text-align: left;
+  ",
+      },
+      undefined,
+    ]
+  }
+>
+  <h2
+    css={
+      Array [
+        Object {
+          "map": undefined,
+          "name": "nd9hyy",
+          "next": undefined,
+          "styles": "
+    display: inline-block;
+    color: #030D36;
+    font-size: 1.125rem;
+  ",
+        },
+        Object {
+          "map": undefined,
+          "name": "9oecbb",
+          "next": undefined,
+          "styles": "
+    font-size: 16px;
+  ",
+        },
+        undefined,
+        undefined,
+        undefined,
+        false,
+        Object {
+          "map": undefined,
+          "name": "elpby5",
+          "next": undefined,
+          "styles": "
+    font-size: 32px;
+    color: #030D36;
+    font-family: 'ProximaNova-Semibold';
+  ",
+        },
+        false,
+        false,
+        false,
+      ]
+    }
+  >
+    Alice's Adventures
+     
+  </h2>
+  <h3
+    css={
+      Object {
+        "map": undefined,
+        "name": "89fcrv",
+        "next": undefined,
+        "styles": "
+    display: inline;
+  ",
+      }
+    }
+  >
+    Through the Looking Glass
+  </h3>
+</div>
+`;

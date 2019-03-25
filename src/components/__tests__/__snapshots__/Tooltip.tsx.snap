@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip renders correctly 1`] = `
+<span
+  aria-describedby="Did you know this is a tooltip?"
+>
+  <img
+    src="test-file-stub"
+  />
+</span>
+`;

@@ -7,15 +7,7 @@ const snippet = `bearerClient.call('{props.functionName}', params)`
 const FunctionCall = () => (
   <>
     <h3>
-      <Tooltip
-        placement="right"
-        trigger={['hover']}
-        content={`Not sure what to pass here`}
-        description={`Not sure what to pass here`}
-        overlay={`Not sure what to pass here`}
-      >
-        <img src={require('../../../images/shared/icon-question.svg')} />
-      </Tooltip>
+      <Tooltip placement="right" trigger={['hover']} content={`Not sure what to pass here`} />
       <span
         css={css`
           margin-left: 8px;

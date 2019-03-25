@@ -11,23 +11,15 @@ exports[`UIElement has auto margin-left when rightAligned is true 1`] = `
       primaryText="Connect Hello World component"
       tag="h3"
       tooltip={
-        <React.Fragment>
-          <Tooltip
-            content="This is a tooltip"
-            description="This is a tooltip"
-            overlay=""
-            placement="right"
-            trigger={
-              Array [
-                "hover",
-              ]
-            }
-          >
-            <img
-              src="test-file-stub"
-            />
-          </Tooltip>
-        </React.Fragment>
+        <Tooltip
+          content="This is a tooltip"
+          placement="right"
+          trigger={
+            Array [
+              "hover",
+            ]
+          }
+        />
       }
     />
   </div>
@@ -74,23 +66,15 @@ exports[`UIElement has no auto margin when rightAligned is false 1`] = `
       primaryText="Connect Hello World component"
       tag="h3"
       tooltip={
-        <React.Fragment>
-          <Tooltip
-            content="This is a tooltip"
-            description="This is a tooltip"
-            overlay=""
-            placement="right"
-            trigger={
-              Array [
-                "hover",
-              ]
-            }
-          >
-            <img
-              src="test-file-stub"
-            />
-          </Tooltip>
-        </React.Fragment>
+        <Tooltip
+          content="This is a tooltip"
+          placement="right"
+          trigger={
+            Array [
+              "hover",
+            ]
+          }
+        />
       }
     />
   </div>

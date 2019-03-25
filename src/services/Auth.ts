@@ -85,12 +85,17 @@ function storeJWT(_jwt: string, { exp }: IidTokenPayload) {
 
 export function lockLogin(
   authenticated: () => void,
+  handleError: () => void,
   signup: boolean = false,
   url: string = window.location.pathname
 ): Auth0LockStatic {
   sessionStorage.setItem(REDIRECT_KEY, url)
   const lock = createLock(signup, true)
   lock.on('authenticated', (authResult: any) => {
+    if (!authResult.idToken) {
+      handleError()
+      return
+    }
     // in page login
     storeJWT(authResult.idToken, authResult.idTokenPayload)
     lock.hide()

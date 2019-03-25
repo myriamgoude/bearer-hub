@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render renders correctly 1`] = `
+<div
+  css={
+    Object {
+      "map": undefined,
+      "name": "v8urg6",
+      "next": undefined,
+      "styles": "
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 1em;
+          max-width: 25%;
+          z-index: 50;
+          border-radius: 3px;
+          font-color: #dc4c4c;
+          background: #fbeded;
+          color: red;
+          padding: 1em;
+          box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.26);
+          display: flex;
+        ",
+    }
+  }
+>
+  <div
+    css={
+      Object {
+        "map": undefined,
+        "name": "v5v3zq",
+        "next": undefined,
+        "styles": "
+            width: 90%;
+          ",
+      }
+    }
+  >
+    Something's gone wrong and we couldn't log you in. Please try again.
+  </div>
+  <div
+    css={
+      Object {
+        "map": undefined,
+        "name": "13y554e",
+        "next": undefined,
+        "styles": "
+            padding: 1em;
+            cursor: pointer;
+            width: 10%;
+          ",
+      }
+    }
+    onClick={[Function]}
+  >
+    X
+  </div>
+</div>
+`;
+
+exports[`render renders the default correctly 1`] = `
+<div
+  css={
+    Object {
+      "map": undefined,
+      "name": "v8urg6",
+      "next": undefined,
+      "styles": "
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 1em;
+          max-width: 25%;
+          z-index: 50;
+          border-radius: 3px;
+          font-color: #dc4c4c;
+          background: #fbeded;
+          color: red;
+          padding: 1em;
+          box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.26);
+          display: flex;
+        ",
+    }
+  }
+>
+  <div
+    css={
+      Object {
+        "map": undefined,
+        "name": "v5v3zq",
+        "next": undefined,
+        "styles": "
+            width: 90%;
+          ",
+      }
+    }
+  >
+    Something's gone wrong. Please try again.
+  </div>
+  <div
+    css={
+      Object {
+        "map": undefined,
+        "name": "13y554e",
+        "next": undefined,
+        "styles": "
+            padding: 1em;
+            cursor: pointer;
+            width: 10%;
+          ",
+      }
+    }
+    onClick={[Function]}
+  >
+    X
+  </div>
+</div>
+`;

@@ -2,9 +2,8 @@ import * as React from 'react'
 import { css } from '@emotion/core'
 
 import { isAuthenticated, isSSOAuthenticated, lockLogin } from '../../services/Auth'
-import { Link, Button } from '../index'
-
 import { isBrowser } from '../../services/Browser'
+import { Link, Button } from '../index'
 
 import styles from './Navigation.style'
 
@@ -40,15 +39,26 @@ export default class Navigation extends React.Component<INavigationProps, INavig
   }
 
   private doLogin = () => {
-    lockLogin(this.onLogin)
+    lockLogin(this.onLogin, this.onError)
   }
 
   private doSignup = () => {
-    lockLogin(this.onLogin, true)
+    lockLogin(this.onLogin, this.onError, true)
   }
 
   private onLogin = () => {
     this.setState({ isAuthenticated: true })
+  }
+
+  private onError = () => {
+    const currentWindow = window as any
+    const errorMessage = 'Login via Navigation failed'
+
+    if (isBrowser && currentWindow.bugsnagClient !== undefined) {
+      currentWindow.bugsnagClient.notify(errorMessage)
+    } else {
+      console.log(errorMessage)
+    }
   }
 
   private renderLoggedIn = () => <NavLink to="https://app.bearer.sh">GO TO DASHBOARD</NavLink>

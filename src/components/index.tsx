@@ -1,3 +1,4 @@
+import { Alert, AlertType, AlertKey } from './Alert/index'
 import Button from './Buttons/index'
 import Card from './Card/index'
 import Container from './Container/index'
@@ -34,6 +35,9 @@ import VideoContent from './VideoContent/index'
 import VideoSection from './VideoSection/index'
 
 export {
+  Alert,
+  AlertKey,
+  AlertType,
   Button,
   Card,
   Clearfix,

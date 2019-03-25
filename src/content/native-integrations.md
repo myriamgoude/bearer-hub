@@ -2,19 +2,32 @@
 layout: simple
 title: 'Manifesto'
 image: ''
-description: 'long form description'
+description: 'Bearer - Our vision regarding future of API'
 ---
 
-## Manifesto Title 1
+## Bearer Manifesto
 
-### Manifesto Subtitle 1
+Building and Maintaining Integration is too painful. It’s time for drastic changes!
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dolor est. Quisque at porttitor tellus, vel viverra arcu. Nulla a malesuada mi. Mauris ac neque eget sapien vehicula ultricies. Donec pellentesque mattis eros vel consectetur. Vivamus sollicitudin ex et congue vestibulum. Maecenas et eros porttitor, iaculis ligula eu, varius diam. Nunc hendrerit eros in arcu porta bibendum.
+Developers are tired of rebuilding the same Integration, users are frustrated by working with applications that don’t integrate with each other and vendors are clueless on how to find a solution without breaking the bank.
 
-Nullam ullamcorper malesuada eleifend. Vestibulum pretium velit ut sollicitudin rutrum. Quisque ipsum lacus, efficitur pretium convallis vitae, dictum et ex. Nam molestie molestie augue, non accumsan odio imperdiet in. Sed molestie convallis sapien, ac semper nisl dapibus vitae. Maecenas congue, enim ac dictum imperdiet, lorem massa scelerisque est, ut pretium elit orci hendrerit orci. Etiam sodales iaculis ex, ac bibendum felis bibendum vitae. Morbi accumsan fringilla quam imperdiet posuere. Suspendisse pulvinar felis id arcu feugiat, rutrum consectetur quam malesuada. Vivamus tincidunt sodales metus, et varius risus tincidunt et. Quisque a massa eget urna venenatis lobortis a sit amet elit. Ut fringilla, ex non vehicula consectetur, purus tortor auctor nunc, eu imperdiet dolor risus a justo. Donec sollicitudin metus sed ultrices laoreet. Sed molestie porta laoreet.
+We, as an industry, as developers, and as vendors haven’t been building the right standard to integrate our applications together.
+But wait, aren’t there APIs to take care of all of that? In fact yes, many different APIs, as many as there are applications, mostly all working differently! We’ve been focused for too long on the API itself instead of thinking about who, why and how someone will consume it.
 
-Donec pretium tortor mauris, vitae commodo diam porta quis. Integer ultrices ipsum sit amet nulla consequat feugiat. Phasellus ligula arcu, gravida sit amet suscipit et, imperdiet non enim. Vestibulum ut lorem a nibh sodales efficitur eu a libero. Vestibulum rutrum diam eget magna tincidunt condimentum. Pellentesque commodo, orci quis viverra malesuada, dui risus ullamcorper nulla, non condimentum justo libero eget orci. Integer eleifend purus id rhoncus convallis. Nulla erat mauris, bibendum vitae ligula vitae, ultricies imperdiet orci. Duis lacus nulla, consequat in nulla ac, sagittis viverra velit. Maecenas sed sapien est.
+A modern application should provide dozens of Integrations, which means understanding dozens of APIs and possible use-cases, and building a lot of vendor-specific code that will have to be maintained.
 
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam venenatis rutrum lobortis. Ut auctor fermentum neque, eu efficitur nulla pulvinar eget. Vestibulum nisl dolor, faucibus quis egestas id, scelerisque quis libero. Vivamus volutpat hendrerit fringilla. Nulla id suscipit diam, at porta neque. Quisque fermentum, elit id tempus suscipit, est lacus eleifend quam, et luctus quam enim eu turpis. Sed enim felis, vestibulum et blandit sit amet, molestie et tellus. Donec mattis pharetra sapien sed malesuada. Suspendisse volutpat eros ut auctor sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac habitasse platea dictumst.
+It’s time to put an end to this nonsense.
 
-Morbi id leo et mi mattis sagittis vitae in risus. Morbi vel pharetra est, vitae sagittis nibh. Nullam at mauris ac nunc luctus dignissim. Vestibulum fringilla libero tellus, luctus imperdiet arcu porttitor ac. Cras quis tellus dictum, malesuada eros eget, cursus magna. Aenean fermentum bibendum orci non rutrum. In quis dictum felis. Integer a purus et sapien auctor luctus scelerisque eu metus. In malesuada tortor nunc, varius egestas nisi vehicula id. Nulla nec est eros. Mauris eu felis purus. Nulla a nulla nec turpis consequat rhoncus eu sed urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur lacus sit amet massa tristique volutpat.
+Integrations should be **standardized** but not generic. Every application has its specificities and therefore every Integration should be able to reflect this diversity.
+
+As a final result, Integrations should provide a **native** experience, from developers to end users.
+
+With Bearer,
+
+Developers are able to focus on what matters most: their business logic, and not vendor-specific code. They don’t have to reinvent the wheel and maintain it.
+
+Vendors can finally provide all the integrations they need at a fraction of what it took them before.
+
+Users are happy.
+
+Bear with us!

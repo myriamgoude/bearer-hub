@@ -33,6 +33,7 @@ import TimelineCard from './TimelineCard/index'
 import Tooltip from './Tooltip/index'
 import VideoContent from './VideoContent/index'
 import VideoSection from './VideoSection/index'
+import TeamBlock from './TeamBlock/index'
 
 export {
   Alert,
@@ -68,6 +69,7 @@ export {
   SectionHeading,
   Small,
   Text,
+  TeamBlock,
   TimelineCard,
   Tooltip,
   VideoContent,

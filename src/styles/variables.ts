@@ -8,6 +8,7 @@ export const colors = {
   green: '#00C682',
   orange: '#E4611F',
   blue: '#0931D5',
+  purple: '#C600A3',
   darkerBlue: '#03081E',
   primary: ['#E9B300', '#FFC400', '#FFD033', '#FFE799', '#FFF9E5'],
   secondary: ['#030D36', '#343C5D', '#999DAE', '#E6E7EB', '#F6F6F8'],

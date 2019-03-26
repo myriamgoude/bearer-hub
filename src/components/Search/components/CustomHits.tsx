@@ -32,6 +32,12 @@ export const CustomHits = connectHits(
             <Card
               key={hit.objectID}
               link={`${integrationPath({ hubID: hit.hubID, title: hit.title, provider: hit.provider })}`}
+              trackLink
+              trackingAction="explore-integration"
+              trackingOptions={{
+                category: 'Integration',
+                label: hit.hubID
+              }}
               small
               className={[blockStyles.item, blockStyles.card, cardStyle]}
             >

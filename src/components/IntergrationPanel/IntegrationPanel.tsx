@@ -37,6 +37,12 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
               <Card
                 key={integration.id}
                 link={`${integrationPath(integration)}`}
+                trackLink
+                trackingAction="explore-integration"
+                trackingOptions={{
+                  category: 'Integration',
+                  label: integration.hubID
+                }}
                 small
                 className={[styles.item, styles.card, integration.featured && styles.featured]}
               >

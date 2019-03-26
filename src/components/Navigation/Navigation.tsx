@@ -15,6 +15,7 @@ interface INavigationProps {}
 
 interface INavLinkProps {
   children?: any
+  trackLink?: boolean
   to: any
 }
 
@@ -22,6 +23,7 @@ const NavLink = (props: INavLinkProps) => (
   <li>
     <Link
       to={props.to}
+      trackLink={props.trackLink}
       css={[styles.link, isBrowser() && window.location.pathname.indexOf(props.to) === 0 && styles.linkActive]}
     >
       {props.children}
@@ -90,7 +92,9 @@ export default class Navigation extends React.Component<INavigationProps, INavig
           <NavLink to="/explore">EXPLORE INTEGRATIONS</NavLink>
           <NavLink to="/how-it-works">HOW IT WORKS</NavLink>
           <NavLink to="/native-integrations">MANIFESTO</NavLink>
-          <NavLink to="https://docs.bearer.sh">DOCS</NavLink>
+          <NavLink trackLink to="https://docs.bearer.sh">
+            DOCS
+          </NavLink>
           {this.state.isAuthenticated ? this.renderLoggedIn() : this.renderLogin()}
         </ul>
       </div>

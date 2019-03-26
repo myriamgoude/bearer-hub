@@ -122,7 +122,7 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
                     background: ${colors.yellow};
                   `}
                 />
-                <Button primary link="#" text="Share ideas" />
+                <Button primary trackLink link="?share-ideas" text="Share ideas" />
               </Grid>
             </div>
           </Section>

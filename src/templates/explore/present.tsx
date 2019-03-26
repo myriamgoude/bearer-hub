@@ -205,6 +205,12 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
               <Button
                 primary
                 link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${integration.hubID}`}
+                trackLink
+                trackingAction="embed-integration"
+                trackingOptions={{
+                  category: 'Integration',
+                  label: integration.hubID
+                }}
                 text="Embed this Integration"
               />
               <Button secondary link="/how-it-works" text="Documentation" />
@@ -280,8 +286,18 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             background: url(${require('../../images/shared/yellow-splash.svg')}) no-repeat center center / 122px;
           `}
         >
-          <Button primary text="Embed this integration" link={'#'} />
-          <Button secondary text="See the documentations" link={'#'} />
+          <Button
+            primary
+            link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${integration.hubID}`}
+            trackLink
+            trackingAction="embed-integration"
+            trackingOptions={{
+              category: 'Integration',
+              label: integration.hubID
+            }}
+            text="Embed this Integration"
+          />
+          <Button secondary text="See the documentation" link={'#'} />
         </Section>
 
         <Section

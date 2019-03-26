@@ -9,7 +9,6 @@ import styles from './Card.style'
 interface ICardProps {
   children?: object
   className?: any
-  onClick?: any
   title?: string | any
   text?: any
   icon?: string
@@ -18,12 +17,18 @@ interface ICardProps {
   link?: string
   small?: boolean
   css?: any
+  trackLink?: boolean
+  trackingAction?: string
+  trackingOptions?: any
 }
 
 const Card = (props: ICardProps) => {
   return props.link ? (
     <Link
       to={props.link}
+      trackLink={props.trackLink}
+      trackingAction={props.trackingAction}
+      trackingOptions={props.trackingOptions}
       css={css`
         &:hover {
           text-decoration: none;
@@ -31,7 +36,6 @@ const Card = (props: ICardProps) => {
       `}
     >
       <div
-        onClick={props.onClick}
         css={[
           props.className && props.className,
           styles.root,
@@ -48,7 +52,6 @@ const Card = (props: ICardProps) => {
     </Link>
   ) : (
     <div
-      onClick={props.onClick}
       css={[
         props.className && props.className,
         styles.root,

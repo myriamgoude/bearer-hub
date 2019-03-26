@@ -31,16 +31,17 @@ module.exports = {
         links: [
           { to: '/explore', label: 'Explore' },
           { to: '/pricing', label: 'Pricing' },
-          { to: '/security', label: 'security' }
+          { to: '/security', label: 'Security' }
         ]
       },
       {
         title: 'Help',
         links: [
           { to: '/how-it-works', label: 'How it works' },
-          { to: '#', label: 'Documentation' },
+          { to: 'https://docs.bearer.sh', label: 'Documentation', trackLink: true },
           { to: 'https://support.bearer.sh/', label: 'FAQ' },
-          { to: 'https://status.bearer.sh/', label: 'Status Page' }
+          { to: 'https://status.bearer.sh/', label: 'Status Page' },
+          { to: '?contact-us', label: 'Contact us', trackLink: true }
         ]
       },
       {

@@ -60,7 +60,7 @@ const HowItWorksPage: GatsbyPage<IQueryProps> = ({ data, location }) => (
             text-align: center;
           `}
         >
-          <Button primary link="/explore" text="Explore integrations" />
+          <Button primary trackLink link="/explore" text="Explore integrations" />
           <Button link="/" text="See documentation" />
         </Grid>
       </Section>

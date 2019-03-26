@@ -2,7 +2,7 @@ import React from 'react'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
 import Link from '../Link/Link'
 
-describe('Header', () => {
+describe('Link', () => {
   const text = 'my link'
   const renderer = ShallowRenderer.createRenderer()
   it('renders internal links', () => {

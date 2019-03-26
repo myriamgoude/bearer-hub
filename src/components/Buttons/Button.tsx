@@ -16,6 +16,9 @@ interface IButtonProps {
   save?: boolean
   className?: string
   onClick?: any
+  trackLink?: boolean
+  trackingAction?: string
+  trackingOptions?: any
 }
 
 const Button = (props: IButtonProps) => {
@@ -37,7 +40,13 @@ const Button = (props: IButtonProps) => {
     ${styles.linkStyle}
   `
   return (
-    <ButtonLink to={props.link} onClick={props.onClick}>
+    <ButtonLink
+      to={props.link}
+      onClick={props.onClick}
+      trackLink={props.trackLink}
+      trackingAction={props.trackingAction}
+      trackingOptions={props.trackingOptions}
+    >
       <RegularButton>{props.text}</RegularButton>
     </ButtonLink>
   )

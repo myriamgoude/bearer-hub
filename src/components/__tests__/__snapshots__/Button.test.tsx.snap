@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders correctly 1`] = `
-.emotion-1 + a {
-  margin-left: 0.5rem;
-}
-
+exports[`Button renders correctly 1`] = `
 .emotion-0 {
   border-radius: 4px;
   -webkit-appearance: none;
@@ -25,7 +21,6 @@ exports[`Header renders correctly 1`] = `
 }
 
 <a
-  className="emotion-1"
   href="/foo"
 >
   <button
@@ -36,11 +31,39 @@ exports[`Header renders correctly 1`] = `
 </a>
 `;
 
-exports[`Header renders primary colours 1`] = `
-.emotion-1 + a {
-  margin-left: 0.5rem;
+exports[`Button renders onClick when trackLink is set 1`] = `
+.emotion-0 {
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #FFC400;
+  color: #030D36;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 1.5rem;
 }
 
+.emotion-0:hover {
+  background-color: #E9B300;
+}
+
+<a
+  href="/foo"
+  onClick={[Function]}
+>
+  <button
+    className="emotion-0"
+  >
+    hello
+  </button>
+</a>
+`;
+
+exports[`Button renders primary colours 1`] = `
 .emotion-0 {
   border-radius: 4px;
   -webkit-appearance: none;
@@ -67,7 +90,37 @@ exports[`Header renders primary colours 1`] = `
 }
 
 <a
-  className="emotion-1"
+  href="/foo"
+>
+  <button
+    className="emotion-0"
+  >
+    hello
+  </button>
+</a>
+`;
+
+exports[`Button renders secondary colours 1`] = `
+.emotion-0 {
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #030D36;
+  color: #FFF;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 1.5rem;
+}
+
+.emotion-0:hover {
+  background-color: #343C5D;
+}
+
+<a
   href="/foo"
 >
   <button

@@ -23,7 +23,7 @@ interface IFooterQuery {
 
 interface IFooterCategory {
   title: string
-  links: { to: string; label: string }[]
+  links: { to: string; label: string; trackLink?: boolean }[]
 }
 
 interface IFooterProps {
@@ -39,6 +39,7 @@ const query = graphql`
           links {
             to
             label
+            trackLink
           }
         }
       }
@@ -67,7 +68,9 @@ const Footer = (props: IFooterProps) => (
             <ul>
               {cat.links.map((link, index) => (
                 <li key={index}>
-                  <Link to={link.to}>{link.label}</Link>
+                  <Link to={link.to} trackLink={link.trackLink}>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

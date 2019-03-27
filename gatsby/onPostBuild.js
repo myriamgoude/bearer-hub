@@ -14,10 +14,38 @@ function handleImage(provider) {
 }
 
 module.exports = async ({ graphql }) => {
-  const { data } = await graphql(`
+  //-----------------------------------//
+  // GENERATE JSON API                 //
+  //-----------------------------------//
+
+  // www.bearer.sh provides a JSON API which exposes for consumption various information
+  // about integrations from Bearer's CMS system, for example images and copy
+
+  // Currently we have two endpoints:
+  // - All integrations from the Explore index page: api/explore.json
+  // - Featured integrations (top 4): api/featured.json
+
+  // Prepare API folder for JSON files
+  const dir = './public/api'
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir)
+  }
+
+  //-----------------------------------//
+  // INTEGRATION API: api/explore.json //
+  //-----------------------------------//
+  const integrationJSON = []
+  const integrationData = await graphql(`
     {
       graphcms {
-        integrations(where: { status: PUBLISHED }) {
+        integrations(
+          where: {
+            status: PUBLISHED
+            githubUrl_not: null
+            timeline: { timelineStages_some: { id_not: null, displayOnHub_not: null } }
+            provider: { id_not: null }
+          }
+        ) {
           hubID
           githubUrl
           title
@@ -33,38 +61,82 @@ module.exports = async ({ graphql }) => {
     }
   `)
 
-  if (data.errors) {
-    console.error(data.errors)
-    throw new Error(data.errors)
+  if (integrationData.errors) {
+    console.error(integrationData.errors)
+    throw new Error(integrationData.errors)
   }
 
-  const integrationData = []
+  integrationData.data.graphcms.integrations.forEach(integration => {
+    console.log(`Preparing JSON for "${integration.title}" integration`)
 
-  data.graphcms.integrations.forEach(integration => {
-    if (integration.githubUrl) {
-      console.log(`Preparing JSON for "${integration.title}" integration`)
-      let template = githubHandle(integration.githubUrl)
-      let imageObj = handleImage(integration.provider)
+    let template = githubHandle(integration.githubUrl)
+    let imageObj = handleImage(integration.provider)
 
-      integrationData.push({
-        template,
-        id: integration.hubID,
-        repo: integration.githubUrl,
-        name: integration.title,
-        description: integration.description,
-        image: {
-          url: imageObj.url,
-          handle: imageObj.handle
-        }
-      })
-    } else {
-      console.log(`No GitHub URL provided for "${integration.title}" integration`)
-    }
+    integrationJSON.push({
+      template,
+      id: integration.hubID,
+      repo: integration.githubUrl,
+      name: integration.title,
+      description: integration.description,
+      image: {
+        url: imageObj.url,
+        handle: imageObj.handle
+      }
+    })
   })
-  const dir = './public/api'
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir)
+
+  fs.writeFileSync(`${dir}/featured.json`, JSON.stringify(integrationJSON), 'utf8')
+
+  //----------------------------------------------//
+  // FEATURED INTEGRATIONS API: api/featured.json //
+  //----------------------------------------------//
+
+  const featuredIntegrationJSON = []
+  const featuredIntegrationData = await graphql(`
+    {
+      graphcms {
+        integrations(
+          where: { status: PUBLISHED, githubUrl_not: null, featured: true }
+          orderBy: featuredOrder_ASC
+          first: 2
+        ) {
+          hubID
+          featuredOrder
+          githubUrl
+          title
+          description
+          provider {
+            image {
+              url
+              handle
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (featuredIntegrationData.errors) {
+    console.error(featuredIntegrationData.errors)
+    throw new Error(featuredIntegrationData.errors)
   }
 
-  fs.writeFileSync(`${dir}/explore.json`, JSON.stringify(integrationData), 'utf8')
+  featuredIntegrationData.data.graphcms.integrations.forEach(integration => {
+    let template = githubHandle(integration.githubUrl)
+    let imageObj = handleImage(integration.provider)
+
+    featuredIntegrationJSON.push({
+      template,
+      id: integration.hubID,
+      repo: integration.githubUrl,
+      name: integration.title,
+      description: integration.description,
+      image: {
+        url: imageObj.url,
+        handle: imageObj.handle
+      }
+    })
+  })
+
+  fs.writeFileSync(`${dir}/featured.json`, JSON.stringify(featuredIntegrationJSON), 'utf8')
 }

@@ -47,12 +47,14 @@ class Link extends React.Component<ILinkProps> {
 
   render() {
     const internal = /^\/(?!\/)/.test(this.props.to)
+    const { to, trackLink, trackingAction, trackingOptions, onClick, ...remainingProps } = this.props
+
     if (internal) {
       return (
         <GatsbyLink
           to={this.props.to}
           {...(this.props.trackLink || this.props.onClick ? { onClick: this.handleOnClick } : null)}
-          {...this.props.rest}
+          {...remainingProps}
         >
           {this.props.children}
         </GatsbyLink>
@@ -62,7 +64,7 @@ class Link extends React.Component<ILinkProps> {
       <a
         href={this.props.to}
         {...(this.props.trackLink || this.props.onClick ? { onClick: this.handleOnClick } : null)}
-        {...this.props.rest}
+        {...remainingProps}
       >
         {this.props.children}
       </a>

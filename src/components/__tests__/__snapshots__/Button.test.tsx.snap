@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button renders correctly 1`] = `
+.emotion-1 + a {
+  margin-left: 0.5rem;
+}
+
 .emotion-0 {
   border-radius: 4px;
   -webkit-appearance: none;
@@ -21,6 +25,7 @@ exports[`Button renders correctly 1`] = `
 }
 
 <a
+  className="emotion-1"
   href="/foo"
 >
   <button
@@ -32,6 +37,10 @@ exports[`Button renders correctly 1`] = `
 `;
 
 exports[`Button renders onClick when trackLink is set 1`] = `
+.emotion-1 + a {
+  margin-left: 0.5rem;
+}
+
 .emotion-0 {
   border-radius: 4px;
   -webkit-appearance: none;
@@ -52,6 +61,7 @@ exports[`Button renders onClick when trackLink is set 1`] = `
 }
 
 <a
+  className="emotion-1"
   href="/foo"
   onClick={[Function]}
 >
@@ -64,6 +74,10 @@ exports[`Button renders onClick when trackLink is set 1`] = `
 `;
 
 exports[`Button renders primary colours 1`] = `
+.emotion-1 + a {
+  margin-left: 0.5rem;
+}
+
 .emotion-0 {
   border-radius: 4px;
   -webkit-appearance: none;
@@ -90,6 +104,7 @@ exports[`Button renders primary colours 1`] = `
 }
 
 <a
+  className="emotion-1"
   href="/foo"
 >
   <button
@@ -101,6 +116,10 @@ exports[`Button renders primary colours 1`] = `
 `;
 
 exports[`Button renders secondary colours 1`] = `
+.emotion-1 + a {
+  margin-left: 0.5rem;
+}
+
 .emotion-0 {
   border-radius: 4px;
   -webkit-appearance: none;
@@ -121,6 +140,7 @@ exports[`Button renders secondary colours 1`] = `
 }
 
 <a
+  className="emotion-1"
   href="/foo"
 >
   <button

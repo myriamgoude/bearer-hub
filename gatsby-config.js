@@ -57,8 +57,7 @@ module.exports = {
         links: [
           { to: '/privacy-policy', label: 'Privacy' },
           { to: '/cookie-policy', label: 'Cookie Policy' },
-          { to: '/legal', label: 'Legal Notices' },
-          { to: '#', label: 'GDPR' }
+          { to: '/legal', label: 'Legal Notices' }
         ]
       }
     ]

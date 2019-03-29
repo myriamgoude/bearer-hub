@@ -23,6 +23,21 @@ module.exports = {
         title: 'Integration Proxy',
         description:
           'Our Infrastructure act as an Integration proxy, taking care of hard things like APIs Authentication (OAuth etc.), Security, Logging and Scaling.'
+      },
+      {
+        title: 'Natively Embeddable',
+        description:
+          'Components are natively embeddable into any Web Application, from Frontend to Backend, in minutes.'
+      },
+      {
+        title: 'Supporting Many Stacks',
+        description:
+          'To make it even easier, Bearer provides common Adapters and SDKs for all Integration. Current supporting: NodeJS, Express, Ruby, Rails, Javascript, React, Vue, Angular.'
+      },
+      {
+        title: 'Adaptable to Your Context',
+        description:
+          'Our modular Component concept makes it dead simple to adapts any Integration to your Business Logic.'
       }
     ],
     footer: [

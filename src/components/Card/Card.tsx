@@ -13,7 +13,7 @@ interface ICardProps {
   text?: any
   icon?: string
   padding?: string
-  style?: string | object
+  style?: any
   link?: string
   small?: boolean
   css?: any
@@ -23,6 +23,7 @@ interface ICardProps {
 }
 
 const Card = (props: ICardProps) => {
+  console.log(props)
   return props.link ? (
     <Link
       to={props.link}
@@ -41,7 +42,7 @@ const Card = (props: ICardProps) => {
           styles.root,
           props.padding === 'large' ? styles.paddingLarge : styles.paddingRegular,
           props.small && styles.heightSmall,
-          props.css && props.css
+          props.style && props.style
         ]}
       >
         {props.icon && <img src={`${props.icon}`} alt={`Icon for ${props.title}`} />}
@@ -57,7 +58,7 @@ const Card = (props: ICardProps) => {
         styles.root,
         props.padding === 'large' ? styles.paddingLarge : styles.paddingRegular,
         props.small && styles.heightSmall,
-        props.css && props.css
+        props.style && props.style
       ]}
     >
       {props.icon && <img src={`${props.icon}`} alt={`Icon for ${props.title}`} />}

@@ -18,10 +18,17 @@ export default {
     width: ${getEmSize(100)};
     height: ${getEmSize(100)};
   `,
+  containerIconCentered: css`
+    left: 0;
+    right: 0;
+    margin: auto;
+  `,
   backgroundIcon: css`
     position: absolute;
     width: 100%;
     height: 100%;
+    left: 0;
+    right: 0;
   `,
   icon: css`
     position: absolute;

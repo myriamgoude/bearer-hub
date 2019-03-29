@@ -13,6 +13,7 @@ interface IColoredTextBlocks {
   text: any
   onClick?: any
   color?: string
+  centered?: boolean
   icon?: string
   iconBg?: string
 }
@@ -22,13 +23,17 @@ const ColoredTextBlock = (props: IColoredTextBlocks) => {
   return (
     <div css={styles.root}>
       <div css={styles.container}>
-        <object css={styles.containerIcon}>
+        <object css={[styles.containerIcon, props.centered && styles.containerIconCentered]}>
           <img src={props.iconBg} css={styles.backgroundIcon} />
           <img src={props.icon} css={styles.icon} />
         </object>
         <h3
           css={[
             styles.title,
+            props.centered &&
+              css`
+                text-align: center;
+              `,
             css`
               color: ${color};
             `

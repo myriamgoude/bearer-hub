@@ -16,6 +16,7 @@ interface IButtonProps {
   save?: boolean
   className?: string
   onClick?: any
+  style?: any
   trackLink?: boolean
   trackingAction?: string
   trackingOptions?: any
@@ -35,6 +36,7 @@ const Button = (props: IButtonProps) => {
         ? styles.mediumButtonDimensions
         : styles.regularButtonDimensions
     }
+    ${props.style}
   `
   const ButtonLink = styled(Link)`
     ${styles.linkStyle}

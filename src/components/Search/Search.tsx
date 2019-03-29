@@ -21,7 +21,7 @@ export default class Search extends React.Component<ISearchProps> {
       <div>
         <div>
           <CustomSearchBox />
-          <CustomHits hit={null} attribute={''} />
+          <CustomHits />
 
           {this.props.defaultCategory ? (
             <VirtualMenu attribute={categoriesAttribute} defaultRefinement={this.props.defaultCategory} />

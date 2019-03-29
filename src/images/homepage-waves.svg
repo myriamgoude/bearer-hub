@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1440px" height="569px" viewBox="0 0 1440 569" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
-    <title>1BB7BFB5-4D7E-47A9-A4E4-35286EA83BF4</title>
-    <desc>Created with sketchtool.</desc>
-    <defs>
-        <radialGradient cx="61.6017223%" cy="39.7673114%" fx="61.6017223%" fy="39.7673114%" r="127.258311%" gradientTransform="translate(0.616017,0.397673),scale(0.415576,1.000000),rotate(165.153011),translate(-0.616017,-0.397673)" id="radialGradient-1">
-            <stop stop-color="#F6FAFF" offset="0%"></stop>
-            <stop stop-color="#F6FAFF" offset="1.33992753%"></stop>
-            <stop stop-color="#F0F2FC" offset="100%"></stop>
-        </radialGradient>
-    </defs>
-    <g id="Hub" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Integration-landing-Export-Spreadsheet" transform="translate(0.000000, -4245.000000)" fill="url(#radialGradient-1)" fill-rule="nonzero">
-            <path d="M-7,4408.04919 L443,4344.16112 C752.666667,4276.34584 991.166667,4243.31419 1158.5,4245.06618 C1325.83333,4246.81818 1446.66667,4272.14887 1521,4321.05826 L1455,4879.0001 L15,4880 L-7,4408.04919 Z" id="sharpBottomInte"></path>
-        </g>
-    </g>
-</svg>
+<svg width="1440" height="569" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient cx="61.602%" cy="39.767%" fx="61.602%" fy="39.767%" r="127.258%" gradientTransform="scale(-.41558 -1) rotate(-14.847 -3.485 8.052)" id="a"><stop stop-color="#F6FAFF" offset="0%"/><stop stop-color="#F6FAFF" offset="1.34%"/><stop stop-color="#F0F2FC" offset="100%"/></radialGradient></defs><path d="M-7 4408.05l450-63.889c309.667-67.815 548.167-100.847 715.5-99.095 167.333 1.752 288.167 27.083 362.5 75.992L1455 4879l-1440 1-22-471.95z" transform="translate(0 -4245)" fill="url(#a)"/></svg>

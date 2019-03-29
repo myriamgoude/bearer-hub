@@ -9,24 +9,20 @@ export default {
     display: block;
   `,
   item: css`
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
     margin: auto;
     width: 100%;
-    max-height: 300px;
-    transform: translateY(-50%);
+    padding-top: calc((64px * 2) + 40px);
+    position: relative;
 
     &:before {
       content: '';
       display: block;
       width: 2px;
       position: absolute;
-      height: 88px;
+      height: 64px;
       left: 0;
       right: 0;
-      top: -120px;
+      top: 64px;
       margin: auto;
       background: ${colors.yellow};
       z-index: 5;
@@ -35,11 +31,11 @@ export default {
       content: '';
       display: block;
       width: 2px;
-      height: 88px;
-      position: absolute;
+      height: 64px;
+      position: relative;
       left: 0;
       right: 0;
-      bottom: -120px;
+      bottom: -40px;
       margin: auto;
       background: ${colors.yellow};
       z-index: 5;

@@ -102,5 +102,9 @@ export default {
       height: 260px;
       background: url(${require('../../images/explore-hero-shape.svg')}) no-repeat top center / cover;
     }
+  `,
+
+  styleBackgroundHowItWorks: css`
+    background: radial-gradient(circle, #f6faff 0%, #f6faff 1.34%, #f0f2fc 100%);
   `
 }

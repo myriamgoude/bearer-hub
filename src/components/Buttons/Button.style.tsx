@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { colors } from '../../styles/variables'
+import { colors, dimensions } from '../../styles/variables'
 import { getEmSize } from '../../styles/mixins'
 export default {
   buttonStyle: css`
@@ -30,6 +30,7 @@ export default {
     height: 32px;
     line-height: 32px;
     padding: 0 ${getEmSize(16)};
+    font-size: ${getEmSize(dimensions.fontSize.small)};
   `,
 
   primaryButton: css`

@@ -28,6 +28,7 @@ import Section from './Section/index'
 import SectionCTA from './SectionCTA/index'
 import SectionHeading from './SectionHeading/index'
 import Small from './Small/index'
+import Tag from './Tag/index'
 import Text from './Text/index'
 import TimelineCard from './TimelineCard/index'
 import Tooltip from './Tooltip/index'
@@ -68,6 +69,7 @@ export {
   SectionCTA,
   SectionHeading,
   Small,
+  Tag,
   Text,
   TeamBlock,
   TimelineCard,

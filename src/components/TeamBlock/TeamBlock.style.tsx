@@ -9,27 +9,19 @@ export default {
   `,
   container: css`
     position: relative;
+    width: 180px;
   `,
-  containerIcon: css`
-    position: absolute;
-    display: block;
-    top: -70px;
-    left: -40px;
-    width: ${getEmSize(100)};
-    height: ${getEmSize(100)};
-  `,
-  backgroundIcon: css`
-    position: absolute;
+  image: css`
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
   `,
-  icon: css`
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  imageContainer: css`
+    height: 215px;
   `,
   title: css`
     font-size: ${dimensions.headingSizes.h4}em;
+    margin: 8px 0 0 0;
   `
 }

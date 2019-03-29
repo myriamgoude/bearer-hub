@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
     - name: node
-      image: bearerhub/node-10.9:0.6
+      image: bearerhub/node-corp:10.15-O.7
       command:
         - cat
       tty: true

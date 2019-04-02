@@ -34,7 +34,7 @@ We use [direnv](https://direnv.net/) to manage environment variables.
 
 Something not working? Here are some steps to try 
 
-1. Delete your local `.cache/`, `.node_modules/`, and `.public/` directories to "turn it off and on again"
+1. Delete your local `.cache/`, `node_modules/`, and `public/` directories to "turn it off and on again"
 2. If you're seeing an error running `yarn start`, try `yarn build` in case a different -- and hopefully more helpful -- error is thrown :) 
 
 ## Environments

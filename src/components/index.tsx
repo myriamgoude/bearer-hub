@@ -1,4 +1,5 @@
 import { Alert, AlertType, AlertKey } from './Alert/index'
+import BearerTimeline from './BearerTimeline/index'
 import Button from './Buttons/index'
 import Card from './Card/index'
 import Container from './Container/index'
@@ -18,6 +19,7 @@ import LayoutRoot from './LayoutRoot/index'
 import Label from './Label/index'
 import Link from './Link/index'
 import LightCta from './LightCta/index'
+import MyAppTimeline from './MyAppTimeline/index'
 import Navigation from './Navigation/index'
 import Page from './Page/index'
 import PageHeading from './PageHeading/index'
@@ -30,7 +32,6 @@ import SectionHeading from './SectionHeading/index'
 import Small from './Small/index'
 import Tag from './Tag/index'
 import Text from './Text/index'
-import TimelineCard from './TimelineCard/index'
 import Tooltip from './Tooltip/index'
 import VideoContent from './VideoContent/index'
 import VideoSection from './VideoSection/index'
@@ -40,6 +41,7 @@ export {
   Alert,
   AlertKey,
   AlertType,
+  BearerTimeline,
   Button,
   Card,
   Clearfix,
@@ -59,6 +61,7 @@ export {
   Label,
   Link,
   LightCta,
+  MyAppTimeline,
   Navigation,
   Page,
   PageHeading,
@@ -72,7 +75,6 @@ export {
   Tag,
   Text,
   TeamBlock,
-  TimelineCard,
   Tooltip,
   VideoContent,
   VideoSection

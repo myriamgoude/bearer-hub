@@ -5,57 +5,36 @@ import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 
 import {
+  BearerTimeline,
   Button,
-  DashedLine,
   HeroPanel,
   IntegrationPanel,
+  MyAppTimeline,
   Page,
   PageHeading,
   Section,
-  SectionHeading,
-  Text,
-  SectionCTA
+  SectionHeading
 } from '../../components/index'
-import TimelineStage from '../../components/timeline/TimelineStage'
-
 import IndexLayout from '../../layouts'
-
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { getEmSize } from '../../styles/mixins'
 import { colors, dimensions } from '../../styles/variables'
 
-interface ITimelineProps {
-  title: string
-  storyText: string
-  timelineStages: {
-    id: string
-    timeToComplete: number
-    backendElementType: string
-    backendElementName: string
-    uiElement: {
-      title: string
-      codeSnippet: string
-      tooltip: string
-      helperText: string
-      image: {
-        handle: string
-        height: number
-        width: number
-      }
-    }
-  }[]
-}
-
 interface IQueryData {
   graphcms: {
-    integrations: {
-      mdDescription: string
-      timeline: ITimelineProps
+    templates: {
       id: string
       hubID: string
-      title: string
-      description: string
+      gitHubUrl: string
+      defaultFunctionName: string
+      defaultFunctionCode: string
+      defaultFunctionReturnValue: string
+      apiAuthType: string
+      oauthScopes?: any
+      apiArchType: string
+      mdDescription: string
       featured: boolean
+      featuredOrder: number
       provider: {
         hubID: string
         title: string
@@ -70,40 +49,24 @@ interface IQueryData {
 export const query = graphql`
   query ExplorePresentQuery($id: ID!) {
     graphcms {
-      integrations(where: { id: $id }, first: 1) {
+      templates(where: { id: $id }, first: 1) {
         id
         hubID
-        title
-        hubID
-        description
+        gitHubUrl
+        defaultFunctionName
+        defaultFunctionCode
+        defaultFunctionReturnValue
+        apiAuthType
+        oauthScopes
+        apiArchType
+        mdDescription
         featured
+        featuredOrder
         provider {
           hubID
           title
           image {
             url
-          }
-        }
-        mdDescription
-        timeline {
-          title
-          storyText
-          timelineStages(where: { displayOnHub: true }, orderBy: order_ASC) {
-            id
-            timeToComplete
-            backendElementType
-            backendElementName
-            uiElement {
-              title
-              codeSnippet
-              tooltip
-              helperText
-              image {
-                handle
-                height
-                width
-              }
-            }
           }
         }
       }
@@ -131,47 +94,8 @@ const StyledMarkDown = styled(Markdown)`
   }
 `
 
-const labelStyle = css`
-  background: ${colors.yellow};
-  height: 48px;
-  line-height: 48px;
-  width: 132px;
-  border-radius: 24px;
-  margin: auto;
-  color: #fff;
-  z-index: 10;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1em;
-  font-size: 24px;
-`
-
-function timelineHeading(timeline?: ITimelineProps): string {
-  if (timeline) {
-    const totalTime = timeline.timelineStages.reduce((sum, stage) => {
-      return sum + stage.timeToComplete
-    }, 0)
-    return `${timeline.title}${totalTime ? ` in ${totalTime} minutes` : ''}`
-  }
-  return ''
-}
-
-function generateMinutesLength(arr: any) {
-  let min = 0
-  arr.map((stage: any) => {
-    min += stage.timeToComplete
-  })
-  return `${min}mn`
-}
-
 const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
-  const integration = data.graphcms.integrations[0]
-  const timeline = integration.timeline
-  let timeElapsed = 0
+  const template = data.graphcms.templates[0]
 
   return (
     <IndexLayout location={location}>
@@ -189,7 +113,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           <HeroPanel
             title={
               <PageHeading
-                primaryText={timelineHeading(timeline)}
+                primaryText={`Quickly build a ${template.provider.title} API Integration using Bearer Framework`}
                 style={css`
                   max-width: 700px;
                   margin: auto;
@@ -199,21 +123,32 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             paddingBottom={true}
             style={{ paddingBottom: '2.5vw', zIndex: 90 }}
           >
-            <StyledMarkDown source={integration.mdDescription} escapeHtml={false} className="markdown-header" />
+            <div>
+              <ul>
+                <li>Don't spend time understanding {template.provider.title} API mechanism</li>
+                <li>Use a pre-configured API Client and {template.apiAuthType} implementation</li>
+                <li>Consume &amp; transform {template.provider.title} API data with simple functions</li>
+                <li>Host &amp; scale your Integration for free on our platform</li>
+                <li>Log &amp; monitor every call to the {template.provider.title} API out-of-the-box</li>
+                <li>Integration in seconds into your App with our SDKs</li>
+              </ul>
+            </div>
+            <StyledMarkDown source={template.mdDescription} escapeHtml={false} className="markdown-header" />
 
             <div>
               <Button
                 primary
-                link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${integration.hubID}`}
+                link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${template.hubID}`}
                 trackLink
                 trackingAction="embed-integration"
                 trackingOptions={{
                   category: 'Integration',
-                  label: integration.hubID
+                  label: template.hubID
                 }}
-                text="Embed this Integration"
+                text="Get started"
               />
               <Button secondary link="/how-it-works" text="Documentation" />
+              <Button secondary link="#" text="Explore product" />
             </div>
           </HeroPanel>
         </div>
@@ -241,38 +176,16 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
               z-index: 5;
             `}
           >
-            <SectionHeading primaryText={timeline.storyText} tag="h5" />
+            <SectionHeading
+              primaryText={`As a developer, I want to build an integration on ${template.provider.title}`}
+              tag="h5"
+            />
           </div>
         </Section>
-        <DashedLine
-          mention="On Bearer"
-          mentionBg={colors.lightGrey}
-          className={css`
-            z-index: 99;
-          `}
-        />
-        <Section>
-          <div
-            css={css`
-              position: absolute;
-              width: 2px;
-              height: 100%;
-              background: ${colors.yellow};
-              left: 0;
-              right: 0;
-              top: 0;
-              margin: auto;
-            `}
-          />
-          {timeline.timelineStages.map((stage, i) => {
-            timeElapsed += stage.timeToComplete
-            return <TimelineStage key={stage.id} index={i} stage={stage} timeElasped={timeElapsed} />
-          })}
-          <div css={labelStyle}>
-            <img src={require('../../images/shared/icon-timer.svg')} />
-            <span>{generateMinutesLength(timeline.timelineStages)}</span>
-          </div>
-        </Section>
+
+        <BearerTimeline template={template} />
+
+        <MyAppTimeline template={template} />
 
         {/*
           Uncomment this if the timeline returns a video
@@ -288,34 +201,16 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
         >
           <Button
             primary
-            link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${integration.hubID}`}
+            link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${template.hubID}`}
             trackLink
             trackingAction="embed-integration"
             trackingOptions={{
               category: 'Integration',
-              label: integration.hubID
+              label: template.hubID
             }}
-            text="Embed this Integration"
+            text="Get started"
           />
           <Button secondary text="See the documentation" link={'#'} />
-        </Section>
-
-        <Section
-          withTail
-          css={css`
-            max-width: 440px;
-            margin: auto;
-          `}
-        >
-          <Text
-            style={css`
-              text-align: center;
-            `}
-            large
-          >
-            This Integration matches to different real use cases we got from users and partners. These are insights but
-            feel free to adapt to your own project !
-          </Text>
         </Section>
 
         <Section withTail>
@@ -326,13 +221,14 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
               background-position: top right 148px, bottom left 162px;
               background-repeat: no-repeat;
               padding: 2em 0;
+              text-align: center;
             `}
           >
-            <IntegrationPanel integrations={data.graphcms.integrations} />
+            <SectionHeading primaryText={`Other Templates`} tag="h5" />
+            <IntegrationPanel integrations={data.graphcms.templates} />
+            <Button primary link={`/explore`} trackLink text="Explore templates" />
           </div>
         </Section>
-
-        <SectionCTA integrationsCta />
       </Page>
     </IndexLayout>
   )

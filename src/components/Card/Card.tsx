@@ -23,7 +23,6 @@ interface ICardProps {
 }
 
 const Card = (props: ICardProps) => {
-  console.log(props)
   return props.link ? (
     <Link
       to={props.link}

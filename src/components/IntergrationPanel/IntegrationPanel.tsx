@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 
 import { Container, Grid, Card, Text } from '../index'
 
-import { integrationPath } from '../../services/Explore'
+import { templatePath } from '../../services/Explore'
 
 import styles from './IntegrationPanel.style'
 import { getEmSize } from '../../styles/mixins'
@@ -12,8 +12,6 @@ interface IIntegrationProps {
   integrations: {
     id: string
     hubID: string
-    title: string
-    description: string
     featured: boolean
     provider: {
       hubID: string
@@ -36,7 +34,7 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
             return (
               <Card
                 key={integration.id}
-                link={`${integrationPath(integration)}`}
+                link={`${templatePath(integration)}`}
                 trackLink
                 trackingAction="explore-integration"
                 trackingOptions={{
@@ -55,14 +53,13 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                   `}
                 >
                   <Text
-                    text={integration.title}
+                    text={`${integration.provider.title} API`}
                     large
                     style={css`
                       font-weight: bold;
                       margin-bottom: ${getEmSize(8)};
                     `}
                   />
-                  <Text small text={integration.description} />
                 </div>
               </Card>
             )

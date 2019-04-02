@@ -19,7 +19,7 @@ export default {
     right: 0;
     top: -30px;
     margin: auto;
-    width: 120px;
+    width: 130px;
     height: 60px;
     line-height: 60px;
     padding: 0 1em;

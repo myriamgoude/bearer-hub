@@ -22,6 +22,7 @@ interface IQueryData {
     templates: {
       id: string
       hubID: string
+      title: string
       gitHubUrl: string
       defaultFunctionName: string
       defaultFunctionCode: string
@@ -48,6 +49,7 @@ export const query = graphql`
       templates(where: { id: $id }, first: 1) {
         id
         hubID
+        title
         gitHubUrl
         defaultFunctionName
         defaultFunctionCode
@@ -88,7 +90,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           <HeroPanel
             title={
               <PageHeading
-                primaryText={`Quickly build a ${template.provider.title} API Integration using Bearer Framework`}
+                primaryText={`Quickly build a ${template.title} Integration using Bearer Framework`}
                 style={css`
                   max-width: 700px;
                   margin: auto;
@@ -100,11 +102,11 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           >
             <div>
               <ul>
-                <li>Don't spend time understanding {template.provider.title} API mechanism</li>
+                <li>Don't spend time understanding {template.title} mechanism</li>
                 <li>Use a pre-configured API Client and {template.apiAuthType} implementation</li>
-                <li>Consume &amp; transform {template.provider.title} API data with simple functions</li>
+                <li>Consume &amp; transform {template.title} data with simple functions</li>
                 <li>Host &amp; scale your Integration for free on our platform</li>
-                <li>Log &amp; monitor every call to the {template.provider.title} API out-of-the-box</li>
+                <li>Log &amp; monitor every call to the {template.title} out-of-the-box</li>
                 <li>Integration in seconds into your App with our SDKs</li>
               </ul>
             </div>

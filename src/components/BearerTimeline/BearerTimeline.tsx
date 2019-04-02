@@ -29,6 +29,7 @@ const StyledDiv = styled.div<{ rightAligned: boolean }>`
 
 interface IBearerTimelineProps {
   template: {
+    title: string
     gitHubUrl: string
     defaultFunctionName: string
     defaultFunctionCode: string

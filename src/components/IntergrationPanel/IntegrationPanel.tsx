@@ -12,6 +12,7 @@ interface IIntegrationProps {
   integrations: {
     id: string
     hubID: string
+    title: string
     featured: boolean
     provider: {
       hubID: string

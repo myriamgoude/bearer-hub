@@ -14,6 +14,7 @@ interface IIntegration {
 
 interface ITemplate {
   hubID: string
+  title: string
   provider: {
     hubID: string
     title: string
@@ -27,8 +28,8 @@ interface ITemplate {
 // E.g. "/explore/2/slack/5/slack-notification"
 export function templatePath(template: ITemplate) {
   return `/explore/${template.provider.hubID}/${slug(template.provider.title)}/${template.hubID}/${slug(
-    template.provider.title
-  )}-api`
+    template.title
+  )}`
 }
 
 // Returns a path to an Integration page, given its Hub ID (a unique

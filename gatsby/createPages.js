@@ -76,7 +76,6 @@ module.exports = async ({ graphql, actions }) => {
         templates(where: { status: PUBLISHED, provider: { id_not: null } }) {
           id
           hubID
-          title
           provider {
             id
             hubID
@@ -103,7 +102,7 @@ module.exports = async ({ graphql, actions }) => {
     const providerPath = `/explore/provider/${provider.hubID}/${providerSlug}`
     const providerWildCardPath = `/explore/provider/${provider.hubID}/:slug`
 
-    const templatePath = `/explore/${provider.hubID}/${providerSlug}/${template.hubID}/${generateSlug(template.title)}`
+    const templatePath = `/explore/${provider.hubID}/${providerSlug}/${template.hubID}/${providerSlug}-api`
     const templateWildCardPath = `/explore/${provider.hubID}/:slug/${template.hubID}/:slug`
     // Take us from e.g. explore/12/slack/ to explore/provider/12/slack
     const templateProviderRedirect = `/explore/${provider.hubID}/:slug /explore/provider/${

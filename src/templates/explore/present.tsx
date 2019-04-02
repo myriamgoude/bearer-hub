@@ -1,8 +1,6 @@
 import * as React from 'react'
-import Markdown from 'react-markdown'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import styled from '@emotion/styled'
 
 import {
   BearerTimeline,
@@ -17,8 +15,7 @@ import {
 } from '../../components/index'
 import IndexLayout from '../../layouts'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
-import { getEmSize } from '../../styles/mixins'
-import { colors, dimensions } from '../../styles/variables'
+import { colors } from '../../styles/variables'
 
 interface IQueryData {
   graphcms: {
@@ -32,7 +29,6 @@ interface IQueryData {
       apiAuthType: string
       oauthScopes?: any
       apiArchType: string
-      mdDescription: string
       featured: boolean
       featuredOrder: number
       provider: {
@@ -59,7 +55,6 @@ export const query = graphql`
         apiAuthType
         oauthScopes
         apiArchType
-        mdDescription
         featured
         featuredOrder
         provider {
@@ -71,26 +66,6 @@ export const query = graphql`
         }
       }
     }
-  }
-`
-
-const StyledMarkDown = styled(Markdown)`
-  margin: 24px 0 32px;
-
-  & ul {
-    padding: 0;
-    margin: 32px 0;
-    text-align: center;
-  }
-  & li {
-    display: list-item;
-    list-style-position: inside;
-  }
-
-  & p {
-    color: ${colors.darkBlue};
-    font-size: ${getEmSize(dimensions.fontSize.large)};
-    display: inline;
   }
 `
 
@@ -133,7 +108,6 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
                 <li>Integration in seconds into your App with our SDKs</li>
               </ul>
             </div>
-            <StyledMarkDown source={template.mdDescription} escapeHtml={false} className="markdown-header" />
 
             <div>
               <Button

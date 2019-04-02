@@ -42,37 +42,31 @@ module.exports = {
     ],
     footer: [
       {
-        title: 'Integrations',
+        title: 'Product',
         links: [
-          { to: '/explore', label: 'Explore' },
-          { to: '/pricing', label: 'Pricing' },
-          { to: '/security', label: 'Security' }
-        ]
-      },
-      {
-        title: 'Help',
-        links: [
-          { to: '/how-it-works', label: 'How it works' },
-          { to: 'https://docs.bearer.sh', label: 'Documentation', trackLink: true },
-          { to: 'https://support.bearer.sh/', label: 'FAQ' },
-          { to: 'https://status.bearer.sh/', label: 'Status Page' },
-          { to: '?contact-us', label: 'Contact us', trackLink: true }
+          { to: '/product', label: 'Product' },
+          { to: '/explore', label: 'Templates' },
+          { to: '/pricing', label: 'Pricing' }
         ]
       },
       {
         title: 'Company',
+        links: [{ to: '/about', label: 'About us' }, { to: '/jobs', label: 'Jobs' }, { to: '/press', label: 'Press' }]
+      },
+      {
+        title: 'Docs & Help',
         links: [
-          { to: '/native-integrations', label: 'Manifesto' },
-          { to: '/about', label: 'About us' },
-          { to: '/press', label: 'Press Kit' }
+          { to: 'https://docs.bearer.sh', label: 'Documentation', trackLink: true },
+          { to: 'https://support.bearer.sh/', label: 'FAQ' },
+          { to: 'https://status.bearer.sh/', label: 'Service Status' }
         ]
       },
       {
         title: 'Legal',
         links: [
+          { to: '/terms', label: 'Terms' },
           { to: '/privacy-policy', label: 'Privacy' },
-          { to: '/cookie-policy', label: 'Cookie Policy' },
-          { to: '/legal', label: 'Legal Notices' }
+          { to: '/cookie-policy', label: 'Cookie Policy' }
         ]
       }
     ]

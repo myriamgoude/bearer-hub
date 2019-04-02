@@ -22,7 +22,7 @@ import LightCta from './LightCta/index'
 import MyAppTimeline from './MyAppTimeline/index'
 import Navigation from './Navigation/index'
 import Page from './Page/index'
-import PageHeading from './PageHeading/index'
+import TimelineHeading from './TimelineHeading/index'
 import PageMetadata from './PageMetadata/index'
 import Pill from './Pill/index'
 import Search from './Search/index'
@@ -64,7 +64,7 @@ export {
   MyAppTimeline,
   Navigation,
   Page,
-  PageHeading,
+  TimelineHeading,
   PageMetadata,
   Pill,
   Search,

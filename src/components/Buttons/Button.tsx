@@ -12,6 +12,7 @@ interface IButtonProps {
   small?: boolean
   medium?: boolean
   primary?: boolean
+  callToAction?: boolean
   secondary?: boolean
   save?: boolean
   className?: string
@@ -27,6 +28,7 @@ const Button = (props: IButtonProps) => {
     ${styles.buttonStyle}
 
     ${props.primary && styles.primaryButton}
+    ${props.callToAction && styles.callToActionButton}
     ${props.secondary ? styles.secondaryButton : styles.primaryButton}
     ${props.save && styles.saveButton}
     ${

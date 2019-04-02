@@ -7,11 +7,13 @@ import {
   Button,
   HeroPanel,
   IntegrationPanel,
+  Link,
   MyAppTimeline,
   Page,
-  PageHeading,
+  TimelineHeading,
   Section,
-  SectionHeading
+  SectionHeading,
+  Small
 } from '../../components/index'
 import IndexLayout from '../../layouts'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
@@ -81,7 +83,6 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           css={[
             css`
               position: relative;
-              text-align: center;
               background-image: radial-gradient(circle at 62% 40%, #f6faff, #f6faff 1%, #f0f2fc);
             `,
             heroStyles.curvedSection
@@ -89,11 +90,10 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
         >
           <HeroPanel
             title={
-              <PageHeading
+              <TimelineHeading
                 primaryText={`Quickly build a ${template.title} Integration using Bearer Framework`}
                 style={css`
                   max-width: 700px;
-                  margin: auto;
                 `}
               />
             }
@@ -114,6 +114,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             <div>
               <Button
                 primary
+                callToAction
                 link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${template.hubID}`}
                 trackLink
                 trackingAction="embed-integration"
@@ -123,9 +124,11 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
                 }}
                 text="Get started"
               />
-              <Button secondary link="/how-it-works" text="Documentation" />
-              <Button secondary link="#" text="Explore product" />
             </div>
+            <Small>
+              Check the <Link to="https://docs.bearer.sh">documentation</Link> or{' '}
+              <Link to="/product">explore product</Link>
+            </Small>
           </HeroPanel>
         </div>
         <Section>

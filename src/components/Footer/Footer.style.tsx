@@ -14,7 +14,7 @@ export default {
     }
 
     @media (min-width: ${breakpoints.sm}px) {
-      padding: 2rem;
+      padding: 2.5rem 2rem;
     }
 
     @media (min-width: ${breakpoints.xl}px) {
@@ -41,7 +41,7 @@ export default {
       -webkit-box-pack: end;
       -ms-flex-pack: end;
       justify-content: flex-end;
-      margin: 2.875rem 2rem 0 0;
+      margin: 0 2rem 0 0;
       text-align: right;
 
       a:last-child img {
@@ -50,6 +50,8 @@ export default {
     }
   `,
   copyright: css`
+    font-size: 0.875rem;
+
     @media (min-width: ${breakpoints.sm}px) {
       margin: 1rem 0 0 0;
     }
@@ -109,7 +111,7 @@ export default {
 
     @media (min-width: ${breakpoints.sm}px) {
       ul {
-        margin: 2rem 0 2rem 0;
+        margin: 1rem 0;
         padding: 0;
       }
     }

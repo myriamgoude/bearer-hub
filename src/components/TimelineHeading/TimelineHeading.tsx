@@ -1,15 +1,15 @@
 import * as React from 'react'
 import Text from '../Text'
 
-import styles from './PageHeading.style'
+import styles from './TimelineHeading.style'
 
-interface PageHeadingProps {
+interface TimelineHeadingProps {
   primaryText: string
   secondaryText?: string
   style?: any
 }
 
-const PageHeading = (props: PageHeadingProps) => {
+const TimelineHeading = (props: TimelineHeadingProps) => {
   return (
     <div css={[styles.root, props.style && props.style]}>
       <Text tag="h1" text={props.primaryText} />
@@ -17,4 +17,4 @@ const PageHeading = (props: PageHeadingProps) => {
     </div>
   )
 }
-export default PageHeading
+export default TimelineHeading

@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Link from '../Link/Link'
 
-// NOTE: social icons are from imported from https://simpleicons.org/
+// NOTE: social icons are imported from from https://simpleicons.org/
 import socialIconTwitter from '../../images/social/twitter.svg'
 import socialIconFacebook from '../../images/social/facebook.svg'
 import socialIconLinkedIn from '../../images/social/linkedin.svg'
@@ -94,6 +94,6 @@ const Footer = (props: IFooterProps) => (
         </Link>
       </div>
     </div>
-    <div css={styles.copyright}>&copy; Copyright Bearer 2018-2019</div>
+    <div css={styles.copyright}>&copy; Copyright Bearer 2018-{new Date().getFullYear()}</div>
   </div>
 )

@@ -48,7 +48,7 @@ module.exports = async ({ graphql, actions }) => {
   //----------------------------//
 
   // Templates for Explore pages
-  const templateTemplate = resolve(`./src/templates/explore/present.tsx`)
+  const timelineTemplate = resolve(`./src/templates/explore/timeline.tsx`)
   const providerTemplate = resolve(`./src/templates/explore/providers.tsx`)
   const categoryTemplate = resolve(`./src/templates/explore/categories.tsx`)
 
@@ -112,7 +112,7 @@ module.exports = async ({ graphql, actions }) => {
     // Create pages for templates (e.g. "Slack Notification")
     createPage({
       path: templatePath,
-      component: templateTemplate,
+      component: timelineTemplate,
       context: {
         id: template.id
       }

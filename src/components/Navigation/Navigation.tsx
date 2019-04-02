@@ -63,7 +63,7 @@ export default class Navigation extends React.Component<INavigationProps, INavig
     }
   }
 
-  private renderLoggedIn = () => <NavLink to="https://app.bearer.sh">GO TO DASHBOARD</NavLink>
+  private renderLoggedIn = () => <NavLink to="https://app.bearer.sh">Go to dashboard</NavLink>
 
   private renderLogin = () => (
     <>
@@ -89,12 +89,12 @@ export default class Navigation extends React.Component<INavigationProps, INavig
       <div css={styles.root}>
         {this.renderToggleButton()}
         <ul css={[styles.list, !this.state.isOpened && styles.mobileList]}>
-          <NavLink to="/explore">EXPLORE INTEGRATIONS</NavLink>
-          <NavLink to="/how-it-works">HOW IT WORKS</NavLink>
-          <NavLink to="/native-integrations">MANIFESTO</NavLink>
+          <NavLink to="/explore">INTEGRATIONS TEMPLATES</NavLink>
+          <NavLink to="/product">PRODUCT</NavLink>
           <NavLink trackLink to="https://docs.bearer.sh">
-            DOCS
+            DOCUMENTATION
           </NavLink>
+          <NavLink to="/pricing">PRICING</NavLink>
           {this.state.isAuthenticated ? this.renderLoggedIn() : this.renderLogin()}
         </ul>
       </div>

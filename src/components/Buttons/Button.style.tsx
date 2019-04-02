@@ -41,6 +41,9 @@ export default {
       background-color: ${colors.primary[0]};
     }
   `,
+  callToActionButton: css`
+    min-width: 12rem;
+  `,
   secondaryButton: css`
     background-color: ${colors.secondary[0]};
     color: ${colors.white};

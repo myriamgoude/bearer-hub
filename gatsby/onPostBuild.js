@@ -2,8 +2,8 @@
 
 const fs = require('fs')
 
-function githubHandle(githubUrl) {
-  return githubUrl.replace('https://github.com/Bearer/integrations/tree/master/', '')
+function gitHubHandle(gitHubUrl) {
+  return gitHubUrl.replace('https://github.com/Bearer/templates/tree/master/', '')
 }
 
 function handleImage(provider) {
@@ -19,11 +19,11 @@ module.exports = async ({ graphql }) => {
   //-----------------------------------//
 
   // www.bearer.sh provides a JSON API which exposes for consumption various information
-  // about integrations from Bearer's CMS system, for example images and copy
+  // about templates from Bearer's CMS system, for example images and copy
 
   // Currently we have two endpoints:
-  // - All integrations from the Explore index page: api/explore.json
-  // - Featured integrations (top 4): api/featured.json
+  // - All templates from the Explore index page: api/explore.json
+  // - Featured templates (top 4): api/featured.json
 
   // Prepare API folder for JSON files
   const dir = './public/api'
@@ -32,24 +32,16 @@ module.exports = async ({ graphql }) => {
   }
 
   //-----------------------------------//
-  // INTEGRATION API: api/explore.json //
+  // TEMPLATE API: api/explore.json    //
   //-----------------------------------//
-  const integrationJSON = []
-  const integrationData = await graphql(`
+  const templateJSON = []
+  const templateData = await graphql(`
     {
       graphcms {
-        integrations(
-          where: {
-            status: PUBLISHED
-            githubUrl_not: null
-            timeline: { timelineStages_some: { id_not: null, displayOnHub_not: null } }
-            provider: { id_not: null }
-          }
-        ) {
+        templates(where: { status: PUBLISHED, provider: { id_not: null } }) {
           hubID
-          githubUrl
+          gitHubUrl
           title
-          description
           provider {
             image {
               url
@@ -61,23 +53,23 @@ module.exports = async ({ graphql }) => {
     }
   `)
 
-  if (integrationData.errors) {
-    console.error(integrationData.errors)
-    throw new Error(integrationData.errors)
+  if (templateData.errors) {
+    console.error(templateData.errors)
+    throw new Error(templateData.errors)
   }
 
-  integrationData.data.graphcms.integrations.forEach(integration => {
-    console.log(`Preparing JSON for "${integration.title}" integration`)
+  templateData.data.graphcms.templates.forEach(template => {
+    console.log(`Preparing JSON for "${template.title}" template`)
 
-    let template = githubHandle(integration.githubUrl)
-    let imageObj = handleImage(integration.provider)
+    let handle = gitHubHandle(template.gitHubUrl)
+    let imageObj = handleImage(template.provider)
 
-    integrationJSON.push({
-      template,
-      id: integration.hubID,
-      repo: integration.githubUrl,
-      name: integration.title,
-      description: integration.description,
+    templateJSON.push({
+      template: handle,
+      id: template.hubID,
+      repo: template.gitHubUrl,
+      name: template.title,
+      description: `${template.title} : Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       image: {
         url: imageObj.url,
         handle: imageObj.handle
@@ -85,26 +77,21 @@ module.exports = async ({ graphql }) => {
     })
   })
 
-  fs.writeFileSync(`${dir}/featured.json`, JSON.stringify(integrationJSON), 'utf8')
+  fs.writeFileSync(`${dir}/explore.json`, JSON.stringify(templateJSON), 'utf8')
 
   //----------------------------------------------//
-  // FEATURED INTEGRATIONS API: api/featured.json //
+  // FEATURED TEMPLATES API: api/featured.json    //
   //----------------------------------------------//
 
   const featuredIntegrationJSON = []
   const featuredIntegrationData = await graphql(`
     {
       graphcms {
-        integrations(
-          where: { status: PUBLISHED, githubUrl_not: null, featured: true }
-          orderBy: featuredOrder_ASC
-          first: 2
-        ) {
+        templates(where: { status: PUBLISHED, featured: true }, orderBy: featuredOrder_ASC, first: 2) {
           hubID
           featuredOrder
-          githubUrl
+          gitHubUrl
           title
-          description
           provider {
             image {
               url
@@ -121,16 +108,16 @@ module.exports = async ({ graphql }) => {
     throw new Error(featuredIntegrationData.errors)
   }
 
-  featuredIntegrationData.data.graphcms.integrations.forEach(integration => {
-    let template = githubHandle(integration.githubUrl)
-    let imageObj = handleImage(integration.provider)
+  featuredIntegrationData.data.graphcms.templates.forEach(template => {
+    let handle = gitHubHandle(template.gitHubUrl)
+    let imageObj = handleImage(template.provider)
 
     featuredIntegrationJSON.push({
-      template,
-      id: integration.hubID,
-      repo: integration.githubUrl,
-      name: integration.title,
-      description: integration.description,
+      template: handle,
+      id: template.hubID,
+      repo: template.gitHubUrl,
+      name: template.title,
+      description: `${template.title} : Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       image: {
         url: imageObj.url,
         handle: imageObj.handle

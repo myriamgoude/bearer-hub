@@ -1,12 +1,15 @@
 'use strict'
 
-const allPublishedIntegrations = `
-  query allPublishedIntegrations { 
+const allPublishedTemplates = `
+  query allPublishedTemplates { 
     graphcms {
-      integrations(where: { status: PUBLISHED, timeline: { timelineStages_some: { id_not: null, displayOnHub: true } } }) {
+      templates(where: { status: PUBLISHED }) {
         id
         hubID
         title
+        imageShare {
+          url
+        }
         categories {
           hubID
           title
@@ -25,8 +28,8 @@ const allPublishedIntegrations = `
 
 module.exports = [
   {
-    query: allPublishedIntegrations,
-    transformer: ({ data }) => data.graphcms.integrations,
+    query: allPublishedTemplates,
+    transformer: ({ data }) => data.graphcms.templates,
     settings: {
       attributesForFaceting: ['categories.title', 'provider.title']
     }

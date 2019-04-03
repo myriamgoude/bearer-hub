@@ -34,16 +34,7 @@ interface IQueryData {
 
 export const scopedCategories = graphql`
   fragment scopedCategories on GraphCMS {
-    categories(
-      where: {
-        status: PUBLISHED
-        integrations_some: {
-          id_not: null
-          status: PUBLISHED
-          timeline: { timelineStages_some: { id_not: null, displayOnHub: true } }
-        }
-      }
-    ) {
+    categories(where: { status: PUBLISHED, templates_some: { status: PUBLISHED } }) {
       id
       hubID
       title
@@ -53,16 +44,7 @@ export const scopedCategories = graphql`
 
 export const scopedProviders = graphql`
   fragment scopedProviders on GraphCMS {
-    providers(
-      where: {
-        status: PUBLISHED
-        integrations_some: {
-          id_not: null
-          status: PUBLISHED
-          timeline: { timelineStages_some: { id_not: null, displayOnHub: true } }
-        }
-      }
-    ) {
+    providers(where: { status: PUBLISHED, templates_some: { status: PUBLISHED } }) {
       id
       hubID
       title

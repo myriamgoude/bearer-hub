@@ -44,13 +44,13 @@ module.exports = async ({ graphql, actions }) => {
   })
 
   //----------------------------//
-  //  ALL EXPLORE PAGES         //
+  //  ALL INTEGRATION PAGES     //
   //----------------------------//
 
-  // Templates for Explore pages
-  const timelineTemplate = resolve(`./src/templates/explore/timeline.tsx`)
-  const providerTemplate = resolve(`./src/templates/explore/providers.tsx`)
-  const categoryTemplate = resolve(`./src/templates/explore/categories.tsx`)
+  // Templates for Integration pages
+  const timelineTemplate = resolve(`./src/templates/integrations/timeline.tsx`)
+  const providerTemplate = resolve(`./src/templates/integrations/providers.tsx`)
+  const categoryTemplate = resolve(`./src/templates/integrations/categories.tsx`)
 
   // Redirect data for the Netlify _redirects file
   const providerRedirects = []
@@ -59,7 +59,6 @@ module.exports = async ({ graphql, actions }) => {
   const categoryRewrites = []
   const templateRedirects = []
   const templateRewrites = []
-  const templateProviderRedirects = []
 
   // See /services/template which also generates a slug
   // Since we cannot use this service here, the logic must be duplicated
@@ -70,12 +69,13 @@ module.exports = async ({ graphql, actions }) => {
   // Note 1: we only ask for PUBLISHED templates with 1+ PROVIDER and Hub-worthy TIMELINE STAGES
   // Note 2: ID is a hashed string used by GraphCMS e.g. cjs3996bq9ew00c15zc96bcnh, cjsukbmse36eh0c150la5jzc2
   //         Hub ID is a unique and required field we have defined in the CMS, which we use in the URLs e.g. 1, 5, 72
-  const allExplore = await graphql(`
+  const allTemplates = await graphql(`
     {
       graphcms {
         templates(where: { status: PUBLISHED, provider: { id_not: null } }) {
           id
           hubID
+          title
           provider {
             id
             hubID
@@ -91,23 +91,18 @@ module.exports = async ({ graphql, actions }) => {
     }
   `)
 
-  if (allExplore.errors) {
-    console.error(allExplore.errors)
-    throw new Error(allExplore.errors)
+  if (allTemplates.errors) {
+    console.error(allTemplates.errors)
+    throw new Error(allTemplates.errors)
   }
 
-  allExplore.data.graphcms.templates.forEach(template => {
+  allTemplates.data.graphcms.templates.forEach(template => {
     const provider = template.provider
-    const providerSlug = generateSlug(provider.title)
-    const providerPath = `/explore/provider/${provider.hubID}/${providerSlug}`
-    const providerWildCardPath = `/explore/provider/${provider.hubID}/:slug`
+    const providerPath = `/integrations/provider/${provider.hubID}/${generateSlug(provider.title)}`
+    const providerWildCardPath = `/integrations/provider/${provider.hubID}/:slug`
 
-    const templatePath = `/explore/${provider.hubID}/${providerSlug}/${template.hubID}/${providerSlug}-api`
-    const templateWildCardPath = `/explore/${provider.hubID}/:slug/${template.hubID}/:slug`
-    // Take us from e.g. explore/12/slack/ to explore/provider/12/slack
-    const templateProviderRedirect = `/explore/${provider.hubID}/:slug /explore/provider/${
-      provider.hubID
-    }/${providerSlug} 301`
+    const templatePath = `/integrations/${template.hubID}/${generateSlug(template.title)}`
+    const templateWildCardPath = `/integrations/${template.hubID}/:slug`
 
     // Create pages for templates (e.g. "Slack Notification")
     createPage({
@@ -134,12 +129,10 @@ module.exports = async ({ graphql, actions }) => {
     templateRewrites.push(`${templatePath} ${templatePath} 200`)
     templateRedirects.push(`${templateWildCardPath} ${templatePath} 301`)
 
-    templateProviderRedirects.push(templateProviderRedirect)
-
     // Create pages for template Categories (e.g. "Developer Tooling", "Mailing")
     template.categories.forEach(category => {
-      const categoryPath = `/explore/category/${category.hubID}/${generateSlug(category.title)}`
-      const categoryWildCardPath = `/explore/category/${category.hubID}/:slug`
+      const categoryPath = `/integrations/category/${category.hubID}/${generateSlug(category.title)}`
+      const categoryWildCardPath = `/integrations/category/${category.hubID}/:slug`
 
       createPage({
         path: categoryPath,
@@ -154,7 +147,7 @@ module.exports = async ({ graphql, actions }) => {
       categoryRedirects.push(`${categoryWildCardPath} ${categoryPath} 301`)
     })
   })
-  console.log('Populating redirect file for Netlify...')
+  console.log('\nPopulating redirect file for Netlify...')
   const dir = './public/'
 
   const redirectData = []
@@ -166,7 +159,6 @@ module.exports = async ({ graphql, actions }) => {
 
   // Add redirects (301)
   redirectData.push(templateRedirects.join('\n'))
-  redirectData.push(templateProviderRedirects.join('\n'))
   redirectData.push(providerRedirects.join('\n'))
   redirectData.push(categoryRedirects.join('\n'))
 

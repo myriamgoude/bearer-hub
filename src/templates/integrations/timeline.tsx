@@ -127,7 +127,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             </div>
             <Small>
               Check the <Link to="https://docs.bearer.sh">documentation</Link> or{' '}
-              <Link to="/product">explore product</Link>
+              <Link to="/product/framework">explore product</Link>
             </Small>
           </HeroPanel>
         </div>
@@ -205,7 +205,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           >
             <SectionHeading primaryText={`Other Templates`} tag="h5" />
             <IntegrationPanel integrations={data.graphcms.templates} />
-            <Button primary link={`/explore`} trackLink text="Explore templates" />
+            <Button primary link={`/integrations`} trackLink text="Explore templates" />
           </div>
         </Section>
       </Page>

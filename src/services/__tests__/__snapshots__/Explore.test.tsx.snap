@@ -2,15 +2,7 @@
 
 exports[`categoryPath is considered an internal link 1`] = `
 <mockConstructor
-  to="/explore/category/123/my-item-title"
->
-  My Item Title
-</mockConstructor>
-`;
-
-exports[`integrationPath is considered an internal link 1`] = `
-<mockConstructor
-  to="/explore/123/my-item-title/456/my-integration-title"
+  to="/integrations/category/123/my-item-title"
 >
   My Item Title
 </mockConstructor>
@@ -18,7 +10,15 @@ exports[`integrationPath is considered an internal link 1`] = `
 
 exports[`providerPath is considered an internal link 1`] = `
 <mockConstructor
-  to="/explore/provider/123/my-item-title"
+  to="/integrations/provider/123/my-item-title"
+>
+  My Item Title
+</mockConstructor>
+`;
+
+exports[`templatePath is considered an internal link 1`] = `
+<mockConstructor
+  to="/integrations/456/my-integration-title"
 >
   My Item Title
 </mockConstructor>

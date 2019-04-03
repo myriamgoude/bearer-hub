@@ -89,7 +89,7 @@ export default class Navigation extends React.Component<INavigationProps, INavig
       <div css={styles.root}>
         {this.renderToggleButton()}
         <ul css={[styles.list, !this.state.isOpened && styles.mobileList]}>
-          <NavLink to="/explore">INTEGRATIONS TEMPLATES</NavLink>
+          <NavLink to="/integrations">INTEGRATIONS TEMPLATES</NavLink>
           <NavLink to="/product/framework">PRODUCT</NavLink>
           <NavLink trackLink to="https://docs.bearer.sh">
             DOCUMENTATION

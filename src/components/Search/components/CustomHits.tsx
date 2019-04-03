@@ -5,7 +5,7 @@ import { connectHits } from 'react-instantsearch-dom'
 import { Card, Grid, Clearfix } from '../../index'
 import { CustomHighlight } from './CustomHighlight'
 import blockStyles from '../../../components/IntergrationPanel/IntegrationPanel.style'
-import { integrationPath } from '../../../services/Explore'
+import { templatePath } from '../../../services/Explore'
 
 const cardStyle = css`
   display: flex;
@@ -31,7 +31,7 @@ export const CustomHits = connectHits(
           return (
             <Card
               key={hit.objectID}
-              link={`${integrationPath({ hubID: hit.hubID, title: hit.title, provider: hit.provider })}`}
+              link={`${templatePath({ hubID: hit.hubID, title: hit.title, provider: hit.provider })}`}
               trackLink
               trackingAction="explore-integration"
               trackingOptions={{

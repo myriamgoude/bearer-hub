@@ -2,17 +2,17 @@ import React from 'react'
 import MockDate from 'mockdate'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
 
-import { integrationPath, categoryPath, providerPath, slug, timer } from '../Explore'
+import { templatePath, categoryPath, providerPath, slug, timer } from '../Explore'
 import Link from '../../components/Link/Link'
 
 const myItem = { hubID: '123', title: 'My Item Title' }
 
-describe('integrationPath', () => {
+describe('templatePath', () => {
   const myIntegration = { hubID: '456', title: 'My Integration Title', provider: myItem }
-  const myPath = integrationPath(myIntegration)
+  const myPath = templatePath(myIntegration)
 
   it('returns the path to an integration presentation page', () => {
-    expect(myPath).toMatch('/explore/123/my-item-title/456/my-integration-title')
+    expect(myPath).toMatch('/integrations/456/my-integration-title')
   })
 
   it('is considered an internal link', () => {
@@ -28,8 +28,8 @@ describe('integrationPath', () => {
 describe('categoryPath', () => {
   const myPath = categoryPath(myItem)
 
-  it('returns the path to a category explore page', () => {
-    expect(myPath).toMatch('/explore/category/123/my-item-title')
+  it('returns the path to a category integrations page', () => {
+    expect(myPath).toMatch('/integrations/category/123/my-item-title')
   })
 
   it('is considered an internal link', () => {
@@ -45,8 +45,8 @@ describe('categoryPath', () => {
 describe('providerPath', () => {
   const myPath = providerPath(myItem)
 
-  it('returns the path to a provider explore page', () => {
-    expect(myPath).toMatch('/explore/provider/123/my-item-title')
+  it('returns the path to a provider integrations page', () => {
+    expect(myPath).toMatch('/integrations/provider/123/my-item-title')
   })
 
   it('is considered an internal link', () => {

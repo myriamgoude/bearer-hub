@@ -23,7 +23,7 @@ class Link extends React.Component<ILinkProps> {
       case 'https://docs.bearer.sh': {
         return 'general-documentation'
       }
-      case '/explore': {
+      case '/integrations': {
         return 'explore-integrations'
       }
       default: {

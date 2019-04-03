@@ -130,7 +130,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               margin-bottom: 8px;
             `}
           >
-            <Button primary trackLink link="/explore" text="Explore integrations" />
+            <Button primary trackLink link="/integrations" text="Explore integrations" />
           </div>
           <Small>
             Learn more about <Link to="/native-integration">Native Integrations</Link>
@@ -242,7 +242,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           <Button
             trackLink
             text="Explore Integrations"
-            link="/explore"
+            link="/integrations"
             css={css`
               margin: 1em auto;
             `}

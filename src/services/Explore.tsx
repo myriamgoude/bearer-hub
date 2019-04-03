@@ -3,15 +3,6 @@ interface IItem {
   title: string
 }
 
-interface IIntegration {
-  hubID: string
-  title: string
-  provider: {
-    hubID: string
-    title: string
-  }
-}
-
 interface ITemplate {
   hubID: string
   title: string
@@ -25,38 +16,25 @@ interface ITemplate {
 // and required integer column) and title, and Hub ID and title
 // of its provider
 //
-// E.g. "/explore/2/slack/5/slack-notification"
+// E.g. "/integrations/5/slack-notification"
 export function templatePath(template: ITemplate) {
-  return `/explore/${template.provider.hubID}/${slug(template.provider.title)}/${template.hubID}/${slug(
-    template.title
-  )}`
-}
-
-// Returns a path to an Integration page, given its Hub ID (a unique
-// and required integer column) and title, and Hub ID and title
-// of its provider
-//
-// E.g. "/explore/2/slack/5/slack-notification"
-export function integrationPath(integration: IIntegration) {
-  return `/explore/${integration.provider.hubID}/${slug(integration.provider.title)}/${integration.hubID}/${slug(
-    integration.title
-  )}`
+  return `/integrations/${template.hubID}/${slug(template.title)}`
 }
 
 // Returns a path to a Provider page, given its Hub ID (a unique
 // and required integer column) and title
 //
-// E.g. "/explore/provider/2/slack/"
+// E.g. "/integrations/provider/2/slack/"
 export function providerPath(provider: IItem) {
-  return `/explore/provider/${provider.hubID}/${slug(provider.title)}`
+  return `/integrations/provider/${provider.hubID}/${slug(provider.title)}`
 }
 
 // Returns a path to a Category page, given its Hub ID (a unique
 // and required integer column) and title
 //
-// E.g. "/explore/category/3/communication/"
+// E.g. "/integrations/category/3/communication/"
 export function categoryPath(category: IItem) {
-  return `/explore/category/${category.hubID}/${slug(category.title)}`
+  return `/integrations/category/${category.hubID}/${slug(category.title)}`
 }
 
 // Generates a slug given an item with a title

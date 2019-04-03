@@ -22,7 +22,7 @@ module.exports = async ({ graphql }) => {
   // about templates from Bearer's CMS system, for example images and copy
 
   // Currently we have two endpoints:
-  // - All templates from the Explore index page: api/explore.json
+  // - All templates from the Integrations index page: api/explore.json
   // - Featured templates (top 4): api/featured.json
 
   // Prepare API folder for JSON files

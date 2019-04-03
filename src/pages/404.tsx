@@ -15,7 +15,7 @@ const NotFoundPage: GatsbyPage = ({ location }) => (
           <div>
             <h2>404: Page not found</h2>
             <h1>Oops, this page has been move or doesn't exist anymore</h1>
-            <Button primary link="/explore" text="Explore integrations" />
+            <Button primary link="/integrations" text="Explore templates" />
           </div>
           <div>
             <svg width="485" height="331" xmlns="http://www.w3.org/2000/svg">

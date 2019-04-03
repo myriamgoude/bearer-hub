@@ -13,7 +13,7 @@ module.exports = {
         title: 'Product',
         links: [
           { to: '/product/framework', label: 'Product' },
-          { to: '/explore', label: 'Templates' },
+          { to: '/integrations', label: 'Templates' },
           { to: '/pricing', label: 'Pricing' }
         ]
       },

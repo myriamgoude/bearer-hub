@@ -40,7 +40,7 @@ const SectionCTA = (props: ISectionCTAProps) => {
                 We offer powerful integrations that cover most of providers and business usages. Discover our scenarios
                 and get started now
               </Text>
-              <Button primary trackLink link="/explore" text="Browse all our integrations" />
+              <Button primary trackLink link="/integrations" text="Browse all our integrations" />
             </div>
           </div>
           <div>

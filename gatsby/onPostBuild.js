@@ -25,10 +25,14 @@ module.exports = async ({ graphql }) => {
   // - All templates from the Integrations index page: api/explore.json
   // - Featured templates (top 4): api/featured.json
 
-  // Prepare API folder for JSON files
+  // Prepare API folders for JSON files
   const dir = './public/api'
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir)
+  }
+  const childDir = `${dir}/integrations`
+  if (!fs.existsSync(childDir)) {
+    fs.mkdirSync(childDir)
   }
 
   //-----------------------------------//
@@ -61,10 +65,10 @@ module.exports = async ({ graphql }) => {
   templateData.data.graphcms.templates.forEach(template => {
     console.log(`Preparing JSON for "${template.title}" template`)
 
-    let handle = gitHubHandle(template.gitHubUrl)
-    let imageObj = handleImage(template.provider)
+    const handle = gitHubHandle(template.gitHubUrl)
+    const imageObj = handleImage(template.provider)
 
-    templateJSON.push({
+    const templateObj = {
       template: handle,
       id: template.hubID,
       repo: template.gitHubUrl,
@@ -74,9 +78,15 @@ module.exports = async ({ graphql }) => {
         url: imageObj.url,
         handle: imageObj.handle
       }
-    })
+    }
+
+    fs.writeFileSync(`${childDir}/${template.hubID}.json`, JSON.stringify(templateObj), 'utf8')
+
+    templateJSON.push(templateObj)
   })
 
+  fs.writeFileSync(`${dir}/integrations.json`, JSON.stringify(templateJSON), 'utf8')
+  // TODO remove this once the Dashboard is updated
   fs.writeFileSync(`${dir}/explore.json`, JSON.stringify(templateJSON), 'utf8')
 
   //----------------------------------------------//
@@ -109,8 +119,8 @@ module.exports = async ({ graphql }) => {
   }
 
   featuredIntegrationData.data.graphcms.templates.forEach(template => {
-    let handle = gitHubHandle(template.gitHubUrl)
-    let imageObj = handleImage(template.provider)
+    const handle = gitHubHandle(template.gitHubUrl)
+    const imageObj = handleImage(template.provider)
 
     featuredIntegrationJSON.push({
       template: handle,
@@ -125,5 +135,7 @@ module.exports = async ({ graphql }) => {
     })
   })
 
+  fs.writeFileSync(`${childDir}/featured.json`, JSON.stringify(featuredIntegrationJSON), 'utf8')
+  // TODO remove this once the Dashboard is updated
   fs.writeFileSync(`${dir}/featured.json`, JSON.stringify(featuredIntegrationJSON), 'utf8')
 }

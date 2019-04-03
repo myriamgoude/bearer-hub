@@ -44,7 +44,7 @@ module.exports = {
       {
         title: 'Product',
         links: [
-          { to: '/product', label: 'Product' },
+          { to: '/product/framework', label: 'Product' },
           { to: '/explore', label: 'Templates' },
           { to: '/pricing', label: 'Pricing' }
         ]

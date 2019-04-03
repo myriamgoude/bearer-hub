@@ -11,7 +11,6 @@ import {
   TeamBlock,
   Clearfix,
   Grid,
-  Link,
   Tag,
   PageMetadata,
   SectionHeading,
@@ -160,7 +159,6 @@ const AboutPage: GatsbyPage = ({ location }) => (
             We build the next-gen developer tool to build &amp; use Integration at scale. Our technology transform any
             API into standardized components providing agnostic front-end and backend logic, usable in minutes.
           </Text>
-          <Link to="/how-it-works"> Learn more </Link>
         </div>
       </Section>
       <Section withTail background="transparent">

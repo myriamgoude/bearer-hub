@@ -8,38 +8,6 @@ module.exports = {
     siteUrl: process.env.GATSBY_BASE_DOMAIN,
     description: 'Bearer Hub',
     twitter: '@BearerSH',
-    howToSteps: [
-      {
-        title: 'Modular Components',
-        description:
-          'Bearer’s Integrations are composed of highly flexible modular components built on top of APIs. Did we mention they are 100% Open Source?'
-      },
-      {
-        title: 'UI Elements & Backend Functions',
-        description:
-          'The Integration Components provide a mix of UI Elements & Backend Functions to cover fullstack usage.'
-      },
-      {
-        title: 'Integration Proxy',
-        description:
-          'Our Infrastructure act as an Integration proxy, taking care of hard things like APIs Authentication (OAuth etc.), Security, Logging and Scaling.'
-      },
-      {
-        title: 'Natively Embeddable',
-        description:
-          'Components are natively embeddable into any Web Application, from Frontend to Backend, in minutes.'
-      },
-      {
-        title: 'Supporting Many Stacks',
-        description:
-          'To make it even easier, Bearer provides common Adapters and SDKs for all Integration. Current supporting: NodeJS, Express, Ruby, Rails, Javascript, React, Vue, Angular.'
-      },
-      {
-        title: 'Adaptable to Your Context',
-        description:
-          'Our modular Component concept makes it dead simple to adapts any Integration to your Business Logic.'
-      }
-    ],
     footer: [
       {
         title: 'Product',

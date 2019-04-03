@@ -13,7 +13,7 @@ class Link extends React.Component<ILinkProps> {
     super(props)
   }
 
-  // Typically the action (event name) is the internal link (e.g. /explore, /how-it-works)
+  // Typically the action (event name) is the internal link (e.g. /explore)
   // but this may be overridden and there are exceptions e.g. for some external links
   private getTrackingAction = () => {
     if (this.props.trackingAction) {

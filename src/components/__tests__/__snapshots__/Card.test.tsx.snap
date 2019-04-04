@@ -60,6 +60,7 @@ exports[`Header renders correctly 1`] = `
         false,
         false,
         false,
+        undefined,
       ]
     }
   >
@@ -135,6 +136,7 @@ exports[`Header renders with object values 1`] = `
         false,
         false,
         false,
+        undefined,
       ]
     }
   >

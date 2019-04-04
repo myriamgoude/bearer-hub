@@ -30,6 +30,7 @@ exports[`Header renders correctly 1`] = `
       false,
       false,
       false,
+      undefined,
     ]
   }
 >
@@ -67,6 +68,7 @@ exports[`Header renders correctly with className 1`] = `
       false,
       false,
       false,
+      undefined,
     ]
   }
 >

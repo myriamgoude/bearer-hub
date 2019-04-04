@@ -10,7 +10,7 @@ interface ISectionHeadingProps {
   className?: string
   align?: string
   tag?: string
-  css?: any
+  style?: any
   children?: any
   tooltip?: any
 }
@@ -32,7 +32,7 @@ const SectionHeading = (props: ISectionHeadingProps) => {
       break
   }
   return (
-    <div css={[styles.root, alignment, props.css && props.css]} className={props.className && props.className}>
+    <div css={[styles.root, alignment, props.style]} className={props.className}>
       {props.primaryText && (
         <Text tag={props.tag ? props.tag : 'h2'}>
           {props.primaryText} {props.tooltip}

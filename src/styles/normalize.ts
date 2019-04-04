@@ -45,7 +45,7 @@ export default `
     font-size: 80%;
   }
 
-  table {
+  table:not(.pricing-table) {
     width: 100%;
     margin-bottom: 1rem;
     border: 1px solid ${colors.ui.bright};
@@ -53,17 +53,17 @@ export default `
     border-collapse: collapse;
   }
 
-  td,
-  th {
+  table:not(.pricing-table) td,
+  table:not(.pricing-table) th {
     padding: .25rem .5rem;
     border: 1px solid ${colors.ui.bright};
   }
 
-  th {
+  table:not(.pricing-table) th {
     text-align: left;
   }
 
-  tbody {
+  table:not(.pricing-table) tbody {
     tr {
       &:nth-of-type(odd) {
         td {

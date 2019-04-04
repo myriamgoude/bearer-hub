@@ -5,4 +5,8 @@ export default `
       background: ${colors.lightGrey}
   }
 
+  b {
+    font-family: 'ProximaNova-Semibold';
+  }
+
 `

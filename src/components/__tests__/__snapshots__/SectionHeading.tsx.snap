@@ -66,6 +66,7 @@ exports[`SectionHeading renders correctly with tooltip text 1`] = `
         false,
         false,
         false,
+        undefined,
       ]
     }
   >
@@ -156,6 +157,7 @@ exports[`SectionHeading renders correctly without tooltip text 1`] = `
         false,
         false,
         false,
+        undefined,
       ]
     }
   >

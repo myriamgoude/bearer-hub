@@ -1,4 +1,5 @@
 import React from 'react'
+import { css } from '@emotion/core'
 import styles from './Text.style'
 import CustomTag from '../CustomTag'
 import { helpers } from '../../styles/helpers'
@@ -10,6 +11,7 @@ interface ITextProps {
   large?: boolean
   tag?: string
   children?: any
+  color?: string
 }
 
 const Text = (props: ITextProps) => {
@@ -26,7 +28,12 @@ const Text = (props: ITextProps) => {
         props.tag === 'h2' && helpers.h2,
         props.tag === 'h3' && helpers.h3,
         props.tag === 'h4' && helpers.h4,
-        props.tag === 'h5' && helpers.h5
+        props.tag === 'h5' && helpers.h5,
+
+        props.color &&
+          css`
+            color: ${props.color};
+          `
       ]}
     >
       {props.text || props.children}

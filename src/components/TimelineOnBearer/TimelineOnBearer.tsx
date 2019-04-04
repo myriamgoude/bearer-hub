@@ -66,7 +66,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => (
         hint={`You will find your credentials on ${props.template.provider.title} settings page`}
       >
         <>
-          <CodeSnippet prism={props.prism} code={`npm / yarn\n$ npm bearer setup:token CLIENT_ID:CLIENT_SECRET`} />
+          <CodeSnippet prism={props.prism} code={`$ npm bearer setup:token CLIENT_ID:CLIENT_SECRET`} />
         </>
       </TimelineStage>
 
@@ -76,11 +76,23 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => (
         placement={props.placement.next().value}
       >
         <>
-          <CodeSnippet prism={props.prism} code={`npm bearer invoke`} backend />
+          <CodeSnippet prism={props.prism} code={`$ npm bearer invoke`} />
           <div
             css={css`
-              margin-top: 1rem;
-              margin-left: 3.5rem;
+              padding-top: 1rem;
+              padding-left: 3.5rem;
+              position: relative;
+
+              &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                background: url(${require('../../images/curve-subsnippet.svg')}) no-repeat;
+                width: 100px;
+                height: 100px;
+                top: 0;
+                left: 2.1rem;
+              }
             `}
           >
             <CodeSnippet
@@ -109,7 +121,6 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => (
         }
     }
 }`}
-              backend
             />
           </div>
         </>
@@ -120,7 +131,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => (
         tooltip={'Not sure what to pass here'}
         placement={props.placement.next().value}
       >
-        <CodeSnippet prism={props.prism} code={`npm bearer generate:function myFunction`} backend />
+        <CodeSnippet prism={props.prism} code={`$ npm bearer generate:function myFunction`} />
       </TimelineStage>
 
       <TimelineStage

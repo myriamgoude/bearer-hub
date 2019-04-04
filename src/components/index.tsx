@@ -1,5 +1,4 @@
 import { Alert, AlertType, AlertKey } from './Alert/index'
-import BearerTimeline from './BearerTimeline/index'
 import Button from './Buttons/index'
 import Card from './Card/index'
 import Container from './Container/index'
@@ -19,10 +18,13 @@ import LayoutRoot from './LayoutRoot/index'
 import Label from './Label/index'
 import Link from './Link/index'
 import LightCta from './LightCta/index'
-import MyAppTimeline from './MyAppTimeline/index'
 import Navigation from './Navigation/index'
 import Page from './Page/index'
 import TimelineHeading from './TimelineHeading/index'
+import TimelineMyApp from './TimelineMyApp/index'
+import TimelinePlacement from './TimelinePlacement/index'
+import TimelineOnBearer from './TimelineOnBearer/index'
+import TimelineStage from './TimelineStage/index'
 import PageMetadata from './PageMetadata/index'
 import Pill from './Pill/index'
 import Search from './Search/index'
@@ -41,7 +43,6 @@ export {
   Alert,
   AlertKey,
   AlertType,
-  BearerTimeline,
   Button,
   Card,
   Clearfix,
@@ -61,10 +62,13 @@ export {
   Label,
   Link,
   LightCta,
-  MyAppTimeline,
   Navigation,
   Page,
   TimelineHeading,
+  TimelineMyApp,
+  TimelinePlacement,
+  TimelineOnBearer,
+  TimelineStage,
   PageMetadata,
   Pill,
   Search,

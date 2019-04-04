@@ -86,7 +86,7 @@ const Footer = (props: IFooterProps) => (
         <Link to="https://github.com/Bearer">
           <img src={socialIconGitHub} alt="Bearer is on GitHub" />
         </Link>
-        <Link to="#facebook">
+        <Link to="https://www.facebook.com/BearerAPI/">
           <img src={socialIconFacebook} alt="Bearer is on Facebook" />
         </Link>
         <Link to="https://www.linkedin.com/company/bearer">
@@ -94,6 +94,6 @@ const Footer = (props: IFooterProps) => (
         </Link>
       </div>
     </div>
-    <div css={styles.copyright}>&copy; Copyright Bearer 2018-{new Date().getFullYear()}</div>
+    <div css={styles.copyright}>&copy; Copyright Bearer {new Date().getFullYear()}</div>
   </div>
 )

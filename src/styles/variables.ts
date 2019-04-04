@@ -9,7 +9,7 @@ export const colors = {
   orange: '#E4611F',
   blue: '#0931D5',
   purple: '#C600A3',
-  darkerBlue: '#03081E',
+  darkerBlue: '#040D34',
   primary: ['#E9B300', '#FFC400', '#FFD033', '#FFE799', '#FFF9E5'],
   secondary: ['#030D36', '#343C5D', '#999DAE', '#E6E7EB', '#F6F6F8'],
   accent: ['#00C682', '#0FE49B', '#3FE9AF', '#9FF4D7', '#E7FCF5'],

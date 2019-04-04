@@ -3,17 +3,17 @@ import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 
 import {
-  BearerTimeline,
   Button,
   HeroPanel,
   IntegrationPanel,
   Link,
-  MyAppTimeline,
   Page,
+  TimelineOnBearer,
   TimelineHeading,
+  TimelineMyApp,
+  TimelinePlacement,
   Section,
-  SectionHeading,
-  Small
+  SectionHeading
 } from '../../components/index'
 import IndexLayout from '../../layouts'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
@@ -37,6 +37,8 @@ interface IQueryData {
       provider: {
         hubID: string
         title: string
+        description: string
+        color: string
         image: {
           url: string
         }
@@ -75,7 +77,8 @@ export const query = graphql`
 
 const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
   const template = data.graphcms.templates[0]
-
+  const placement = TimelinePlacement()
+  const prism = false
   return (
     <IndexLayout location={location}>
       <Page>
@@ -91,45 +94,17 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           <HeroPanel
             title={
               <TimelineHeading
-                primaryText={`Quickly build a ${template.title} Integration using Bearer Framework`}
-                style={css`
-                  max-width: 700px;
-                `}
+                providerName={template.provider.title}
+                providerDescription={template.provider.description} // TODO
+                providerColor={template.provider.color || colors.primary[0]} // TODO
+                templateHubId={template.hubID}
+                templateApiAuthType={template.apiAuthType}
+                templateTitle={template.title}
               />
             }
             paddingBottom={true}
             style={{ paddingBottom: '2.5vw', zIndex: 90 }}
-          >
-            <div>
-              <ul>
-                <li>Don't spend time understanding {template.title} mechanism</li>
-                <li>Use a pre-configured API Client and {template.apiAuthType} implementation</li>
-                <li>Consume &amp; transform {template.title} data with simple functions</li>
-                <li>Host &amp; scale your Integration for free on our platform</li>
-                <li>Log &amp; monitor every call to the {template.title} out-of-the-box</li>
-                <li>Integration in seconds into your App with our SDKs</li>
-              </ul>
-            </div>
-
-            <div>
-              <Button
-                primary
-                callToAction
-                link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${template.hubID}`}
-                trackLink
-                trackingAction="embed-integration"
-                trackingOptions={{
-                  category: 'Integration',
-                  label: template.hubID
-                }}
-                text="Get started"
-              />
-            </div>
-            <Small>
-              Check the <Link to="https://docs.bearer.sh">documentation</Link> or{' '}
-              <Link to="/product/framework">explore product</Link>
-            </Small>
-          </HeroPanel>
+          />
         </div>
         <Section>
           <div
@@ -149,7 +124,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
               max-width: 380px;
               width: 100%;
               margin: auto;
-              margin-bottom: 120px;
+              margin-bottom: 3rem;
               background: ${colors.lightGrey};
               position: relative;
               z-index: 5;
@@ -162,9 +137,8 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           </div>
         </Section>
 
-        <BearerTimeline template={template} />
-
-        <MyAppTimeline template={template} />
+        <TimelineOnBearer template={template} placement={placement} prism={prism} />
+        <TimelineMyApp template={template} placement={placement} prism={prism} />
 
         {/*
           Uncomment this if the timeline returns a video
@@ -173,13 +147,14 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
 
         <Section
           css={css`
-            margin: 40px 0 120px;
+            margin: 3rem 0;
             text-align: center;
             background: url(${require('../../images/shared/yellow-splash.svg')}) no-repeat center center / 122px;
           `}
         >
           <Button
             primary
+            callToAction
             link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${template.hubID}`}
             trackLink
             trackingAction="embed-integration"
@@ -189,7 +164,9 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             }}
             text="Get started"
           />
-          <Button secondary text="See the documentation" link={'#'} />
+          <p style={{ marginTop: '1.25rem' }}>
+            <Link to="https://docs.bearer.sh">or read the documentation</Link>
+          </p>
         </Section>
 
         <Section withTail>
@@ -203,7 +180,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
               text-align: center;
             `}
           >
-            <SectionHeading primaryText={`Other Templates`} tag="h5" />
+            <SectionHeading primaryText={`Other Templates`} tag="h2" />
             <IntegrationPanel integrations={data.graphcms.templates} />
             <Button primary link={`/integrations`} trackLink text="Explore templates" />
           </div>

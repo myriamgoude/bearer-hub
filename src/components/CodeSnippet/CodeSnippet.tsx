@@ -7,8 +7,9 @@ import { backendTheme, frontendTheme } from '../CodeExamples/Theme'
 
 interface ICodeSnippetProps {
   className?: any
-  children?: any
-  prism?: boolean
+  prism: boolean
+  isWhite?: boolean
+  isFaded?: boolean
   code?: any
   backend?: boolean
 }
@@ -28,8 +29,15 @@ const CodeSnippet = (props: ICodeSnippetProps) => {
       )}
     </Highlight>
   ) : (
-    <pre css={[styles.root, props.className && props.className]}>
-      <code>{props.children}</code>
+    <pre
+      css={[
+        styles.defaultSnippet,
+        props.isWhite ? styles.whiteSnippet : styles.blackSnippet,
+        props.isFaded && styles.fadeOnSnippet,
+        props.className && props.className
+      ]}
+    >
+      <code>{props.code}</code>
     </pre>
   )
 }

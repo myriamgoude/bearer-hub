@@ -132,9 +132,6 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           >
             <Button primary trackLink link="/integrations" text="Explore integrations" />
           </div>
-          <Small>
-            Learn more about <Link to="/native-integration">Native Integrations</Link>
-          </Small>
         </HeroPanel>
       </div>
 

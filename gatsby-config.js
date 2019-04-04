@@ -32,9 +32,9 @@ module.exports = {
       {
         title: 'Legal',
         links: [
-          { to: '/terms', label: 'Terms' },
           { to: '/privacy-policy', label: 'Privacy' },
-          { to: '/cookie-policy', label: 'Cookie Policy' }
+          { to: '/cookie-policy', label: 'Cookie Policy' },
+          { to: '/terms', label: 'Terms of Service' }
         ]
       }
     ]

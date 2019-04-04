@@ -1,12 +1,12 @@
 import { css } from '@emotion/core'
 import { breakpoints } from '../../styles/variables'
 
-import timelineHeaderIconClock from '../../images/timeline/clock.svg'
-import timelineHeaderIconRabbit from '../../images/timeline/rabbit.svg'
-import timelineHeaderIconGlasses from '../../images/timeline/glasses.svg'
-import timelineHeaderIconHome from '../../images/timeline/home.svg'
-import timelineHeaderIconMonitor from '../../images/timeline/monitor.svg'
-import timelineHeaderIconAtomium from '../../images/timeline/atomium.svg'
+import timelineHeaderIconClock from '../../images/timeline/icon-timeline-clock.svg'
+import timelineHeaderIconRabbit from '../../images/timeline/icon-timeline-rabbit.svg'
+import timelineHeaderIcon3d from '../../images/timeline/icon-timeline-3d.svg'
+import timelineHeaderIconHome from '../../images/timeline/icon-timeline-home.svg'
+import timelineHeaderIconMonitor from '../../images/timeline/icon-timeline-monitor.svg'
+import timelineHeaderIconAtomium from '../../images/timeline/icon-timeline-atomium.svg'
 
 export default {
   root: css`
@@ -57,9 +57,9 @@ export default {
       background-image: url(${timelineHeaderIconRabbit});
     }
   `,
-  featureIconGlasses: css`
+  featureIcon3d: css`
     &:before {
-      background-image: url(${timelineHeaderIconGlasses});
+      background-image: url(${timelineHeaderIcon3d});
     }
   `,
   featureIconHome: css`

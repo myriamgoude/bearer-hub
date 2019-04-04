@@ -36,7 +36,7 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
           <li css={[styles.feature, styles.featureIconRabbit]}>
             Use a pre-configured API Client and {props.templateApiAuthType} implementation
           </li>
-          <li css={[styles.feature, styles.featureIconGlasses]}>
+          <li css={[styles.feature, styles.featureIcon3d]}>
             Consume &amp; transform {props.templateTitle} data with simple functions
           </li>
           <li css={[styles.feature, styles.featureIconHome]}>

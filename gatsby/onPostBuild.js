@@ -13,6 +13,13 @@ function handleImage(provider) {
   return {}
 }
 
+function humanizeAuthType(authType) {
+  if (authType === 'APIKey') {
+    return 'API Auth Key'
+  }
+  return authType
+}
+
 module.exports = async ({ graphql }) => {
   //-----------------------------------//
   // GENERATE JSON API                 //
@@ -46,6 +53,8 @@ module.exports = async ({ graphql }) => {
           hubID
           gitHubUrl
           title
+          apiAuthType
+          apiArchType
           provider {
             image {
               url
@@ -67,12 +76,15 @@ module.exports = async ({ graphql }) => {
 
     const handle = gitHubHandle(template.gitHubUrl)
     const imageObj = handleImage(template.provider)
+    const authType = humanizeAuthType(template.apiAuthType)
 
     const templateObj = {
       template: handle,
       id: template.hubID,
       repo: template.gitHubUrl,
       name: template.title,
+      authType,
+      archType: template.apiArchType,
       description: `${template.title} : Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       image: {
         url: imageObj.url,
@@ -102,6 +114,8 @@ module.exports = async ({ graphql }) => {
           featuredOrder
           gitHubUrl
           title
+          apiAuthType
+          apiArchType
           provider {
             image {
               url
@@ -121,12 +135,15 @@ module.exports = async ({ graphql }) => {
   featuredIntegrationData.data.graphcms.templates.forEach(template => {
     const handle = gitHubHandle(template.gitHubUrl)
     const imageObj = handleImage(template.provider)
+    const authType = humanizeAuthType(template.apiAuthType)
 
     featuredIntegrationJSON.push({
       template: handle,
       id: template.hubID,
       repo: template.gitHubUrl,
       name: template.title,
+      authType,
+      archType: template.apiArchType,
       description: `${template.title} : Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       image: {
         url: imageObj.url,

@@ -7,7 +7,7 @@ title: 'Terms of Service'
 
 ### Relating to the use of Bearer’s Website and Services.
 
-**Updated: March 28, 2019**
+**Updated: April 1, 2019**
 
 The following Terms of Service ( "ToS") govern your relationship ( "Customer" or "You") with Bearer SAS, a Société par Actions Simplifiée registered in Nanterre, France, under number 835 230 939, having its registered office at 163 Quai du Dervaux, 92600 Asnieres Sur Seine, France.
 
@@ -23,7 +23,7 @@ By signing up with Bearer, you irrevocably agree to be bound by this ToS. You sh
 
 "**Authorized Users**" mean users authorized by the Customer to access and use the Platform, the Software and the Services, which may include - without limitation of the number of users - Customer's employees, Affiliates, Affiliates' employees and any third parties, subject to the compliance with the provisions of these ToS and the limitations set forth in the applicable Plan.
 
-“**API Integration**” means the source code that You create with the Framework, host on the Platform, monitor with the Dashboard and access with the SDKs.
+“**API Integration**” means the source code that You create with the Framework, host on the Platform, monitor with the Dashboard and access with the Integration Clients.
 
 "**Confidential Information**" means any information of a confidential nature that is communicated by the disclosing Party to the receiving Party or accessed by the receiving Party, communicated in written or oral form, marked as proprietary, confidential or otherwise so identified, and/or any information that by its form, nature, content or mode of transmission would, to a reasonable recipient, be deemed confidential or proprietary, including, without limitation, the Agent, the Software and the Documentation.
 
@@ -39,6 +39,8 @@ By signing up with Bearer, you irrevocably agree to be bound by this ToS. You sh
 
 “**Framework**” means the Open Source Software component provided by Bearer that You use to create Your API Integration hosted on Bearer Platform.
 
+"**Integration Clients**" means the Open Source Software component installed and hosted by You in Your Properties made available as is by Bearer.
+
 "**Intellectual Property Rights**" means any unpatented inventions, patent applications, patents, design rights, Documentation, blog content, copyrights, trademarks, Bearer marks, corporate name and trade names, domain name rights, mask work rights, drawings and designs, semiconductor topographies, database rights, domain names, know-how, and other trade secret rights, and all other intellectual property rights, derivatives thereof, in each case whether applied for or not, registered or not, with all the priority rights attached thereto, divisions, continuations, continuations-in-part, renewals, re-issuances and extensions of the forgoing (as applicable) now existing or hereafter filed, issues or acquired, relating to any creations, and all other forms of equivalent protection of creations in force anywhere in the world.
 
 "**Party**" means either You, the Customer, or Bearer.
@@ -48,15 +50,13 @@ By signing up with Bearer, you irrevocably agree to be bound by this ToS. You sh
 "**Personal Data**" means any information relating to an identified or identifiable person as defined
 by applicable data protection legislation, being understood that in any case an identifiable natural person shall refer at least to a natural person who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person, including coded or pseudonymous data as long as long it is possible from the use of such data to reattribute data to an identified or identifiable individual as defined above.
 
-"**Platform**" means the infrastructure provided and managed by Bearer, that enables You and Your Authorized Users to host and query API Integration built with the Framework and consumed with the SDKs.
-
-"**SDK**" means the Open Source Software component installed and hosted by You in Your Properties made available as is by Bearer.
+"**Platform**" means the infrastructure provided and managed by Bearer, that enables You and Your Authorized Users to host and query API Integration built with the Framework and consumed with the Integration Clients.
 
 "**Services**" means the services provided by Bearer under these ToS as further described at www.bearer.sh, including, the Platform and the Dashboard - and excluding all open source software Bearer makes available ("Open Source Software").
 
 "**Site**" means the website www.bearer.sh or any related website.
 
-"**Software**" except solely with respect to open source software Bearer makes available ("Open Source Software"), including language-specific codes that enable easy communication with Bearer Platform (the “SDK”), means all of Bearer's proprietary technology (including software, hardware, products, processes, patents, algorithms, user interfaces, know-how, techniques, designs, and other tangible or intangible technical material or information, protected or not by Intellectual Property Rights) that Bearer may make available to You from time to time in accordance with the ToS.
+"**Software**" except solely with respect to open source software Bearer makes available ("Open Source Software"), including language-specific codes that enable easy communication with Bearer Platform (the “Integration Clients”), means all of Bearer's proprietary technology (including software, hardware, products, processes, patents, algorithms, user interfaces, know-how, techniques, designs, and other tangible or intangible technical material or information, protected or not by Intellectual Property Rights) that Bearer may make available to You from time to time in accordance with the ToS.
 
 "**Term**" is defined in section 5.1.
 
@@ -100,7 +100,7 @@ You exclusively own all rights, title and interest in and to all Customer Data w
 
 #### 4.3. License granted to You by Bearer
 
-Subject to Your compliance with this Agreement and Your payment of the applicable fees, Bearer grants You and Your Authorized Users for the Term of the applicable Plan and solely for Customer's internal business purposes, a limited, non-transferable, non-sublicensable, non-exclusive right to (i) use the Platform to host Your API Integration; (ii) access and use the Dashboard; (iii) access and reproduce the Documentation exclusively for the purposes of using the Services, the Framework, Platform, Dashboard, the SDKs and the Software. This license should be strictly construed. It is understood that any use exceeding the license granted above will be deemed a breach of the ToS. Any rights not expressly granted in this Agreement are expressly reserved by Bearer and/or its licensors.
+Subject to Your compliance with this Agreement and Your payment of the applicable fees, Bearer grants You and Your Authorized Users for the Term of the applicable Plan and solely for Customer's internal business purposes, a limited, non-transferable, non-sublicensable, non-exclusive right to (i) use the Platform to host Your API Integration; (ii) access and use the Dashboard; (iii) access and reproduce the Documentation exclusively for the purposes of using the Services, the Framework, Platform, Dashboard, the Integration Clients and the Software. This license should be strictly construed. It is understood that any use exceeding the license granted above will be deemed a breach of the ToS. Any rights not expressly granted in this Agreement are expressly reserved by Bearer and/or its licensors.
 
 #### 4.4. Restrictions
 

@@ -7,7 +7,6 @@ interface ITeamBlocks {
   children?: any
   name: string
   role: any
-  location: string
   onClick?: any
   photo?: string
 }
@@ -20,7 +19,7 @@ const TeamBlock = (props: ITeamBlocks) => {
           <img src={props.photo} css={styles.image} />
         </div>
         <h4 css={styles.title}>{props.name}</h4>
-        <Text text={`${props.role}, ${props.location}`} />
+        <Text text={`${props.role}`} />
       </div>
     </div>
   )

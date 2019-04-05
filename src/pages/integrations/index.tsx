@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 import { graphql } from 'gatsby'
 
 import Page from '../../components/Page/Page'
-import { Section, HeroLined, Text, Clearfix, Grid, SectionHeading, Button, Search } from '../../components/index'
+import { Section, HeroLined, Text, Clearfix, Search } from '../../components/index'
 import IndexLayout from '../../layouts'
 import PageMetadata from '../../components/PageMetadata/PageMetadata'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
@@ -11,8 +11,6 @@ import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { InstantSearch } from 'react-instantsearch-dom'
 
 import { SearchList } from '../../components/Search/components/SearchList'
-
-import { colors } from '../../styles/variables'
 
 interface IQueryData {
   graphcms: {
@@ -58,9 +56,9 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
                 height: 780px;
               `}
             >
-              <Text tag="h1" text="Explore integrations" />
+              <Text tag="h1" text="Explore Templates" />
               <Clearfix />
-              <Text tag="h3" text="Over 30 Native Integrations for your App" />
+              <Text tag="h3" text="Start building your Integrations even faster!" />
             </HeroLined>
           </div>
           <Section
@@ -83,32 +81,6 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
               `}
             >
               <Search />
-
-              <Grid
-                style={css`
-                  align-items: center;
-                  padding: 80px 0;
-                `}
-                childrenStyle={css`
-                  flex: 0 1 auto !important;
-                `}
-              >
-                <SectionHeading
-                  primaryText="Some ideas to share?"
-                  css={css`
-                    margin-bottom: 0;
-                  `}
-                />
-                <span
-                  css={css`
-                    display: block;
-                    height: 2px;
-                    width: 232px;
-                    background: ${colors.yellow};
-                  `}
-                />
-                <Button primary trackLink link="?share-ideas" text="Share ideas" />
-              </Grid>
             </div>
           </Section>
         </InstantSearch>

@@ -122,7 +122,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
     <Page>
       <div css={heroStyles.styleBackgroundHome}>
         <HeroPanel
-          punchline="Your app, Your Integration, Your Code!"
+          punchline="Your app, your Integration, your Code!"
           title={
             <>
               <h1
@@ -141,14 +141,10 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             css={css`
               margin: 1.5rem 0 2rem 0;
               padding: 0;
+              font-size: 1.5rem;
             `}
           >
-            All the required tooling to build Integrations:
-            <ul>
-              <li>Managed Authentication</li>
-              <li>Pre-build templates</li>
-              <li>Data remapping</li>
-            </ul>
+            Bearer provides all the tooling to build, run and manage API Integrations.
           </p>
 
           <Button primary trackLink link="/integrations" text="Start building" />
@@ -214,7 +210,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         >
           {[
             {
-              title: 'Code API Integration in minutes',
+              title: 'Consume any API in minutes',
               text:
                 'Our Framework provides all the tooling you need including \
                 out-of-the-box API Client configuration and authentication (OAuth etc.).',
@@ -223,22 +219,22 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               color: colors.green
             },
             {
-              title: 'Map API to your data model',
+              title: 'Map API endpoints to your App model',
               text:
-                'Create Functions that query, transform and re-expose API data \
-              according to your App model. ',
+                'Create Functions to query, transform and re-expose APIs \
+                according to your App model. ',
               iconBg: orangeSplash,
               icon: iconGlobe,
               color: colors.orange
             },
             {
-              title: 'Monitor every API calls',
+              title: 'Integrate into your code with 1 line',
               text:
-                'Our Platform logs and monitors every API call your Integration \
-                performs so you know what happens behind the scene.',
-              iconBg: blueSplash,
-              icon: iconMonitor,
-              color: colors.blue
+                'Directly call your Functions using Integration Clients \
+                (NodeJS, Ruby, Javascript, React etc.), and keep your code base clean.',
+              iconBg: lightblueSplash,
+              icon: iconShippet,
+              color: '#6679CB'
             }
           ].map((textBlock, index) => (
             <ColoredTextBlock
@@ -259,24 +255,25 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         >
           {[
             {
-              title: 'Integration Clients for your App',
-              text: 'Embed your Integration in your App in seconds \
-              with our many Integration Clients.',
-              iconBg: lightblueSplash,
-              icon: iconShippet,
-              color: '#6679CB'
-            },
-            {
               title: 'Deploy & Scale without hassles',
               text:
-                'Deploy your Integration on our Platform in one command and let us \
-              scale it infinitely.',
+                'Deploy your Integration on our Platform with one command \
+                and let us scale it infinitely.',
               iconBg: purpleSplash,
               icon: iconLinked,
               color: '#C600A3'
             },
             {
-              title: 'Manage Integration',
+              title: 'Monitor every API call',
+              text:
+                'Our Platform logs and monitors every API call your Integration \
+                performs so you know what happens behind the scene.',
+              iconBg: blueSplash,
+              icon: iconMonitor,
+              color: colors.blue
+            },
+            {
+              title: 'Manage your Integrations',
               text:
                 'Bearer Dashboard let you manage everything about your Integrations, \
                 from API keys to Webhooks and gives you a complete overview.',
@@ -306,7 +303,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
       </Section>
 
       <Section withTail>
-        <SectionHeading primaryText="Featured Integrations" />
+        <SectionHeading primaryText="Featured Integrations Templates" />
         <IntegrationPanel integrations={data.graphcms.integrations} />
         <div
           css={[

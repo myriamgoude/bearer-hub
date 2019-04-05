@@ -3,24 +3,11 @@ import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 
 import IndexLayout from '../../layouts'
-import {
-  Clearfix,
-  Grid,
-  Button,
-  SectionHeading,
-  HeroLined,
-  Page,
-  PageMetadata,
-  Section,
-  Search,
-  Text
-} from '../../components/index'
+import { Clearfix, HeroLined, Page, PageMetadata, Section, Search, Text } from '../../components/index'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { InstantSearch } from 'react-instantsearch-dom'
 
 import { SearchList } from '../../components/Search/components/SearchList'
-
-import { colors } from '../../styles/variables'
 
 interface IQueryData {
   graphcms: {
@@ -55,7 +42,7 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
 
   return (
     <IndexLayout location={location}>
-      <PageMetadata title={category.title} description={`Explore ${category.title} Integrations`} />
+      <PageMetadata title={category.title} description={`Explore ${category.title} Integration Templates`} />
       <Page>
         <InstantSearch
           appId={`${process.env.GATSBY_ALGOLIA_APP_ID}`}
@@ -64,9 +51,9 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
         >
           <div css={heroStyles.styleBackgroundExplore}>
             <HeroLined>
-              <Text tag="h1" text={`Explore ${category.title} integrations`} />
+              <Text tag="h1" text={`Explore ${category.title} Templates`} />
               <Clearfix />
-              <Text tag="h3" text="Over 30 Native Integrations for your App" />
+              <Text tag="h3" text="Start building your Integrations even faster!" />
             </HeroLined>
           </div>
           <Section
@@ -88,32 +75,6 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
               `}
             >
               <Search defaultCategory={category.title} />
-
-              <Grid
-                style={css`
-                  align-items: center;
-                  padding: 80px 0;
-                `}
-                childrenStyle={css`
-                  flex: 0 1 auto !important;
-                `}
-              >
-                <SectionHeading
-                  primaryText="Some ideas to share?"
-                  css={css`
-                    margin-bottom: 0;
-                  `}
-                />
-                <span
-                  css={css`
-                    display: block;
-                    height: 2px;
-                    width: 232px;
-                    background: ${colors.yellow};
-                  `}
-                />
-                <Button primary trackLink link="?share-ideas" text="Share ideas" />
-              </Grid>
             </div>
           </Section>
         </InstantSearch>

@@ -26,7 +26,6 @@ module.exports = {
         title: 'Docs & Help',
         links: [
           { to: 'https://docs.bearer.sh', label: 'Documentation', trackLink: true },
-          { to: 'https://support.bearer.sh/', label: 'FAQ' },
           { to: 'https://status.bearer.sh/', label: 'Service Status' }
         ]
       },

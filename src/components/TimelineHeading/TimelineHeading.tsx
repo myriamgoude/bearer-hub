@@ -18,7 +18,7 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
   return (
     <div css={[styles.root, props.style && props.style]}>
       <h1 css={styles.heading}>
-        Quickly build{' '}
+        Quickly build your own{' '}
         <span
           css={styles.provider}
           style={{ color: props.providerColor, borderColor: props.providerColor }}
@@ -26,7 +26,7 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
         >
           {props.providerName}
         </span>{' '}
-        API Integration using Bearer Framework
+        API Integration
       </h1>
       <div>
         <ul css={styles.features}>
@@ -37,15 +37,17 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
             Use a pre-configured API Client and {props.templateApiAuthType} implementation
           </li>
           <li css={[styles.feature, styles.featureIcon3d]}>
-            Consume &amp; transform {props.templateTitle} data with simple functions
+            Consume &amp; transform {props.templateTitle} API with functions
           </li>
           <li css={[styles.feature, styles.featureIconHome]}>
             Host &amp; scale your Integration for free on our platform
           </li>
           <li css={[styles.feature, styles.featureIconMonitor]}>
-            Log &amp; monitor every call to the {props.templateTitle} out-of-the-box
+            Monitor &amp; log every API call to the {props.templateTitle}
           </li>
-          <li css={[styles.feature, styles.featureIconAtomium]}>Integration in seconds into your App with our SDKs</li>
+          <li css={[styles.feature, styles.featureIconAtomium]}>
+            Integrate in seconds into your App with \ our Integration Clients
+          </li>
         </ul>
       </div>
 
@@ -60,7 +62,7 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
             category: 'Integration',
             label: props.templateHubId
           }}
-          text="Get started"
+          text="Start building"
         />
       </div>
       <Small>

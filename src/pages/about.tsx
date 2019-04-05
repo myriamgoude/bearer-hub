@@ -108,7 +108,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
         <HeroLined>
           <Text tag="h1" text="About Us" />
           <Clearfix />
-          <Text tag="h3" text="The new Standard to build Native Integration" />
+          <Text tag="h3" text="The API Integration Framework" />
         </HeroLined>
       </div>
 
@@ -150,15 +150,22 @@ const AboutPage: GatsbyPage = ({ location }) => (
 
           <SectionHeading primaryText="Our Mission" />
 
-          <Text>Bearer strives to connect application together, no matter their technology. </Text>
+          <Text>Bearer strives to help developers build quicker and better API Integration, no matter the APIs. </Text>
 
           <Text>
-            In a World ruled by APIs, it’s about time to empower developers with Integrations their users deserve.
+            In a World ruled by APIs, every App requires more and more Integration, and yet it doesn’t get easier to
+            work with over time, on the contrary.
           </Text>
 
           <Text>
-            We build the next-gen developer tool to build &amp; use Integration at scale. Our technology transform any
-            API into standardized components providing agnostic front-end and backend logic, usable in minutes.
+            As developers, we know it’s critical to keep in control of the API we are consuming as much as owning our
+            business logic. But, we’ve found it to be a constant challenge to do so while keeping our codebase clean and
+            maintainable.
+          </Text>
+
+          <Text>
+            We believe in the right tool for the job but haven’t found it to solve those challenges. We’ve decided to
+            build it, welcome to Bearer.
           </Text>
         </div>
       </Section>
@@ -248,60 +255,61 @@ const AboutPage: GatsbyPage = ({ location }) => (
           {[
             {
               photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
-              name: 'John Doe',
-              role: 'Designer',
-              location: 'Paris'
+              name: 'Guillaume Montard',
+              role: 'Co-Founder, CEO'
             },
             {
               photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
-              name: 'John Doe',
-              role: 'Designer',
-              location: 'Paris'
+              name: 'Cédric Fabianski',
+              role: 'Co-Founder, CTO'
             },
             {
               photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
-              name: 'John Doe',
-              role: 'Designer',
-              location: 'Paris'
+              name: 'Antoine Tanguy',
+              role: 'Software Engineer'
             },
             {
               photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
-              name: 'John Doe',
-              role: 'Designer',
-              location: 'Paris'
+              name: 'Radek Molenda',
+              role: 'Software Engineer'
             },
             {
               photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
-              name: 'John Doe',
-              role: 'Designer',
-              location: 'Paris'
+              name: 'Myriam Goude',
+              role: 'Product Manager'
             },
             {
               photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
-              name: 'John Doe',
-              role: 'Designer',
-              location: 'Paris'
+              name: 'Tarik Ihadjadene',
+              role: 'Dev Ops'
             },
             {
               photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
-              name: 'John Doe',
-              role: 'Designer',
-              location: 'Paris'
+              name: 'Arthur Carayon',
+              role: 'UI/UX Designer'
             },
             {
               photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
-              name: 'John Doe',
-              role: 'Designer',
-              location: 'Paris'
+              name: 'Phil Hayton',
+              role: 'Software Engineer'
+            },
+            {
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              name: 'Elizabeth Braae',
+              role: 'Software Engineer'
+            },
+            {
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              name: 'Corentin Brossault',
+              role: 'Software Engineer'
+            },
+            {
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              name: 'David Roe',
+              role: 'Software Engineer'
             }
           ].map((textBlock, index) => (
-            <TeamBlock
-              key={index}
-              photo={textBlock.photo}
-              name={textBlock.name}
-              role={textBlock.role}
-              location={textBlock.location}
-            />
+            <TeamBlock key={index} photo={textBlock.photo} name={textBlock.name} role={textBlock.role} />
           ))}
         </Grid>
       </Section>

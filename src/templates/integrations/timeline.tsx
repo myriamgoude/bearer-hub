@@ -131,7 +131,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             `}
           >
             <SectionHeading
-              primaryText={`As a developer, I want to build an integration on ${template.provider.title}`}
+              primaryText={`As a developer, I want to build an Integration on ${template.provider.title}`}
               tag="h5"
             />
           </div>
@@ -162,7 +162,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
               category: 'Integration',
               label: template.hubID
             }}
-            text="Get started"
+            text="Start building"
           />
           <p style={{ marginTop: '1.25rem' }}>
             <Link to="https://docs.bearer.sh">or read the documentation</Link>
@@ -180,9 +180,9 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
               text-align: center;
             `}
           >
-            <SectionHeading primaryText={`Other Templates`} tag="h2" />
+            <SectionHeading primaryText={`Related Templates`} tag="h2" />
             <IntegrationPanel integrations={data.graphcms.templates} />
-            <Button primary link={`/integrations`} trackLink text="Explore templates" />
+            <Button primary link={`/integrations`} trackLink text="Explore Templates" />
           </div>
         </Section>
       </Page>

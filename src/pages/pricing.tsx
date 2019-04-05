@@ -14,8 +14,7 @@ import {
   Small
 } from '../components/'
 import IndexLayout from '../layouts'
-import { breakpoints, colors } from '../styles/variables'
-import { getEmSize } from '../styles/mixins'
+import { colors } from '../styles/variables'
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
 
 const PricingTable = (props: any) => (
@@ -37,20 +36,22 @@ const PricingTable = (props: any) => (
           content: '';
           display: block;
           width: 2px;
-          height: 47px;
+          left: 50%;
           position: absolute;
-          left: 0;
-          right: 0;
-          top: calc(-47px - 64px);
-          margin: auto;
-          background: ${colors.yellow};
           z-index: 5;
+          content: '';
+          background: ${colors.yellow};
         }
 
         &:after {
           top: inherit;
-          height: 32px;
-          bottom: -32px;
+          height: 2rem;
+          bottom: -2rem;
+        }
+
+        &:before {
+          top: -5rem;
+          height: 3rem;
         }
       }
 
@@ -95,74 +96,55 @@ const PricingTable = (props: any) => (
   </table>
 )
 
+const FeatureIncluded = () => (
+  <img
+    src={require('../images/shared/icon-check-green.svg')}
+    css={css`
+      vertical-align: middle;
+    `}
+  />
+)
+
 const PricingPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata title="Pricing" />
-    <Page>
-      <div
-        css={[
-          heroStyles.styleBackgroundHowItWorks,
-          css`
-            z-index: 12;
-          `
-        ]}
-      >
-        <HeroLined
-          itemStyle={css`
-            &:after {
-              height: 74px;
-              bottom: -40px;
-            }
-          `}
-        >
-          <Text
-            tag="h1"
-            text={
-              <>
-                Pricing based on your <Clearfix />
-                <span
-                  css={css`
-                    color: ${colors.yellow};
-                  `}
-                >
-                  Integration Success
-                </span>
-              </>
-            }
-          />
-        </HeroLined>
-      </div>
-      <Section
-        style={css`
-          top: -200px;
+    <Page
+      css={[
+        heroStyles.styleDefaultCurve,
+        css`
+          z-index: 12;
+        `
+      ]}
+    >
+      <HeroLined
+        itemStyle={css`
           &:after {
-            display: block;
-            position: absolute;
-            content: '';
-            width: 100%;
-            height: 100%;
-            background: url(${require('../images/curve-about.svg')}) no-repeat center bottom / 100%;
-            top: -40px;
-            height: 300px;
-            user-select: none;
-            pointer-events: none;
-            z-index: 5;
-
-            @media (min-width: ${getEmSize(breakpoints.xl)}) {
-              top: -40px;
-            }
-
-            @media (min-width: ${getEmSize(breakpoints.md)}) {
-              top: -60px;
-            }
+            height: 74px;
+            bottom: -40px;
           }
         `}
       >
+        <Text
+          tag="h1"
+          text={
+            <>
+              Pricing based on your <Clearfix />
+              <span
+                css={css`
+                  color: ${colors.yellow};
+                `}
+              >
+                Integration Success
+              </span>
+            </>
+          }
+        />
+      </HeroLined>
+      <Section>
         <div
           css={css`
             position: relative;
             z-index: 12;
-            top: -80px;
           `}
         >
           <Grid>
@@ -178,63 +160,53 @@ const PricingPage: GatsbyPage = ({ location }) => (
               `}
             >
               <tr>
-                <td>
-                  <Text text="Integrations" />
-                </td>
+                <td>Integrations</td>
               </tr>
               <tr>
-                <td>
-                  <Text text="Watermark" />
-                </td>
+                <td>API Call included</td>
               </tr>
               <tr>
-                <td>
-                  <Text text="Data retention" />
-                </td>
+                <td>Logging</td>
               </tr>
               <tr>
-                <td>
-                  <Text text="Support" />
-                </td>
+                <td>Error Handling</td>
               </tr>
               <tr>
-                <td>
-                  <Text text="Analytics" />
-                </td>
+                <td>Webhook</td>
               </tr>
               <tr>
-                <td>
-                  <Text text="Team management" />
-                </td>
+                <td>Support</td>
               </tr>
               <tr>
-                <td>
-                  <Text text="Monthly usage included" />
-                </td>
+                <td>Data Retention</td>
               </tr>
               <tr>
-                <td>
-                  <Text text="Additional usage" />
-                </td>
+                <td>Team Management</td>
+              </tr>
+              <tr>
+                <td>SLA</td>
+              </tr>
+              <tr>
+                <td>Additional Usage</td>
               </tr>
             </PricingTable>
 
             <div>
+              <div
+                css={css`
+                  display: block;
+                  width: 340px;
+                  height: 2px;
+                  background: ${colors.yellow};
+                  position: absolute;
+                  left: 50%;
+                  right: 0;
+                  top: calc(-1rem - 4rem);
+                  margin-top: auto;
+                  z-index: 5;
+                `}
+              />
               <PricingTable className="first-table">
-                <div
-                  css={css`
-                    display: block;
-                    width: 340px;
-                    height: 2px;
-                    position: absolute;
-                    left: 50%;
-                    right: 0;
-                    top: calc(-47px - 64px);
-                    margin-top: auto;
-                    background: ${colors.yellow};
-                    z-index: 5;
-                  `}
-                />
                 <thead>
                   <tr>
                     <th>
@@ -259,32 +231,44 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     </th>
                   </tr>
                 </thead>
-                <tr>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td>YES</td>
-                </tr>
-                <tr>
-                  <td>24 hours</td>
-                </tr>
-                <tr>
-                  <td />
-                </tr>
-                <tr>
-                  <td />
-                </tr>
-                <tr>
-                  <td />
-                </tr>
-                <tr>
-                  <td>
-                    <b>1,000 MTU</b>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Not available</td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>Unlimited</td>
+                  </tr>
+                  <tr>
+                    <td>Unlimited for 1 Integration</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <FeatureIncluded />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <FeatureIncluded />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <FeatureIncluded />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Chat</td>
+                  </tr>
+                  <tr>
+                    <td>7 days</td>
+                  </tr>
+                  <tr>
+                    <td />
+                  </tr>
+                  <tr>
+                    <td />
+                  </tr>
+                  <tr>
+                    <td>Not available</td>
+                  </tr>
+                </tbody>
               </PricingTable>
               <div
                 css={css`
@@ -296,10 +280,11 @@ const PricingPage: GatsbyPage = ({ location }) => (
                 `}
               >
                 <SectionHeading
-                  primaryText="Add integration today!"
+                  primaryText="Start Building Integrations!"
                   tag="h3"
                   style={css`
                     margin-bottom: 0;
+                    max-width: 10rem;
                   `}
                 />
                 <Button
@@ -324,7 +309,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                 <thead>
                   <tr>
                     <th>
-                      <Text text="Business" color={colors.yellow} />
+                      <Text text="Enterprise" color={colors.yellow} />
                     </th>
                   </tr>
                   <tr>
@@ -346,44 +331,48 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     </th>
                   </tr>
                 </thead>
-                <tr>
-                  <td>Unlimited</td>
-                </tr>
-                <tr>
-                  <td>NO</td>
-                </tr>
-                <tr>
-                  <td>30 Days</td>
-                </tr>
-                <tr>
-                  <td>Email &amp; Phone support</td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src={require('../images/shared/icon-check-green.svg')}
-                      css={css`
-                        vertical-align: middle;
-                      `}
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src={require('../images/shared/icon-check-green.svg')}
-                      css={css`
-                        vertical-align: middle;
-                      `}
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td />
-                </tr>
-                <tr>
-                  <td>Contact Us</td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>Unlimited</td>
+                  </tr>
+                  <tr>
+                    <td>Unlimited</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <FeatureIncluded />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <FeatureIncluded />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <FeatureIncluded />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Email &amp; Phone support</td>
+                  </tr>
+                  <tr>
+                    <td>30 days</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <FeatureIncluded />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <FeatureIncluded />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Contact us</td>
+                  </tr>
+                </tbody>
               </PricingTable>
               <div
                 css={css`

@@ -27,8 +27,7 @@ import valueTrust from '../images/shared/value-trust.svg'
 import valueAutonomy from '../images/shared/value-autonomy.svg'
 import valueResponsibility from '../images/shared/value-responsibility.svg'
 
-import { colors, breakpoints } from '../styles/variables'
-import { getEmSize } from '../styles/mixins'
+import { colors } from '../styles/variables'
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
 
 const JobCard = (props: any) => (
@@ -96,48 +95,20 @@ const JobCard = (props: any) => (
 const AboutPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata title="About Us" />
-    <Page>
-      <div
-        css={[
-          heroStyles.styleBackgroundHowItWorks,
-          css`
-            z-index: 12;
-          `
-        ]}
-      >
-        <HeroLined>
-          <Text tag="h1" text="About Us" />
-          <Clearfix />
-          <Text tag="h3" text="The API Integration Framework" />
-        </HeroLined>
-      </div>
-
-      <Section
-        style={css`
-          top: -200px;
-          &:after {
-            display: block;
-            position: absolute;
-            content: '';
-            width: 100%;
-            height: 100%;
-            background: url(${require('../images/curve-about.svg')}) no-repeat center bottom / 100%;
-            top: -40px;
-            height: 300px;
-            user-select: none;
-            pointer-events: none;
-            z-index: 5;
-
-            @media (min-width: ${getEmSize(breakpoints.xl)}) {
-              top: -40px;
-            }
-
-            @media (min-width: ${getEmSize(breakpoints.md)}) {
-              top: -60px;
-            }
-          }
-        `}
-      >
+    <Page
+      css={[
+        heroStyles.styleDefaultCurve,
+        css`
+          z-index: 12;
+        `
+      ]}
+    >
+      <HeroLined>
+        <Text tag="h1" text="About Us" />
+        <Clearfix />
+        <Text tag="h3" text="The API Integration Framework" />
+      </HeroLined>
+      <Section>
         <div
           css={css`
             margin: auto;
@@ -242,9 +213,6 @@ const AboutPage: GatsbyPage = ({ location }) => (
           col={4}
           gutter={0}
           space="around"
-          style={css`
-            max-width: 860px;
-          `}
           childrenStyle={css`
             display: flex;
             align-items: center;
@@ -322,7 +290,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
               url(${require('../images/shared/gradient-splash.svg')});
             background-position: top right 148px, bottom left 162px;
             background-repeat: no-repeat;
-            padding: 2em 0;
+            padding: 2rem 0;
           `}
         >
           <Grid
@@ -347,13 +315,6 @@ const AboutPage: GatsbyPage = ({ location }) => (
                 location: 'PARIS',
                 remote: true,
                 url: '#'
-              },
-              {
-                role: 'Full Stack',
-                description: 'Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus…',
-                location: null,
-                remote: true,
-                url: '#'
               }
             ].map((offer, index) => (
               <JobCard
@@ -369,60 +330,52 @@ const AboutPage: GatsbyPage = ({ location }) => (
         </div>
       </Section>
 
-      <div
-        css={css`
-          background: url(${require('../images/wave-about.svg')}) no-repeat center top / cover;
-          height: 400px;
-          margin-top: 100px;
+      <Section
+        withTail
+        style={css`
+          padding-bottom: 4rem;
+          background-image: url(${require('../images/wave-about.svg')});
+          background-repeat: no-repeat;
+          background-position: center 6rem;
+          background-size: cover;
         `}
       >
-        <Section
-          withTail
-          style={css`
-            padding-top: 3em !important;
-            margin-bottom: 0 !important;
-            &:before {
-              top: calc(-64px + -100px) !important;
-            }
+        <SectionHeading primaryText="Our Investors" />
+
+        <Grid
+          childrenStyle={css`
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
           `}
         >
-          <SectionHeading primaryText="Our Investors" />
-
-          <Grid
-            childrenStyle={css`
-              display: flex;
-              text-align: center;
-              align-items: center;
-              justify-content: center;
+          <img
+            src={require('../images/shared/logo-partech.png')}
+            alt={`Logo Partech`}
+            css={css`
+              height: 50px;
+              vertical-align: middle;
             `}
-          >
-            <img
-              src={require('../images/shared/logo-partech.png')}
-              alt={`Logo Partech`}
-              css={css`
-                height: 50px;
-                vertical-align: middle;
-              `}
-            />
-            <img
-              src={require('../images/shared/logo-point-nine.png')}
-              alt={`Logo Point Nine`}
-              css={css`
-                height: 50px;
-                vertical-align: middle;
-              `}
-            />
-            <img
-              src={require('../images/shared/logo-kima-ventures.png')}
-              alt={`Logo Kima Ventures`}
-              css={css`
-                height: 78px;
-                vertical-align: middle;
-              `}
-            />
-          </Grid>
-        </Section>
-      </div>
+          />
+          <img
+            src={require('../images/shared/logo-point-nine.png')}
+            alt={`Logo Point Nine`}
+            css={css`
+              height: 50px;
+              vertical-align: middle;
+            `}
+          />
+          <img
+            src={require('../images/shared/logo-kima-ventures.png')}
+            alt={`Logo Kima Ventures`}
+            css={css`
+              height: 78px;
+              vertical-align: middle;
+            `}
+          />
+        </Grid>
+      </Section>
     </Page>
   </IndexLayout>
 )

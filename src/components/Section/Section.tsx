@@ -18,12 +18,12 @@ const Section = (props: ISectionProps) => (
   <div
     css={[
       styles.root,
-      props.style && props.style,
       props.withTail && styles.tail,
       props.background &&
         css`
           background: ${props.background};
-        `
+        `,
+      props.style && props.style
     ]}
     className={props.className && props.className}
   >

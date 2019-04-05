@@ -4,7 +4,7 @@ import { colors } from '../../styles/variables'
 
 export default {
   root: css`
-    padding: 2em 0;
+    padding: 2rem 0;
     position: relative;
   `,
   tail: css`
@@ -14,7 +14,7 @@ export default {
       content: '';
       display: block;
       width: 2px;
-      height: 88px;
+      height: 5.5rem;
       margin: 2rem auto;
       background: ${colors.yellow};
       z-index: 5;

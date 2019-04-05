@@ -13,26 +13,31 @@ export default {
   containerIcon: css`
     position: absolute;
     display: block;
-    top: -3.5rem;
+    top: -4rem;
     left: -1rem;
-    width: 5rem;
+    width: 100%;
     height: 5rem;
   `,
   containerIconCentered: css`
     left: 0;
-    right: 0;
-    margin: auto;
+
+    & > img {
+      position: absolute;
+      margin: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   `,
   backgroundIcon: css`
     z-index: 0;
     position: absolute;
-    width: 100%;
     height: 100%;
     left: 0;
-    right: 0;
   `,
   icon: css`
     position: absolute;
+    height: 40%;
     top: 40%;
     left: 32px;
     transform: translate(-50%, -50%);

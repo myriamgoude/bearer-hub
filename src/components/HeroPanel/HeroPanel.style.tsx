@@ -31,9 +31,6 @@ export default {
       width: auto;
     }
   `,
-  heightXl: css`
-    height: 800px;
-  `,
 
   curvedSection: css`
     &::after {
@@ -87,7 +84,7 @@ export default {
     }
   `,
 
-  styleBackgroundHowItWorks: css`
-    background: radial-gradient(circle, #f6faff 0%, #f6faff 1.34%, #f0f2fc 100%);
+  styleDefaultCurve: css`
+    background: url(${require('../../images/hero-background-homepage.svg')}) no-repeat top right;
   `
 }

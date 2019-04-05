@@ -13,7 +13,6 @@ interface IHeroPanel {
   highlight?: string
   css?: any
   children?: object
-  longHero?: boolean
   paddingBottom?: boolean
   style?: any
 }
@@ -22,7 +21,6 @@ const HeroPanel: React.SFC<IHeroPanel> = ({
   title,
   subtitle,
   punchline,
-  longHero,
   image,
   imageCss,
   css,
@@ -34,7 +32,7 @@ const HeroPanel: React.SFC<IHeroPanel> = ({
     <Container
       flex
       flexDirection="row"
-      style={[styles.root, longHero && styles.heightXl, css && css, style && style]}
+      style={[styles.root, css && css, style && style]}
       padding="large"
       paddingBottom={paddingBottom}
     >

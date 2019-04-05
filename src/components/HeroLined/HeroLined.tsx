@@ -9,7 +9,7 @@ interface IHeroLinedPros {
 }
 const HeroLined = (props: IHeroLinedPros) => {
   return (
-    <HeroPanel longHero style={[styles.root, props.style]}>
+    <HeroPanel style={[styles.root, props.style]}>
       <div css={[styles.item, props.itemStyle]}>{props.children}</div>
     </HeroPanel>
   )

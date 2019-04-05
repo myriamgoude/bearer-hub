@@ -177,7 +177,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
                 url(${require('../../images/shared/gradient-splash.svg')});
               background-position: top right 148px, bottom left 162px;
               background-repeat: no-repeat;
-              padding: 2em 0;
+              padding: 2rem 0;
               text-align: center;
             `}
           >

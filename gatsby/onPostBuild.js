@@ -61,6 +61,9 @@ module.exports = async ({ graphql }) => {
               handle
             }
           }
+          categories {
+            title
+          }
         }
       }
     }
@@ -78,6 +81,12 @@ module.exports = async ({ graphql }) => {
     const imageObj = handleImage(template.provider)
     const authType = humanizeAuthType(template.apiAuthType)
 
+    const templateCategories = []
+
+    template.categories.map(category => {
+      templateCategories.push({ name: category.title })
+    })
+
     const templateObj = {
       template: handle,
       id: template.hubID,
@@ -89,7 +98,8 @@ module.exports = async ({ graphql }) => {
       image: {
         url: imageObj.url,
         handle: imageObj.handle
-      }
+      },
+      categories: templateCategories
     }
 
     fs.writeFileSync(`${childDir}/${template.hubID}.json`, JSON.stringify(templateObj), 'utf8')
@@ -122,6 +132,9 @@ module.exports = async ({ graphql }) => {
               handle
             }
           }
+          categories {
+            title
+          }
         }
       }
     }
@@ -137,6 +150,12 @@ module.exports = async ({ graphql }) => {
     const imageObj = handleImage(template.provider)
     const authType = humanizeAuthType(template.apiAuthType)
 
+    const templateCategories = []
+
+    template.categories.map(category => {
+      templateCategories.push({ name: category.title })
+    })
+
     featuredIntegrationJSON.push({
       template: handle,
       id: template.hubID,
@@ -148,7 +167,8 @@ module.exports = async ({ graphql }) => {
       image: {
         url: imageObj.url,
         handle: imageObj.handle
-      }
+      },
+      categories: templateCategories
     })
   })
 

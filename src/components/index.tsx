@@ -3,7 +3,6 @@ import Button from './Buttons/index'
 import Card from './Card/index'
 import Container from './Container/index'
 import Clearfix from './Clearfix/index'
-import CodeExamples from './CodeExamples/index'
 import CodeSnippet from './CodeSnippet/index'
 import ColoredTextBlock from './ColoredTextBlock/index'
 import DashedLine from './DashedLine/index'
@@ -47,7 +46,6 @@ export {
   Card,
   Clearfix,
   Container,
-  CodeExamples,
   CodeSnippet,
   ColoredTextBlock,
   DashedLine,

@@ -6,20 +6,17 @@ import {
   Button,
   Card,
   Clearfix,
-  CodeExamples,
   ColoredTextBlock,
   Grid,
   HeroPanel,
   IntegrationPanel,
   Link,
-  LightCta,
   Page,
   Pill,
   Section,
-  SectionCTA,
   SectionHeading,
   Small,
-  Text
+  VideoSection
 } from '../components/'
 import IndexLayout from '../layouts'
 
@@ -31,18 +28,23 @@ import logoMailchimp from '../images/brands/mailchimp.svg'
 import logoGithub from '../images/brands/github.svg'
 import logoZendesk from '../images/brands/zendesk.svg'
 
-import greenSplash from '../images/shared/green-splash.svg'
-import orangeSplash from '../images/shared/orange-splash.svg'
-import blueSplash from '../images/shared/blue-splash.svg'
-import iconGraph from '../images/shared/icon-Graph.svg'
-import iconShippet from '../images/shared/icon-Shippet.svg'
-import iconLayout from '../images/shared/icon-Layout.svg'
+import greenSplash from '../images/shared/splash-green.svg'
+import orangeSplash from '../images/shared/splash-orange.svg'
+import blueSplash from '../images/shared/splash-blue.svg'
+import lightblueSplash from '../images/shared/splash-lightblue.svg'
+import purpleSplash from '../images/shared/splash-purple.svg'
+import yellowSplash from '../images/shared/splash-yellow.svg'
+
+import iconRabbit from '../images/shared/icon-rabbit.svg'
+import iconGlobe from '../images/shared/icon-globe.svg'
+import iconMonitor from '../images/shared/icon-monitor.svg'
+import iconShippet from '../images/shared/icon-shippet.svg'
+import iconLinked from '../images/shared/icon-linked.svg'
+import iconCog from '../images/shared/icon-cog.svg'
 
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
 
 import { colors, breakpoints } from '../styles/variables'
-
-import codeData from '../data/codeSamples'
 
 interface IQueryData {
   graphcms: {
@@ -92,17 +94,35 @@ export const query = graphql`
 `
 
 const styleWaveBg = css`
-  background: url(${require('../images/homepage-waves-2.svg')}) no-repeat center center / contain;
+  background-image: url(${require('../images/homepage-waves-2.svg')});
+  background-repeat: no-repeat;
+  background-position: center;
 `
+
+const styleWhyUseBearerCardHeading = css`
+  font-size: 1.5rem;
+  margin: 0 0 2rem 0;
+  display: flex;
+  align-items: center;
+`
+
+const styleWhyUseBearerCardImage = css`
+  vertical-align: middle;
+  margin-right: 12px;
+  width: 38px;
+  height: 38px;
+`
+
+const whyUseBearerCardImage = (src: string, alt: string) => (
+  <img src={require(`../images/shared/${src}.svg`)} css={styleWhyUseBearerCardImage} alt={alt} />
+)
 
 const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
   <IndexLayout location={location}>
     <Page>
       <div css={heroStyles.styleBackgroundHome}>
         <HeroPanel
-          css={css`
-            background: red;
-          `}
+          punchline="Your app, Your Integration, Your Code!"
           title={
             <>
               <h1
@@ -110,37 +130,38 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
                   color: ${colors.darkBlue};
                 `}
               >
-                Native Integration <Clearfix /> To power your app
+                The API Integration
+                <Clearfix /> Framework
               </h1>
             </>
           }
-          subtitle={
-            <>
-              Bearer helps apps get connected to
-              <Clearfix /> the rest of the World.
-            </>
-          }
           image={placeholderHeroImage}
-          longHero
         >
-          <LightCta text="Your users will thank you." />
-          <div
+          <p
             css={css`
-              margin-top: 64px;
-              margin-bottom: 8px;
+              margin: 1.5rem 0 2rem 0;
+              padding: 0;
             `}
           >
-            <Button primary trackLink link="/integrations" text="Explore integrations" />
-          </div>
+            All the required tooling to build Integrations:
+            <ul>
+              <li>Managed Authentication</li>
+              <li>Pre-build templates</li>
+              <li>Data remapping</li>
+            </ul>
+          </p>
+
+          <Button primary trackLink link="/integrations" text="Start building" />
+          <br />
+          <Small>
+            You can also <Link to="/integrations">explore templates</Link> or check{' '}
+            <Link to="https://docs.bearer.sh">documentation</Link>
+          </Small>
         </HeroPanel>
       </div>
 
-      <Section
-        css={css`
-          padding-bottom: 8em;
-        `}
-      >
-        <SectionHeading primaryText="Most Integrated Apps" />
+      <Section>
+        <SectionHeading primaryText="Our customers" />
         <Grid
           space="between"
           style={css`
@@ -153,35 +174,70 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         </Grid>
       </Section>
 
+      <div css={styleWaveBg}>
+        <Section withTail>
+          <SectionHeading primaryText="Build any API Integrations in minutes" />
+          <div
+            css={css`
+              margin-bottom: 3rem;
+              text-align: center;
+              position: relative;
+              z-index: 5;
+            `}
+          >
+            <VideoSection
+              thumbnail=""
+              src=""
+              button={
+                <Button
+                  trackLink
+                  link="https://docs.bearer.sh/"
+                  secondary
+                  text={'Documentation'}
+                  css={css`
+                    margin-top: -1rem;
+                    display: inline-block;
+                  `}
+                />
+              }
+            />
+          </div>
+        </Section>
+      </div>
+
       <Section withTail background="transparent">
-        <Grid fullWidth>
+        <Grid
+          style={css`
+            margin-top: 7rem;
+          `}
+          fullWidth
+        >
           {[
             {
-              title: 'For product manager',
+              title: 'Code API Integration in minutes',
               text:
-                'Start adding the Integrations that keep piling up in your backlog.\
-                 Add dozens of Integrations that users keep asking for without impacting roadmap and budget',
+                'Our Framework provides all the tooling you need including \
+                out-of-the-box API Client configuration and authentication (OAuth etc.).',
               iconBg: greenSplash,
-              icon: iconGraph,
+              icon: iconRabbit,
               color: colors.green
             },
             {
-              title: 'For Front-End developer',
+              title: 'Map API to your data model',
               text:
-                'Ready-to-use, one line of code, Web Components that work for your stack,\
-                 future-proof. Offer a standardize experience, customizable to your look and feel.',
+                'Create Functions that query, transform and re-expose API data \
+              according to your App model. ',
               iconBg: orangeSplash,
-              icon: iconLayout,
+              icon: iconGlobe,
               color: colors.orange
             },
             {
-              title: 'For Back-End developer',
+              title: 'Monitor every API calls',
               text:
-                'Scale your Integration without overloading your codebase with dozens \
-                of dependencies, SDKs and vendor-specific code. \
-                Did we mention we take care of the OAuth flow too?',
+                'Our Platform logs and monitors every API call your Integration \
+                performs so you know what happens behind the scene.',
               iconBg: blueSplash,
-              icon: iconShippet,
+              icon: iconMonitor,
               color: colors.blue
             }
           ].map((textBlock, index) => (
@@ -195,36 +251,59 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             />
           ))}
         </Grid>
+        <Grid
+          style={css`
+            margin-top: 7rem;
+          `}
+          fullWidth
+        >
+          {[
+            {
+              title: 'Integration Clients for your App',
+              text: 'Embed your Integration in your App in seconds \
+              with our many Integration Clients.',
+              iconBg: lightblueSplash,
+              icon: iconShippet,
+              color: '#6679CB'
+            },
+            {
+              title: 'Deploy & Scale without hassles',
+              text:
+                'Deploy your Integration on our Platform in one command and let us \
+              scale it infinitely.',
+              iconBg: purpleSplash,
+              icon: iconLinked,
+              color: '#C600A3'
+            },
+            {
+              title: 'Manage Integration',
+              text:
+                'Bearer Dashboard let you manage everything about your Integrations, \
+                from API keys to Webhooks and gives you a complete overview.',
+              iconBg: yellowSplash,
+              icon: iconCog,
+              color: '#E9B300'
+            }
+          ].map((textBlock, index) => (
+            <ColoredTextBlock
+              key={index}
+              title={textBlock.title}
+              icon={textBlock.icon}
+              iconBg={textBlock.iconBg}
+              text={textBlock.text}
+              color={textBlock.color}
+            />
+          ))}
+        </Grid>
+        <div
+          css={css`
+            text-align: center;
+          `}
+          className="mt-32 mb-64"
+        >
+          <Button text="Product features" link="/product" />
+        </div>
       </Section>
-
-      <div css={styleWaveBg}>
-        <Section withTail>
-          <SectionHeading primaryText="A Native Integration in 5 minutes" />
-          <CodeExamples data={codeData} />
-          <div
-            css={css`
-              margin-top: -30px;
-              text-align: center;
-              position: relative;
-              z-index: 5;
-            `}
-          >
-            <div>
-              <Link
-                trackLink
-                to="https://docs.bearer.sh/"
-                css={css`
-                  margin-top: 16px;
-                  display: inline-block;
-                  color: ${colors.black};
-                `}
-              >
-                <Small>You can also check the docs</Small>
-              </Link>
-            </div>
-          </div>
-        </Section>
-      </div>
 
       <Section withTail>
         <SectionHeading primaryText="Featured Integrations" />
@@ -233,30 +312,18 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           css={[
             css`
               text-align: center;
+              margin-top: 2.375rem;
             `
           ]}
         >
-          <Button
-            trackLink
-            text="Explore Integrations"
-            link="/integrations"
-            css={css`
-              margin: 1em auto;
-            `}
-          />
+          <Button trackLink text="Explore Templates" link="/integrations" className="mt-16 mb-16" />
         </div>
       </Section>
-
-      <SectionCTA
-        style={css`
-          margin-bottom: 64px;
-        `}
-      />
 
       <Section
         withTail
         css={css`
-          margin-bottom: 3em;
+          margin-bottom: 7.5em;
         `}
       >
         <SectionHeading primaryText="Why use Bearer?" />
@@ -265,13 +332,10 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           gutter={32}
           fullWidth
           style={css`
-            justify-content: center !important;
-
             @media (min-width: ${breakpoints.md}px) {
-              height: 600px;
+              margin-top: 5rem;
               justify-content: space-between !important;
             }
-            align-items: center;
             background: url(${require('../images/shared/yellow-circle.svg')}) no-repeat center top / 560px;
           `}
           childrenStyle={css`
@@ -283,110 +347,50 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             }
           `}
         >
+          <Card style={{ padding: '40px' }} padding="large">
+            <h3 css={styleWhyUseBearerCardHeading}>
+              {whyUseBearerCardImage('icon-magnet', 'Icon Magnet')}
+              <span>More Integration</span>
+            </h3>
+            <p>Building API Integration is tedious, time-consuming and costly. </p>
+            <p>With Bearer, build Integration faster and focus on your Business logic instead of glue code. </p>
+            <p>Build more & better Integration.</p>
+          </Card>
           <Card
-            title={
-              <div
-                css={css`
-                  margin-bottom: 16px;
-                `}
-              >
-                <img
-                  src={require('../images/shared/icon-magnet.svg')}
-                  css={css`
-                    vertical-align: middle;
-                    margin-right: 12px;
-                    width: 40px;
-                  `}
-                  alt="Icon Magnet"
-                />
-                <span>
-                  <Text text="Native" tag="h5" />
-                </span>
-              </div>
-            }
-            children={
-              <>
-                <Text text="Integration should be a key feature of your App!" />
-                <Text text="Are you going to continue to let third parties capture its value?" />
-                <Text
-                  text="It’s time to power-up your App with truly Native Integrations. 
-                  Take care of your business logic and we will do the rest."
-                />
-              </>
-            }
-            padding="large"
-          />
-          <Card
-            className={css`
-              position: relative;
+            style={css`
+              padding: 40px;
               @media (min-width: ${breakpoints.md}px) {
-                top: 200px;
+                margin-top: 200px;
               }
             `}
-            title={
-              <div
-                css={css`
-                  margin-bottom: 16px;
-                `}
-              >
-                <img
-                  src={require('../images/shared/icon-globe.svg')}
-                  css={css`
-                    vertical-align: middle;
-                    margin-right: 12px;
-                    width: 40px;
-                  `}
-                  alt="Icon Globe"
-                />
-                <span>
-                  <Text text="Standardized" tag="h5" />
-                </span>
-              </div>
-            }
-            children={
-              <>
-                <Text text="Every Vendor’s API, SDK, Authentication mechanism, and even UI Widgets, are different!" />
-                <Text text="Stop piling up dependencies and maintaining vendor-specific code." />
-                <Text text="Every Bearer Integration is truly standardized, once and for all." />
-              </>
-            }
             padding="large"
-          />
+          >
+            <h3 css={styleWhyUseBearerCardHeading}>
+              {whyUseBearerCardImage('icon-graph-yellow', 'Icon graph')}
+              <span>Managed Integration</span>
+            </h3>
+            <p>APIs always fail so do Integration, we all know it. </p>
+            <p>
+              By providing a dedicated Platform to run them, Bearer helps you better understand what’s happening and
+              reduce maintenance cost.
+            </p>
+          </Card>
           <Card
-            title={
-              <div
-                css={css`
-                  margin-bottom: 16px;
-                `}
-              >
-                <img
-                  src={require('../images/shared/icon-plugnplay.svg')}
-                  css={css`
-                    vertical-align: middle;
-                    margin-right: 12px;
-                    width: 40px;
-                    position: relative;
-                  `}
-                  alt="Icon Plug'n'Play"
-                />
-                <span>
-                  <Text text="Plug and Play" tag="h5" />
-                </span>
-              </div>
-            }
-            children={
-              <>
-                <Text
-                  text={`Using the Bearer standard, add any Integration like a breeze (which is about 5 minutes).`}
-                />
-                <Text
-                  text={`We help you further by providing all the necessary tooling to help even more with your stack`}
-                />
-                <Text text="We currently support: Ruby, Rails, Node, Express, React and Vue" />
-              </>
-            }
+            style={css`
+              padding: 40px;
+              @media (min-width: ${breakpoints.md}px) {
+                margin-top: 50px;
+              }
+            `}
             padding="large"
-          />
+          >
+            <h3 css={styleWhyUseBearerCardHeading}>
+              {whyUseBearerCardImage('icon-globe-yellow', 'Icon Globe')}
+              <span>Enforcing Best Practices</span>
+            </h3>
+            <p>Shielding your App from APIs helps keep your codebase clean and maintainable.</p>
+            <p>Add, Update or Remove Integration without impacting your Business or adding legacy code.</p>
+          </Card>
         </Grid>
       </Section>
     </Page>

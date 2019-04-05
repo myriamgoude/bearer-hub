@@ -27,7 +27,7 @@ export default {
     height: 300px;
 
     @media (min-width: ${breakpoints.lg}px) {
-      height: 440px;
+      height: 380px;
       width: auto;
     }
   `,
@@ -52,24 +52,7 @@ export default {
 
   styleBackgroundHome: css`
     background: url(${require('../../images/hero-background-homepage.svg')}) no-repeat top right;
-    background-size: 600px;
-
-    @media (min-width: ${breakpoints.sm}px) {
-      background-size: auto 300px;
-    }
-    @media (min-width: ${breakpoints.md}px) {
-      background-size: auto 400px;
-    }
-    @media (min-width: ${breakpoints.lg}px) {
-      background-size: 990px;
-    }
-    @media (min-width: ${breakpoints.xl}px) {
-      background-size: 1200px;
-    }
-    @media (min-width: ${breakpoints.xxl}px) {
-      background-size: 1500px;
-      background-position-y: -100px;
-    }
+    background-size: contain;
   `,
   styleBackgroundExplore: css`
     background: url(${require('../../images/hero-explore.svg')}) no-repeat bottom 200px center / 1600px;

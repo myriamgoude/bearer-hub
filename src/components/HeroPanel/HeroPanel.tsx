@@ -1,12 +1,13 @@
 import * as React from 'react'
 
-import { Container, Text } from '../index'
+import { Container, Text, LightCta } from '../index'
 import styles from './HeroPanel.style'
 import helpers from '../../styles/helpers'
 
 interface IHeroPanel {
   title?: string | any
   subtitle?: string | any
+  punchline?: string
   image?: string
   imageCss?: any
   highlight?: string
@@ -20,6 +21,7 @@ interface IHeroPanel {
 const HeroPanel: React.SFC<IHeroPanel> = ({
   title,
   subtitle,
+  punchline,
   longHero,
   image,
   imageCss,
@@ -37,6 +39,7 @@ const HeroPanel: React.SFC<IHeroPanel> = ({
       paddingBottom={paddingBottom}
     >
       <div css={image ? styles.halfItem : styles.fullItem}>
+        {punchline && <LightCta text={punchline} />}
         {typeof title === 'string' ? <h1 css={helpers.h1}>{title}</h1> : title}
         {subtitle && <Text text={subtitle} tag="h3" style={styles.subtitle} />}
         {children}

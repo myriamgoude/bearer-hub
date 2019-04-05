@@ -5,6 +5,7 @@ import styles from './VideoSection.style'
 interface IVideoSectionProps {
   thumbnail: string
   src: string
+  button?: any
 }
 const VideoSection = (props: IVideoSectionProps) => {
   return (
@@ -14,6 +15,7 @@ const VideoSection = (props: IVideoSectionProps) => {
           <div css={styles.video}>
             <VideoContent thumbnail={props.thumbnail} src={props.src} />
           </div>
+          {props.button && <div css={styles.button}>{props.button}</div>}
         </Container>
       </div>
     </>

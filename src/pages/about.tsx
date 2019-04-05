@@ -17,10 +17,11 @@ import {
   Button
 } from '../components/'
 
-import greenSplash from '../images/shared/green-splash.svg'
-import orangeSplash from '../images/shared/orange-splash.svg'
-import blueSplash from '../images/shared/blue-splash.svg'
-import purpleSplash from '../images/shared/purple-splash.svg'
+import greenSplash from '../images/shared/splash-green.svg'
+import orangeSplash from '../images/shared/splash-orange.svg'
+import blueSplash from '../images/shared/splash-blue.svg'
+import purpleSplash from '../images/shared/splash-purple.svg'
+
 import valueFocus from '../images/shared/value-focus.svg'
 import valueTrust from '../images/shared/value-trust.svg'
 import valueAutonomy from '../images/shared/value-autonomy.svg'

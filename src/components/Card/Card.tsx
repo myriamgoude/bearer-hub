@@ -10,6 +10,11 @@ interface ICardProps {
   children?: object
   className?: any
   title?: string | any
+  heading?: {
+    src: string
+    alt: string
+    text: string
+  }
   text?: any
   icon?: string
   padding?: string
@@ -21,6 +26,23 @@ interface ICardProps {
   trackingAction?: string
   trackingOptions?: any
 }
+
+const CardBox = (props: ICardProps) => (
+  <div
+    css={[
+      props.className && props.className,
+      styles.root,
+      props.padding === 'large' ? styles.paddingLarge : styles.paddingRegular,
+      props.small && styles.heightSmall,
+      props.style && props.style
+    ]}
+  >
+    {props.icon && <img src={`${props.icon}`} alt={`Icon for ${props.title}`} />}
+    {props.title && <h3>{props.title}</h3>}
+    {props.text && <Text text={props.text} />}
+    {props.children && props.children}
+  </div>
+)
 
 const Card = (props: ICardProps) => {
   return props.link ? (
@@ -35,36 +57,10 @@ const Card = (props: ICardProps) => {
         }
       `}
     >
-      <div
-        css={[
-          props.className && props.className,
-          styles.root,
-          props.padding === 'large' ? styles.paddingLarge : styles.paddingRegular,
-          props.small && styles.heightSmall,
-          props.style && props.style
-        ]}
-      >
-        {props.icon && <img src={`${props.icon}`} alt={`Icon for ${props.title}`} />}
-        {props.title && <h3>{props.title}</h3>}
-        {props.text && <Text text={props.text} />}
-        {props.children && props.children}
-      </div>
+      {CardBox(props)}
     </Link>
   ) : (
-    <div
-      css={[
-        props.className && props.className,
-        styles.root,
-        props.padding === 'large' ? styles.paddingLarge : styles.paddingRegular,
-        props.small && styles.heightSmall,
-        props.style && props.style
-      ]}
-    >
-      {props.icon && <img src={`${props.icon}`} alt={`Icon for ${props.title}`} />}
-      {props.title && <h3>{props.title}</h3>}
-      {props.text && <Text text={props.text} />}
-      {props.children && props.children}
-    </div>
+    CardBox(props)
   )
 }
 

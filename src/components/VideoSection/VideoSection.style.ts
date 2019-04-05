@@ -1,8 +1,8 @@
 import { css } from '@emotion/core'
+import { colors } from '../../styles/variables'
 
 export default {
   root: css`
-    height: 600px;
     background: url(${require('../../images/homepage-waves-2.svg')}) no-repeat center center / contain;
     display: flex;
     align-items: center;
@@ -12,9 +12,14 @@ export default {
     max-width: 711px;
     margin: auto;
     border-radius: 4px;
-    background-color: #ffffff;
+    background-color: ${colors.lightblack};
     box-shadow: 0 31px 70px 0 rgba(3, 13, 54, 0.08);
     position: relative;
     z-index: 5;
+  `,
+  button: css`
+    position: relative;
+    z-index: 10;
+    margin-top: -1rem;
   `
 }

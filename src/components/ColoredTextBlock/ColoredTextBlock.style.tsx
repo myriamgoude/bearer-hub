@@ -13,10 +13,10 @@ export default {
   containerIcon: css`
     position: absolute;
     display: block;
-    top: -70px;
-    left: -40px;
-    width: ${getEmSize(100)};
-    height: ${getEmSize(100)};
+    top: -3.5rem;
+    left: -1rem;
+    width: 5rem;
+    height: 5rem;
   `,
   containerIconCentered: css`
     left: 0;
@@ -24,6 +24,7 @@ export default {
     margin: auto;
   `,
   backgroundIcon: css`
+    z-index: 0;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -33,10 +34,11 @@ export default {
   icon: css`
     position: absolute;
     top: 40%;
-    left: 50%;
+    left: 32px;
     transform: translate(-50%, -50%);
   `,
   title: css`
     font-size: ${dimensions.headingSizes.h4}em;
+    position: relative;
   `
 }

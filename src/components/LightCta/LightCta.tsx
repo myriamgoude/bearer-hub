@@ -12,15 +12,22 @@ interface ILightCtaProps {
 
 const LightCta: React.SFC<ILightCtaProps> = ({ tailColor, text }: ILightCtaProps) => {
   return (
-    <div className="mt-16">
+    <div
+      css={css`
+        margin-bottom: 0.75rem;
+        color: ${colors.darkBlue};
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+      `}
+    >
       <span
         css={css`
           display: inline-block;
-          height: 1px;
-          width: 16px;
-          margin-right: 10px;
+          height: 2px;
+          width: 1.25rem;
+          margin-right: 0.5rem;
           background: ${tailColor ? tailColor : colors.yellow};
-          vertical-align: middle;
         `}
       />{' '}
       {text}

@@ -3,8 +3,6 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 
 import styles from './CodeSnippet.style'
 
-import { backendTheme, frontendTheme } from '../CodeExamples/Theme'
-
 interface ICodeSnippetProps {
   className?: any
   prism: boolean
@@ -15,7 +13,7 @@ interface ICodeSnippetProps {
 }
 const CodeSnippet = (props: ICodeSnippetProps) => {
   return props.prism ? (
-    <Highlight {...defaultProps} code={props.code} language="jsx" theme={props.backend ? backendTheme : frontendTheme}>
+    <Highlight {...defaultProps} code={props.code} language="jsx">
       {({ style, tokens, getLineProps, getTokenProps }) => (
         <pre style={style} css={styles.prismSnippet}>
           {tokens.map((line, i) => (

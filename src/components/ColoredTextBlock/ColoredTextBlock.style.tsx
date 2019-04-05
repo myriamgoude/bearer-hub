@@ -45,5 +45,8 @@ export default {
   title: css`
     font-size: ${dimensions.headingSizes.h4}em;
     position: relative;
+    color: inherit;
+    overflow: hidden;
+    height: 3rem;
   `
 }

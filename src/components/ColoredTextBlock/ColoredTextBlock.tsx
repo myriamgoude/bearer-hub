@@ -33,10 +33,8 @@ const ColoredTextBlock = (props: IColoredTextBlocks) => {
             props.centered &&
               css`
                 text-align: center;
-              `,
-            css`
-              color: ${color};
-            `
+                height: auto;
+              `
           ]}
         >
           {props.title}

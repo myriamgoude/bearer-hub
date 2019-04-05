@@ -288,7 +288,8 @@ const PricingPage: GatsbyPage = ({ location }) => (
                   `}
                 />
                 <Button
-                  link="#"
+                  trackLink
+                  link="https://app.bearer.sh"
                   text="Start now"
                   style={css`
                     margin: 12px auto;
@@ -384,7 +385,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                 `}
               >
                 <Button
-                  link="#"
+                  link="?contact-us"
                   text="Contact us"
                   style={css`
                     margin: 12px auto;

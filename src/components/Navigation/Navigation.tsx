@@ -59,12 +59,12 @@ export default class Navigation extends React.Component<INavigationProps, INavig
     }
   }
 
-  private renderLoggedIn = () => <NavLink to="https://app.bearer.sh">Go to dashboard</NavLink>
+  private renderLoggedIn = () => <Button small secondary text="Go to dashboard" link="https://app.bearer.sh" />
 
   private renderLogin = () => (
     <>
-      <Button onClick={this.doLogin} small secondary text="Login" link="#" />
-      <Button onClick={this.doSignup} small primary text="Signup" link="#" />
+      <Button onClick={this.doLogin} small primary text="Login" link="#login" />
+      <Button onClick={this.doSignup} small secondary text="Signup" link="#signup" />
     </>
   )
 

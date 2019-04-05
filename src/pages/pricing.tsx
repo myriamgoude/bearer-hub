@@ -30,29 +30,6 @@ const PricingTable = (props: any) => (
         color: ${props.background === 'dark' ? 'white' : '#313958'};
         border-radius: 8px;
         text-align: center;
-
-        &:before,
-        &:after {
-          content: '';
-          display: block;
-          width: 2px;
-          left: 50%;
-          position: absolute;
-          z-index: 5;
-          content: '';
-          background: ${colors.yellow};
-        }
-
-        &:after {
-          top: inherit;
-          height: 2rem;
-          bottom: -2rem;
-        }
-
-        &:before {
-          top: -5rem;
-          height: 3rem;
-        }
       }
 
       position: relative;
@@ -139,6 +116,23 @@ const PricingPage: GatsbyPage = ({ location }) => (
             </>
           }
         />
+        <div
+          css={css`
+            &:after {
+              content: '';
+              display: block;
+              position: absolute;
+              height: 48px;
+              width: 302px;
+              background: url(${require('../images/yellow-stapple.svg')}) no-repeat center center / contain;
+              left: 208px;
+              right: 0;
+              top: inherit;
+              bottom: -46px;
+              margin: auto;
+            }
+          `}
+        />
       </HeroLined>
       <Section>
         <div
@@ -147,13 +141,30 @@ const PricingPage: GatsbyPage = ({ location }) => (
             z-index: 12;
           `}
         >
-          <Grid>
+          <Grid
+            style={css`
+              justify-content: inherit;
+              > div {
+                display: flex;
+                &:first-of-type {
+                  flex: 0 1 29%;
+                  align-self: flex-start;
+                }
+
+                &:nth-child(2) {
+                  justify-content: center;
+                }
+                &:nth-child(3) {
+                  justify-content: flex-start;
+                }
+              }
+            `}
+          >
             <PricingTable
               className="transparent"
               css={css`
                 text-align: left;
                 padding-top: 140px;
-
                 p {
                   margin-bottom: 0;
                 }
@@ -192,20 +203,6 @@ const PricingPage: GatsbyPage = ({ location }) => (
             </PricingTable>
 
             <div>
-              <div
-                css={css`
-                  display: block;
-                  width: 340px;
-                  height: 2px;
-                  background: ${colors.yellow};
-                  position: absolute;
-                  left: 50%;
-                  right: 0;
-                  top: calc(-1rem - 4rem);
-                  margin-top: auto;
-                  z-index: 5;
-                `}
-              />
               <PricingTable className="first-table">
                 <thead>
                   <tr>

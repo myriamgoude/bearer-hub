@@ -6,32 +6,34 @@ export default {
     align-self: flex-end;
   `,
   link: css`
+    position: relative;
+    padding: 0 0.75rem;
+    line-height: 1rem;
+    height: 1rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.12px;
+    color: ${colors.darkBlue};
+
     &:hover,
     &:focus {
       text-decoration: none;
     }
-    padding: 0.6rem 0.75rem;
-    min-width: 2rem;
-    line-height: 2em;
-    font-size: 14px;
-    letter-spacing: 0.12px;
-    line-height: 17px;
-    color: currentColor;
-  `,
-  linkActive: css`
-    position: relative;
 
-    &:before {
+    &.active {
+      font-weight: bold;
+    }
+
+    &.active:before {
       content: '';
       display: block;
-      width: 1px;
-      height: 28px;
+      width: 2px;
+      height: 18px;
       background: ${colors.yellow};
       position: absolute;
       left: 0;
       right: 0;
       margin: auto;
-      top: -24px;
+      top: -30px;
     }
   `,
   list: css`
@@ -44,7 +46,7 @@ export default {
     padding: 2em 0;
 
     @media (min-width: ${breakpoints.md}px) {
-      display: block;
+      display: inline-block;
       background: transparent;
       color: ${colors.black};
       width: auto;
@@ -61,6 +63,21 @@ export default {
         width: auto;
         display: inline-block;
       }
+    }
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    &:not(:last-child)::after {
+      display: inline-block;
+      content: '';
+      width: 1px;
+      height: 1.5rem;
+      margin-bottom: -0.5rem;
+      margin-left: 1rem;
+      background-color: #e2e6f1;
+      // border-right: 1px solid #eceef8;
     }
   `,
   mobileList: css`

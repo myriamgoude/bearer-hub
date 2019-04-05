@@ -21,11 +21,7 @@ interface INavLinkProps {
 
 const NavLink = (props: INavLinkProps) => (
   <li>
-    <Link
-      to={props.to}
-      trackLink={props.trackLink}
-      css={[styles.link, isBrowser() && window.location.pathname.indexOf(props.to) === 0 && styles.linkActive]}
-    >
+    <Link to={props.to} trackLink={props.trackLink} css={[styles.link]} partiallyActive activeClassName="active">
       {props.children}
     </Link>
   </li>
@@ -67,8 +63,8 @@ export default class Navigation extends React.Component<INavigationProps, INavig
 
   private renderLogin = () => (
     <>
-      <Button onClick={this.doLogin} small primary text="Login" link="#" />
-      <Button onClick={this.doSignup} small secondary text="Signup" link="#" />
+      <Button onClick={this.doLogin} small secondary text="Login" link="#" />
+      <Button onClick={this.doSignup} small primary text="Signup" link="#" />
     </>
   )
 
@@ -86,17 +82,17 @@ export default class Navigation extends React.Component<INavigationProps, INavig
 
   public render() {
     return (
-      <div css={styles.root}>
+      <div css={[styles.root, !this.state.isOpened && styles.mobileList]}>
         {this.renderToggleButton()}
-        <ul css={[styles.list, !this.state.isOpened && styles.mobileList]}>
+        <ul css={styles.list}>
           <NavLink to="/integrations">INTEGRATIONS TEMPLATES</NavLink>
           <NavLink to="/product/framework">PRODUCT</NavLink>
           <NavLink trackLink to="https://docs.bearer.sh">
             DOCUMENTATION
           </NavLink>
           <NavLink to="/pricing">PRICING</NavLink>
-          {this.state.isAuthenticated ? this.renderLoggedIn() : this.renderLogin()}
         </ul>
+        {this.state.isAuthenticated ? this.renderLoggedIn() : this.renderLogin()}
       </div>
     )
   }

@@ -38,7 +38,7 @@ interface IQueryData {
         hubID: string
         title: string
         description: string
-        color: string
+        mainColor: string
         image: {
           url: string
         }
@@ -66,6 +66,7 @@ export const query = graphql`
         provider {
           hubID
           title
+          description
           image {
             url
           }
@@ -95,8 +96,8 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             title={
               <TimelineHeading
                 providerName={template.provider.title}
-                providerDescription={template.provider.description} // TODO
-                providerColor={template.provider.color || colors.primary[0]} // TODO
+                providerDescription={template.provider.description}
+                providerColor={template.provider.mainColor || colors.primary[0]}
                 templateHubId={template.hubID}
                 templateApiAuthType={template.apiAuthType}
                 templateTitle={template.title}

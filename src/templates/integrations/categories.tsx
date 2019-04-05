@@ -34,11 +34,6 @@ interface IQueryData {
       hubID: string
       title: string
     }[]
-    providers: {
-      id: string
-      hubID: string
-      title: string
-    }[]
   }
 }
 
@@ -51,7 +46,6 @@ export const query = graphql`
         title
       }
       ...scopedCategories
-      ...scopedProviders
     }
   }
 `
@@ -86,11 +80,7 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
                 padding-right: 58px;
               `}
             >
-              <SearchList
-                selected={category.id}
-                categories={data.graphcms.categories}
-                providers={data.graphcms.providers}
-              />
+              <SearchList selected={category.id} categories={data.graphcms.categories} />
             </div>
             <div
               css={css`

@@ -21,14 +21,6 @@ export function templatePath(template: ITemplate) {
   return `/integrations/${template.hubID}/${slug(template.title)}`
 }
 
-// Returns a path to a Provider page, given its Hub ID (a unique
-// and required integer column) and title
-//
-// E.g. "/integrations/provider/2/slack/"
-export function providerPath(provider: IItem) {
-  return `/integrations/provider/${provider.hubID}/${slug(provider.title)}`
-}
-
 // Returns a path to a Category page, given its Hub ID (a unique
 // and required integer column) and title
 //

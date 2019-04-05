@@ -16,14 +16,6 @@ import { colors } from '../../styles/variables'
 
 interface IQueryData {
   graphcms: {
-    providers: {
-      id: string
-      hubID: string
-      title: string
-      image: {
-        url: string
-      }
-    }[]
     categories: {
       id: string
       hubID: string
@@ -42,23 +34,9 @@ export const scopedCategories = graphql`
   }
 `
 
-export const scopedProviders = graphql`
-  fragment scopedProviders on GraphCMS {
-    providers(where: { status: PUBLISHED, templates_some: { status: PUBLISHED } }) {
-      id
-      hubID
-      title
-      image {
-        url
-      }
-    }
-  }
-`
-
 export const query = graphql`
   query ExplorePageQuery {
     graphcms {
-      ...scopedProviders
       ...scopedCategories
     }
   }
@@ -96,7 +74,7 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
                 padding-right: 58px;
               `}
             >
-              <SearchList categories={data.graphcms.categories} providers={data.graphcms.providers} />
+              <SearchList categories={data.graphcms.categories} />
             </div>
 
             <div

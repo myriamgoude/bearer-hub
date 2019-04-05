@@ -1,17 +1,12 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
-import { categoryPath, providerPath } from '../../../services/Explore'
+import { categoryPath } from '../../../services/Explore'
 import { Label, Link } from '../../index'
 import { colors } from '../../../styles/variables'
 
 interface ISearchListProps {
   selected?: string
   categories: {
-    id: string
-    hubID: string
-    title: string
-  }[]
-  providers: {
     id: string
     hubID: string
     title: string
@@ -40,30 +35,10 @@ const navLinkStyle = css`
   line-height: 19px;
   margin-bottom: 8px;
 `
+
 export const SearchList = (props: ISearchListProps) => {
   return (
     <nav css={navStyle}>
-      <section>
-        <Label text="Providers" />
-        <ul>
-          {props.providers.map(provider => (
-            <li key={provider.id}>
-              <Link
-                to={providerPath({ hubID: provider.hubID, title: provider.title })}
-                css={navLinkStyle}
-                style={
-                  props.selected === provider.id
-                    ? { borderBottom: `1px dashed ${colors.gray.dark}` }
-                    : { color: colors.darkBlue }
-                }
-              >
-                {provider.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
       <section
         css={css`
           margin-top: 16px;
@@ -71,6 +46,15 @@ export const SearchList = (props: ISearchListProps) => {
       >
         <Label text="Categories" />
         <ul>
+          <li key={0}>
+            <Link
+              to="/integrations"
+              css={navLinkStyle}
+              style={!props.selected ? { borderBottom: `1px dashed ${colors.gray.dark}` } : { color: colors.darkBlue }}
+            >
+              All
+            </Link>
+          </li>
           {props.categories.map(category => (
             <li key={category.id}>
               <Link

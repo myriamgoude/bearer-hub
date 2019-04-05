@@ -49,12 +49,9 @@ module.exports = async ({ graphql, actions }) => {
 
   // Templates for Integration pages
   const timelineTemplate = resolve(`./src/templates/integrations/timeline.tsx`)
-  const providerTemplate = resolve(`./src/templates/integrations/providers.tsx`)
   const categoryTemplate = resolve(`./src/templates/integrations/categories.tsx`)
 
   // Redirect data for the Netlify _redirects file
-  const providerRedirects = []
-  const providerRewrites = []
   const categoryRedirects = []
   const categoryRewrites = []
   const templateRedirects = []
@@ -66,7 +63,7 @@ module.exports = async ({ graphql, actions }) => {
     return title.toLowerCase().replace(/\s/g, '-')
   }
 
-  // Note 1: we only ask for PUBLISHED templates with 1+ PROVIDER and Hub-worthy TIMELINE STAGES
+  // Note 1: we only ask for PUBLISHED templates with an associated PROVIDER
   // Note 2: ID is a hashed string used by GraphCMS e.g. cjs3996bq9ew00c15zc96bcnh, cjsukbmse36eh0c150la5jzc2
   //         Hub ID is a unique and required field we have defined in the CMS, which we use in the URLs e.g. 1, 5, 72
   const allTemplates = await graphql(`
@@ -76,11 +73,6 @@ module.exports = async ({ graphql, actions }) => {
           id
           hubID
           title
-          provider {
-            id
-            hubID
-            title
-          }
           categories {
             id
             hubID
@@ -97,10 +89,6 @@ module.exports = async ({ graphql, actions }) => {
   }
 
   allTemplates.data.graphcms.templates.forEach(template => {
-    const provider = template.provider
-    const providerPath = `/integrations/provider/${provider.hubID}/${generateSlug(provider.title)}`
-    const providerWildCardPath = `/integrations/provider/${provider.hubID}/:slug`
-
     const templatePath = `/integrations/${template.hubID}/${generateSlug(template.title)}`
     const templateWildCardPath = `/integrations/${template.hubID}/:slug`
 
@@ -113,19 +101,7 @@ module.exports = async ({ graphql, actions }) => {
       }
     })
 
-    // Create pages for template Providers (e.g. "Slack", "MailChimp")
-    createPage({
-      path: providerPath,
-      component: providerTemplate,
-      context: {
-        id: provider.id
-      }
-    })
-
-    // Add rewrite (200) and redirect (301) data for template and Provider
-    providerRewrites.push(`${providerPath} ${providerPath} 200`)
-    providerRedirects.push(`${providerWildCardPath} ${providerPath} 301`)
-
+    // Add rewrite (200) and redirect (301) data for template
     templateRewrites.push(`${templatePath} ${templatePath} 200`)
     templateRedirects.push(`${templateWildCardPath} ${templatePath} 301`)
 
@@ -154,12 +130,10 @@ module.exports = async ({ graphql, actions }) => {
 
   // Add rewrites (200)
   redirectData.push(templateRewrites.join('\n'))
-  redirectData.push(providerRewrites.join('\n'))
   redirectData.push(categoryRewrites.join('\n'))
 
   // Add redirects (301)
   redirectData.push(templateRedirects.join('\n'))
-  redirectData.push(providerRedirects.join('\n'))
   redirectData.push(categoryRedirects.join('\n'))
 
   fs.writeFileSync(`${dir}/_redirects`, redirectData.join('\n'), 'utf8')

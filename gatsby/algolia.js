@@ -31,7 +31,7 @@ module.exports = [
     query: allPublishedTemplates,
     transformer: ({ data }) => data.graphcms.templates,
     settings: {
-      attributesForFaceting: ['categories.title', 'provider.title']
+      attributesForFaceting: ['categories.title']
     }
   }
 ]

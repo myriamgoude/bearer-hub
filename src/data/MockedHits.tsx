@@ -8,14 +8,6 @@ export const MockedHits = [
         title: 'Payment'
       }
     ],
-    providers: [
-      {
-        title: 'Stripe',
-        image: {
-          url: 'https://media.graphcms.com//tte8EvkJT46bPwlZgmWH'
-        }
-      }
-    ],
     objectID: '232532810',
     _highlightResult: {
       id: {
@@ -36,22 +28,6 @@ export const MockedHits = [
             matchedWords: []
           }
         }
-      ],
-      providers: [
-        {
-          title: {
-            value: 'Stripe',
-            matchLevel: 'none',
-            matchedWords: []
-          },
-          image: {
-            url: {
-              value: 'https://media.graphcms.com//tte8EvkJT46bPwlZgmWH',
-              matchLevel: 'none',
-              matchedWords: []
-            }
-          }
-        }
       ]
     }
   },
@@ -65,14 +41,6 @@ export const MockedHits = [
       },
       {
         title: 'Events'
-      }
-    ],
-    providers: [
-      {
-        title: 'Google',
-        image: {
-          url: 'https://media.graphcms.com//D1xQUh47RC2bLHPDd508'
-        }
       }
     ],
     objectID: '232532800',
@@ -102,22 +70,6 @@ export const MockedHits = [
             matchedWords: []
           }
         }
-      ],
-      providers: [
-        {
-          title: {
-            value: 'Google',
-            matchLevel: 'none',
-            matchedWords: []
-          },
-          image: {
-            url: {
-              value: 'https://media.graphcms.com//D1xQUh47RC2bLHPDd508',
-              matchLevel: 'none',
-              matchedWords: []
-            }
-          }
-        }
       ]
     }
   },
@@ -128,14 +80,6 @@ export const MockedHits = [
     categories: [
       {
         title: 'Mailing'
-      }
-    ],
-    providers: [
-      {
-        title: 'Twilio',
-        image: {
-          url: 'https://media.graphcms.com//fnjiGl4XSh6LMUBR8UU4'
-        }
       }
     ],
     objectID: '232532790',
@@ -158,22 +102,6 @@ export const MockedHits = [
             matchedWords: []
           }
         }
-      ],
-      providers: [
-        {
-          title: {
-            value: 'Twilio',
-            matchLevel: 'none',
-            matchedWords: []
-          },
-          image: {
-            url: {
-              value: 'https://media.graphcms.com//fnjiGl4XSh6LMUBR8UU4',
-              matchLevel: 'none',
-              matchedWords: []
-            }
-          }
-        }
       ]
     }
   },
@@ -184,14 +112,6 @@ export const MockedHits = [
     categories: [
       {
         title: 'Mailing'
-      }
-    ],
-    providers: [
-      {
-        title: 'Mailchimp',
-        image: {
-          url: 'https://media.graphcms.com//bGVFkXqRSiilf7SUYoOn'
-        }
       }
     ],
     objectID: '232532780',
@@ -214,22 +134,6 @@ export const MockedHits = [
             matchedWords: []
           }
         }
-      ],
-      providers: [
-        {
-          title: {
-            value: 'Mailchimp',
-            matchLevel: 'none',
-            matchedWords: []
-          },
-          image: {
-            url: {
-              value: 'https://media.graphcms.com//bGVFkXqRSiilf7SUYoOn',
-              matchLevel: 'none',
-              matchedWords: []
-            }
-          }
-        }
       ]
     }
   },
@@ -240,14 +144,6 @@ export const MockedHits = [
     categories: [
       {
         title: 'Data helpers'
-      }
-    ],
-    providers: [
-      {
-        title: 'Google',
-        image: {
-          url: 'https://media.graphcms.com//D1xQUh47RC2bLHPDd508'
-        }
       }
     ],
     objectID: '232532770',
@@ -270,22 +166,6 @@ export const MockedHits = [
             matchedWords: []
           }
         }
-      ],
-      providers: [
-        {
-          title: {
-            value: 'Google',
-            matchLevel: 'none',
-            matchedWords: []
-          },
-          image: {
-            url: {
-              value: 'https://media.graphcms.com//D1xQUh47RC2bLHPDd508',
-              matchLevel: 'none',
-              matchedWords: []
-            }
-          }
-        }
       ]
     }
   },
@@ -296,14 +176,6 @@ export const MockedHits = [
     categories: [
       {
         title: 'Mailing'
-      }
-    ],
-    providers: [
-      {
-        title: 'GitHub',
-        image: {
-          url: 'https://media.graphcms.com//nzaiNzsXRiWHq7JnvUDJ'
-        }
       }
     ],
     objectID: '232532760',
@@ -326,22 +198,6 @@ export const MockedHits = [
             matchedWords: []
           }
         }
-      ],
-      providers: [
-        {
-          title: {
-            value: 'GitHub',
-            matchLevel: 'none',
-            matchedWords: []
-          },
-          image: {
-            url: {
-              value: 'https://media.graphcms.com//nzaiNzsXRiWHq7JnvUDJ',
-              matchLevel: 'none',
-              matchedWords: []
-            }
-          }
-        }
       ]
     }
   },
@@ -352,14 +208,6 @@ export const MockedHits = [
     categories: [
       {
         title: 'Development tools'
-      }
-    ],
-    providers: [
-      {
-        title: 'Slack',
-        image: {
-          url: 'https://media.graphcms.com//jUZKVJ7fQTantBln0XrO'
-        }
       }
     ],
     objectID: '232532750',
@@ -380,22 +228,6 @@ export const MockedHits = [
             value: 'Development tools',
             matchLevel: 'none',
             matchedWords: []
-          }
-        }
-      ],
-      providers: [
-        {
-          title: {
-            value: 'Slack',
-            matchLevel: 'none',
-            matchedWords: []
-          },
-          image: {
-            url: {
-              value: 'https://media.graphcms.com//jUZKVJ7fQTantBln0XrO',
-              matchLevel: 'none',
-              matchedWords: []
-            }
           }
         }
       ]

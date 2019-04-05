@@ -8,14 +8,6 @@ exports[`categoryPath is considered an internal link 1`] = `
 </mockConstructor>
 `;
 
-exports[`providerPath is considered an internal link 1`] = `
-<mockConstructor
-  to="/integrations/provider/123/my-item-title"
->
-  My Item Title
-</mockConstructor>
-`;
-
 exports[`templatePath is considered an internal link 1`] = `
 <mockConstructor
   to="/integrations/456/my-integration-title"

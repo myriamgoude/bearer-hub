@@ -4,9 +4,10 @@ const queries = require('./gatsby/algolia')
 
 module.exports = {
   siteMetadata: {
-    title: 'Bearer',
+    title: 'Bearer - The API Integration Framework',
     siteUrl: process.env.GATSBY_BASE_DOMAIN,
-    description: 'Bearer Hub',
+    description:
+      'Bearer is an API Integration Framework and Platform helping developers build Integration more quickly. Get Started with dozens of Integration Templates!',
     twitter: '@BearerSH',
     footer: [
       {

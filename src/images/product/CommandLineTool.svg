@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="591px" height="427px" viewBox="0 0 591 427" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>CommandLineTool</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="22.5198819%" y1="69.6954057%" x2="85.9659845%" y2="30.6665546%" id="linearGradient-1">
+            <stop stop-color="#FBFCFF" offset="0%"></stop>
+            <stop stop-color="#EEF1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="58.0821662%" x2="1.80027174%" y2="42.4095794%" id="linearGradient-2">
+            <stop stop-color="#030D36" offset="0%"></stop>
+            <stop stop-color="#343C5D" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-3" x="125" y="177" width="367" height="155" rx="12"></rect>
+        <filter x="-8.4%" y="-11.0%" width="116.9%" height="140.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="14" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0117647059   0 0 0 0 0.0509803922   0 0 0 0 0.211764706  0 0 0 0.195066652 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="100%" y1="67.6831213%" x2="1.80027174%" y2="33.3927778%" id="linearGradient-5">
+            <stop stop-color="#030D36" offset="0%"></stop>
+            <stop stop-color="#343C5D" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-6" x="0" y="0" width="437" height="273" rx="12"></rect>
+        <filter x="-6.1%" y="-9.0%" width="112.1%" height="119.4%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0117647059   0 0 0 0 0.0509803922   0 0 0 0 0.211764706  0 0 0 0.0915100524 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M12,0 L425,0 C431.627417,-1.21743675e-15 437,5.372583 437,12 L437,30 L0,30 L0,12 C-8.11624501e-16,5.372583 5.372583,1.21743675e-15 12,0 Z" id="path-9"></path>
+        <filter x="-6.1%" y="-81.7%" width="112.1%" height="276.7%" filterUnits="objectBoundingBox" id="filter-11">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0117647059   0 0 0 0 0.0509803922   0 0 0 0 0.211764706  0 0 0 0.0915100524 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Hub" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Product-Framework" transform="translate(-671.000000, -568.000000)">
+            <g id="CommandLineTool" transform="translate(671.000000, 568.000000)">
+                <path d="M580.334711,118.693218 C632.056969,249.192744 485.252883,416.488201 363.70907,415.065032 C323.490768,414.594111 132.504326,461.732638 35.602338,371.828867 C-61.2996502,281.925096 54.1434992,103.262932 207.305861,37.6064508 C360.468222,-28.0500299 528.612453,-11.8063089 580.334711,118.693218 Z" id="Path-4" fill="url(#linearGradient-1)"></path>
+                <path d="M397.837043,132 C425.390708,132 447.727367,100.888338 447.727367,74.2446087 C447.727367,67.1247108 450.590791,53.8285919 447.727367,47.7450763 C439.875428,31.0631614 418.027652,26.0018701 397.837043,26.0018701 C381.873435,26.0018701 357.078739,25.5928309 347.94672,36.8734732 C341.3166,45.063557 347.94672,63.0373035 347.94672,74.2446087 C347.94672,100.888338 370.283378,132 397.837043,132 Z" id="home-PM-BG" fill-opacity="0.0614526721" fill="#0FE49B" fill-rule="nonzero"></path>
+                <path d="M580.334711,118.693218 C632.056969,249.192744 485.252883,416.488201 363.70907,415.065032 C323.490768,414.594111 132.504326,461.732638 35.602338,371.828867 C-61.2996502,281.925096 54.1434992,103.262932 207.305861,37.6064508 C360.468222,-28.0500299 528.612453,-11.8063089 580.334711,118.693218 Z" id="Path-4" fill="url(#linearGradient-1)"></path>
+                <path d="M119.566198,352.070978 C135.221766,352.070978 155.82892,360.172564 164.904023,349.427911 C171.683381,341.401352 169.089053,316.235692 169.089053,305.156536 C169.089053,293.001207 172.909028,267.89737 164.904023,259.563628 C155.845671,250.133283 134.085758,258.242095 119.566198,258.242095 C92.2154807,258.242095 70.0433433,279.246406 70.0433433,305.156536 C70.0433433,317.948251 68.9524867,333.035584 77.7158983,341.498709 C86.7031272,350.177982 105.718407,352.070978 119.566198,352.070978 Z" id="home-BE-BG" fill="#9FF4D7" fill-rule="nonzero"></path>
+                <g id="Mask">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+                <g id="$-Bearer--h-Bearer-C" transform="translate(90.000000, 59.000000)">
+                    <mask id="mask-7" fill="white">
+                        <use xlink:href="#path-6"></use>
+                    </mask>
+                    <g id="Mask">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-6"></use>
+                        <use fill="url(#linearGradient-5)" fill-rule="evenodd" xlink:href="#path-6"></use>
+                    </g>
+                    <text id="$-Bearer-CLI-VERSION" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375">
+                        <tspan x="17" y="51" fill="#999DAE">$</tspan>
+                        <tspan x="25.8388672" y="51" fill="#FFFFFF"> </tspan>
+                        <tspan x="17" y="68" fill="#FFFFFF">Bearer CLI</tspan>
+                        <tspan x="17" y="85" fill="#FFFFFF"></tspan>
+                        <tspan x="17" y="102" fill="#9DADEE">VERSION</tspan>
+                        <tspan x="78.8720703" y="102" fill="#FFFFFF"></tspan>
+                        <tspan x="17" y="119" fill="#FFFFFF"></tspan>
+                        <tspan x="17" y="136" fill="#FFFFFF"></tspan>
+                        <tspan x="17" y="153" fill="#9DADEE">USAGE</tspan>
+                        <tspan x="61.1943359" y="153" fill="#FFFFFF"></tspan>
+                        <tspan x="17" y="170" fill="#999DAE">$</tspan>
+                        <tspan x="25.8388672" y="170" fill="#FFFFFF"> </tspan>
+                        <tspan x="17" y="187" fill="#FFFFFF"></tspan>
+                        <tspan x="17" y="204" fill="#9DADEE">COMMANDS</tspan>
+                        <tspan x="87.7109375" y="204" fill="#FFFFFF"></tspan>
+                        <tspan x="17" y="221" fill="#FFFFFF">autocomplete   </tspan>
+                        <tspan x="17" y="238" fill="#FFFFFF">encrypt        </tspan>
+                        <tspan x="17" y="255" fill="#FFFFFF">generate       </tspan>
+                    </text>
+                    <text id="Bearer-[COMMAND]" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                        <tspan x="34" y="170">Bearer [COMMAND]</tspan>
+                    </text>
+                    <text id="Generrate-Function-o" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                        <tspan x="147" y="257">Generrate Function or Component</tspan>
+                    </text>
+                    <text id="Encrypt-using-Bearer" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                        <tspan x="147" y="238">Encrypt using Bearersecurity</tspan>
+                    </text>
+                    <text id="Display-autocomplete" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                        <tspan x="147" y="221">Display autocomplete installationinstructions</tspan>
+                    </text>
+                    <text id="@Bearer/cli/0.104.0" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                        <tspan x="24" y="120"> @Bearer/cli/0.104.0 darwin-x64 node-v8.12.2</tspan>
+                    </text>
+                    <text id="Bearer--h" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                        <tspan x="34" y="51">Bearer -h</tspan>
+                    </text>
+                    <mask id="mask-10" fill="white">
+                        <use xlink:href="#path-9"></use>
+                    </mask>
+                    <g id="Mask">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-11)" xlink:href="#path-9"></use>
+                        <use fill="#343C5D" fill-rule="evenodd" xlink:href="#path-9"></use>
+                    </g>
+                </g>
+                <circle id="Oval" fill="#4F556D" cx="108" cy="74" r="6"></circle>
+                <circle id="Oval" fill="#656B86" cx="126" cy="74" r="6"></circle>
+                <circle id="Oval" fill="#777FA0" cx="144" cy="74" r="6"></circle>
+                <text id="Terminal" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.4375" fill="#999DAE">
+                    <tspan x="281.171" y="80">Terminal</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

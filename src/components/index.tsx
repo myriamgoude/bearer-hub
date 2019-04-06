@@ -31,6 +31,7 @@ import Section from './Section/index'
 import SectionCTA from './SectionCTA/index'
 import SectionHeading from './SectionHeading/index'
 import Small from './Small/index'
+import Tabs from './Tabs/index'
 import Tag from './Tag/index'
 import Text from './Text/index'
 import Tooltip from './Tooltip/index'
@@ -74,6 +75,7 @@ export {
   SectionCTA,
   SectionHeading,
   Small,
+  Tabs,
   Tag,
   Text,
   TeamBlock,

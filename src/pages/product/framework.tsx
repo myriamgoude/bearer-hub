@@ -74,10 +74,10 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
           `}
         >
           <div>
-            <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Command Line Tools" />
+            <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Command Line Interface" />
             <Text large>
               Get started in seconds using the Bearer CLI, from bootstrapping a new project, generating &amp; running
-              functions and finally deploying your Integrations.
+              Functions and finally deploying your Integrations.
             </Text>
           </div>
           <div>
@@ -90,8 +90,8 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
           <div>
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="API Authentication" />
             <Text large>
-              From API Key to OAuth based API, Bearer has you covered to actually get your? things done instead of
-              figuring out how it works.
+              From API Key to OAuth based authentication, Bearer has you covered to actually get things done instead of
+              figuring out how APIs work.
             </Text>
           </div>
           <div>
@@ -104,7 +104,7 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
           <div>
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Map API to Custom Model" />
             <Text large>
-              Build Functions to glue APIs with your App as micro-services, transforming data to primitives your App
+              Build Functions to map APIs to your App as micro-services, transforming data to primitives your App
               natively understand while simplifying your code base.
             </Text>
           </div>
@@ -115,7 +115,7 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Integration Clients" />
             <Text large>
               Call Functions anywhere from your App, in Ruby, NodeJS, Python, JavaScript or React - you decide. Get
-              access to an OAuth Connect component and manage Webhooks receptions.
+              access to an OAuth Connect component and even manage Webhooks receptions.
             </Text>
           </div>
           <div>

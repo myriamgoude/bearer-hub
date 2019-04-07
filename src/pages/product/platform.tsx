@@ -98,7 +98,8 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Function Specifications" />
 
             <Text large>
-              Automated Open API 3 compliant Function specifications, directly available using Bearer SDK.
+              Automated Open API 3 compliant Function specifications, directly available using Bearer Integration
+              Clients.
             </Text>
           </div>
           <div>

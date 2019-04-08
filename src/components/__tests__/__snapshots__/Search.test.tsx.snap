@@ -42,6 +42,7 @@ exports[`Search renders correctly 1`] = `
           }
         }
         noValidate={true}
+        onSubmit={[Function]}
         role="search"
       >
         <input

@@ -29,7 +29,7 @@ const searchBoxStyle = css`
   }
 `
 export const CustomSearchBox = connectSearchBox(({ currentRefinement, refine }: any) => (
-  <form noValidate action="" role="search" css={searchBoxStyle}>
+  <form noValidate action="" role="search" css={searchBoxStyle} onSubmit={event => event.preventDefault()}>
     <input
       type="search"
       value={currentRefinement}

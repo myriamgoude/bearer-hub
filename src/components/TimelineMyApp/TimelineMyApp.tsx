@@ -50,13 +50,26 @@ const TimelineMyApp = (props: ITimelineMyAppProps) => (
       >
         <CodeSnippet
           prism={props.prism}
-          code={`<script id=”bearer-script” src=”https://…”></script>
+          snippets={[
+            {
+              language: 'JS',
+              code: `<script id=”bearer-script” src=”https://…”></script>
 <script>
 var bearer = new Bearer(SETUP_ID, INTEGRATION_NAME)
 
 bearer.connect(myIntegration).then(console.log)
-</script>`}
-          backend
+</script>`
+            },
+            {
+              language: 'React',
+              code: `<script id=”bearer-script” src=”https://…”></script>
+<script>
+var bearer = new Bearer(SETUP_ID, INTEGRATION_NAME)
+
+bearer.connect(myIntegration).then(console.log)
+</script>`
+            }
+          ]}
         />
       </TimelineStage>
 
@@ -67,15 +80,18 @@ bearer.connect(myIntegration).then(console.log)
       >
         <CodeSnippet
           prism={props.prism}
-          code={`// First install the Bearer SDK
+          snippets={[
+            {
+              language: 'JS',
+              code: `// First install the Bearer SDK
 // npm install --save @bearer/node
 
 import { bearer } from ‘@bearer/nodejs’
 
 bearer.setup(SETUP_ID, INTEGRATION_NAME)
-
-bearer.invoke(“{myFunction}”, options)`}
-          backend
+bearer.invoke(“{myFunction}”, options)`
+            }
+          ]}
         />
       </TimelineStage>
     </Section>

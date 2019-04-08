@@ -53,9 +53,15 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => (
       >
         <CodeSnippet
           prism={props.prism}
-          code={`$ git clone ${props.template.gitHubUrl}\n$ cd ${templateFolderName(
-            props.template.gitHubUrl
-          )}\n$ npm install`}
+          snippets={[
+            {
+              language: 'bash',
+              code: `$ git clone ${props.template.gitHubUrl}
+$ cd ${templateFolderName(props.template.gitHubUrl)}
+$ npm install`
+            }
+          ]}
+          code={``}
         />
       </TimelineStage>
 
@@ -66,7 +72,10 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => (
         hint={`You will find your credentials on ${props.template.provider.title} settings page`}
       >
         <>
-          <CodeSnippet prism={props.prism} code={`$ npm bearer setup:token CLIENT_ID:CLIENT_SECRET`} />
+          <CodeSnippet
+            prism={props.prism}
+            snippets={[{ language: 'bash', code: `$ npm bearer setup:token CLIENT_ID:CLIENT_SECRET` }]}
+          />
         </>
       </TimelineStage>
 
@@ -76,7 +85,10 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => (
         placement={props.placement.next().value}
       >
         <>
-          <CodeSnippet prism={props.prism} code={`$ npm bearer invoke`} />
+          <CodeSnippet
+            prism={props.prism}
+            snippets={[{ language: 'bash', code: `$ npm bearer invoke defaultFunction` }]}
+          />
           <div
             css={css`
               padding-top: 1rem;
@@ -131,7 +143,10 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => (
         tooltip={'Not sure what to pass here'}
         placement={props.placement.next().value}
       >
-        <CodeSnippet prism={props.prism} code={`$ npm bearer generate:function myFunction`} />
+        <CodeSnippet
+          prism={props.prism}
+          snippets={[{ language: 'bash', code: `$ npm bearer generate:function myFunction` }]}
+        />
       </TimelineStage>
 
       <TimelineStage
@@ -142,8 +157,18 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => (
       >
         <CodeSnippet
           prism={props.prism}
-          code={`npm bearer push\n\nRefreshing tokens... done\n ✓ Generate bundle
-✓ Transfer bundle \n\n 🐻Integration successfully pushed.`}
+          snippets={[
+            {
+              language: 'bash',
+              code: `$ npm bearer push
+
+Refreshing tokens... done
+  ✓ Generate bundle
+  ✓ Transfer bundle
+
+🐻Integration successfully pushed.`
+            }
+          ]}
         />
       </TimelineStage>
     </Section>

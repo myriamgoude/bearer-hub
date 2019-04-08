@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { colors } from '../../styles/variables'
+import { colors, fonts } from '../../styles/variables'
 
 export default {
   prismSnippet: css`
@@ -40,6 +40,9 @@ export default {
       opacity: 1;
     }
   `,
+  multiSnippet: css`
+    padding: 0.5rem;
+  `,
   whiteSnippet: css`
     color: ${colors.secondary[1]};
     background: ${colors.white};
@@ -58,6 +61,49 @@ export default {
       width: 100%;
       height: 40%;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    }
+  `,
+  lineComment: css`
+    color: ${colors.secondary[2]};
+  `,
+
+  lineCode: css`
+    width: 100%;
+    height: 0.875rem;
+    line-height: 0.875rem;
+    display: inline-block;
+  `,
+  lineNumber: css`
+    display: inline-block;
+    margin-right: 0.5rem;
+
+    &::before {
+      color: ${colors.secondary[2]};
+      content: attr(data-line-number);
+    }
+  `,
+  lineContainer: css`
+    display: flex;
+    font-size: 0.75rem;
+    font-family: ${fonts.code};
+  `,
+  languages: css`
+    display: flex;
+
+    & > span {
+      color: ${colors.secondary[2]};
+      font-size: 0.75rem;
+      text-align: center;
+      letter-spacing: 0.38px;
+      line-height: 100%;
+      padding: 0 1rem;
+      cursor: pointer;
+    }
+
+    & > span.active {
+      color: #495ca8;
+      letter-spacing: normal;
+      border-bottom: 2px solid ${colors.yellow};
     }
   `
 }

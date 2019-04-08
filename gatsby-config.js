@@ -151,15 +151,15 @@ module.exports = {
           consentOnScroll: false,
           lang: 'en',
           siteId: 1413491,
-          cookiePolicyId: 65368465,
+          reloadOnConsent: true,
           enableRemoteConsent: true,
+          enableCMP: true,
+          cookiePolicyId: 65368465,
           banner: {
-            applyStyles: true,
-            textColor: '#FFF',
-            backgroundColor: '#030d36',
-            fontSize: '0.8rem',
-            content:
-              'Bearer uses browser cookies to give you the best possible experience. To make Bearer work, we log user data and share it with processors. By closing this banner, you agree to our Privacy Policy, including cookie policy.',
+            position: 'bottom',
+            textColor: '#958ea4',
+            backgroundColor: '#FFFFFF',
+            fontSize: '12px',
             slideDown: false
           }
         }

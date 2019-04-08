@@ -37,11 +37,7 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata title="Bearer - Platform Features" />
     <Page>
-      <HeroLined
-        style={css`
-          height: 388px;
-        `}
-      >
+      <HeroLined>
         <Text tag="h1" text="Platform Features" />
         <Clearfix />
         <Text tag="h3" text="Run and manage API Integrations like World Class Services" />

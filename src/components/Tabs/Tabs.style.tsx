@@ -18,9 +18,10 @@ export default {
     line-height: 64px;
     color: ${colors.secondary[1]};
     border-bottom: 2px solid white;
-  `,
-  active: css`
-    color: ${colors.yellow};
-    border-color: currentColor;
+
+    &.active {
+      color: ${colors.yellow};
+      border-color: currentColor;
+    }
   `
 }

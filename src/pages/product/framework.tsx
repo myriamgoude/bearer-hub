@@ -37,11 +37,7 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata title="Bearer - Framework Features" />
     <Page>
-      <HeroLined
-        style={css`
-          height: 388px;
-        `}
-      >
+      <HeroLined>
         <Text tag="h1" text="Framework Features " />
         <Clearfix />
         <Text tag="h3" text="Build API Integration in no time!" />

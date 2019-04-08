@@ -21,10 +21,7 @@ const Tabs = (props: ITabsProps) => (
     `}
   >
     {props.items.map((item: any) => (
-      <Link
-        to={item.path}
-        css={[styles.item, isBrowser() && window.location.pathname.indexOf(item.path) === 0 && styles.active]}
-      >
+      <Link to={item.path} css={[styles.item, isBrowser()]} partiallyActive activeClassName="active">
         <Text
           text={item.label}
           large

@@ -10,7 +10,7 @@ export default {
   item: css`
     margin: auto;
     width: 100%;
-    padding-top: 6rem;
+    padding-top: 4rem;
     position: relative;
 
     &:before,
@@ -22,6 +22,10 @@ export default {
       margin: 2rem auto;
       background: ${colors.yellow};
       z-index: 5;
+    }
+
+    &:before {
+      margin-top: 0;
     }
   `
 }

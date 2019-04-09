@@ -10,6 +10,7 @@ import {
   Grid,
   HeroPanel,
   IntegrationPanel,
+  LightCta,
   Link,
   Page,
   Pill,
@@ -19,8 +20,6 @@ import {
   VideoSection
 } from '../components/'
 import IndexLayout from '../layouts'
-
-import placeholderHeroImage from '../images/hero-illustration.svg'
 
 import logoDropbox from '../images/brands/dropbox.svg'
 import logoTwillio from '../images/brands/twilio.svg'
@@ -41,8 +40,6 @@ import iconMonitor from '../images/shared/icon-monitor.svg'
 import iconShippet from '../images/shared/icon-shippet.svg'
 import iconLinked from '../images/shared/icon-linked.svg'
 import iconCog from '../images/shared/icon-cog.svg'
-
-import heroStyles from '../components/HeroPanel/HeroPanel.style'
 
 import { colors, breakpoints } from '../styles/variables'
 
@@ -93,12 +90,6 @@ export const query = graphql`
   }
 `
 
-const styleWaveBg = css`
-  background-image: url(${require('../images/homepage-waves-2.svg')});
-  background-repeat: no-repeat;
-  background-position: center;
-`
-
 const styleWhyUseBearerCardHeading = css`
   font-size: 1.5rem;
   margin: 0 0 2rem 0;
@@ -120,41 +111,39 @@ const whyUseBearerCardImage = (src: string, alt: string) => (
 const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
   <IndexLayout location={location}>
     <Page>
-      <div css={heroStyles.styleBackgroundHome}>
-        <HeroPanel
-          punchline="Your app, your Integration, your Code!"
-          title={
-            <>
-              <h1
-                css={css`
-                  color: ${colors.darkBlue};
-                `}
-              >
-                The API Integration
-                <Clearfix /> Framework
-              </h1>
-            </>
-          }
-          image={placeholderHeroImage}
-        >
+      <HeroPanel>
+        <div className="hero-half">
+          <h1
+            css={css`
+              color: ${colors.darkBlue};
+            `}
+          >
+            The API Integration
+            <Clearfix /> Framework
+          </h1>
           <p
             css={css`
-              margin: 1.5rem 0 2rem 0;
-              padding: 0;
-              font-size: 1.5rem;
+              font-size: 1.25rem;
             `}
           >
             Bearer provides all the tooling to build, run and manage API Integrations.
           </p>
-
+          <LightCta text="Your app, your Integration, your Code!" />
+          <br />
           <Button primary trackLink link="/integrations" text="Start building" />
           <br />
-          <Small>
-            You can also <Link to="/integrations">explore templates</Link> or check{' '}
-            <Link to="https://docs.bearer.sh">documentation</Link>
-          </Small>
-        </HeroPanel>
-      </div>
+          <p>
+            <Small>
+              You can also <Link to="/integrations">explore templates</Link> or check{' '}
+              <Link to="https://docs.bearer.sh">documentation</Link>
+            </Small>
+          </p>
+        </div>
+
+        <div className="hero-half">
+          <VideoSection thumbnail="" src="" />
+        </div>
+      </HeroPanel>
 
       <Section>
         <SectionHeading primaryText="Our customers" />
@@ -169,37 +158,6 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           })}
         </Grid>
       </Section>
-
-      <div css={styleWaveBg}>
-        <Section withTail>
-          <SectionHeading primaryText="Build any API Integrations in minutes" />
-          <div
-            css={css`
-              margin-bottom: 3rem;
-              text-align: center;
-              position: relative;
-              z-index: 5;
-            `}
-          >
-            <VideoSection
-              thumbnail=""
-              src=""
-              button={
-                <Button
-                  trackLink
-                  link="https://docs.bearer.sh/"
-                  secondary
-                  text={'Documentation'}
-                  css={css`
-                    margin-top: -1rem;
-                    display: inline-block;
-                  `}
-                />
-              }
-            />
-          </div>
-        </Section>
-      </div>
 
       <Section withTail background="transparent">
         <Grid

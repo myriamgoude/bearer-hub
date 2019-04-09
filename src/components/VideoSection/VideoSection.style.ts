@@ -11,9 +11,11 @@ export default {
     height: 310px;
     max-width: 711px;
     margin: auto;
-    border-radius: 4px;
-    background-color: ${colors.lightblack};
-    box-shadow: 0 31px 70px 0 rgba(3, 13, 54, 0.08);
+    border-radius: 12px;
+    background-color: ${colors.darkBlue};
+    background-image: url(${require('../../images/video/demo.svg')});
+    background-size: cover;
+    box-shadow: 0 8px 17px 0 rgba(3, 13, 54, 0.16);
     position: relative;
     z-index: 5;
   `,

@@ -4,9 +4,9 @@ import { css } from '@emotion/core'
 
 import {
   Button,
-  HeroPanel,
   IntegrationPanel,
   Link,
+  HeroPanel,
   Page,
   TimelineOnBearer,
   TimelineHeading,
@@ -82,31 +82,17 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
   const prism = false
   return (
     <IndexLayout location={location}>
-      <Page>
-        <div
-          css={[
-            css`
-              position: relative;
-              background-image: radial-gradient(circle at 62% 40%, #f6faff, #f6faff 1%, #f0f2fc);
-            `,
-            heroStyles.curvedSection
-          ]}
-        >
-          <HeroPanel
-            title={
-              <TimelineHeading
-                providerName={template.provider.title}
-                providerDescription={template.provider.description}
-                providerColor={template.provider.mainColor || colors.primary[0]}
-                templateHubId={template.hubID}
-                templateApiAuthType={template.apiAuthType}
-                templateTitle={template.title}
-              />
-            }
-            paddingBottom={true}
-            style={{ paddingBottom: '2.5vw', zIndex: 90 }}
+      <Page css={[heroStyles.styleDefaultCurve]}>
+        <HeroPanel>
+          <TimelineHeading
+            providerName={template.provider.title}
+            providerDescription={template.provider.description}
+            providerColor={template.provider.mainColor || colors.primary[0]}
+            templateHubId={template.hubID}
+            templateApiAuthType={template.apiAuthType}
+            templateTitle={template.title}
           />
-        </div>
+        </HeroPanel>
         <Section>
           <div
             css={css`

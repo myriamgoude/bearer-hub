@@ -7,6 +7,13 @@ export default {
     align-items: center;
     position: relative;
     height: auto;
+
+    & .hero-half {
+      width: 47.5%;
+    }
+    & .hero-half:first-child {
+      margin-right: 5%;
+    }
     @media (min-width: ${breakpoints.md}px) {
       flex-direction: row;
     }

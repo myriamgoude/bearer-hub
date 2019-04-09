@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="499px" height="206px" viewBox="0 0 499 206" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>APIAuth</title>
-    <desc>Created with Sketch.</desc>
+    <style> * {font-family:"Courier"}</style>
     <defs>
         <rect id="path-1" x="30" y="26" width="267" height="39" rx="19.5"></rect>
         <filter x="-9.9%" y="-62.8%" width="119.9%" height="235.9%" filterUnits="objectBoundingBox" id="filter-2">
@@ -90,10 +88,10 @@
                         <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-8"></use>
                         <use fill="url(#linearGradient-7)" fill-rule="evenodd" xlink:href="#path-8"></use>
                     </g>
-                    <text id="$" mask="url(#mask-9)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#999DAE">
+                    <text id="$" mask="url(#mask-9)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#999DAE">
                         <tspan x="22" y="23">$</tspan>
                     </text>
-                    <text id="Bearer-new" mask="url(#mask-9)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                    <text id="Bearer-new" mask="url(#mask-9)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
                         <tspan x="40" y="23">Bearer new</tspan>
                     </text>
                 </g>
@@ -105,7 +103,7 @@
                         <use fill="black" fill-opacity="1" filter="url(#filter-14)" xlink:href="#path-12"></use>
                         <use fill="url(#linearGradient-11)" fill-rule="evenodd" xlink:href="#path-12"></use>
                     </g>
-                    <text id="OAuth1" mask="url(#mask-13)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                    <text id="OAuth1" mask="url(#mask-13)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
                         <tspan x="43" y="23">OAuth1</tspan>
                     </text>
                     <path d="M26.2894505,25.0000005 L26.2894505,25.0000005 C26.3662194,25.0000862 26.4398569,24.9695691 26.4940603,24.9152047 L31.7033611,19.7059038 L31.7033611,19.7059039 C31.8163398,19.592891 31.8163398,19.4096972 31.7033611,19.2966843 L26.4940603,14.0873835 L26.4940603,14.0873835 C26.3790933,13.9763449 26.1958793,13.979529 26.0848407,14.0944961 C25.9765214,14.2066477 25.9765214,14.3844515 26.0848407,14.4966031 L31.0895318,19.5012942 L26.0848407,24.5059853 L26.0848407,24.5059853 C25.9718377,24.6190225 25.9718655,24.8022637 26.0849025,24.9152667 C26.139159,24.9695068 26.2127318,24.9999844 26.2894503,25.0000006 L26.2894505,25.0000005 Z" id="Path" stroke="#999DAE" fill="#999DAE" fill-rule="nonzero" mask="url(#mask-13)"></path>
@@ -118,7 +116,7 @@
                         <use fill="black" fill-opacity="1" filter="url(#filter-17)" xlink:href="#path-15"></use>
                         <use fill="url(#linearGradient-11)" fill-rule="evenodd" xlink:href="#path-15"></use>
                     </g>
-                    <text id="OAuth2" mask="url(#mask-16)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                    <text id="OAuth2" mask="url(#mask-16)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
                         <tspan x="43" y="23">OAuth2</tspan>
                     </text>
                     <path d="M26.2894505,25.0000005 L26.2894505,25.0000005 C26.3662194,25.0000862 26.4398569,24.9695691 26.4940603,24.9152047 L31.7033611,19.7059038 L31.7033611,19.7059039 C31.8163398,19.592891 31.8163398,19.4096972 31.7033611,19.2966843 L26.4940603,14.0873835 L26.4940603,14.0873835 C26.3790933,13.9763449 26.1958793,13.979529 26.0848407,14.0944961 C25.9765214,14.2066477 25.9765214,14.3844515 26.0848407,14.4966031 L31.0895318,19.5012942 L26.0848407,24.5059853 L26.0848407,24.5059853 C25.9718377,24.6190225 25.9718655,24.8022637 26.0849025,24.9152667 C26.139159,24.9695068 26.2127318,24.9999844 26.2894503,25.0000006 L26.2894505,25.0000005 Z" id="Path" stroke="#999DAE" fill="#999DAE" fill-rule="nonzero" mask="url(#mask-16)"></path>
@@ -131,7 +129,7 @@
                         <use fill="black" fill-opacity="1" filter="url(#filter-20)" xlink:href="#path-18"></use>
                         <use fill="url(#linearGradient-11)" fill-rule="evenodd" xlink:href="#path-18"></use>
                     </g>
-                    <text id="NoAuth" mask="url(#mask-19)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                    <text id="NoAuth" mask="url(#mask-19)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
                         <tspan x="43" y="23">NoAuth</tspan>
                     </text>
                     <path d="M26.2894505,25.0000005 L26.2894505,25.0000005 C26.3662194,25.0000862 26.4398569,24.9695691 26.4940603,24.9152047 L31.7033611,19.7059038 L31.7033611,19.7059039 C31.8163398,19.592891 31.8163398,19.4096972 31.7033611,19.2966843 L26.4940603,14.0873835 L26.4940603,14.0873835 C26.3790933,13.9763449 26.1958793,13.979529 26.0848407,14.0944961 C25.9765214,14.2066477 25.9765214,14.3844515 26.0848407,14.4966031 L31.0895318,19.5012942 L26.0848407,24.5059853 L26.0848407,24.5059853 C25.9718377,24.6190225 25.9718655,24.8022637 26.0849025,24.9152667 C26.139159,24.9695068 26.2127318,24.9999844 26.2894503,25.0000006 L26.2894505,25.0000005 Z" id="Path" stroke="#999DAE" fill="#999DAE" fill-rule="nonzero" mask="url(#mask-19)"></path>
@@ -144,7 +142,7 @@
                         <use fill="black" fill-opacity="1" filter="url(#filter-23)" xlink:href="#path-21"></use>
                         <use fill="url(#linearGradient-11)" fill-rule="evenodd" xlink:href="#path-21"></use>
                     </g>
-                    <text id="Basic-Auth" mask="url(#mask-22)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                    <text id="Basic-Auth" mask="url(#mask-22)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
                         <tspan x="43" y="23">Basic Auth</tspan>
                     </text>
                     <path d="M26.2894505,25.0000005 L26.2894505,25.0000005 C26.3662194,25.0000862 26.4398569,24.9695691 26.4940603,24.9152047 L31.7033611,19.7059038 L31.7033611,19.7059039 C31.8163398,19.592891 31.8163398,19.4096972 31.7033611,19.2966843 L26.4940603,14.0873835 L26.4940603,14.0873835 C26.3790933,13.9763449 26.1958793,13.979529 26.0848407,14.0944961 C25.9765214,14.2066477 25.9765214,14.3844515 26.0848407,14.4966031 L31.0895318,19.5012942 L26.0848407,24.5059853 L26.0848407,24.5059853 C25.9718377,24.6190225 25.9718655,24.8022637 26.0849025,24.9152667 C26.139159,24.9695068 26.2127318,24.9999844 26.2894503,25.0000006 L26.2894505,25.0000005 Z" id="Path" stroke="#999DAE" fill="#999DAE" fill-rule="nonzero" mask="url(#mask-22)"></path>
@@ -157,7 +155,7 @@
                         <use fill="black" fill-opacity="1" filter="url(#filter-26)" xlink:href="#path-24"></use>
                         <use fill="url(#linearGradient-11)" fill-rule="evenodd" xlink:href="#path-24"></use>
                     </g>
-                    <text id="API-Key" mask="url(#mask-25)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                    <text id="API-Key" mask="url(#mask-25)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
                         <tspan x="43" y="23">API Key</tspan>
                     </text>
                     <path d="M26.2894505,25.0000005 L26.2894505,25.0000005 C26.3662194,25.0000862 26.4398569,24.9695691 26.4940603,24.9152047 L31.7033611,19.7059038 L31.7033611,19.7059039 C31.8163398,19.592891 31.8163398,19.4096972 31.7033611,19.2966843 L26.4940603,14.0873835 L26.4940603,14.0873835 C26.3790933,13.9763449 26.1958793,13.979529 26.0848407,14.0944961 C25.9765214,14.2066477 25.9765214,14.3844515 26.0848407,14.4966031 L31.0895318,19.5012942 L26.0848407,24.5059853 L26.0848407,24.5059853 C25.9718377,24.6190225 25.9718655,24.8022637 26.0849025,24.9152667 C26.139159,24.9695068 26.2127318,24.9999844 26.2894503,25.0000006 L26.2894505,25.0000005 Z" id="Path" stroke="#0FE49B" fill="#999DAE" fill-rule="nonzero" mask="url(#mask-25)"></path>

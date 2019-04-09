@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="525px" height="245px" viewBox="0 0 525 245" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>Logs@2x</title>
-    <desc>Created with Sketch.</desc>
+    <style> * {font-family:"Courier"; font-size: 12px; }</style>
     <defs>
         <linearGradient x1="100%" y1="57.9358235%" x2="1.80027174%" y2="42.547018%" id="linearGradient-1">
             <stop stop-color="#030D36" offset="0%"></stop>

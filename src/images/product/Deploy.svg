@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="510px" height="273px" viewBox="0 0 510 273" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>Deploy@2x</title>
-    <desc>Created with Sketch.</desc>
+    <style> * {font-family:"Courier"}</style>
     <defs>
         <linearGradient x1="100%" y1="57.290085%" x2="1.80027174%" y2="43.1534677%" id="linearGradient-1">
             <stop stop-color="#030D36" offset="0%"></stop>

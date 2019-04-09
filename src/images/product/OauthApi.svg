@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="380px" height="223px" viewBox="0 0 380 223" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>OauthApi@2x</title>
-    <desc>Created with Sketch.</desc>
+    <style> * {font-family:"Courier"}</style>
     <defs>
         <linearGradient x1="100%" y1="51.8267092%" x2="1.80027174%" y2="48.2844337%" id="linearGradient-1">
             <stop stop-color="#F9FAFD" offset="0%"></stop>

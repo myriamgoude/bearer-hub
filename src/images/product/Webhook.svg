@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="348px" height="311px" viewBox="0 0 348 311" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>Webhook@2x</title>
-    <desc>Created with Sketch.</desc>
+    <style> * {font-family:"Courier"}</style>
     <defs>
         <linearGradient x1="22.5198819%" y1="80.1332819%" x2="85.9659845%" y2="20.4205047%" id="linearGradient-1">
             <stop stop-color="#FBFCFF" offset="0%"></stop>

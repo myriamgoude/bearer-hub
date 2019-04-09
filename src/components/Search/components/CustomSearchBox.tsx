@@ -3,17 +3,15 @@ import { css } from '@emotion/core'
 import { connectSearchBox } from 'react-instantsearch-dom'
 
 const searchBoxStyle = css`
-  height: 72px;
-  width: 512px;
+  margin: auto;
+  z-index: 5;
+  height: 4.5rem;
+  width: 32rem;
+  max-width: 100%;
   border: 1px solid #d4d9ea;
   border-radius: 4px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.49);
-  position: absolute;
-  top: -250px;
-  left: 0;
-  right: 0;
-  margin: auto;
 
   input {
     appearance: none;
@@ -29,7 +27,7 @@ const searchBoxStyle = css`
   }
 `
 export const CustomSearchBox = connectSearchBox(({ currentRefinement, refine }: any) => (
-  <form noValidate action="" role="search" css={searchBoxStyle} onSubmit={event => event.preventDefault()}>
+  <form noValidate action="" css={searchBoxStyle} role="search" onSubmit={event => event.preventDefault()}>
     <input
       type="search"
       value={currentRefinement}

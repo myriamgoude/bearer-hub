@@ -11,6 +11,7 @@ import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { InstantSearch } from 'react-instantsearch-dom'
 
 import { SearchList } from '../../components/Search/components/SearchList'
+import { CustomSearchBox } from '../../components/Search/components/CustomSearchBox'
 
 interface IQueryData {
   graphcms: {
@@ -44,45 +45,38 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
   return (
     <IndexLayout location={location}>
       <PageMetadata title="Explore" description="Explore Integrations" />
-      <Page>
+      <Page css={heroStyles.styleBackgroundExplore}>
         <InstantSearch
           appId={`${process.env.GATSBY_ALGOLIA_APP_ID}`}
           apiKey={`${process.env.GATSBY_ALGOLIA_SEARCH_API_KEY}`}
           indexName={`${process.env.GATSBY_ALGOLIA_INDEX_NAME}`}
         >
-          <div css={heroStyles.styleBackgroundExplore}>
-            <HeroLined
-              style={css`
-                height: 780px;
-              `}
-            >
+          <div css={heroStyles.styleBackgroundExploreAfter}>
+            <HeroLined>
               <Text tag="h1" text="Explore Templates" />
               <Clearfix />
               <Text tag="h3" text="Start building your Integrations even faster!" />
             </HeroLined>
           </div>
-          <Section
-            styleContainer={css`
-              display: flex;
-            `}
-          >
-            <div
-              css={css`
-                flex: 0 1 30%;
-                padding-right: 58px;
+          <div css={heroStyles.styleBackgroundBefore}>
+            <CustomSearchBox />
+            <Section
+              styleContainer={css`
+                display: flex;
+                padding-top: 2rem;
               `}
             >
-              <SearchList categories={data.graphcms.categories} />
-            </div>
+              <div
+                css={css`
+                  padding-right: 58px;
+                `}
+              >
+                <SearchList categories={data.graphcms.categories} />
+              </div>
 
-            <div
-              css={css`
-                flex: 0 1 70%;
-              `}
-            >
               <Search />
-            </div>
-          </Section>
+            </Section>
+          </div>
         </InstantSearch>
       </Page>
     </IndexLayout>

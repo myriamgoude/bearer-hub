@@ -28,8 +28,6 @@ const navStyle = css`
 `
 const navLinkStyle = css`
   color: #030d36;
-  font-family: 'Proxima Nova';
-  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.13px;
   line-height: 19px;
@@ -39,11 +37,7 @@ const navLinkStyle = css`
 export const SearchList = (props: ISearchListProps) => {
   return (
     <nav css={navStyle}>
-      <section
-        css={css`
-          margin-top: 16px;
-        `}
-      >
+      <section>
         <Label text="Categories" />
         <ul>
           <li key={0}>

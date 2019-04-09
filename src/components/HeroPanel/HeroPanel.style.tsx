@@ -59,36 +59,43 @@ export default {
     background-size: contain;
   `,
   styleBackgroundExplore: css`
-    background: url(${require('../../images/hero-explore.svg')}) no-repeat bottom 200px center / 1600px;
+    background: url(${require('../../images/hero-explore.svg')}) no-repeat;
+    background-position: top 400px center;
+    background-size: contain;
     position: relative;
 
     @media (min-width: ${breakpoints.sm}px) {
-      background-size: contain;
+      background-position: top 300px center;
     }
     @media (min-width: ${breakpoints.md}px) {
-      background-size: 800px;
+      background-position: top 300px center;
     }
     @media (min-width: ${breakpoints.lg}px) {
-      background-size: 1200px;
+      background-position: top 250px center;
     }
     @media (min-width: ${breakpoints.xl}px) {
-      background-size: 1600px;
+      background-position: top 200px center;
     }
 
     @media (min-width: ${breakpoints.xxl}px) {
-      background-size: 1880px;
+      background-position: top 150px center;
     }
-
+  `,
+  styleBackgroundExploreAfter: css`
     &:after {
       content: '';
       display: block;
-      position: absolute;
-      bottom: -24px;
-      left: 0;
       width: 100%;
-      height: 260px;
-      background: url(${require('../../images/explore-hero-shape.svg')}) no-repeat top center / cover;
+      height: 17rem;
+      background-image: url(${require('../../images/explore-hero-shape.svg')});
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+      background-color: transparent;
     }
+  `,
+  styleBackgroundBefore: css`
+    margin-top: -18rem;
   `,
 
   styleDefaultCurve: css`

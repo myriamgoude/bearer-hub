@@ -20,7 +20,10 @@ export const CustomHits = connectHits(
         col={3}
         gutter={16}
         style={css`
-          justify-content: ${hits.length <= 2 ? 'flex-start !important' : null};
+          width: 100%;
+          margin: 0;
+          align-content: flex-start;
+          justify-content: flex-start;
         `}
         childrenStyle={css`
           margin-bottom: 8px;

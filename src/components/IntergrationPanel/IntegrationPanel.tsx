@@ -43,11 +43,9 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                   label: template.hubID
                 }}
                 small
-                className={[styles.item, styles.card, template.featured && styles.featured]}
+                className={[styles.item, template.featured && styles.featured]}
               >
-                <div css={image && styles.cardImageContainer}>
-                  {image && <img src={image} css={styles.cardImage} />}
-                </div>
+                <div>{image && <img src={image} css={styles.cardImage} />}</div>
                 <div
                   css={css`
                     align-self: flex-end;

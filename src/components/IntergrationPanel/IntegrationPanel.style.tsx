@@ -5,7 +5,6 @@ export default {
   item: css`
     width: 100%;
     text-align: center;
-    margin-bottom: 32px;
   `,
 
   featured: css`
@@ -26,21 +25,19 @@ export default {
       background: linear-gradient(50.21deg, #ffce00 0%, #fbbb18 100%);
     }
   `,
-  card: css`
-    background: red;
-  `,
-  cardImageContainer: css`
-    width: 100%;
-    height: ${getEmSize(60)};
-    display: flex;
-    align-items: center;
-    padding: 0.3em;
-    margin-bottom: 8px;
-  `,
   cardImage: css`
-    object-fit: contain;
-    object-position: center;
-    width: 100%;
-    height: 100%;
+    height: 4rem;
+    max-width: 8rem;
+  `,
+  cardTags: css`
+    width: 80%;
+    margin: 0 auto;
+    & > span {
+      margin-bottom: 0.25rem;
+    }
+
+    & > span:nth-oftype(3) {
+      margin-left: 0;
+    }
   `
 }

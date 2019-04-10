@@ -7,7 +7,7 @@ interface ITagProps {
   text?: string | any
   style?: any
   children?: any
-  color: string
+  color?: string
 }
 
 const Tag = (props: ITagProps) => {
@@ -17,8 +17,8 @@ const Tag = (props: ITagProps) => {
       css={[
         styles.root,
         css`
-          background-color: ${color ? hexToRGB(color, 0.2) : 'rgba(100,100,100,0.2)'};
-          color: ${color ? hexToRGB(color) : 'rgba(100,100,100,1)'};
+          background-color: ${color ? hexToRGB(color, 0.12) : 'rgba(100,100,100,0.2)'};
+          color: ${color ? color : 'rgba(100,100,100,1)'};
         `
       ]}
     >

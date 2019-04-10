@@ -1,15 +1,12 @@
 import { css } from '@emotion/core'
-import { getEmSize } from '../../styles/mixins'
 
 export default {
   root: css`
     display: inline-block;
-    font-size: ${getEmSize(12)};
-    padding: 0 10px;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.75rem;
     border-radius: 100px;
-    text-transform: uppercase;
-    max-height: 20px;
-    line-height: 20px;
+    line-height: 1.25rem;
 
     & + span {
       margin-left: 8px;

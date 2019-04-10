@@ -50,24 +50,8 @@ const JobCard = (props: any) => (
   >
     <header>
       <span className="job-infos">
-        {props.location && (
-          <Tag
-            text={props.location}
-            color={colors.orange}
-            css={css`
-              display: inline-block;
-            `}
-          />
-        )}
-        {props.remote && (
-          <Tag
-            text={props.remote && 'remote'}
-            color={colors.purple}
-            css={css`
-              display: inline-block;
-            `}
-          />
-        )}
+        {props.location && <Tag text={props.location.toUpperCase()} color={colors.orange} />}
+        {props.remote && <Tag text={props.remote && 'REMOTE'} color={colors.purple} />}
       </span>
     </header>
     <Text

@@ -15,6 +15,5 @@ export default {
   `,
   heightSmall: css`
     height: 100%;
-    max-height: 240px;
   `
 }

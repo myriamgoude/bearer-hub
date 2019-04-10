@@ -1,9 +1,7 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import Link from '../Link'
-import Text from '../Text'
-
+import { Link, Text } from '../index'
 import styles from './Card.style'
 
 interface ICardProps {

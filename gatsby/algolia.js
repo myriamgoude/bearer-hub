@@ -7,6 +7,8 @@ const allPublishedTemplates = `
         id
         hubID
         title
+        apiAuthType
+        apiArchType
         imageShare {
           url
         }

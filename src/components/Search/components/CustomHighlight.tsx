@@ -12,8 +12,7 @@ export const CustomHighlight = connectHighlight(({ highlight, attribute, hit }: 
 
   return (
     <Text
-      tag={attribute === 'provider.title' ? 'h5' : 'p'}
-      small={attribute === 'title' && true}
+      tag="h5"
       style={css`
         font-weight: bold;
         margin-bottom: 8px;

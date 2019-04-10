@@ -1,12 +1,13 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import { Container, Grid, Card, Text } from '../index'
+import { Container, Clearfix, Grid, Card, Tag, Text } from '../index'
 
 import { templatePath } from '../../services/Explore'
 
 import styles from './IntegrationPanel.style'
 import { getEmSize } from '../../styles/mixins'
+import blockStyles from '../../components/IntergrationPanel/IntegrationPanel.style'
 
 interface IIntegrationProps {
   templates: {
@@ -14,6 +15,9 @@ interface IIntegrationProps {
     hubID: string
     title: string
     featured: boolean
+    apiAuthType: string
+    apiArchType: string
+    categories: { title: string }[]
     provider: {
       hubID: string
       title: string
@@ -31,6 +35,10 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
       <Container>
         <Grid fullWidth space="around" gutter={24} col={4}>
           {this.props.templates.map(template => {
+            const tags = [template.apiAuthType, template.apiArchType]
+            if (template.categories.length) {
+              tags.push(template.categories[0].title)
+            }
             const image = template.provider.image ? template.provider.image.url : ''
             return (
               <Card
@@ -59,6 +67,10 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                       margin-bottom: ${getEmSize(8)};
                     `}
                   />
+                  <Clearfix />
+                  <div css={blockStyles.cardTags}>
+                    {tags && tags.map((tag: string, index: number) => <Tag key={index} text={tag} color="#1339D7" />)}
+                  </div>
                 </div>
               </Card>
             )

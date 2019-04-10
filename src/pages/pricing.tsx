@@ -56,14 +56,27 @@ const PricingTable = (props: any) => (
 
       td,
       th {
-        height: 45px;
-        line-height: 45px;
+        height: 3rem;
+        max-height: 3rem;
+        line-height: 3rem;
       }
 
       &:not(.transparent) tr:not(:first-child) {
         td {
           border-top: 1px solid ${props.background === 'dark' ? colors.secondary[1] : colors.secondary[4]};
         }
+      }
+
+      &:not(.transparent):after {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 32px;
+        z-index: 5;
+        position: absolute;
+        left: 50%;
+        margin: 2px auto;
+        background: rgb(255, 196, 0);
       }
 
       ${props.css}
@@ -206,7 +219,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
             </PricingTable>
 
             <div>
-              <PricingTable className="first-table">
+              <PricingTable className="white">
                 <thead>
                   <tr>
                     <th>
@@ -260,10 +273,10 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     <td>7 days</td>
                   </tr>
                   <tr>
-                    <td />
+                    <td>&nbsp;</td>
                   </tr>
                   <tr>
-                    <td />
+                    <td>&nbsp;</td>
                   </tr>
                   <tr>
                     <td>Not available</td>

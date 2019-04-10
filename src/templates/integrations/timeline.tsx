@@ -34,6 +34,7 @@ interface IQueryData {
       oauthScopes?: any
       apiArchType: string
       featured: boolean
+      categories: { title: string }[]
       featuredOrder: number
       provider: {
         hubID: string
@@ -64,6 +65,9 @@ export const query = graphql`
         apiArchType
         featured
         featuredOrder
+        categories {
+          title
+        }
         provider {
           hubID
           title

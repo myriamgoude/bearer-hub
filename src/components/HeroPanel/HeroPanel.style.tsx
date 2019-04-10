@@ -60,25 +60,25 @@ export default {
   `,
   styleBackgroundExplore: css`
     background: url(${require('../../images/hero-explore.svg')}) no-repeat;
-    background-position: top 400px center;
+    background-position: top 300px center;
     background-size: contain;
     position: relative;
 
     @media (min-width: ${breakpoints.sm}px) {
-      background-position: top 300px center;
-    }
-    @media (min-width: ${breakpoints.md}px) {
-      background-position: top 300px center;
-    }
-    @media (min-width: ${breakpoints.lg}px) {
       background-position: top 250px center;
     }
-    @media (min-width: ${breakpoints.xl}px) {
+    @media (min-width: ${breakpoints.md}px) {
       background-position: top 200px center;
+    }
+    @media (min-width: ${breakpoints.lg}px) {
+      background-position: top 150px center;
+    }
+    @media (min-width: ${breakpoints.xl}px) {
+      background-position: top 100px center;
     }
 
     @media (min-width: ${breakpoints.xxl}px) {
-      background-position: top 150px center;
+      background-position: top 50px center;
     }
   `,
   styleBackgroundExploreAfter: css`

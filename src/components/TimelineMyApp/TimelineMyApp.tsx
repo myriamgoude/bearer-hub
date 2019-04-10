@@ -59,7 +59,7 @@ const TimelineMyApp = (props: ITimelineMyAppProps) => {
         )}
 
         <TimelineStage
-          heading="Invoke Functions"
+          heading="Call Functions"
           placement={props.placement.next().value}
           tooltip={`Not sure what to pass here`}
         >

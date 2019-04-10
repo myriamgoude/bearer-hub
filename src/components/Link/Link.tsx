@@ -24,7 +24,10 @@ class Link extends React.Component<ILinkProps> {
         return 'general-documentation'
       }
       case '/integrations': {
-        return 'explore-integrations'
+        return 'explore-page'
+      }
+      case '/product': {
+        return 'product-page'
       }
       default: {
         return this.props.to.replace(/\//g, '')

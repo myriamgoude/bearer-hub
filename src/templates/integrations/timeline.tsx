@@ -144,15 +144,17 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             callToAction
             link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${template.hubID}`}
             trackLink
-            trackingAction="embed-integration"
+            trackingAction="embed-template"
             trackingOptions={{
-              category: 'Integration',
+              category: 'Template',
               label: template.hubID
             }}
             text="Start building"
           />
           <p style={{ marginTop: '1.25rem' }}>
-            <Link to="https://docs.bearer.sh">or read the documentation</Link>
+            <Link trackLink to="https://docs.bearer.sh">
+              or read the documentation
+            </Link>
           </p>
         </Section>
 

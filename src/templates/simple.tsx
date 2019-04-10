@@ -12,8 +12,6 @@ interface IQueryData {
     excerpt: string
     frontmatter: {
       title: string
-      description: string | null
-      image: string | null
     }
   }
 }
@@ -29,7 +27,6 @@ const SimpleTemplate: GatsbyPage<IQueryData> = ({ data, location }) => (
       >
         <Text tag="h1" text={data.markdownRemark.frontmatter.title} />
         <Clearfix />
-        <Text tag="h3" text={data.markdownRemark.frontmatter.description} />
       </HeroLined>
       <Section>
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} css={styles.markdownPages} />
@@ -47,8 +44,6 @@ export const query = graphql`
       excerpt
       frontmatter {
         title
-        description
-        image
       }
     }
   }

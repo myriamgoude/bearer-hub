@@ -36,9 +36,9 @@ export const CustomHits = connectHits(
               key={hit.objectID}
               link={`${templatePath({ hubID: hit.hubID, title: hit.title, provider: hit.provider })}`}
               trackLink
-              trackingAction="explore-integration"
+              trackingAction="explore-template"
               trackingOptions={{
-                category: 'Integration',
+                category: 'Template',
                 label: hit.hubID
               }}
               small

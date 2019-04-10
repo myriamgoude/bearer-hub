@@ -37,9 +37,9 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                 key={integration.id}
                 link={`${templatePath(integration)}`}
                 trackLink
-                trackingAction="explore-integration"
+                trackingAction="explore-template"
                 trackingOptions={{
-                  category: 'Integration',
+                  category: 'Template',
                   label: integration.hubID
                 }}
                 small

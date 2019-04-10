@@ -57,16 +57,23 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
           callToAction
           link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${props.templateHubId}`}
           trackLink
-          trackingAction="embed-integration"
+          trackingAction="embed-template"
           trackingOptions={{
-            category: 'Integration',
+            category: 'Template',
             label: props.templateHubId
           }}
           text="Start building"
         />
       </div>
       <Small>
-        Check the <Link to="https://docs.bearer.sh">documentation</Link> or <Link to="/product">explore product</Link>
+        Check the
+        <Link trackLink to="https://docs.bearer.sh">
+          documentation
+        </Link>
+        or
+        <Link trackLink to="/product">
+          explore product
+        </Link>
       </Small>
     </div>
   )

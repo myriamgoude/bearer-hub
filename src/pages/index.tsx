@@ -128,14 +128,21 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           >
             Bearer provides all the tooling to build, run and manage API Integrations.
           </p>
+
           <LightCta text="Your app, your Integration, your Code!" />
           <br />
-          <Button primary trackLink link="/integrations" text="Start building" />
+          <Button primary link="/integrations" text="Start building" />
           <br />
           <p>
             <Small>
-              You can also <Link to="/integrations">explore templates</Link> or check{' '}
-              <Link to="https://docs.bearer.sh">documentation</Link>
+              You can also{' '}
+              <Link trackLink to="/integrations">
+                explore templates
+              </Link>{' '}
+              or check{' '}
+              <Link to="https://docs.bearer.sh" trackLink>
+                documentation
+              </Link>
             </Small>
           </p>
         </div>
@@ -256,7 +263,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           `}
           className="mt-32 mb-64"
         >
-          <Button text="Product features" link="/product" />
+          <Button text="Product features" link="/product" trackLink />
         </div>
       </Section>
 

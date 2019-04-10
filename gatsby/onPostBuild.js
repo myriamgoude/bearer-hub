@@ -119,7 +119,7 @@ module.exports = async ({ graphql }) => {
   const featuredIntegrationData = await graphql(`
     {
       graphcms {
-        templates(where: { status: PUBLISHED, featured: true }, orderBy: featuredOrder_ASC, first: 2) {
+        templates(where: { status: PUBLISHED, featured: true }, orderBy: featuredOrder_ASC, first: 4) {
           hubID
           featuredOrder
           gitHubUrl

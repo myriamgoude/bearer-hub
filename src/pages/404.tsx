@@ -1,10 +1,11 @@
 import * as React from 'react'
 import IndexLayout from '../layouts'
 import { css } from '@emotion/core'
-import { Button, HeroLined, Page, Grid } from '../components/'
+import { Button, HeroLined, Page, PageMetadata, Grid } from '../components/'
 
 const NotFoundPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
+    <PageMetadata title="404 Page not found" />
     <Page>
       <HeroLined>
         <Grid

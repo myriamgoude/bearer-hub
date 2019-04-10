@@ -21,6 +21,7 @@ const PageMetadata: React.SFC<IPageMetadataProps> = ({ title, description, image
 
   const allImages = image ? [{ name: 'twitter:image', content: image }, { propery: 'og:image', content: image }] : []
   const allTitles = [{ name: 'twitter:title', content: title }, { propery: 'og:title', content: title }]
+
   return <Helmet title={title} meta={[...allTitles, ...allDescriptions, ...allImages]} />
 }
 export default PageMetadata

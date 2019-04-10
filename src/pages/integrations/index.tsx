@@ -44,7 +44,11 @@ export const query = graphql`
 const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
   return (
     <IndexLayout location={location}>
-      <PageMetadata title="Explore" description="Explore Integrations" />
+      <PageMetadata
+        title="Explore API Integration Templates | Bearer"
+        description="Explore Integration Templates on dozen of API Providers and 
+      start building your API Integration in mintues using Bearer Framework."
+      />
       <Page css={heroStyles.styleBackgroundExplore}>
         <InstantSearch
           appId={`${process.env.GATSBY_ALGOLIA_APP_ID}`}

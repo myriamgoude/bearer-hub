@@ -37,7 +37,13 @@ const navLinkStyle = css`
 export const SearchList = (props: ISearchListProps) => {
   return (
     <nav css={navStyle}>
-      <section>
+      <section
+        itemScope
+        itemType="http://schema.org/Thing"
+        css={css`
+          margin-top: 16px;
+        `}
+      >
         <Label text="Categories" />
         <ul>
           <li key={0}>
@@ -50,8 +56,9 @@ export const SearchList = (props: ISearchListProps) => {
             </Link>
           </li>
           {props.categories.map(category => (
-            <li key={category.id}>
+            <li itemProp="Category" key={category.id}>
               <Link
+                itemProp="url"
                 to={categoryPath({ hubID: category.hubID, title: category.title })}
                 css={navLinkStyle}
                 style={

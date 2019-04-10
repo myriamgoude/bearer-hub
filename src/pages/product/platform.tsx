@@ -35,7 +35,11 @@ const headingTail = css`
 
 const ProductPlatformPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
-    <PageMetadata title="Bearer - Platform Features" />
+    <PageMetadata
+      title="Bearer - Platform Features"
+      description="Bearer manage your API Integration as microservices and helps you host, 
+      scale and monitor them so you can focus on your App"
+    />
     <Page>
       <HeroLined>
         <Text tag="h1" text="Platform Features" />

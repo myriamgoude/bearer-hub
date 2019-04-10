@@ -94,7 +94,11 @@ const JobCard = (props: any) => (
 
 const AboutPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
-    <PageMetadata title="About Us" />
+    <PageMetadata
+      title="About Us  | Bearer"
+      description="Meet the Bearer team and learn about our mission 
+        to help developers build quicker & better API Integrations"
+    />
     <Page
       css={[
         heroStyles.styleDefaultCurve,

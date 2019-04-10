@@ -35,7 +35,11 @@ const headingTail = css`
 
 const ProductFrameworkPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
-    <PageMetadata title="Bearer - Framework Features" />
+    <PageMetadata
+      title="Bearer - Framework Features"
+      description="Build API Integration quicker, Don't reimplement API Authentication, 
+      Map API data to your model, Integrate in your App in one line of code and more."
+    />
     <Page>
       <HeroLined>
         <Text tag="h1" text="Framework Features " />

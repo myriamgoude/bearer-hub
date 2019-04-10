@@ -8,7 +8,10 @@ import IndexLayout from '../layouts'
 
 const PressPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
-    <PageMetadata title="Press and Media Resources" />
+    <PageMetadata
+      title="Press Information and Resources | Bearer"
+      description="Press and Resources about Bearer, the API Integration Framework"
+    />
     <Page>
       <Container>
         <h1>Press and Media Resources</h1>

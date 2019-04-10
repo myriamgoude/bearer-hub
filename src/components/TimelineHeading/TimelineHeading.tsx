@@ -16,10 +16,11 @@ interface TimelineHeadingProps {
 
 const TimelineHeading = (props: TimelineHeadingProps) => {
   return (
-    <div css={[styles.root, props.style && props.style]}>
-      <h1 css={styles.heading}>
+    <div itemScope itemType="http://schema.org/Thing" css={[styles.root, props.style && props.style]}>
+      <h1 itemProp="Name" css={styles.heading}>
         Quickly build your own{' '}
         <span
+          itemProp="Provider"
           css={styles.provider}
           style={{ color: props.providerColor, borderColor: props.providerColor }}
           title={props.providerDescription}
@@ -29,7 +30,7 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
         API Integration
       </h1>
       <div>
-        <ul css={styles.features}>
+        <ul itemProp="featureList" css={styles.features}>
           <li css={[styles.feature, styles.featureIconClock]}>
             Don't spend time understanding {props.templateTitle} mechanism
           </li>
@@ -51,7 +52,7 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
         </ul>
       </div>
 
-      <div>
+      <div itemProp="url">
         <Button
           primary
           callToAction
@@ -66,14 +67,11 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
         />
       </div>
       <Small>
-        Check the
-        <Link trackLink to="https://docs.bearer.sh">
+        Check the{' '}
+        <Link itemProp="Documentation" to="https://docs.bearer.sh">
           documentation
-        </Link>
-        or
-        <Link trackLink to="/product">
-          explore product
-        </Link>
+        </Link>{' '}
+        or <Link to="/product">explore product</Link>
       </Small>
     </div>
   )

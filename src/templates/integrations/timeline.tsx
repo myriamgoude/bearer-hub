@@ -8,6 +8,7 @@ import {
   Link,
   HeroPanel,
   Page,
+  PageMetadata,
   TimelineOnBearer,
   TimelineHeading,
   TimelineMyApp,
@@ -82,6 +83,12 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
   const prism = false
   return (
     <IndexLayout location={location}>
+      <PageMetadata
+        title={`Build your ${template.provider.title} API Integrations with Bearer`}
+        description={`Pick the this template and start building your 
+        ${template.provider.title} API Integration in minutes using Bearer Framework.`}
+        image={`template-${template.provider.title}.jpg`}
+      />
       <Page css={[heroStyles.styleDefaultCurve]}>
         <HeroPanel>
           <TimelineHeading

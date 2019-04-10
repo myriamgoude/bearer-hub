@@ -11,6 +11,7 @@ build/**
 
 .DS_Store
 .cache/
+.bashrc
 
 /public/
 

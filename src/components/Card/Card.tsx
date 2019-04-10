@@ -25,6 +25,9 @@ interface ICardProps {
   trackLink?: boolean
   trackingAction?: string
   trackingOptions?: any
+  itemProp?: string
+  itemScope?: boolean
+  itemType?: string
 }
 
 const CardBox = (props: ICardProps) => (
@@ -47,6 +50,9 @@ const CardBox = (props: ICardProps) => (
 const Card = (props: ICardProps) => {
   return props.link ? (
     <Link
+      itemScope
+      itemType={props.itemType}
+      itemProp="url"
       to={props.link}
       trackLink={props.trackLink}
       trackingAction={props.trackingAction}

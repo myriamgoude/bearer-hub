@@ -33,6 +33,8 @@ export const CustomHits = connectHits(
         {hits.map(hit => {
           return (
             <Card
+              itemScope
+              itemType="http://schema.org/Product"
               key={hit.objectID}
               link={`${templatePath({ hubID: hit.hubID, title: hit.title, provider: hit.provider })}`}
               trackLink
@@ -44,13 +46,19 @@ export const CustomHits = connectHits(
               small
               className={[blockStyles.item, blockStyles.card, cardStyle]}
             >
-              <div css={blockStyles.cardImageContainer}>
-                <img src={hit.provider.image ? hit.provider.image.url : null} css={blockStyles.cardImage} />
-              </div>
               <div>
-                <CustomHighlight attribute="provider.title" hit={hit} />
-                <Clearfix />
-                <CustomHighlight attribute="title" hit={hit} />
+                <div css={blockStyles.cardImageContainer}>
+                  <img
+                    itemProp="logo"
+                    src={hit.provider.image ? hit.provider.image.url : null}
+                    css={blockStyles.cardImage}
+                  />
+                </div>
+                <div itemProp="brand">
+                  <CustomHighlight attribute="provider.title" hit={hit} />
+                  <Clearfix />
+                  <CustomHighlight attribute="title" hit={hit} />
+                </div>
               </div>
             </Card>
           )

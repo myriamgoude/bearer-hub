@@ -177,7 +177,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             `}
           >
             <SectionHeading primaryText={`Related Templates`} tag="h2" />
-            <IntegrationPanel integrations={data.graphcms.templates} />
+            <IntegrationPanel templates={data.graphcms.templates} />
             <Button primary link={`/integrations`} trackLink text="Explore Templates" />
           </div>
         </Section>

@@ -45,11 +45,10 @@ import { colors, breakpoints } from '../styles/variables'
 
 interface IQueryData {
   graphcms: {
-    integrations: {
+    templates: {
       id: string
       hubID: string
       title: string
-      description: string
       featured: boolean
       provider: {
         hubID: string
@@ -65,18 +64,14 @@ interface IQueryData {
 export const query = graphql`
   query IndexPageQuery {
     graphcms {
-      integrations(
-        where: {
-          status: PUBLISHED
-          featured: true
-          provider: { id_not: null }
-          timeline: { timelineStages_some: { id_not: null, displayOnHub: true } }
-        }
+      templates(
+        where: { status: PUBLISHED, provider: { id_not: null }, featured: true }
+        orderBy: featuredOrder_ASC
+        first: 4
       ) {
         id
         hubID
         title
-        description
         featured
         provider {
           hubID
@@ -269,7 +264,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
 
       <Section withTail>
         <SectionHeading primaryText="Featured Integrations Templates" />
-        <IntegrationPanel integrations={data.graphcms.integrations} />
+        <IntegrationPanel templates={data.graphcms.templates} />
         <div
           css={[
             css`

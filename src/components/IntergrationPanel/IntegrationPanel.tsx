@@ -9,7 +9,7 @@ import styles from './IntegrationPanel.style'
 import { getEmSize } from '../../styles/mixins'
 
 interface IIntegrationProps {
-  integrations: {
+  templates: {
     id: string
     hubID: string
     title: string
@@ -30,20 +30,20 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
     return (
       <Container>
         <Grid fullWidth space="around" gutter={24} col={4}>
-          {this.props.integrations.map(integration => {
-            const image = integration.provider.image ? integration.provider.image.url : ''
+          {this.props.templates.map(template => {
+            const image = template.provider.image ? template.provider.image.url : ''
             return (
               <Card
-                key={integration.id}
-                link={`${templatePath(integration)}`}
+                key={template.id}
+                link={`${templatePath(template)}`}
                 trackLink
                 trackingAction="explore-template"
                 trackingOptions={{
                   category: 'Template',
-                  label: integration.hubID
+                  label: template.hubID
                 }}
                 small
-                className={[styles.item, styles.card, integration.featured && styles.featured]}
+                className={[styles.item, styles.card, template.featured && styles.featured]}
               >
                 <div css={image && styles.cardImageContainer}>
                   {image && <img src={image} css={styles.cardImage} />}
@@ -54,7 +54,7 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                   `}
                 >
                   <Text
-                    text={`${integration.provider.title} API`}
+                    text={`${template.provider.title} API`}
                     large
                     style={css`
                       font-weight: bold;

@@ -3,7 +3,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 
 import styles from './CodeSnippet.style'
 
-interface Snippet {
+export interface Snippet {
   language: string
   code: string
 }
@@ -58,7 +58,7 @@ const CodeSnippet = (props: ICodeSnippetProps) => {
             ]}
             {...index > 0 && { style: { display: 'none' } }}
           >
-            <code>
+            <code itemScope itemType="http://schema.org/SoftwareSourceCode">
               {snippet.code.split('\n').map((code, index) => {
                 const isBash = snippet.language === 'bash'
                 return (

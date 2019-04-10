@@ -38,16 +38,16 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
             Use a pre-configured API Client and {props.templateApiAuthType} implementation
           </li>
           <li css={[styles.feature, styles.featureIcon3d]}>
-            Consume &amp; transform {props.templateTitle} API with functions
+            Consume &amp; transform {props.templateTitle} with functions
           </li>
           <li css={[styles.feature, styles.featureIconHome]}>
             Host &amp; scale your Integration for free on our platform
           </li>
           <li css={[styles.feature, styles.featureIconMonitor]}>
-            Monitor &amp; log every API call to the {props.templateTitle}
+            Monitor &amp; log every API call to the {props.templateTitle} out-of-the-box
           </li>
           <li css={[styles.feature, styles.featureIconAtomium]}>
-            Integrate in seconds into your App with \ our Integration Clients
+            Integrate in seconds into your App with our Integration Clients
           </li>
         </ul>
       </div>
@@ -67,11 +67,10 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
         />
       </div>
       <Small>
-        Check the{' '}
-        <Link itemProp="Documentation" to="https://docs.bearer.sh">
+        or read the{' '}
+        <Link itemProp="documentation" to="https://docs.bearer.sh">
           documentation
         </Link>{' '}
-        or <Link to="/product">explore product</Link>
       </Small>
     </div>
   )

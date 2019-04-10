@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 
 import { CodeSnippet, DashedLine, Section, TimelineStage } from '../index'
 import { colors } from '../../styles/variables'
+import timelineCodeSnippet from './TimelineOnBearer.snippets'
 
 interface ITimelineOnBearerProps {
   prism: boolean
@@ -10,6 +11,7 @@ interface ITimelineOnBearerProps {
   template: {
     title: string
     gitHubUrl: string
+    apiAuthType: string
     defaultFunctionName: string
     defaultFunctionCode: string
     defaultFunctionReturnValue: string
@@ -20,9 +22,9 @@ interface ITimelineOnBearerProps {
   }
 }
 
-function templateFolderName(gitHubUrl: string) {
-  return gitHubUrl.replace('https://github.com/bearer/', '')
-}
+// function templateFolderName(gitHubUrl: string) {
+//   return gitHubUrl.replace('https://github.com/bearer/', '')
+// }
 
 const TimelineOnBearer = (props: ITimelineOnBearerProps) => (
   <>
@@ -47,21 +49,15 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => (
         `}
       />
       <TimelineStage
-        heading={`Clone Template`}
+        heading={`Start with the Bearer template`}
         tooltip={'Not sure what to pass here'}
         placement={props.placement.next().value}
       >
         <CodeSnippet
           prism={props.prism}
           snippets={[
-            {
-              language: 'bash',
-              code: `$ git clone ${props.template.gitHubUrl}
-$ cd ${templateFolderName(props.template.gitHubUrl)}
-$ npm install`
-            }
+            timelineCodeSnippet.cloneTemplate(props.template.gitHubUrl, props.template.provider.title.toLowerCase())
           ]}
-          code={``}
         />
       </TimelineStage>
 
@@ -71,24 +67,16 @@ $ npm install`
         placement={props.placement.next().value}
         hint={`You will find your credentials on ${props.template.provider.title} settings page`}
       >
-        <>
-          <CodeSnippet
-            prism={props.prism}
-            snippets={[{ language: 'bash', code: `$ npm bearer setup:token CLIENT_ID:CLIENT_SECRET` }]}
-          />
-        </>
+        <CodeSnippet prism={props.prism} snippets={[timelineCodeSnippet.generateSetup(props.template.apiAuthType)]} />
       </TimelineStage>
 
       <TimelineStage
-        heading={`Test initial function`}
+        heading={`Test a pre-built Function locally`}
         tooltip={'Not sure what to pass here'}
         placement={props.placement.next().value}
       >
         <>
-          <CodeSnippet
-            prism={props.prism}
-            snippets={[{ language: 'bash', code: `$ npm bearer invoke defaultFunction` }]}
-          />
+          <CodeSnippet prism={props.prism} snippets={[timelineCodeSnippet.defaultFunction()]} />
           <div
             css={css`
               padding-top: 1rem;
@@ -143,10 +131,7 @@ $ npm install`
         tooltip={'Not sure what to pass here'}
         placement={props.placement.next().value}
       >
-        <CodeSnippet
-          prism={props.prism}
-          snippets={[{ language: 'bash', code: `$ npm bearer generate:function myFunction` }]}
-        />
+        <CodeSnippet prism={props.prism} snippets={[timelineCodeSnippet.customFunction()]} />
       </TimelineStage>
 
       <TimelineStage
@@ -155,21 +140,7 @@ $ npm install`
         placement={props.placement.next().value}
         hint="Login to the developer portal to view and search through your logs"
       >
-        <CodeSnippet
-          prism={props.prism}
-          snippets={[
-            {
-              language: 'bash',
-              code: `$ npm bearer push
-
-Refreshing tokens... done
-  ✓ Generate bundle
-  ✓ Transfer bundle
-
-🐻Integration successfully pushed.`
-            }
-          ]}
-        />
+        <CodeSnippet prism={props.prism} snippets={[timelineCodeSnippet.deployIntegration()]} />
       </TimelineStage>
     </Section>
   </>

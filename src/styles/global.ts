@@ -9,4 +9,9 @@ export default `
     font-family: 'ProximaNova-Semibold';
   }
 
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
 `

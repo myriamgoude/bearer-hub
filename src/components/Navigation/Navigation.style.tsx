@@ -6,6 +6,7 @@ export default {
     align-self: flex-end;
   `,
   link: css`
+    text-decoration: none;
     position: relative;
     padding: 0 0.75rem;
     line-height: 1rem;

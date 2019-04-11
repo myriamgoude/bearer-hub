@@ -20,32 +20,50 @@ import IndexLayout from '../../layouts'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { colors } from '../../styles/variables'
 
+interface ITemplateData {
+  id: string
+  hubID: string
+  title: string
+  gitHubUrl: string
+  defaultFunctionName: string
+  defaultFunctionCode: string
+  defaultFunctionReturnValue: string
+  apiAuthType: string
+  oauthScopes?: any
+  apiArchType: string
+  featured: boolean
+  featuredOrder: number
+  provider: {
+    hubID: string
+    title: string
+    description: string
+    color: string
+    image: {
+      url: string
+    }
+  }
+}
+
+interface IFeaturedTemplateData {
+  id: string
+  hubID: string
+  title: string
+  apiAuthType: string
+  apiArchType: string
+  categories: { title: string }[]
+  featured: boolean
+  provider: {
+    hubID: string
+    title: string
+    image: {
+      url: string
+    }
+  }
+}
 interface IQueryData {
   graphcms: {
-    templates: {
-      id: string
-      hubID: string
-      title: string
-      gitHubUrl: string
-      defaultFunctionName: string
-      defaultFunctionCode: string
-      defaultFunctionReturnValue: string
-      apiAuthType: string
-      oauthScopes?: any
-      apiArchType: string
-      featured: boolean
-      categories: { title: string }[]
-      featuredOrder: number
-      provider: {
-        hubID: string
-        title: string
-        description: string
-        color: string
-        image: {
-          url: string
-        }
-      }
-    }[]
+    templates: ITemplateData[]
+    featuredTemplates: IFeaturedTemplateData[]
   }
 }
 
@@ -78,12 +96,36 @@ export const query = graphql`
           }
         }
       }
+
+      featuredTemplates: templates(
+        where: { id_not: $id, status: PUBLISHED, provider: { id_not: null }, featured: true }
+        orderBy: featuredOrder_ASC
+        first: 4
+      ) {
+        id
+        hubID
+        title
+        featured
+        apiAuthType
+        apiArchType
+        categories {
+          title
+        }
+        provider {
+          hubID
+          title
+          image {
+            url
+          }
+        }
+      }
     }
   }
 `
 
 const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
   const template = data.graphcms.templates[0]
+  const featuredTemplates = data.graphcms.featuredTemplates
   const placement = TimelinePlacement()
   const prism = false
   return (
@@ -164,8 +206,9 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             text="Start building"
           />
           <p style={{ marginTop: '1.25rem' }}>
+            or read the{' '}
             <Link trackLink to="https://docs.bearer.sh">
-              or read the documentation
+              documentation
             </Link>
           </p>
         </Section>
@@ -181,9 +224,18 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
               text-align: center;
             `}
           >
-            <SectionHeading primaryText={`Related Templates`} tag="h2" />
-            <IntegrationPanel templates={data.graphcms.templates} />
-            <Button primary link={`/integrations`} trackLink text="Explore Templates" />
+            <SectionHeading primaryText={`Featured Templates`} tag="h2" />
+            <IntegrationPanel templates={featuredTemplates} />
+            <div
+              css={[
+                css`
+                  text-align: center;
+                  margin-top: 2.375rem;
+                `
+              ]}
+            >
+              <Button trackLink text="Explore Templates" link="/integrations" className="mt-16 mb-16" />
+            </div>
           </div>
         </Section>
       </Page>

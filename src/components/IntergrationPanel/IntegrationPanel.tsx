@@ -9,24 +9,27 @@ import styles from './IntegrationPanel.style'
 import { getEmSize } from '../../styles/mixins'
 import blockStyles from '../../components/IntergrationPanel/IntegrationPanel.style'
 
-interface IIntegrationProps {
-  templates: {
-    id: string
+interface ITemplate {
+  id: string
+  hubID: string
+  title: string
+  featured: boolean
+  apiAuthType: string
+  apiArchType: string
+  categories: { title: string }[]
+  provider: {
     hubID: string
     title: string
-    featured: boolean
-    apiAuthType: string
-    apiArchType: string
-    categories: { title: string }[]
-    provider: {
-      hubID: string
-      title: string
-      image: {
-        url: string
-      }
+    image: {
+      url: string
     }
-  }[]
+  }
+}
+
+interface IIntegrationProps {
+  templates: ITemplate[]
   css?: any
+  currentTemplate?: ITemplate
 }
 
 export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {

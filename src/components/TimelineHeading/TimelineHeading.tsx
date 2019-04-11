@@ -32,7 +32,7 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
       <div>
         <ul itemProp="featureList" css={styles.features}>
           <li css={[styles.feature, styles.featureIconClock]}>
-            Don't spend time understanding {props.templateTitle} mechanism
+            <span>Don't spend time understanding {props.templateTitle} mechanism</span>
           </li>
           <li css={[styles.feature, styles.featureIconRabbit]}>
             Use a pre-configured API Client and {props.templateApiAuthType} implementation

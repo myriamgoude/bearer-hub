@@ -28,6 +28,13 @@ export default {
       columns: 2;
       -webkit-columns: 2;
       -moz-columns: 2;
+
+      & > li > span {
+        max-width: 95%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
     }
   `,
   feature: css`
@@ -41,10 +48,11 @@ export default {
       display: inline-block;
       margin-right: 1rem;
       height: 1.25rem;
-      width: 20px;
-      background-size: 1.25rem;
+      width: 1.25rem;
+      background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
+      box-sizing: normal;
     }
   `,
   featureIconClock: css`

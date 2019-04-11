@@ -37,7 +37,7 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata
       title="Bearer - Framework Features"
-      description="Build API Integration quicker, Don't reimplement API Authentication, 
+      description="Build API Integration quicker, Don't reimplement API Authentication,
       Map API data to your model, Integrate in your App in one line of code and more."
     />
     <Page>
@@ -76,7 +76,7 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
           <div>
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Command Line Interface" />
             <Text large>
-              Get started in seconds using the Bearer CLI, from bootstrapping a new project, generating &amp; running
+              Start coding in seconds using Bearer CLI, from bootstrapping a new project, generating &amp; running
               Functions and finally deploying your Integrations.
             </Text>
           </div>
@@ -90,8 +90,8 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
           <div>
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="API Authentication" />
             <Text large>
-              From API Key to OAuth based authentication, Bearer has you covered to actually get things done instead of
-              figuring out how APIs work.
+              API authentication managed out-of-the-box from OAuth to API Key, including a pre-configured API Client to
+              start query the API right away.
             </Text>
           </div>
           <div>
@@ -114,8 +114,10 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
           <div>
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Integration Clients" />
             <Text large>
-              Call Functions anywhere from your App, in Ruby, NodeJS, Python, JavaScript or React - you decide. Get
-              access to an OAuth Connect component and even manage Webhooks receptions.
+              Call Functions and build OAuth Connect Components in your App using Integration Clients.
+              <br />
+              <br />
+              Available in: Ruby, NodeJS, Python, JavaScript or React.
             </Text>
           </div>
           <div>

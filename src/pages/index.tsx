@@ -132,7 +132,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             Bearer provides all the tooling to build, run and manage API Integrations.
           </p>
 
-          <LightCta text="Your app, your Integration, your Code!" />
+          <LightCta text="Your App, your Integration, your Code!" />
           <br />
           <Button primary link="/integrations" text="Start building" />
           <br />
@@ -271,7 +271,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
       </Section>
 
       <Section withTail>
-        <SectionHeading primaryText="Featured Integrations Templates" />
+        <SectionHeading primaryText="Featured Integration Templates" />
         <IntegrationPanel templates={data.graphcms.templates} />
         <div
           css={[

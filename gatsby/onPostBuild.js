@@ -28,9 +28,10 @@ module.exports = async ({ graphql }) => {
   // www.bearer.sh provides a JSON API which exposes for consumption various information
   // about templates from Bearer's CMS system, for example images and copy
 
-  // Currently we have two endpoints:
-  // - All templates from the Integrations index page: api/explore.json
-  // - Featured templates (top 4): api/featured.json
+  // Currently we have three endpoints
+  // - /api/integrations.json (all templates)
+  // - /api/integrations/featured.json (our top 4 featured templates)
+  // - /api/integrations/{integration.id}.json (data for a )
 
   // Prepare API folders for JSON files
   const dir = './public/api'
@@ -42,14 +43,14 @@ module.exports = async ({ graphql }) => {
     fs.mkdirSync(childDir)
   }
 
-  //-----------------------------------//
-  // TEMPLATE API: api/explore.json    //
-  //-----------------------------------//
+  //----------------------------------------//
+  // TEMPLATE API: api/integrations.json    //
+  //----------------------------------------//
   const templateJSON = []
   const templateData = await graphql(`
     {
       graphcms {
-        templates(where: { status: PUBLISHED, provider: { id_not: null } }) {
+        templates(where: { status: PUBLISHED, provider: { id_not: null } }, orderBy: title_ASC) {
           hubID
           gitHubUrl
           title
@@ -75,8 +76,6 @@ module.exports = async ({ graphql }) => {
   }
 
   templateData.data.graphcms.templates.forEach(template => {
-    console.log(`Preparing JSON for "${template.title}" template`)
-
     const handle = gitHubHandle(template.gitHubUrl)
     const imageObj = handleImage(template.provider)
     const authType = humanizeAuthType(template.apiAuthType)
@@ -94,7 +93,7 @@ module.exports = async ({ graphql }) => {
       name: template.title,
       authType,
       archType: template.apiArchType,
-      description: `${template.title} : Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
+      description: '',
       image: {
         url: imageObj.url,
         handle: imageObj.handle
@@ -108,8 +107,6 @@ module.exports = async ({ graphql }) => {
   })
 
   fs.writeFileSync(`${dir}/integrations.json`, JSON.stringify(templateJSON), 'utf8')
-  // TODO remove this once the Dashboard is updated
-  fs.writeFileSync(`${dir}/explore.json`, JSON.stringify(templateJSON), 'utf8')
 
   //----------------------------------------------//
   // FEATURED TEMPLATES API: api/featured.json    //
@@ -173,6 +170,4 @@ module.exports = async ({ graphql }) => {
   })
 
   fs.writeFileSync(`${childDir}/featured.json`, JSON.stringify(featuredIntegrationJSON), 'utf8')
-  // TODO remove this once the Dashboard is updated
-  fs.writeFileSync(`${dir}/featured.json`, JSON.stringify(featuredIntegrationJSON), 'utf8')
 }

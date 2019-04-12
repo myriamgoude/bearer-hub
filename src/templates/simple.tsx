@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import { Clearfix, Page, PageMetadata, HeroLined, Text, Section } from '../components/index'
 import IndexLayout from '../layouts'
 import styles from '../styles/helpers'
-import css from '@emotion/css'
 
 interface IQueryData {
   markdownRemark: {
@@ -20,11 +19,7 @@ const SimpleTemplate: GatsbyPage<IQueryData> = ({ data, location }) => (
   <IndexLayout location={location}>
     <PageMetadata {...data.markdownRemark.frontmatter} />
     <Page>
-      <HeroLined
-        style={css`
-          height: 400px;
-        `}
-      >
+      <HeroLined>
         <Text tag="h1" text={data.markdownRemark.frontmatter.title} />
         <Clearfix />
       </HeroLined>

@@ -16,7 +16,9 @@ export default {
     @media (min-width: ${breakpoints.sm}px) {
       padding: 2.5rem 2rem;
     }
-
+  `,
+  container: css`
+    position: relative;
     @media (min-width: ${breakpoints.xl}px) {
       display: flex;
       justify-content: space-between;
@@ -41,7 +43,7 @@ export default {
       -webkit-box-pack: end;
       -ms-flex-pack: end;
       justify-content: flex-end;
-      margin: 0 2rem 0 0;
+      margin: 0;
       text-align: right;
 
       a:last-child img {
@@ -62,8 +64,8 @@ export default {
 
     @media (min-width: ${breakpoints.xl}px) {
       position: absolute;
-      bottom: 2rem;
-      right: 4rem;
+      bottom: 0;
+      right: 0;
       text-align: right;
     }
   `,
@@ -146,10 +148,6 @@ export default {
 
     @media (min-width: ${breakpoints.sm}px) {
       margin-bottom: 2rem;
-    }
-
-    @media (min-width: ${breakpoints.md}px) {
-      padding: 0 2rem;
     }
   `
 }

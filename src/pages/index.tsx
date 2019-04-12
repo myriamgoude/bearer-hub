@@ -229,7 +229,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
                 and let us scale it infinitely.',
               iconBg: purpleSplash,
               icon: iconLinked,
-              color: '#C600A3'
+              color: colors.purple
             },
             {
               title: 'Monitor every API call',
@@ -247,7 +247,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
                 from API keys to Webhooks and gives you a complete overview.',
               iconBg: yellowSplash,
               icon: iconCog,
-              color: '#E9B300'
+              color: colors.yellow
             }
           ].map((textBlock, index) => (
             <ColoredTextBlock

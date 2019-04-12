@@ -31,8 +31,6 @@ interface ITemplateData {
   apiAuthType: string
   oauthScopes?: any
   apiArchType: string
-  featured: boolean
-  featuredOrder: number
   provider: {
     hubID: string
     title: string
@@ -51,7 +49,6 @@ interface IFeaturedTemplateData {
   apiAuthType: string
   apiArchType: string
   categories: { title: string }[]
-  featured: boolean
   provider: {
     hubID: string
     title: string
@@ -83,9 +80,6 @@ export const query = graphql`
         apiArchType
         featured
         featuredOrder
-        categories {
-          title
-        }
         provider {
           hubID
           title
@@ -108,9 +102,6 @@ export const query = graphql`
         featured
         apiAuthType
         apiArchType
-        categories {
-          title
-        }
         provider {
           hubID
           title

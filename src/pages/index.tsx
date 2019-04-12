@@ -49,10 +49,8 @@ interface IQueryData {
       id: string
       hubID: string
       title: string
-      featured: boolean
       apiAuthType: string
       apiArchType: string
-      categories: { title: string }[]
       provider: {
         hubID: string
         title: string
@@ -77,10 +75,6 @@ export const query = graphql`
         title
         apiAuthType
         apiArchType
-        featured
-        categories {
-          title
-        }
         provider {
           hubID
           title

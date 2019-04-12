@@ -15,7 +15,6 @@ interface ICustomHitsProps {
   id: string
   hubID: string
   provider: any
-  categories: { hubId: number; title: string }[]
 }
 
 export const CustomHits = connectHits(({ hits }: { hits: ICustomHitsProps[] }) => {
@@ -36,9 +35,6 @@ export const CustomHits = connectHits(({ hits }: { hits: ICustomHitsProps[] }) =
     >
       {hits.map(hit => {
         const tags = [hit.apiAuthType, hit.apiArchType]
-        if (hit.categories.length) {
-          tags.push(hit.categories[0].title)
-        }
 
         return (
           <Card

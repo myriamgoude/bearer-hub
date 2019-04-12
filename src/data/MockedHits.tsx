@@ -2,7 +2,6 @@ export const MockedHits = [
   {
     id: 'cjsyu9iovyzrb0c15sen1vgxd',
     title: 'List all the Stripe invoices of your users',
-    featured: true,
     categories: [
       {
         title: 'Payment'
@@ -34,7 +33,6 @@ export const MockedHits = [
   {
     id: 'cjsysl7giykfz0c15kbw85hrt',
     title: 'Create an event on Calendar',
-    featured: null,
     categories: [
       {
         title: 'Communication'
@@ -76,7 +74,6 @@ export const MockedHits = [
   {
     id: 'cjsvnfkwm91yn0c15mhrpdii4',
     title: 'send SMS to your users',
-    featured: null,
     categories: [
       {
         title: 'Mailing'
@@ -108,7 +105,6 @@ export const MockedHits = [
   {
     id: 'cjskuiedvg0cb0c15fp28zoz8',
     title: 'Mailchimp: subscribe to mailing list',
-    featured: true,
     categories: [
       {
         title: 'Mailing'
@@ -140,7 +136,6 @@ export const MockedHits = [
   {
     id: 'cjsk8uuf6bx7e0c15ro3m7724',
     title: 'Google : import contacts',
-    featured: true,
     categories: [
       {
         title: 'Data helpers'
@@ -172,7 +167,6 @@ export const MockedHits = [
   {
     id: 'cjrw5lng5083u0c15c6ax1xlo',
     title: 'GitHub Pull Request',
-    featured: null,
     categories: [
       {
         title: 'Mailing'
@@ -204,7 +198,6 @@ export const MockedHits = [
   {
     id: 'cjrw5l0t807x40c15aoexnab8',
     title: 'Slack Notification',
-    featured: true,
     categories: [
       {
         title: 'Development tools'

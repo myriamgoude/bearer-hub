@@ -13,10 +13,8 @@ interface ITemplate {
   id: string
   hubID: string
   title: string
-  featured: boolean
   apiAuthType: string
   apiArchType: string
-  categories: { title: string }[]
   provider: {
     hubID: string
     title: string
@@ -39,9 +37,6 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
         <Grid fullWidth space="around" gutter={24} col={4}>
           {this.props.templates.map(template => {
             const tags = [template.apiAuthType, template.apiArchType]
-            if (template.categories.length) {
-              tags.push(template.categories[0].title)
-            }
             const image = template.provider.image ? template.provider.image.url : ''
             return (
               <Card
@@ -54,7 +49,7 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                   label: template.hubID
                 }}
                 small
-                className={[styles.item, template.featured && styles.featured]}
+                className={[styles.item]}
               >
                 <div>{image && <img src={image} css={styles.cardImage} />}</div>
                 <div

@@ -35,19 +35,19 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
             <span>Don't spend time understanding {props.templateTitle} mechanism</span>
           </li>
           <li css={[styles.feature, styles.featureIconRabbit]}>
-            Use a pre-configured API Client and {props.templateApiAuthType} implementation
+            <span>Use a pre-configured API Client and {props.templateApiAuthType} implementation</span>
           </li>
           <li css={[styles.feature, styles.featureIcon3d]}>
-            Consume &amp; transform {props.templateTitle} with functions
+            <span>Consume &amp; transform {props.templateTitle} with functions</span>
           </li>
           <li css={[styles.feature, styles.featureIconHome]}>
-            Host &amp; scale your Integration for free on our platform
+            <span>Host &amp; scale your Integration for free on our platform</span>
           </li>
           <li css={[styles.feature, styles.featureIconMonitor]}>
-            Monitor &amp; log every API call to the {props.templateTitle} out-of-the-box
+            <span>Monitor &amp; log every API call to the {props.templateTitle} out-of-the-box</span>
           </li>
           <li css={[styles.feature, styles.featureIconAtomium]}>
-            Integrate in seconds into your App with our Integration Clients
+            <span>Integrate in seconds into your App with our Integration Clients</span>
           </li>
         </ul>
       </div>

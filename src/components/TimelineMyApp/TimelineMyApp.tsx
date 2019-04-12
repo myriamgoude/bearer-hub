@@ -50,18 +50,21 @@ const TimelineMyApp = (props: ITimelineMyAppProps) => {
 
         {useConnectAction && (
           <TimelineStage
-            heading="Add the Connect component"
+            heading="Add a Connect Component"
             placement={props.placement.next().value}
             tooltip={`Not sure what to pass here`}
+            hint={`Once users logged-in with their ${props.template.provider.title} account, your \
+            functions are able to query the API using their credentials.`}
           >
             <CodeSnippet prism={props.prism} snippets={timelineCodeSnippet.connectComponent()} />
           </TimelineStage>
         )}
 
         <TimelineStage
-          heading="Call Functions"
+          heading="Call your functions"
           placement={props.placement.next().value}
           tooltip={`Not sure what to pass here`}
+          hint={`Use our integration clients to call your functions from your app.`}
         >
           <CodeSnippet prism={props.prism} snippets={timelineCodeSnippet.invokeFunction()} />
         </TimelineStage>

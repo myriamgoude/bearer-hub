@@ -46,7 +46,7 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
     <IndexLayout location={location}>
       <PageMetadata
         title="Explore API Integration Templates | Bearer"
-        description="Explore Integration Templates on dozen of API Providers and 
+        description="Explore Integration Templates on dozen of API Providers and
       start building your API Integration in mintues using Bearer Framework."
       />
       <Page css={heroStyles.styleBackgroundExplore}>
@@ -59,7 +59,7 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
             <HeroLined>
               <Text tag="h1" text="Explore Templates" />
               <Clearfix />
-              <Text tag="h3" text="Start building your Integrations even faster!" />
+              <Text tag="h3" text="Build your integrations even faster!" />
             </HeroLined>
           </div>
           <div css={heroStyles.styleBackgroundBefore}>

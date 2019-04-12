@@ -44,7 +44,7 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
       <HeroLined>
         <Text tag="h1" text="Platform Features" />
         <Clearfix />
-        <Text tag="h3" text="Run and manage API Integrations like World Class Services" />
+        <Text tag="h3" text="Run and Manage API Integrations like World Class Services" />
       </HeroLined>
       <Tabs
         items={[
@@ -76,7 +76,7 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Deployment" />
 
             <Text large>
-              Deploy your Integrations in less than a minute using our Platform, we will scale and secure it for you.
+              Deploy your integrations in under a minute on our Platform, and let Bearer scale and secure it for you.
             </Text>
           </div>
           <div>
@@ -86,8 +86,7 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Monitor" />
 
             <Text large>
-              Monitor and log every API calls your Integrations are performing, get insights to quickly know what's
-              happening.
+              Get insights on the go as Bearer monitors and logs every API call performed by your integrations.
             </Text>
           </div>
           <div>
@@ -97,8 +96,8 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Function Specifications" />
 
             <Text large>
-              Access to your Function definitions available under the Open API 3 specification, call them using our
-              Integration Clients.
+              Access to your function definitions is available under the Open API 3 specification. You can call them any
+              time using Bearer’s integration clients.
             </Text>
           </div>
           <div>
@@ -112,8 +111,8 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Authentication Flow " />
 
             <Text large>
-              Managed API authentication flow, from API securely storing credentials, triggering OAuth dance, storing
-              and retrieving access tokens and refresh tokens.
+              Bearer manages your API authentication flow, from securely storing credentials to storing, retrieving and
+              refreshing access tokens.
             </Text>
           </div>
           <div>
@@ -124,11 +123,11 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
             />
           </div>
           <div>
-            <SectionHeading tag="h3" style={headingTail} align="left" primaryText="WebHook" />
+            <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Webhook" />
 
             <Text large>
-              Direct webhooks to Bearer and forward them anywhere while automatically adding signing, applicative
-              acknowledgement and retry logic.
+              Direct webhooks to and from Bearer, while automatically adding signing, reception acknowledge and retry
+              logic.
             </Text>
           </div>
           <div>

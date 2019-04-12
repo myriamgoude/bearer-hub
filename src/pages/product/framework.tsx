@@ -44,7 +44,7 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
       <HeroLined>
         <Text tag="h1" text="Framework Features " />
         <Clearfix />
-        <Text tag="h3" text="Build API Integration in no time!" />
+        <Text tag="h3" text="Build API Integrations in a flash!" />
       </HeroLined>
 
       <Tabs
@@ -76,8 +76,8 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
           <div>
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Command Line Interface" />
             <Text large>
-              Start coding in seconds using Bearer CLI, from bootstrapping a new project, generating &amp; running
-              Functions and finally deploying your Integrations.
+              From bootstrapping a new integration, to generating and running functions and then on to deploying your
+              code, you can start in seconds with Bearer CLI.
             </Text>
           </div>
           <div>
@@ -90,8 +90,8 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
           <div>
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="API Authentication" />
             <Text large>
-              API authentication managed out-of-the-box from OAuth to API Key, including a pre-configured API Client to
-              start query the API right away.
+              Bearer manages API authentication out-of-the-box, from OAuth to API Key, including a pre-configured API
+              client to query the API right away.
             </Text>
           </div>
           <div>
@@ -102,10 +102,10 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
             />
           </div>
           <div>
-            <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Map API to Custom Model" />
+            <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Map API to Custom Models" />
             <Text large>
-              Build Functions to map APIs to your App as micro-services, transforming data to primitives your App
-              natively understand while simplifying your code base.
+              Build functions to map APIs to your app as micro-services, which can transform data to primitives your app
+              will natively understand while simplifying your code base.
             </Text>
           </div>
           <div>
@@ -114,7 +114,7 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
           <div>
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Integration Clients" />
             <Text large>
-              Call Functions and build OAuth Connect Components in your App using Integration Clients.
+              Use our integration clients to call functions and add OAuth connect components in your app.
               <br />
               <br />
               Available in: Ruby, NodeJS, Python, JavaScript or React.

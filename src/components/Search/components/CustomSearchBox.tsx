@@ -31,7 +31,7 @@ export const CustomSearchBox = connectSearchBox(({ currentRefinement, refine }: 
     <input
       type="search"
       value={currentRefinement}
-      placeholder="Search for an API Provider"
+      placeholder="Search for an API provider"
       onChange={event => refine(event.currentTarget.value)}
     />
   </form>

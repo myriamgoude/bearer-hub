@@ -127,7 +127,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                   color: ${colors.yellow};
                 `}
               >
-                Integration Success
+                Integration Needs!
               </span>
             </>
           }
@@ -249,7 +249,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     <td>Unlimited</td>
                   </tr>
                   <tr>
-                    <td>Unlimited for 1 Integration</td>
+                    <td>First integration unlimited</td>
                   </tr>
                   <tr>
                     <td>
@@ -270,7 +270,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     <td>Chat</td>
                   </tr>
                   <tr>
-                    <td>7 days</td>
+                    <td>1 Week</td>
                   </tr>
                   <tr>
                     <td>&nbsp;</td>
@@ -279,7 +279,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     <td>&nbsp;</td>
                   </tr>
                   <tr>
-                    <td>Not available</td>
+                    <td>Not Available</td>
                   </tr>
                 </tbody>
               </PricingTable>
@@ -293,11 +293,11 @@ const PricingPage: GatsbyPage = ({ location }) => (
                 `}
               >
                 <SectionHeading
-                  primaryText="Start Building Integrations!"
+                  primaryText="Start Building Your Integrations!"
                   tag="h3"
                   style={css`
                     margin-bottom: 0;
-                    max-width: 10rem;
+                    max-width: 12rem;
                   `}
                 />
                 <Button
@@ -371,7 +371,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     <td>Email &amp; Phone support</td>
                   </tr>
                   <tr>
-                    <td>30 days</td>
+                    <td>30 Days</td>
                   </tr>
                   <tr>
                     <td>
@@ -384,7 +384,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     </td>
                   </tr>
                   <tr>
-                    <td>Contact us</td>
+                    <td>Contact Us</td>
                   </tr>
                 </tbody>
               </PricingTable>

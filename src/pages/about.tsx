@@ -79,8 +79,8 @@ const JobCard = (props: any) => (
 const AboutPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata
-      title="About Us  | Bearer"
-      description="Meet the Bearer team and learn about our mission 
+      title="About Us | Bearer"
+      description="Meet the Bearer team and learn about our mission
         to help developers build quicker & better API Integrations"
     />
     <Page
@@ -94,7 +94,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
       <HeroLined>
         <Text tag="h1" text="About Us" />
         <Clearfix />
-        <Text tag="h3" text="The API Integration Framework" />
+        <Text tag="h3" text="The API Integration Framework Team" />
       </HeroLined>
       <Section>
         <div
@@ -109,23 +109,22 @@ const AboutPage: GatsbyPage = ({ location }) => (
 
           <SectionHeading primaryText="Our Mission" />
 
-          <Text>Bearer strives to help developers build quicker and better API Integration, no matter the APIs. </Text>
+          <Text>Bearer is here to help developers build quicker and better API Integration.</Text>
 
           <Text>
-            In a World ruled by APIs, every App requires more and more Integration, and yet it doesn’t get easier to
-            work with over time, on the contrary.
+            The problem with APIs is that as APIs become more universal, integrating them doesn’t get any easier.
           </Text>
 
           <Text>
-            As developers, we know it’s critical to keep in control of the API we are consuming as much as owning our
-            business logic. But, we’ve found it to be a constant challenge to do so while keeping our codebase clean and
-            maintainable.
+            As developers, it is critical to keep control over both the APIs we consume, and our own business logic.
+            However, it is a constant challenge to do both while also keeping our codebase clean and maintainable.
           </Text>
 
           <Text>
-            We believe in the right tool for the job but haven’t found it to solve those challenges. We’ve decided to
-            build it, welcome to Bearer.
+            We believe in the right tools for the jobs. Since we haven’t found them yet, we’ve decided to build them.
           </Text>
+
+          <Text>Welcome to Bearer.</Text>
         </div>
       </Section>
       <Section withTail background="transparent">
@@ -151,30 +150,28 @@ const AboutPage: GatsbyPage = ({ location }) => (
           {[
             {
               title: 'Focus',
-              text: 'We have a mission to accomplish and nothing will divert us from that goal. We owe you this.',
+              text: 'We have a mission to accomplish, and nothing will distract us from that goal.',
               iconBg: greenSplash,
               icon: valueFocus,
               color: colors.green
             },
             {
               title: 'Trust',
-              text:
-                'We trust each other as we will trust you. \
-                In exchange we gain your trust by being honest and transparent',
+              text: 'We trust each other the same way we hope you will trust us: through honesty and transparency.',
               iconBg: orangeSplash,
               icon: valueTrust,
               color: colors.orange
             },
             {
               title: 'Autonomy',
-              text: 'We want our teammates to be autonomous so they can give their true best.',
+              text: 'We give our team freedom so that they can give you their best.',
               iconBg: blueSplash,
               icon: valueAutonomy,
               color: colors.blue
             },
             {
               title: 'Responsibility',
-              text: "We can't envision autonomy without great responsibility, between us or with you!",
+              text: 'With great freedom comes great responsibility, to each other and to you!',
               iconBg: purpleSplash,
               icon: valueResponsibility,
               color: colors.purple
@@ -293,14 +290,14 @@ const AboutPage: GatsbyPage = ({ location }) => (
               {
                 role: 'Senior FrontEnd Engineer',
                 description: 'Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus…',
-                location: 'PARIS',
-                remote: false,
+                location: 'Anywhere',
+                remote: true,
                 url: '#'
               },
               {
-                role: 'Business Developer',
+                role: 'Product Marketing',
                 description: 'Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus…',
-                location: 'PARIS',
+                location: 'Anywhere',
                 remote: true,
                 url: '#'
               }

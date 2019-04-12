@@ -123,20 +123,20 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               font-size: 1.25rem;
             `}
           >
-            Bearer provides all the tooling to build, run and manage API Integrations.
+            Bearer provides all of the tools to build, run and manage API integrations.
           </p>
 
-          <LightCta text="Your App, your Integration, your Code!" />
+          <LightCta text="Your app, your integration, your code" />
           <br />
-          <Button primary link="/integrations" text="Start building" />
+          <Button primary link="/integrations" text="Start building!" />
           <br />
           <p>
             <Small>
               You can also{' '}
               <Link trackLink to="/integrations">
-                explore templates
+                explore our templates
               </Link>{' '}
-              or check{' '}
+              or check out the{' '}
               <Link to="https://docs.bearer.sh" trackLink>
                 documentation
               </Link>
@@ -174,26 +174,24 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             {
               title: 'Consume any API in minutes',
               text:
-                'Our Framework provides all the tooling you need including \
-                out-of-the-box API Client configuration and authentication (OAuth etc.).',
+                'Our framework provides all the tools you need, including out-of-the-box \
+                API client configuration and authentication (OAuth, etc.).',
               iconBg: greenSplash,
               icon: iconRabbit,
               color: colors.green
             },
             {
-              title: 'Map API endpoints to your App model',
-              text:
-                'Create Functions to query, transform and re-expose APIs \
-                according to your App model. ',
+              title: 'Map API endpoints to your app model',
+              text: 'Create functions to query, transform and re-expose APIs according to your app model',
               iconBg: orangeSplash,
               icon: iconGlobe,
               color: colors.orange
             },
             {
-              title: 'Integrate into your code with 1 line',
+              title: 'Integrate into your code with one line',
               text:
-                'Directly call your Functions using Integration Clients \
-                (NodeJS, Ruby, Javascript, React etc.), and keep your code base clean.',
+                'Directly call your functions using integration Clients \
+                (NodeJS, Ruby, JavaScript, React, etc.) and keep your code base clean and tidy.',
               iconBg: lightblueSplash,
               icon: iconShippet,
               color: '#6679CB'
@@ -217,10 +215,10 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         >
           {[
             {
-              title: 'Deploy & Scale without hassles',
+              title: 'Deploy and Scale without fuss',
               text:
-                'Deploy your Integration on our Platform with one command \
-                and let us scale it infinitely.',
+                'Deploy your integration on our platform with one command, \
+              and let us scale it infinitely.',
               iconBg: purpleSplash,
               icon: iconLinked,
               color: colors.purple
@@ -228,17 +226,17 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             {
               title: 'Monitor every API call',
               text:
-                'Our Platform logs and monitors every API call your Integration \
-                performs so you know what happens behind the scene.',
+                'Log and monitor every API call from your integration, \
+                so you can always check what’s going on behind the scenes.',
               iconBg: blueSplash,
               icon: iconMonitor,
               color: colors.blue
             },
             {
-              title: 'Manage your Integrations',
+              title: 'Manage your integrations',
               text:
-                'Bearer Dashboard let you manage everything about your Integrations, \
-                from API keys to Webhooks and gives you a complete overview.',
+                'Bearer’s Dashboard gives you a complete overview, \
+                and lets you manage everything about your integrations from API keys to webhooks.',
               iconBg: yellowSplash,
               icon: iconCog,
               color: colors.yellow
@@ -265,7 +263,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
       </Section>
 
       <Section withTail>
-        <SectionHeading primaryText="Featured Integration Templates" />
+        <SectionHeading primaryText="Featured integration templates" />
         <IntegrationPanel templates={data.graphcms.templates} />
         <div
           css={[
@@ -275,7 +273,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             `
           ]}
         >
-          <Button trackLink text="Explore Templates" link="/integrations" className="mt-16 mb-16" />
+          <Button trackLink text="Explore templates" link="/integrations" className="mt-16 mb-16" />
         </div>
       </Section>
 
@@ -311,9 +309,11 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               {whyUseBearerCardImage('icon-magnet', 'Icon Magnet')}
               <span>More Integration</span>
             </h3>
-            <p>Building API Integration is tedious, time-consuming and costly. </p>
-            <p>With Bearer, build Integration faster and focus on your Business logic instead of glue code. </p>
-            <p>Build more & better Integration.</p>
+            <p>Building API integration is tedious and costs time and money.</p>
+            <p>
+              Bearer helps you build better, faster and more integration, so you can focus on what really matters to
+              your business.
+            </p>
           </Card>
           <Card
             style={css`
@@ -328,10 +328,10 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               {whyUseBearerCardImage('icon-graph-yellow', 'Icon graph')}
               <span>Managed Integration</span>
             </h3>
-            <p>APIs always fail so do Integration, we all know it. </p>
+            <p>Bearer provides a dedicated platform to run your API integrations. </p>
             <p>
-              By providing a dedicated Platform to run them, Bearer helps you better understand what’s happening and
-              reduce maintenance cost.
+              If something goes wrong, this will help you identify and solve the problem faster, keeping maintenance
+              time and costs down.
             </p>
           </Card>
           <Card
@@ -347,8 +347,8 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               {whyUseBearerCardImage('icon-globe-yellow', 'Icon Globe')}
               <span>Enforcing Best Practices</span>
             </h3>
-            <p>Shielding your App from APIs helps keep your codebase clean and maintainable.</p>
-            <p>Add, Update or Remove Integration without impacting your Business or adding legacy code.</p>
+            <p>App shielding helps keep your code base neat and tidy.</p>
+            <p>Add, update or remove integration without adding legacy code or impacting your business.</p>
           </Card>
         </Grid>
       </Section>

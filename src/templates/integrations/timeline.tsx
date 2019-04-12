@@ -123,7 +123,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
     <IndexLayout location={location}>
       <PageMetadata
         title={`Build your ${template.provider.title} API Integrations with Bearer`}
-        description={`Pick the this template and start building your 
+        description={`Pick the this template and start building your
         ${template.provider.title} API Integration in minutes using Bearer Framework.`}
         image={`template-${template.provider.title}.jpg`}
       />
@@ -163,7 +163,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             `}
           >
             <SectionHeading
-              primaryText={`As a developer, I want to build an Integration on ${template.provider.title}`}
+              primaryText={`As a developer, I want to build an integration on ${template.provider.title}`}
               tag="h5"
             />
           </div>
@@ -225,7 +225,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
                 `
               ]}
             >
-              <Button trackLink text="Explore Templates" link="/integrations" className="mt-16 mb-16" />
+              <Button trackLink text="Explore templates" link="/integrations" className="mt-16 mb-16" />
             </div>
           </div>
         </Section>

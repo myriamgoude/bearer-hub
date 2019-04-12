@@ -4,9 +4,8 @@ const timelineCodeSnippet = {
   cloneTemplate(gitHubUrl: string, templateTitle: string): Snippet {
     return {
       language: 'bash',
-      code: `$ git clone ${gitHubUrl}
-$ cd ${templateTitle}
-$ npm install`
+      code: `$ git clone ${gitHubUrl} && cd templates/${templateTitle}
+$ yarn install`
     }
   },
 
@@ -15,14 +14,14 @@ $ npm install`
       switch (apiAuthType.toLowerCase()) {
         case 'oauth1':
         case 'oauth2':
-          return '$ npm bearer setup:auth CLIENT_ID:CLIENT_SECRET'
+          return '$ yarn bearer setup:auth CLIENT_ID:CLIENT_SECRET'
         case 'apikey':
-          return '$ npm bearer setup:auth API_KEY'
+          return '$ yarn bearer setup:auth API_KEY'
         case 'basic':
-          return '$ npm bearer setup:auth USERNAME:PASSWORD'
+          return '$ yarn bearer setup:auth USERNAME:PASSWORD'
 
         default:
-          return '$ npm bearer setup:auth'
+          return '$ yarn bearer setup:auth'
       }
     }
 
@@ -37,27 +36,32 @@ $ npm install`
   defaultFunction(): Snippet {
     return {
       language: 'bash',
-      code: '$ npm bearer invoke defaultFunction'
+      code: '$ yarn bearer invoke defaultFunction'
     }
   },
 
   customFunction(): Snippet {
     return {
       language: 'bash',
-      code: `$ npm bearer generate:function myFunction`
+      code: `$ yarn bearer generate:function myFunction
+
+    create: functions/myFunction.ts
+
+Function generated
+✨ Done`
     }
   },
 
   deployIntegration(): Snippet {
     return {
       language: 'bash',
-      code: `$ npm bearer push
+      code: `$ yarn bearer push
 
 Refreshing tokens... done
   ✓ Generate bundle
   ✓ Transfer bundle
 
-🐻Integration successfully pushed.`
+🐻 Integration successfully pushed.`
     }
   }
 }

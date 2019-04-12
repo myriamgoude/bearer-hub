@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Configure, connectMenu } from 'react-instantsearch-dom'
+import { connectMenu } from 'react-instantsearch-dom'
 
 import { CustomHits } from './components/CustomHits'
 
@@ -20,7 +20,6 @@ export default class Search extends React.Component<ISearchProps> {
         {this.props.defaultCategory ? (
           <VirtualMenu attribute={categoriesAttribute} defaultRefinement={this.props.defaultCategory} />
         ) : null}
-        <Configure hitsPerPage={8} />
       </>
     )
   }

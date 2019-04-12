@@ -29,6 +29,7 @@ const navStyle = css`
 const navLinkStyle = css`
   color: #030d36;
   font-weight: 600;
+  text-decoration: none;
   letter-spacing: 0.13px;
   line-height: 19px;
   margin-bottom: 8px;

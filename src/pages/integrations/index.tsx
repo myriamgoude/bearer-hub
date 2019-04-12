@@ -72,6 +72,7 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
             >
               <div
                 css={css`
+                  width: 40%;
                   padding-right: 58px;
                 `}
               >

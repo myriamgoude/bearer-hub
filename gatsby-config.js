@@ -21,7 +21,11 @@ module.exports = {
       },
       {
         title: 'Company',
-        links: [{ to: '/about', label: 'About us' }, { to: '/jobs', label: 'Jobs' }, { to: '/press', label: 'Press' }]
+        links: [
+          { to: '/about', label: 'About us' },
+          { to: '/about#jobs', label: 'Jobs' },
+          { to: '/press', label: 'Press' }
+        ]
       },
       {
         title: 'Docs & Help',

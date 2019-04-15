@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-
 import { Container, Link } from '../index'
 
 // NOTE: social icons are imported from from https://simpleicons.org/

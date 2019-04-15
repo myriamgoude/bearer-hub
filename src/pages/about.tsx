@@ -38,6 +38,7 @@ const JobCard = (props: any) => (
       box-shadow: 0 2px 18px 0 rgba(3, 13, 54, 0.13);
       min-height: 178px;
       border-radius: 0;
+      margin: 0 2rem;
 
       header {
         display: flex;
@@ -224,7 +225,6 @@ const AboutPage: GatsbyPage = ({ location }) => (
           fullWidth
           col={4}
           gutter={0}
-          space="around"
           childrenStyle={css`
             display: flex;
             align-items: center;
@@ -238,6 +238,9 @@ const AboutPage: GatsbyPage = ({ location }) => (
             @media (max-width: ${breakpoints.lg}px) {
               overflow: inherit;
             }
+          `}
+          css={css`
+            justify-content: stretch;
           `}
         >
           {[
@@ -295,7 +298,8 @@ const AboutPage: GatsbyPage = ({ location }) => (
               photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'David Roe',
               role: 'Software Engineer'
-            }
+            },
+            {} // Quick hack, add an empty div to align grid
           ].map((textBlock, index) => (
             <TeamBlock key={index} photo={textBlock.photo} name={textBlock.name} role={textBlock.role} />
           ))}
@@ -305,6 +309,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
       <Section withTail>
         <SectionHeading primaryText="Ready to join?" />
         <div
+          id="jobs"
           css={css`
             background-image: url(${require('../images/shared/yellow-splash.svg')}),
               url(${require('../images/shared/gradient-splash.svg')});

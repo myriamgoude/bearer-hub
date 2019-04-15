@@ -328,11 +328,15 @@ const AboutPage: GatsbyPage = ({ location }) => (
           >
             {[
               {
-                role: 'Senior Javascript Engineer',
-                description: '',
+                role: 'Senior JavaScript Engineer',
+                description:
+                  "You are not afraid deep dive into the source code of any JS library like ReactJS?\
+                  TypeScript is your best friend and you can't imagine the world without it?\
+                  You feel like making developers' lifes easier is where you expressed yourself the most,\
+                  this position if for you!",
                 location: 'Anywhere',
                 remote: true,
-                url: 'mailto:hello@bearer.sh?subject=Senior Javascript Engineer position'
+                url: 'mailto:hello@bearer.sh?subject=Senior JavaScript Engineer @ Bearer'
               },
               {
                 role: 'Frontend Developer',
@@ -341,7 +345,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
                   You feel right at cross section of UI/X, product and engineering, this position is for you!',
                 location: 'Anywhere',
                 remote: true,
-                url: '#'
+                url: 'mailto:hello@bearer.sh?subject=Frontend Developer @ Bearer'
               }
             ].map((offer, index) => (
               <JobCard

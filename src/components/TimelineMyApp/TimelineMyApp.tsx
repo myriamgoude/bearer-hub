@@ -53,7 +53,7 @@ const TimelineMyApp = (props: ITimelineMyAppProps) => {
             heading="Add a Connect Component"
             placement={props.placement.next().value}
             tooltip={`Not sure what to pass here`}
-            hint={`Once users logged-in with their ${props.template.provider.title} account, your \
+            hint={`Once users log in with their ${props.template.provider.title} account, your \
             functions are able to query the API using their credentials.`}
           >
             <CodeSnippet prism={props.prism} snippets={timelineCodeSnippet.connectComponent()} />

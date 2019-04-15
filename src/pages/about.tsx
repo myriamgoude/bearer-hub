@@ -68,7 +68,7 @@ const JobCard = (props: any) => (
 
     <Button
       link={props.url}
-      text="Apply now"
+      text="Apply"
       secondary
       small
       style={css`
@@ -98,7 +98,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
       <HeroLined>
         <Text tag="h1" text="About Us" />
         <Clearfix />
-        <Text tag="h3" text="The API Integration Framework Team" />
+        <Text tag="h3" text="We are building the future of API integration" />
       </HeroLined>
       <Section>
         <div
@@ -126,15 +126,16 @@ const AboutPage: GatsbyPage = ({ location }) => (
 
           <SectionHeading primaryText="Our Mission" />
 
-          <Text>Bearer is here to help developers build quicker and better API Integration.</Text>
+          <Text>Bearer are here to help developers build quicker and better API Integration.</Text>
 
           <Text>
             The problem with APIs is that as APIs become more universal, integrating them doesn’t get any easier.
           </Text>
 
           <Text>
-            As developers, it is critical to keep control over both the APIs we consume, and our own business logic.
-            However, it is a constant challenge to do both while also keeping our codebase clean and maintainable.
+            As developers, we know it is critical to keep control over both the APIs we consume, and our own business
+            logic. However, it is a constant challenge to do both while also keeping our codebase clean and
+            maintainable.
           </Text>
 
           <Text>
@@ -322,15 +323,17 @@ const AboutPage: GatsbyPage = ({ location }) => (
           >
             {[
               {
-                role: 'Senior FrontEnd Engineer',
-                description: 'Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus…',
+                role: 'Senior Javascript Engineer',
+                description: '',
                 location: 'Anywhere',
                 remote: true,
-                url: '#'
+                url: 'mailto:hello@bearer.sh?subject=Senior Javascript Engineer position'
               },
               {
-                role: 'Product Marketing',
-                description: 'Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus…',
+                role: 'Frontend Developer',
+                description:
+                  'You are passionate about frontend development? Pixel perfect means something to you?\
+                  You feel right at cross section of UI/X, product and engineering, this position is for you!',
                 location: 'Anywhere',
                 remote: true,
                 url: '#'

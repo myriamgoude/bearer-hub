@@ -66,7 +66,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
             tooltip={'Not sure what to pass here'}
             placement={props.placement.next().value}
             hint={`Use your ${props.template.provider.title} OAuth credentials \
-            and let Bearer automatically generate a static access token to query the API in local development.`}
+            to let Bearer automatically generate a static access token. This will query the API in local development.`}
           >
             <CodeSnippet
               prism={props.prism}
@@ -90,7 +90,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
         )}
 
         <TimelineStage
-          heading={`Test the pre-built Function`}
+          heading={`Test the pre-built function`}
           tooltip={'Not sure what to pass here'}
           placement={props.placement.next().value}
         >
@@ -123,9 +123,9 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
           heading={`Code your own function`}
           tooltip={'Not sure what to pass here'}
           placement={props.placement.next().value}
-          hint={`Use the function to call any ${
+          hint={`Use your function to call any ${
             props.template.provider.title
-          } API endpoint and map data to your app models.`}
+          } endpoint and map the data to your app models.`}
         >
           <CodeSnippet prism={props.prism} snippets={[timelineCodeSnippet.customFunction()]} />
         </TimelineStage>
@@ -134,7 +134,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
           heading={`Deploy your integration`}
           tooltip={'Not sure what to pass here'}
           placement={props.placement.next().value}
-          hint="Once your integration is ready, deploy it on Bearer platform and you are ready to use it in production."
+          hint="Once your integration is ready, deploy it on the Bearer platform and you’re good to go!"
         >
           <CodeSnippet prism={props.prism} snippets={[timelineCodeSnippet.deployIntegration()]} />
         </TimelineStage>

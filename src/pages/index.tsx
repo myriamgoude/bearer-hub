@@ -7,6 +7,7 @@ import {
   Clearfix,
   ColoredTextBlock,
   Grid,
+  Card,
   HeroPanel,
   IntegrationPanel,
   LightCta,
@@ -87,13 +88,12 @@ export const query = graphql`
   }
 `
 
-// ** TEMPORARLY REMOVED **
-// const styleWhyUseBearerCardHeading = css`
-//   font-size: 1.5rem;
-//   margin: 0 0 2rem 0;
-//   display: flex;
-//   align-items: center;
-// `
+const styleWhyUseBearerCardHeading = css`
+  font-size: 1.5rem;
+  margin: 0 0 2rem 0;
+  display: flex;
+  align-items: center;
+`
 
 // const styleWhyUseBearerCardImage = css`
 //   vertical-align: middle;
@@ -244,7 +244,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             {
               title: 'Deploy and Scale without fuss',
               text:
-                'Deploy your integration on our platform with one command, \
+                'Deploy your integrations on our platform with one command, \
               and let us scale it infinitely.',
               iconBg: purpleSplash,
               icon: iconLinked,
@@ -253,7 +253,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             {
               title: 'Monitor every API call',
               text:
-                'Log and monitor every API call from your integration, \
+                'Log and monitor every API call from your integrations, \
                 so you can always check what’s going on behind the scenes.',
               iconBg: blueSplash,
               icon: iconMonitor,
@@ -304,7 +304,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         </div>
       </Section>
 
-      {/* <Section
+      <Section
         withTail
         css={css`
           margin-bottom: 7.5em;
@@ -337,12 +337,13 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         >
           <Card style={{ padding: '40px' }} padding="large">
             <h3 css={styleWhyUseBearerCardHeading}>
-              {whyUseBearerCardImage('icon-magnet', 'Icon Magnet')}
-              <span>More Integration</span>
+              <span>Spend less of your engineering resources</span>
             </h3>
-            <p>Building API Integration is tedious, time-consuming and costly. </p>
-            <p>With Bearer, build Integration faster and focus on your Business logic instead of glue code. </p>
-            <p>Build more &amp; better Integration.</p>
+            <p>
+              Building & maintaining API integrations is tedious and often wastes precious engineering resources on low
+              value-added tasks
+            </p>
+            <p>With Bearer, your engineers can focus on your integration business logic.</p>
           </Card>
           <Card
             style={css`
@@ -354,13 +355,11 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             padding="large"
           >
             <h3 css={styleWhyUseBearerCardHeading}>
-              {whyUseBearerCardImage('icon-graph-yellow', 'Icon graph')}
-              <span>Managed Integration</span>
+              <span>Say goodbye to integration’s technical debt</span>
             </h3>
-            <p>Bearer provides a dedicated platform to run your API integrations. </p>
             <p>
-              If something goes wrong, this will help you identify and solve the problem faster, keeping maintenance
-              time and costs down.
+              Bearer enforces by design to follow the industry best practices, shielding your application and business
+              logic from the integration glue code, helping keep your code base neat and tidy.
             </p>
           </Card>
           <Card
@@ -373,14 +372,18 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             padding="large"
           >
             <h3 css={styleWhyUseBearerCardHeading}>
-              {whyUseBearerCardImage('icon-globe-yellow', 'Icon Globe')}
-              <span>Enforcing Best Practices</span>
+              <span>Scale your integration roadmap</span>
             </h3>
-            <p>App shielding helps keep your code base neat and tidy.</p>
-            <p>Add, update or remove integration without adding legacy code or impacting your business.</p>
+            <p>
+              By bringing down the time required to build Integrations, the level of skills required and the maintenance
+              overhead, Bearer makes it possible to build more integrations.
+            </p>
+            <p>
+              In addition, you can easily externalize some integrations without compromising on quality and security!
+            </p>
           </Card>
         </Grid>
-      </Section> */}
+      </Section>
     </Page>
   </IndexLayout>
 )

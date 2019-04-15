@@ -179,7 +179,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata
       title="Pricing and Plans | Bearer"
-      description="Get started building API Integration for free! Learn more about our pricing and plans."
+      description="Start building API integration for free! Learn more about our pricing and plans."
     />
     <Page
       css={[

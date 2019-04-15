@@ -37,8 +37,8 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata
       title="Bearer - Framework Features"
-      description="Build API Integration quicker, Don't reimplement API Authentication,
-      Map API data to your model, Integrate in your App in one line of code and more."
+      description="Build API integration faster with the Bearer 
+      framework, manage API authentication, map data easily, integrate into your app in one line of code and more."
     />
     <Page>
       <HeroLined>

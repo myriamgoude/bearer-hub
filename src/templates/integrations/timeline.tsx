@@ -122,10 +122,9 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
   return (
     <IndexLayout location={location}>
       <PageMetadata
-        title={`Build your ${template.provider.title} API Integrations with Bearer`}
-        description={`Pick the this template and start building your
-        ${template.provider.title} API Integration in minutes using Bearer Framework.`}
-        image={`template-${template.provider.title}.jpg`}
+        title={`Build your own ${template.provider.title} API Integrations with Bearer`}
+        description={`Pick this template and start building your own 
+        ${template.provider.title} integration in minutes using the Bearer Framework.`}
       />
       <Page css={[heroStyles.styleDefaultCurve]}>
         <HeroPanel>

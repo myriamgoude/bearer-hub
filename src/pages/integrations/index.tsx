@@ -47,8 +47,8 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
     <IndexLayout location={location}>
       <PageMetadata
         title="Explore API Integration Templates | Bearer"
-        description="Explore Integration Templates on dozen of API Providers and
-      start building your API Integration in mintues using Bearer Framework."
+        description="Explore integration templates on dozen of API providers and start 
+        building your API integrations in minutes using the Bearer Framework."
       />
       <Page css={heroStyles.styleBackgroundExplore}>
         <InstantSearch

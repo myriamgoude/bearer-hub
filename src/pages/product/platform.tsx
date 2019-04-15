@@ -37,8 +37,8 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata
       title="Bearer - Platform Features"
-      description="Bearer manage your API Integration as microservices and helps you host,
-      scale and monitor them so you can focus on your App"
+      description="Run and monitor your API Integrations with Bearer's platform, 
+      log every API call, manage authentication flows and webhooks, and more"
     />
     <Page>
       <HeroLined>

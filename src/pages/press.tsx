@@ -10,7 +10,7 @@ const PressPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata
       title="Press Information and Resources | Bearer"
-      description="Press and Resources about Bearer, the API Integration Framework"
+      description="Press and resources about Bearer, the API Integration Framework"
     />
     <Page>
       <Container>

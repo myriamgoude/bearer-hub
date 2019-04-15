@@ -26,7 +26,7 @@ interface IQueryData {
 
 export const scopedCategories = graphql`
   fragment scopedCategories on GraphCMS {
-    categories(where: { status: PUBLISHED, templates_some: { status: PUBLISHED } }) {
+    categories(where: { status: PUBLISHED, templates_some: { status: PUBLISHED } }, orderBy: title_ASC) {
       id
       hubID
       title

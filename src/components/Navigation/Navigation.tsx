@@ -15,13 +15,21 @@ interface INavigationProps {}
 
 interface INavLinkProps {
   children?: any
+  target?: string
   trackLink?: boolean
   to: any
 }
 
 const NavLink = (props: INavLinkProps) => (
   <li>
-    <Link to={props.to} trackLink={props.trackLink} css={[styles.link]} partiallyActive activeClassName="active">
+    <Link
+      to={props.to}
+      trackLink={props.trackLink}
+      css={[styles.link]}
+      partiallyActive
+      activeClassName="active"
+      {...props.target && { target: props.target }}
+    >
       {props.children}
     </Link>
   </li>
@@ -98,7 +106,7 @@ export default class Navigation extends React.Component<INavigationProps, INavig
           <ul css={styles.list} className={this.state.isOpened ? 'show' : undefined}>
             <NavLink to="/integrations">INTEGRATIONS TEMPLATES</NavLink>
             <NavLink to="/product/">PRODUCT</NavLink>
-            <NavLink trackLink to="https://docs.bearer.sh">
+            <NavLink trackLink to="https://docs.bearer.sh" target="_blank">
               DOCUMENTATION
             </NavLink>
             <NavLink to="/pricing">PRICING</NavLink>

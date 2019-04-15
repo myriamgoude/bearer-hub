@@ -22,6 +22,7 @@ export default {
 
     &:hover,
     &:focus {
+      font-weight: bold;
       text-decoration: none;
     }
 

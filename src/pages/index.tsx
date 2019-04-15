@@ -4,7 +4,6 @@ import { css } from '@emotion/core'
 
 import {
   Button,
-  Card,
   Clearfix,
   ColoredTextBlock,
   Grid,
@@ -13,7 +12,6 @@ import {
   LightCta,
   Link,
   Page,
-  Pill,
   Section,
   SectionHeading,
   Small,
@@ -21,11 +19,13 @@ import {
 } from '../components/'
 import IndexLayout from '../layouts'
 
-import logoDropbox from '../images/brands/dropbox.svg'
-import logoTwillio from '../images/brands/twilio.svg'
-import logoMailchimp from '../images/brands/mailchimp.svg'
-import logoGithub from '../images/brands/github.svg'
-import logoZendesk from '../images/brands/zendesk.svg'
+// ** Temporarly removed **
+//
+// import logoDropbox from '../images/brands/dropbox.svg'
+// import logoTwillio from '../images/brands/twilio.svg'
+// import logoMailchimp from '../images/brands/mailchimp.svg'
+// import logoGithub from '../images/brands/github.svg'
+// import logoZendesk from '../images/brands/zendesk.svg'
 
 import greenSplash from '../images/shared/splash-green.svg'
 import orangeSplash from '../images/shared/splash-orange.svg'
@@ -87,23 +87,24 @@ export const query = graphql`
   }
 `
 
-const styleWhyUseBearerCardHeading = css`
-  font-size: 1.5rem;
-  margin: 0 0 2rem 0;
-  display: flex;
-  align-items: center;
-`
+// ** TEMPORARLY REMOVED **
+// const styleWhyUseBearerCardHeading = css`
+//   font-size: 1.5rem;
+//   margin: 0 0 2rem 0;
+//   display: flex;
+//   align-items: center;
+// `
 
-const styleWhyUseBearerCardImage = css`
-  vertical-align: middle;
-  margin-right: 12px;
-  width: 38px;
-  height: 38px;
-`
+// const styleWhyUseBearerCardImage = css`
+//   vertical-align: middle;
+//   margin-right: 12px;
+//   width: 38px;
+//   height: 38px;
+// `
 
-const whyUseBearerCardImage = (src: string, alt: string) => (
-  <img src={require(`../images/shared/${src}.svg`)} css={styleWhyUseBearerCardImage} alt={alt} />
-)
+// const whyUseBearerCardImage = (src: string, alt: string) => (
+//   <img src={require(`../images/shared/${src}.svg`)} css={styleWhyUseBearerCardImage} alt={alt} />
+// )
 
 const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
   <IndexLayout location={location}>
@@ -136,8 +137,8 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               <Link trackLink to="/integrations">
                 explore our templates
               </Link>{' '}
-              or check out the{' '}
-              <Link to="https://docs.bearer.sh" trackLink>
+              or check{' '}
+              <Link to="https://docs.bearer.sh" trackLink target="_blank">
                 documentation
               </Link>
             </Small>
@@ -156,7 +157,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         </div>
       </HeroPanel>
 
-      <Section>
+      {/* <Section>
         <SectionHeading primaryText="Our customers" />
         <Grid
           space="between"
@@ -177,7 +178,9 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             return <Pill key={index} logo={logo} />
           })}
         </Grid>
-      </Section>
+      </Section> */}
+
+      <div style={{ margin: '1rem 0' }}>&nbsp;</div>
 
       <Section withTail background="transparent">
         <Grid
@@ -293,15 +296,15 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           css={[
             css`
               text-align: center;
-              margin-top: 2.375rem;
             `
           ]}
+          className="mt-32 mb-64"
         >
           <Button trackLink text="Explore templates" link="/integrations" className="mt-16 mb-16" />
         </div>
       </Section>
 
-      <Section
+      {/* <Section
         withTail
         css={css`
           margin-bottom: 7.5em;
@@ -377,7 +380,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             <p>Add, update or remove integration without adding legacy code or impacting your business.</p>
           </Card>
         </Grid>
-      </Section>
+      </Section> */}
     </Page>
   </IndexLayout>
 )

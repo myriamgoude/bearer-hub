@@ -62,7 +62,7 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
           <Section
             styleContainer={css`
               display: flex;
-              /* margin-top: -200px; */
+              flex-wrap: wrap;
 
               @media (max-width: ${breakpoints.lg}px) {
                 display: block;
@@ -82,8 +82,13 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
             >
               <SearchList selected={category.id} categories={data.graphcms.categories} />
             </div>
-
-            <Search defaultCategory={category.title} />
+            <div
+              css={css`
+                flex: 0 1 70%;
+              `}
+            >
+              <Search defaultCategory={category.title} />
+            </div>
           </Section>
         </InstantSearch>
       </Page>

@@ -337,11 +337,11 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         >
           <Card style={{ padding: '40px' }} padding="large">
             <h3 css={styleWhyUseBearerCardHeading}>
-              <span>Spend less of your engineering resources</span>
+              <span>Don’t waste your engineering resources</span>
             </h3>
             <p>
-              Building & maintaining API integrations is tedious and often wastes precious engineering resources on low
-              value-added tasks
+              Building and maintaining API integrations is tedious, and often wastes precious engineering resources on
+              low-value-added tasks.
             </p>
             <p>With Bearer, your engineers can focus on your integration business logic.</p>
           </Card>
@@ -357,9 +357,10 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             <h3 css={styleWhyUseBearerCardHeading}>
               <span>Say goodbye to integration’s technical debt</span>
             </h3>
+            <p>Bearer enforces industry best practices by design.</p>
             <p>
-              Bearer enforces by design to follow the industry best practices, shielding your application and business
-              logic from the integration glue code, helping keep your code base neat and tidy.
+              It shields your application and business logic from the integration glue code, helping you keep your code
+              base neat and tidy.
             </p>
           </Card>
           <Card
@@ -375,11 +376,12 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               <span>Scale your integration roadmap</span>
             </h3>
             <p>
-              By bringing down the time required to build Integrations, the level of skills required and the maintenance
-              overhead, Bearer makes it possible to build more integrations.
+              Bearer makes it possible to build more integrations by reducing the time, money and expertise you need to
+              expend.
             </p>
             <p>
-              In addition, you can easily externalize some integrations without compromising on quality and security!
+              Not only that, you can also easily externalize some integrations without compromising on quality and
+              security!
             </p>
           </Card>
         </Grid>

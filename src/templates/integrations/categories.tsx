@@ -9,6 +9,7 @@ import { InstantSearch } from 'react-instantsearch-dom'
 
 import { SearchList } from '../../components/Search/components/SearchList'
 import { CustomSearchBox } from '../../components/Search/components/CustomSearchBox'
+import { breakpoints } from '../../styles/variables'
 
 interface IQueryData {
   graphcms: {
@@ -57,25 +58,33 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
               <Text tag="h3" text="Start building your Integrations even faster!" />
             </HeroLined>
           </div>
-          <div css={heroStyles.styleBackgroundBefore}>
-            <CustomSearchBox />
-            <Section
-              styleContainer={css`
-                display: flex;
-                padding-top: 2rem;
+          <CustomSearchBox />
+          <Section
+            styleContainer={css`
+              display: flex;
+              /* margin-top: -200px; */
+
+              @media (max-width: ${breakpoints.lg}px) {
+                display: block;
+              }
+            `}
+          >
+            <div
+              css={css`
+                flex: 0 1 30%;
+                padding-right: 58px;
+
+                @media (max-width: ${breakpoints.lg}px) {
+                  flex: 0 1 100%;
+                  margin-top: 1em;
+                }
               `}
             >
-              <div
-                css={css`
-                  padding-right: 58px;
-                `}
-              >
-                <SearchList selected={category.id} categories={data.graphcms.categories} />
-              </div>
+              <SearchList selected={category.id} categories={data.graphcms.categories} />
+            </div>
 
-              <Search defaultCategory={category.title} />
-            </Section>
-          </div>
+            <Search defaultCategory={category.title} />
+          </Section>
         </InstantSearch>
       </Page>
     </IndexLayout>

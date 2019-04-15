@@ -69,9 +69,19 @@ export default class Navigation extends React.Component<INavigationProps, INavig
   )
 
   renderToggleButton = () => (
-    <button onClick={() => this.setState({ isOpened: !this.state.isOpened })} css={styles.mobileButton}>
+    <button
+      onClick={() => {
+        this.setState({ isOpened: !this.state.isOpened })
+        console.log(styles.mobileList)
+      }}
+      css={styles.mobileButton}
+    >
       <img
-        src={require('../../images/shared/icon-burger.svg')}
+        src={
+          this.state.isOpened
+            ? require('../../images/shared/icon-close.svg')
+            : require('../../images/shared/icon-burger.svg')
+        }
         css={css`
           width: 32px;
         `}
@@ -82,18 +92,25 @@ export default class Navigation extends React.Component<INavigationProps, INavig
 
   public render() {
     return (
-      <div css={[styles.root, !this.state.isOpened && styles.mobileList]}>
-        {this.renderToggleButton()}
-        <ul css={styles.list}>
-          <NavLink to="/integrations">INTEGRATIONS TEMPLATES</NavLink>
-          <NavLink to="/product/">PRODUCT</NavLink>
-          <NavLink trackLink to="https://docs.bearer.sh">
-            DOCUMENTATION
-          </NavLink>
-          <NavLink to="/pricing">PRICING</NavLink>
-        </ul>
-        {this.state.isAuthenticated ? this.renderLoggedIn() : this.renderLogin()}
-      </div>
+      <>
+        <div css={styles.root}>
+          {this.renderToggleButton()}
+          <ul css={styles.list} className={this.state.isOpened ? 'show' : undefined}>
+            <NavLink to="/integrations">INTEGRATIONS TEMPLATES</NavLink>
+            <NavLink to="/product/">PRODUCT</NavLink>
+            <NavLink trackLink to="https://docs.bearer.sh">
+              DOCUMENTATION
+            </NavLink>
+            <NavLink to="/pricing">PRICING</NavLink>
+            <div className="mobile-login">
+              {this.state.isAuthenticated ? this.renderLoggedIn() : this.renderLogin()}
+            </div>
+          </ul>
+          <span className="desktop-login">
+            {this.state.isAuthenticated ? this.renderLoggedIn() : this.renderLogin()}
+          </span>
+        </div>
+      </>
     )
   }
 

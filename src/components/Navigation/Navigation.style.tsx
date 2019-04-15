@@ -4,6 +4,11 @@ import { colors, breakpoints } from '../../styles/variables'
 export default {
   root: css`
     align-self: flex-end;
+    @media (max-width: ${breakpoints.md}px) {
+      .desktop-login {
+        display: none !important;
+      }
+    }
   `,
   link: css`
     text-decoration: none;
@@ -35,16 +40,15 @@ export default {
       right: 0;
       margin: auto;
       top: -30px;
+      @media (max-width: ${breakpoints.md}px) {
+        display: none;
+      }
     }
   `,
   list: css`
-    margin: 0;
-    display: none;
-    background: ${colors.darkBlue};
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2em 0;
+    .mobile-login {
+      display: none;
+    }
 
     @media (min-width: ${breakpoints.md}px) {
       display: inline-block;
@@ -52,6 +56,32 @@ export default {
       color: ${colors.black};
       width: auto;
       padding: 0;
+    }
+    @media (max-width: ${breakpoints.md}px) {
+      margin: 0;
+      background: ${colors.lightGrey};
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 2em 0;
+      position: fixed;
+      color: ${colors.darkBlue};
+      box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.26);
+
+      li a {
+        color: currentColor;
+        font-weight: bold;
+      }
+
+      display: none;
+      &.show {
+        display: block;
+      }
+
+      .mobile-login {
+        display: block;
+        padding: 1em;
+      }
     }
 
     li {
@@ -78,7 +108,11 @@ export default {
       margin-bottom: -0.5rem;
       margin-left: 1rem;
       background-color: #e2e6f1;
-      // border-right: 1px solid #eceef8;
+      border-right: 1px solid #eceef8;
+
+      @media (max-width: ${breakpoints.md}px) {
+        display: none;
+      }
     }
   `,
   mobileList: css`
@@ -89,8 +123,10 @@ export default {
     appearance: none;
     display: block;
     position: fixed;
+    border: none;
+    background: transparent;
     z-index: 10;
-    top: 8px;
+    top: 16px;
     right: 8px;
     @media (min-width: ${breakpoints.md}px) {
       display: none;

@@ -7,6 +7,7 @@ import { templatePath } from '../../services/Explore'
 
 import styles from './IntegrationPanel.style'
 import { getEmSize } from '../../styles/mixins'
+import { breakpoints } from '../../styles/variables'
 import blockStyles from '../../components/IntergrationPanel/IntegrationPanel.style'
 
 interface ITemplate {
@@ -34,7 +35,28 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
   render() {
     return (
       <Container>
-        <Grid fullWidth space="around" gutter={24} col={4}>
+        <Grid
+          fullWidth
+          space="around"
+          gutter={24}
+          col={4}
+          style={css`
+            justify-content: ${this.props.templates.length <= 2 ? 'flex-start !important' : null};
+            @media (max-width: ${breakpoints.lg}px) {
+              display: block;
+              width: ${(this.props.templates.length + 1) * 152 + (this.props.templates.length = 2 ? 16 : 0)}px;
+              overflow: scroll;
+            }
+          `}
+          childrenStyle={css`
+            margin-bottom: 8px;
+            margin-right: ${(this.props.templates.length = 2 ? 16 : 0)}px;
+            @media (max-width: ${breakpoints.lg}px) {
+              width: 152px;
+              display: inline-block;
+            }
+          `}
+        >
           {this.props.templates.map(template => {
             const tags = [template.apiAuthType, template.apiArchType]
             const image = template.provider.image ? template.provider.image.url : ''

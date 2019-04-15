@@ -1,5 +1,6 @@
 import { css } from '@emotion/core'
 import { getEmSize } from '../../styles/mixins'
+import { breakpoints } from '../../styles/variables'
 
 export default {
   root: css`
@@ -12,5 +13,11 @@ export default {
     align-items: center;
     justify-content: center;
     display: flex;
+
+    @media (max-width: ${breakpoints.lg}px) {
+      width: 60px;
+      height: 60px;
+      padding: 8px;
+    }
   `
 }

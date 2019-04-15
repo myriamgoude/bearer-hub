@@ -1,7 +1,8 @@
 import * as React from 'react'
 import IndexLayout from '../layouts'
 import { css } from '@emotion/core'
-import { Button, HeroLined, Page, PageMetadata, Grid } from '../components/'
+import { Button, HeroLined, Page, Grid, Text, SectionHeading, PageMetadata } from '../components/'
+import { breakpoints } from '../styles/variables'
 
 const NotFoundPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
@@ -11,15 +12,36 @@ const NotFoundPage: GatsbyPage = ({ location }) => (
         <Grid
           css={css`
             text-align: center;
+
+            @media (max-width: ${breakpoints.md}px) {
+              justify-content: center;
+            }
+          `}
+          childrenStyle={css`
+            @media (max-width: ${breakpoints.md}px) {
+              flex: 0 1 100%;
+            }
           `}
         >
           <div>
-            <h2>404: Page not found</h2>
-            <h1>Oops, this page has been move or doesn't exist anymore</h1>
+            <Text color="#9AA4CB" large>
+              404: Page not found
+            </Text>
+            <SectionHeading primaryText="Oops, this page has been moved or doesn't exist anymore" />
             <Button primary link="/integrations" text="Explore templates" />
           </div>
           <div>
-            <svg width="485" height="331" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              viewBox="0 0 485 331"
+              css={css`
+                max-width: 80%;
+
+                @media (max-width: ${breakpoints.md}px) {
+                  max-width: 70%;
+                  margin-top: 32px;
+                }
+              `}
+            >
               <defs>
                 <filter x="-1.3%" y="-2.3%" width="102.6%" height="104.5%" filterUnits="objectBoundingBox" id="a">
                   <feGaussianBlur stdDeviation="1" in="SourceGraphic" />

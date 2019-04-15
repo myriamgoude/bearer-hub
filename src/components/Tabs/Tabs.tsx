@@ -10,18 +10,32 @@ import { Grid, Text } from '../index'
 interface ITabsProps {
   style?: any
   items: any
+  active?: boolean
 }
+
+const pageUrl = (label: string) => (isBrowser() ? `${window.location.pathname}?pricing=${label.toLowerCase()}` : null)
 
 const Tabs = (props: ITabsProps) => (
   <Grid
-    style={styles.root}
+    style={[styles.root, props.style]}
     childrenStyle={css`
       flex: 0 1 auto !important;
       margin: 0 8px;
     `}
   >
     {props.items.map((item: any) => (
-      <Link to={item.path} css={[styles.item, isBrowser()]} partiallyActive activeClassName="active">
+      <Link
+        key={item.label}
+        to={item.path ? item.path : pageUrl(item.label)}
+        css={[
+          styles.item,
+          isBrowser(),
+          isBrowser() && window.location.search.replace('?pricing=', '') === item.label.toLowerCase() && styles.active,
+          props.active && styles.active
+        ]}
+        partiallyActive
+        activeClassName="active"
+      >
         <Text
           text={item.label}
           large

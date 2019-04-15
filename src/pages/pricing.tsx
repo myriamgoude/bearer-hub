@@ -11,16 +11,55 @@ import {
   Section,
   Grid,
   SectionHeading,
-  Small
+  Small,
+  Tabs
 } from '../components/'
 import IndexLayout from '../layouts'
-import { colors } from '../styles/variables'
+import { colors, breakpoints } from '../styles/variables'
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
+import { isBrowser } from '../services/Browser'
+
+const pricingPageCss = css`
+  .mobile-label {
+    display: none;
+    color: ${colors.secondary[2]};
+
+    @media (max-width: ${breakpoints.lg}px) {
+      display: inline-block;
+    }
+  }
+
+  td:not(.mobile-label) {
+    color: #313958;
+    font-family: 'ProximaNova-Semibold';
+  }
+
+  .mobile-panel {
+    @media (max-width: ${breakpoints.lg}px) {
+      position: relative;
+
+      & > div {
+        margin: auto;
+        width: 100%;
+
+        > table {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        &:not(.show) {
+          display: none;
+        }
+      }
+    }
+  }
+`
 
 const PricingTable = (props: any) => (
   <table
     className={`pricing-table ${props.className}`}
     css={css`
+      border-collapse: collapse;
       &:not(.transparent) {
         width: 244px;
         background: ${props.background === 'dark' ? colors.darkBlue : 'white'};
@@ -30,6 +69,26 @@ const PricingTable = (props: any) => (
         color: ${props.background === 'dark' ? 'white' : '#313958'};
         border-radius: 8px;
         text-align: center;
+
+        @media (max-width: ${breakpoints.lg}px) {
+          text-align: left;
+          margin: auto;
+
+          & tr > td:last-of-type {
+            text-align: right;
+          }
+
+          & td {
+            width: auto;
+            &:not(:last-of-type) {
+              border-bottom: 1px solid ${props.background === 'dark' ? '#000' : '#f6f6f8'};
+            }
+          }
+        }
+
+        & td:not(.mobile-label) {
+          color: ${props.background === 'dark' && 'white !important'};
+        }
       }
 
       position: relative;
@@ -61,7 +120,28 @@ const PricingTable = (props: any) => (
         line-height: 3rem;
       }
 
-      &:not(.transparent) tr:not(:first-child) {
+      tbody tr td {
+        @media (max-width: ${breakpoints.lg}px) {
+          display: flex;
+          justify-content: space-around;
+
+          > span {
+            flex: 0 1 50%;
+            white-space: nowrap;
+            font-size: 14px;
+            padding: 0 8px;
+          }
+          > span:first-of-type {
+            text-align: left;
+          }
+
+          > span:last-of-type {
+            text-align: right;
+          }
+        }
+      }
+
+      &:not(.transparent) tr:not(:first-of-type) {
         td {
           border-top: 1px solid ${props.background === 'dark' ? colors.secondary[1] : colors.secondary[4]};
         }
@@ -104,6 +184,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
     <Page
       css={[
         heroStyles.styleDefaultCurve,
+        pricingPageCss,
         css`
           z-index: 12;
         `
@@ -146,10 +227,33 @@ const PricingPage: GatsbyPage = ({ location }) => (
               top: inherit;
               bottom: -46px;
               margin: auto;
+
+              @media (max-width: ${breakpoints.lg}px) {
+                display: none;
+              }
             }
           `}
         />
       </HeroLined>
+      <Tabs
+        items={[
+          {
+            label: 'Community',
+            target: '.plan-community',
+            navigate: false
+          },
+          {
+            label: 'Business',
+            target: '.plan-business',
+            navigate: false
+          }
+        ]}
+        style={css`
+          @media (min-width: ${breakpoints.lg}px) {
+            display: none;
+          }
+        `}
+      />
       <Section>
         <div
           css={css`
@@ -167,119 +271,169 @@ const PricingPage: GatsbyPage = ({ location }) => (
                   align-self: flex-start;
                 }
 
-                &:nth-child(2) {
+                &:nth-of-type(2) {
                   justify-content: center;
                 }
-                &:nth-child(3) {
+                &:nth-of-type(3) {
                   justify-content: flex-start;
                 }
               }
             `}
+            childrenClassName="mobile-panel"
           >
             <PricingTable
               className="transparent"
               css={css`
                 text-align: left;
-                padding-top: 140px;
+                top: 140px;
+                position: relative;
                 p {
                   margin-bottom: 0;
                 }
+
+                @media (max-width: ${breakpoints.lg}px) {
+                  display: none;
+                }
               `}
             >
-              <tr>
-                <td>Integrations</td>
-              </tr>
-              <tr>
-                <td>API Call included</td>
-              </tr>
-              <tr>
-                <td>Logging</td>
-              </tr>
-              <tr>
-                <td>Error Handling</td>
-              </tr>
-              <tr>
-                <td>Webhook</td>
-              </tr>
-              <tr>
-                <td>Support</td>
-              </tr>
-              <tr>
-                <td>Data Retention</td>
-              </tr>
-              <tr>
-                <td>Team Management</td>
-              </tr>
-              <tr>
-                <td>SLA</td>
-              </tr>
-              <tr>
-                <td>Additional Usage</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>Integrations</td>
+                </tr>
+                <tr>
+                  <td>API Call included</td>
+                </tr>
+                <tr>
+                  <td>Logging</td>
+                </tr>
+                <tr>
+                  <td>Error Handling</td>
+                </tr>
+                <tr>
+                  <td>Webhook</td>
+                </tr>
+                <tr>
+                  <td>Support</td>
+                </tr>
+                <tr>
+                  <td>Data Retention</td>
+                </tr>
+                <tr>
+                  <td>Team Management</td>
+                </tr>
+                <tr>
+                  <td>SLA</td>
+                </tr>
+                <tr>
+                  <td>Additional Usage</td>
+                </tr>
+              </tbody>
             </PricingTable>
 
-            <div>
-              <PricingTable className="white">
+            <div
+              className={
+                isBrowser()
+                  ? window.location.search.replace('?pricing=', '') === 'community'
+                    ? 'show'
+                    : !window.location.search
+                    ? 'show'
+                    : undefined
+                  : ''
+              }
+            >
+              <PricingTable className="first-table">
                 <thead>
-                  <tr>
-                    <th>
-                      <Text text="Community" color="#66709A" />
-                    </th>
-                  </tr>
-                  <tr>
-                    <th>
-                      <SectionHeading
-                        primaryText="Free"
-                        tag="h3"
-                        style={css`
-                          color: ${colors.darkBlue};
-                          margin-bottom: 0;
+                  <th>
+                    <Text text="Community" color="#66709A" />
 
-                          > h3 {
-                            margin: 0 !important;
-                            font-family: 'ProximaNova-Semibold';
-                          }
-                        `}
-                      />
-                    </th>
-                  </tr>
+                    <SectionHeading
+                      primaryText="Free"
+                      tag="h3"
+                      style={css`
+                        color: ${colors.darkBlue};
+                        margin-bottom: 0;
+
+                        > h3 {
+                          margin: 0 !important;
+                          font-family: 'ProximaNova-Semibold';
+                        }
+                      `}
+                    />
+                  </th>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Unlimited</td>
-                  </tr>
-                  <tr>
-                    <td>First integration unlimited</td>
-                  </tr>
-                  <tr>
                     <td>
-                      <FeatureIncluded />
+                      <span className="mobile-label">Integrations</span>
+                      <span>Unlimited</span>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <FeatureIncluded />
+                      <span className="mobile-label">API Call included</span>
+                      <span>Unlimited for 1 Integration</span>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <FeatureIncluded />
+                      <span className="mobile-label">Logging</span>
+
+                      <span>
+                        <FeatureIncluded />
+                      </span>
                     </td>
                   </tr>
                   <tr>
-                    <td>Chat</td>
+                    <td>
+                      <span className="mobile-label">Error Handling</span>
+
+                      <span>
+                        <FeatureIncluded />
+                      </span>
+                    </td>
                   </tr>
                   <tr>
-                    <td>1 Week</td>
+                    <td>
+                      <span className="mobile-label">Webhook</span>
+
+                      <span>
+                        <FeatureIncluded />
+                      </span>
+                    </td>
                   </tr>
                   <tr>
-                    <td>&nbsp;</td>
+                    <td>
+                      <span className="mobile-label">Support</span>
+                      <span>Chat</span>
+                    </td>
                   </tr>
                   <tr>
-                    <td>&nbsp;</td>
+                    <td>
+                      <span className="mobile-label">Data Retention</span>
+                      <span>7 days</span>
+                    </td>
                   </tr>
                   <tr>
-                    <td>Not Available</td>
+                    <td>
+                      <span className="mobile-label">Team Management</span>
+                      <span>
+                        <i>not included</i>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="mobile-label">SLA</span>
+                      <span>
+                        <i>not included</i>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="mobile-label">Additional Usage</span>
+                      <span>Not available</span>
+                    </td>
                   </tr>
                 </tbody>
               </PricingTable>
@@ -318,73 +472,106 @@ const PricingPage: GatsbyPage = ({ location }) => (
               </div>
             </div>
 
-            <div>
+            <div
+              className={
+                isBrowser() ? (window.location.search.replace('?pricing=', '') === 'business' ? 'show' : undefined) : ''
+              }
+            >
               <PricingTable background="dark">
                 <thead>
-                  <tr>
-                    <th>
-                      <Text text="Enterprise" color={colors.yellow} />
-                    </th>
-                  </tr>
-                  <tr>
-                    <th>
-                      <SectionHeading
-                        primaryText="Let's talk"
-                        tag="h3"
-                        style={css`
-                          margin-bottom: 0;
+                  <th>
+                    <Text text="Enterprise" color={colors.yellow} />
+                    <SectionHeading
+                      primaryText="Let's talk"
+                      tag="h3"
+                      style={css`
+                        margin-bottom: 0;
 
-                          > h3 {
-                            color: white !important;
-                            font-weight: bold;
-                            margin: 0 !important;
-                            font-family: 'ProximaNova-Semibold';
-                          }
-                        `}
-                      />
-                    </th>
-                  </tr>
+                        > h3 {
+                          color: white !important;
+                          font-weight: bold;
+                          margin: 0 !important;
+                          font-family: 'ProximaNova-Semibold';
+                        }
+                      `}
+                    />
+                  </th>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Unlimited</td>
-                  </tr>
-                  <tr>
-                    <td>Unlimited</td>
-                  </tr>
-                  <tr>
                     <td>
-                      <FeatureIncluded />
+                      <span className="mobile-label">Integrations</span>
+                      <span>Unlimited</span>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <FeatureIncluded />
+                      <span className="mobile-label">API Call included</span>
+                      <span>Unlimited</span>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <FeatureIncluded />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Email &amp; Phone support</td>
-                  </tr>
-                  <tr>
-                    <td>30 Days</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <FeatureIncluded />
+                      <span className="mobile-label">Logging</span>
+
+                      <span>
+                        <FeatureIncluded />
+                      </span>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <FeatureIncluded />
+                      <span className="mobile-label">Error Handling</span>
+
+                      <span>
+                        <FeatureIncluded />
+                      </span>
                     </td>
                   </tr>
                   <tr>
-                    <td>Contact Us</td>
+                    <td>
+                      <span className="mobile-label">Webhook</span>
+
+                      <span>
+                        <FeatureIncluded />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="mobile-label">Support</span>
+                      <span>Email &amp; Phone support</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="mobile-label">Data Retention</span>
+                      <span>30 days</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="mobile-label">Team Management</span>
+
+                      <span>
+                        <FeatureIncluded />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="mobile-label">SLA</span>
+
+                      <span>
+                        <FeatureIncluded />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className="mobile-label">Additional Usage</span>
+                      <span>Contact us</span>
+                    </td>
                   </tr>
                 </tbody>
               </PricingTable>

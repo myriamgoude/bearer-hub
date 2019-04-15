@@ -16,12 +16,13 @@ interface IColoredTextBlocks {
   centered?: boolean
   icon?: string
   iconBg?: string
+  style?: any
 }
 
 const ColoredTextBlock = (props: IColoredTextBlocks) => {
   const color = props.color ? props.color : colors.black
   return (
-    <div css={styles.root} style={{ color }}>
+    <div css={[styles.root, props.style]} style={{ color }}>
       <div css={styles.container}>
         <object css={[styles.containerIcon, props.centered && styles.containerIconCentered]}>
           <img src={props.iconBg} css={styles.backgroundIcon} />

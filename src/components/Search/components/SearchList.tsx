@@ -1,8 +1,10 @@
 import * as React from 'react'
+import { navigate } from 'gatsby'
+
 import { css } from '@emotion/core'
 import { categoryPath } from '../../../services/Explore'
 import { Label, Link } from '../../index'
-import { colors } from '../../../styles/variables'
+import { colors, breakpoints } from '../../../styles/variables'
 
 interface ISearchListProps {
   selected?: string
@@ -25,6 +27,35 @@ const navStyle = css`
     padding: 0;
     margin: 0;
   }
+
+  .component-select {
+    display: none;
+  }
+
+  select {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: #030d36;
+    font-family: 'Proxima Nova';
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  @media (max-width: ${breakpoints.lg}px) {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 16px 0;
+    position: relative;
+
+    .component-select {
+      display: block;
+    }
+    .component-list {
+      display: none;
+    }
+  }
 `
 const navLinkStyle = css`
   color: #030d36;
@@ -36,6 +67,30 @@ const navLinkStyle = css`
 `
 
 export const SearchList = (props: ISearchListProps) => {
+  const showOptions = (s: any) => {
+    navigate(categoryPath({ hubID: s[s.selectedIndex].id, title: s[s.selectedIndex].value }))
+  }
+
+  const caretDown = () => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        css={css`
+          width: 12px;
+          display: inline - block;
+        `}
+      >
+        <path d="M6 9l6 6 6-6" />
+      </svg>
+    )
+  }
+
   return (
     <nav css={navStyle}>
       <section
@@ -45,34 +100,53 @@ export const SearchList = (props: ISearchListProps) => {
           margin-top: 16px;
         `}
       >
-        <Label text="Categories" />
-        <ul>
-          <li key={0}>
-            <Link
-              to="/integrations"
-              css={navLinkStyle}
-              style={!props.selected ? { borderBottom: `1px dashed ${colors.gray.dark}` } : { color: colors.darkBlue }}
-            >
-              All
-            </Link>
-          </li>
-          {props.categories.map(category => (
-            <li itemProp="Category" key={category.id}>
+        <div className="component-select">
+          <Label text="Sort by categories" />
+
+          <select
+            onChange={e => {
+              showOptions(e.target)
+            }}
+          >
+            {props.categories.map(category => (
+              <option key={category.id} value={category.title} id={category.hubID}>
+                {category.title}
+              </option>
+            ))}
+          </select>
+          {caretDown()}
+        </div>
+        <div className="component-list">
+          <Label text="Categories" />
+          <ul>
+            <li key={0}>
               <Link
-                itemProp="url"
-                to={categoryPath({ hubID: category.hubID, title: category.title })}
+                to="/integrations"
                 css={navLinkStyle}
                 style={
-                  props.selected === category.id
-                    ? { borderBottom: `1px dashed ${colors.gray.dark}` }
-                    : { color: colors.darkBlue }
+                  !props.selected ? { borderBottom: `1px dashed ${colors.gray.dark}` } : { color: colors.darkBlue }
                 }
               >
-                {category.title}
+                All
               </Link>
             </li>
-          ))}
-        </ul>
+            {props.categories.map(category => (
+              <li key={category.id}>
+                <Link
+                  to={categoryPath({ hubID: category.hubID, title: category.title })}
+                  css={navLinkStyle}
+                  style={
+                    props.selected === category.id
+                      ? { borderBottom: `1px dashed ${colors.gray.dark}` }
+                      : { color: colors.darkBlue }
+                  }
+                >
+                  {category.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </nav>
   )

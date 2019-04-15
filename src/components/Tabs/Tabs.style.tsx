@@ -23,5 +23,9 @@ export default {
       color: ${colors.yellow};
       border-color: currentColor;
     }
+  `,
+  active: css`
+    color: ${colors.yellow};
+    border-color: currentColor;
   `
 }

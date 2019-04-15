@@ -11,11 +11,20 @@ export default {
     & .hero-half {
       width: 47.5%;
     }
-    & .hero-half:first-child {
+    & .hero-half:first-of-type {
       margin-right: 5%;
     }
     @media (min-width: ${breakpoints.md}px) {
       flex-direction: row;
+    }
+    @media (max-width: ${breakpoints.lg}px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      .hero-half {
+        width: 100%;
+        text-align: center;
+      }
     }
   `,
   subtitle: css`
@@ -63,7 +72,6 @@ export default {
     background-position: top 300px center;
     background-size: contain;
     position: relative;
-
     @media (min-width: ${breakpoints.sm}px) {
       background-position: top 250px center;
     }
@@ -80,6 +88,12 @@ export default {
     @media (min-width: ${breakpoints.xxl}px) {
       background-position: top 50px center;
     }
+
+    @media (max-width: ${breakpoints.lg}px) {
+      background-size: 470px;
+      background-position: center center;
+      padding-top: 60px;
+    }
   `,
   styleBackgroundExploreAfter: css`
     &:after {
@@ -92,6 +106,7 @@ export default {
       background-position: top center;
       background-size: cover;
       background-color: transparent;
+      position: absolute;
     }
   `,
   styleBackgroundBefore: css`

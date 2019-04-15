@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { colors } from '../../styles/variables'
+import { breakpoints, colors } from '../../styles/variables'
 
 export default {
   root: css`
@@ -21,6 +21,13 @@ export default {
       margin: 2rem auto;
       background: ${colors.yellow};
       z-index: 5;
+    }
+
+    &:before {
+      margin-top: 0;
+      @media (max-width: ${breakpoints.lg}px) {
+        display: none;
+      }
     }
   `
 }

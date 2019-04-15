@@ -6,6 +6,7 @@ import { Card, Clearfix, Grid, Tag } from '../../index'
 import { CustomHighlight } from './CustomHighlight'
 import blockStyles from '../../../components/IntergrationPanel/IntegrationPanel.style'
 import { templatePath } from '../../../services/Explore'
+import { breakpoints } from '../../../styles/variables'
 
 interface ICustomHitsProps {
   objectID: string
@@ -23,14 +24,21 @@ export const CustomHits = connectHits(({ hits }: { hits: ICustomHitsProps[] }) =
       col={3}
       gutter={16}
       style={css`
-        width: 100%;
-        margin: 0;
-        align-content: flex-start;
-        justify-content: flex-start;
+        justify-content: ${hits.length <= 2 ? 'flex-start !important' : null};
+        @media (max-width: ${breakpoints.lg}px) {
+          display: block;
+          width: ${hits.length * 152 + (hits.length === 2 ? 16 : 0)}px;
+          overflow: scroll;
+        }
       `}
       childrenStyle={css`
         margin-bottom: 8px;
         margin-right: ${(hits.length = 2 ? 16 : 0)}px;
+        @media (max-width: ${breakpoints.lg}px) {
+          min-width: 152px;
+          max-width: 152px;
+          display: inline-block;
+        }
       `}
     >
       {hits.map(hit => {

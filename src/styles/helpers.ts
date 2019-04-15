@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { colors, dimensions } from './variables'
+import { colors, dimensions, breakpoints } from './variables'
 import { getEmSize } from './mixins'
 
 export const helpers = {
@@ -7,6 +7,10 @@ export const helpers = {
     font-size: ${dimensions.headingSizes.h1}em;
     font-weight: bold;
     color: ${colors.darkBlue};
+
+    @media (max-width: ${breakpoints.lg}px) {
+      font-size: ${dimensions.headingSizes.h1 / 1.2}em;
+    }
   `,
   h2: css`
     font-size: 32px;

@@ -11,6 +11,7 @@ import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { InstantSearch } from 'react-instantsearch-dom'
 
 import { SearchList } from '../../components/Search/components/SearchList'
+import { breakpoints } from '../../styles/variables'
 import { CustomSearchBox } from '../../components/Search/components/CustomSearchBox'
 
 interface IQueryData {
@@ -62,26 +63,34 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
               <Text tag="h3" text="Build your integrations even faster!" />
             </HeroLined>
           </div>
-          <div css={heroStyles.styleBackgroundBefore}>
-            <CustomSearchBox />
-            <Section
-              styleContainer={css`
-                display: flex;
-                padding-top: 2rem;
+          <CustomSearchBox />
+
+          <Section
+            styleContainer={css`
+              display: flex;
+              /* margin-top: -200px; */
+
+              @media (max-width: ${breakpoints.lg}px) {
+                display: block;
+              }
+            `}
+          >
+            <div
+              css={css`
+                flex: 0 1 30%;
+                padding-right: 58px;
+
+                @media (max-width: ${breakpoints.lg}px) {
+                  flex: 0 1 100%;
+                  margin-top: 1em;
+                }
               `}
             >
-              <div
-                css={css`
-                  width: 40%;
-                  padding-right: 58px;
-                `}
-              >
-                <SearchList categories={data.graphcms.categories} />
-              </div>
+              <SearchList categories={data.graphcms.categories} />
+            </div>
 
-              <Search />
-            </Section>
-          </div>
+            <Search />
+          </Section>
         </InstantSearch>
       </Page>
     </IndexLayout>

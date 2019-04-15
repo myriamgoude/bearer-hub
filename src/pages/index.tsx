@@ -144,7 +144,14 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           </p>
         </div>
 
-        <div className="hero-half">
+        <div
+          className="hero-half"
+          css={css`
+            @media (max-width: ${breakpoints.lg}px) {
+              display: none;
+            }
+          `}
+        >
           <VideoSection thumbnail="" src="" />
         </div>
       </HeroPanel>
@@ -155,6 +162,15 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           space="between"
           style={css`
             max-width: 568px;
+            @media (max-width: ${breakpoints.lg}px) {
+              flex-direction: row;
+            }
+          `}
+          childrenStyle={css`
+            @media (max-width: ${breakpoints.lg}px) {
+              flex: 0 1 20% !important;
+              padding: 8px 0;
+            }
           `}
         >
           {[logoDropbox, logoTwillio, logoMailchimp, logoGithub, logoZendesk].map((logo, index) => {
@@ -167,6 +183,11 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         <Grid
           style={css`
             margin-top: 7rem;
+          `}
+          childrenStyle={css`
+            @media (max-width: ${breakpoints.lg}px) {
+              margin-bottom: 60px;
+            }
           `}
           fullWidth
         >
@@ -210,6 +231,9 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         <Grid
           style={css`
             margin-top: 7rem;
+            @media (max-width: ${breakpoints.lg}px) {
+              margin-top: 3em;
+            }
           `}
           fullWidth
         >
@@ -302,6 +326,10 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               max-width: 320px;
               margin-bottom: 0;
             }
+            @media (max-width: ${breakpoints.lg}px) {
+              max-width: 100% !important;
+              width: 100% !important;
+            }
           `}
         >
           <Card style={{ padding: '40px' }} padding="large">
@@ -309,11 +337,9 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               {whyUseBearerCardImage('icon-magnet', 'Icon Magnet')}
               <span>More Integration</span>
             </h3>
-            <p>Building API integration is tedious and costs time and money.</p>
-            <p>
-              Bearer helps you build better, faster and more integration, so you can focus on what really matters to
-              your business.
-            </p>
+            <p>Building API Integration is tedious, time-consuming and costly. </p>
+            <p>With Bearer, build Integration faster and focus on your Business logic instead of glue code. </p>
+            <p>Build more &amp; better Integration.</p>
           </Card>
           <Card
             style={css`

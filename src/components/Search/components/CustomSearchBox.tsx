@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 import { connectSearchBox } from 'react-instantsearch-dom'
+import { breakpoints } from '../../../styles/variables'
 
 const searchBoxStyle = css`
   margin: auto;
@@ -12,6 +13,8 @@ const searchBoxStyle = css`
   border-radius: 4px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.49);
+  position: relative;
+  z-index: 10;
 
   input {
     appearance: none;
@@ -24,6 +27,10 @@ const searchBoxStyle = css`
     &:focus {
       outline-offset: 2px;
     }
+  }
+
+  @media (max-width: ${breakpoints.lg}px) {
+    max-width: 80%;
   }
 `
 export const CustomSearchBox = connectSearchBox(({ currentRefinement, refine }: any) => (

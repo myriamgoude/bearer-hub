@@ -27,8 +27,10 @@ import valueTrust from '../images/shared/value-trust.svg'
 import valueAutonomy from '../images/shared/value-autonomy.svg'
 import valueResponsibility from '../images/shared/value-responsibility.svg'
 
-import { colors } from '../styles/variables'
+import { colors, breakpoints } from '../styles/variables'
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
+
+const aboutPageCss = css``
 
 const JobCard = (props: any) => (
   <Card
@@ -86,6 +88,8 @@ const AboutPage: GatsbyPage = ({ location }) => (
     <Page
       css={[
         heroStyles.styleDefaultCurve,
+        aboutPageCss,
+
         css`
           z-index: 12;
         `
@@ -103,9 +107,22 @@ const AboutPage: GatsbyPage = ({ location }) => (
             width: 520px;
             position: relative;
             z-index: 12;
+
+            @media (max-width: ${breakpoints.lg}px) {
+              max-width: 100%;
+              width: 100%;
+            }
           `}
         >
-          <img src={require('../images/bearer-team.png')} alt="Our Team" />
+          <img
+            src={require('../images/bearer-team.png')}
+            alt="Our Team"
+            css={css`
+              @media (max-width: ${breakpoints.lg}px) {
+                width: 100%;
+              }
+            `}
+          />
 
           <SectionHeading primaryText="Our Mission" />
 
@@ -142,8 +159,11 @@ const AboutPage: GatsbyPage = ({ location }) => (
           `}
           childrenStyle={css`
             text-align: center;
-            div > p {
-              margin-top: 32px;
+
+            @media (min-width: ${breakpoints.lg}px) {
+              div > p {
+                margin-top: 32px;
+              }
             }
           `}
         >
@@ -185,8 +205,14 @@ const AboutPage: GatsbyPage = ({ location }) => (
               text={textBlock.text}
               color={textBlock.color}
               centered
-              css={css`
+              style={css`
                 text-align: center;
+                @media (max-width: ${breakpoints.lg}px) {
+                  object {
+                    position: relative;
+                    top: 0;
+                  }
+                }
               `}
             />
           ))}
@@ -203,6 +229,14 @@ const AboutPage: GatsbyPage = ({ location }) => (
             align-items: center;
             justify-content: center;
             flex: 0 1 180px !important;
+            @media (max-width: ${breakpoints.lg}px) {
+              display: block;
+            }
+          `}
+          wrapperStyle={css`
+            @media (max-width: ${breakpoints.lg}px) {
+              overflow: inherit;
+            }
           `}
         >
           {[

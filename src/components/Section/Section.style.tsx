@@ -1,11 +1,14 @@
 import { css } from '@emotion/core'
 
-import { colors } from '../../styles/variables'
+import { colors, breakpoints } from '../../styles/variables'
 
 export default {
   root: css`
     padding: 2rem 0;
     position: relative;
+    @media (max-width: ${breakpoints.lg}px) {
+      padding: 2rem 1rem;
+    }
   `,
   tail: css`
     padding: 0;

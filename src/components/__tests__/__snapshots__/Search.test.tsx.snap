@@ -9,9 +9,27 @@ exports[`Search renders correctly 1`] = `
       Array [
         Object {
           "map": undefined,
-          "name": "1n3w5wq",
+          "name": "1pjxgn4",
           "next": undefined,
           "styles": "
+          @media (max-width: 992px) {
+            overflow: scroll;
+            width: ;
+          }
+        ",
+        },
+        undefined,
+      ]
+    }
+  >
+    <div
+      css={
+        Array [
+          Object {
+            "map": undefined,
+            "name": "1n3w5wq",
+            "next": undefined,
+            "styles": "
     display: flex;
     margin: auto;
     flex-direction: column;
@@ -22,24 +40,27 @@ exports[`Search renders correctly 1`] = `
       flex-direction: row;
     }
   ",
-        },
-        false,
-        false,
-        undefined,
-        Object {
-          "map": undefined,
-          "name": "pq2q0q",
-          "next": undefined,
-          "styles": "
-        width: 100%;
-        margin: 0;
-        align-content: flex-start;
-        justify-content: flex-start;
+          },
+          false,
+          false,
+          undefined,
+          Object {
+            "map": undefined,
+            "name": "s155ij",
+            "next": undefined,
+            "styles": "
+        justify-content: flex-start !important;
+        @media (max-width: 992px) {
+          display: block;
+          width: 0px;
+          overflow: scroll;
+        }
       ",
-        },
-        false,
-      ]
-    }
-  />
+          },
+          false,
+        ]
+      }
+    />
+  </div>
 </div>
 `;

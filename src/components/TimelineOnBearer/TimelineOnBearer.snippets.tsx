@@ -1,4 +1,4 @@
-import { Snippet } from '../CodeSnippet/CodeSnippet'
+import { Snippet } from '../CodeSnippets/CodeSnippets'
 
 const timelineCodeSnippet = {
   cloneTemplate(gitHubUrl: string, templateTitle: string): Snippet {

@@ -4,6 +4,7 @@ import Card from './Card/index'
 import Container from './Container/index'
 import Clearfix from './Clearfix/index'
 import CodeSnippet from './CodeSnippet/index'
+import CodeSnippets from './CodeSnippets/index'
 import ColoredTextBlock from './ColoredTextBlock/index'
 import DashedLine from './DashedLine/index'
 import Footer from './Footer/index'
@@ -48,6 +49,7 @@ export {
   Clearfix,
   Container,
   CodeSnippet,
+  CodeSnippets,
   ColoredTextBlock,
   DashedLine,
   Footer,

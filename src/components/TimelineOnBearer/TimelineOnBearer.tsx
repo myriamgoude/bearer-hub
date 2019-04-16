@@ -1,12 +1,11 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import { CodeSnippet, DashedLine, Section, TimelineStage } from '../index'
+import { CodeSnippet, CodeSnippets, DashedLine, Section, TimelineStage } from '../index'
 import { colors, breakpoints } from '../../styles/variables'
 import timelineCodeSnippet from './TimelineOnBearer.snippets'
 
 interface ITimelineOnBearerProps {
-  prism: boolean
   placement: IterableIterator<string>
   template: {
     title: string
@@ -72,8 +71,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
           tooltip={'Not sure what to pass here'}
           placement={props.placement.next().value}
         >
-          <CodeSnippet
-            prism={props.prism}
+          <CodeSnippets
             snippets={[
               timelineCodeSnippet.cloneTemplate(props.template.gitHubUrl, props.template.provider.title.toLowerCase())
             ]}
@@ -88,10 +86,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
             hint={`Use your ${props.template.provider.title} OAuth credentials \
             to let Bearer automatically generate a static access token. This will query the API in local development.`}
           >
-            <CodeSnippet
-              prism={props.prism}
-              snippets={[timelineCodeSnippet.generateSetup(props.template.apiAuthType)]}
-            />
+            <CodeSnippets snippets={[timelineCodeSnippet.generateSetup(props.template.apiAuthType)]} />
           </TimelineStage>
         )}
 
@@ -102,10 +97,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
             placement={props.placement.next().value}
             hint={`You are now ready query the ${props.template.provider.title} API in local development.`}
           >
-            <CodeSnippet
-              prism={props.prism}
-              snippets={[timelineCodeSnippet.generateSetup(props.template.apiAuthType)]}
-            />
+            <CodeSnippets snippets={[timelineCodeSnippet.generateSetup(props.template.apiAuthType)]} />
           </TimelineStage>
         )}
 
@@ -115,7 +107,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
           placement={props.placement.next().value}
         >
           <>
-            <CodeSnippet prism={props.prism} snippets={[timelineCodeSnippet.defaultFunction()]} />
+            <CodeSnippets snippets={[timelineCodeSnippet.defaultFunction()]} />
             <div
               css={css`
                 padding-top: 1rem;
@@ -134,7 +126,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
                 }
               `}
             >
-              <CodeSnippet prism={props.prism} isWhite isFaded code={props.template.defaultFunctionReturnValue} />
+              <CodeSnippet isWhite isFaded code={props.template.defaultFunctionReturnValue} />
             </div>
           </>
         </TimelineStage>
@@ -147,7 +139,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
             props.template.provider.title
           } endpoint and map the data to your app models.`}
         >
-          <CodeSnippet prism={props.prism} snippets={[timelineCodeSnippet.customFunction()]} />
+          <CodeSnippets snippets={[timelineCodeSnippet.customFunction()]} />
         </TimelineStage>
 
         <TimelineStage
@@ -156,7 +148,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
           placement={props.placement.next().value}
           hint="Once your integration is ready, deploy it on the Bearer platform and you’re good to go!"
         >
-          <CodeSnippet prism={props.prism} snippets={[timelineCodeSnippet.deployIntegration()]} />
+          <CodeSnippets snippets={[timelineCodeSnippet.deployIntegration()]} />
         </TimelineStage>
       </Section>
     </>

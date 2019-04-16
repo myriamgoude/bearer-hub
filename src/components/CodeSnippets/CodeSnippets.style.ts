@@ -2,11 +2,6 @@ import { css } from '@emotion/core'
 import { colors, fonts } from '../../styles/variables'
 
 export default {
-  prismSnippet: css`
-    padding: 1em !important;
-    overflow: scroll;
-    border-radius: 2px;
-  `,
   defaultSnippet: css`
     margin: 0;
     padding: 0.5rem 1rem;
@@ -76,6 +71,9 @@ export default {
   lineNumber: css`
     display: inline-block;
     margin-right: 0.5rem;
+    width: 0.8rem;
+    text-align: right;
+    float: left;
 
     &::before {
       color: ${colors.secondary[2]};
@@ -83,7 +81,8 @@ export default {
     }
   `,
   lineContainer: css`
-    display: flex;
+    display: block;
+    clear: both;
     font-size: 0.75rem;
     font-family: ${fonts.code};
   `,

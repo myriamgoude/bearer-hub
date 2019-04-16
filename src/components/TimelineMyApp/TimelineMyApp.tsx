@@ -1,12 +1,11 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import { CodeSnippet, DashedLine, Section, TimelineStage } from '../index'
+import { CodeSnippets, DashedLine, Section, TimelineStage } from '../index'
 import { colors, breakpoints } from '../../styles/variables'
 import timelineCodeSnippet from './TimelineMyApp.snippets'
 
 interface ITimelineMyAppProps {
-  prism: boolean
   placement: IterableIterator<string>
   template: {
     title: string
@@ -61,7 +60,7 @@ const TimelineMyApp = (props: ITimelineMyAppProps) => {
             hint={`Once users log in with their ${props.template.provider.title} account, your \
             functions are able to query the API using their credentials.`}
           >
-            <CodeSnippet prism={props.prism} snippets={timelineCodeSnippet.connectComponent()} />
+            <CodeSnippets snippets={timelineCodeSnippet.connectComponent()} />
           </TimelineStage>
         )}
 
@@ -71,7 +70,7 @@ const TimelineMyApp = (props: ITimelineMyAppProps) => {
           tooltip={`Not sure what to pass here`}
           hint={`Use our integration clients to call your functions from your app.`}
         >
-          <CodeSnippet prism={props.prism} snippets={timelineCodeSnippet.invokeFunction()} />
+          <CodeSnippets snippets={timelineCodeSnippet.invokeFunction()} />
         </TimelineStage>
       </Section>
     </>

@@ -118,7 +118,6 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
   const template = data.graphcms.templates[0]
   const featuredTemplates = data.graphcms.featuredTemplates
   const placement = TimelinePlacement()
-  const prism = false
   return (
     <IndexLayout location={location}>
       <PageMetadata
@@ -168,9 +167,8 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           </div>
         </Section>
 
-        <TimelineOnBearer template={template} placement={placement} prism={prism} />
-        <TimelineMyApp template={template} placement={placement} prism={prism} />
-
+        <TimelineOnBearer template={template} placement={placement} />
+        <TimelineMyApp template={template} placement={placement} />
         {/*
           Uncomment this if the timeline returns a video
 

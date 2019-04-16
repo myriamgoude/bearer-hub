@@ -1,4 +1,4 @@
-import { Snippet } from '../CodeSnippet/CodeSnippet'
+import { Snippet } from '../CodeSnippets/CodeSnippets'
 
 const timelineCodeSnippet = {
   connectComponent(): Snippet[] {
@@ -14,7 +14,30 @@ bearer.connect(myIntegration).then(console.log)
       },
       {
         language: 'React',
-        code: `TODO`
+        code: `import React, { useState } from 'react'
+import { render } from 'react-dom'
+import { MyIntegration } from './invoke'
+
+// Import Bearer SDK for React
+import { Bearer, factory } from '@bearer/react'
+const { Connect } = factory('integration-id')
+
+function App() {
+  const [authId, setAuthId] = useState('')
+  return (
+    <Bearer clientId='client-id'>
+      {!authId ? (
+        <Connect setupId='setup-id' authId={authId}
+          onSuccess={data => setAuthId(data.authId }}
+          render={({ connect }) => <button onClick={connect}> Connect </button>}
+        />
+      ) : ( <MyIntegration authId={authId} /> )}
+    </Bearer>
+  )
+}
+
+const rootElement = document.getElementById('root')
+render(<App />, rootElement)`
       }
     ]
   },
@@ -35,7 +58,32 @@ bearer
       },
       {
         language: 'React',
-        code: `TODO`
+        code: `import React from 'react'
+import { BearerContext } from '@bearer/react/lib/bearer-provider'
+
+export class MyIntegration extends React.Component<any, any> {
+  static contextType = BearerContext
+  context!: React.ContextType<typeof BearerContext>
+
+  constructor(props: any) {
+    super(props)
+    this.state = { channels: [] }
+  }
+
+  componentDidMount() {
+    this.context.bearer.invoke('integration-id', 'myFunction')
+      .then((data: any) => { this.setState({ channels: data.channels }) })
+      .catch(console.error)
+  }
+
+  render() => (
+    <ul>
+      {this.state.channels.map((value: string, index: number) => {
+        return <li key={index}>{value}</li>
+      })}
+    </ul>
+  )
+}`
       },
       {
         language: 'NodeJS',
@@ -49,10 +97,6 @@ bearer.invoke("{myFunction}" options)`
       },
       {
         language: 'Ruby',
-        code: `TODO`
-      },
-      {
-        language: 'Python',
         code: `TODO`
       }
     ]

@@ -1,4 +1,6 @@
 import * as React from 'react'
+import * as crypto from 'crypto'
+
 import { css } from '@emotion/core'
 import Page from '../components/Page/Page'
 import IndexLayout from '../layouts'
@@ -245,63 +247,74 @@ const AboutPage: GatsbyPage = ({ location }) => (
         >
           {[
             {
-              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              email: 'guillaume@bearer.sh',
               name: 'Guillaume Montard',
               role: 'Co-Founder, CEO'
             },
             {
-              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              email: 'cedric@bearer.sh',
               name: 'Cédric Fabianski',
               role: 'Co-Founder, CTO'
             },
             {
-              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              email: 'antoine@bearer.sh',
               name: 'Antoine Tanguy',
               role: 'Software Engineer'
             },
             {
-              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              email: 'radek@bearer.sh',
               name: 'Radek Molenda',
               role: 'Software Engineer'
             },
             {
-              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              email: 'myriam@bearer.sh',
               name: 'Myriam Goude',
               role: 'Product Manager'
             },
             {
-              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              email: 'tarik@bearer.sh',
               name: 'Tarik Ihadjadene',
               role: 'Dev Ops'
             },
             {
-              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              email: 'arthur@bearer.sh',
               name: 'Arthur Carayon',
               role: 'UI/UX Designer'
             },
             {
-              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              email: 'phil@bearer.sh',
               name: 'Phil Hayton',
               role: 'Software Engineer'
             },
             {
-              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              email: 'elizabeth@bearer.sh',
               name: 'Elizabeth Braae',
               role: 'Software Engineer'
             },
             {
-              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              email: 'corentin@bearer.sh',
               name: 'Corentin Brossault',
               role: 'Software Engineer'
             },
             {
-              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
+              email: 'david@bearer.sh',
               name: 'David Roe',
               role: 'Software Engineer'
             },
             {} // Quick hack, add an empty div to align grid
-          ].map((textBlock, index) => (
-            <TeamBlock key={index} photo={textBlock.photo} name={textBlock.name} role={textBlock.role} />
+          ].map((teammate, index) => (
+            <TeamBlock
+              key={index}
+              photo={
+                teammate.email &&
+                `https://www.gravatar.com/avatar/${crypto
+                  .createHash('md5')
+                  .update(teammate.email)
+                  .digest('hex')}?s=1024`
+              }
+              name={teammate.name}
+              role={teammate.role}
+            />
           ))}
         </Grid>
       </Section>

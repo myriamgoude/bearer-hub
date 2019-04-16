@@ -161,11 +161,13 @@ module.exports = {
           enableCMP: true,
           cookiePolicyId: 65368465,
           banner: {
-            position: 'bottom',
+            position: 'top',
             textColor: '#958ea4',
             backgroundColor: '#FFFFFF',
             fontSize: '12px',
-            slideDown: false
+            slideDown: false,
+            applyStyles: false,
+            content: "Bearer uses cookies to make its website easier to use. <a href='/privacy'>Learn more</a>"
           }
         }
       }

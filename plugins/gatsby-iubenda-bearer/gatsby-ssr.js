@@ -4,13 +4,15 @@ export const onRenderBody = ({ setHeadComponents }, { consentSolutionConfig, coo
   if (!consentSolutionConfig && !cookieSolutionConfig) {
     return
   }
-  const snippet = `if(typeof window !== undefined){window._iub = window._iub || [];window._iub.csConfiguration = ${JSON.stringify(
-    { ...consentSolutionConfig, ...cookieSolutionConfig }
-  )};}`
+
+  const snippet = `window._iub = _iub || [];window._iub.csConfiguration = ${JSON.stringify({
+    ...consentSolutionConfig,
+    ...cookieSolutionConfig
+  })};`
+
   return setHeadComponents([
-    <script key="iubenda-cs-tcf-js" src="//cdn.iubenda.com/cs/tcf/stub.js" />,
-    <script key="iubenda-conf" dangerouslySetInnerHTML={{ __html: snippet }} />,
-    <script key="iubenda-cs-js" src="//cdn.iubenda.com/cs/iubenda_cs.js" charSet="UTF‌-8" async={true} />,
-    <script key="iubenda-consent-js" src="//cdn.iubenda.com/consent_solution/iubenda_cons.js" async={true} />
+    <script key="1" src="//cdn.iubenda.com/cs/tcf/stub.js" />,
+    <script key="2" dangerouslySetInnerHTML={{ __html: snippet }} />,
+    <script key="3" src="//cdn.iubenda.com/cs/iubenda_cs.js" charSet="UTF-8" async={true} />
   ])
 }

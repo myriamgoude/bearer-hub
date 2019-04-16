@@ -9,7 +9,7 @@ export default {
     justify-content: space-between;
     flex-wrap: wrap;
 
-    @media (min-width: ${breakpoints.sm}px) {
+    @media (min-width: ${breakpoints.md}px) {
       flex-direction: row;
     }
   `,

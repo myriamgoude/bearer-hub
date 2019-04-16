@@ -33,21 +33,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
           z-index: 99;
         `}
       />
-      <div
-        css={css`
-          position: relative;
-          width: 100%;
-          height: 100px;
-          background: url(${require('../../images/shared/mobile-line.svg')}) no-repeat center center / contain;
-          left: 0;
-          right: 0;
-          margin: auto;
 
-          @media (min-width: ${breakpoints.lg}px) {
-            display: none;
-          }
-        `}
-      />
       <Section>
         <div
           css={css`
@@ -63,6 +49,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
             @media (max-width: ${breakpoints.lg}px) {
               right: inherit;
               margin-left: 8px;
+              margin-top: 16px;
             }
           `}
         />

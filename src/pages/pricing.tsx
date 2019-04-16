@@ -26,7 +26,7 @@ const pricingPageCss = css`
     display: none;
     color: ${colors.secondary[2]};
 
-    @media (max-width: ${breakpoints.lg}px) {
+    @media (max-width: ${breakpoints.md}px) {
       display: inline-block;
     }
   }
@@ -37,7 +37,7 @@ const pricingPageCss = css`
   }
 
   .mobile-panel {
-    @media (max-width: ${breakpoints.lg}px) {
+    @media (max-width: ${breakpoints.md}px) {
       position: relative;
 
       & > div {
@@ -72,7 +72,7 @@ const PricingTable = (props: any) => (
         border-radius: 8px;
         text-align: center;
 
-        @media (max-width: ${breakpoints.lg}px) {
+        @media (max-width: ${breakpoints.md}px) {
           text-align: left;
           margin: auto;
 
@@ -123,7 +123,7 @@ const PricingTable = (props: any) => (
       }
 
       tbody tr td {
-        @media (max-width: ${breakpoints.lg}px) {
+        @media (max-width: ${breakpoints.md}px) {
           display: flex;
           justify-content: space-around;
 
@@ -230,7 +230,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
               bottom: -46px;
               margin: auto;
 
-              @media (max-width: ${breakpoints.lg}px) {
+              @media (max-width: ${breakpoints.md}px) {
                 display: none;
               }
             }
@@ -251,7 +251,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
           }
         ]}
         style={css`
-          @media (min-width: ${breakpoints.lg}px) {
+          @media (min-width: ${breakpoints.md}px) {
             display: none;
           }
         `}
@@ -293,7 +293,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                   margin-bottom: 0;
                 }
 
-                @media (max-width: ${breakpoints.lg}px) {
+                @media (max-width: ${breakpoints.md}px) {
                   display: none;
                 }
               `}

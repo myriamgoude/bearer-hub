@@ -70,8 +70,13 @@ export default {
     }
   `,
   categories: css`
-    @media (min-width: ${breakpoints.md}px) {
-      display: flex;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: ${breakpoints.lg}px) {
+      section {
+        width: 50%;
+      }
     }
   `,
   category: css`

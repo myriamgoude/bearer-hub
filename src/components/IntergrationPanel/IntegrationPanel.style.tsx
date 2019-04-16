@@ -1,4 +1,5 @@
 import { css } from '@emotion/core'
+import { breakpoints } from '../../styles/variables'
 
 export default {
   item: css`
@@ -18,6 +19,10 @@ export default {
 
     & > span:nth-of-type(3) {
       margin-left: 0;
+    }
+
+    @media (max-width: ${breakpoints.lg}px) {
+      width: 100%;
     }
   `
 }

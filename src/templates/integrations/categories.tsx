@@ -77,6 +77,7 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
                 @media (max-width: ${breakpoints.lg}px) {
                   flex: 0 1 100%;
                   margin-top: 1em;
+                  margin-bottom: 3em;
                 }
               `}
             >

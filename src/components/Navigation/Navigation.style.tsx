@@ -4,7 +4,7 @@ import { colors, breakpoints } from '../../styles/variables'
 export default {
   root: css`
     align-self: flex-end;
-    @media (max-width: ${breakpoints.md}px) {
+    @media (max-width: ${breakpoints.lg}px) {
       .desktop-login {
         display: none !important;
       }
@@ -41,7 +41,7 @@ export default {
       right: 0;
       margin: auto;
       top: -30px;
-      @media (max-width: ${breakpoints.md}px) {
+      @media (max-width: ${breakpoints.lg}px) {
         display: none;
       }
     }
@@ -51,14 +51,14 @@ export default {
       display: none;
     }
 
-    @media (min-width: ${breakpoints.md}px) {
+    @media (min-width: ${breakpoints.lg}px) {
       display: inline-block;
       background: transparent;
       color: ${colors.black};
       width: auto;
       padding: 0;
     }
-    @media (max-width: ${breakpoints.md}px) {
+    @media (max-width: ${breakpoints.lg}px) {
       margin: 0;
       background: ${colors.lightGrey};
       top: 0;
@@ -91,7 +91,7 @@ export default {
       line-height: 40px;
       list-style: none;
 
-      @media (min-width: ${breakpoints.md}px) {
+      @media (min-width: ${breakpoints.lg}px) {
         width: auto;
         display: inline-block;
       }
@@ -111,7 +111,7 @@ export default {
       background-color: #e2e6f1;
       border-right: 1px solid #eceef8;
 
-      @media (max-width: ${breakpoints.md}px) {
+      @media (max-width: ${breakpoints.lg}px) {
         display: none;
       }
     }
@@ -129,7 +129,7 @@ export default {
     z-index: 10;
     top: 16px;
     right: 8px;
-    @media (min-width: ${breakpoints.md}px) {
+    @media (min-width: ${breakpoints.lg}px) {
       display: none;
     }
   `

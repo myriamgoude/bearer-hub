@@ -9,12 +9,13 @@ exports[`Search renders correctly 1`] = `
       Array [
         Object {
           "map": undefined,
-          "name": "1pjxgn4",
+          "name": "14xsuv6",
           "next": undefined,
           "styles": "
           @media (max-width: 992px) {
             overflow: scroll;
             width: ;
+            text-align: center;
           }
         ",
         },
@@ -27,7 +28,7 @@ exports[`Search renders correctly 1`] = `
         Array [
           Object {
             "map": undefined,
-            "name": "1n3w5wq",
+            "name": "1gba6eq",
             "next": undefined,
             "styles": "
     display: flex;
@@ -36,7 +37,7 @@ exports[`Search renders correctly 1`] = `
     justify-content: space-between;
     flex-wrap: wrap;
 
-    @media (min-width: 576px) {
+    @media (min-width: 768px) {
       flex-direction: row;
     }
   ",
@@ -46,14 +47,15 @@ exports[`Search renders correctly 1`] = `
           undefined,
           Object {
             "map": undefined,
-            "name": "s155ij",
+            "name": "1tqafzq",
             "next": undefined,
             "styles": "
         justify-content: flex-start !important;
         @media (max-width: 992px) {
-          display: block;
           width: 0px;
           overflow: scroll;
+          flex-wrap: nowrap;
+          flex-direction: row;
         }
       ",
           },

@@ -1,6 +1,4 @@
 import * as React from 'react'
-import * as crypto from 'crypto'
-
 import { css } from '@emotion/core'
 import Page from '../components/Page/Page'
 import IndexLayout from '../layouts'
@@ -83,8 +81,8 @@ const AboutPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata
       title="About Us | Bearer"
-      description="Meet the Bearer team and learn about our 
-      mission to help developers build quicker & better API integrations"
+      description="
+        Meet the Bearer team and learn about our mission to help developers build quicker &amp; better API integrations"
     />
     <Page
       css={[
@@ -243,74 +241,63 @@ const AboutPage: GatsbyPage = ({ location }) => (
         >
           {[
             {
-              email: 'guillaume@bearer.sh',
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'Guillaume Montard',
               role: 'Co-Founder, CEO'
             },
             {
-              email: 'cedric@bearer.sh',
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'Cédric Fabianski',
               role: 'Co-Founder, CTO'
             },
             {
-              email: 'antoine@bearer.sh',
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'Antoine Tanguy',
               role: 'Software Engineer'
             },
             {
-              email: 'radek@bearer.sh',
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'Radek Molenda',
               role: 'Software Engineer'
             },
             {
-              email: 'myriam@bearer.sh',
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'Myriam Goude',
               role: 'Product Manager'
             },
             {
-              email: 'tarik@bearer.sh',
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'Tarik Ihadjadene',
               role: 'Dev Ops'
             },
             {
-              email: 'arthur@bearer.sh',
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'Arthur Carayon',
               role: 'UI/UX Designer'
             },
             {
-              email: 'phil@bearer.sh',
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'Phil Hayton',
               role: 'Software Engineer'
             },
             {
-              email: 'elizabeth@bearer.sh',
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'Elizabeth Braae',
               role: 'Software Engineer'
             },
             {
-              email: 'corentin@bearer.sh',
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'Corentin Brossault',
               role: 'Software Engineer'
             },
             {
-              email: 'dave@bearer.sh',
+              photo: 'https://ca.slack-edge.com/T4EM0JX09-U4G2561AA-71013676414c-72',
               name: 'David Roe',
               role: 'Software Engineer'
             },
             {} // Quick hack, add an empty div to align grid
-          ].map((teammate, index) => (
-            <TeamBlock
-              key={index}
-              photo={
-                teammate.email &&
-                `https://www.gravatar.com/avatar/${crypto
-                  .createHash('md5')
-                  .update(teammate.email)
-                  .digest('hex')}?s=1024`
-              }
-              name={teammate.name}
-              role={teammate.role}
-            />
+          ].map((textBlock, index) => (
+            <TeamBlock key={index} photo={textBlock.photo} name={textBlock.name} role={textBlock.role} />
           ))}
         </Grid>
       </Section>
@@ -388,6 +375,10 @@ const AboutPage: GatsbyPage = ({ location }) => (
             text-align: center;
             align-items: center;
             justify-content: center;
+
+            @media (max-width: ${breakpoints.lg}px) {
+              margin-top: 32px;
+            }
           `}
         >
           <img

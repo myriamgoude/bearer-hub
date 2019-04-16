@@ -129,7 +129,14 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             Bearer provides all of the tools to build, run and manage API integrations.
           </p>
 
-          <LightCta text="Your app, your integration, your code" />
+          <LightCta
+            text="Your app, your integration, your code"
+            style={css`
+              @media (max-width: ${breakpoints.lg}px) {
+                justify-content: center !important;
+              }
+            `}
+          />
           <br />
           <ButtonToDashboard primary link={dashboardURL()} text="Start building!" />
           <br />
@@ -238,6 +245,11 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             margin-top: 7rem;
             @media (max-width: ${breakpoints.lg}px) {
               margin-top: 3em;
+            }
+          `}
+          childrenStyle={css`
+            @media (max-width: ${breakpoints.lg}px) {
+              margin-bottom: 60px;
             }
           `}
           fullWidth

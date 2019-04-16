@@ -51,12 +51,19 @@ const PressPage: GatsbyPage = ({ location }) => (
                 max-width: 400px !important;
                 margin: 0;
                 margin-top: 68px;
+
+                @media (max-width: ${breakpoints.lg}px) {
+                  margin: 68px auto 0;
+                }
               `}
               childrenStyle={css`
                 padding-right: 8px;
                 a,
                 button {
                   width: 100% !important;
+                  @media (max-width: ${breakpoints.lg}px) {
+                    margin-bottom: 16px;
+                  }
                 }
               `}
             >
@@ -100,7 +107,14 @@ const PressPage: GatsbyPage = ({ location }) => (
               </span>
             </Grid>
           </div>
-          <div className="hero-half">
+          <div
+            className="hero-half"
+            css={css`
+              @media (max-width: ${breakpoints.lg}px) {
+                display: none;
+              }
+            `}
+          >
             <img
               src={require('../images/press-hero-illustration.png')}
               css={css`
@@ -131,9 +145,16 @@ const PressPage: GatsbyPage = ({ location }) => (
             space="between"
             style={css`
               max-width: 508px;
+              @media (max-width: ${breakpoints.lg}px) {
+                padding: 1em 0;
+                align-items: center;
+              }
             `}
             childrenStyle={css`
               max-width: 244px;
+              @media (max-width: ${breakpoints.lg}px) {
+                margin-bottom: 16px;
+              }
             `}
           >
             {pressArticles.map((article: any) => (
@@ -197,7 +218,17 @@ const PressPage: GatsbyPage = ({ location }) => (
         `}
       >
         <SectionHeading primaryText="Brand and resources" />
-        <Grid>
+        <Grid
+          childrenStyle={css`
+            @media (max-width: ${breakpoints.lg}px) {
+              display: flex;
+              width: 100%;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 16px;
+            }
+          `}
+        >
           <div>
             <SectionHeading
               secondaryText="Color"
@@ -236,7 +267,16 @@ const PressPage: GatsbyPage = ({ location }) => (
             >
               <Text>It’s yellow but not canary</Text>
               <Clearfix />
-              <Text color={colors.yellow}>{colors.yellow}</Text>
+              <Text
+                color={colors.yellow}
+                style={css`
+                  @media (max-width: ${breakpoints.lg}px) {
+                    float: left;
+                  }
+                `}
+              >
+                {colors.yellow}
+              </Text>
             </div>
           </div>
           <div>
@@ -269,7 +309,16 @@ const PressPage: GatsbyPage = ({ location }) => (
             >
               <Text>It’s dark, but not black</Text>
               <Clearfix />
-              <Text color={colors.darkBlue}>{colors.darkBlue}</Text>
+              <Text
+                color={colors.darkBlue}
+                style={css`
+                  @media (max-width: ${breakpoints.lg}px) {
+                    float: left;
+                  }
+                `}
+              >
+                {colors.darkBlue}
+              </Text>
             </div>
           </div>
         </Grid>

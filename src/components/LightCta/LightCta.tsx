@@ -7,19 +7,23 @@ interface ILightCtaProps {
   color?: string
   tailColor?: string
   text: string
+  style?: any
   [key: string]: any
 }
 
-const LightCta: React.SFC<ILightCtaProps> = ({ tailColor, text }: ILightCtaProps) => {
+const LightCta: React.SFC<ILightCtaProps> = ({ tailColor, text, style }: ILightCtaProps) => {
   return (
     <div
-      css={css`
-        margin-bottom: 0.75rem;
-        color: ${colors.darkBlue};
-        letter-spacing: 0.5px;
-        display: flex;
-        align-items: center;
-      `}
+      css={[
+        css`
+          margin-bottom: 0.75rem;
+          color: ${colors.darkBlue};
+          letter-spacing: 0.5px;
+          display: flex;
+          align-items: center;
+        `,
+        style
+      ]}
     >
       <span
         css={css`

@@ -25,6 +25,7 @@ const Grid = (props: IGridProps) => {
           @media (max-width: ${breakpoints.lg}px) {
             overflow: scroll;
             width: ${props.width};
+            text-align: center;
           }
         `,
         props.wrapperStyle
@@ -48,16 +49,15 @@ const Grid = (props: IGridProps) => {
               props.gutter
                 ? props.col
                   ? css`
-                      flex: calc(${(100 / props.col) * 2}% - ${props.gutter}px);
+                      flex: 0 1 calc(${(100 / props.col) * 2}% - ${props.gutter}px);
                       @media (min-width: ${breakpoints.lg}px) {
-                        flex: calc(${100 / props.col}% - ${props.gutter}px);
-                        flex-grow: 0;
+                        flex: 0 1 calc(${100 / props.col}% - ${props.gutter}px);
                       }
                     `
                   : css`
-                      flex: calc(${(100 / props.children.length) * 2}% - ${props.gutter}px);
+                      flex: 0 1 calc(${(100 / props.children.length) * 2}% - ${props.gutter}px);
                       @media (min-width: ${breakpoints.lg}px) {
-                        flex: calc(${100 / props.children.length}% - ${props.gutter}px);
+                        flex: 0 1 calc(${100 / props.children.length}% - ${props.gutter}px);
                       }
                     `
                 : props.col

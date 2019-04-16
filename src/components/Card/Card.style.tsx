@@ -15,6 +15,10 @@ export default {
         font-size: 18px !important;
       }
     }
+
+    @media (max-width: ${breakpoints.lg}px) {
+      min-width: 200px;
+    }
   `,
   paddingRegular: css`
     padding: ${getEmSize(24)};

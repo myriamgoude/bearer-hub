@@ -16,8 +16,10 @@ const TeamBlock = (props: ITeamBlocks) => {
     <div css={styles.root}>
       <div css={styles.container}>
         <div css={styles.imageContainer}>{props.photo && <img src={props.photo} css={styles.image} />}</div>
-        {props.name && <h4 css={styles.title}>{props.name}</h4>}
-        {props.role && <Text text={`${props.role}`} />}
+        <div>
+          {props.name && <h4 css={styles.title}>{props.name}</h4>}
+          {props.role && <Text text={`${props.role}`} />}
+        </div>
       </div>
     </div>
   )

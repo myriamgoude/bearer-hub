@@ -43,7 +43,10 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
           style={css`
             justify-content: ${this.props.templates.length <= 2 ? 'flex-start !important' : null};
             @media (max-width: ${breakpoints.lg}px) {
-              display: block;
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: row;
+              justify-content: flex-start;
               width: ${(this.props.templates.length + 1) * 152 + (this.props.templates.length = 2 ? 16 : 0)}px;
               overflow: scroll;
             }
@@ -52,7 +55,6 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
             margin-bottom: 8px;
             margin-right: ${(this.props.templates.length = 2 ? 16 : 0)}px;
             @media (max-width: ${breakpoints.lg}px) {
-              width: 152px;
               display: inline-block;
             }
           `}

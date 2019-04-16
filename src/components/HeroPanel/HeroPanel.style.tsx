@@ -79,7 +79,6 @@ export default {
       background-position: top 200px center;
     }
     @media (min-width: ${breakpoints.lg}px) {
-      background-position: top 150px center;
     }
     @media (min-width: ${breakpoints.xl}px) {
       background-position: top 100px center;
@@ -91,7 +90,7 @@ export default {
 
     @media (max-width: ${breakpoints.lg}px) {
       background-size: 470px;
-      background-position: center center;
+      background-position: center top 300px;
       padding-top: 60px;
     }
   `,

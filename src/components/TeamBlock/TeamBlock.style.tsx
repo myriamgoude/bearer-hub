@@ -25,11 +25,16 @@ export default {
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
+    @media (max-width: ${breakpoints.lg}px) {
+      width: 88px;
+      height: 88px;
+    }
   `,
   imageContainer: css`
     @media (max-width: ${breakpoints.lg}px) {
-      height: 64px;
-      width: 64px;
+      height: auto;
+      padding: 1em 0;
+      width: 100%;
       display: inline-block;
       float: left;
       margin-right: 16px;

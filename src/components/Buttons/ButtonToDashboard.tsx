@@ -24,7 +24,7 @@ export default class ButtonToDashboard extends React.Component<IButtonToDashboar
   }
 
   private handleClick = (link: string) => {
-    lockLogin(this.onLogin, this.onError, false, link)
+    lockLogin(this.onLogin, this.onError, true, link)
   }
 
   private onLogin = () => {

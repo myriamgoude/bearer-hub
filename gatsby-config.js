@@ -142,8 +142,19 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: process.env.GATSBY_BASE_DOMAIN,
-        sitemap: process.env.GATSBY_BASE_DOMAIN,
-        policy: [{ userAgent: '*', disallow: ['/'] }]
+        sitemap: `${process.env.GATSBY_BASE_DOMAIN}/sitemap.xml`,
+        resolveEnv: () => process.env.GATSBY_ENV || process.env.NODE_ENV || 'development',
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          staging: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }]
+          }
+        }
       }
     },
     {

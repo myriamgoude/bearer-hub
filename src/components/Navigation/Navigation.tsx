@@ -2,6 +2,7 @@ import * as React from 'react'
 import { css } from '@emotion/core'
 
 import { isAuthenticated, isSSOAuthenticated, lockLogin } from '../../services/Auth'
+import { dashboardURL } from '../../services/Dashboard'
 import { isBrowser } from '../../services/Browser'
 import { Link, Button } from '../index'
 
@@ -46,11 +47,11 @@ export default class Navigation extends React.Component<INavigationProps, INavig
   }
 
   private doLogin = () => {
-    lockLogin(this.onLogin, this.onError)
+    lockLogin(this.onLogin, this.onError, false, dashboardURL())
   }
 
   private doSignup = () => {
-    lockLogin(this.onLogin, this.onError, true)
+    lockLogin(this.onLogin, this.onError, true, dashboardURL())
   }
 
   private onLogin = () => {
@@ -68,7 +69,7 @@ export default class Navigation extends React.Component<INavigationProps, INavig
     }
   }
 
-  private renderLoggedIn = () => <Button small secondary text="Go to dashboard" link="https://app.bearer.sh" />
+  private renderLoggedIn = () => <Button small secondary text="Go to dashboard" link={dashboardURL()} />
 
   private renderLogin = () => (
     <>

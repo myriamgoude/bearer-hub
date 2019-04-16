@@ -2,6 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 
+import { dashboardURL } from '../services/Dashboard'
 import {
   Button,
   ButtonToDashboard,
@@ -130,7 +131,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
 
           <LightCta text="Your app, your integration, your code" />
           <br />
-          <ButtonToDashboard primary link="https://app.bearer.sh" text="Start building!" />
+          <ButtonToDashboard primary link={dashboardURL()} text="Start building!" />
           <br />
           <p>
             <Small>

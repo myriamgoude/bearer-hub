@@ -19,6 +19,7 @@ import IndexLayout from '../layouts'
 import { colors, breakpoints } from '../styles/variables'
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
 import { isBrowser } from '../services/Browser'
+import { dashboardURL } from '../services/Dashboard'
 
 const pricingPageCss = css`
   .mobile-label {
@@ -457,7 +458,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                 />
                 <ButtonToDashboard
                   trackLink
-                  link="https://app.bearer.sh"
+                  link={dashboardURL()}
                   text="Start now"
                   style={css`
                     margin: 12px auto;

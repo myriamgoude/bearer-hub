@@ -122,6 +122,37 @@ const PricingTable = (props: any) => (
         line-height: 3rem;
       }
 
+      td.onTwoLines > span:last-of-type,
+      th.onTwoLines > span:last-of-type {
+        padding-top: 0.5rem;
+      }
+
+      td.onTwoLines .br,
+      th.onTwoLines .br {
+        display: block;
+        line-height: initial;
+      }
+
+      @media (min-width: ${breakpoints.lg}px) {
+        td.onTwoLines,
+        th.onTwoLines {
+          line-height: 1.5rem;
+          padding: 1rem;
+        }
+
+        td.pretendToBeOnTwoLines,
+        th.pretendToBeOnTwoLines {
+          line-height: 5rem;
+          padding: 0;
+        }
+
+        td.onTwoLines .br,
+        th.onTwoLines .br {
+          display: block;
+          line-height: 1.5rem;
+        }
+      }
+
       tbody tr td {
         @media (max-width: ${breakpoints.md}px) {
           display: flex;
@@ -302,7 +333,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                   <td>Integrations</td>
                 </tr>
                 <tr>
-                  <td>API Call included</td>
+                  <td className="pretendToBeOnTwoLines">API Call included</td>
                 </tr>
                 <tr>
                   <td>Logging</td>
@@ -342,23 +373,25 @@ const PricingPage: GatsbyPage = ({ location }) => (
             >
               <PricingTable className="first-table">
                 <thead>
-                  <th>
-                    <Text text="Community" color="#66709A" />
+                  <tr>
+                    <th>
+                      <Text text="Community" color="#66709A" />
 
-                    <SectionHeading
-                      primaryText="Free"
-                      tag="h3"
-                      style={css`
-                        color: ${colors.darkBlue};
-                        margin-bottom: 0;
+                      <SectionHeading
+                        primaryText="Free"
+                        tag="h3"
+                        style={css`
+                          color: ${colors.darkBlue};
+                          margin-bottom: 0;
 
-                        > h3 {
-                          margin: 0 !important;
-                          font-family: 'ProximaNova-Semibold';
-                        }
-                      `}
-                    />
-                  </th>
+                          > h3 {
+                            margin: 0 !important;
+                            font-family: 'ProximaNova-Semibold';
+                          }
+                        `}
+                      />
+                    </th>
+                  </tr>
                 </thead>
                 <tbody>
                   <tr>
@@ -368,9 +401,12 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td className="onTwoLines">
                       <span className="mobile-label">API Call included</span>
-                      <span>Unlimited for 1 Integration</span>
+                      <span>
+                        <span className="br">Unlimited for 1 integration</span>
+                        <span className="br">2000 per month for others</span>
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -479,23 +515,25 @@ const PricingPage: GatsbyPage = ({ location }) => (
             >
               <PricingTable background="dark">
                 <thead>
-                  <th>
-                    <Text text="Enterprise" color={colors.yellow} />
-                    <SectionHeading
-                      primaryText="Let's talk"
-                      tag="h3"
-                      style={css`
-                        margin-bottom: 0;
+                  <tr>
+                    <th>
+                      <Text text="Enterprise" color={colors.yellow} />
+                      <SectionHeading
+                        primaryText="Let's Talk"
+                        tag="h3"
+                        style={css`
+                          margin-bottom: 0;
 
-                        > h3 {
-                          color: white !important;
-                          font-weight: bold;
-                          margin: 0 !important;
-                          font-family: 'ProximaNova-Semibold';
-                        }
-                      `}
-                    />
-                  </th>
+                          > h3 {
+                            color: white !important;
+                            font-weight: bold;
+                            margin: 0 !important;
+                            font-family: 'ProximaNova-Semibold';
+                          }
+                        `}
+                      />
+                    </th>
+                  </tr>
                 </thead>
                 <tbody>
                   <tr>
@@ -505,9 +543,9 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td className="pretendToBeOnTwoLines">
                       <span className="mobile-label">API Call included</span>
-                      <span>Unlimited</span>
+                      <span>--</span>
                     </td>
                   </tr>
                   <tr>
@@ -540,7 +578,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                   <tr>
                     <td>
                       <span className="mobile-label">Support</span>
-                      <span>Email &amp; Phone support</span>
+                      <span>Email &amp; Slack support</span>
                     </td>
                   </tr>
                   <tr>
@@ -585,7 +623,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                 `}
               >
                 <Button
-                  link="#pricing-contact"
+                  link="#contact-us"
                   text="Contact us"
                   style={css`
                     margin: 12px auto;

@@ -168,8 +168,8 @@ module.exports = {
           consentOnScroll: false,
           lang: 'en',
           siteId: 1413491,
-          reloadOnConsent: true,
-          enableRemoteConsent: true,
+          reloadOnConsent: false,
+          enableRemoteConsent: false,
           enableCMP: true,
           cookiePolicyId: 65368465,
           banner: {

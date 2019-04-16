@@ -242,12 +242,11 @@ const PricingPage: GatsbyPage = ({ location }) => (
           {
             label: 'Community',
             target: '.plan-community',
-            navigate: false
+            default: true
           },
           {
             label: 'Business',
-            target: '.plan-business',
-            navigate: false
+            target: '.plan-business'
           }
         ]}
         style={css`
@@ -335,9 +334,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
             <div
               className={
                 isBrowser()
-                  ? window.location.search.replace('?pricing=', '') === 'community'
-                    ? 'show'
-                    : !window.location.search
+                  ? window.location.search.replace('?pricing=', '') === 'community' || window.location.search === ''
                     ? 'show'
                     : undefined
                   : ''

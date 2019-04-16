@@ -30,7 +30,10 @@ const Tabs = (props: ITabsProps) => (
         css={[
           styles.item,
           isBrowser(),
-          isBrowser() && window.location.search.replace('?pricing=', '') === item.label.toLowerCase() && styles.active,
+          isBrowser() &&
+            (window.location.search.replace('?pricing=', '') === item.label.toLowerCase() ||
+              (window.location.search === '' && item.default)) &&
+            styles.active,
           props.active && styles.active
         ]}
         partiallyActive

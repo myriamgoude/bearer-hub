@@ -14,7 +14,8 @@ import {
   TimelineMyApp,
   TimelinePlacement,
   Section,
-  SectionHeading
+  SectionHeading,
+  ButtonToDashboard
 } from '../../components/index'
 import IndexLayout from '../../layouts'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
@@ -181,7 +182,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             background: url(${require('../../images/shared/yellow-splash.svg')}) no-repeat center center / 122px;
           `}
         >
-          <Button
+          <ButtonToDashboard
             primary
             callToAction
             link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${template.hubID}`}

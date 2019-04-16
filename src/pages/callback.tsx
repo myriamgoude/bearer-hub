@@ -9,6 +9,14 @@ export default class Login extends React.Component {
   }
 
   public componentDidMount() {
-    lockCallback(() => navigate(redirectPath()))
+    const internal = /^\/(?!\/)/.test(redirectPath())
+    if (internal) {
+      lockCallback(() => navigate(redirectPath()))
+    } else {
+      lockCallback(() => {
+        const currentWindow = window as any
+        currentWindow.location = `${redirectPath()}`
+      })
+    }
   }
 }

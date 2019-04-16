@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Button, Link, Small } from '../../components/index'
+import { ButtonToDashboard, Link, Small } from '../../components/index'
 
 import styles from './TimelineHeading.style'
 
@@ -53,7 +53,7 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
       </div>
 
       <div itemProp="url">
-        <Button
+        <ButtonToDashboard
           primary
           callToAction
           link={`${process.env.GATSBY_BEARER_DASHBOARD_SETUP_URL}${props.templateHubId}`}

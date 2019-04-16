@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 
 import {
   Button,
+  ButtonToDashboard,
   Page,
   PageMetadata,
   HeroLined,
@@ -454,7 +455,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     max-width: 12rem;
                   `}
                 />
-                <Button
+                <ButtonToDashboard
                   trackLink
                   link="https://app.bearer.sh"
                   text="Start now"

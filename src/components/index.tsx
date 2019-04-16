@@ -1,5 +1,5 @@
 import { Alert, AlertType, AlertKey } from './Alert/index'
-import Button from './Buttons/index'
+import { Button, ButtonToDashboard } from './Buttons/index'
 import Card from './Card/index'
 import Container from './Container/index'
 import Clearfix from './Clearfix/index'
@@ -45,6 +45,7 @@ export {
   AlertKey,
   AlertType,
   Button,
+  ButtonToDashboard,
   Card,
   Clearfix,
   Container,

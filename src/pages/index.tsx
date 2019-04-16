@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 
 import {
   Button,
+  ButtonToDashboard,
   Clearfix,
   ColoredTextBlock,
   Grid,
@@ -129,7 +130,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
 
           <LightCta text="Your app, your integration, your code" />
           <br />
-          <Button primary link="/integrations" text="Start building!" />
+          <ButtonToDashboard primary link="https://app.bearer.sh" text="Start building!" />
           <br />
           <p>
             <Small>

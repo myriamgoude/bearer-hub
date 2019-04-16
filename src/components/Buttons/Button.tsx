@@ -23,7 +23,7 @@ interface IButtonProps {
   trackingOptions?: any
 }
 
-const Button = (props: IButtonProps) => {
+export default (props: IButtonProps) => {
   const RegularButton = styled.button`
     ${styles.buttonStyle}
 
@@ -55,5 +55,3 @@ const Button = (props: IButtonProps) => {
     </ButtonLink>
   )
 }
-
-export default Button

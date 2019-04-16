@@ -35,7 +35,8 @@ class Link extends React.Component<ILinkProps> {
       }
     }
   }
-  public handleOnClick = () => {
+
+  public handleOnClick = (event: any) => {
     // onClick action to track analytics
     if (this.props.trackLink && isBrowser) {
       const currentWindow = window as any
@@ -44,7 +45,7 @@ class Link extends React.Component<ILinkProps> {
 
     // other onClick actions (if present)
     if (this.props.onClick) {
-      this.props.onClick()
+      this.props.onClick(event)
     }
   }
 

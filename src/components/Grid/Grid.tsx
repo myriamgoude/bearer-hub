@@ -51,6 +51,7 @@ const Grid = (props: IGridProps) => {
                       flex: calc(${(100 / props.col) * 2}% - ${props.gutter}px);
                       @media (min-width: ${breakpoints.lg}px) {
                         flex: calc(${100 / props.col}% - ${props.gutter}px);
+                        flex-grow: 0;
                       }
                     `
                   : css`

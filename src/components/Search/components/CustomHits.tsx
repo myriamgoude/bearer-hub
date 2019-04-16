@@ -2,7 +2,7 @@ import * as React from 'react'
 import { css } from '@emotion/core'
 
 import { connectHits } from 'react-instantsearch-dom'
-import { Card, Clearfix, Grid, Tag } from '../../index'
+import { Card, Grid, Tag } from '../../index'
 import { CustomHighlight } from './CustomHighlight'
 import blockStyles from '../../../components/IntergrationPanel/IntegrationPanel.style'
 import { humanizeAuthType, templatePath } from '../../../services/Explore'
@@ -32,12 +32,17 @@ export const CustomHits = connectHits(({ hits }: { hits: ICustomHitsProps[] }) =
         }
       `}
       childrenStyle={css`
+        -webkit-transition: box-shadow 0.2s; /* Safari */
+        transition: box-shadow 0.2s;
         margin-bottom: 16px;
         margin-right: ${(hits.length = 2 ? 16 : 0)}px;
         @media (max-width: ${breakpoints.lg}px) {
           min-width: 152px;
           max-width: 152px;
           display: inline-block;
+        }
+        &:hover {
+          box-shadow: 0 3px 4px 0 rgba(30, 9, 54, 0.1);
         }
       `}
     >
@@ -68,10 +73,9 @@ export const CustomHits = connectHits(({ hits }: { hits: ICustomHitsProps[] }) =
             </div>
             <div itemProp="brand">
               <CustomHighlight attribute="title" hit={hit} />
-              <Clearfix />
-              <div css={blockStyles.cardTags}>
-                {tags && tags.map((tag: string, index: number) => <Tag key={index} text={tag} color="#1339D7" />)}
-              </div>
+            </div>
+            <div css={blockStyles.cardTags}>
+              {tags && tags.map((tag: string, index: number) => <Tag key={index} text={tag} color="#1339D7" />)}
             </div>
           </Card>
         )

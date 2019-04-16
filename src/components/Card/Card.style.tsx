@@ -7,7 +7,9 @@ export default {
     background: white;
     box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.26);
     border-radius: 6px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     h5 {
       @media (max-width: ${breakpoints.lg}) {
         font-size: 18px !important;

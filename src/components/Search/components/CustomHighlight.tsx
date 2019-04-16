@@ -15,7 +15,7 @@ export const CustomHighlight = connectHighlight(({ highlight, attribute, hit }: 
       tag="h5"
       style={css`
         font-weight: bold;
-        margin-bottom: 8px;
+        margin: 1rem;
       `}
     >
       {parsedHit.map((part: { value: string; isHighlighted: boolean }, index: number) => {

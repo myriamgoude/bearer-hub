@@ -32,6 +32,9 @@ export default {
     margin: 0 0.75rem;
   `,
   stageHint: css`
+    display: block;
+    margin-top: 1rem;
     font-size: 0.875rem;
+    line-height: 1.3 !important;
   `
 }

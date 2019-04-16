@@ -38,6 +38,9 @@ export default {
     position: absolute;
     height: 100%;
     left: 0;
+    @media (max-width: ${breakpoints.lg}px) {
+      left: auto;
+    }
   `,
   icon: css`
     position: absolute;
@@ -45,6 +48,9 @@ export default {
     top: 40%;
     left: 32px;
     transform: translate(-50%, -50%);
+    @media (max-width: ${breakpoints.lg}px) {
+      position: relative;
+    }
   `,
   title: css`
     font-size: ${dimensions.headingSizes.h4}em;

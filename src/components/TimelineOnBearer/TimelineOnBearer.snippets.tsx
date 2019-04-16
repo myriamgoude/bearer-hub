@@ -1,10 +1,17 @@
 import { Snippet } from '../CodeSnippets/CodeSnippets'
 
 const timelineCodeSnippet = {
-  cloneTemplate(gitHubUrl: string, templateTitle: string): Snippet {
+  cloneTemplate(templateTitle: string): Snippet {
+    function templateFolderPath(templateTitle: string) {
+      return `templates/providers/${templateTitle
+        .toLowerCase()
+        .split(' ')
+        .join('-')}`
+    }
+    const gitHubUrl = 'https://github.com/Bearer/templates'
     return {
       language: 'bash',
-      code: `$ git clone ${gitHubUrl} && cd templates/${templateTitle}
+      code: `$ git clone ${gitHubUrl} && cd ${templateFolderPath(templateTitle)}
 $ yarn install`
     }
   },

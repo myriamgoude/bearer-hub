@@ -5,39 +5,41 @@ const timelineCodeSnippet = {
     return [
       {
         language: 'JS',
-        code: `<script src="https://cdn.jsdelivr.net/npm/@bearer/js@0.111.0/lib/bearer.production.min.js"></script>
+        code: `<script src="https://cdn.jsdelivr.net/npm/@bearer/js/lib/bearer.production.min.js"></script>
 <script>
-var bearer = new Bearer(SETUP_ID, INTEGRATION_NAME)
+const bearerClient = bearer('BEARER_CLIENT_ID')
 
-bearer.connect(myIntegration).then(console.log)
+bearerClient.connect(
+  'INTEGRATION_UUID', 
+  'YOUR_SETUP_ID', 
+  { authId: 'YOUR_USER_IDENTIFIER' }
+)
 </script>`
       },
       {
         language: 'React',
-        code: `import React, { useState } from 'react'
-import { render } from 'react-dom'
-import { MyIntegration } from './invoke'
+        code: `import * as React from "react"
+import { factory } from "@bearer/react"
+import { BearerContext } from "@bearer/react/lib/bearer-provider"
 
-// Import Bearer SDK for React
-import { Bearer, factory } from '@bearer/react'
-const { Connect } = factory('integration-id')
+const { Connect } = factory(INTEGRATION_UUID);
 
-function App() {
-  const [authId, setAuthId] = useState('')
+const MyComponent = () => { 
+  const [authId, setAuthId] = React.useState();
+
   return (
-    <Bearer clientId='client-id'>
-      {!authId ? (
-        <Connect setupId='setup-id' authId={authId}
-          onSuccess={data => setAuthId(data.authId }}
-          render={({ connect }) => <button onClick={connect}> Connect </button>}
-        />
-      ) : ( <MyIntegration authId={authId} /> )}
-    </Bearer>
+    <Connect authId={YOUR_USER_IDENTIFIER} setupId={YOUR_SETUP_ID} 
+      onSuccess={data => {
+        setAuthId(data.authId);
+      }}
+      render={({ connect }) => {
+        return (
+          <button onClick={connect}>Connect</button>
+        )
+      }}
+    />
   )
-}
-
-const rootElement = document.getElementById('root')
-render(<App />, rootElement)`
+}`
       }
     ]
   },
@@ -46,58 +48,72 @@ render(<App />, rootElement)`
     return [
       {
         language: 'JS',
-        code: `<script src="https://cdn.jsdelivr.net/npm/@bearer/js@0.111.0/lib/bearer.production.min.js"></script>
+        code: `<script src="https://cdn.jsdelivr.net/npm/@bearer/js/lib/bearer.production.min.js"></script>
 <script>
-var bearer = new Bearer(SETUP_ID, INTEGRATION_NAME)
+const bearerClient = bearer('BEARER_CLIENT_ID')
 
-bearer
-  .invoke("myIntegration", "myFunction")
-  .then(({data}) => { console.log(data) })
-  .catch(console.error)
+bearerClient.invoke('INTEGRATION_UUID', 'FUNCTION_NAME', {
+  query: { params: 'value' }
+})
+  .then(() => {
+    console.log('Successfully invoked function')
+  })
+  .catch(() => {
+    console.log('Something went wrong')
+  })
 </script>`
       },
       {
         language: 'React',
-        code: `import React from 'react'
-import { BearerContext } from '@bearer/react/lib/bearer-provider'
+        code: `import * as React from 'react'
+import { Bearer } from "@bearer/react"
 
-export class MyIntegration extends React.Component<any, any> {
-  static contextType = BearerContext
-  context!: React.ContextType<typeof BearerContext>
+const App = () => 
+  <Bearer clientId="BEARER_CLIENT_ID">
+    <MyComponent />
+  </Bearer>
 
-  constructor(props: any) {
-    super(props)
-    this.state = { channels: [] }
+const MyComponent = () => { 
+  const context = useContext(BearerContext);
+  const handleClick = (e: any) => {
+    context.bearer
+      .invoke("INTEGRATION_UUID", "FUNCTION_NAME", { query: { params: "value" } })
+      .then(data => { console.log(data) })
+      .catch(console.error);
   }
-
-  componentDidMount() {
-    this.context.bearer.invoke('integration-id', 'myFunction')
-      .then((data: any) => { this.setState({ channels: data.channels }) })
-      .catch(console.error)
-  }
-
-  render() => (
-    <ul>
-      {this.state.channels.map((value: string, index: number) => {
-        return <li key={index}>{value}</li>
-      })}
-    </ul>
+  
+  return (
+    <button type="button" onClick={this.handleClick}>Click Me</button>
   )
 }`
       },
       {
         language: 'NodeJS',
-        code: `// First install the Bearer SDK
-// npm install --save @bearer/node
+        code: `import bearer from '@bearer/node'
 
-import { bearer } from '@bearer/nodejs'
+const bearerClient = bearer(process.env.BEARER_API_KEY)
 
-bearer.setup(SETUP_ID, INTEGRATION_NAME)
-bearer.invoke("{myFunction}" options)`
+bearerClient.invoke('INTEGRATION_UUID', 'FUNCTION_NAME', {
+  query: { params: 'value' }
+})
+  .then(() => {
+    console.log('Successfully invoked function')
+  })
+  .catch(() => {
+    console.log('Something went wrong')
+  })`
       },
       {
         language: 'Ruby',
-        code: `TODO`
+        code: `Bearer::Configuration.setup do |config|
+  config.api_key = BEARER_API_KEY
+end
+
+Bearer.invoke(
+  "INTEGRATION_UUID", 
+  "FUNCTION_NAME", 
+  params: { params: "value" }
+)`
       }
     ]
   }

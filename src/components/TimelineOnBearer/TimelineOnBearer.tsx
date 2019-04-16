@@ -54,11 +54,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
           `}
         />
         <TimelineStage heading={`Clone the template`} placement={props.placement.next().value}>
-          <CodeSnippets
-            snippets={[
-              timelineCodeSnippet.cloneTemplate(props.template.gitHubUrl, props.template.provider.title.toLowerCase())
-            ]}
-          />
+          <CodeSnippets snippets={[timelineCodeSnippet.cloneTemplate(props.template.provider.title.toLowerCase())]} />
         </TimelineStage>
 
         {isOauth && (

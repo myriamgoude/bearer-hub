@@ -297,7 +297,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
               role: 'Software Engineer'
             },
             {
-              email: 'david@bearer.sh',
+              email: 'dave@bearer.sh',
               name: 'David Roe',
               role: 'Software Engineer'
             },

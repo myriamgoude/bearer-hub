@@ -38,6 +38,7 @@ const JobCard = (props: any) => (
       min-height: 178px;
       border-radius: 0;
       margin: 0 2rem;
+      height: 100%;
 
       header {
         display: flex;
@@ -338,11 +339,11 @@ const AboutPage: GatsbyPage = ({ location }) => (
               {
                 role: 'Senior JavaScript Engineer',
                 description:
-                  "You are not afraid deep dive into the source code of any JS library like ReactJS?\
+                  "You are not afraid to deep dive into the source code of any JS library like ReactJS?\
                   TypeScript is your best friend and you can't imagine the world without it?\
-                  You feel like making developers' lifes easier is where you expressed yourself the most,\
-                  this position if for you!",
-                location: 'Anywhere',
+                  If you feel like making developers' lives easier is where you best express yourself,\
+                  this position is for you!",
+                location: 'Earth',
                 remote: true,
                 url: 'mailto:hello@bearer.sh?subject=Senior JavaScript Engineer @ Bearer'
               },
@@ -351,7 +352,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
                 description:
                   'You are passionate about frontend development? Pixel perfect means something to you?\
                   You feel right at cross section of UI/X, product and engineering, this position is for you!',
-                location: 'Anywhere',
+                location: 'Earth',
                 remote: true,
                 url: 'mailto:hello@bearer.sh?subject=Frontend Developer @ Bearer'
               }

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { ButtonToDashboard, Link, Small } from '../../components/index'
-
+import { humanizeAuthType } from '../../services/Explore'
 import styles from './TimelineHeading.style'
 
 interface TimelineHeadingProps {
@@ -35,7 +35,9 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
             <span>Don’t waste time learning the {props.templateTitle} behaviour</span>
           </li>
           <li css={[styles.feature, styles.featureIconRabbit]}>
-            <span>Use a pre-configured API client and {props.templateApiAuthType} implementation</span>
+            <span>
+              Use a pre-configured API client and {humanizeAuthType(props.templateApiAuthType)} implementation
+            </span>
           </li>
           <li css={[styles.feature, styles.featureIcon3d]}>
             <span>Consume and transform the {props.templateTitle} with functions</span>

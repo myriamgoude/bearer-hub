@@ -1,8 +1,7 @@
 import React from 'react'
-import MockDate from 'mockdate'
 import * as ShallowRenderer from 'react-test-renderer/shallow'
 
-import { templatePath, categoryPath, slug, timer } from '../Explore'
+import { templatePath, categoryPath, slug, humanizeAuthType } from '../Explore'
 import Link from '../../components/Link/Link'
 
 const myItem = { hubID: '123', title: 'My Item Title' }
@@ -49,22 +48,14 @@ describe('slug', () => {
   })
 })
 
-describe('timer', () => {
-  afterEach(() => {
-    MockDate.reset()
+describe('humanizeAuthType', () => {
+  it('humanizes the "API key" Auth type as expected', () => {
+    const authType = humanizeAuthType('APIKey')
+    expect(authType).toMatch('API Key')
   })
 
-  it('returns the expected time in 24:00 format', () => {
-    MockDate.set(new Date('2019-01-01T12:01:11'))
-    const myTime = timer(2)
-    // 12:01 + 2 minutes = 12:03
-    expect(myTime).toMatch('12:03')
-  })
-
-  it('returns the expected time across hours', () => {
-    MockDate.set(new Date('2019-01-01T08:59:11'))
-    const myTime = timer(2)
-    // 8:59 + 2 minutes = 9:01
-    expect(myTime).toMatch('9:01')
+  it('returns other Auth types as expected', () => {
+    const authType = humanizeAuthType('OAuth2')
+    expect(authType).toMatch('OAuth2')
   })
 })

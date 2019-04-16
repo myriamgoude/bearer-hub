@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 
 import { Container, Clearfix, Grid, Card, Tag, Text } from '../index'
 
-import { templatePath } from '../../services/Explore'
+import { humanizeAuthType, templatePath } from '../../services/Explore'
 
 import styles from './IntegrationPanel.style'
 import { getEmSize } from '../../styles/mixins'
@@ -58,7 +58,7 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
           `}
         >
           {this.props.templates.map(template => {
-            const tags = [template.apiAuthType, template.apiArchType]
+            const tags = [humanizeAuthType(template.apiAuthType), template.apiArchType]
             const image = template.provider.image ? template.provider.image.url : ''
             return (
               <Card

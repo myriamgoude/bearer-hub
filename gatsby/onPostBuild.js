@@ -13,9 +13,10 @@ function handleImage(provider) {
   return {}
 }
 
+// See also services/Explore.tsx which has a similar function
 function humanizeAuthType(authType) {
   if (authType === 'APIKey') {
-    return 'API Auth Key'
+    return 'API Key'
   }
   return authType
 }

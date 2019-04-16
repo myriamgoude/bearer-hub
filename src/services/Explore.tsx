@@ -37,15 +37,10 @@ export function slug(title: string) {
   return `${title.toLowerCase().replace(/\s/g, '-')}`
 }
 
-// Adds a given number of minutes to the current time
-//
-// Returns a String
-export function timer(time: number) {
-  const now = new Date()
-  const minutesAdded = new Date(now.getTime() + time * 60 * 1000)
-  const realTime = `${minutesAdded.getHours()}:${minutesAdded
-    .getMinutes()
-    .toString()
-    .padStart(2, '0')}`
-  return realTime
+// See also onPostBuild.js which has a similar function
+export function humanizeAuthType(authType: string) {
+  if (authType === 'APIKey') {
+    return 'API Key'
+  }
+  return authType
 }

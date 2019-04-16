@@ -5,7 +5,7 @@ import { connectHits } from 'react-instantsearch-dom'
 import { Card, Clearfix, Grid, Tag } from '../../index'
 import { CustomHighlight } from './CustomHighlight'
 import blockStyles from '../../../components/IntergrationPanel/IntegrationPanel.style'
-import { templatePath } from '../../../services/Explore'
+import { humanizeAuthType, templatePath } from '../../../services/Explore'
 import { breakpoints } from '../../../styles/variables'
 
 interface ICustomHitsProps {
@@ -42,7 +42,7 @@ export const CustomHits = connectHits(({ hits }: { hits: ICustomHitsProps[] }) =
       `}
     >
       {hits.map(hit => {
-        const tags = [hit.apiAuthType, hit.apiArchType]
+        const tags = [humanizeAuthType(hit.apiAuthType), hit.apiArchType]
 
         return (
           <Card

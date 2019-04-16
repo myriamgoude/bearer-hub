@@ -23,7 +23,7 @@ module.exports = {
         title: 'Company',
         links: [
           { to: '/about', label: 'About us' },
-          { to: '/jobs', label: 'Jobs' },
+          { to: '/about#jobs', label: 'Jobs' },
           { to: '/press', label: 'Press' },
           { to: '#contact-us', label: 'Contact us' }
         ]

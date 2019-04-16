@@ -23,15 +23,16 @@ module.exports = {
         title: 'Company',
         links: [
           { to: '/about', label: 'About us' },
-          { to: '/about#jobs', label: 'Jobs' },
-          { to: '/press', label: 'Press' }
+          { to: '/jobs', label: 'Jobs' },
+          { to: '/press', label: 'Press' },
+          { to: '#contact-us', label: 'Contact us' }
         ]
       },
       {
         title: 'Docs & Help',
         links: [
-          { to: 'https://docs.bearer.sh', label: 'Documentation', trackLink: true },
-          { to: 'https://status.bearer.sh/', label: 'Service Status' }
+          { to: 'https://docs.bearer.sh', label: 'Documentation', trackLink: true, targetBlank: true },
+          { to: 'https://status.bearer.sh/', label: 'Service Status', targetBlank: true }
         ]
       },
       {

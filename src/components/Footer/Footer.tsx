@@ -7,6 +7,7 @@ import socialIconTwitter from '../../images/social/twitter.svg'
 import socialIconFacebook from '../../images/social/facebook.svg'
 import socialIconLinkedIn from '../../images/social/linkedin.svg'
 import socialIconGitHub from '../../images/social/github.svg'
+import socialIconMedium from '../../images/social/medium.svg'
 
 import whiteLogo from '../../images/logo-white.svg'
 
@@ -22,7 +23,7 @@ interface IFooterQuery {
 
 interface IFooterCategory {
   title: string
-  links: { to: string; label: string; trackLink?: boolean }[]
+  links: { to: string; label: string; trackLink?: boolean; targetBlank?: boolean }[]
 }
 
 interface IFooterProps {
@@ -39,6 +40,7 @@ const query = graphql`
             to
             label
             trackLink
+            targetBlank
           }
         }
       }
@@ -80,33 +82,20 @@ const Footer = (props: IFooterProps) => (
       </div>
       <div css={styles.social}>
         <div>
-          <Link to="https://twitter.com/@bearer">
+          <Link targetBlank to="https://twitter.com/@bearersh">
             <img src={socialIconTwitter} alt="Bearer is on Twitter" />
           </Link>
-          <Link to="https://github.com/Bearer">
+          <Link targetBlank to="https://github.com/Bearer">
             <img src={socialIconGitHub} alt="Bearer is on GitHub" />
           </Link>
-          <Link to="https://www.facebook.com/BearerAPI/">
+          <Link targetBlank to="https://www.facebook.com/BearerAPI/">
             <img src={socialIconFacebook} alt="Bearer is on Facebook" />
           </Link>
-          <Link to="https://www.linkedin.com/company/bearer">
+          <Link targetBlank to="https://www.linkedin.com/company/bearer">
             <img src={socialIconLinkedIn} alt="Bearer is on LinkedIn" />
           </Link>
-        </div>
-      </div>
-      <div css={styles.social}>
-        <div>
-          <Link to="https://twitter.com/@bearer" target="_blank">
-            <img src={socialIconTwitter} alt="Bearer is on Twitter" />
-          </Link>
-          <Link to="https://github.com/Bearer" target="_blank">
-            <img src={socialIconGitHub} alt="Bearer is on GitHub" />
-          </Link>
-          <Link to="https://www.facebook.com/BearerAPI/" target="_blank">
-            <img src={socialIconFacebook} alt="Bearer is on Facebook" />
-          </Link>
-          <Link to="https://www.linkedin.com/company/bearer" target="_blank">
-            <img src={socialIconLinkedIn} alt="Bearer is on LinkedIn" />
+          <Link targetBlank to="https://medium.com/bearer">
+            <img src={socialIconMedium} alt="Bearer is on Medium" />
           </Link>
         </div>
       </div>

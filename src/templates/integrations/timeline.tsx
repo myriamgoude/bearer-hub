@@ -195,7 +195,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           />
           <p style={{ marginTop: '1.25rem' }}>
             or read the{' '}
-            <Link trackLink to="https://docs.bearer.sh">
+            <Link trackLink to="https://docs.bearer.sh" targetBlank>
               documentation
             </Link>
           </p>

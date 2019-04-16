@@ -68,7 +68,7 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
       </div>
       <Small>
         or read the{' '}
-        <Link itemProp="documentation" to="https://docs.bearer.sh">
+        <Link itemProp="documentation" to="https://docs.bearer.sh" targetBlank>
           documentation
         </Link>{' '}
       </Small>

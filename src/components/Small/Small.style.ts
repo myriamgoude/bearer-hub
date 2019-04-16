@@ -3,6 +3,6 @@ import helpers from '../../styles/helpers'
 
 export default {
   root: css`
-    font-size: ${helpers.small};
+    ${helpers.small};
   `
 }

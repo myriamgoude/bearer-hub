@@ -32,8 +32,6 @@ import valueResponsibility from '../images/shared/value-responsibility.svg'
 import { colors, breakpoints } from '../styles/variables'
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
 
-const aboutPageCss = css``
-
 const JobCard = (props: any) => (
   <Card
     style={css`
@@ -91,8 +89,6 @@ const AboutPage: GatsbyPage = ({ location }) => (
     <Page
       css={[
         heroStyles.styleDefaultCurve,
-        aboutPageCss,
-
         css`
           z-index: 12;
         `

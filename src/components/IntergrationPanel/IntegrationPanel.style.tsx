@@ -16,7 +16,7 @@ export default {
       margin-bottom: 0.25rem;
     }
 
-    & > span:nth-oftype(3) {
+    & > span:nth-of-type(3) {
       margin-left: 0;
     }
   `

@@ -213,7 +213,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
               text-align: center;
             `}
           >
-            <SectionHeading primaryText={`Featured Templates`} tag="h2" />
+            <SectionHeading primaryText="Featured Templates" tag="h2" />
             <IntegrationPanel templates={featuredTemplates} />
             <div
               css={[

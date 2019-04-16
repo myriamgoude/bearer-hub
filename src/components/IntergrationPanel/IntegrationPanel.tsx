@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import { Container, Clearfix, Grid, Card, Tag, Text } from '../index'
+import { Container, Grid, Card, Tag, Text } from '../index'
 
 import { humanizeAuthType, templatePath } from '../../services/Explore'
 
@@ -52,10 +52,15 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
             }
           `}
           childrenStyle={css`
-            margin-bottom: 8px;
+            -webkit-transition: box-shadow 0.2s; /* Safari */
+            transition: box-shadow 0.2s;
+            margin-bottom: 16px;
             margin-right: ${(this.props.templates.length = 2 ? 16 : 0)}px;
             @media (max-width: ${breakpoints.lg}px) {
               display: inline-block;
+            }
+            &:hover {
+              box-shadow: 0 3px 4px 0 rgba(30, 9, 54, 0.1);
             }
           `}
         >
@@ -75,11 +80,12 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                 small
                 className={[styles.item]}
               >
-                <div>{image && <img src={image} css={styles.cardImage} />}</div>
+                <div>{image && <img src={image} css={styles.cardImage} itemProp="logo" />}</div>
                 <div
                   css={css`
-                    align-self: flex-end;
+                    align-self: normal;
                   `}
+                  itemProp="brand"
                 >
                   <Text
                     text={`${template.provider.title} API`}
@@ -89,10 +95,9 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                       margin-bottom: ${getEmSize(8)};
                     `}
                   />
-                  <Clearfix />
-                  <div css={blockStyles.cardTags}>
-                    {tags && tags.map((tag: string, index: number) => <Tag key={index} text={tag} color="#1339D7" />)}
-                  </div>
+                </div>
+                <div css={blockStyles.cardTags}>
+                  {tags && tags.map((tag: string, index: number) => <Tag key={index} text={tag} color="#1339D7" />)}
                 </div>
               </Card>
             )

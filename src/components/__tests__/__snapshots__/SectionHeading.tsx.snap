@@ -18,10 +18,13 @@ exports[`SectionHeading renders correctly with tooltip text 1`] = `
       },
       Object {
         "map": undefined,
-        "name": "139b19o",
+        "name": "1nkc955",
         "next": undefined,
         "styles": "
     text-align: left;
+    @media (max-width: 992px) {
+      text-align: center;
+    }
   ",
       },
       undefined,
@@ -109,10 +112,13 @@ exports[`SectionHeading renders correctly without tooltip text 1`] = `
       },
       Object {
         "map": undefined,
-        "name": "139b19o",
+        "name": "1nkc955",
         "next": undefined,
         "styles": "
     text-align: left;
+    @media (max-width: 992px) {
+      text-align: center;
+    }
   ",
       },
       undefined,

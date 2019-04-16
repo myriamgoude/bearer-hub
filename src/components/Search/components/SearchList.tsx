@@ -68,7 +68,11 @@ const navLinkStyle = css`
 
 export const SearchList = (props: ISearchListProps) => {
   const showOptions = (s: any) => {
-    navigate(categoryPath({ hubID: s[s.selectedIndex].id, title: s[s.selectedIndex].value }))
+    if (s[s.selectedIndex].value === 'All') {
+      navigate('/integrations')
+    } else {
+      navigate(categoryPath({ hubID: s[s.selectedIndex].id, title: s[s.selectedIndex].value }))
+    }
   }
 
   const caretDown = () => {
@@ -108,8 +112,16 @@ export const SearchList = (props: ISearchListProps) => {
               showOptions(e.target)
             }}
           >
+            <option key={0} value={'All'} id={'0'} selected={props.selected ? false : true}>
+              All
+            </option>
             {props.categories.map(category => (
-              <option key={category.id} value={category.title} id={category.hubID}>
+              <option
+                key={category.id}
+                value={category.title}
+                id={category.hubID}
+                selected={props.selected === category.id}
+              >
                 {category.title}
               </option>
             ))}

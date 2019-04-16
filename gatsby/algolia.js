@@ -3,7 +3,7 @@
 const allPublishedTemplates = `
   query allPublishedTemplates { 
     graphcms {
-      templates(where: { status: PUBLISHED }) {
+      templates(where: { status: PUBLISHED }, orderBy: title_DESC) {
         id
         hubID
         title

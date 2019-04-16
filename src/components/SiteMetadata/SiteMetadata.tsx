@@ -11,7 +11,7 @@ import favicon_16x16 from '../../../static/favicon-16x16.png'
 import apple_touch_icon from '../../../static/apple-touch-icon.png'
 import safari_svg from '../../../static/safari-pinned-tab.svg'
 
-import facebookDefault_1x from '../../../static/FB-default@1x.png'
+import facebookDefault_1x from '../../../static/bearer-api-integration.jpg'
 
 interface ISiteMetadataProps {
   pathname: string

@@ -32,7 +32,7 @@ export const CustomHits = connectHits(({ hits }: { hits: ICustomHitsProps[] }) =
         }
       `}
       childrenStyle={css`
-        margin-bottom: 8px;
+        margin-bottom: 16px;
         margin-right: ${(hits.length = 2 ? 16 : 0)}px;
         @media (max-width: ${breakpoints.lg}px) {
           min-width: 152px;

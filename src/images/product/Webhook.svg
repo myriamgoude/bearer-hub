@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="348px" height="311px" viewBox="0 0 348 311" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <style> * {font-family:"Courier"}</style>
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Webhook@2x</title>
+    <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="22.5198819%" y1="80.1332819%" x2="85.9659845%" y2="20.4205047%" id="linearGradient-1">
             <stop stop-color="#FBFCFF" offset="0%"></stop>
@@ -12,12 +14,12 @@
         </linearGradient>
     </defs>
     <g id="Hub" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Product-Platform" transform="translate(-808.000000, -2779.000000)">
-            <g id="Webhook" transform="translate(808.000000, 2779.000000)">
+        <g id="Product-Platform" transform="translate(-808.000000, -2479.000000)">
+            <g id="Webhook" transform="translate(808.000000, 2479.000000)">
                 <path d="M341.719931,86.4486901 C372.175677,181.496355 285.732662,303.343865 214.163716,302.307318 C190.481873,301.964329 78.0228519,336.297074 20.9638132,270.816809 C-36.0952255,205.336545 31.8814513,75.2102382 122.068426,27.3901785 C212.2554,-20.4298813 311.264186,-8.59897437 341.719931,86.4486901 Z" id="Path-4" fill="url(#linearGradient-1)"></path>
                 <rect id="Rectangle" fill="url(#linearGradient-2)" x="70" y="46" width="221" height="220" rx="110"></rect>
-                <path id="Line-13" d="M158,141.5 L77,141.5 L72,141.5 L72,131.5 L77,131.5 L158,131.5 L158,109.5 L212,136.5 L158,163.5 L158,141.5 Z" fill="#FFFFFF" fill-rule="nonzero"></path>
-                <path id="Line-13" d="M226.5,183.5 L145,183.5 L140,183.5 L140,173.5 L145,173.5 L226.5,173.5 L226.5,151.5 L280.5,178.5 L226.5,205.5 L226.5,183.5 Z" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <path id="Line-13" d="M158,141.5 L72,141.5 L72,131.5 L158,131.5 L158,109.5 L212,136.5 L158,163.5 L158,141.5 Z" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <path id="Line-13" d="M226.5,183.5 L140,183.5 L140,173.5 L226.5,173.5 L226.5,151.5 L280.5,178.5 L226.5,205.5 L226.5,183.5 Z" fill="#FFFFFF" fill-rule="nonzero"></path>
                 <circle id="Oval" fill="#3FE9AF" cx="260" cy="239" r="40"></circle>
                 <path d="M240,243.232268 L253.79435,252.121468 C255.090627,252.9568 256.80906,252.673299 257.768328,251.465857 L278,226" id="Path-6" stroke="#FFFFFF" stroke-width="8"></path>
             </g>

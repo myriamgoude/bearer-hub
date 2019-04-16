@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="591px" height="427px" viewBox="0 0 591 427" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
     <style> * {font-family:"Courier"}</style>
+    <title>CommandLineTool</title>
+    <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="22.5198819%" y1="69.6954057%" x2="85.9659845%" y2="30.6665546%" id="linearGradient-1">
             <stop stop-color="#FBFCFF" offset="0%"></stop>
@@ -44,66 +47,68 @@
                     <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
                     <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
                 </g>
-                <g id="$-Bearer--h-Bearer-C" transform="translate(90.000000, 59.000000)">
-                    <mask id="mask-7" fill="white">
-                        <use xlink:href="#path-6"></use>
-                    </mask>
-                    <g id="Mask">
-                        <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-6"></use>
-                        <use fill="url(#linearGradient-5)" fill-rule="evenodd" xlink:href="#path-6"></use>
+                <g id="Group-5" transform="translate(90.000000, 59.000000)">
+                    <g id="$-Bearer--h-Bearer-C">
+                        <mask id="mask-7" fill="white">
+                            <use xlink:href="#path-6"></use>
+                        </mask>
+                        <g id="Mask">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-6"></use>
+                            <use fill="url(#linearGradient-5)" fill-rule="evenodd" xlink:href="#path-6"></use>
+                        </g>
+                        <text id="$-bearer-CLI-VERSION" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375">
+                            <tspan x="17" y="51" fill="#999DAE">$</tspan>
+                            <tspan x="25.8388672" y="51" fill="#FFFFFF"> </tspan>
+                            <tspan x="17" y="68" fill="#FFFFFF">bearer CLI</tspan>
+                            <tspan x="17" y="85" fill="#FFFFFF"></tspan>
+                            <tspan x="17" y="102" fill="#9DADEE">VERSION</tspan>
+                            <tspan x="78.8720703" y="102" fill="#FFFFFF"></tspan>
+                            <tspan x="17" y="119" fill="#FFFFFF"></tspan>
+                            <tspan x="17" y="136" fill="#FFFFFF"></tspan>
+                            <tspan x="17" y="153" fill="#9DADEE">USAGE</tspan>
+                            <tspan x="61.1943359" y="153" fill="#FFFFFF"></tspan>
+                            <tspan x="17" y="170" fill="#999DAE">$</tspan>
+                            <tspan x="25.8388672" y="170" fill="#FFFFFF"> </tspan>
+                            <tspan x="17" y="187" fill="#FFFFFF"></tspan>
+                            <tspan x="17" y="204" fill="#9DADEE">COMMANDS</tspan>
+                            <tspan x="87.7109375" y="204" fill="#FFFFFF"></tspan>
+                            <tspan x="17" y="221" fill="#FFFFFF">generate   </tspan>
+                            <tspan x="17" y="238" fill="#FFFFFF">invoke        </tspan>
+                            <tspan x="17" y="255" fill="#FFFFFF">push       </tspan>
+                        </text>
+                        <text id="bearer-[COMMAND]" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                            <tspan x="34" y="170">bearer [COMMAND]</tspan>
+                        </text>
+                        <text id="deploy-integration-t" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                            <tspan x="147" y="257">deploy integration to Bearer</tspan>
+                        </text>
+                        <text id="invoke-function-loca" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                            <tspan x="147" y="238">invoke function locally</tspan>
+                        </text>
+                        <text id="generate-function" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                            <tspan x="147" y="221">generate function </tspan>
+                        </text>
+                        <text id="@bearer/cli/1.0.0" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                            <tspan x="24" y="120"> @bearer/cli/1.0.0</tspan>
+                        </text>
+                        <text id="bearer--h" mask="url(#mask-7)" font-family="Courier" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
+                            <tspan x="34" y="51">bearer -h</tspan>
+                        </text>
+                        <mask id="mask-10" fill="white">
+                            <use xlink:href="#path-9"></use>
+                        </mask>
+                        <g id="Mask">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-11)" xlink:href="#path-9"></use>
+                            <use fill="#343C5D" fill-rule="evenodd" xlink:href="#path-9"></use>
+                        </g>
                     </g>
-                    <text id="$-Bearer-CLI-VERSION" mask="url(#mask-7)" font-size="14" font-weight="normal" letter-spacing="0.4375">
-                        <tspan x="17" y="51" fill="#999DAE">$</tspan>
-                        <tspan x="25.8388672" y="51" fill="#FFFFFF"> </tspan>
-                        <tspan x="17" y="68" fill="#FFFFFF">Bearer CLI</tspan>
-                        <tspan x="17" y="85" fill="#FFFFFF"></tspan>
-                        <tspan x="17" y="102" fill="#9DADEE">VERSION</tspan>
-                        <tspan x="78.8720703" y="102" fill="#FFFFFF"></tspan>
-                        <tspan x="17" y="119" fill="#FFFFFF"></tspan>
-                        <tspan x="17" y="136" fill="#FFFFFF"></tspan>
-                        <tspan x="17" y="153" fill="#9DADEE">USAGE</tspan>
-                        <tspan x="61.1943359" y="153" fill="#FFFFFF"></tspan>
-                        <tspan x="17" y="170" fill="#999DAE">$</tspan>
-                        <tspan x="25.8388672" y="170" fill="#FFFFFF"> </tspan>
-                        <tspan x="17" y="187" fill="#FFFFFF"></tspan>
-                        <tspan x="17" y="204" fill="#9DADEE">COMMANDS</tspan>
-                        <tspan x="87.7109375" y="204" fill="#FFFFFF"></tspan>
-                        <tspan x="17" y="221" fill="#FFFFFF">autocomplete   </tspan>
-                        <tspan x="17" y="238" fill="#FFFFFF">encrypt        </tspan>
-                        <tspan x="17" y="255" fill="#FFFFFF">generate       </tspan>
+                    <circle id="Oval" fill="#4F556D" cx="18" cy="15" r="6"></circle>
+                    <circle id="Oval" fill="#656B86" cx="36" cy="15" r="6"></circle>
+                    <circle id="Oval" fill="#777FA0" cx="54" cy="15" r="6"></circle>
+                    <text id="Terminal" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.4375" fill="#999DAE">
+                        <tspan x="191.171" y="21">Terminal</tspan>
                     </text>
-                    <text id="Bearer-[COMMAND]" mask="url(#mask-7)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
-                        <tspan x="34" y="170">Bearer [COMMAND]</tspan>
-                    </text>
-                    <text id="Generrate-Function-o" mask="url(#mask-7)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
-                        <tspan x="147" y="257">Generrate Function or Component</tspan>
-                    </text>
-                    <text id="Encrypt-using-Bearer" mask="url(#mask-7)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
-                        <tspan x="147" y="238">Encrypt using Bearersecurity</tspan>
-                    </text>
-                    <text id="Display-autocomplete" mask="url(#mask-7)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
-                        <tspan x="147" y="221">Display autocomplete installationinstructions</tspan>
-                    </text>
-                    <text id="@Bearer/cli/0.104.0" mask="url(#mask-7)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
-                        <tspan x="24" y="120"> @Bearer/cli/0.104.0 darwin-x64 node-v8.12.2</tspan>
-                    </text>
-                    <text id="Bearer--h" mask="url(#mask-7)" font-size="14" font-weight="normal" letter-spacing="0.4375" fill="#FFFFFF">
-                        <tspan x="34" y="51">Bearer -h</tspan>
-                    </text>
-                    <mask id="mask-10" fill="white">
-                        <use xlink:href="#path-9"></use>
-                    </mask>
-                    <g id="Mask">
-                        <use fill="black" fill-opacity="1" filter="url(#filter-11)" xlink:href="#path-9"></use>
-                        <use fill="#343C5D" fill-rule="evenodd" xlink:href="#path-9"></use>
-                    </g>
                 </g>
-                <circle id="Oval" fill="#4F556D" cx="108" cy="74" r="6"></circle>
-                <circle id="Oval" fill="#656B86" cx="126" cy="74" r="6"></circle>
-                <circle id="Oval" fill="#777FA0" cx="144" cy="74" r="6"></circle>
-                <text id="Terminal" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.4375" fill="#999DAE">
-                    <tspan x="281.171" y="80">Terminal</tspan>
-                </text>
             </g>
         </g>
     </g>

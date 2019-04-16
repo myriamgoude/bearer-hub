@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: 'Bearer - The API Integration Framework',
     siteUrl: process.env.GATSBY_BASE_DOMAIN,
-    image: '../images/bearer-api-integration.jpg',
+    image: '../../../static/bearer-api-integration.jpg',
     description:
       'Bearer is an API integration framework and platform providing all the tools to build, run and manage API Integrations.',
     twitter: '@BearerSH',

@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 
 import Page from '../../components/Page/Page'
 import PageMetadata from '../../components/PageMetadata/PageMetadata'
-import { HeroLined, Clearfix, Text, Tabs, Section, Grid, SectionHeading } from '../../components/'
+import { HeroLined, Clearfix, Button, Text, Tabs, Section, Grid, SectionHeading } from '../../components/'
 import IndexLayout from '../../layouts'
 import { colors } from '../../styles/variables'
 
@@ -12,6 +12,14 @@ const imageStyle = css`
   height: 100%;
   object-fit: contain;
   object-position: center;
+`
+
+const imageStyle2 = css`
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  margin: 2rem 0;
 `
 
 const headingTail = css`
@@ -126,6 +134,40 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
               alt="Integration Clients illustration"
               css={imageStyle}
             />
+          </div>
+        </Grid>
+      </Section>
+
+      <Section>
+        <Grid
+          col={2}
+          childrenStyle={css`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 0 88px;
+            max-width: 376px;
+          `}
+        >
+          <div>
+            <img src={require('../../images/product/templates.svg')} alt="Available Templates" css={imageStyle2} />
+            <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Templates" />
+            <Text large>To start building your integration even faster, use our API templates!</Text>
+            <Button trackLink text="Explore templates" link="/integrations" className="mt-16 mb-16" />
+          </div>
+          <div>
+            <img
+              src={require('../../images/product/typescriptOpen.svg')}
+              alt="Typescript & Open Source"
+              css={imageStyle2}
+            />
+            <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Typescript & Open Source" />
+            <Text large>
+              Bearer Framework is built with Typescript and provided under the MIT Open Source License.
+              <br />
+              <br />
+              <strong>Your integration, your code</strong>
+            </Text>
           </div>
         </Grid>
       </Section>

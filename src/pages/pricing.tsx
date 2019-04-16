@@ -460,6 +460,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                   trackLink
                   link={dashboardURL()}
                   text="Start now"
+                  trackingAction="pricing-start-now"
                   style={css`
                     margin: 12px auto;
                   `}

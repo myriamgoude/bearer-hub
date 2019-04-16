@@ -16,11 +16,9 @@ export default `
 
 #iubenda-cs-banner {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
+  bottom: 1rem;
+  left: 5%;
   background: rgba(4, 12, 52, 0.8);
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
   z-index: 1000;
   box-shadow: 0 3px 4px 0 rgba(30, 9, 54, 0.1);
   border-radius: 5px;
@@ -28,7 +26,7 @@ export default `
   color: #fff;
   padding: 10px 13px 10px 20px;
   display: inline-block;
-  width: 100%;
+  width: 70%;
   max-width: 530px;
 }
 
@@ -51,4 +49,12 @@ export default `
   cursor: pointer;
 }
 
+@media all and (min-width: 790px) {
+  #iubenda-cs-banner {
+    width: 100%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+  }
+}
 `

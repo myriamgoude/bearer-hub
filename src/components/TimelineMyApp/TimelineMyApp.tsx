@@ -2,7 +2,7 @@ import * as React from 'react'
 import { css } from '@emotion/core'
 
 import { CodeSnippet, DashedLine, Section, TimelineStage } from '../index'
-import { colors } from '../../styles/variables'
+import { colors, breakpoints } from '../../styles/variables'
 import timelineCodeSnippet from './TimelineMyApp.snippets'
 
 interface ITimelineMyAppProps {
@@ -45,6 +45,11 @@ const TimelineMyApp = (props: ITimelineMyAppProps) => {
             right: 0;
             top: 0;
             margin: auto;
+
+            @media (max-width: ${breakpoints.lg}px) {
+              right: inherit;
+              margin-left: 8px;
+            }
           `}
         />
 

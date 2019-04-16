@@ -2,7 +2,7 @@ import * as React from 'react'
 import { css } from '@emotion/core'
 
 import { CodeSnippet, DashedLine, Section, TimelineStage } from '../index'
-import { colors } from '../../styles/variables'
+import { colors, breakpoints } from '../../styles/variables'
 import timelineCodeSnippet from './TimelineOnBearer.snippets'
 
 interface ITimelineOnBearerProps {
@@ -34,6 +34,21 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
           z-index: 99;
         `}
       />
+      <div
+        css={css`
+          position: relative;
+          width: 100%;
+          height: 100px;
+          background: url(${require('../../images/shared/mobile-line.svg')}) no-repeat center center / contain;
+          left: 0;
+          right: 0;
+          margin: auto;
+
+          @media (min-width: ${breakpoints.lg}px) {
+            display: none;
+          }
+        `}
+      />
       <Section>
         <div
           css={css`
@@ -45,6 +60,11 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
             right: 0;
             top: 0;
             margin: auto;
+
+            @media (max-width: ${breakpoints.lg}px) {
+              right: inherit;
+              margin-left: 8px;
+            }
           `}
         />
         <TimelineStage

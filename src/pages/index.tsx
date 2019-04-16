@@ -138,7 +138,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             `}
           />
           <br />
-          <ButtonToDashboard primary link={dashboardURL()} text="Start building!" />
+          <ButtonToDashboard primary link={dashboardURL()} text="Start building" />
           <br />
           <p>
             <Small>

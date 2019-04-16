@@ -5,7 +5,7 @@ export GATSBY_BASE_DOMAIN=http://localhost:8000
 
 export GATSBY_ENV=development
 
-export GATSBY_BEARER_DASHBOARD_SETUP_URL=https://app.staging.bearer.sh/setup/?i=
+export GATSBY_BEARER_DASHBOARD_SETUP_URL=https://app.staging.bearer.sh/setup/
 
 export GATSBY_ALGOLIA_APP_ID=KXXBSNVKD1
 export GATSBY_ALGOLIA_SEARCH_API_KEY=cf02ca78402fd5cd597b1fea1e4a4ce6

@@ -12,7 +12,7 @@ import { breakpoints, colors } from '../styles/variables'
 import pressArticles from '../data/press'
 
 const PressPage: GatsbyPage = ({ location }) => (
-  <IndexLayout location={location}>
+  <IndexLayout location={location} enrichedHeader={true}>
     <PageMetadata title="Press and Media Resources" />
     <Page
       css={[
@@ -67,10 +67,10 @@ const PressPage: GatsbyPage = ({ location }) => (
                 }
               `}
             >
-              <Button primary link="/integrations" text="Contact us" />
+              <Button primary link="mailto:hello@bearer.sh?subject=Press" text="Contact us" />
               <Button
                 secondary
-                link="/integrations"
+                link="https://drive.google.com/drive/folders/1NfLHbVsjDonkt9wrysrnQCuP0tD5CGh-?usp=sharing"
                 text="Download press kit"
                 style={css`
                   position: relative;
@@ -160,6 +160,7 @@ const PressPage: GatsbyPage = ({ location }) => (
             {pressArticles.map((article: any) => (
               <div key={article.name}>
                 <a
+                  target="_blank"
                   href={article.url}
                   title={article.name}
                   css={css`

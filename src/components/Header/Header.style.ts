@@ -5,13 +5,14 @@ import { heights, dimensions, colors } from '../../styles/variables'
 export default {
   root: css`
     height: ${heights.header}px;
-    padding: 1em ${dimensions.containerPadding}rem;
+    padding: 1rem ${dimensions.containerPadding}rem;
     color: ${colors.black};
     position: relative;
     z-index: 100;
     margin-bottom: -${heights.header}px;
   `,
   container: css`
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -36,5 +37,28 @@ export default {
     vertical-align: bottom;
     margin-right: 0.5rem;
     width: auto;
+  `,
+  enriched: css`
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(3, 13, 54, 0.08);
+    padding: 4rem 1rem 1rem 1rem;
+    position: absolute;
+    top: -1rem;
+    left: -1.4rem;
+    z-index: -1;
+
+    & img {
+      margin-right: 0;
+    }
+
+    & a {
+      padding-right: 0.2rem;
+    }
+
+    & a:last-of-type {
+      padding-right: 0;
+    }
   `
 }

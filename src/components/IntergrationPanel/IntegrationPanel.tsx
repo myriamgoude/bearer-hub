@@ -41,6 +41,7 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
           gutter={24}
           col={4}
           style={css`
+            overflow: auto;
             justify-content: ${this.props.templates.length <= 2 ? 'flex-start !important' : null};
             @media (max-width: ${breakpoints.lg}px) {
               display: flex;
@@ -48,7 +49,6 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
               flex-direction: row;
               justify-content: flex-start;
               width: ${(this.props.templates.length + 1) * 152 + (this.props.templates.length = 2 ? 16 : 0)}px;
-              overflow: scroll;
             }
           `}
           childrenStyle={css`

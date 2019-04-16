@@ -9,11 +9,10 @@ exports[`Search renders correctly 1`] = `
       Array [
         Object {
           "map": undefined,
-          "name": "14xsuv6",
+          "name": "1xdq1vh",
           "next": undefined,
           "styles": "
           @media (max-width: 992px) {
-            overflow: scroll;
             width: ;
             text-align: center;
           }
@@ -47,13 +46,13 @@ exports[`Search renders correctly 1`] = `
           undefined,
           Object {
             "map": undefined,
-            "name": "1tqafzq",
+            "name": "11jq5cb",
             "next": undefined,
             "styles": "
         justify-content: flex-start !important;
         @media (max-width: 992px) {
           width: 0px;
-          overflow: scroll;
+          overflow: auto;
           flex-wrap: nowrap;
           flex-direction: row;
         }

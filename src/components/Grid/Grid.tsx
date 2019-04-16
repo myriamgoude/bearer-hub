@@ -23,7 +23,6 @@ const Grid = (props: IGridProps) => {
       css={[
         css`
           @media (max-width: ${breakpoints.lg}px) {
-            overflow: scroll;
             width: ${props.width};
             text-align: center;
           }

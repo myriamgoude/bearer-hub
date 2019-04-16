@@ -73,7 +73,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
 
-    @media (max-width: ${breakpoints.lg}px) {
+    @media (max-width: ${breakpoints.md}px) {
       section {
         width: 50%;
       }
@@ -153,6 +153,7 @@ export default {
 
     @media (min-width: ${breakpoints.sm}px) {
       margin-bottom: 2rem;
+      margin-right: 1rem;
     }
   `
 }

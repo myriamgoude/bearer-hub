@@ -22,54 +22,22 @@ const Header = (props: IHeaderProps) => (
             `
           ]}
         >
-          <div
-            css={
-              props.enriched &&
-              css`
-                border-bottom-right-radius: 9px;
-                border-bottom-left-radius: 9px;
-                background-color: #ffffff;
-                box-shadow: 0 4px 8px 0 rgba(3, 13, 54, 0.08);
-                height: 90px;
-                position: absolute;
-                top: 0;
-                padding: 16px;
-
-                &img {
-                  margin-right: 0;
-                }
-              `
-            }
-          >
-            <img src={logo} css={styles.image} alt="Bearer logo" />
-
-            {props.enriched && (
-              <div
-                css={css`
-                  margin: 8px 0;
-                  a {
-                    padding: 2px;
-                  }
-                `}
-              >
-                <a href="">
-                  <Tag text="SVG" color="#1339D7" />
-                </a>
-                <a href="">
-                  <Tag text="PNG" color="#1339D7" />
-                </a>
-                <a href="">
-                  <Tag text="AI" color="#1339D7" />
-                </a>
-              </div>
-            )}
-          </div>
+          <img src={logo} css={styles.image} alt="Bearer logo" />
         </Link>
-        <Navigation
-          css={css`
-            justify-self: flex-end;
-          `}
-        />
+        {props.enriched && (
+          <div css={styles.enriched}>
+            <a target="_blank" href="https://drive.google.com/drive/folders/1NfLHbVsjDonkt9wrysrnQCuP0tD5CGh-">
+              <Tag text="SVG" color="#1339D7" />
+            </a>
+            <a target="_blank" href="https://drive.google.com/drive/folders/1NfLHbVsjDonkt9wrysrnQCuP0tD5CGh-">
+              <Tag text="PNG" color="#1339D7" />
+            </a>
+            <a target="_blank" href="https://drive.google.com/drive/folders/1NfLHbVsjDonkt9wrysrnQCuP0tD5CGh-">
+              <Tag text="AI" color="#1339D7" />
+            </a>
+          </div>
+        )}
+        <Navigation />
       </div>
     </Container>
   </header>

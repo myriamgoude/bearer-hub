@@ -66,11 +66,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
             }
           `}
         />
-        <TimelineStage
-          heading={`Clone the template`}
-          tooltip={'Not sure what to pass here'}
-          placement={props.placement.next().value}
-        >
+        <TimelineStage heading={`Clone the template`} placement={props.placement.next().value}>
           <CodeSnippets
             snippets={[
               timelineCodeSnippet.cloneTemplate(props.template.gitHubUrl, props.template.provider.title.toLowerCase())
@@ -81,7 +77,6 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
         {isOauth && (
           <TimelineStage
             heading={`Generate an access token`}
-            tooltip={'Not sure what to pass here'}
             placement={props.placement.next().value}
             hint={`Use your ${props.template.provider.title} OAuth credentials \
             to let Bearer automatically generate a static access token. This will query the API in local development.`}
@@ -93,7 +88,6 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
         {!isOauth && (
           <TimelineStage
             heading={`Configure your API credentials`}
-            tooltip={'Not sure what to pass here'}
             placement={props.placement.next().value}
             hint={`You are now ready query the ${props.template.provider.title} API in local development.`}
           >
@@ -101,11 +95,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
           </TimelineStage>
         )}
 
-        <TimelineStage
-          heading={`Test the pre-built function`}
-          tooltip={'Not sure what to pass here'}
-          placement={props.placement.next().value}
-        >
+        <TimelineStage heading={`Test the pre-built function`} placement={props.placement.next().value}>
           <>
             <CodeSnippets snippets={[timelineCodeSnippet.defaultFunction()]} />
             <div
@@ -133,7 +123,6 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
 
         <TimelineStage
           heading={`Code your own function`}
-          tooltip={'Not sure what to pass here'}
           placement={props.placement.next().value}
           hint={`Use your function to call any ${
             props.template.provider.title
@@ -144,7 +133,6 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
 
         <TimelineStage
           heading={`Deploy your integration`}
-          tooltip={'Not sure what to pass here'}
           placement={props.placement.next().value}
           hint="Once your integration is ready, deploy it on the Bearer platform and you’re good to go!"
         >

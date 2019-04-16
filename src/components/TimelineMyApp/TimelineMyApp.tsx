@@ -56,7 +56,6 @@ const TimelineMyApp = (props: ITimelineMyAppProps) => {
           <TimelineStage
             heading="Add a Connect Component"
             placement={props.placement.next().value}
-            tooltip={`Not sure what to pass here`}
             hint={`Once users log in with their ${props.template.provider.title} account, your \
             functions are able to query the API using their credentials.`}
           >
@@ -67,7 +66,6 @@ const TimelineMyApp = (props: ITimelineMyAppProps) => {
         <TimelineStage
           heading="Call your functions"
           placement={props.placement.next().value}
-          tooltip={`Not sure what to pass here`}
           hint={`Use our integration clients to call your functions from your app.`}
         >
           <CodeSnippets snippets={timelineCodeSnippet.invokeFunction()} />

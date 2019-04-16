@@ -41,7 +41,7 @@ const StyledDiv = styled.div<{ placement: string }>`
 
 interface ITimelineStageProps {
   heading: string
-  tooltip: string
+  tooltip?: string
   placement: string
   hint?: string
   children: any

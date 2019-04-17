@@ -27,7 +27,7 @@ const NotFoundPage: GatsbyPage = ({ location }) => (
             <Text color="#9AA4CB" large>
               404: Page not found
             </Text>
-            <SectionHeading primaryText="Oops, this page has been moved or doesn't exist anymore" />
+            <SectionHeading align="left" primaryText="Oops, this page has been moved or doesn't exist anymore" />
             <Button primary link="/integrations" text="Explore templates" />
           </div>
           <div>

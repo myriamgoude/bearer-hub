@@ -16,6 +16,7 @@ export const helpers = {
     font-size: 32px;
     color: ${colors.darkBlue};
     font-family: 'ProximaNova-Semibold';
+    margin-top: 2rem;
   `,
   h3: css`
     font-size: ${dimensions.headingSizes.h3}em;

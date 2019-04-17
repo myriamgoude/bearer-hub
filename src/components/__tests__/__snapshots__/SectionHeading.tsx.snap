@@ -58,12 +58,13 @@ exports[`SectionHeading renders correctly with tooltip text 1`] = `
         false,
         Object {
           "map": undefined,
-          "name": "elpby5",
+          "name": "1if3yx1",
           "next": undefined,
           "styles": "
     font-size: 32px;
     color: #030D36;
     font-family: 'ProximaNova-Semibold';
+    margin-top: 2rem;
   ",
         },
         false,
@@ -152,12 +153,13 @@ exports[`SectionHeading renders correctly without tooltip text 1`] = `
         false,
         Object {
           "map": undefined,
-          "name": "elpby5",
+          "name": "1if3yx1",
           "next": undefined,
           "styles": "
     font-size: 32px;
     color: #030D36;
     font-family: 'ProximaNova-Semibold';
+    margin-top: 2rem;
   ",
         },
         false,

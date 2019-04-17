@@ -32,7 +32,6 @@ const pricingPageCss = css`
   }
 
   td:not(.mobile-label) {
-    color: #313958;
     font-family: 'ProximaNova-Semibold';
   }
 
@@ -68,7 +67,7 @@ const PricingTable = (props: any) => (
         appearance: none;
         border: none !important;
         box-shadow: 0 4px 12px 0 rgba(3, 13, 54, 0.08);
-        color: ${props.background === 'dark' ? 'white' : '#313958'};
+        color: ${props.background === 'dark' ? 'white' : colors.darkBlue};
         border-radius: 8px;
         text-align: center;
 

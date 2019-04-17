@@ -1,6 +1,7 @@
 'use strict'
 
 const queries = require('./gatsby/algolia')
+const bareDomain = process.env.GATSBY_BASE_DOMAIN.split(':')[1].replace(/\//g, '')
 
 module.exports = {
   siteMetadata: {
@@ -171,6 +172,7 @@ module.exports = {
           reloadOnConsent: false,
           enableRemoteConsent: false,
           enableCMP: true,
+          localConsentDomain: bareDomain,
           cookiePolicyId: 65368465,
           banner: {
             position: 'top',

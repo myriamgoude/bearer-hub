@@ -276,8 +276,8 @@ const PricingPage: GatsbyPage = ({ location }) => (
             default: true
           },
           {
-            label: 'Business',
-            target: '.plan-business'
+            label: 'Enterprise',
+            target: '.plan-enterprise'
           }
         ]}
         style={css`

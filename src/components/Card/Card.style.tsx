@@ -18,6 +18,7 @@ export default {
 
     @media (max-width: ${breakpoints.lg}px) {
       min-width: 200px;
+      margin-top: 0 !important;
     }
   `,
   paddingRegular: css`

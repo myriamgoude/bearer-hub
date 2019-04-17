@@ -28,6 +28,9 @@ export default {
     @media (min-width: ${breakpoints.md}px) {
       display: flex;
     }
+    @media (min-width: ${breakpoints.lg}px) {
+      display: block;
+    }
   `,
   social: css`
     img {
@@ -154,6 +157,9 @@ export default {
     @media (min-width: ${breakpoints.sm}px) {
       margin-bottom: 2rem;
       margin-right: 1rem;
+    }
+    @media (max-width: ${breakpoints.sm}px) {
+      margin-bottom: 3rem;
     }
   `
 }

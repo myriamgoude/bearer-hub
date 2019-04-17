@@ -5,7 +5,7 @@ import Page from '../../components/Page/Page'
 import PageMetadata from '../../components/PageMetadata/PageMetadata'
 import { HeroLined, Clearfix, Text, Tabs, Section, SectionHeading, Grid } from '../../components/'
 import IndexLayout from '../../layouts'
-import { colors } from '../../styles/variables'
+import { colors, breakpoints } from '../../styles/variables'
 
 const imageStyle = css`
   width: 100%;
@@ -66,7 +66,10 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
             align-items: center;
             justify-content: center;
             padding: 88px 0;
-
+            @media (max-width: ${breakpoints.lg}px) {
+              padding: 48px 0;
+              margin: 0 auto;
+            }
             &:nth-child(odd) {
               max-width: 376px;
             }

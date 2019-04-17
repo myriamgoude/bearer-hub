@@ -7,7 +7,7 @@ exports[`Header renders correctly 1`] = `
       undefined,
       Object {
         "map": undefined,
-        "name": "75h6f3",
+        "name": "qu5tpg",
         "next": undefined,
         "styles": "
     background: white;
@@ -24,6 +24,7 @@ exports[`Header renders correctly 1`] = `
 
     @media (max-width: 992px) {
       min-width: 200px;
+      margin-top: 0 !important;
     }
   ",
       },
@@ -88,7 +89,7 @@ exports[`Header renders with object values 1`] = `
       undefined,
       Object {
         "map": undefined,
-        "name": "75h6f3",
+        "name": "qu5tpg",
         "next": undefined,
         "styles": "
     background: white;
@@ -105,6 +106,7 @@ exports[`Header renders with object values 1`] = `
 
     @media (max-width: 992px) {
       min-width: 200px;
+      margin-top: 0 !important;
     }
   ",
       },

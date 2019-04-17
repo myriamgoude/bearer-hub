@@ -77,6 +77,7 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
             padding: 88px 0;
             @media (max-width: ${breakpoints.lg}px) {
               padding: 48px 0;
+              margin: 0 auto;
             }
 
             &:nth-child(odd) {
@@ -147,9 +148,14 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
           childrenStyle={css`
             display: flex;
             align-items: center;
+            margin: 0 auto;
             justify-content: center;
             padding: 0px 0 88px;
             max-width: 376px;
+            @media (max-width: ${breakpoints.lg}px) {
+              padding: 48px 0;
+              margin: 0 auto;
+            }
           `}
         >
           <div>

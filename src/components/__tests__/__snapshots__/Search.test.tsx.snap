@@ -46,13 +46,15 @@ exports[`Search renders correctly 1`] = `
           undefined,
           Object {
             "map": undefined,
-            "name": "1n65zn0",
+            "name": "16hhrtu",
             "next": undefined,
             "styles": "
         justify-content: flex-start;
         @media (max-width: 992px) {
           width: 0px;
+          max-width: 100%;
           overflow: scroll;
+          margin: 0;
           flex-wrap: nowrap;
           flex-direction: row;
         }

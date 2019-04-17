@@ -105,7 +105,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
         <div
           css={css`
             margin: auto;
-            width: 520px;
+            width: 720px;
             position: relative;
             z-index: 12;
 
@@ -116,11 +116,14 @@ const AboutPage: GatsbyPage = ({ location }) => (
           `}
         >
           <img
-            src={require('../images/bearer-team.png')}
+            src={require('../images/team-remote.png')}
             alt="Our Team"
             css={css`
-              @media (max-width: ${breakpoints.lg}px) {
-                width: 100%;
+              width: 720px;
+              display: block;
+              margin: 0 auto;
+              @media (max-width: ${breakpoints.md}px) {
+                width: 376px;
               }
             `}
           />
@@ -225,11 +228,14 @@ const AboutPage: GatsbyPage = ({ location }) => (
           fullWidth
           col={4}
           gutter={0}
+          style={css`
+            justify-content: left;
+          `}
           childrenStyle={css`
             display: flex;
             align-items: center;
             justify-content: center;
-            flex: 0 1 180px !important;
+            flex: 0 1 25% !important;
             @media (max-width: ${breakpoints.lg}px) {
               display: block;
             }
@@ -298,8 +304,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
               email: 'dave@bearer.sh',
               name: 'David Roe',
               role: 'Software Engineer'
-            },
-            {} // Quick hack, add an empty div to align grid
+            }
           ].map((teammate, index) => (
             <TeamBlock
               key={index}

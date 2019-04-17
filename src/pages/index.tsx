@@ -334,6 +334,9 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               margin-top: 5rem;
               justify-content: space-between !important;
             }
+            @media (max-width: ${breakpoints.lg}px) {
+              display: block;
+            }
             background: url(${require('../images/shared/yellow-circle.svg')}) no-repeat center top / 560px;
           `}
           childrenStyle={css`
@@ -341,11 +344,11 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
 
             @media (min-width: ${breakpoints.md}px) {
               max-width: 320px;
-              margin-bottom: 0;
             }
             @media (max-width: ${breakpoints.lg}px) {
               max-width: 100% !important;
               width: 100% !important;
+              flex-direction: column;
             }
           `}
         >

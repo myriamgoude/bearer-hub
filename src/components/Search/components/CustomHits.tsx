@@ -26,8 +26,10 @@ export const CustomHits = connectHits(({ hits }: { hits: ICustomHitsProps[] }) =
       style={css`
         justify-content: flex-start;
         @media (max-width: ${breakpoints.lg}px) {
-          width: ${hits.length * 152 + (hits.length === 2 ? 16 : 0)}px;
+          width: ${hits.length * 200 + hits.length * 32}px;
+          max-width: 100%;
           overflow: scroll;
+          margin: 0;
           flex-wrap: nowrap;
           flex-direction: row;
         }

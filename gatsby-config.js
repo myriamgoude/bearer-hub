@@ -25,7 +25,7 @@ module.exports = {
           { to: '/about', label: 'About us' },
           { to: '/about#jobs', label: 'Jobs' },
           { to: '/press', label: 'Press' },
-          { to: '#contact-us', label: 'Contact us' }
+          { to: '?contact-us', label: 'Contact us' }
         ]
       },
       {

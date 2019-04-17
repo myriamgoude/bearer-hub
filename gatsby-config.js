@@ -26,7 +26,7 @@ module.exports = {
           { to: '/about', label: 'About us' },
           { to: '/about#jobs', label: 'Jobs' },
           { to: '/press', label: 'Press' },
-          { to: '?contact-us', label: 'Contact us' }
+          { to: '#contact-us', label: 'Contact us' }
         ]
       },
       {
@@ -192,6 +192,7 @@ module.exports = {
         apiKey: process.env.BUGSNAG_API_KEY
       }
     },
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    'gatsby-intercom-hash'
   ]
 }

@@ -19,6 +19,7 @@ interface INavLinkProps {
   target?: string
   trackLink?: boolean
   targetBlank?: boolean
+  partiallyActive?: boolean
   to: any
 }
 
@@ -28,7 +29,7 @@ const NavLink = (props: INavLinkProps) => (
       to={props.to}
       trackLink={props.trackLink}
       css={[styles.link]}
-      partiallyActive
+      partiallyActive={props.partiallyActive}
       activeClassName="active"
       targetBlank={props.targetBlank}
     >
@@ -106,11 +107,15 @@ export default class Navigation extends React.Component<INavigationProps, INavig
         {this.renderToggleButton()}
         <ul css={styles.list} className={this.state.isOpened ? 'show' : undefined}>
           <NavLink to="/integrations">INTEGRATIONS TEMPLATES</NavLink>
-          <NavLink to="/product/">PRODUCT</NavLink>
+          <NavLink partiallyActive to="/product/">
+            PRODUCT
+          </NavLink>
           <NavLink trackLink to="https://docs.bearer.sh" targetBlank>
             DOCUMENTATION
           </NavLink>
-          <NavLink to="/pricing">PRICING</NavLink>
+          <NavLink partiallyActive to="/pricing">
+            PRICING
+          </NavLink>
           <div className="mobile-login">{this.state.isAuthenticated ? this.renderLoggedIn() : this.renderLogin()}</div>
         </ul>
         <span className="desktop-login">{this.state.isAuthenticated ? this.renderLoggedIn() : this.renderLogin()}</span>

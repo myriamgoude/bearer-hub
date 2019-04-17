@@ -6,6 +6,7 @@ export default {
   root: css`
     background: white;
     box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.26);
+    border: 1px solid #d4d9ea;
     border-radius: 6px;
     display: flex;
     flex-direction: column;

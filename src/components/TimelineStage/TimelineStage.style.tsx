@@ -33,7 +33,7 @@ export default {
   `,
   stageHint: css`
     display: block;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     font-size: 0.875rem;
     line-height: 1.3 !important;
   `

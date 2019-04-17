@@ -9,9 +9,13 @@ export default {
     @media (max-width: ${breakpoints.lg}px) {
       padding: 2rem 1rem;
     }
+
+    &:last-of-type {
+      margin-bottom: 6rem;
+    }
   `,
   tail: css`
-    padding: 0;
+    padding-top: 0;
 
     &:before {
       content: '';

@@ -20,7 +20,10 @@ import {
   Small,
   VideoSection
 } from '../components/'
+
 import IndexLayout from '../layouts'
+import heroStyles from '../components/HeroPanel/HeroPanel.style'
+import { colors, breakpoints } from '../styles/variables'
 
 // ** Temporarly removed **
 //
@@ -43,8 +46,6 @@ import iconMonitor from '../images/shared/icon-monitor.svg'
 import iconShippet from '../images/shared/icon-shippet.svg'
 import iconLinked from '../images/shared/icon-linked.svg'
 import iconCog from '../images/shared/icon-cog.svg'
-
-import { colors, breakpoints } from '../styles/variables'
 
 interface IQueryData {
   graphcms: {
@@ -110,7 +111,7 @@ const styleWhyUseBearerCardHeading = css`
 
 const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
   <IndexLayout location={location}>
-    <Page>
+    <Page css={heroStyles.styleDefaultCurve}>
       <HeroPanel>
         <div className="hero-half">
           <h1
@@ -189,7 +190,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         </Grid>
       </Section> */}
 
-      <div style={{ margin: '1rem 0' }}>&nbsp;</div>
+      <div style={{ height: '2rem' }} />
 
       <Section withTail background="transparent">
         <Grid
@@ -297,7 +298,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           css={css`
             text-align: center;
           `}
-          className="mt-32 mb-64"
+          className="mt-32"
         >
           <Button text="Product features" link="/product" trackLink />
         </div>
@@ -312,18 +313,13 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               text-align: center;
             `
           ]}
-          className="mt-32 mb-64"
+          className="mt-32"
         >
           <Button trackLink text="Explore templates" link="/integrations" className="mt-16 mb-16" />
         </div>
       </Section>
 
-      <Section
-        withTail
-        css={css`
-          margin-bottom: 7.5em;
-        `}
-      >
+      <Section withTail>
         <SectionHeading primaryText="Why use Bearer?" />
         <Grid
           space="around"

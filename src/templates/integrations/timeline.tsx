@@ -151,7 +151,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           />
           <div
             css={css`
-              border-bottom: 3px solid ${colors.yellow};
+              border-bottom: 2px solid ${colors.yellow};
               max-width: 380px;
               width: 100%;
               margin: auto;
@@ -163,7 +163,12 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           >
             <SectionHeading
               primaryText={`As a developer, I want to build an integration on ${template.provider.title}`}
-              tag="h5"
+              tag="h3"
+              css={css`
+                & > h3 {
+                   margin: 5rem 0 0 0;
+                }
+              `}
             />
           </div>
         </Section>
@@ -177,7 +182,8 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
 
         <Section
           css={css`
-            margin: 3rem 0;
+            padding: 0;
+            margin: 2.5rem 0;
             text-align: center;
             background: url(${require('../../images/shared/yellow-splash.svg')}) no-repeat center center / 122px;
           `}
@@ -207,23 +213,29 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
             css={css`
               background-image: url(${require('../../images/shared/yellow-splash.svg')}),
                 url(${require('../../images/shared/gradient-splash.svg')});
-              background-position: top right 148px, bottom left 162px;
+              background-position: top 100px right 148px, bottom 60px left 162px;
               background-repeat: no-repeat;
-              padding: 2rem 0;
+              padding: 0;
               text-align: center;
             `}
           >
-            <SectionHeading primaryText="Featured Templates" tag="h2" />
+            <SectionHeading
+              primaryText="Featured Templates"
+              tag="h2"
+              style={css`
+                & > h2 { margin: 2rem 0; }
+              `}
+            />
             <IntegrationPanel templates={featuredTemplates} />
             <div
               css={[
                 css`
                   text-align: center;
-                  margin-top: 2.375rem;
+                  margin-top: 2rem;
                 `
               ]}
             >
-              <Button trackLink text="Explore templates" link="/integrations" className="mt-16 mb-16" />
+              <Button trackLink text="Explore templates" link="/integrations" />
             </div>
           </div>
         </Section>

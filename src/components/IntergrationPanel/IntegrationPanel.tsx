@@ -80,7 +80,15 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                 small
                 className={[styles.item]}
               >
-                <div>{image && <img src={image} css={styles.cardImage} itemProp="logo" />}</div>
+                <div
+                  css={css`
+                    margin-top: 1rem;
+                    height: 4rem;
+                    margin-bottom: 1rem;
+                  `}
+                >
+                  {image && <img src={image} css={styles.cardImage} itemProp="logo" />}
+                </div>
                 <div
                   css={css`
                     align-self: normal;

@@ -623,7 +623,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                 `}
               >
                 <Button
-                  link="?contact-us"
+                  link="?pricing-contact"
                   text="Contact us"
                   style={css`
                     margin: 12px auto;

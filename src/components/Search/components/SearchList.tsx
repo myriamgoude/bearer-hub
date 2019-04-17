@@ -36,6 +36,9 @@ const navStyle = css`
     appearance: none;
     background: transparent;
     border: none;
+  }
+
+  select option {
     color: #030d36;
     font-family: 'Proxima Nova';
     font-size: 16px;

@@ -25,10 +25,10 @@ export default {
     }
   `,
   main: css`
-    @media (min-width: ${breakpoints.md}px) {
+    @media (min-width: ${breakpoints.lg}px) {
       display: flex;
     }
-    @media (min-width: ${breakpoints.lg}px) {
+    @media (max-width: ${breakpoints.lg}px) {
       display: block;
     }
   `,

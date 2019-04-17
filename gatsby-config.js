@@ -181,7 +181,7 @@ module.exports = {
             fontSize: '12px',
             slideDown: false,
             applyStyles: false,
-            content: "Bearer uses cookies to make its website easier to use. <a href='/privacy'>Learn more</a>"
+            content: "Bearer uses cookies to make its website easier to use. <a href='/privacy-policy'>Learn more</a>"
           }
         }
       }

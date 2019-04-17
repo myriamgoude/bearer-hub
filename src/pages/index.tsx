@@ -216,7 +216,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             },
             {
               title: 'Map API endpoints to your app model',
-              text: 'Create functions to query, transform and re-expose APIs according to your app model',
+              text: 'Create functions to query, transform and re-expose APIs according to your app model.',
               iconBg: orangeSplash,
               icon: iconGlobe,
               color: colors.orange

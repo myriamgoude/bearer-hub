@@ -59,12 +59,15 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
             <HeroLined>
               <Text tag="h1" text="Explore Templates" />
               <Clearfix />
-              <Text tag="h3" text="Build your integrations even faster!" />
+              <Text tag="h3" text="Build your integrations even faster!" style={{ marginTop: '0.5rem' }} />
             </HeroLined>
           </div>
           <CustomSearchBox />
 
           <Section
+            style={{
+              paddingTop: '5rem'
+            }}
             styleContainer={css`
               display: flex;
               flex-wrap: wrap;

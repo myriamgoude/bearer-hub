@@ -9,6 +9,10 @@ export default {
     text-align: left;
     display: block;
     margin-bottom: ${getEmSize(24)};
+
+    & > h2 {
+      margin-top: 2rem;
+    }
   `,
   heading: css`
     display: inline;

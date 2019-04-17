@@ -41,6 +41,8 @@ const JobCard = (props: any) => (
       border-radius: 0;
       margin: 0 2rem;
       height: 100%;
+      max-width: 25rem;
+      padding: 12px 24px;
 
       header {
         display: flex;
@@ -229,6 +231,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
           col={4}
           gutter={0}
           style={css`
+            padding-top: 2rem;
             justify-content: left;
           `}
           childrenStyle={css`
@@ -304,6 +307,11 @@ const AboutPage: GatsbyPage = ({ location }) => (
               email: 'dave@bearer.sh',
               name: 'David Roe',
               role: 'Software Engineer'
+            },
+            {
+              email: 'hello@bearer.sh',
+              name: 'You?',
+              role: '🐻'
             }
           ].map((teammate, index) => (
             <TeamBlock
@@ -385,6 +393,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
           background-repeat: no-repeat;
           background-position: center 6rem;
           background-size: cover;
+          margin-bottom: 0 !important;
         `}
       >
         <SectionHeading primaryText="Our Investors" />

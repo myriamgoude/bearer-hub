@@ -484,6 +484,9 @@ const PricingPage: GatsbyPage = ({ location }) => (
                   primaryText="Start Building Your Integrations!"
                   tag="h3"
                   style={css`
+                    & > h3 {
+                      margin-top: 0.5rem;
+                    }
                     margin-bottom: 0;
                     max-width: 12rem;
                   `}

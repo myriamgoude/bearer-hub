@@ -34,7 +34,7 @@ const SectionHeading = (props: ISectionHeadingProps) => {
   return (
     <div css={[styles.root, alignment, props.style]} className={props.className}>
       {props.primaryText && (
-        <Text tag={props.tag ? props.tag : 'h2'}>
+        <Text tag={props.tag ? props.tag : 'h2'} css={styles.heading}>
           {props.primaryText} {props.tooltip}
         </Text>
       )}

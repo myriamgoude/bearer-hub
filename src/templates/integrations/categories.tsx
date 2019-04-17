@@ -1,15 +1,15 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
+import { Configure, InstantSearch, Pagination } from 'react-instantsearch-dom'
 
+import { breakpoints, colors } from '../../styles/variables'
 import IndexLayout from '../../layouts'
+
 import { Clearfix, HeroLined, Page, PageMetadata, Section, Search, Text } from '../../components/index'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
-import { InstantSearch } from 'react-instantsearch-dom'
-
 import { SearchList } from '../../components/Search/components/SearchList'
 import { CustomSearchBox } from '../../components/Search/components/CustomSearchBox'
-import { breakpoints } from '../../styles/variables'
 
 interface IQueryData {
   graphcms: {
@@ -89,6 +89,32 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
               `}
             >
               <Search defaultCategory={category.title} />
+              <Configure hitsPerPage={12} />
+              <div
+                css={css`
+                  ul {
+                    list-decoration: none;
+                    text-align: center;
+                  }
+                  ul li {
+                    display: inline-block;
+                    padding: 1em;
+                    color: ${colors.link[0]};
+                  }
+                  ul li a {
+                    text-decoration: none;
+                  }
+                  .ais-Pagination-link--selected {
+                    font-weight: bold;
+                    text-decoration: underline;
+                  }
+                  .ais-Pagination-item--disabled {
+                    color: ${colors.link[2]};
+                  }
+                `}
+              >
+                <Pagination showFirst={false} />
+              </div>
             </div>
           </Section>
         </InstantSearch>

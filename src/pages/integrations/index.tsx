@@ -1,17 +1,16 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 import { graphql } from 'gatsby'
+import { Configure, InstantSearch, Pagination } from 'react-instantsearch-dom'
+
+import { breakpoints, colors } from '../../styles/variables'
+import IndexLayout from '../../layouts'
 
 import Page from '../../components/Page/Page'
 import { Section, HeroLined, Text, Clearfix, Search } from '../../components/index'
-import IndexLayout from '../../layouts'
 import PageMetadata from '../../components/PageMetadata/PageMetadata'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
-
-import { InstantSearch } from 'react-instantsearch-dom'
-
 import { SearchList } from '../../components/Search/components/SearchList'
-import { breakpoints } from '../../styles/variables'
 import { CustomSearchBox } from '../../components/Search/components/CustomSearchBox'
 
 interface IQueryData {
@@ -95,6 +94,32 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
               `}
             >
               <Search />
+              <Configure hitsPerPage={12} />
+              <div
+                css={css`
+                  ul {
+                    list-decoration: none;
+                    text-align: center;
+                  }
+                  ul li {
+                    display: inline-block;
+                    padding: 1em;
+                    color: ${colors.link[0]};
+                  }
+                  ul li a {
+                    text-decoration: none;
+                  }
+                  .ais-Pagination-link--selected {
+                    font-weight: bold;
+                    text-decoration: underline;
+                  }
+                  .ais-Pagination-item--disabled {
+                    color: ${colors.link[2]};
+                  }
+                `}
+              >
+                <Pagination showFirst={false} />
+              </div>
             </div>
           </Section>
         </InstantSearch>

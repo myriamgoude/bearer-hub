@@ -24,7 +24,7 @@ export const CustomHits = connectHits(({ hits }: { hits: ICustomHitsProps[] }) =
       col={3}
       gutter={16}
       style={css`
-        justify-content: ${hits.length <= 2 ? 'flex-start !important' : null};
+        justify-content: flex-start;
         @media (max-width: ${breakpoints.lg}px) {
           width: ${hits.length * 152 + (hits.length === 2 ? 16 : 0)}px;
           overflow: scroll;

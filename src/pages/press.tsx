@@ -1,9 +1,21 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import Page from '../components/Page/Page'
-import PageMetadata from '../components/PageMetadata/PageMetadata'
-import { HeroLined, Text, Clearfix, Grid, SectionHeading, HeroPanel, Button, Section, Small } from '../components/'
+import {
+  Button,
+  Clearfix,
+  Grid,
+  HeroLined,
+  HeroPanel,
+  Link,
+  Page,
+  PageMetadata,
+  SectionHeading,
+  Section,
+  Small,
+  Text
+} from '../components/'
+
 import IndexLayout from '../layouts'
 
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
@@ -159,9 +171,8 @@ const PressPage: GatsbyPage = ({ location }) => (
           >
             {pressArticles.map((article: any) => (
               <div key={article.name}>
-                <a
-                  target="_blank"
-                  href={article.url}
+                <Link
+                  to={article.url}
                   title={article.name}
                   css={css`
                     box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.26);
@@ -206,7 +217,7 @@ const PressPage: GatsbyPage = ({ location }) => (
                       <time dateTime="true">{article.date}</time>
                     </Small>
                   </div>
-                </a>
+                </Link>
               </div>
             ))}
           </Grid>

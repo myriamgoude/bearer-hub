@@ -26,15 +26,15 @@ const Header = (props: IHeaderProps) => (
         </Link>
         {props.enriched && (
           <div css={styles.enriched}>
-            <a target="_blank" href="https://drive.google.com/drive/folders/1NfLHbVsjDonkt9wrysrnQCuP0tD5CGh-">
+            <Link targetBlank to="https://drive.google.com/uc?export=download&id=18YAFKw5iNjSW8r4BS_jjLMhi0yd-LSIR">
               <Tag text="SVG" color="#1339D7" />
-            </a>
-            <a target="_blank" href="https://drive.google.com/drive/folders/1NfLHbVsjDonkt9wrysrnQCuP0tD5CGh-">
+            </Link>
+            <Link targetBlank to="https://drive.google.com/uc?export=download&id=1b3qgDifFZkDfqI-8JYyjD3FczQe9oWtV">
               <Tag text="PNG" color="#1339D7" />
-            </a>
-            <a target="_blank" href="https://drive.google.com/drive/folders/1NfLHbVsjDonkt9wrysrnQCuP0tD5CGh-">
-              <Tag text="AI" color="#1339D7" />
-            </a>
+            </Link>
+            <Link targetBlank to="https://drive.google.com/uc?export=download&id=1StsAImd9OMqE5Ul1K2in9sCuwPmAZD8x">
+              <Tag text="PDF" color="#1339D7" />
+            </Link>
           </div>
         )}
         <Navigation />

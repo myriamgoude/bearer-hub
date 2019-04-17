@@ -1,21 +1,23 @@
 import * as React from 'react'
 import * as crypto from 'crypto'
 import { css } from '@emotion/core'
-import Page from '../components/Page/Page'
 import IndexLayout from '../layouts'
+
 import {
+  Button,
   Card,
-  Section,
-  HeroLined,
-  Text,
-  ColoredTextBlock,
-  TeamBlock,
   Clearfix,
+  ColoredTextBlock,
   Grid,
-  Tag,
+  HeroLined,
+  Link,
+  Page,
   PageMetadata,
+  Section,
   SectionHeading,
-  Button
+  TeamBlock,
+  Text,
+  Tag
 } from '../components/'
 
 import greenSplash from '../images/shared/splash-green.svg'
@@ -394,30 +396,36 @@ const AboutPage: GatsbyPage = ({ location }) => (
             }
           `}
         >
-          <img
-            src={require('../images/shared/logo-partech.png')}
-            alt={`Logo Partech`}
-            css={css`
-              height: 50px;
-              vertical-align: middle;
-            `}
-          />
-          <img
-            src={require('../images/shared/logo-point-nine.png')}
-            alt={`Logo Point Nine`}
-            css={css`
-              height: 50px;
-              vertical-align: middle;
-            `}
-          />
-          <img
-            src={require('../images/shared/logo-kima-ventures.png')}
-            alt={`Logo Kima Ventures`}
-            css={css`
-              height: 78px;
-              vertical-align: middle;
-            `}
-          />
+          <Link to="https://partechpartners.com/" targetBlank>
+            <img
+              src={require('../images/shared/logo-partech.png')}
+              alt={`Logo Partech`}
+              css={css`
+                height: 50px;
+                vertical-align: middle;
+              `}
+            />
+          </Link>
+          <Link to="http://www.pointninecap.com/" targetBlank>
+            <img
+              src={require('../images/shared/logo-point-nine.png')}
+              alt={`Logo Point Nine`}
+              css={css`
+                height: 50px;
+                vertical-align: middle;
+              `}
+            />
+          </Link>
+          <Link to="https://www.kimaventures.com/" targetBlank>
+            <img
+              src={require('../images/shared/logo-kima-ventures.png')}
+              alt={`Logo Kima Ventures`}
+              css={css`
+                height: 78px;
+                vertical-align: middle;
+              `}
+            />
+          </Link>
         </Grid>
       </Section>
     </Page>

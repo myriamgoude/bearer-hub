@@ -12,9 +12,7 @@ const VideoSection = (props: IVideoSectionProps) => {
     <>
       <div css={styles.root}>
         <Container>
-          <div css={styles.video}>
-            <VideoContent thumbnail={props.thumbnail} src={props.src} />
-          </div>
+          <VideoContent thumbnail={props.thumbnail} src={props.src} />
           {props.button && <div css={styles.button}>{props.button}</div>}
         </Container>
       </div>

@@ -17,8 +17,10 @@ const VideoContent: React.SFC<IVideoContentProps> = ({ thumbnail, src, type = 'v
     muted: true,
     playsInline: true,
     poster: thumbnail,
-    preload: 'auto'
+    preload: 'auto',
+    isLanding: true
   }
-  return <video {...videoOptions} css={styles.root} />
+
+  return <video {...videoOptions} css={[styles.root]} />
 }
 export default VideoContent

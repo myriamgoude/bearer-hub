@@ -12,6 +12,9 @@ export default {
     width: 100%;
     padding-top: 4rem;
     position: relative;
+    @media (max-width: ${breakpoints.lg}px) {
+      margin: 2rem auto 0 auto;
+    }
 
     &:after {
       content: '';

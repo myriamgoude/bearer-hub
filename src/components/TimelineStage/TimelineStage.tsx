@@ -12,7 +12,7 @@ const StyledDiv = styled.div<{ placement: string }>`
   @media (min-width: ${breakpoints.lg}px) {
     width: 50%;
     ${props =>
-      props.placement === 'right' ? 'margin-left: auto; padding-left: calc(115px + 20px);' : 'padding-right: 115px'};
+      props.placement === 'right' ? 'margin-left: auto; padding-left: calc(115px + 20px);' : 'padding-right: 125px'};
     position: relative;
     h3 {
       ${props => (props.placement === 'right' ? 'text-align: left' : 'justify-content: flex-end;text-align: right')};

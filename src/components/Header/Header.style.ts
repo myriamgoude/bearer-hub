@@ -1,12 +1,11 @@
 import { css } from '@emotion/core'
 
-import { heights, dimensions, colors } from '../../styles/variables'
+import { heights, dimensions } from '../../styles/variables'
 
 export default {
   root: css`
     height: ${heights.header}px;
     padding: 1rem ${dimensions.containerPadding}rem;
-    color: ${colors.black};
     position: relative;
     z-index: 100;
     margin-bottom: -${heights.header}px;

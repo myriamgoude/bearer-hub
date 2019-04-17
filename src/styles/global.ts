@@ -3,15 +3,16 @@ import { colors } from './variables'
 export default `
   body {
       background: ${colors.lightGrey}
+      color: ${colors.darkBlue}
   }
 
   b {
-    font-family: 'ProximaNova-Semibold';
+    font-family: 'ProximaNova-Semibold'
   }
 
   a {
-    color: black;
-    text-decoration: underline;
+    color: ${colors.darkBlue}
+    text-decoration: underline
   }
 
 #iubenda-cs-banner {

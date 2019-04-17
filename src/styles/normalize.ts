@@ -19,14 +19,14 @@ export default `
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: ${fonts.sansSerif};
-    color: ${colors.black};
+    color: ${colors.darkBlue};
     background-color: ${colors.white};
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
   }
 
   a {
-    color: ${colors.blue};
+    color: ${colors.darkBlue};
     text-decoration: none;
 
     &:hover,
@@ -79,7 +79,7 @@ export default `
   h1, h2, h3, h4, h5, h6 {
     margin-top: 1.414rem;
     margin-bottom: .5rem;
-    color: ${colors.black};
+    color: ${colors.darkBlue};
     font-weight: 600;
     line-height: ${dimensions.lineHeight.heading};
     text-rendering: optimizeLegibility;
@@ -108,7 +108,7 @@ export default `
   }
 
   strong {
-    color: ${colors.black};
+    color: ${colors.darkBlue};
   }
 
   ul,

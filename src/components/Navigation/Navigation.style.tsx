@@ -18,7 +18,6 @@ export default {
     height: 1rem;
     font-size: 0.875rem;
     letter-spacing: 0.12px;
-    color: ${colors.darkBlue};
 
     &:hover,
     &:focus {
@@ -54,7 +53,6 @@ export default {
     @media (min-width: ${breakpoints.lg}px) {
       display: inline-block;
       background: transparent;
-      color: ${colors.black};
       width: auto;
       padding: 0;
     }
@@ -66,7 +64,6 @@ export default {
       width: 100%;
       padding: 2em 0;
       position: fixed;
-      color: ${colors.darkBlue};
       box-shadow: 0 2px 4px 0 rgba(3, 13, 54, 0.26);
 
       li a {

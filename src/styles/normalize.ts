@@ -20,14 +20,14 @@ export default `
     overflow-y: scroll;
     font-family: ${fonts.sansSerif};
     color: ${colors.darkBlue};
-    background-color: ${colors.white};
+    background-color: ${colors.lightBlue};
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
   }
 
   a {
     color: ${colors.darkBlue};
-    text-decoration: none;
+    text-decoration: underline;
 
     &:hover,
     &:focus {

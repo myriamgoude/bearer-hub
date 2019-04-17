@@ -510,7 +510,11 @@ const PricingPage: GatsbyPage = ({ location }) => (
 
             <div
               className={
-                isBrowser() ? (window.location.search.replace('?pricing=', '') === 'business' ? 'show' : undefined) : ''
+                isBrowser()
+                  ? window.location.search.replace('?pricing=', '') === 'enterprise'
+                    ? 'show'
+                    : undefined
+                  : ''
               }
             >
               <PricingTable background="dark">

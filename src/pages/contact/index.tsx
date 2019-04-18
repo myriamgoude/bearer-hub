@@ -77,7 +77,16 @@ const ContactFormPage: GatsbyPage = ({ location }) => (
     <Page css={[heroStyles.styleDefaultCurve]}>
       <ContactFormHero />
       <Section>
-        <form name="contact" method="POST" data-netlify="true" css={styleForm} action="/contact/success">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          css={styleForm}
+          action="/contact/success"
+        >
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="contact" />
           <div className="form-group" css={styleFormGroup}>
             <label>
               <span className="form-label">Your name*</span>

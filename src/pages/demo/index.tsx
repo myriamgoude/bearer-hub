@@ -73,7 +73,16 @@ const DemoFormPage: GatsbyPage = ({ location }) => (
         />
       </HeroLined>
       <Section>
-        <form name="demo" method="POST" data-netlify="true" css={styleForm} action="/demo/success">
+        <form
+          name="demo"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          css={styleForm}
+          action="/demo/success"
+        >
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="demo" />
           <div className="form-group" css={styleFormGroup}>
             <label>
               <span className="form-label">Your name*</span>

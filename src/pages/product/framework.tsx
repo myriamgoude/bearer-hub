@@ -45,7 +45,7 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata
       title="Bearer - Framework Features"
-      description="Build API integration faster with the Bearer 
+      description="Build API integration faster with the Bearer
       framework, manage API authentication, map data easily, integrate into your app in one line of code and more."
     />
     <Page>
@@ -171,12 +171,7 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
               css={imageStyle2}
             />
             <SectionHeading tag="h3" style={headingTail} align="left" primaryText="Typescript & Open Source" />
-            <Text large>
-              Bearer Framework is built with Typescript and provided under the MIT Open Source License.
-              <br />
-              <br />
-              <strong>Your integration, your code</strong>
-            </Text>
+            <Text large>Bearer Framework is built with Typescript and provided under the MIT Open Source License.</Text>
           </div>
         </Grid>
       </Section>

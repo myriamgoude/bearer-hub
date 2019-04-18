@@ -451,7 +451,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     <td>
                       <span className="mobile-label">Team Management</span>
                       <span>
-                        <i>not included</i>
+                        <i>Not included</i>
                       </span>
                     </td>
                   </tr>
@@ -459,7 +459,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
                     <td>
                       <span className="mobile-label">SLA</span>
                       <span>
-                        <i>not included</i>
+                        <i>Not included</i>
                       </span>
                     </td>
                   </tr>

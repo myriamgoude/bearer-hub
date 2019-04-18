@@ -37,14 +37,18 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata
       title="Bearer - Platform Features"
-      description="Run and monitor your API Integrations with Bearer's platform, 
+      description="Run and monitor your API Integrations with Bearer's platform,
       log every API call, manage authentication flows and webhooks, and more"
     />
     <Page>
       <HeroLined>
         <Text tag="h1" text="Platform Features" />
         <Clearfix />
-        <Text tag="h3" text="Run and Manage API Integrations like World Class Services" />
+        <Text tag="h3">
+          Run and Manage API Integrations
+          <br />
+          like World Class Services
+        </Text>
       </HeroLined>
       <Tabs
         items={[

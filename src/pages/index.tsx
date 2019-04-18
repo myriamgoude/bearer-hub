@@ -127,7 +127,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
               font-size: 1.25rem;
             `}
           >
-            Bearer provides all of the tools to build, run and manage API integrations.
+            Bearer provides all the tools to build, run and manage API integrations.
           </p>
 
           <LightCta
@@ -224,7 +224,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             {
               title: 'Integrate into your code with one line',
               text:
-                'Directly call your functions using integration Clients \
+                'Directly call your functions using integration clients \
                 (NodeJS, Ruby, JavaScript, React, etc.) and keep your code base clean and tidy.',
               iconBg: lightblueSplash,
               icon: iconShippet,
@@ -390,7 +390,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             </h3>
             <p>
               Bearer makes it possible to build more integrations by reducing the time, money and expertise you need to
-              expend.
+              expand.
             </p>
             <p>
               Not only that, you can also easily externalize some integrations without compromising on quality and

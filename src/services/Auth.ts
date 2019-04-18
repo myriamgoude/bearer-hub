@@ -106,7 +106,11 @@ export function lockLogin(
 }
 
 export function lockCallback(callback: () => void) {
-  createLock().on('authenticated', (authResult: any) => {
+  createLock().checkSession({}, (error, authResult) => {
+    if (error || !authResult) {
+      // background auth failed do nothing
+      return
+    }
     storeJWT(authResult.idToken, authResult.idTokenPayload)
     callback()
   })

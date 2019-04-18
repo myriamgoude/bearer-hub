@@ -48,7 +48,6 @@ export function isSSOAuthenticated(authenticated: () => void) {
   lock.checkSession({}, (error, authResult) => {
     if (error || !authResult) {
       // background auth failed do nothing
-      Cookie.erase(JWT_COOKIE_KEY)
       return
     }
     storeJWT(authResult.idToken, authResult.idTokenPayload)

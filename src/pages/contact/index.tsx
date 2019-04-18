@@ -63,7 +63,7 @@ export const ContactFormHero = () => (
     <Clearfix />
     <Text
       tag="h3"
-      text="Use the form below to get in touch with Bearer team."
+      text="Use the form below to get in touch with the Bearer team."
       style={css`
         max-width: 25rem;
       `}

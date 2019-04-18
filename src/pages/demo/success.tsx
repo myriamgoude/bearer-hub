@@ -11,7 +11,7 @@ import { dashboardURL } from '../../services/Dashboard'
 
 const DemoThankYouPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
-    <PageMetadata title="Press and Media Resources" />
+    <PageMetadata title="Thank you" />
     <Page css={[heroStyles.styleDefaultCurve]}>
       <HeroLined>
         <Text tag="h1" text="Request a demo" />

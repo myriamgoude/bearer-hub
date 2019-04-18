@@ -43,7 +43,7 @@ interface IDefaultMetaProps {
 // NB: Full mount is required to mock the query but helmet will not return anything
 // in a full mount as it edits the header!
 export const DefaultMeta: React.SFC<IDefaultMetaProps> = ({ title, canonical, image, alt, twitter, description }) => (
-  <Helmet defaultTitle={title} titleTemplate={`%s | ${title}`}>
+  <Helmet defaultTitle={title} titleTemplate={`%s`}>
     <html lang="en" />
     <link rel="canonical" href={canonical} />
     <meta name="twitter:card" content="summary_large_image" />

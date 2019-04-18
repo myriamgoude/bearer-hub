@@ -5,7 +5,7 @@ exports[`SiteMetadata DefaultMeta renders expected metadata 1`] = `
   defaultTitle="Bearer"
   defer={true}
   encodeSpecialCharacters={true}
-  titleTemplate="%s | Bearer"
+  titleTemplate="%s"
 >
   <html
     lang="en"

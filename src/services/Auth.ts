@@ -120,8 +120,7 @@ export function redirectPath(): string {
   return sessionStorage.getItem(REDIRECT_KEY) || DEFAULT_REDIRECT
 }
 
-export function logout(callback: () => void) {
+export function logout() {
   Cookie.erase(JWT_COOKIE_KEY)
-  createLock().logout({ returnTo: DEFAULT_REDIRECT })
-  callback()
+  createLock().logout({ returnTo: BASE_DOMAIN })
 }

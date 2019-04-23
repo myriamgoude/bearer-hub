@@ -1,12 +1,17 @@
 import { css } from '@emotion/core'
 import { getEmSize } from '../../styles/mixins'
-import { widths, dimensions } from '../../styles/variables'
+import { widths, dimensions, breakpoints } from '../../styles/variables'
 
 export default {
   root: css`
     margin: auto;
     width: 100%;
-    max-width: ${getEmSize(widths.xl)};
+    @media (min-width: ${breakpoints.xl}px) {
+      max-width: ${getEmSize(widths.xxl)};
+    }
+    @media (max-width: ${breakpoints.xl}px) {
+      max-width: ${getEmSize(widths.xl)};
+    }
   `,
   displayFlex: css`
     display: flex;

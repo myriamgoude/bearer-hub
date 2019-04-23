@@ -3,6 +3,8 @@ import * as React from 'react'
 import { ButtonToDashboard, Link, Small } from '../../components/index'
 import { humanizeAuthType } from '../../services/Explore'
 import styles from './TimelineHeading.style'
+import { breakpoints } from '../../styles/variables'
+import css from '@emotion/css'
 
 interface TimelineHeadingProps {
   providerName: string
@@ -54,7 +56,14 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
         </ul>
       </div>
 
-      <div itemProp="url">
+      <div
+        itemProp="url"
+        css={css`
+          @media (max-width: ${breakpoints.lg}px) {
+            margin-top: 1rem;
+          }
+        `}
+      >
         <ButtonToDashboard
           primary
           callToAction

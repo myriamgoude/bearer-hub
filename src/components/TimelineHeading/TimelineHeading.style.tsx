@@ -15,6 +15,9 @@ export default {
   heading: css`
     max-width: 600px;
     margin-bottom: 2rem;
+    @media (max-width: ${breakpoints.lg}px) {
+      margin-bottom: 5rem;
+    }
   `,
   provider: css`
     border-bottom-width: 2px;

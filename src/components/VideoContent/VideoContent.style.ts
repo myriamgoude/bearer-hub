@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { colors } from '../../styles/variables'
+import { colors, breakpoints } from '../../styles/variables'
 
 export default {
   root: css`
@@ -11,6 +11,9 @@ export default {
     position: relative;
     z-index: 5;
     width: 100%;
-    height: 308px;
+    height: 389px;
+    @media (max-width: ${breakpoints.xl}px) {
+      height: 326px;
+    }
   `
 }

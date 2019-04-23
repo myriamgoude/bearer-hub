@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="591px" height="427px" viewBox="0 0 591 427" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
-    <style> * {font-family:'ProximaNova-Regular'}</style>
-    <title>CommandLineTool</title>
-    <desc>Created with Sketch.</desc>
+    <style> * {font-family:'ProximaNova-Regular', Courier}</style>
     <defs>
         <linearGradient x1="22.5198819%" y1="69.6954057%" x2="85.9659845%" y2="30.6665546%" id="linearGradient-1">
             <stop stop-color="#FBFCFF" offset="0%"></stop>
@@ -105,7 +102,7 @@
                     <circle id="Oval" fill="#4F556D" cx="18" cy="15" r="6"></circle>
                     <circle id="Oval" fill="#656B86" cx="36" cy="15" r="6"></circle>
                     <circle id="Oval" fill="#777FA0" cx="54" cy="15" r="6"></circle>
-                    <text id="Terminal" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.4375" fill="#999DAE">
+                    <text id="Terminal" font-family="ProximaNova-Semibold, Proxima Nova, Courier" font-size="14" font-weight="500" letter-spacing="0.4375" fill="#999DAE">
                         <tspan x="191.171" y="21">Terminal</tspan>
                     </text>
                 </g>

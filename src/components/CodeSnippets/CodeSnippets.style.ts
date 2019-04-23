@@ -91,10 +91,10 @@ export default {
 
     & > span {
       color: ${colors.secondary[2]};
-      font-size: 0.75rem;
+      font-size: 0.875rem;
       text-align: center;
       letter-spacing: 0.38px;
-      line-height: 100%;
+      line-height: 120%;
       padding: 0 1rem;
       cursor: pointer;
     }

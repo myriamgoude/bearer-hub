@@ -199,7 +199,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           `}
           childrenStyle={css`
             @media (max-width: ${breakpoints.lg}px) {
-              margin-bottom: 60px;
+              margin-bottom: 6rem;
             }
           `}
           fullWidth
@@ -245,12 +245,16 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           style={css`
             margin-top: 7rem;
             @media (max-width: ${breakpoints.lg}px) {
-              margin-top: 3em;
+              margin-top: 0;
+              margin-bottom: 5rem;
             }
           `}
           childrenStyle={css`
             @media (max-width: ${breakpoints.lg}px) {
-              margin-bottom: 60px;
+              margin-bottom: 6rem;
+              &:last-of-type {
+                margin-bottom: 0;
+              }
             }
           `}
           fullWidth
@@ -304,7 +308,14 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         </div>
       </Section>
 
-      <Section withTail>
+      <Section
+        withTail
+        css={css`
+          @media (max-width: ${breakpoints.md}px) {
+            margin-top: 4rem;
+          }
+        `}
+      >
         <SectionHeading primaryText="Featured integration templates" />
         <IntegrationPanel templates={data.graphcms.templates} />
         <div
@@ -319,7 +330,14 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         </div>
       </Section>
 
-      <Section withTail>
+      <Section
+        withTail
+        css={css`
+          @media (max-width: ${breakpoints.md}px) {
+            margin-top: 4rem;
+          }
+        `}
+      >
         <SectionHeading primaryText="Why use Bearer?" />
         <Grid
           space="around"
@@ -344,11 +362,12 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             @media (max-width: ${breakpoints.lg}px) {
               max-width: 100% !important;
               width: 100% !important;
+              text-align: left;
               flex-direction: column;
             }
           `}
         >
-          <Card style={{ padding: '40px' }} padding="large">
+          <Card style={{ padding: '2.5rem' }} padding="large">
             <h3 css={styleWhyUseBearerCardHeading}>
               <span>Don’t waste your engineering resources</span>
             </h3>
@@ -360,7 +379,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           </Card>
           <Card
             style={css`
-              padding: 40px;
+              padding: 2.5rem;
               @media (min-width: ${breakpoints.md}px) {
                 margin-top: 200px;
               }
@@ -378,9 +397,9 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           </Card>
           <Card
             style={css`
-              padding: 40px;
+              padding: 2.5rem;
               @media (min-width: ${breakpoints.md}px) {
-                margin-top: 50px;
+                margin-top: 48px;
               }
             `}
             padding="large"

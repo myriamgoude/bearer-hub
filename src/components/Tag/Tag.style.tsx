@@ -9,6 +9,7 @@ export default {
     line-height: 1.25rem;
 
     & + span {
+      margin-top: 2px;
       margin-left: 8px;
     }
   `

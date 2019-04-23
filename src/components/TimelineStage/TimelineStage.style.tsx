@@ -15,6 +15,8 @@ export default {
     font-size: 1.2rem;
 
     @media (max-width: ${breakpoints.lg}px) {
+      margin-top: 4rem;
+      margin-bottom: 1rem;
       &:before {
         content: '';
         display: block;
@@ -23,7 +25,7 @@ export default {
         height: 2px;
         background: ${colors.yellow};
         left: 8px;
-        margin-top: 8px;
+        margin-top: 1rem;
       }
     }
   `,
@@ -34,7 +36,7 @@ export default {
   stageHint: css`
     display: block;
     margin-top: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 0.875rem !important;
     line-height: 1.3 !important;
   `
 }

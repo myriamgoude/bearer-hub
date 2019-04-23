@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="446px" height="273px" viewBox="0 0 446 273" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
-    <style> * {font-family:'ProximaNova-Regular'}</style>
-    <title>A3F802C0-3BA8-4C0B-AE96-BB495FEF0E99@2x</title>
-    <desc>Created with sketchtool.</desc>
+    <style> * {font-family:'ProximaNova-Regular', Courier}</style>
     <defs>
         <linearGradient x1="100%" y1="63.4044671%" x2="1.80027174%" y2="37.4111047%" id="linearGradient-1">
             <stop stop-color="#030D36" offset="0%"></stop>
@@ -24,34 +21,34 @@
                     <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
                     <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
                 </g>
-                <text id="12:21AM" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.04999999" fill="#9DADEE">
+                <text id="12:21AM" font-family="ProximaNova-Semibold, Proxima Nova" font-size="12" font-weight="500" letter-spacing="0.04999999" fill="#9DADEE">
                     <tspan x="27" y="96.6253666">12:21AM</tspan>
                 </text>
-                <text id="Starting-deployment." font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.04999999" fill="#FFFFFF">
+                <text id="Starting-deployment." font-family="ProximaNova-Semibold, Proxima Nova" font-size="12" font-weight="500" letter-spacing="0.04999999" fill="#FFFFFF">
                     <tspan x="96" y="96.6253666">Starting deployment...</tspan>
                 </text>
-                <text id="12:21AM" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.04999999" fill="#9DADEE">
+                <text id="12:21AM" font-family="ProximaNova-Semibold, Proxima Nova" font-size="12" font-weight="500" letter-spacing="0.04999999" fill="#9DADEE">
                     <tspan x="27" y="128.625367">12:21AM</tspan>
                 </text>
-                <text id="Preparing-Functions" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.04999999" fill="#FFFFFF">
+                <text id="Preparing-Functions" font-family="ProximaNova-Semibold, Proxima Nova" font-size="12" font-weight="500" letter-spacing="0.04999999" fill="#FFFFFF">
                     <tspan x="96" y="128.625367">Preparing functions deployment...</tspan>
                 </text>
-                <text id="12:21AM" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.04999999" fill="#9DADEE">
+                <text id="12:21AM" font-family="ProximaNova-Semibold, Proxima Nova" font-size="12" font-weight="500" letter-spacing="0.04999999" fill="#9DADEE">
                     <tspan x="27" y="160.625367">12:21AM</tspan>
                 </text>
-                <text id="Building-Functions.." font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.04999999" fill="#FFFFFF">
+                <text id="Building-Functions.." font-family="ProximaNova-Semibold, Proxima Nova" font-size="12" font-weight="500" letter-spacing="0.04999999" fill="#FFFFFF">
                     <tspan x="96" y="160.625367">Building functions...</tspan>
                 </text>
-                <text id="12:22AM" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.04999999" fill="#9DADEE">
+                <text id="12:22AM" font-family="ProximaNova-Semibold, Proxima Nova" font-size="12" font-weight="500" letter-spacing="0.04999999" fill="#9DADEE">
                     <tspan x="27" y="192.625367">12:22AM</tspan>
                 </text>
-                <text id="Successfully-built-F" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.04999999" fill="#FFFFFF">
+                <text id="Successfully-built-F" font-family="ProximaNova-Semibold, Proxima Nova" font-size="12" font-weight="500" letter-spacing="0.04999999" fill="#FFFFFF">
                     <tspan x="96" y="192.625367">Successfully built functions</tspan>
                 </text>
-                <text id="12:22AM" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.04999999" fill="#9DADEE">
+                <text id="12:22AM" font-family="ProximaNova-Semibold, Proxima Nova" font-size="12" font-weight="500" letter-spacing="0.04999999" fill="#9DADEE">
                     <tspan x="27" y="222.625367">12:22AM</tspan>
                 </text>
-                <text id="Successfully-deploye" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.04999999" fill="#FFFFFF">
+                <text id="Successfully-deploye" font-family="ProximaNova-Semibold, Proxima Nova" font-size="12" font-weight="500" letter-spacing="0.04999999" fill="#FFFFFF">
                     <tspan x="96" y="222.625367">Successfully deployed functions</tspan>
                 </text>
             </g>

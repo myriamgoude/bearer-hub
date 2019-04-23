@@ -67,6 +67,7 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
           col={2}
           childrenStyle={css`
             display: flex;
+            text-align: left;
             align-items: center;
             justify-content: center;
             padding: 88px 0;
@@ -75,7 +76,10 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
               margin: 0 auto;
             }
             &:nth-child(odd) {
-              max-width: 376px;
+              max-width: 500px;
+              @media (max-width: ${breakpoints.lg}px) {
+                max-width: 376px;
+              }
             }
           `}
         >

@@ -73,6 +73,7 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
           childrenStyle={css`
             display: flex;
             align-items: center;
+            text-align: left;
             justify-content: center;
             padding: 88px 0;
             @media (max-width: ${breakpoints.lg}px) {
@@ -81,7 +82,10 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
             }
 
             &:nth-child(odd) {
-              max-width: 376px;
+              max-width: 500px;
+              @media (max-width: ${breakpoints.lg}px) {
+                max-width: 376px;
+              }
             }
           `}
         >
@@ -151,10 +155,15 @@ const ProductFrameworkPage: GatsbyPage = ({ location }) => (
             margin: 0 auto;
             justify-content: center;
             padding: 0px 0 88px;
-            max-width: 376px;
             @media (max-width: ${breakpoints.lg}px) {
               padding: 48px 0;
               margin: 0 auto;
+              max-width: 376px;
+            }
+            &:nth-child(odd) {
+              @media (min-width: ${breakpoints.lg}px) {
+                padding-right: 65px;
+              }
             }
           `}
         >

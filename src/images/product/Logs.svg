@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="539px" height="245px" viewBox="0 0 539 245" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
-    <style> * {font-family:'ProximaNova-Regular'}</style>
-    <title>D79A82EF-7392-4F73-AE4E-F9D6AEED1693@2x</title>
-    <desc>Created with sketchtool.</desc>
+    <style> * {font-family:'ProximaNova-Regular', Courier}</style>
     <defs>
         <linearGradient x1="100%" y1="57.3110782%" x2="1.80027174%" y2="43.1337518%" id="linearGradient-1">
             <stop stop-color="#030D36" offset="0%"></stop>
@@ -31,37 +28,35 @@
                         <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
                     </g>
                 </g>
-                <text id="[2019-02-21T16:51:03" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="15" font-weight="500" fill="#9DADEE">
-                    <tspan x="64" y="70">[2019-02-21T16:51:03.883Z]  </tspan>
+                <text id="[2019-02-21T16:51:03" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="12" font-weight="500" fill="#9DADEE">
+                    <tspan x="58" y="70">[2019-02-21T16:51:03.883Z]  </tspan>
                 </text>
-                <text id="Parameter-authId-mis" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="15" font-weight="500" fill="#FFFFFF">
-                    <tspan x="261" y="70">Parameter authId missing</tspan>
+                <text id="Parameter-authId-mis" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="12" font-weight="500" fill="#FFFFFF">
+                    <tspan x="259" y="70">Parameter authId missing</tspan>
                 </text>
-                <text id="Calling-function-sha" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="15" font-weight="500" fill="#FFFFFF">
-                    <tspan x="261" y="102">Calling function share</tspan>
+                <text id="Calling-function-sha" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="12" font-weight="500" fill="#FFFFFF">
+                    <tspan x="259" y="102">Calling function share</tspan>
                 </text>
-                <text id="Successfully-called" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="15" font-weight="500" fill="#FFFFFF">
-                    <tspan x="261" y="136">Successfully called function share</tspan>
+                <text id="Successfully-called" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="12" font-weight="500" fill="#FFFFFF">
+                    <tspan x="259" y="136">Successfully called function share</tspan>
                 </text>
-                <text id="Calling-function-lis" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="15" font-weight="500" fill="#FFFFFF">
-                    <tspan x="261" y="168">Calling function list</tspan>
+                <text id="Calling-function-lis" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="12" font-weight="500" fill="#FFFFFF">
+                    <tspan x="259" y="168">Calling function list</tspan>
                 </text>
-                <text id="Function-list-return" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="15" font-weight="500" fill="#FFFFFF">
-                    <tspan x="261" y="201">Function list returned error code 429</tspan>
+                <text id="Function-list-return" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="12" font-weight="500" fill="#FFFFFF">
+                    <tspan x="259" y="201">Function list returned an error 429</tspan>
                 </text>
-                <text id="[2019-02-21T16:51:28" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="15" font-weight="500" fill="#9DADEE">
-                    <tspan x="64" y="103">[2019-02-21T16:51:28.563Z]  </tspan>
+                <text id="[2019-02-21T16:51:28" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="12" font-weight="500" fill="#9DADEE">
+                    <tspan x="58" y="103">[2019-02-21T16:51:28.563Z]  </tspan>
                 </text>
-                <text id="[2019-02-21T16:55:10" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="15" font-weight="500" fill="#9DADEE">
-                    <tspan x="64" y="136">[2019-02-21T16:55:10.145Z]</tspan>
+                <text id="[2019-02-21T16:55:10" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="12" font-weight="500" fill="#9DADEE">
+                    <tspan x="58" y="136">[2019-02-21T16:55:10.145Z]</tspan>
                 </text>
-                <text id="[2019-02-21T19:12:33" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="15" font-weight="500">
-                    <tspan x="64" y="169" fill="#9DADEE">[2019-02-21T19:12:33.467Z]  </tspan>
-                    <tspan x="249.01" y="169" font-family="SourceSansPro-Regular, Source Sans Pro" font-weight="normal" fill="#495056"> </tspan>
+                <text id="[2019-02-21T19:12:33" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="12" font-weight="500">
+                    <tspan x="58" y="169" fill="#9DADEE">[2019-02-21T19:12:33.467Z]  </tspan>
                 </text>
-                <text id="[2019-02-23T02.22:44" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="15" font-weight="500">
-                    <tspan x="64" y="202" fill="#9DADEE">[2019-02-23T02.22:44.161Z]  </tspan>
-                    <tspan x="249.01" y="202" font-family="SourceSansPro-Regular, Source Sans Pro" font-weight="normal" fill="#495056"> </tspan>
+                <text id="[2019-02-23T02.22:44" font-family="SourceSansPro-Semibold, Source Sans Pro" font-size="12" font-weight="500">
+                    <tspan x="58" y="202" fill="#9DADEE">[2019-02-23T02.22:44.161Z]  </tspan>
                 </text>
             </g>
         </g>

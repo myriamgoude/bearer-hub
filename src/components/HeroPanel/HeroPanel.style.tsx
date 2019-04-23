@@ -9,22 +9,33 @@ export default {
     height: auto;
 
     & .hero-half {
-      width: 47.5%;
+      width: 50%;
+      text-align: right;
     }
     & .hero-half:first-of-type {
-      margin-right: 5%;
+      width: 100%;
+      text-align: center;
+      margin-top: -3rem;
+      h1 {
+        margin-bottom: 2rem;
+      }
+      @media (min-width: ${breakpoints.md}px) {
+        width: 100%;
+      }
+
+      @media (min-width: ${breakpoints.lg}px) {
+        margin-top: 0;
+        width: 45%;
+        margin-right: 5%;
+        text-align: left;
+      }
     }
     @media (min-width: ${breakpoints.md}px) {
       flex-direction: row;
     }
     @media (max-width: ${breakpoints.lg}px) {
-      padding-left: 1rem;
-      padding-right: 1rem;
-
-      .hero-half {
-        width: 100%;
-        text-align: center;
-      }
+      padding-left: 3rem;
+      padding-right: 3rem;
     }
   `,
   subtitle: css`

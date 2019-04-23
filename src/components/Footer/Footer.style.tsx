@@ -19,15 +19,13 @@ export default {
   `,
   container: css`
     position: relative;
-    @media (min-width: ${breakpoints.xl}px) {
+    @media (min-width: ${breakpoints.lg}px) {
       display: flex;
       justify-content: space-between;
     }
   `,
   main: css`
-    @media (min-width: ${breakpoints.lg}px) {
-      display: flex;
-    }
+    display: flex;
     @media (max-width: ${breakpoints.lg}px) {
       display: block;
     }
@@ -37,12 +35,12 @@ export default {
       width: 1.5rem;
       margin-right: 1rem;
     }
-
-    @media (min-width: ${breakpoints.lg}px) {
-      margin: 0 0 0 2rem;
+    margin: 2rem 0 0 0;
+    @media (max-width: ${breakpoints.lg}px) {
+      margin: 5rem 0 0 0;
     }
 
-    @media (min-width: ${breakpoints.xl}px) {
+    @media (min-width: ${breakpoints.lg}px) {
       -webkit-box-pack: end;
       -ms-flex-pack: end;
       justify-content: flex-end;
@@ -58,14 +56,10 @@ export default {
     font-size: 0.875rem;
 
     @media (min-width: ${breakpoints.sm}px) {
-      margin: 1rem 0 0 0;
+      margin: 1rem 0;
     }
 
     @media (min-width: ${breakpoints.lg}px) {
-      margin: 1rem 0 0 2rem;
-    }
-
-    @media (min-width: ${breakpoints.xl}px) {
       position: absolute;
       bottom: 0;
       right: 0;
@@ -75,14 +69,9 @@ export default {
   categories: css`
     display: flex;
     flex-wrap: wrap;
-
-    @media (max-width: ${breakpoints.md}px) {
-      section {
-        width: 50%;
-      }
-    }
   `,
   category: css`
+    margin: 0 2rem;
     h3 {
       color: ${colors.gray.copy};
       text-transform: uppercase;
@@ -97,11 +86,13 @@ export default {
     ul {
       list-style-type: none;
       padding: 0;
+      margin: 1rem 0;
 
       a {
         color: inherit;
         text-decoration: none;
         font-size: 1rem;
+        line-height: 1.8rem;
 
         &:hover {
           color: inherit;
@@ -110,32 +101,9 @@ export default {
       }
     }
 
-    @media (max-width: ${breakpoints.sm}px) {
-      margin: 1rem 0;
-
-      ul {
-        margin: 1rem 0 0 0;
-        padding: 0;
-      }
-    }
-
-    @media (min-width: ${breakpoints.sm}px) {
-      ul {
-        margin: 1rem 0;
-        padding: 0;
-      }
-    }
-
-    @media (min-width: ${breakpoints.md}px) {
-      margin-right: 4rem;
-    }
-
-    @media (min-width: ${breakpoints.lg}px) {
-      margin: 0 2rem;
-
-      &:first-of-type {
-        margin-left: 1rem;
-      }
+    @media (max-width: ${breakpoints.md}px) {
+      margin: 0 1rem;
+      min-width: 120px;
     }
 
     @media (min-width: ${breakpoints.xl}px) {

@@ -5,7 +5,7 @@ import { getEmSize } from '../../styles/mixins'
 export default {
   root: css`
     padding: 0 ${getEmSize(16)};
-    max-width: 272px;
+    max-width: 85%;
 
     @media (max-width: ${breakpoints.lg}px) {
       max-width: 100%;
@@ -30,6 +30,10 @@ export default {
       margin: auto;
       top: 50%;
       left: 50%;
+
+      @media (max-width: ${breakpoints.lg}px) {
+        left: 5%;
+      }
       transform: translate(-50%, -50%);
     }
   `,

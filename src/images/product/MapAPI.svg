@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="707px" height="427px" viewBox="0 0 707 427" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
-    <style> * {font-family:'ProximaNova-Regular'}</style>
-    <title>MapAPI</title>
-    <desc>Created with Sketch.</desc>
+    <style> * {font-family:'ProximaNova-Regular', Courier}</style>
     <defs>
         <linearGradient x1="22.5198819%" y1="69.6954057%" x2="85.9659845%" y2="30.6665546%" id="linearGradient-1">
             <stop stop-color="#FBFCFF" offset="0%"></stop>

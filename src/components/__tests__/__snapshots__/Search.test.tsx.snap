@@ -9,12 +9,11 @@ exports[`Search renders correctly 1`] = `
       Array [
         Object {
           "map": undefined,
-          "name": "1xdq1vh",
+          "name": "1lgc70f",
           "next": undefined,
           "styles": "
           @media (max-width: 992px) {
             width: ;
-            text-align: center;
           }
         ",
         },

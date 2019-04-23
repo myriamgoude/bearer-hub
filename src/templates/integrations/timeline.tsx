@@ -124,7 +124,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
       <PageMetadata
         title={`Build your own ${template.provider.title} API Integrations with Bearer`}
         description={`Pick this template and start building your own 
-        ${template.provider.title} integration in minutes using the Bearer Framework.`}
+        ${template.provider.title} API integration in minutes using the Bearer Framework.`}
       />
       <Page css={[heroStyles.styleDefaultCurve]}>
         <HeroPanel>
@@ -183,7 +183,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
         <Section
           css={css`
             padding: 0;
-            margin: 2.5rem 0;
+            margin: 2rem 0;
             text-align: center;
             background: url(${require('../../images/shared/yellow-splash.svg')}) no-repeat center center / 122px;
           `}

@@ -30,7 +30,7 @@ import valueTrust from '../images/shared/value-trust.svg'
 import valueAutonomy from '../images/shared/value-autonomy.svg'
 import valueResponsibility from '../images/shared/value-responsibility.svg'
 
-import { colors, breakpoints } from '../styles/variables'
+import { colors, breakpoints, widths } from '../styles/variables'
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
 
 const JobCard = (props: any) => (
@@ -41,7 +41,7 @@ const JobCard = (props: any) => (
       border-radius: 0;
       margin: 0 2rem;
       height: 100%;
-      max-width: 25rem;
+      max-width: 100%;
       padding: 12px 24px;
 
       header {
@@ -63,7 +63,8 @@ const JobCard = (props: any) => (
     </header>
     <Text
       style={css`
-        margin-bottom: 8px;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
         font-weight: 600;
       `}
     >
@@ -107,7 +108,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
         <div
           css={css`
             margin: auto;
-            width: 720px;
+            width: ${widths.md}px;
             position: relative;
             z-index: 12;
 
@@ -121,12 +122,9 @@ const AboutPage: GatsbyPage = ({ location }) => (
             src={require('../images/team-remote.png')}
             alt="Our Team"
             css={css`
-              width: 720px;
+              max-width: 100%;
               display: block;
               margin: 0 auto;
-              @media (max-width: ${breakpoints.md}px) {
-                width: 376px;
-              }
             `}
           />
 
@@ -152,27 +150,17 @@ const AboutPage: GatsbyPage = ({ location }) => (
         </div>
       </Section>
       <Section withTail background="transparent">
-        <SectionHeading
-          primaryText="Our values"
-          css={css`
-            margin-bottom: 64px;
-          `}
-        />
-
+        <SectionHeading primaryText="Our values" />
         <Grid
-          fullWidth
           style={css`
-            padding-top: 40px;
+            margin-top: 7rem;
           `}
           childrenStyle={css`
-            text-align: center;
-
-            @media (min-width: ${breakpoints.lg}px) {
-              div > p {
-                margin-top: 32px;
-              }
+            @media (max-width: ${breakpoints.lg}px) {
+              margin-bottom: 6rem;
             }
           `}
+          fullWidth
         >
           {[
             {
@@ -211,21 +199,19 @@ const AboutPage: GatsbyPage = ({ location }) => (
               iconBg={textBlock.iconBg}
               text={textBlock.text}
               color={textBlock.color}
-              centered
-              style={css`
-                text-align: center;
-                @media (max-width: ${breakpoints.lg}px) {
-                  object {
-                    position: relative;
-                    top: 0;
-                  }
-                }
-              `}
             />
           ))}
         </Grid>
       </Section>
-      <Section withTail background="transparent">
+      <Section
+        withTail
+        background="transparent"
+        css={css`
+          @media (max-width: ${breakpoints.md}px) {
+            margin-top: 4rem;
+          }
+        `}
+      >
         <Grid
           fullWidth
           col={4}
@@ -348,6 +334,11 @@ const AboutPage: GatsbyPage = ({ location }) => (
             gutter={16}
             childrenStyle={css`
               margin-bottom: 32px;
+              max-width: 35rem;
+              text-align: left;
+              @media (max-width: ${breakpoints.lg}px) {
+                max-width: 100%;
+              }
             `}
           >
             {[
@@ -407,6 +398,9 @@ const AboutPage: GatsbyPage = ({ location }) => (
 
             @media (max-width: ${breakpoints.lg}px) {
               margin-top: 32px;
+              img {
+                max-width: 90%;
+              }
             }
           `}
         >

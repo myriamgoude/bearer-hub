@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import { colors } from '../../styles/variables'
+import { colors, breakpoints } from '../../styles/variables'
 
 import styles from './ColoredTextBlock.style'
 
@@ -34,6 +34,9 @@ const ColoredTextBlock = (props: IColoredTextBlocks) => {
             props.centered &&
               css`
                 text-align: center;
+                @media (max-width: ${breakpoints.lg}px) {
+                  text-align: left;
+                }
                 height: auto;
               `
           ]}

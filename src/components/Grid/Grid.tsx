@@ -24,7 +24,6 @@ const Grid = (props: IGridProps) => {
         css`
           @media (max-width: ${breakpoints.lg}px) {
             width: ${props.width};
-            text-align: center;
           }
         `,
         props.wrapperStyle

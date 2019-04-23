@@ -19,8 +19,6 @@ const LightCta: React.SFC<ILightCtaProps> = ({ tailColor, text, style }: ILightC
           margin-bottom: 0.75rem;
           color: ${colors.darkBlue};
           letter-spacing: 0.5px;
-          display: flex;
-          align-items: center;
         `,
         style
       ]}
@@ -31,10 +29,11 @@ const LightCta: React.SFC<ILightCtaProps> = ({ tailColor, text, style }: ILightC
           height: 2px;
           width: 1.25rem;
           margin-right: 0.5rem;
+          margin-bottom: 0.25rem;
           background: ${tailColor ? tailColor : colors.yellow};
         `}
       />{' '}
-      {text}
+      <b>{text}</b>
     </div>
   )
 }

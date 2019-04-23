@@ -227,6 +227,9 @@ const PricingPage: GatsbyPage = ({ location }) => (
           &:after {
             height: 74px;
             bottom: -40px;
+            @media (max-width: ${breakpoints.lg}px) {
+              margin-bottom: 0;
+            }
           }
         `}
       >

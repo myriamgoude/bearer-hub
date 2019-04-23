@@ -7,20 +7,18 @@ interface IVideoContentProps {
   type?: string
 }
 
-const VideoContent: React.SFC<IVideoContentProps> = ({ thumbnail, src, type = 'video/mp4' }) => {
-  const videoOptions = {
-    src,
-    type,
-    autoPlay: true,
-    controls: false,
-    loop: true,
-    muted: true,
-    playsInline: true,
-    poster: thumbnail,
-    preload: 'auto',
-    isLanding: true
-  }
-
-  return <video {...videoOptions} css={[styles.root]} />
-}
+const VideoContent: React.FunctionComponent<IVideoContentProps> = ({ thumbnail, src, type = 'video/mp4' }) => (
+  <video
+    autoPlay={true}
+    controls={false}
+    loop={true}
+    muted={true}
+    playsInline={true}
+    poster={thumbnail}
+    preload={'auto'}
+    css={[styles.root]}
+  >
+    <source src={src} type={type} />
+  </video>
+)
 export default VideoContent

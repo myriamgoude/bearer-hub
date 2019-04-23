@@ -63,6 +63,7 @@ class Link extends React.Component<ILinkProps> {
         </GatsbyLink>
       )
     }
+    const { activeClassName, partiallyActive, ...aTagRemainingProps } = remainingProps
     return (
       <a
         href={this.props.to}
@@ -70,7 +71,7 @@ class Link extends React.Component<ILinkProps> {
         // All external links to be opened in a new browser tab
         target="_blank"
         rel="noopener"
-        {...remainingProps}
+        {...aTagRemainingProps}
       >
         {this.props.children}
       </a>

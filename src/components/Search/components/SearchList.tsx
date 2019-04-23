@@ -111,20 +111,16 @@ export const SearchList = (props: ISearchListProps) => {
           <Label text="Sort by categories" />
 
           <select
+            value={props.selected || '0'}
             onChange={e => {
               showOptions(e.target)
             }}
           >
-            <option key={0} value={'All'} id={'0'} selected={props.selected ? false : true}>
+            <option key={0} value={'All'} id={'0'}>
               All
             </option>
             {props.categories.map(category => (
-              <option
-                key={category.id}
-                value={category.title}
-                id={category.hubID}
-                selected={props.selected === category.id}
-              >
+              <option key={category.id} value={category.title} id={category.hubID}>
                 {category.title}
               </option>
             ))}

@@ -7,12 +7,6 @@ const StyledLayoutMain = styled.main`
   flex: 1;
 `
 
-interface LayoutMainProps {
-  className?: string
-}
-
-const LayoutMain: React.SFC<LayoutMainProps> = ({ children, className }) => (
-  <StyledLayoutMain className={className}>{children}</StyledLayoutMain>
-)
+const LayoutMain: React.FunctionComponent = ({ children }) => <StyledLayoutMain>{children}</StyledLayoutMain>
 
 export default LayoutMain

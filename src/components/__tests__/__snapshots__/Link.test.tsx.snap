@@ -1,17 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Link passes props to subcomponents 1`] = `
-<a
-  href="#"
+<mockConstructor
   onClick={[Function]}
+  to="/bar"
 >
   my link
-</a>
+</mockConstructor>
 `;
 
-exports[`Link renders external links 1`] = `
+exports[`Link renders external links as expected (e.g. target blank) 1`] = `
 <a
   href="http://example.com"
+  rel="noopener"
+  target="_blank"
 >
   my link
 </a>
@@ -23,12 +25,4 @@ exports[`Link renders internal links 1`] = `
 >
   my link
 </mockConstructor>
-`;
-
-exports[`Link renders tricky non gatsby links 1`] = `
-<a
-  href="#"
->
-  my link
-</a>
 `;

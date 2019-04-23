@@ -148,7 +148,7 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
                 explore our templates
               </Link>{' '}
               or check{' '}
-              <Link to="https://docs.bearer.sh" trackLink targetBlank>
+              <Link to="https://docs.bearer.sh" trackLink>
                 documentation
               </Link>
             </Small>

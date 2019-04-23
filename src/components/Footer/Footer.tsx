@@ -23,7 +23,7 @@ interface IFooterQuery {
 
 interface IFooterCategory {
   title: string
-  links: { to: string; label: string; trackLink?: boolean; targetBlank?: boolean }[]
+  links: { to: string; label: string; trackLink?: boolean }[]
 }
 
 interface IFooterProps {
@@ -40,7 +40,6 @@ const query = graphql`
             to
             label
             trackLink
-            targetBlank
           }
         }
       }
@@ -82,19 +81,19 @@ const Footer = (props: IFooterProps) => (
       </div>
       <div css={styles.social}>
         <div>
-          <Link targetBlank to="https://twitter.com/@bearersh">
+          <Link to="https://twitter.com/@bearersh">
             <img src={socialIconTwitter} alt="Bearer is on Twitter" />
           </Link>
-          <Link targetBlank to="https://github.com/Bearer">
+          <Link to="https://github.com/Bearer">
             <img src={socialIconGitHub} alt="Bearer is on GitHub" />
           </Link>
-          <Link targetBlank to="https://www.facebook.com/BearerAPI/">
+          <Link to="https://www.facebook.com/BearerAPI/">
             <img src={socialIconFacebook} alt="Bearer is on Facebook" />
           </Link>
-          <Link targetBlank to="https://www.linkedin.com/company/bearer">
+          <Link to="https://www.linkedin.com/company/bearer">
             <img src={socialIconLinkedIn} alt="Bearer is on LinkedIn" />
           </Link>
-          <Link targetBlank to="https://medium.com/bearer">
+          <Link to="https://medium.com/bearer">
             <img src={socialIconMedium} alt="Bearer is on Medium" />
           </Link>
         </div>

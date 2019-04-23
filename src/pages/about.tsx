@@ -410,7 +410,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
             }
           `}
         >
-          <Link to="https://partechpartners.com/" targetBlank>
+          <Link to="https://partechpartners.com/">
             <img
               src={require('../images/shared/logo-partech.png')}
               alt={`Logo Partech`}
@@ -420,7 +420,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
               `}
             />
           </Link>
-          <Link to="http://www.pointninecap.com/" targetBlank>
+          <Link to="http://www.pointninecap.com/">
             <img
               src={require('../images/shared/logo-point-nine.png')}
               alt={`Logo Point Nine`}
@@ -430,7 +430,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
               `}
             />
           </Link>
-          <Link to="https://www.kimaventures.com/" targetBlank>
+          <Link to="https://www.kimaventures.com/">
             <img
               src={require('../images/shared/logo-kima-ventures.png')}
               alt={`Logo Kima Ventures`}

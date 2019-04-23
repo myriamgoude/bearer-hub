@@ -12,24 +12,19 @@ describe('Link', () => {
     renderer.render(<Link to={to}>{text}</Link>)
     expect(renderer.getRenderOutput()).toMatchSnapshot()
   })
-  it('renders external links', () => {
-    const to = 'http://example.com'
-    renderer.render(<Link to={to}>{text}</Link>)
-    expect(renderer.getRenderOutput()).toMatchSnapshot()
-  })
-  it('renders tricky non gatsby links', () => {
-    const to = '#'
-    renderer.render(<Link to={to}>{text}</Link>)
-    expect(renderer.getRenderOutput()).toMatchSnapshot()
-  })
   it('passes props to subcomponents', () => {
     const handler = () => {}
-    const to = '#'
+    const to = '/bar'
     renderer.render(
       <Link to={to} onClick={handler}>
         {text}
       </Link>
     )
+    expect(renderer.getRenderOutput()).toMatchSnapshot()
+  })
+  it('renders external links as expected (e.g. target blank)', () => {
+    const to = 'http://example.com'
+    renderer.render(<Link to={to}>{text}</Link>)
     expect(renderer.getRenderOutput()).toMatchSnapshot()
   })
 })

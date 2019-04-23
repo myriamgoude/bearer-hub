@@ -5,7 +5,6 @@ import { isBrowser } from '../../services/Browser'
 interface ILinkProps {
   to: string
   trackLink?: boolean
-  targetBlank?: boolean
   [key: string]: any
 }
 
@@ -51,13 +50,12 @@ class Link extends React.Component<ILinkProps> {
 
   render() {
     const internal = /^\/(?!\/)/.test(this.props.to)
-    const { to, trackLink, trackingAction, trackingOptions, onClick, targetBlank, ...remainingProps } = this.props
+    const { to, trackLink, trackingAction, trackingOptions, onClick, ...remainingProps } = this.props
 
     if (internal) {
       return (
         <GatsbyLink
           to={this.props.to}
-          {...(this.props.targetBlank ? { target: '_blank', rel: 'noopener' } : null)}
           {...(this.props.trackLink || this.props.onClick ? { onClick: this.handleOnClick } : null)}
           {...remainingProps}
         >
@@ -68,8 +66,10 @@ class Link extends React.Component<ILinkProps> {
     return (
       <a
         href={this.props.to}
-        {...(this.props.targetBlank ? { target: '_blank', rel: 'noopener' } : null)}
         {...(this.props.trackLink || this.props.onClick ? { onClick: this.handleOnClick } : null)}
+        // All external links to be opened in a new browser tab
+        target="_blank"
+        rel="noopener"
         {...remainingProps}
       >
         {this.props.children}

@@ -18,7 +18,6 @@ interface INavLinkProps {
   children?: any
   target?: string
   trackLink?: boolean
-  targetBlank?: boolean
   partiallyActive?: boolean
   to: any
 }
@@ -31,7 +30,6 @@ const NavLink = (props: INavLinkProps) => (
       css={[styles.link]}
       partiallyActive={props.partiallyActive}
       activeClassName="active"
-      targetBlank={props.targetBlank}
     >
       {props.children}
     </Link>
@@ -110,7 +108,7 @@ export default class Navigation extends React.Component<INavigationProps, INavig
           <NavLink partiallyActive to="/product/">
             PRODUCT
           </NavLink>
-          <NavLink trackLink to="https://docs.bearer.sh" targetBlank>
+          <NavLink trackLink to="https://docs.bearer.sh">
             DOCUMENTATION
           </NavLink>
           <NavLink partiallyActive to="/pricing">

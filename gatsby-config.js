@@ -171,7 +171,8 @@ module.exports = {
           siteId: 1413491,
           reloadOnConsent: false,
           enableRemoteConsent: false,
-          enableCMP: true,
+          consentOnContinuedBrowsing: false,
+          askConsentIfCMPNotFound: false,
           localConsentDomain: bareDomain,
           cookiePolicyId: 65368465,
           banner: {

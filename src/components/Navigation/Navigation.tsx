@@ -72,8 +72,8 @@ export default class Navigation extends React.Component<INavigationProps, INavig
 
   private renderLogin = () => (
     <>
-      <Button onClick={this.doLogin} small primary text="Login" link="#login" />
-      <Button onClick={this.doSignup} small secondary text="Signup" link="#signup" />
+      <Button onClick={this.doLogin} small primary text="Login" link="/#login" />
+      <Button onClick={this.doSignup} small secondary text="Signup" link="/#signup" />
     </>
   )
 

@@ -88,8 +88,10 @@ const AboutPage: GatsbyPage = ({ location }) => (
   <IndexLayout location={location}>
     <PageMetadata
       title="About Us | Bearer"
-      description="
-        Meet the Bearer team and learn about our mission to help developers build quicker &amp; better API integrations"
+      description={
+        'Meet the Bearer team and learn about our mission to help developers build quicker &amp;' +
+        ' better API integrations'
+      }
     />
     <Page
       css={[

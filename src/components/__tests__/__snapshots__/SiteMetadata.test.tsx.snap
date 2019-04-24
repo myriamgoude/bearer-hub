@@ -55,7 +55,7 @@ exports[`SiteMetadata DefaultMeta renders expected metadata 1`] = `
     property="og:url"
   />
   <meta
-    content="en"
+    content="en_US"
     property="og:locale"
   />
   <meta

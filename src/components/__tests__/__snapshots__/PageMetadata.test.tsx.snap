@@ -11,10 +11,6 @@ exports[`PageMetadata renders title, description 1`] = `
         "name": "twitter:title",
       },
       Object {
-        "content": "My Page",
-        "propery": "og:title",
-      },
-      Object {
         "content": "My description",
         "name": "description",
       },
@@ -22,14 +18,19 @@ exports[`PageMetadata renders title, description 1`] = `
         "content": "My description",
         "name": "twitter:description",
       },
-      Object {
-        "content": "My description",
-        "propery": "og:description",
-      },
     ]
   }
   title="My Page"
-/>
+>
+  <meta
+    content="My Page"
+    property="og:title"
+  />
+  <meta
+    content="My description"
+    property="og:description"
+  />
+</HelmetWrapper>
 `;
 
 exports[`PageMetadata renders title, description, image 1`] = `
@@ -43,10 +44,6 @@ exports[`PageMetadata renders title, description, image 1`] = `
         "name": "twitter:title",
       },
       Object {
-        "content": "My Page",
-        "propery": "og:title",
-      },
-      Object {
         "content": "My description",
         "name": "description",
       },
@@ -55,21 +52,26 @@ exports[`PageMetadata renders title, description, image 1`] = `
         "name": "twitter:description",
       },
       Object {
-        "content": "My description",
-        "propery": "og:description",
-      },
-      Object {
-        "content": "https://static.bearer.sh/logo.png",
+        "content": "http://www.bearer.sh/logo.png",
         "name": "twitter:image",
-      },
-      Object {
-        "content": "https://static.bearer.sh/logo.png",
-        "propery": "og:image",
       },
     ]
   }
   title="My Page"
-/>
+>
+  <meta
+    content="My Page"
+    property="og:title"
+  />
+  <meta
+    content="My description"
+    property="og:description"
+  />
+  <meta
+    content="http://www.bearer.sh/logo.png"
+    property="og:image"
+  />
+</HelmetWrapper>
 `;
 
 exports[`PageMetadata renders when given only a title 1`] = `
@@ -82,12 +84,13 @@ exports[`PageMetadata renders when given only a title 1`] = `
         "content": "My Page",
         "name": "twitter:title",
       },
-      Object {
-        "content": "My Page",
-        "propery": "og:title",
-      },
     ]
   }
   title="My Page"
-/>
+>
+  <meta
+    content="My Page"
+    property="og:title"
+  />
+</HelmetWrapper>
 `;

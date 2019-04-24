@@ -56,7 +56,7 @@ export const DefaultMeta: React.SFC<IDefaultMetaProps> = ({ title, canonical, im
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:locale" content="en" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={image} />
     <meta property="og:image:alt" content={alt ? alt : ''} />
@@ -85,7 +85,7 @@ const SiteMetadata = ({ pathname }: ISiteMetadataProps) => (
         title,
         twitter,
         description,
-        image: `${facebookDefault_1x}`,
+        image: `${siteUrl}${facebookDefault_1x}`,
         alt: 'Bearer logo with slogan "Developer Platform for API Integration"',
         canonical: `${siteUrl}${pathname}`
       }

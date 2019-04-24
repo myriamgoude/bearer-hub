@@ -8,7 +8,7 @@ exports[`VideoContent renders correctly 1`] = `
     Array [
       Object {
         "map": undefined,
-        "name": "7adda2",
+        "name": "1t2vc5m",
         "next": undefined,
         "styles": "
     margin: auto;
@@ -18,20 +18,17 @@ exports[`VideoContent renders correctly 1`] = `
     box-shadow: 0 8px 17px 0 rgba(3, 13, 54, 0.16);
     position: relative;
     z-index: 5;
-    width: 100%;
-    height: 389px;
-    @media (max-width: 1200px) {
-      height: 326px;
-    }
   ",
       },
     ]
   }
+  height="315px"
   loop={true}
   muted={true}
   playsInline={true}
   poster="/mv-video-perview.jpg"
   preload="auto"
+  width="560px"
 >
   <source
     src="/my-video.mp4"

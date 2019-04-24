@@ -163,7 +163,11 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
             }
           `}
         >
-          <VideoSection thumbnail="" src="https://static.bearer.sh/integration.mp4" />
+          <VideoSection
+            thumbnail=""
+            src="https://static.bearer.sh/hub/video/bearer-quickstart-20190423.mp4"
+            size={{ width: 537, height: 378 }}
+          />
         </div>
       </HeroPanel>
 

@@ -1,12 +1,14 @@
 import * as React from 'react'
 import { navigate } from 'gatsby'
 
-const ProductIndexPage: GatsbyPage = () => {
+import IndexLayout from '../../layouts'
+
+const ProductIndexPage: GatsbyPage = ({ location }) => {
   React.useEffect(() => {
-    navigate('/product/framework')
+    navigate('/product/framework', { replace: true })
   })
 
-  return null
+  return <IndexLayout location={location} />
 }
 
 export default ProductIndexPage

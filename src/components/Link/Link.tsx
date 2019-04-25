@@ -49,7 +49,7 @@ class Link extends React.Component<ILinkProps> {
   }
 
   render() {
-    const internal = /^\/(?!\/)/.test(this.props.to)
+    const internal = this.props.to.indexOf('http') !== 0
     const { to, trackLink, trackingAction, trackingOptions, onClick, ...remainingProps } = this.props
 
     if (internal) {

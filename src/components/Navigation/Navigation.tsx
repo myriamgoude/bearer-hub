@@ -45,12 +45,14 @@ export default class Navigation extends React.Component<INavigationProps, INavig
     }
   }
 
-  private doLogin = () => {
+  private doLogin = (e: Event) => {
     lockLogin(this.onLogin, this.onError, false, dashboardURL())
+    e.preventDefault()
   }
 
-  private doSignup = () => {
+  private doSignup = (e: Event) => {
     lockLogin(this.onLogin, this.onError, true, dashboardURL())
+    e.preventDefault()
   }
 
   private onLogin = () => {
@@ -72,8 +74,8 @@ export default class Navigation extends React.Component<INavigationProps, INavig
 
   private renderLogin = () => (
     <>
-      <Button onClick={this.doLogin} small primary text="Login" link="/#login" />
-      <Button onClick={this.doSignup} small secondary text="Signup" link="/#signup" />
+      <Button onClick={this.doLogin} small primary text="Login" link="#login" />
+      <Button onClick={this.doSignup} small secondary text="Signup" link="#signup" />
     </>
   )
 

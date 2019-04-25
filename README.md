@@ -1,4 +1,4 @@
-# Bearer Hub
+# 🐻 Bearer Hub 🐻
 
 ## Getting Started
 
@@ -10,9 +10,7 @@ With `yarn start` running, the local site is available at http://localhost:8000/
 
 GraphiQL, the in-browser GraphQL interface, is available at http://localhost:8000/___graphql 
 
-To create a production build, use `yarn build`. 
-
-_**Note without the `ALGOLIA_ADMIN_API_KEY` set in your `.envrc` file, `yarn build` will fail to build the Algolia index (`AlgoliaSearchError: Invalid Application-ID or API key`) but otherwise succeed.**_
+To create a production build, use `yarn build && yarn serve`. The production preview will be available at http://localhost:9000/
 
 ### Using direnv
 
@@ -40,6 +38,6 @@ Something not working? Here are some steps to try
 ## Environments
 
 * Staging (`master` branch): https://bearer-hub-staging.netlify.com/
-* Production (latest release): https://bearer-hub-production.netlify.com/
+* Production (latest release): https://www.bearer.sh/
 
 Jenkins: https://jenkins.bearer.tech/job/Bearer/job/hub/

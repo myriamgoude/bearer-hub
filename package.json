@@ -11,7 +11,8 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "clean": "rimraf public",
+    "build-dev": "GATSBY_ACTIVE_ENV=development yarn build",
+    "clean": "rimraf public && rimraf .cache",
     "dev": "gatsby develop",
     "format": "prettier --write *.js gatsby/* \"src/**/*.{ts,tsx,md}\"",
     "lint-ts": "tslint 'src/**/*.{ts,tsx}' -p tsconfig.json",

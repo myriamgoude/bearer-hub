@@ -1,5 +1,19 @@
 'use strict'
 
+let activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
+
+console.log(`Using environment config: '${activeEnv}'`)
+
+require('dotenv').config({
+  path: `.env.${activeEnv}`
+})
+
+if (activeEnv === 'development') {
+  require('dotenv').config({
+    path: `.env.local`
+  })
+}
+
 const queries = require('./gatsby/algolia')
 const bareDomain = process.env.GATSBY_BASE_DOMAIN.split(':')[1].replace(/\//g, '')
 
@@ -144,7 +158,7 @@ module.exports = {
       options: {
         host: process.env.GATSBY_BASE_DOMAIN,
         sitemap: `${process.env.GATSBY_BASE_DOMAIN}/sitemap.xml`,
-        resolveEnv: () => process.env.GATSBY_ENV || process.env.NODE_ENV || 'development',
+        resolveEnv: () => process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development',
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }]

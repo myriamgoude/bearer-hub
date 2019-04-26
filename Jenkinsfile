@@ -42,11 +42,13 @@ pipeline {
             steps {
                 script {
                     SITE_ID="d3c509b0-5d03-4792-bb11-4942a144cb67"
+                    STAGING=true
+                    
                 }
 
                 container("node") {
                     ansiColor('xterm') {
-                        sh ".jenkins/scripts/preview.sh $SITE_ID $AWS_CORP_STAGING_SECRETS $BRANCH_NAME"
+                        sh ".jenkins/scripts/preview.sh $SITE_ID $AWS_CORP_STAGING_SECRETS $BRANCH_NAME $STAGING"
                     }
                  }
             }
@@ -61,10 +63,11 @@ pipeline {
             steps {
                 script {
                     SITE_ID="d3c509b0-5d03-4792-bb11-4942a144cb67"
+                    STAGING=true
                 }
                 container("node") {
                     ansiColor('xterm') {
-                        sh ".jenkins/scripts/deploy.sh $SITE_ID $AWS_CORP_STAGING_SECRETS"
+                        sh ".jenkins/scripts/deploy.sh $SITE_ID $AWS_CORP_STAGING_SECRETS $STAGING"
                     }
                 }
             }

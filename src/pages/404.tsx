@@ -1,11 +1,10 @@
 import * as React from 'react'
-import IndexLayout from '../layouts'
 import { css } from '@emotion/core'
-import { Button, HeroLined, Page, Grid, Text, SectionHeading, PageMetadata } from '../components/'
+import { Button, Grid, HeroLined, Layout, Page, PageMetadata, SectionHeading, Text } from '../components/'
 import { breakpoints } from '../styles/variables'
 
 const NotFoundPage: GatsbyPage = ({ location }) => (
-  <IndexLayout location={location}>
+  <Layout location={location}>
     <PageMetadata title="404 Page not found" />
     <Page>
       <HeroLined>
@@ -74,7 +73,7 @@ const NotFoundPage: GatsbyPage = ({ location }) => (
         </Grid>
       </HeroLined>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 
 export default NotFoundPage

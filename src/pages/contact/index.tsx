@@ -1,9 +1,7 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import { Button, Clearfix, HeroLined, Page, PageMetadata, Section, Text } from '../../components'
-
-import IndexLayout from '../../layouts'
+import { Button, Clearfix, HeroLined, Layout, Page, PageMetadata, Section, Text } from '../../components'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { colors } from '../../styles/variables'
 
@@ -72,7 +70,7 @@ export const ContactFormHero = () => (
 )
 
 const ContactFormPage: GatsbyPage = ({ location }) => (
-  <IndexLayout location={location}>
+  <Layout location={location}>
     <PageMetadata title="Contact us" />
     <Page css={[heroStyles.styleDefaultCurve]}>
       <ContactFormHero />
@@ -126,7 +124,7 @@ const ContactFormPage: GatsbyPage = ({ location }) => (
         </form>
       </Section>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 
 export default ContactFormPage

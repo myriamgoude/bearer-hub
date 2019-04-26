@@ -4,18 +4,18 @@ import { css } from '@emotion/core'
 import {
   Button,
   ButtonToDashboard,
+  Clearfix,
+  Grid,
+  HeroLined,
+  Layout,
   Page,
   PageMetadata,
-  HeroLined,
-  Text,
-  Clearfix,
   Section,
-  Grid,
   SectionHeading,
   Small,
-  Tabs
+  Tabs,
+  Text
 } from '../components/'
-import IndexLayout from '../layouts'
 import { colors, breakpoints } from '../styles/variables'
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
 import { isBrowser } from '../services/Browser'
@@ -208,7 +208,7 @@ const FeatureIncluded = () => (
 )
 
 const PricingPage: GatsbyPage = ({ location }) => (
-  <IndexLayout location={location}>
+  <Layout location={location}>
     <PageMetadata
       title="Pricing and Plans | Bearer"
       description="Start building API integration for free! Learn more about our pricing and plans."
@@ -644,7 +644,7 @@ const PricingPage: GatsbyPage = ({ location }) => (
         </div>
       </Section>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 
 export default PricingPage

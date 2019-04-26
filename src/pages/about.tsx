@@ -1,7 +1,6 @@
 import * as React from 'react'
 import * as crypto from 'crypto'
 import { css } from '@emotion/core'
-import IndexLayout from '../layouts'
 
 import {
   Button,
@@ -10,6 +9,7 @@ import {
   ColoredTextBlock,
   Grid,
   HeroLined,
+  Layout,
   Link,
   Page,
   PageMetadata,
@@ -85,7 +85,7 @@ const JobCard = (props: any) => (
 )
 
 const AboutPage: GatsbyPage = ({ location }) => (
-  <IndexLayout location={location}>
+  <Layout location={location}>
     <PageMetadata
       title="About Us | Bearer"
       description={
@@ -439,7 +439,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
         </Grid>
       </Section>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 
 export default AboutPage

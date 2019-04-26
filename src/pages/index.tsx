@@ -12,6 +12,7 @@ import {
   Card,
   HeroPanel,
   IntegrationPanel,
+  Layout,
   LightCta,
   Link,
   Page,
@@ -21,7 +22,6 @@ import {
   VideoSection
 } from '../components/'
 
-import IndexLayout from '../layouts'
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
 import { colors, breakpoints } from '../styles/variables'
 
@@ -110,7 +110,7 @@ const styleWhyUseBearerCardHeading = css`
 // )
 
 const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
-  <IndexLayout location={location}>
+  <Layout location={location}>
     <Page css={heroStyles.styleDefaultCurve}>
       <HeroPanel>
         <div className="hero-half">
@@ -423,6 +423,6 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
         </Grid>
       </Section>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 export default IndexPage

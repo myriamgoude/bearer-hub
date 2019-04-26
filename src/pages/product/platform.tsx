@@ -1,10 +1,18 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import Page from '../../components/Page/Page'
-import PageMetadata from '../../components/PageMetadata/PageMetadata'
-import { HeroLined, Clearfix, Text, Tabs, Section, SectionHeading, Grid } from '../../components/'
-import IndexLayout from '../../layouts'
+import {
+  Clearfix,
+  HeroLined,
+  Grid,
+  Layout,
+  Page,
+  PageMetadata,
+  Section,
+  SectionHeading,
+  Text,
+  Tabs
+} from '../../components/'
 import { colors, breakpoints } from '../../styles/variables'
 
 const imageStyle = css`
@@ -34,7 +42,7 @@ const headingTail = css`
 `
 
 const ProductPlatformPage: GatsbyPage = ({ location }) => (
-  <IndexLayout location={location}>
+  <Layout location={location}>
     <PageMetadata
       title="Bearer - Platform Features"
       description="Run and monitor your API Integrations with Bearer's platform,
@@ -147,7 +155,7 @@ const ProductPlatformPage: GatsbyPage = ({ location }) => (
         </Grid>
       </Section>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 
 export default ProductPlatformPage

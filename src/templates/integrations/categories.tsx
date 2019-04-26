@@ -4,9 +4,8 @@ import { css } from '@emotion/core'
 import { Configure, InstantSearch, Pagination } from 'react-instantsearch-dom'
 
 import { breakpoints, colors } from '../../styles/variables'
-import IndexLayout from '../../layouts'
 
-import { Clearfix, HeroLined, Page, PageMetadata, Section, Search, Text } from '../../components/index'
+import { Clearfix, HeroLined, Layout, Page, PageMetadata, Section, Search, Text } from '../../components/index'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { SearchList } from '../../components/Search/components/SearchList'
 import { CustomSearchBox } from '../../components/Search/components/CustomSearchBox'
@@ -43,7 +42,7 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
   const category = data.graphcms.defaultCategory[0]
 
   return (
-    <IndexLayout location={location}>
+    <Layout location={location}>
       <PageMetadata title={category.title} description={`Explore ${category.title} Integration Templates`} />
       <Page css={heroStyles.styleBackgroundExplore}>
         <InstantSearch
@@ -119,7 +118,7 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
           </Section>
         </InstantSearch>
       </Page>
-    </IndexLayout>
+    </Layout>
   )
 }
 

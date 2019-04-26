@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 
-import { Page, PageMetadata, HeroLined, Text, Section } from '../components/index'
-import IndexLayout from '../layouts'
+import { HeroLined, Layout, Page, PageMetadata, Section, Text } from '../components/index'
 
 import styles from '../styles/helpers'
 
@@ -14,7 +13,7 @@ interface IQueryData {
 }
 
 const IubendaTemplate: GatsbyPage<IQueryData> = ({ data, location }) => (
-  <IndexLayout location={location}>
+  <Layout location={location}>
     <PageMetadata title={data.iubendaDocument.title} />
     <Page>
       <HeroLined>
@@ -24,7 +23,7 @@ const IubendaTemplate: GatsbyPage<IQueryData> = ({ data, location }) => (
         <div dangerouslySetInnerHTML={{ __html: data.iubendaDocument.content }} css={styles.markdownPages} />
       </Section>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 
 export default IubendaTemplate

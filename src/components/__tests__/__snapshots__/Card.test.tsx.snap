@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders correctly 1`] = `
+exports[`Card renders correctly 1`] = `
 <div
   css={
     Array [
@@ -83,7 +83,7 @@ exports[`Header renders correctly 1`] = `
 </div>
 `;
 
-exports[`Header renders with object values 1`] = `
+exports[`Card renders with object values 1`] = `
 <div
   css={
     Array [

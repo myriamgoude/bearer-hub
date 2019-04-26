@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import { Button, Clearfix, HeroLined, Page, PageMetadata, Section, Text } from '../../components'
+import { Button, Clearfix, HeroLined, Layout, Page, PageMetadata, Section, Text } from '../../components'
 
-import IndexLayout from '../../layouts'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { colors } from '../../styles/variables'
 
@@ -58,7 +57,7 @@ export const styleFormGroup = css`
 `
 
 const DemoFormPage: GatsbyPage = ({ location }) => (
-  <IndexLayout location={location}>
+  <Layout location={location}>
     <PageMetadata title="Request a demo" />
     <Page css={[heroStyles.styleDefaultCurve]}>
       <HeroLined>
@@ -119,7 +118,7 @@ const DemoFormPage: GatsbyPage = ({ location }) => (
         </form>
       </Section>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 
 export default DemoFormPage

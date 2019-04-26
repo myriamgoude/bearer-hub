@@ -1,16 +1,15 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import { ButtonToDashboard, Clearfix, HeroLined, Page, PageMetadata, Section, Text } from '../../components'
+import { ButtonToDashboard, Clearfix, HeroLined, Layout, Page, PageMetadata, Section, Text } from '../../components'
 
-import IndexLayout from '../../layouts'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { styleForm } from './index'
 
 import { dashboardURL } from '../../services/Dashboard'
 
 const DemoThankYouPage: GatsbyPage = ({ location }) => (
-  <IndexLayout location={location}>
+  <Layout location={location}>
     <PageMetadata title="Thank you" />
     <Page css={[heroStyles.styleDefaultCurve]}>
       <HeroLined>
@@ -37,7 +36,7 @@ const DemoThankYouPage: GatsbyPage = ({ location }) => (
         </div>
       </Section>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 
 export default DemoThankYouPage

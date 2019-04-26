@@ -13,9 +13,10 @@ import Header from './Header/index'
 import HeroLined from './HeroLined/index'
 import HeroPanel from './HeroPanel/index'
 import IntegrationPanel from './IntergrationPanel/index'
+import Label from './Label/index'
+import Layout from './Layout/index'
 import LayoutMain from './LayoutMain/index'
 import LayoutRoot from './LayoutRoot/index'
-import Label from './Label/index'
 import Link from './Link/index'
 import LightCta from './LightCta/index'
 import Navigation from './Navigation/index'
@@ -59,9 +60,10 @@ export {
   HeroLined,
   HeroPanel,
   IntegrationPanel,
+  Label,
+  Layout,
   LayoutMain,
   LayoutRoot,
-  Label,
   Link,
   LightCta,
   Navigation,

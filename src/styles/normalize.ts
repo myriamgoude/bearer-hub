@@ -35,8 +35,6 @@ export default `
     }
   }
 
-
-
   figure {
     margin: 2rem 0;
   }

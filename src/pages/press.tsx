@@ -7,6 +7,7 @@ import {
   Grid,
   HeroLined,
   HeroPanel,
+  Layout,
   Link,
   Page,
   PageMetadata,
@@ -16,15 +17,13 @@ import {
   Text
 } from '../components/'
 
-import IndexLayout from '../layouts'
-
 import heroStyles from '../components/HeroPanel/HeroPanel.style'
 import { breakpoints, colors } from '../styles/variables'
 
 import pressArticles from '../data/press'
 
 const PressPage: GatsbyPage = ({ location }) => (
-  <IndexLayout location={location} enrichedHeader={true}>
+  <Layout location={location} enrichedHeader={true}>
     <PageMetadata title="Press and Media Resources" />
     <Page
       css={[
@@ -336,7 +335,7 @@ const PressPage: GatsbyPage = ({ location }) => (
         </Grid>
       </Section>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 
 export default PressPage

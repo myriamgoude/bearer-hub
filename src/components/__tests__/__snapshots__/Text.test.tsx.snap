@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders correctly 1`] = `
+exports[`Text renders correctly 1`] = `
 <p
   css={
     Array [
@@ -38,7 +38,7 @@ exports[`Header renders correctly 1`] = `
 </p>
 `;
 
-exports[`Header renders correctly with className 1`] = `
+exports[`Text renders correctly with className 1`] = `
 <p
   css={
     Array [

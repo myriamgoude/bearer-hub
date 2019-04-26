@@ -4,11 +4,8 @@ import { graphql } from 'gatsby'
 import { Configure, InstantSearch, Pagination } from 'react-instantsearch-dom'
 
 import { breakpoints, colors } from '../../styles/variables'
-import IndexLayout from '../../layouts'
 
-import Page from '../../components/Page/Page'
-import { Section, HeroLined, Text, Clearfix, Search } from '../../components/index'
-import PageMetadata from '../../components/PageMetadata/PageMetadata'
+import { Clearfix, HeroLined, Layout, Page, PageMetadata, Search, Section, Text } from '../../components/index'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { SearchList } from '../../components/Search/components/SearchList'
 import { CustomSearchBox } from '../../components/Search/components/CustomSearchBox'
@@ -43,7 +40,7 @@ export const query = graphql`
 
 const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
   return (
-    <IndexLayout location={location}>
+    <Layout location={location}>
       <PageMetadata
         title="Explore API Integration Templates | Bearer"
         description="Explore integration templates on dozen of API providers and start 
@@ -127,7 +124,7 @@ const ExplorePage: GatsbyPage<IQueryData> = ({ data, location }) => {
           </Section>
         </InstantSearch>
       </Page>
-    </IndexLayout>
+    </Layout>
   )
 }
 

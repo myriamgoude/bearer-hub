@@ -2,7 +2,7 @@ import * as React from 'react'
 import renderer from 'react-test-renderer'
 import Card from '../Card/Card'
 
-describe('Header', () => {
+describe('Card', () => {
   it('renders correctly', () => {
     const tree = renderer.create(<Card title="foo" text="foo" />).toJSON()
     expect(tree).toMatchSnapshot()

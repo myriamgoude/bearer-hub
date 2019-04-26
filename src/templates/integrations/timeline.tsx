@@ -4,20 +4,20 @@ import { css } from '@emotion/core'
 
 import {
   Button,
-  IntegrationPanel,
-  Link,
+  ButtonToDashboard,
   HeroPanel,
+  IntegrationPanel,
+  Layout,
+  Link,
   Page,
   PageMetadata,
+  Section,
+  SectionHeading,
   TimelineOnBearer,
   TimelineHeading,
   TimelineMyApp,
-  TimelinePlacement,
-  Section,
-  SectionHeading,
-  ButtonToDashboard
+  TimelinePlacement
 } from '../../components/index'
-import IndexLayout from '../../layouts'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { colors } from '../../styles/variables'
 
@@ -120,7 +120,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
   const featuredTemplates = data.graphcms.featuredTemplates
   const placement = TimelinePlacement()
   return (
-    <IndexLayout location={location}>
+    <Layout location={location}>
       <PageMetadata
         title={`Build your own ${template.provider.title} API Integrations with Bearer`}
         description={`Pick this template and start building your own 
@@ -240,7 +240,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
           </div>
         </Section>
       </Page>
-    </IndexLayout>
+    </Layout>
   )
 }
 

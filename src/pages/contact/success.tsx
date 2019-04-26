@@ -1,13 +1,12 @@
 import * as React from 'react'
 
-import { Button, Page, PageMetadata, Section } from '../../components'
+import { Button, Layout, Page, PageMetadata, Section } from '../../components'
 
-import IndexLayout from '../../layouts'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { ContactFormHero, styleForm } from './index'
 
 const ContactThankYouPage: GatsbyPage = ({ location }) => (
-  <IndexLayout location={location}>
+  <Layout location={location}>
     <PageMetadata title="Thank you" />
     <Page css={[heroStyles.styleDefaultCurve]}>
       <ContactFormHero />
@@ -21,7 +20,7 @@ const ContactThankYouPage: GatsbyPage = ({ location }) => (
         </div>
       </Section>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 
 export default ContactThankYouPage

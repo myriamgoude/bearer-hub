@@ -2,7 +2,7 @@ import * as React from 'react'
 import renderer from 'react-test-renderer'
 import Text from '../Text/Text'
 
-describe('Header', () => {
+describe('Text', () => {
   it('renders correctly', () => {
     const tree = renderer.create(<Text text="hello" />).toJSON()
     expect(tree).toMatchSnapshot()

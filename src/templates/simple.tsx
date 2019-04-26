@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 
-import { Clearfix, Page, PageMetadata, HeroLined, Text, Section } from '../components/index'
-import IndexLayout from '../layouts'
+import { Clearfix, HeroLined, Layout, Page, PageMetadata, Section, Text } from '../components/index'
 import styles from '../styles/helpers'
 
 interface IQueryData {
@@ -16,7 +15,7 @@ interface IQueryData {
 }
 
 const SimpleTemplate: GatsbyPage<IQueryData> = ({ data, location }) => (
-  <IndexLayout location={location}>
+  <Layout location={location}>
     <PageMetadata {...data.markdownRemark.frontmatter} />
     <Page>
       <HeroLined>
@@ -27,7 +26,7 @@ const SimpleTemplate: GatsbyPage<IQueryData> = ({ data, location }) => (
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} css={styles.markdownPages} />
       </Section>
     </Page>
-  </IndexLayout>
+  </Layout>
 )
 
 export default SimpleTemplate

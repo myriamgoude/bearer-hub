@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import { CodeSnippet, CodeSnippets, DashedLine, Section, TimelineStage } from '../index'
+import { CodeSnippet, CodeSnippets, DashedLine, Link, Section, TimelineStage } from '../index'
+import { apiProviderCredentials } from '../../services/Explore'
 import { colors, breakpoints } from '../../styles/variables'
 import timelineCodeSnippet from './TimelineOnBearer.snippets'
 
@@ -11,6 +12,7 @@ interface ITimelineOnBearerProps {
     title: string
     gitHubUrl: string
     apiAuthType: string
+    apiCredentialsUrl: string
     defaultFunctionName: string
     defaultFunctionCode: string
     defaultFunctionReturnValue: string
@@ -22,8 +24,6 @@ interface ITimelineOnBearerProps {
 }
 
 const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
-  const apiAuthType = props.template.apiAuthType.toLowerCase()
-  const isOauth = apiAuthType === 'oauth2' || apiAuthType === 'oauth1'
   return (
     <>
       <DashedLine
@@ -57,26 +57,28 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
           <CodeSnippets snippets={[timelineCodeSnippet.cloneTemplate(props.template.provider.title.toLowerCase())]} />
         </TimelineStage>
 
-        {isOauth && (
-          <TimelineStage
-            heading={`Generate an access token`}
-            placement={props.placement.next().value}
-            hint={`Use your ${props.template.provider.title} OAuth credentials \
-            to let Bearer automatically generate a static access token. This will query the API in local development.`}
-          >
-            <CodeSnippets snippets={[timelineCodeSnippet.generateSetup(props.template.apiAuthType)]} />
-          </TimelineStage>
-        )}
-
-        {!isOauth && (
+        {
           <TimelineStage
             heading={`Configure your API credentials`}
             placement={props.placement.next().value}
-            hint={`You are now ready query the ${props.template.provider.title} API in local development.`}
+            hint={
+              <span>
+                Setup the integration with your{' '}
+                {apiProviderCredentials(props.template.apiAuthType, props.template.provider.title)}. This will allow you
+                to make authenticated API requests.{' '}
+                {props.template.apiCredentialsUrl && (
+                  <Link to={props.template.apiCredentialsUrl}>
+                    Don't know your {apiProviderCredentials(props.template.apiAuthType, props.template.provider.title)}?
+                  </Link>
+                )}
+              </span>
+            }
           >
-            <CodeSnippets snippets={[timelineCodeSnippet.generateSetup(props.template.apiAuthType)]} />
+            <CodeSnippets
+              snippets={[timelineCodeSnippet.generateSetup(props.template.apiAuthType, props.template.provider.title)]}
+            />
           </TimelineStage>
-        )}
+        }
 
         <TimelineStage heading={`Test the pre-built function`} placement={props.placement.next().value}>
           <>

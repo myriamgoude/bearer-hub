@@ -63,7 +63,6 @@ export default {
   `,
 
   lineCode: css`
-    width: 100%;
     height: 0.875rem;
     line-height: 0.875rem;
     display: inline-block;

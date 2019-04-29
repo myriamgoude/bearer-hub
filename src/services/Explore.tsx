@@ -44,3 +44,17 @@ export function humanizeAuthType(authType: string) {
   }
   return authType
 }
+
+// Helper to create the right provider credentials naming
+// e.g. Dropbox OAuth2 credentials, PagerDuty API key, etc.
+export function apiProviderCredentials(apiAuthType: string, apiProviderName: string) {
+  switch (apiAuthType.toLowerCase()) {
+    case 'oauth2':
+    case 'oauth1':
+      return `${apiProviderName} ${apiAuthType} credentials`
+    case 'apikey':
+      return `${apiProviderName} API key`
+    default:
+      return `${apiProviderName} credentials`
+  }
+}

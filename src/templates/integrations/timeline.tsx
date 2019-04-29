@@ -32,6 +32,7 @@ interface ITemplateData {
   apiAuthType: string
   oauthScopes?: any
   apiArchType: string
+  apiCredentialsUrl: string
   provider: {
     hubID: string
     title: string
@@ -79,6 +80,7 @@ export const query = graphql`
         apiAuthType
         oauthScopes
         apiArchType
+        apiCredentialsUrl
         featured
         featuredOrder
         provider {

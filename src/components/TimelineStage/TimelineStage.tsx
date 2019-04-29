@@ -43,14 +43,14 @@ interface ITimelineStageProps {
   heading: string
   tooltip?: string
   placement: string
-  hint?: string
+  hint?: React.ReactElement | string
   children: any
 }
 
 const TimelineStage = (props: ITimelineStageProps) => (
   <Container style={{ marginBottom: 32 }}>
     <StyledDiv placement={props.placement}>
-      <h3 css={styles.stageHeading}>
+      <h3 css={styles.stageHeading} id={props.heading.toLowerCase().replace(/ /g, '-')}>
         {props.heading}
         {props.tooltip && (
           <span css={styles.stageTooltip}>

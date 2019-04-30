@@ -120,7 +120,7 @@ export const SearchList = (props: ISearchListProps) => {
               All
             </option>
             {props.categories.map(category => (
-              <option key={category.id} value={category.title} id={category.hubID}>
+              <option key={category.id} value={category.title} id={category.hubID} itemProp="name">
                 {category.title}
               </option>
             ))}
@@ -151,6 +151,7 @@ export const SearchList = (props: ISearchListProps) => {
                       ? { borderBottom: `1px dashed ${colors.gray.dark}` }
                       : { color: colors.darkBlue }
                   }
+                  itemProp="name"
                 >
                   {category.title}
                 </Link>

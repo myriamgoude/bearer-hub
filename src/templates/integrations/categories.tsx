@@ -80,7 +80,7 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
                 }
               `}
             >
-              <SearchList selected={category.id} categories={data.graphcms.categories} />
+              <SearchList selected={category.title} categories={data.graphcms.categories} />
             </div>
             <div
               css={css`

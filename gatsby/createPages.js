@@ -52,6 +52,7 @@ module.exports = async ({ graphql, actions }) => {
   const categoryTemplate = resolve(`./src/templates/integrations/categories.tsx`)
 
   // Redirect data for the Netlify _redirects file
+  const historicalRedirects = ['/integrations/slack/share /integrations/11/:slug 301']
   const categoryRedirects = []
   const categoryRewrites = []
   const templateRedirects = []
@@ -135,6 +136,7 @@ module.exports = async ({ graphql, actions }) => {
   // Add redirects (301)
   redirectData.push(templateRedirects.join('\n'))
   redirectData.push(categoryRedirects.join('\n'))
+  redirectData.push(historicalRedirects.join('\n'))
 
   fs.writeFileSync(`${dir}/_redirects`, redirectData.join('\n'), 'utf8')
 }

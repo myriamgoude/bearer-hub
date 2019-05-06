@@ -200,6 +200,7 @@ const PricingTable = (props: any) => (
 
 const FeatureIncluded = () => (
   <img
+    alt="Bearer - features included"
     src={require('../images/shared/icon-check-green.svg')}
     css={css`
       vertical-align: middle;
@@ -210,7 +211,7 @@ const FeatureIncluded = () => (
 const PricingPage: GatsbyPage = ({ location }) => (
   <Layout location={location}>
     <PageMetadata
-      title="Pricing and Plans | Bearer"
+      title="Bearer | Pricing and Plans"
       description="Start building API integration for free! Learn more about our pricing and plans."
     />
     <Page

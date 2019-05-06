@@ -81,19 +81,28 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                 className={[styles.item]}
               >
                 <div
+                  itemScope
+                  itemType="http://schema.org/Service"
                   css={css`
                     margin-top: 1rem;
                     height: 4rem;
                     margin-bottom: 1rem;
                   `}
                 >
-                  {image && <img src={image} css={styles.cardImage} itemProp="logo" />}
+                  {image && (
+                    <img
+                      src={image}
+                      alt={`${template.provider.title} API integration`}
+                      css={styles.cardImage}
+                      itemProp="logo"
+                    />
+                  )}
                 </div>
                 <div
                   css={css`
                     align-self: normal;
                   `}
-                  itemProp="brand"
+                  itemProp="name"
                 >
                   <Text
                     text={`${template.provider.title} API`}

@@ -18,11 +18,11 @@ interface TimelineHeadingProps {
 
 const TimelineHeading = (props: TimelineHeadingProps) => {
   return (
-    <div itemScope itemType="http://schema.org/Thing" css={[styles.root, props.style && props.style]}>
-      <h1 itemProp="Name" css={styles.heading}>
+    <div itemScope itemType="http://schema.org/Service" css={[styles.root, props.style && props.style]}>
+      <h1 itemProp="name" css={styles.heading}>
         Quickly build your own{' '}
         <span
-          itemProp="Provider"
+          itemProp="provider"
           css={styles.provider}
           style={{ color: props.providerColor, borderColor: props.providerColor }}
           title={props.providerDescription}
@@ -32,25 +32,25 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
         API Integration
       </h1>
       <div>
-        <ul itemProp="featureList" css={styles.features}>
-          <li css={[styles.feature, styles.featureIconClock]}>
+        <ul css={styles.features}>
+          <li itemProp="serviceType" css={[styles.feature, styles.featureIconClock]}>
             <span>Don’t waste time learning the {props.templateTitle} behaviour</span>
           </li>
-          <li css={[styles.feature, styles.featureIconRabbit]}>
+          <li itemProp="serviceType" css={[styles.feature, styles.featureIconRabbit]}>
             <span>
               Use a pre-configured API client and {humanizeAuthType(props.templateApiAuthType)} implementation
             </span>
           </li>
-          <li css={[styles.feature, styles.featureIcon3d]}>
+          <li itemProp="serviceType" css={[styles.feature, styles.featureIcon3d]}>
             <span>Consume and transform the {props.templateTitle} with functions</span>
           </li>
-          <li css={[styles.feature, styles.featureIconHome]}>
+          <li itemProp="serviceType" css={[styles.feature, styles.featureIconHome]}>
             <span>Host and scale your integration for free</span>
           </li>
-          <li css={[styles.feature, styles.featureIconMonitor]}>
+          <li itemProp="serviceType" css={[styles.feature, styles.featureIconMonitor]}>
             <span>Monitor and log every API call to the {props.templateTitle} out of the box.</span>
           </li>
-          <li css={[styles.feature, styles.featureIconAtomium]}>
+          <li itemProp="serviceType" css={[styles.feature, styles.featureIconAtomium]}>
             <span>Integrate into your app within seconds using our integration clients</span>
           </li>
         </ul>
@@ -79,7 +79,7 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
       </div>
       <Small>
         or read the{' '}
-        <Link itemProp="documentation" to="https://docs.bearer.sh">
+        <Link itemScope itemType="https://schema.org/WebAPI" itemProp="documentation" to="https://docs.bearer.sh">
           documentation
         </Link>{' '}
       </Small>

@@ -3,7 +3,6 @@ import * as crypto from 'crypto'
 import { css } from '@emotion/core'
 
 import {
-  Button,
   Card,
   Clearfix,
   ColoredTextBlock,
@@ -53,6 +52,22 @@ const JobCard = (props: any) => (
         align-self: flex-end;
         text-align: right;
       }
+      .job-btn {
+        border-radius: 4px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        font-weight: 600;
+        background-color: #030d36;
+        color: #fff;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 1rem;
+        font-size: 0.875rem;
+        margin: 16px 0;
+        text-decoration: none;
+        width: 70px;
+      }
     `}
   >
     <header>
@@ -71,16 +86,9 @@ const JobCard = (props: any) => (
       {props.role}
     </Text>
     <Text small>{props.description}</Text>
-
-    <Button
-      link={props.url}
-      text="Apply"
-      secondary
-      small
-      style={css`
-        margin: 16px 0;
-      `}
-    />
+    <a href={props.url} className="job-btn secondary small">
+      Apply
+    </a>
   </Card>
 )
 
@@ -122,7 +130,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
         >
           <img
             src={require('../images/team-remote.png')}
-            alt="Our Team"
+            alt="Bearer - Our Team"
             css={css`
               max-width: 100%;
               display: block;
@@ -409,7 +417,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
           <Link to="https://partechpartners.com/">
             <img
               src={require('../images/shared/logo-partech.png')}
-              alt={`Logo Partech`}
+              alt="Bearer - Logo Partech"
               css={css`
                 height: 50px;
                 vertical-align: middle;
@@ -419,7 +427,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
           <Link to="http://www.pointninecap.com/">
             <img
               src={require('../images/shared/logo-point-nine.png')}
-              alt={`Logo Point Nine`}
+              alt="Bearer - Logo Point Nine"
               css={css`
                 height: 50px;
                 vertical-align: middle;
@@ -429,7 +437,7 @@ const AboutPage: GatsbyPage = ({ location }) => (
           <Link to="https://www.kimaventures.com/">
             <img
               src={require('../images/shared/logo-kima-ventures.png')}
-              alt={`Logo Kima Ventures`}
+              alt="Bearer - Logo Kima Ventures"
               css={css`
                 height: 78px;
                 vertical-align: middle;

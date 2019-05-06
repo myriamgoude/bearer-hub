@@ -59,7 +59,7 @@ const Footer = (props: IFooterProps) => (
       <div css={styles.main}>
         <div css={styles.logo}>
           <Link to="/">
-            <img src={whiteLogo} alt="Bearer logo" />
+            <img src={whiteLogo} alt="Bearer - API integration Framework" />
           </Link>
         </div>
         <div css={styles.categories}>

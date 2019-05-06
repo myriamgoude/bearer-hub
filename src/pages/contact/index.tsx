@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import { Button, Clearfix, HeroLined, Layout, Page, PageMetadata, Section, Text } from '../../components'
+import { Clearfix, HeroLined, Layout, Page, PageMetadata, Section, Text } from '../../components'
 import heroStyles from '../../components/HeroPanel/HeroPanel.style'
 import { colors } from '../../styles/variables'
 
@@ -52,6 +52,24 @@ export const styleFormGroup = css`
   &.form-submit {
     margin-top: 2rem;
     text-align: right;
+
+    input[type='submit'] {
+      border-radius: 4px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+      background-color: #ffc400;
+      color: #030d36;
+      height: 48px;
+      line-height: 48px;
+      padding: 0 1.5rem;
+    }
+    input[type='submit']:hover {
+      background-color: #e9b300;
+    }
   }
 `
 
@@ -71,7 +89,7 @@ export const ContactFormHero = () => (
 
 const ContactFormPage: GatsbyPage = ({ location }) => (
   <Layout location={location}>
-    <PageMetadata title="Contact us" />
+    <PageMetadata title="Bearer | Contact us" description="Stay in touch with us in sending your questions " />
     <Page css={[heroStyles.styleDefaultCurve]}>
       <ContactFormHero />
       <Section>
@@ -119,7 +137,7 @@ const ContactFormPage: GatsbyPage = ({ location }) => (
             </label>
           </div>
           <div className="form-group form-submit" css={styleFormGroup}>
-            <Button data-type="submit" text="Submit request" link="submit" />
+            <input type="submit" value="Submit request" />
           </div>
         </form>
       </Section>

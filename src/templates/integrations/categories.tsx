@@ -43,7 +43,10 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
 
   return (
     <Layout location={location}>
-      <PageMetadata title={category.title} description={`Explore ${category.title} Integration Templates`} />
+      <PageMetadata
+        title={`Bearer - ${category.title} API integrations templates`}
+        description={`Start building integrations from our ${category.title} API integration templates`}
+      />
       <Page css={heroStyles.styleBackgroundExplore}>
         <InstantSearch
           appId={`${process.env.GATSBY_ALGOLIA_APP_ID}`}

@@ -102,7 +102,7 @@ export const SearchList = (props: ISearchListProps) => {
     <nav css={navStyle}>
       <section
         itemScope
-        itemType="http://schema.org/Thing"
+        itemType="http://schema.org/Service"
         css={css`
           margin-top: 16px;
         `}
@@ -144,6 +144,7 @@ export const SearchList = (props: ISearchListProps) => {
             {props.categories.map(category => (
               <li key={category.id}>
                 <Link
+                  alt={`${category.title} API integration templates`}
                   to={categoryPath({ hubID: category.hubID, title: category.title })}
                   css={navLinkStyle}
                   style={

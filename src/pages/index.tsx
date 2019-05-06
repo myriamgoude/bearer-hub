@@ -16,6 +16,7 @@ import {
   LightCta,
   Link,
   Page,
+  PageMetadata,
   Section,
   SectionHeading,
   Small,
@@ -111,6 +112,11 @@ const styleWhyUseBearerCardHeading = css`
 
 const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
   <Layout location={location}>
+    <PageMetadata
+      title="Bearer | The API Integration Framework"
+      description="Bearer is an API integration framework and platform providing 
+      all the tools to build, run and manage API Integrations."
+    />
     <Page css={heroStyles.styleDefaultCurve}>
       <HeroPanel>
         <div className="hero-half">

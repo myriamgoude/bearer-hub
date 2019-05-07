@@ -7,6 +7,7 @@ import styles from './Card.style'
 interface ICardProps {
   children?: object
   className?: any
+  headingText?: string | any
   title?: string | any
   heading?: {
     src: string
@@ -39,7 +40,7 @@ const CardBox = (props: ICardProps) => (
     ]}
   >
     {props.icon && <img src={`${props.icon}`} alt={`Icon for ${props.title}`} />}
-    {props.title && <h3>{props.title}</h3>}
+    {props.headingText && <h3>{props.headingText}</h3>}
     {props.text && <Text text={props.text} />}
     {props.children && props.children}
   </div>
@@ -51,6 +52,7 @@ const Card = (props: ICardProps) => {
       itemScope
       itemType={props.itemType}
       itemProp="url"
+      title={`${props.title}`}
       to={props.link}
       trackLink={props.trackLink}
       trackingAction={props.trackingAction}

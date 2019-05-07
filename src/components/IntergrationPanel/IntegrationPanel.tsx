@@ -72,6 +72,7 @@ export class IntegrationPanel extends React.Component<IIntegrationProps, {}> {
                 key={template.id}
                 link={`${templatePath(template)}`}
                 trackLink
+                title={`${template.provider.title} API integration template`}
                 trackingAction="explore-template"
                 trackingOptions={{
                   category: 'Template',

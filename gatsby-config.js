@@ -31,7 +31,7 @@ module.exports = {
         links: [
           { to: '/product/framework', label: 'Product' },
           { to: '/integrations', label: 'Templates' },
-          { to: '/pricing', label: 'Pricing' }
+          { to: '/pricing?pricing=community', label: 'Pricing' }
         ]
       },
       {

@@ -89,7 +89,10 @@ export const ContactFormHero = () => (
 
 const ContactFormPage: GatsbyPage = ({ location }) => (
   <Layout location={location}>
-    <PageMetadata title="Bearer | Contact us" description="Stay in touch with us in sending your questions " />
+    <PageMetadata
+      title="Bearer | Contact us - API Integration Framework"
+      description="Stay in touch with us by sending us your questions "
+    />
     <Page css={[heroStyles.styleDefaultCurve]}>
       <ContactFormHero />
       <Section>

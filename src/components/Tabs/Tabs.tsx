@@ -26,7 +26,7 @@ const Tabs = (props: ITabsProps) => (
     {props.items.map((item: any) => (
       <Link
         key={item.label}
-        to={item.path ? item.path : pageUrl(item.label)}
+        to={`${pageUrl(item.label)}`}
         css={[
           styles.item,
           isBrowser(),

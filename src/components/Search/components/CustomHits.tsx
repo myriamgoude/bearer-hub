@@ -55,6 +55,7 @@ export const CustomHits = connectHits(({ hits }: { hits: ICustomHitsProps[] }) =
             itemScope
             itemType="http://schema.org/Product"
             key={hit.objectID}
+            title={`${hit.provider.title} API integration template`}
             link={`${templatePath({ hubID: hit.hubID, title: hit.title, provider: hit.provider })}`}
             trackLink
             trackingAction="explore-template"
@@ -68,6 +69,7 @@ export const CustomHits = connectHits(({ hits }: { hits: ICustomHitsProps[] }) =
             <div>
               <img
                 itemProp="logo"
+                alt={`${hit.provider.title} API integration`}
                 src={hit.provider.image ? hit.provider.image.url : null}
                 css={blockStyles.cardImage}
               />

@@ -53,7 +53,7 @@ const headingTail = css`
 const ProductFrameworkPage: GatsbyPage = ({ location }) => (
   <Layout location={location}>
     <PageMetadata
-      title="Bearer - Framework Features"
+      title="Bearer | Framework Features"
       description="Build API integration faster with the Bearer
       framework, manage API authentication, map data easily, integrate into your app in one line of code and more."
     />

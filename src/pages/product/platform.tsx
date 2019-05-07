@@ -44,7 +44,7 @@ const headingTail = css`
 const ProductPlatformPage: GatsbyPage = ({ location }) => (
   <Layout location={location}>
     <PageMetadata
-      title="Bearer - Platform Features"
+      title="Bearer | Platform Features"
       description="Run and monitor your API Integrations with Bearer's platform,
       log every API call, manage authentication flows and webhooks, and more"
     />

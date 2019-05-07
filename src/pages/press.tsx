@@ -24,7 +24,10 @@ import pressArticles from '../data/press'
 
 const PressPage: GatsbyPage = ({ location }) => (
   <Layout location={location} enrichedHeader={true}>
-    <PageMetadata title="Press and Media Resources" />
+    <PageMetadata
+      title="Bearer | Press and Media Resources"
+      description="Press Information and Resources about us and our framework"
+    />
     <Page
       css={[
         heroStyles.styleDefaultCurve,
@@ -62,6 +65,30 @@ const PressPage: GatsbyPage = ({ location }) => (
                 max-width: 400px !important;
                 margin: 0;
                 margin-top: 68px;
+                .contact-us {
+                  border-radius: 4px;
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  appearance: none;
+                  border: 0;
+                  cursor: pointer;
+                  font-weight: 600;
+                  background-color: #ffc400;
+                  color: #030d36;
+                  background-color: #ffc400;
+                  color: #030d36;
+                  height: 48px;
+                  line-height: 48px;
+                  padding: 0 1.5rem;
+                  text-decoration: none;
+                  align-item: flex-start;
+                  text-align: center;
+                  display: inline-block;
+
+                  &:hover {
+                    background-color: #e9b300;
+                  }
+                }
 
                 @media (max-width: ${breakpoints.lg}px) {
                   margin: 68px auto 0;
@@ -78,7 +105,9 @@ const PressPage: GatsbyPage = ({ location }) => (
                 }
               `}
             >
-              <Button primary link="mailto:hello@bearer.sh?subject=Press" text="Contact us" />
+              <a href="mailto:hello@bearer.sh?subject=Press" className="contact-us">
+                Contact us
+              </a>
               <Button
                 secondary
                 link="https://drive.google.com/drive/folders/1NfLHbVsjDonkt9wrysrnQCuP0tD5CGh-?usp=sharing"
@@ -128,9 +157,10 @@ const PressPage: GatsbyPage = ({ location }) => (
           >
             <img
               src={require('../images/press-hero-illustration.png')}
+              alt="Bearer - Our press kit"
               css={css`
                 height: 380px;
-                margin: auton;
+                margin: auto;
                 @media (max-width: ${breakpoints.lg}px) {
                   display: none;
                 }

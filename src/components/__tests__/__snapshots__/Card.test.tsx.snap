@@ -42,9 +42,6 @@ exports[`Card renders correctly 1`] = `
     ]
   }
 >
-  <h3>
-    foo
-  </h3>
   <p
     css={
       Array [
@@ -125,16 +122,6 @@ exports[`Card renders with object values 1`] = `
     ]
   }
 >
-  <h3>
-    <img
-      alt="icon"
-      className="foo"
-      src="#"
-    />
-    <span>
-      foo bar
-    </span>
-  </h3>
   <p
     css={
       Array [

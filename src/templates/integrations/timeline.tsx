@@ -124,7 +124,7 @@ const PresentTemplate: GatsbyPage<IQueryData> = ({ data, location }) => {
   return (
     <Layout location={location}>
       <PageMetadata
-        title={`Build your own ${template.provider.title} API Integrations with Bearer`}
+        title={`Build your own ${template.provider.title} API Integration with Bearer`}
         description={`Pick this template and start building your own 
         ${template.provider.title} API integration in minutes using the Bearer Framework.`}
       />

@@ -44,7 +44,7 @@ const ExploreCategoryTemplate: GatsbyPage<IQueryData> = ({ data, location }) => 
   return (
     <Layout location={location}>
       <PageMetadata
-        title={`Bearer - ${category.title} API integrations templates`}
+        title={`Bearer | ${category.title} API integration templates`}
         description={`Start building integrations from our ${category.title} API integration templates`}
       />
       <Page css={heroStyles.styleBackgroundExplore}>

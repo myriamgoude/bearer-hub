@@ -2,17 +2,24 @@ import { Snippet } from '../CodeSnippets/CodeSnippets'
 
 const timelineCodeSnippet = {
   cloneTemplate(templateTitle: string): Snippet {
-    function templateFolderPath(templateTitle: string) {
-      return `templates/providers/${templateTitle
+    // Returnse.g. Google Drive Calendar becomes google-drive-calendar
+    function formatTemplateTitle(templateTitle: string) {
+      return templateTitle
         .toLowerCase()
         .split(' ')
-        .join('-')}`
+        .join('-')
     }
-    const gitHubUrl = 'https://github.com/Bearer/templates'
+
+    // Returns e.g. providers/asana, providers/dropbox
+    function templateFolderPath(templateTitle: string) {
+      return `providers/${formatTemplateTitle(templateTitle)}`
+    }
+
     return {
       language: 'bash',
-      code: `$ git clone ${gitHubUrl} && cd ${templateFolderPath(templateTitle)}
-$ npm run install`
+      code: `$ npm init bearer ${formatTemplateTitle(templateTitle)} -t -d ${templateFolderPath(templateTitle)}
+$ npm install
+      `
     }
   },
 

@@ -18,7 +18,7 @@ const timelineCodeSnippet = {
     return {
       language: 'bash',
       code: `$ npm init bearer ${formatTemplateTitle(templateTitle)} -t -d ${templateFolderPath(templateTitle)}
-$ cd ${formatTemplateTitle(templateTitle)} && npm install`
+$ cd ${formatTemplateTitle(templateTitle)}`
     }
   },
 

@@ -53,7 +53,7 @@ const TimelineOnBearer = (props: ITimelineOnBearerProps) => {
             }
           `}
         />
-        <TimelineStage heading={`Clone the template and install dependencies`} placement={props.placement.next().value}>
+        <TimelineStage heading={`Clone the template`} placement={props.placement.next().value}>
           <CodeSnippets snippets={[timelineCodeSnippet.cloneTemplate(props.template.provider.title.toLowerCase())]} />
         </TimelineStage>
 

@@ -57,7 +57,10 @@ module.exports = async ({ graphql }) => {
           title
           apiAuthType
           apiArchType
+          apiCredentialsUrl
+          oauthScopes
           provider {
+            title
             image {
               url
               handle
@@ -94,12 +97,17 @@ module.exports = async ({ graphql }) => {
       name: template.title,
       authType,
       archType: template.apiArchType,
+      apiCredentialsUrl: template.apiCredentialsUrl,
+      oauthScopes: template.oauthScopes,
       description: '',
       image: {
         url: imageObj.url,
         handle: imageObj.handle
       },
-      categories: templateCategories
+      categories: templateCategories,
+      provider: {
+        title: template.provider.title
+      }
     }
 
     fs.writeFileSync(`${childDir}/${template.hubID}.json`, JSON.stringify(templateObj), 'utf8')
@@ -124,7 +132,10 @@ module.exports = async ({ graphql }) => {
           title
           apiAuthType
           apiArchType
+          apiCredentialsUrl
+          oauthScopes
           provider {
+            title
             image {
               url
               handle
@@ -161,12 +172,17 @@ module.exports = async ({ graphql }) => {
       name: template.title,
       authType,
       archType: template.apiArchType,
+      apiCredentialsUrl: template.apiCredentialsUrl,
+      oauthScopes: template.oauthScopes,
       description: `${template.title} : Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       image: {
         url: imageObj.url,
         handle: imageObj.handle
       },
-      categories: templateCategories
+      categories: templateCategories,
+      provider: {
+        title: template.provider.title
+      }
     })
   })
 

@@ -120,7 +120,7 @@ export const SearchList = (props: ISearchListProps) => {
               All
             </option>
             {props.categories.map(category => (
-              <option key={category.id} value={category.title} id={category.hubID} itemProp="name">
+              <option key={category.id} value={category.title} id={category.hubID} itemProp="category">
                 {category.title}
               </option>
             ))}
@@ -144,7 +144,7 @@ export const SearchList = (props: ISearchListProps) => {
             {props.categories.map(category => (
               <li key={category.id}>
                 <Link
-                  alt={`${category.title} API integration templates`}
+                  alt={`${category.title} API integrations`}
                   to={categoryPath({ hubID: category.hubID, title: category.title })}
                   css={navLinkStyle}
                   style={

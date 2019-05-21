@@ -336,7 +336,13 @@ const IndexPage: GatsbyPage<IQueryData> = ({ data, location }) => (
           ]}
           className="mt-32"
         >
-          <Button trackLink text="Explore templates" link="/integrations" className="mt-16 mb-16" />
+          <Button
+            title="API integrations templates"
+            trackLink
+            text="Explore templates"
+            link="/integrations"
+            className="mt-16 mb-16"
+          />
         </div>
       </Section>
 

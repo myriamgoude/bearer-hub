@@ -19,10 +19,10 @@ interface TimelineHeadingProps {
 const TimelineHeading = (props: TimelineHeadingProps) => {
   return (
     <div itemScope itemType="http://schema.org/Service" css={[styles.root, props.style && props.style]}>
-      <h1 itemProp="name" css={styles.heading}>
+      <h1 itemProp="provider" css={styles.heading}>
         Quickly build your own{' '}
         <span
-          itemProp="provider"
+          itemProp="name"
           css={styles.provider}
           style={{ color: props.providerColor, borderColor: props.providerColor }}
           title={props.providerDescription}
@@ -79,7 +79,13 @@ const TimelineHeading = (props: TimelineHeadingProps) => {
       </div>
       <Small>
         or read the{' '}
-        <Link itemScope itemType="https://schema.org/WebAPI" itemProp="documentation" to="https://docs.bearer.sh">
+        <Link
+          title="API integration documentation"
+          itemScope
+          itemType="https://schema.org/WebAPI"
+          itemProp="documentation"
+          to="https://docs.bearer.sh"
+        >
           documentation
         </Link>{' '}
       </Small>

@@ -18,6 +18,7 @@ interface IButtonProps {
   className?: string
   onClick?: any
   style?: any
+  title?: string
   trackLink?: boolean
   trackingAction?: string
   trackingOptions?: any
@@ -46,6 +47,7 @@ export default (props: IButtonProps) => {
   return (
     <ButtonLink
       to={props.link}
+      title={props.title}
       onClick={props.onClick}
       trackLink={props.trackLink}
       trackingAction={props.trackingAction}

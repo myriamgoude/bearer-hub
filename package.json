@@ -32,7 +32,7 @@
     "@types/mockdate": "^2.0.0",
     "@types/rc-tooltip": "^3.7.1",
     "auth0-lock": "^11.14.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "fs": "^0.0.1-security",
     "gatsby": "^2.0.115",
